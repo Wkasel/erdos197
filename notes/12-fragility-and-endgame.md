@@ -32,3 +32,12 @@ NO-paths remaining: pure-X UNSAT at some scale (decidable, running); or a new
 infinite-descent argument exploiting fragility (every valid arrangement
 separates adjacent values across pivots — quantify accumulation?).
 The problem is fighting back exactly as a 47-year-old problem should.
+
+## Fragility universality (machine-certified, all families)
+ratio 2/3/4/8 alternating-interval partitions: plain pure systems all SAT
+(n up to 819), radius-1 robust versions ALL UNSAT. Fragility is intrinsic to
+the two-set problem. Consequences: no partition offers a drift-tolerant
+pumpable tower; exact self-similar towers are the only uniform YES-route
+(dented by witness-fixed-4096 UNSAT); fragility-accumulation is the most
+promising uncharted NO-route (each scale forces tight separations (z ≺ y ≺ z+1);
+do separations compose into an infinite descent? — tomorrow's question).

@@ -3,3 +3,5 @@ VALIDATION fatal-zone M=16 CP-SAT status: CpSolverStatus.INFEASIBLE (3=INFEASIBL
 g_256(64) = 153  OPTIMAL (95s)
 g_1024(64): status CpSolverStatus.UNKNOWN (3603s)
 g_1024(16): status CpSolverStatus.UNKNOWN (3603s)
+pure-4096: UNKNOWN (3648s)
+=== overnight campaign end Mon Aug 24 05:18:29 PDT 2026 ===
