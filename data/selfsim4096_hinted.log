@@ -1,0 +1,5 @@
+heuristic order built
+n=2730 clauses=6059907
+round 10: 668937 viol (33s)
+round 20: 684664 viol (66s)
+round 30: 709621 viol (96s)

@@ -2,3 +2,4 @@
 VALIDATION fatal-zone M=16 CP-SAT status: CpSolverStatus.INFEASIBLE (3=INFEASIBLE expected)
 g_256(64) = 153  OPTIMAL (95s)
 g_1024(64): status CpSolverStatus.UNKNOWN (3603s)
+g_1024(16): status CpSolverStatus.UNKNOWN (3603s)
