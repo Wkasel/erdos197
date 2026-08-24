@@ -377,6 +377,40 @@ schemes via the per-block deferral calculus of
 Lemma~\ref{lem:bottomhalf}. Both are finite-structure questions; the same
 lemmas hold verbatim for $S_B$ (machine-verified mirror at $4096$).
 
+\section{The displacement ladder}\label{sec:ladder}
+
+For a stage function $s$ write $\delta(v) = s(v) - \mathrm{block}(v)/2 \ge 0$
+(\emph{displacement}). Define
+\[
+L(m) \;=\; \min_{\text{schemes at horizon } 4^m}\ \max_{v \le 16} \delta(v),
+\]
+the minimum over all finite-fiber schemes satisfying (A)$\wedge$(B) at
+horizon $4^m$ (no bound on any other value's displacement).
+
+\begin{proposition}[Ladder rungs; machine-certified, solver-cross-checked]
+$L(3) \le 1$; \ $L(4) = 2$ (infeasibility of the cap $\delta \le 1$ on
+$\{v \le 16\}$ at $N=256$ verified independently by CP-SAT, 252s, and
+CDCL with a unary-ladder encoding, 15s); \ $L(5) \ge 3$ pending.
+\end{proposition}
+
+\begin{theorem}[Divergence criterion]\label{thm:divergence}
+If $L(m) \to \infty$ then $\SA$ is not $3$-permutable. \emph{Proof:} an
+infinite valid permutation induces, for every $m$, a valid scheme at horizon
+$4^m$ (restriction; completions of values $\le 4^m$ that lie beyond the
+horizon fall in the odd block $(4^m, 2\cdot 4^m]$, out of team), and the ten
+displacements $\delta(3), \delta(4), \dots, \delta(16)$ are constants of the
+infinite scheme. For $m$ with $L(m) > \max_{v\le 16}\delta(v)$ this is a
+contradiction, by the exactness of Theorem~\ref{thm:chunk}. \qed
+\end{theorem}
+
+The conjectured growth $L(m) = m-2$ matches the window-death schedule
+(window $w$ dying at horizon $4^{w+3}$) and the observed per-block descent
+of displacement in minimal solutions ($\delta$ profile $(m{-}2, m{-}3,
+\dots, 1, 0)$ across blocks $4, 6, \dots, 2m$). The missing step is a
+self-propagating squeeze $L(m{+}1) \ge L(m) + 1$; the $\times 4$
+restriction alone yields only the diagonal transfer
+$L_{b+1}(m{+}1) \ge L_b(m)$ for the capped set $[1, 4^b]$.
+
 \section{Historical note: suffix-stacked deferral}
 
 The deferral-state experiments (states exist at $M=32,64,128$; class
