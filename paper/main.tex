@@ -255,9 +255,55 @@ such as ``even 2-adic valuation vs.\ odd'' die immediately, and viable partition
 are forced toward dyadic-interval alternation, motivating the canonical
 candidate $\SA$.
 
+\section{Toward the main theorem: suffix-stacked class deferral}
+
+% DRAFT SECTION — the construction program in its corrected form.
+
+\begin{definition}[Deferral states]
+For a scale $M$ (a power of two) let $D_M \subseteq (M/2, M]$ denote a single
+residue class modulo $m(M)$ (class coherence; the witnesses select
+$\{v \equiv 2 \bmod 2^{k/2}\}$). A \emph{deferral state} at scale $M$ is a
+doom-free arrangement of $\SA \cap [1, 2M]$ of the suffix-stacked form
+$[\,\mathrm{bulk} \mid D_{M/2} \mid D_{M}\,]$: the bulk contains everything
+except the two most recent deferred classes, which are appended in scale
+order.
+\end{definition}
+
+Machine-verified facts (certificates in the repository): deferral states exist
+for $M = 32, 64, 128$; the suffix must be stacked in scale order (the reversed
+stacking contains a Lemma~\ref{lem:R} configuration); no-extras variants are
+infeasible at every scale (lookahead into the next block is necessary); any
+single residue class serves as the deferred suffix, while generic sets of the
+same size do not.
+
+\begin{proposition}[Class-sink algebra]
+Fix a modulus $m$ and a target class $r$. The attacker map
+$\varphi_r(b) = 2b - r$ on $\Z/m\Z$ generates a tree rooted at $r$; hence in a
+class-phase arrangement a single class can be scheduled last (all its
+attacker-demands point inward), whereas a fully placed zone imposes root
+demands at every class simultaneously, which close into cycles. For odd $r$
+the shifted map has genuine cycles, so an odd class cannot be scheduled last
+within the pure class calculus; deferred classes must be even, and the
+$2\cdot\mathrm{odd}$ phase requires range truncation.
+\end{proposition}
+
+\begin{proof}[Proof strategy for the main theorem (mutual double induction)]
+The construction is assembled by induction over pairs (scale, instance type),
+where the two instance types are the even-block team $\SA$ and its shifted
+copy $S_B$. The phase order within a scale step is: low-valuation phases by
+the self-absorbing class orders of Theorem~\ref{thm:vdc}; the
+$2\cdot\mathrm{odd}$ phase, which halves onto the odd kernel of an instance of
+the \emph{opposite} type at half the scale (supplying the truncation the
+class calculus cannot: completions leaving the block land in odd blocks, which
+belong to the other team); and the two deferred-class suffixes. The inductive
+hypothesis supplies the opposite-type arrangement; the base cases are
+machine-checked. \emph{Status: the phase-closure verifications are complete
+except for the boundary bookkeeping of the halving step, in progress.}
+\end{proof}
+
 \section{Remarks and open problems}
 
-% TODO: the LV density program; the interleaving-template question;
-% measurement data (g-curves); the exact characterization discussion.
+% TODO: the LV density program; measurement data (g-curves); the exact
+% characterization discussion.
 
 \end{document}
