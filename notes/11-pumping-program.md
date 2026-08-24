@@ -38,3 +38,11 @@ wins, and the same machinery (restriction of hypothetical global solutions is
 "eventually self-similar"?? — NOT automatic; would need new ideas) — NO would
 still not be immediate. If SAT: proceed to extract the pattern, verify the
 boundary lemma, and write the pumping proof.
+
+## CORRECTION (Team B)
+Earlier notes claimed S_B = {1,2} ∪ 2·S_A. FALSE: 2·S_A gives only the even
+values of S_B's blocks. Correct statement: S_B = {1} ∪ (odd-indexed dyadic
+blocks) is structurally identical to S_A shifted one dyadic level. The
+construction/machinery transfers by the same arguments (all scale-shifted), but
+S_B needs its own (analogous) self-similar witness and boundary lemma — parallel
+work, not a free ride. Notes 06/09 claims to be corrected in the paper.
