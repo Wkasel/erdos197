@@ -50,3 +50,15 @@ N=256 is ⊆ {15, 16} — the top of block 4. Consistent with (i) the top-half
 non-deferrability characterization, (ii) the window-2 MUS {15}, (iii) the
 2024-era prediction that block tops (16, 64, 256) are the divergence locus.
 Awaiting final drop-15 / drop-16 tests.
+
+## FINAL COALITION (e81 complete): {15, 16} EXACTLY
+Jointly UNSAT capped at δ≤1 (rest free ≤8) at N=256; either alone droppable
+(SAT). So: **every scheme at 256 has δ(15) ≥ 2 or δ(16) ≥ 2.**
+15 = 1111₂ = crown of the ≡−1 (K/odd) tower; 16 = 10000₂ = block top =
+crown of the ≡0 (C/even) tower. The two defense skeletons are mutually
+limiting: a scheme protects the block hierarchy with one crown early only by
+diving the other. Refined divergence conjecture:
+    max(δ(15), δ(16)) ≥ m − 2  at horizon 4^m  (⟹ S_A not permutable).
+Crown rung at m=5 (cap {15,16} ≤ 2, rest free): e84 launched.
+Cross-refs: window-2 MUS {15} (window space); e76 (cap 15 → δ(16)=2 dive);
+prediction "block tops = divergence locus" (notes/09, session 2).
