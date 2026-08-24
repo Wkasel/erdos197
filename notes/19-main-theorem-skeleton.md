@@ -61,3 +61,18 @@ delta-vs-state constraint families enumerated and discharged:
   a thin class of the OLD top block — outside Prop 1's scope. No contradiction.
 - Synthesis: append-only towers with new-segment reservoirs are dead (agent's
   program); the law's old-block-deferral is the surviving (and audited) shape.
+
+## CORRECTED LAW (from notes/18, machine-verified M=32..128)
+- L1 as originally posed (B∖D vs pre-placed zone) is FALSE for M ≥ 32.
+- TRUE shape: whole-state arrangements [bulk | D_old | D_new] — deferred
+  classes stack as ordered suffixes; the bulk includes the next block minus
+  its defect (extras/lookahead ESSENTIAL — no-extras systems UNSAT everywhere).
+- Invariant = CLASS COHERENCE (any single residue class works as the deferred
+  suffix; random same-size sets never; "≡2" emergent not forced). Algebra:
+  attacker maps φ_r(b) = 2b − r on Z/m are trees rooted at r ⟹ one class can
+  be sink; full zones impose all m roots ⟹ cycles ⟹ fatal. Odd classes can't
+  be last in the pure calculus (ψ-cycles) ⟹ range truncation needed.
+- Remaining localized gap: the 2·odd phase closure (truncation argument) —
+  the phase recurses to the odd kernel; proof = double induction over
+  (scale, class-depth). Suffix-stacking order proven forced (reversed stacking
+  UNSAT via a Lemma-R configuration).

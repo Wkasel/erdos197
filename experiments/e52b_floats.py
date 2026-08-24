@@ -1,5 +1,11 @@
 """e52b — quantify the escape: minimal removals (part-1 semantics) and
-minimal floats (era semantics with selectors) + e51 extras inspection."""
+minimal floats (era semantics with selectors) + e51 extras inspection.
+
+CAVEAT (see notes/18 §3): min_floats pins the P0 history order to
+increasing, which adds spurious constraints (the fully-interleaved system
+is UNSAT with increasing P0 but SAT with free P0, defects or not).  Its
+float counts are therefore NOT meaningful as stated; superseded by the
+state-suffix systems in e52c_suffix.py."""
 import sys, time, random
 sys.path.insert(0, '/Users/will/Dev/personal/tasks/math/erdos197/experiments')
 from e3_sat import OrderSAT
