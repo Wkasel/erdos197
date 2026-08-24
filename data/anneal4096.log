@@ -1,3 +1,8 @@
 n=2730 triples=1340811
 init violations: 331143
 iter 0: cur=331143 best=331143 T=3.02 (0s)
+iter 1000000: cur=14945 best=14928 T=2.87 (1612s)
+iter 2000000: cur=11593 best=11508 T=2.72 (3266s)
+iter 3000000: cur=10854 best=10762 T=2.57 (4969s)
+iter 4000000: cur=10198 best=10103 T=2.42 (6764s)
+iter 5000000: cur=9804 best=9745 T=2.27 (8520s)
