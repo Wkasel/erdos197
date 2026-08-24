@@ -42,3 +42,11 @@ displacement growth) may abstract to arbitrary teams: (1) finish dyadic NO;
 overload at all scales ⟹ Erdős #197 = NO. Step 3 is where DEGS/HS ray
 methods would combine with density pigeonholing (why 3 teams escape: block
 rotation breaks attack chains).
+
+## Coalition extraction (e81, in progress)
+Deletion order 3,4,9,10,11,12,13,14 — ALL droppable (UNSAT persists with
+caps only on the remainder). Interim: the free-space divergence coalition at
+N=256 is ⊆ {15, 16} — the top of block 4. Consistent with (i) the top-half
+non-deferrability characterization, (ii) the window-2 MUS {15}, (iii) the
+2024-era prediction that block tops (16, 64, 256) are the divergence locus.
+Awaiting final drop-15 / drop-16 tests.
