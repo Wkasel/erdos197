@@ -25,6 +25,7 @@ for v in V:
     for j in range(1, cap_of(v) + 1):
         var += 1
         L[v][j] = var
+print("building order vars...", flush=True)
 t = {}
 for i in range(n):
     for j in range(i + 1, n):
@@ -67,6 +68,8 @@ for y in V:
             cl.append([-o(z, y), -o(y, x)])
             ntr += 1
 print(f"m={m} CAP={CAP} DMAX={DMAX}: n={n} clauses={len(cl)} triples={ntr}", flush=True)
+import resource
+print(f"peak RSS MB: {resource.getrusage(resource.RUSAGE_SELF).ru_maxrss//1024//1024}", flush=True)
 sol = Cadical195(bootstrap_with=cl)
 t0 = time.time()
 rounds = 0
