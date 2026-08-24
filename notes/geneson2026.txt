@@ -1,0 +1,656 @@
+Density bounds for permutations avoiding monotone arithmetic
+progressions
+Jesse Geneson
+Abstract
+ForX∈ {N,Z}, letα X (ℓ) andβ X (ℓ) denote the supremal upper and lower densities of
+subsets ofXadmittingω-permutations without monotoneℓ-term arithmetic progressions. We
+strengthen the published lower bounds for the three-term upper-density parameters by proving
+αN(3)≥ 2
+3 , α Z(3)≥ 2
+3 .
+We also proveβ Z(4) = 1 by constructing four-permutable subsets of the integers whose lower
+symmetric densities approach one.
+Keywords:arithmetic progression; permutation; upper density; lower density.
+2020 Mathematics Subject Classification:05A05, 11B25.
+1 Introduction
+Throughout the paper,N={1,2, . . .}. Anω-permutationof a countably infinite setSis a sequence
+p0, p1, . . .of elements ofSin which every element ofSoccurs exactly once. It contains a monotone
+arithmetic progression of lengthℓif there arei 0 < i1 <· · ·< iℓ−1,x∈Z, andd∈Z\ {0}such that
+pij =x+jd(0≤j < ℓ).
+We callS ℓ-permutable if it has anω-permutation containing no such progression.
+ForS⊆NandT⊆Z, define
+dN(S) = lim sup
+n→∞
+|S∩[1, n]|
+n , d N(S) = lim inf
+n→∞
+|S∩[1, n]|
+n ,
+dZ(T) = lim sup
+n→∞
+|T∩[−n, n]|
+2n+ 1 , d Z(T) = lim inf
+n→∞
+|T∩[−n, n]|
+2n+ 1 .
+ForX∈ {N,Z}, put
+αX (ℓ) = sup{dX (S) :S⊆Xis infinite andℓ-permutable},
+βX (ℓ) = sup{dX (S) :S⊆Xis infinite andℓ-permutable}.
+These parameters require an order of typeω. A doubly infinite permutation indexed byZor an
+arbitrary linear order is a different object. Ardal, Brown, and Jungi´ c [2, Theorem 2.2] constructed
+a linear order on all ofZcontaining no monotone three-term progression.
+Entringer and Jackson [4] asked whether, for everyn, the set{0,1, . . . , n}has a permutation
+containing no monotone three-term arithmetic progression. Davis, Entringer, Graham, and Sim-
+mons [3, Facts 3 and 4] proved that everyω-permutation ofNcontains a monotone three-term
+1
+arXiv:2608.12604v1  [math.NT]  12 Aug 2026
+progression and constructed one containing no monotone five-term progression. They asked for the
+supremal upper and lower densities of three-permutable subsets ofNand posed analogous questions
+forZ[3, Questions 4 and 5].
+LeSaulnier and Vijay [7, Theorem 3 and p. 207] provedα N(3)≥1/2 andβ N(3)≥1/4, and
+conjectured equality in both bounds. Geneson [5, Introduction and Proposition 4] defined the two-
+sided parameters and provedα Z(3)≥1/2 andβ Z(3)≥1/6. Adenwalla [1, Theorem 8] improved
+the latter bound toβ Z(3)≥3/10.
+For length four, LeSaulnier and Vijay [7, Theorem 3] provedα N(4) = 1 andβ N(4)≥1/3,
+Geneson [5, Proposition 3] improved the latter bound to 1/2, and Adenwalla [1, Theorems 6 and 7]
+provedβ N(4) =α Z(4) = 1 andβ Z(4)≥2/3. Adenwalla [1, Question 3] asked for the correct values
+of the four length-three parameters andβ Z(4). The published results and the results here are as
+follows.
+parameter published result result here
+αN(3) ≥1/2 ≥2/3
+αZ(3) ≥1/2 ≥2/3
+βZ(4) ≥2/3 = 1
+Theorem 1.1.
+αN(3)≥ 2
+3 , α Z(3)≥ 2
+3 .
+The first inequality disproves the equality conjecture of LeSaulnier and Vijay. The next con-
+struction determines the remaining length-four parameter.
+Theorem 1.2.Letm≥2be a power of two, leta≥4be an integer, and letc∈Rsatisfy
+2 + 1
+a < c < a.
+There is a4-permutable setS m,a,c ⊆Zsuch that
+dZ(Sm,a,c) = 1− a(c−1)
+2mc(a−1) .
+Corollary 1.3.For every integerℓ≥4,
+αN(ℓ) =β N(ℓ) =α Z(ℓ) =β Z(ℓ) = 1.
+The equalities in Corollary 1.3 are supremum statements. Theorem 1.2 does not produce a
+four-permutable subset of the integers of lower symmetric density one or a four-progression-free
+ω-permutation of all ofNorZ. The exact values of the four length-three parameters remain open.
+2 Binary orders
+The binary recursion is classical; see Davis et al. [3, p. 81] and Ardal, Brown, and Jungi´ c [2,
+Definition 2.1]. Nathanson [8] proved the power-of-two modular existence theorem, and Ardal,
+Brown, and Jungi´ c [2, Definition 2.2] constructed the compatible order onZ. We record the
+comparison identities needed below.
+For each integert≥0, represent every residue modulo 2 t by its unique member of{0,1, . . . ,2t −
+1}and itst-digit binary expansion. Let ¯ρ 2t :Z/2 tZ− → {0,1, . . . ,2t −1}assign to each residue
+its rank when the representative’s digits are read from least significant to most significant, with 0
+2
+before 1 at the first difference, and putρ 2t(z) = ¯ρ2t(z+ 2 tZ) forz∈Z. Thus the residue order
+modulo 4 is 0,2,1,3. These ranks satisfy
+ρ2j+1 (z) = 2j(zmod 2) +ρ 2j
+j z
+2
+k
+(j≥0).(2.1)
+Herezmod 2∈ {0,1}is the least significant binary digit, and⌊z/2⌋removes it. For a nonzero
+integerz, letν 2(z) be the largestv≥0 for which 2 v dividesz.
+Lemma 2.1.Lett≥1andm= 2 t. Ifr, δ∈Zandδ̸≡0 (modm), then
+ρm(r)< ρm(r+δ)⇐ ⇒ρ m(r+δ)> ρ m(r+ 2δ),(2.2)
+ρm(r)< ρm(r+δ)⇐ ⇒ρ m(r+ 2δ)< ρ m(r+ 3δ).(2.3)
+In particular,ρ m(r+δ)is strictly smaller than bothρ m(r)andρ m(r+ 2δ), or strictly larger than
+both.
+Proof.We induct ont. Fort= 1, the integerδis odd, and the four ranks are 0,1,0,1 whenris
+even and 1,0,1,0 whenris odd, so both equivalences hold. Suppose the assertion holds modulo
+2t and consider modulus 2 t+1. Ifδis odd, the parities ofr, r+δ, r+ 2δ, r+ 3δalternate. By (2.1),
+every odd term has rank at least 2 t and every even term has rank less than 2 t. Ifris even, each
+side of both equivalences is true; ifris odd, each side is false. Thus both equivalences hold. If
+δ= 2δ ′, all four terms have the same parity and
+ r+kδ
+2
+
+=
+j r
+2
+k
++kδ ′ (0≤k≤3).
+Moreover, 2 t+1 ∤δimplies 2 t ∤δ ′. For 0≤k≤3, the first summand in (2.1) is 2 t((r+kδ) mod
+2). Sinceδis even, it is independent ofk. Subtracting this common summand from each rank
+comparison reduces both equivalences to the induction hypothesis for⌊r/2⌋andδ ′. Sinceδ̸≡0
+(modm), the residuesr, r+δare distinct, as arer+δ, r+ 2δ, so the two comparisons in (2.2) are
+strict. If the first comparison is<, the second is>; otherwise both inequalities reverse. Hence the
+middle rank is strictly larger than both endpoint ranks or strictly smaller than both.
+For distinctu, v∈Z, putq= 1 +ν 2(v−u) and declare
+u≺v⇐ ⇒ρ 2q (u)< ρ2q (v).
+This defines a strict total order onZ. It is the order of Ardal, Brown, and Jungi´ c [2, Definitions 2.1
+and 2.2].
+Lemma 2.2.Foru, h∈Zwithh̸= 0, neither of the relations
+u≺u+h≺u+ 2horu+ 2h≺u+h≺u
+holds, and
+u≺u+h⇐ ⇒u+ 2h≺u+ 3h.
+Proof.The two forbidden chains follow from Ardal, Brown, and Jungi´ c [2, Theorem 2.2]. The
+equivalence is the cases= 2 andt= 3 of Hirose and Saito [6, Lemma 2.5], applied to the identity
+map fromZto (Z,≺).
+We call a finite order or an order of typeωthree-AP-freeif it contains no monotone three-term
+arithmetic progression.
+3
+Corollary 2.3.Every finite set of integers has an order containing no monotone three-term arith-
+metic progression.
+This follows by restricting the order of Ardal, Brown, and Jungi´ c [2, Definition 2.2 and Theo-
+rem 2.2]; we use it for every finite block below.
+3 Positive upper density
+Lemma 3.1.LetMandLbe positive integers withL >2M, letA⊆[1, M]∩Z, and letJbe a
+nonnegative integer. Put
+B=
+J[
+j=0
+[L4j +M,2L4 j]∩Z.(3.1)
+No three-term arithmetic progression contained inA∪Bmeets bothAandB.
+Proof.Every member ofBis larger thanM. Suppose that two terms of a progression lie inAand
+one lies inB. The term inBmust be the largest term. If the two terms inAareu < v, the largest
+possible third term is 2v−u≤2M−1, while the least member ofBisL+M >3M. This is
+impossible.
+It remains to consider a progression with one terma∈Aand two termsy < zinB. Then
+a < y < zand
+z= 2y−a.(3.2)
+Ifybelongs to thejth interval in (3.1), then
+L4j +M≤y≤2L4 j.
+Since 1≤a≤M, equation (3.2) gives
+2L4j +M≤z≤4L4 j −1.
+Thuszexceeds the greatest member 2L4 j of thejth interval. Ifj < J, thenzis smaller than the
+least member 4L4 j +Mof the (j+ 1)st interval. Ifj=J, thenzexceeds every member ofB. In
+either casez /∈B.
+Lemma 3.2.Let<be an infinite strict total order on a setX, and suppose that everyx∈Xhas
+finitely many predecessors. The map
+p(x) =|{y∈X:y < x}|
+is an order-preserving bijection fromXtoN∪ {0}.
+Proof.Ifx < y, then every predecessor ofx, and alsoxitself, precedesy. Hencep(x)< p(y). Now
+fixywithp(y) =q, and list itsqpredecessors in increasing order asy 0 <· · ·< yq−1. Every global
+predecessor ofy j also precedesy, so it is one ofy 0, . . . , yj−1; conversely, all thesejelements precede
+yj. Thusp(y j) =j. The image ofpis therefore an initial segment ofN∪ {0}. It is infinite because
+Xis infinite andpis injective, so it is all ofN∪ {0}.
+PutS 0 =∅andM 0 = 1. Fork≥1, define
+Lk = 4Mk−1 (3.3)
+4
+and
+Bk =
+k[
+j=0
+[Lk4j +M k−1,2L k4j]∩Z.(3.4)
+Finally, put
+Mk = 2Lk4k, S k =S k−1 ∪B k, S=
+[
+k≥1
+Bk.(3.5)
+SinceM k = 8Mk−14k > Mk−1, induction givesS k = Sk
+i=1 Bi ⊆[1, Mk]. Every member ofB k
+is larger thanM k−1, so the blocks are pairwise disjoint. Each block is finite and nonempty, since
+its first interval containsL k +M k−1. HenceSis infinite. By Corollary 2.3, choose a three-AP-free
+orderσ k of the entire finite setB k, and concatenate the orders as
+σ1σ2σ3 · · ·.(3.6)
+This concatenation lists every member ofSexactly once, and every member has only finitely many
+predecessors. Lemma 3.2 therefore makes it anω-permutation ofS.
+Lemma 3.3.Theω-permutation in(3.6)is three-AP-free.
+Proof.A progression whose three terms belong to oneB k is excluded byσ k. Suppose that a
+progression meets more than one block, and letB k be the block with largest index among its
+terms. Its other term or terms belong toS k−1 ⊆[1, Mk−1]. Lemma 3.1, withA=S k−1,M=M k−1,
+L=L k, andJ=k, says that no arithmetic progression meets both sets. This is a contradiction.
+For 0≤j < k, we have 2Lk4j < Lk4j+1 +M k−1, so the intervals in (3.4) are pairwise disjoint.
+Thejth interval has
+Lk4j −M k−1 + 1
+terms. Hence
+|Bk|=L k
+4k+1 −1
+3 −(k+ 1)(M k−1 −1).(3.7)
+SinceB k ⊆[1, Mk] forM k = 2Lk4k,
+|S∩[1, Mk]|
+Mk
+≥ |Bk|
+Mk
+= 2
+3 − 1
+6·4 k − (k+ 1)(M k−1 −1)
+8Mk−14k
+≥ 2
+3 − 1
+6·4 k − k+ 1
+8·4 k .
+Since 4 −k →0, (k+ 1)4 −k →0, andM k → ∞, the displayed lower bounds tend to 2/3. The
+definition of upper density therefore gives
+dN(S)≥ 2
+3 .
+Lemma 3.3 provesα N(3)≥2/3.
+5
+4 Two-sided upper density
+The signed construction permits progressions meeting more than one block whose midpoint belongs
+to an earlier block. Such a progression is not monotone because its midpoint occurs before both
+endpoints.
+Lemma 4.1.LetMandLbe positive integers withL >2M, letA⊆[−M, M]∩Z, and letJbe
+a nonnegative integer. Put
+Ij = [L4j +M,2L4 j −M]∩Z(0≤j≤J), B=
+J[
+j=0
+(Ij ∪ −Ij).(4.1)
+Suppose that every element ofAis ordered before every element ofB. Every three-term arithmetic
+progression contained inA∪Band meeting both sets has its midpoint inAand both endpoints in
+B. Hence it is not monotone.
+Proof.The least absolute value of a member ofBisL+M >3M. If two terms of a progression, say
+u, v, lie inA, then a third term which is their midpoint has absolute value at mostM. A third term
+which is an endpoint has the form 2u−v, and hence has absolute value at most 2|u|+|v| ≤3M.
+Thus no progression has two terms inAand one inB.
+Suppose that a progression has one terma∈Aand two terms inB. Ifais its midpoint,
+this is the conclusion of the lemma. Suppose instead thatais an endpoint. After exchanging the
+endpoints if necessary, write the progression as
+a, y, z, z= 2y−a.
+Ify >0, thenz≥2|y| − |a|>0; ify <0, thenz≤ −2|y|+|a|<0. Thusy, zhave the same sign,
+and the triangle inequalities give
+2|y| −M≤ |z| ≤2|y|+M.
+If|y| ∈Ij, then
+2L4j +M≤ |z| ≤4L4j −M.
+The lower bound is larger than the greatest member 2L4 j −MofI j. Ifj < J, the upper bound is
+smaller than the least member 4L4 j +MofI j+1. Ifj=J, then|z|exceeds the greatest magnitude
+inB. Thusz /∈B, a contradiction.
+PutT 0 =∅andR 0 = 1. Fork≥1, define
+Lk = 4Rk−1 (4.2)
+and
+Ik,j = [Lk4j +R k−1,2L k4j −R k−1]∩Z(0≤j≤k).(4.3)
+Put
+Bk =
+k[
+j=0
+(Ik,j ∪ −Ik,j ),
+Rk = 2Lk4k −R k−1,
+Tk =T k−1 ∪B k, T=
+[
+k≥1
+Bk.
+(4.4)
+6
+SinceR k = (8·4 k −1)R k−1 > Rk−1, induction givesT k = Sk
+i=1 Bi ⊆[−R k, Rk]. Every member
+ofB k has absolute value at least 5R k−1, so the blocks are pairwise disjoint, andR k is the largest
+absolute value introduced inB k. Each block is finite and nonempty, sinceI k,0 containsL k +R k−1.
+HenceTis infinite. Give the whole setB k a finite three-AP-free order and concatenate these orders
+in increasing order ofk.
+Lemma 4.2.This concatenation is a three-AP-freeω-permutation ofT.
+Proof.The concatenation lists every member ofTexactly once, and every member has finitely
+many predecessors, so Lemma 3.2 makes it anω-permutation. A progression contained in oneB k
+is excluded by its internal order. For a progression meeting more than one block, letkbe the
+largest index for which it has a term inB k. Lemma 4.1 applies toA=T k−1 andB=B k. If the
+progression has one term inB k, the lemma says that it cannot exist. If it has two terms inB k,
+its remaining term is its midpoint inT k−1 and occurs before both endpoints. It is therefore not
+monotone.
+For 0≤j < k, 2L k4j −R k−1 < Lk4j+1 +R k−1, so the positive intervals are pairwise disjoint.
+They contain only positive integers, while their negatives contain only negative integers. Thus all
+sets in the union are disjoint. Each positive interval in (4.3) has
+Lk4j −2R k−1 + 1
+terms. Hence
+|Bk|= 2L k
+4k+1 −1
+3 −2(k+ 1)(2R k−1 −1).(4.5)
+PutU k =L k4k, so thatR k = 2U k −R k−1. SinceB k ⊆[−R k, Rk], keeping only its contribution
+gives
+|T∩[−R k, Rk]|
+2Rk + 1 ≥
+8
+3 Uk − 2
+3 Lk −4(k+ 1)R k−1 + 2(k+ 1)
+4Uk −2R k−1 + 1 .(4.6)
+SinceL k = 4Rk−1,
+Lk
+Uk
+= 4−k, Rk−1
+Uk
+= 4−(k+1).
+AlsoU k =L k4k ≥4 k+1, so (k+ 1)/U k →0. Dividing the numerator and denominator in (4.6) by
+Uk, the numerator tends to 8/3 and the denominator to 4. SinceR k → ∞, the definition of upper
+density gives
+dZ(T)≥ 2
+3 .
+Lemma 4.2 provesα Z(3)≥2/3.
+5 Four-term progressions
+The construction combines the binary order of Section 2 with Adenwalla’s geometric residue blocks,
+truncation, and alternating signed intervals [1, Theorems 1, 4, 6, and 7].
+Fix a power of twom≥2, an integera≥4, and a real numbercsatisfying
+2 + 1
+a < c < a.(5.1)
+7
+Writeρ=ρ m. For 0≤i < m, letr i ∈ {0,1, . . . , m−1}be the residue withρ(ri) =i. Fors≥0,
+define
+Ns,i =
+
+x <0 :x≡r i (modm), a 2ms+m−i ≤ |x|<a2ms+3m−i
+c
+
+,
+Ps,i =
+
+x >0 :x≡r i (modm), a 2ms+m+1+i ≤x < a2ms+3m+1+i
+c
+
+.
+(5.2)
+Order the blocks at stagesas
+Ns,0, Ns,1, . . . , Ns,m−1, Ps,m−1, Ps,m−2, . . . , Ps,0,(5.3)
+and concatenate the stages fors= 0,1,2, . . .. Forx, yin a block with residuer, putxbeforeyif
+x−r
+m ≺ y−r
+m in a negative block, y−r
+m ≺ x−r
+m in a positive block.
+We call the exponent of a block’s lower magnitude endpoint itslower exponent. For a fixed
+residue and sign, consecutive stages have lower exponentsfandf+ 2m. Sincec >1, the first
+block ends beforea f+2m , where the next begins, so these blocks are disjoint. Blocks with different
+residues or signs contain different integers. Every block is finite. Iffis its lower exponent, then
+af+2m /c > af+2m−1 , so its defining magnitude interval contains [a f , af+2m−1 ). Its length satisfies
+af (a2m−1 −1)≥4(4 m −1)≥4m > m.
+ForP s,i, the first positive integer at leasta f that is congruent tor i modulomis smaller thana f +m
+and hence lies in this interval. ForN s,i, take instead the first positive magnitude in the residue
+class−r i modulomand negate it; the resulting negative integer is congruent tor i modulom. Thus
+every block is nonempty. LetS m,a,c be the union of the blocks. There are infinitely many pairwise
+disjoint nonempty blocks, soS m,a,c is infinite. Every member lies in exactly one finite block, and
+each block has only finitely many predecessor stages and blocks. Thus every member has finitely
+many predecessors. Lemma 3.2 identifies this infinite order withN∪ {0}, so it is anω-permutation
+πm,a,c ofS m,a,c.
+Assign each block a rankq(B)∈ {0, . . . , m−1}by
+q(Ns,i) =i, q(P s,i) =m−1−i.(5.4)
+Everyx∈S m,a,c lies in a unique blockB(x); putq(x) =q(B(x)). In either sign, the lower exponent
+in (5.2) has the form
+2ms+K−q,(5.5)
+whereK=mfor negative blocks andK= 2mfor positive blocks.
+If an arithmetic progression has common differencedwithm∤d, every adjacent pair has distinct
+residues modulom, hence distinctρ-ranks. For a same-sign pair, the block ranks are also distinct,
+because they use either theρ-order or its reverse.
+For a finite arithmetic progressionx 0, . . . , xv, call the block sequenceB(x 0), . . . , B(xv) chrono-
+logically nondecreasing if its blocks occur in nondecreasing order in the block sequence defining
+πm,a,c.
+If a block has lower exponentf, itsouter exponentisf+ 2mand its strict outer magnitude
+endpoint is
+Uf = af+2m
+c .(5.6)
+8
+Lemma 5.1.Let two distinct blocks of one sign occur in chronological order, with ranksqandq ′,
+respectively, whereq ′ ≤q. If the first block has outer endpointU f , then every magnitude in the
+later block is at least
+caq−q′
+Uf .
+In particular, it is more thanctimes every magnitude in the first block, and more thanactimes
+every magnitude in the first block whenq ′ < q.
+Proof.Among the negative blocks or among the positive blocks of a fixed stage, the block ranks
+increase chronologically. Thus the later block belongs to a later stage. By (5.5), its lower exponent
+in the earliest possible stage isf+ 2m+q−q ′. Its magnitudes are therefore at leasta f+2m+q−q ′
+=
+caq−q′
+Uf . A still later stage only increases this bound, and every magnitude in the first block is
+strictly less thanU f .
+Call a same-sign segment of an arithmetic progressionshrinkingif its magnitudes decrease and
+growingif its magnitudes increase.
+Lemma 5.2.A chronologically nondecreasing same-sign shrinking three-term arithmetic progres-
+sion is contained in one block.
+Proof.Letdbe its common difference. Ifm|d, all three terms have the same block rank.
+Lemma 5.1 prevents a transition to a later block because the magnitudes decrease. Ifm∤d,
+the two successive block-rank comparisons are opposite by (2.2), whether the ranks useρor its
+reverse. Adjacent terms have different residues and lie in distinct blocks. At one transition the later
+block has smaller rank, so Lemma 5.1 makes its magnitudes larger, contradicting shrinking.
+Lemma 5.3.Letx 0, x1, x2 be consecutive terms of an arithmetic progression with signs−,+,+
+or+,−,−. Suppose that the last pair grows in magnitude, the three blocks are chronologically
+nondecreasing, andq(x 2)≤q(x 1). Thenx 1 andx 2 lie in the same block.
+Proof.Let the block containingx 1 belong to stages, have lower exponentf, and have outer
+endpointU f . Every chronologically earlier block of the opposite sign has outer endpoint at most
+Uf /a. Ifx 1 is positive, the largest outer exponent of an earlier negative block in the same stage is
+2ms+ 3m, while the outer exponent of the positive block is at least 2ms+ 3m+ 1. Ifx 1 is negative,
+every earlier positive block belongs to a preceding stage; its outer exponent is at most 2ms+ 2m,
+while that of the negative block is at least 2ms+ 2m+ 1.
+The block containingx 0 is one of these earlier opposite-sign blocks, so|x 0|< U f /a, while
+|x1|< Uf . It follows that
+|x2|= 2|x 1|+|x 0|<
+
+2 + 1
+a
+
+Uf < cUf .
+Ifx 2 belonged to a distinct later block with nonincreasing block rank, Lemma 5.1 would give
+|x2| ≥cUf , a contradiction.
+Ifz j−1, zj, zj+1 are consecutive same-sign terms of an arithmetic progression with common
+differencedand their magnitudes grow, then
+|zj+1|=|z j|+|d|<2|z j|,since|z j|=|z j−1|+|d|>|d|.(5.7)
+Lemma 5.4.The following statements hold.
+9
+1. Lety, x 0, x1, x2 be consecutive terms of an arithmetic progression whose blocks are chronolog-
+ically nondecreasing. Ifx 0, x1, x2 have one sign, grow in magnitude, and have sign opposite
+toy, thenx 0, x1, x2 lie in one block.
+2. Ifx 0, x1, x2, x3 is a chronologically nondecreasing growing four-term arithmetic progression of
+one sign, thenx 1, x2, x3 lie in one block.
+Proof.Letdbe the common difference. Ifm|d, the three same-sign terms in the first statement
+have one block rank. Applied toy, x0, x1, Lemma 5.3 putsx 0, x1 in one block. Equation (5.7) gives
+|x2|<2|x 1|. Sincec >2, Lemma 5.1 preventsx 2 from lying in a distinct later block of the same
+rank. In the second statement, all four terms have one block rank. Applying (5.7) to the triples
+x0, x1, x2 andx 1, x2, x3, and then applying Lemma 5.1, puts the last three terms in one block.
+Suppose thatm∤d. For the first statement, (2.2) makes the later block have strictly smaller rank
+on one of the two transitions, because adjacent terms have different residues. If this occurs fromx 0
+tox 1, Lemma 5.3 puts two terms with different residues in one block, a contradiction. If it occurs
+fromx 1 tox 2, equation (5.7) gives|x 2|<2|x 1|, whereas Lemma 5.1 gives|x 2|> ac|x1|>2|x 1|, a
+contradiction. For the second statement, the block-rank comparisons fromx 1 tox 2 and fromx 2 to
+x3 are opposite by (2.2). At the strict descent, the two terms have different residues, so Lemma 5.1
+makes the later magnitude more thanac >2 times the earlier one, contrary to (5.7).
+Lemma 5.5.Letx 0, x1, x2, x3 be a nonconstant four-term arithmetic progression inS m,a,c whose
+blocks are chronologically nondecreasing. Then either three consecutive terms lie in one block, or
+x0, x1 lie in one blockAandx 2, x3 lie in one blockB, whereAandBhave the same residue modulo
+mand opposite signs.
+Proof.No term is zero. Since the progression is nonconstant, its terms are strictly monotone as
+integers. If all four have one sign, their magnitudes either shrink or grow. Lemma 5.2 or the second
+part of Lemma 5.4 puts three consecutive terms in one block. Otherwise the sign changes once,
+and the two maximal consecutive same-sign segments have lengths 1 and 3, 2 and 2, or 3 and 1.
+Indeed, a strictly monotone integer sequence not containing zero changes sign at most once; before
+the change its magnitudes shrink, and after the change they grow. In the 3 + 1 case, Lemma 5.2
+puts the initial three terms in one block. In the 1 + 3 case, the first part of Lemma 5.4, with the
+initial term asy, puts the terminal three terms in one block. Only the 2 + 2 case remains.
+Letdbe the common difference. Ifm|d, the shrinking pair has one block rank, so Lemma 5.1
+puts it in one block. Lemma 5.3 puts the growing pair in one block. These blocks have the same
+residue and opposite signs.
+Suppose thatm∤d. The shrinking pair must have increasing block ranks, since Lemma 5.1
+precludes a nonincreasing block rank across a shrinking transition. The ranks are unequal because
+adjacent residues differ. If the shrinking pair is negative, thenρ(x 0)< ρ(x1). Equation (2.3) gives
+ρ(x2)< ρ(x3), strictly, soq(x 2)> q(x 3) because positive blocks use the reverse residue order. If
+the shrinking pair is positive, thenρ(x 0)> ρ(x 1), so (2.3) givesρ(x 2)> ρ(x 3), strictly. Hence
+q(x2)> q(x3) for the negative growing pair. In either case, Lemma 5.3 would put the growing pair
+in one block although its residues are different. Thusm∤dcannot occur when two terms have each
+sign.
+Lemma 5.6.Theω-permutationπ m,a,c contains no monotone four-term arithmetic progression.
+Proof.Suppose thatx 0, x1, x2, x3 is such a progression in its order of appearance. Its blocks are
+chronologically nondecreasing. By Lemma 5.5, three consecutive terms lie in one block, or the
+progression has the two-block form stated there.
+10
+In the first case, the three terms have a common residuermodulom. The mapx7→(x−r)/m
+gives a nonconstant three-term arithmetic progression that occurs monotonically in≺or its reverse,
+contrary to Lemma 2.2.
+In the second case, letrbe the common residue and putz i = (xi −r)/m. Ifh=z 1 −z 0, then
+h̸= 0 and
+(z2, z3) = (z0 + 2h, z1 + 2h).
+Indeed,x i+1 −x i is independent ofiand equalsmh, soz i+1 −z i =hfor 0≤i <3. Lemma 2.2
+gives
+z0 ≺z 1 ⇐ ⇒z 2 ≺z 3.(5.8)
+IfAis negative andBis positive, their internal orders requirez 0 ≺z 1 andz 3 ≺z 2, contrary to
+(5.8). IfAis positive andBis negative, they requirez 1 ≺z 0 andz 2 ≺z 3, again a contradiction.
+Together with the construction above, Lemma 5.6 establishes the four-permutability ofS m,a,c.
+To complete the proof of Theorem 1.2, it remains to compute its lower symmetric density. We do
+this by describing the integers omitted outside a fixed central interval, namely the magnitude gaps
+between consecutive blocks of each fixed sign and residue, and computing the upper symmetric
+density of the complement.
+A block with lower exponentfoccupies the magnitude interval
+[af , af+2m /c).
+The block with the same residue and sign in the next stage begins ata f+2m . Its intervening gap is
+[ae/c, ae), e=f+ 2m.(5.9)
+The lower exponents of the blocks at stagesare
+{2ms+ 1,2ms+ 2, . . . ,2ms+ 2m}.(5.10)
+Each exponent in (5.10) occurs once. The gap exponents arising from stagesare therefore
+{2ms+ 2m+ 1, . . . ,2ms+ 4m}.
+The last of these is one less than the first gap exponent for stages+ 1. Thus every integer
+e≥e 0 := 2m+ 1 is the right endpoint exponent of exactly one gap.
+Sincec < a, gaps with consecutive right endpoint exponents are disjoint: the gap ending ata e
+lies belowa e < ae+1/c, the lower endpoint of the next gap. We next verify that there are no other
+omissions. Fix a sign and a residue class. The lower exponents of its blocks have the formf 0 + 2ms,
+where 1≤f 0 ≤2mands≥0. Letxhave the fixed sign and residue and satisfy|x|> a 2m. Choose
+the unique integerE≥2msuch that
+aE ≤ |x|< aE+1.
+Sincef 0 ≤2m≤E, letfbe the largest number of the formf 0 + 2mswithf≤E. Then
+f≤E < f+ 2m. If|x|< a f+2m /c, thenxbelongs to the block with lower exponentf. Otherwise,
+af+2m
+c ≤ |x|< aE+1 ≤a f+2m ,
+soxbelongs to that block’s following gap. Consequently, outside [−a 2m, a2m], each missing integer
+lies in exactly one gap, and each gap removes exactly the integers of one sign in one residue class.
+11
+For an integern≥0, let
+H(n) =|[−n, n]∩(Z\S m,a,c)|, λ= 1−1/c
+m , L= λa
+2(a−1) .
+For a gap with right endpointa e, put
+ℓe =
+ ae
+c
+
+.
+After replacing missing integers by their positive magnitudes, the gap consists exactly of the integers
+in [ℓe, ae) in one residue class modulom. Leth e be their number. For integer endpointsu≤v, the
+number of integers in one residue class modulomthat belong to [u, v) differs from (v−u)/mby
+less than 1. Since 0≤ℓ e −a e/c <1,
+|he −λa e| ≤
+he − ae −ℓ e
+m
+ + ℓe −a e/c
+m
+<1 + 1
+m ≤2.(5.11)
+In particular,
+|he −λa e| ≤2.
+PutC= 2a 2m + 1, the number of integers in [−a 2m, a2m]. For each integerK≥0, putn K =
+ae0+K. The gaps with endpoint exponentse 0, . . . , e0 +Klie in [−n K, nK]. The next gap begins
+ata e0+K+1/c > nK, so every remaining missing integer in this interval lies in [−a 2m, a2m]. Hence
+0≤H(n K)− Pe0+K
+e=e0 he ≤C, and
+H(n K)−λ
+e0+KX
+e=e0
+ae
+ ≤
+H(n K)−
+e0+KX
+e=e0
+he
+ +
+e0+KX
+e=e0
+|he −λa e|
+≤C+ 2(K+ 1).
+Since
+e0+KX
+e=e0
+ae = ae0+K+1 −a e0
+a−1 , n K =a e0+K,
+the normalized geometric main term is
+λ Pe0+K
+e=e0 ae
+2nK + 1 = λ
+a−1
+a−a −K
+2 +a −(e0+K) − → λa
+2(a−1) =L.
+Also (C+ 2(K+ 1))/(2n K + 1)→0, sincen K =a e0+K. Dividing the preceding error estimate by
+2nK + 1 therefore gives
+lim
+K→∞
+H(n K)
+2nK + 1 =L.
+Now letn≥a 2m, and letE≥2mbe the unique integer such thata E ≤n < a E+1. Set
+X=a E+1 andy=n+ 1. Outside [−a 2m, a2m], every missing integer of magnitude at mostn
+belongs to a gap with right endpoint at mosta E or to the part of [X/c, X) belown. By (5.11), the
+completed gaps contain at most
+λ
+EX
+e=e0
+ae + 2E≤ λX
+a−1 + 2E
+12
+integers, where the sum is zero ifE < e0.
+Writeℓ E+1 =⌈X/c⌉. Ify≤ℓ E+1, the truncated part of the gap is empty. Ify > ℓ E+1, it
+consists of the integers in [ℓ E+1, y) in one residue class modulom. The residue-class estimate and
+ℓE+1 ≥X/cgive
+#{integers in the truncated part}< y−ℓ E+1
+m + 1≤ y−X/c
+m + 1.
+Thus in both cases the truncated part contains at most
+max
+
+0, y−X/c
+m
+
++ 1
+integers. Hence
+H(n)≤ λX
+a−1 + max
+
+0, y−X/c
+m
+
++C+ 2E+ 1.
+Ify≤X/c, the maximum is zero, andX≤aygivesλX/(a−1)≤λay/(a−1). Ify > X/c, then
+λ= (c−1)/(mc),X≥y, andc−a <0 give
+λX
+a−1 + y−X/c
+m = y
+m + c−a
+mc(a−1) X≤ y
+m + c−a
+mc(a−1) y= λay
+a−1 .
+Thus the first two terms on the right side of the bound forH(n) sum to at mostλay/(a−1) = 2Ly.
+Sincea E ≤nandE/a E →0, we have 0≤E/n≤E/a E →0. Dividing the bound forH(n) by
+2n+ 1, the term 2Ly/(2n+ 1) tends toL, while (C+ 2E+ 1)/(2n+ 1) tends to zero. It follows
+that
+lim sup
+n→∞
+H(n)
+2n+ 1 ≤L.
+The subsequencen=n K gives the reverse inequality, so
+lim sup
+n→∞
+H(n)
+2n+ 1 = a(c−1)
+2mc(a−1) .
+Since|S m,a,c∩[−n, n]|/(2n+1) = 1−H(n)/(2n+1), taking the lower limit and using lim inf(1−un) =
+1−lim supu n gives
+dZ(Sm,a,c) = 1− a(c−1)
+2mc(a−1) .
+Together with Lemma 5.6, this proves Theorem 1.2.
+Proof of Corollary 1.3.Takea= 4 andc= 5/2. These values satisfy (5.1), and Theorem 1.2 gives,
+for every power of twom≥2,
+βZ(4)≥1− 2
+5m .
+Letting the powers of twomtend to infinity givesβ Z(4) = 1, since every density is at most one.
+Adenwalla [1, Theorem 6] provedβ N(4) = 1.
+Upper density is at least lower density. A monotone progression of lengthℓ≥4 contains one
+of length four, so every four-permutable set isℓ-permutable. Thusβ X (4) = 1 impliesβ X (ℓ) =
+αX (ℓ) = 1 forX∈ {N,Z}, because all four parameters are at most one.
+13
+Declaration of generative AI and AI-assisted technologies
+During the preparation of this draft, the author used Codex with GPT-5.6 Sol Ultra to assist with
+proof development, literature searches, and manuscript editing. The author reviewed and edited
+the content as needed and takes full responsibility for the content of the article.
+References
+[1] S. Adenwalla, Avoiding monotone arithmetic progressions in permutations of integers,Discrete
+Math.347(2024), 114183. doi:10.1016/j.disc.2024.114183.
+[2] H. Ardal, T. Brown, and V. Jungi´ c, Chaotic orderings of the rationals and reals,Amer. Math.
+Monthly118(2011), 921–925. doi:10.4169/amer.math.monthly.118.10.921.
+[3] J. A. Davis, R. C. Entringer, R. L. Graham, and G. J. Simmons, On permutations containing
+no long arithmetic progressions,Acta Arith.34(1977), 81–90. doi:10.4064/aa-34-1-81-90.
+[4] R. C. Entringer and D. E. Jackson, Elementary problem E2440,Amer. Math. Monthly80
+(1973), no. 9, 1058. doi:10.2307/2318789.
+[5] J. Geneson, Forbidden arithmetic progressions in permutations of subsets of the integers,
+Discrete Math.342(2019), 1489–1491. doi:10.1016/j.disc.2019.02.004.
+[6] M. Hirose and S. Saito, Characterization of order structures avoiding three-term arithmetic
+progressions,Order42(2025), 231–239. doi:10.1007/s11083-024-09677-7.
+[7] T. D. LeSaulnier and S. Vijay, On permutations avoiding arithmetic progressions,Discrete
+Math.311(2011), 205–207. doi:10.1016/j.disc.2010.10.006.
+[8] M. B. Nathanson, Permutations, periodicity, and chaos,J. Combin. Theory Ser. A22(1977),
+61–68. doi:10.1016/0097-3165(77)90063-2.
+14
