@@ -25,3 +25,11 @@ Interpretation:
   constrains low levels, leaves block-scale placement free — precisely the
   structure our witnesses exhibit. Classification conjecture: 3-permutability
   of S is governed by its ray-run profile (details to develop).
+
+## Viability breakthrough (same afternoon)
+Pinned-fraction states (7/8 etc.) refuted at c=1 — but CLEAN joints (free
+extras) are SAT at X=16 and X=64 (108s): viable State(64) = complete-256 MINUS
+A SINGLE VALUE (215). Viable states are "complete minus O(1) defect", not
+fraction-shaped. New working conjecture: defect size stays O(1) across scales;
+extension lemma reduces to bounded-defect states. Rolling chain (fixed viable
+state → next joint) running on pod (roll_256.log).
