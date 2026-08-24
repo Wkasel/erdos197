@@ -1,0 +1,389 @@
+arXiv:1803.06334v1  [math.CO]  15 Mar 2018
+Forbidden arithmetic progressions in
+permutations of subsets of the integers
+Jesse Geneson
+Abstract
+Permutations of the positive integers avoiding arithmetic progres-
+sions of length 5 were constructed in (Davis et al, 1977), imp lying the
+existence of permutations of the integers avoiding arithme tic progres-
+sions of length 7. We construct a permutation of the integers avoiding
+arithmetic progressions of length 6. We also prove a lower bo und of
+1
+2 on the lower density of subsets of positive integers that can be per-
+muted to avoid arithmetic progressions of length 4, sharpen ing the
+lower bound of 1
+3 from (LeSaulnier and Vijay, 2011). In addition, we
+generalize several results about forbidden arithmetic pro gressions to
+construct permutations avoiding generalized arithmetic p rogressions.
+1 Introduction
+Davis et al [1] proved that any permutation of the positive integers contains
+an arithmetic progression of length 3, and they also constructed p ermutations
+of the positive integers avoiding arithmetic progressions of length 5 . As a
+result, they noted that there exist permutations of the integers that avoid
+arithmetic progressions of length 7.
+The results of Davis et al leave open the problem of whether there e x-
+ist permutations of the positive integers avoiding arithmetic progre ssions
+of length 4, and whether there exist permutations of the integers avoiding
+arithmetic progressions of length 4, 5, or 6. These open problems a re also
+mentioned in [2].
+In [2], Erdos and Graham also asked whether the positive integers ca n
+be partitioned into two sets, both of which can be permuted to avoid arith-
+metic progressions of length 3. This question is still unsolved, but a p ossible
+strategy to solve it was suggested in [1, 3].
+1
+Deﬁne αZ+(k) to be the supremum of limsupn→∞
+S∩ [1,n]
+n over all sets S of
+positive integers that can be permuted to avoid arithmetic progres sions of
+length k, and similarly deﬁne βZ+(k) to be the supremum of liminfn→∞
+S∩ [1,n]
+n
+over all sets S of positive integers that can be permuted to avoid arithmetic
+progressions of length k.
+In [3], LeSaulnier and Vijay noted that the answer to Erdos and Grah am’s
+question would be no if αZ+(3) + βZ+(3) < 1. They showed that αZ+(3) ≥ 1
+2
+and βZ+(3) ≥ 1
+4, conjecturing that these lower bounds were tight and that
+there was no way to partition the positive integers in the way that Er dos and
+Graham described. They also proved that αZ+(4) = 1 and βZ+(4) ≥ 1
+3.
+Davis et al [1] proved that there are permutations of the positive in tegers
+that avoid arithmetic progressions of length 5, so αZ+(k) = βZ+(k) = 1 for
+all k ≥ 5. Thus the only open problem for αZ+ is evaluating αZ+(3), and the
+only open problems for βZ+ are evaluating βZ+(3) and βZ+(4).
+In Section 2, we construct a permutation of the integers that avo ids arith-
+metic progressions of length 6. We also prove that βZ+(4) ≥ 1
+2, sharpening
+the bound from [3]. In addition, we prove density bounds for sets of integers
+rather than just positive integers. For these results, we deﬁne a nalogues of
+αZ+(k) and βZ+(k) for the integers.
+The upper density function αZ(k) is the supremum of limsupn→∞
+S∩ [− n,n]
+n
+over all sets S of integers which can be permuted to avoid arithmetic progres-
+sions of length k, and the lower density function βZ(k) is the supremum of
+liminfn→∞
+S∩ [− n,n]
+n over all sets S of positive integers which can be permuted
+to avoid arithmetic progressions of length k.
+In the other sections of the paper, we prove results about gener alized
+arithmetic progressions, where we use the term ( r1, . . . , rk− 1) k-progression
+to refer to a sequence of k numbers of the form a, a + r1d, . . . , a+ ∑ k− 1
+i=1 rid.
+We show that every permutation of the positive integers contains a n ( r, s)
+3-progression in Section 3, and we ﬁnd lower bounds on the number o f permu-
+tations of 1 , . . . , n that avoid certain generalized arithmetic progressions in
+Section 4. Density bounds for permutations avoiding generalized ar ithmetic
+progressions are in Section 5.
+2 Density bounds
+First we construct a permutation of the integers avoiding arithmet ic progres-
+sions of length 6. In Section 5, we show how a similar construction can be
+2
+used to avoid certain generalized arithmetic progressions of length 6.
+Proposition 1. There exist permutations of the integers avoiding arithmet ic
+progressions of length 6.
+Proof. Deﬁne a sequence of intervals A0, A1, . . . so that Ai = [10 i, 10i+1) and
+B0, B1, . . . so that Bi contains the additive inverses of the elements in Ai.
+Let X ∗
+i be obtained by rearranging Ai ∪ Bi so that it contains no arithmetic
+progression of length 3. Finally, consider the permutation 0 X ∗
+0 X ∗
+1 . . . .
+Suppose for contradiction that the permutation contained an arit hmetic
+progression of length 6. Then the second element of the progress ion is in
+some block of the form X ∗
+i . If the third element of the progression is in
+the same block X ∗
+i as the second element, then the fourth element must be
+in a diﬀerent block. Since the absolute value of the diﬀerence betwee n the
+ﬁrst two elements in the progression is at most 2 × 10i+1, we can conclude
+that the fourth, ﬁfth, and sixth elements must all be in X ∗
+i+1, which is a
+contradiction. If the third element of the progression is in a diﬀeren t block
+from the second element, then the third, fourth, and ﬁfth elemen ts of the
+progression are forced to be in the same block, a contradiction. ■
+Corollary 2. αZ(k) = βZ(k) = 1 for all k ≥ 6
+The bound βZ+(4) ≥ 1
+3 was proved in [3]. We sharpen this bound to 1
+2
+below.
+Proposition 3. βZ+(4) ≥ 1
+2
+Proof. Deﬁne intervals I1, I2, . . . of the form In = [⌈an⌉, ⌊ban⌋] for parameters
+a, b with 1 < b < a to be chosen later, and let I ∗
+n be obtained by rearranging
+In so that it contains no arithmetic progression of length 3. The set of positive
+integers consisting of the elements of the union of the In’s has lower density
+b− 1
+a− 1 and upper density (1 − 1
+b )(1 + 1
+a− 1).
+For the permutation I ∗
+1 I ∗
+2 . . . to avoid arithmetic progressions of length
+4, it suﬃces for a
+b − ( a
+b − 1)2 ≤ 0 since any arithmetic progression of length
+3 would have to be contained in multiple I ∗
+n’s. This is equivalent to a
+b ≥ 2,
+so if we let a = 2 b, then the lower density is b− 1
+a− 1 = b− 1
+2b− 1. Since b can be
+arbitrarily large, it follows that βZ+(4) ≥ 1
+2. ■
+In [3], the authors proved that αZ+(3) ≥ 1
+2 and βZ+(3) ≥ 1
+4, conjecturing
+that these bounds were tight. We ﬁnd the same lower bound on uppe r density
+for permutations of the full set of integers avoiding arithmetic pro gressions
+of length 3, but a lesser lower bound on lower density.
+3
+Proposition 4. αZ(3) ≥ 1
+2 and βZ(3) ≥ 1
+6
+Proof. Deﬁne a sequence of intervals A1, A2, . . . so that Ai = [5 i, ⌊ 5
+35i⌋] and
+B1, B2, . . . so that Bi contains the additive inverses of the elements in Ai.
+Let X ∗
+i be obtained by rearranging Ai ∪ Bi so that it contains no arithmetic
+progression of length 3. Finally, consider the sequence X ∗
+1 X ∗
+2 . . . .
+First, note that the sequence has upper density 1
+2 and lower density 1
+6 .
+Moreover, note that ⌊ 5
+35i⌋ − (−⌊ 5
+3 5i⌋) < 5i+1 − ⌊ 5
+3 5i⌋, so the second and
+third terms of a 3-term arithmetic progression cannot be in diﬀeren t blocks.
+Also, (5 i+1 − ⌊ 5
+35i⌋) + 5 i+1 > ⌊ 5
+3 5i+1⌋, so the second and third terms of a
+3-term arithmetic progression cannot be in the same block. Thus th ere is no
+arithmetic progression of length 3. ■
+3 3-progression containment in permutations
+of the positive integers
+Both results below use variations of the proof method introduced in [1] and
+also used in [3].
+Proposition 5. For each integer k > 1, every permutation of the positive
+integers contains an arithmetic progression of length 3 with diﬀerence not
+divisible by k.
+Proof. Without loss of generality, we may assume that k is prime. The
+case k = 2 was proved in [3]. As in [3], note that every permutation of
+{1, 2, . . . ,11} with ﬁrst element 2 and second element 1 contains an arith-
+metic progression of length 3 with diﬀerence not divisible by k. This is
+trivially true for k ≥ 7 and is checked with a computer for k = 3 and k = 5.
+Let P = p1p2 . . . be any permutation of the positive integers. Let c be
+the least index such that pc − p1 is not divisible by k and pc > p 1, and let
+pj = max(p1, . . . , pc− 1).
+If pj < 2pc − p1, then p1, pc, 2pc − p1 is an arithmetic progression of length
+3 in P . If pj ≥ 2pc − p1, then let d = pj − pc. Note that d is not divisible by
+k, and pj occurs before pj − d in P , so we can apply the result in the ﬁrst
+sentence of this proof to the set {pj − d, pj, pj + d, . . . , pj + 9d} to obtain an
+arithmetic progression of length 3 in P with diﬀerence not divisible by k. ■
+Although the result below implies that permutations of the positive in-
+tegers always contain ( r, s) 3-progressions, in the next section we will show
+4
+how to ﬁnd permutations of 1 , . . . , n that avoid ( r, s) 3-progressions for all
+n > 0.
+Proposition 6. For all positive integers r and s, every permutation of the
+positive integers contains an (r, s) 3 -progression.
+Proof. Let P be an arbitrary permutation of the positive integers. Let
+a0, a1, a2, . . . denote the subsequence of P consisting of elements that are
+greater than all elements to their left, so a0 is the ﬁrst element of P . By the
+pigeonhole principle, there are 2 elements ai ≡ aj mod r with i < j . Then
+ai, aj, aj + s
+r (aj − ai) is an ( r, s, 3) progression in P . ■
+4 Finite permutations avoiding progressions
+Let θk(n) denote the number of permutations of 1 , . . . , nthat avoid arithmetic
+progressions of length k. The ﬁrst result below generalizes the well-known
+lower bound for the number of permutations of 1 , . . . , n avoiding arithmetic
+progressions of length 3. Later in the section, we are able to exten d this same
+lower bound to certain ( r1, . . . , rk− 1) k-progressions.
+Proposition 7. For all ǫ > 0, θk(n) ≥ (k − 1)!( 1
+k− 2 − ǫ)n if n is a suﬃciently
+large power of k − 1
+Proof. We prove this by extending the lower bound proof used for k = 3.
+First, note that θk((k − 1)n) ≥ (k − 1)!θk(n)k− 1 for all k, n > 0 since we can
+build permutations of {1, . . . ,(k − 1)n} avoiding arithmetic progressions of
+length k using permutations of 1 , . . . , n avoiding arithmetic progressions of
+length k. Speciﬁcally let A1, . . . , Ak− 1 denote the subsets of {1, . . . ,(k − 1)n}
+such that the elements in Ai are congruent to i mod k − 1. For each i, there
+are θk(n) choices for how to permute the elements of Ai and avoid arithmetic
+progressions of length k. We can concatenate the A∗
+i ’s in any order for a
+total of ( k − 1)! possible orderings.
+First note that θk(k − 1) = ( k − 1)! and in general θk((k − 1)n) = ( k −
+1)!
+∑ n− 1
+i=0 (k− 1)i
+. Observe that for all ǫ > 0, there exists N > 0 such that for all
+n > N ,
+∑ n− 1
+i=0 (k− 1)i
+(k− 1)n − 1
+k− 2 < ǫ. ■
+The result below is used in the lower bound constructions for the den sity
+proofs in the last section of this paper.
+5
+Proposition 8. For all positive integers r and s such that 2 divides neither
+r nor s, there exists a permutation of 1, . . . , n avoiding (r, s) 3 -progressions.
+Proof. The permutation is obtained recursively. For n ≤ 2, any permutation
+will work. For n > 2, split the integers 1 , . . . , n into evens and odds, per-
+mute the evens and odds so that they avoid ( r, s) 3-progressions, and then
+concatenate the two permutations with evens ﬁrst. If there was an ( r, s) 3-
+progression in the concatenation, then it could not be fully containe d in the
+evens or fully contained in the odds, so without loss of generality sup pose
+that the ﬁrst two elements are in the evens and the last element is in t he
+odds. Since 2 divides neither r nor s, this is a contradiction since 2 divides
+the diﬀerence between the ﬁrst two elements, but not the last two . ■
+Observe that the proof of the ﬁrst result in this section can be app lied
+to generalized arithmetic progressions. Speciﬁcally we obtain the fo llowing
+recursive inequality for generalized ( r1, . . . , rk− 1) k-progressions for which
+k − 1 does not divide r1, . . . , rk− 1.
+Proposition 9. Suppose that k − 1 does not divide r1, . . . , rk− 1. If a is the
+number of permutations of 1, . . . , n that avoid (r1, . . . , rk− 1) k-progressions
+and b is the number of permutations of 1, . . . , n+ 1 that avoid (r1, . . . , rk− 1)
+k-progressions, then the number of permutations of (k − 1)n + j that avoid
+(r1, . . . , rk− 1) k-progressions for 0 ≤ j < k − 1 is at least (k − 1)!ak− 1− jbj.
+Corollary 10. Suppose that k − 1 does not divide r1, . . . , rk− 1. For all ǫ > 0,
+the number of permutations of 1, . . . , n avoiding (r1, . . . , rk− 1) k-progressions
+is at least (k − 1)!( 1
+k− 2 − ǫ)n if n is a suﬃciently large power of k − 1.
+5 Density bounds for generalized arithmetic
+progressions
+Davis et al [1] asked for bounds on αZ+(3) and βZ+(3), and the lower bounds
+αZ+(3) ≥ 1
+2 and βZ+(3) ≥ 1
+4 were proved in [3]. It is natural to generalize the
+problem from Davis et al to bound αZ+(P ) and βZ+(P ) for any generalized
+arithmetic progression P .
+We extend the lower bounds from [3] to ( r, s) 3-progressions in the result
+below, obtaining lower bounds on the upper and lower densities in term s of
+r and s.
+6
+Proposition 11. Suppose that 2 divides neither r nor s. Then there exist
+sets of positive integers with lower density rs
+(r+s)2 and upper density s
+r+s that
+avoid (r, s) 3 -progressions.
+Proof. Deﬁne intervals I1, I2, . . . of the form In = [⌈an⌉, ⌊ban⌋] for parameters
+a, b with 1 < b < a to be chosen later, and let I ∗
+n be obtained by rearranging
+In so that it contains no ( r, s) 3-progression. The set of positive integers
+consisting of the elements of the union of the In’s has lower density b− 1
+a− 1 and
+upper density (1 − 1
+b )(1 + 1
+a− 1).
+For the permutation I ∗
+1 I ∗
+2 . . . to avoid ( r, s) 3-progressions, it suﬃces for
+(bai − 0) s
+r ≤ ai+1 − bai and ( ai+1 − bai) s
+r + ai+1 > ba i+1. This is equivalent
+to b ≤ a
+1+s/r and b < 1+s/r
+1+ s/r
+a
+. Since b can be arbitrarily close to 1+s/r
+1+ s/r
+a
+, it
+follows that we can obtain upper density s
+r+s and lower density rs
+(r+s)2 with a
+approaching r2+rs+s2
+r2 and b = r2+rs+s2
+r2+rs . ■
+Erdos and Graham [2] asked whether the positive integers can be pa rti-
+tioned into two sets which can both be permuted to avoid arithmetic p ro-
+gressions of length 3. The conjecture in [3] that αZ+(3) = 1
+2 and βZ+(3) = 1
+4
+would negatively answer this question, since it would suﬃce to prove t hat
+αZ+(3) + βZ+(3) < 1.
+It is natural to ask Erdos and Graham’s question for ( r, s) 3-progressions
+in general, since the original question is just the case of (1 , 1) 3-progressions.
+We observe that rs
+(r+s)2 + s
+r+s < 1 for all r, s > 0, so if the bounds in our last
+proof are tight, then the positive integers could not be partitioned into two
+sets that can both be permuted to avoid ( r, s) 3-progressions.
+In the next result, we obtain the same lower bound for the upper de nsity
+when we consider all integers instead of just positive integers, but we get a
+diﬀerent lower bound on the lower density.
+Proposition 12. Suppose that 2 divides neither r nor s. Then there exist
+sets of integers with lower density rs
+(r+s)(r+2s) and upper density s
+r+s that avoid
+(r, s) 3 -progressions.
+Proof. Deﬁne intervals I1, I2, . . . of the form In = [⌈an⌉, ⌊ban⌋] for parameters
+a, b with 1 < b < a to be chosen later, and J1, J2, . . . such that Jn contains
+the additive inverses of the elements of In. Let X ∗
+n be obtained by rearranging
+In ∪ Jn so that it contains no ( r, s) 3-progression.
+For the permutation X ∗
+1 X ∗
+2 . . . to avoid ( r, s) 3-progressions, it suﬃces
+for ( bai − (−bai)) s
+r < a i+1 − bai and ( ai+1 − bai) s
+r + ai+1 > ba i+1. This is
+7
+equivalent to b < a
+1+2s/r and b < 1+s/r
+1+ s/r
+a
+. It follows that we can obtain upper
+density s
+r+s and lower density rs
+(r+s)(r+2s) with a approaching r2+2rs+2s2
+r2 and
+b = r2+2rs+2s2
+r2+2rs . ■
+As with the last result, we see that rs
+(r+s)(r+2s) + s
+r+s < 1 for all r, s > 0,
+so if the bounds in our last proof are tight, then the integers could n ot
+be partitioned into two sets that can both be permuted to avoid ( r, s) 3-
+progressions.
+The last proof below is a generalization of the construction of the pe rmu-
+tation of the integers avoiding arithmetic progressions of length 6 in Section
+2 to a certain class of generalized arithmetic progressions of length 6.
+Proposition 13. For all r, s > 0 for which 2 divides neither r nor s,
+there exist permutations of the integers that avoid (r4, r3s, r2s2, rs3, s4) 6 -
+progressions.
+Proof. Deﬁne a sequence of intervals A0, A1, . . . so that Ai = [ ai, ai+1) and
+B0, B1, . . . so that Bi contains the additive inverses of the elements in Ai.
+Choose a > 1 + 2( s
+r + s2
+r2 + s3
+r3 ) to be an integer. Let X ∗
+i be obtained by rear-
+ranging Ai ∪ Bi so that it contains no ( r, s) 3-progression. Finally, consider
+the permutation P = 0X ∗
+0 X ∗
+1 . . . .
+Suppose that P contained an (r4, r3s, r2s2, rs3, s4) 6-progression. The rest
+of the proof is the same as Proposition 1. ■
+Bounding the upper and lower densities of other generalized arithme tic
+progressions is a possible direction for future research. Also the m ain open
+problems from [1] are still unsolved, including (1) the existence of a p ermu-
+tation of the positive integers avoiding arithmetic progressions of le ngth 4
+and (2) a partition of the positive integers into two subsets, each w hich can
+be permuted to avoid arithmetic progressions of length 3. These pr oblems
+could also be investigated for generalized arithmetic progressions.
+References
+[1] J.A. Davis, R.C. Entringer, R.L. Graham, G.J. Simmons, On permu-
+tations containing no long arithmetic progressions. Acta Arithmetic a, 34
+(1977), pp. 81-90.
+8
+[2] P. Erdos, R.L. Graham, Old and new problems and results in combina to-
+rial number theory, in: LEnseignment Mathematique, Monograph N o. 28,
+Geneva, 1980.
+[3] Timothy D. LeSaulnier, Sujith Vijay, On permutations avoiding arit h-
+metic progressions. Discrete Mathematics 311(2-3): 205-207 (2 011)
+9

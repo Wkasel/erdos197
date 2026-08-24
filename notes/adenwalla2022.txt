@@ -1,0 +1,1089 @@
+arXiv:2211.04451v7  [math.CO]  23 Jul 2024
+Avoiding Monotone Arithmetic Progressions in Permutation s of
+Integers
+Sarosh Adenwalla∗
+July 25, 2024
+Abstract
+A permutation of the integers avoiding monotone arithmetic progressions of length 6 was con-
+structed in (Geneson, 2018). We improve on this by construct ing a permutation of the integers
+avoiding monotone arithmetic progressions of length 5. We a lso construct permutations of the
+integers and the positive integers that improve on previous upper and lower density results. In
+(Davis et al. 1977) they constructed a doubly inﬁnite permut ation of the positive integers that
+avoids monotone arithmetic progressions of length 4. We con struct a doubly inﬁnite permuta-
+tion of the integers avoiding monotone arithmetic progress ions of length 5. A permutation of the
+positive integers that avoided monotone arithmetic progre ssions of length 4 with odd common dif-
+ference was constructed in (LeSaulnier and Vijay, 2011). We generalise this result and show that
+for each k ≥ 1, there exists a permutation of the positive integers that a voids monotone arithmetic
+progressions of length 4 with common diﬀerence not divisibl e by 2 k. In addition, we specify the
+structure of permutations of [1 , n] that avoid length 3 monotone arithmetic progressions mod n as
+deﬁned in (Davis et al. 1977) and provide an explicit constru ction for a multiplicative result on
+permutations that avoid length k monotone arithmetic progressions mod n.
+1 Introduction
+A permutation, a1, a 2, a 3 . . . , avoids monotone arithmetic progressions of length k if there does not
+exist an increasing or decreasing subsequence of the permutation that forms a k-term arithmetic
+progression. We will refer to monotone arithmetic progressions of length k as k-APs. Clearly, if a
+permutation avoids k-APs then it avoids h-APs for any h > k . In [
+2], Davis et al. proved that the
+positive integers cannot be permuted to avoid 3-APs and can be per muted to avoid 5-APs and in [ 4],
+Geneson proved that the integers can be permuted to avoid 6-APs . We prove that the integers can be
+permuted to avoid 5-APs. These results leave open the questions o f whether there exist permutations
+avoiding 4-APs in the integers and the positive integers. Note that if there exists a permutation, P ,
+of the integers avoiding k-APs, then the subsequence of positive integers in P forms a permutation of
+the positive integers avoiding k-APs. Therefore, if there does not exist a permutation of the pos itive
+integers avoiding k-APs, there does not exist a permutation of the integers avoiding k-APs.
+We can work towards answering these open questions by considerin g the largest subset of the inte-
+gers (or positive integers) that can be permuted to avoid 3-APs or 4-APs. Let α Z+(k) be the supremum
+of lim sup n→∞
+|S∩[1,n]|
+n and βZ+(k) be the supremum of lim inf n→∞
+|S∩[1,n]|
+n , over all sets of positive
+integers S that can be permuted to avoid k-APs. These are the upper and lower density functions for
+the positive integers, as deﬁned in [ 7]. We can deﬁne similar functions for the integers, whereby α Z(k)
+is the supremum of lim sup n→∞
+|R∩[−n,n]|
+2n and βZ(k) is the supremum of lim inf n→∞
+|R∩[−n,n]|
+2n over all
+sets of integers R that can be permuted to avoid k-APs. These are the upper and lower density func-
+tions for the integers which were ﬁrst deﬁned in [ 4]. In [ 7] it was shown that α Z+ (4) = 1, α Z+ (3) ≥ 1
+2
+and βZ+ (3) ≥ 1
+4 . These are currently the best known bounds and the authors of [ 7] conjectured that
+the latter two bounds are equalities.
+In [ 4], it was shown that α Z(k) = βZ(k) = 1 for all k ≥ 6. By proving that the integers can
+be permuted to avoid 5-APs, we show that α Z(5) = βZ(5) = 1. It was also proven in [ 4] that
+α Z(3) ≥ 1
+2 , β Z(3) ≥ 1
+6 and βZ+ (4) ≥ 1
+2 . We improve on these latter two results to show that βZ(3) ≥ 3
+10
+∗ Department of Computer Science, University of Liverpool, U K, Sarosh.Adenwalla@liverpool.ac.uk,
+1
+and βZ+ (4) = 1. We also show that α Z(4) = 1 and βZ(4) ≥ 2
+3 . All of these results have been proved by
+explicitly constructing permutations that avoid k-APs and attain those densities. There has not been
+any result found or technique developed towards upper bounding t hese values strictly below 1.
+Another way of moving towards answering whether 4-AP free perm utations of the positive integers
+exist is to consider permutations with restrictions on the common diﬀ erence of any 4-APs that appear.
+In [ 7], it was shown that the positive integers can be permuted to avoid 4- APs with odd common
+diﬀerence (all 4-APs have common diﬀerence divisible by 2). We gener alise this to show that, for any
+k ≥ 1, the positive integers can be permuted to avoid 4-APs with common diﬀerence not divisible by
+2k (equivalently, all 4-APs in the permutation have common diﬀerence d ivisible by 2 k).
+In [ 2], it was shown that the positive integers can be arranged into a doub ly inﬁnite permutation,
+. . . a −2, a −1, a 0, a 1, a 2 . . . , that avoids 4-APs but cannot be arranged in a doubly inﬁnite permut ation
+that avoids 3-APs. Note that this implies that the integers cannot b e arranged in a doubly inﬁnite
+permutation that avoids 3-APs. We will show that there exists a dou bly inﬁnite permutation of the
+integers that avoids 5-APs. Whether there exists a doubly inﬁnite p ermutation of the integers avoiding
+4-APs is still open.
+Let a1, a 2, . . . , a n be a permutation of [1 , n ]. Then a subsequence of this permutation, ai1 , a i2, . . . , a ik ,
+is a k-AP mod n if, for d not equal to 0 and an integer a,
+ait ≡ a + td (mod n),
+for 1 ≤ t ≤ k. For example 4 , 2, 5, 1, 3 contains 3-APs mod 5 such as 4 , 2, 5 and 4 , 5, 1. Let n be
+called k-permissible if [1 , n ] can be permuted to avoid k-APs mod n. In [ 8], Nathanson shows that n
+is 3-permissible if and only if n is a power of 2. Diﬀerent proofs of this are given in [ 5, 6]. It is proven
+in both [ 2, 6] that n is 5-permissible for all n, which means all n are k-permissible for all k ≥ 5. It
+is not known which n are 4-permissible. We show that n is k-permissible if and only if all the prime
+factors of k are k-permissible, improving on a result in [ 8]. This allows us to prove that all n that
+have no prime factors greater than 23 are 4-permissible. We also sh ow that any permutation of [1,2 k]
+avoiding 3-APs mod 2 k must obey a certain structure. From this we determine that there are 2 2k−1
+such permutations, which was originally proven in [ 5] by a diﬀerent method.
+The way we improve the results in these areas is by using modular arith metic in creating these
+permutations. This is used in [ 2] where terms are arranged based on their parity in a doubly inﬁnite
+permutation and in [ 7]. Any k-AP with terms that are distinct mod n must form a k-AP mod n with
+distinct terms. So, by grouping integers in a given interval togethe r in the permutation according to
+their residues mod 2 k for some k (having been rearranged to avoid 3-APs), and ordering those res idues
+in a way that avoids 3-APs mod 2 k, we can avoid 3-APs appearing in certain ways in the permutation.
+This has been used in Theorems 1, 4, 6 and 7.
+It is intuitive to think that constructing these permutations with lar ge lower density is more diﬃcult
+for the integers than for the positive integers. However, we can u se the structure of the integers to
+achieve a permutation that avoids 3-APs with a subset of the intege rs of greater lower density than
+the best known results for the positive integers. Let A be a subset of the positive integers that can be
+permuted to avoid 3-APs, of the form [ a1, b 1], [c1, d 1], [e1, f 1], . . . for 0 < a 1 < b 1 < c 1 < . . . positive
+integers. Due to how these sets are usually permuted, in order for A to avoid 3-APs, the gaps between
+intervals are large compared to the size of the intervals. Now let B be a subset of the integers that can
+be permuted to avoid 3-APs such that for all a, b ∈ B, a ̸= −b. We can choose the subset we use by
+initially picking an interval of positive integers, [ a2, b 2], to be in our subset and then adding [ −d2, −c2]
+followed by [ e2, f 2] and [ −h2, −g2] . . . where
+a2 < b 2 < c 2 < d 2 < e 2 < f 2 < g 2 < h 2 < . . . ,
+are carefully chosen positive integers. In this way, we alternate be tween positive intervals and negative
+intervals. By doing this, the gap between b2 and e2 or between −d2 and −g2 can be large enough to
+avoid 3-APs, and the gap between a2 and −c2 or between e2 and −h2 can be large enough to do so as
+well, while the gap between b2 and c2 or f2 and g2 can be smaller than the gaps between intervals in
+A. Let B+ be the set containing the absolute value of all integers in B. Then
+lim inf
+n→∞
+|B ∩ [−n, n ]|
+2n = lim inf
+n→∞
+|B+ ∩ [1, n ]|
+2n = 1
+2 lim inf
+n→∞
+|B+ ∩ [1, n ]|
+n .
+2
+Then B+ is composed of [ a1, b 2], [c2, d 2], [e2.f 2], [g2, h 2], . . . and so on. Due to the smaller gaps, the
+intervals in B+ do not need to be spread out as much as in A. Thus the lower density of B+ is not
+reduced as much and if constructed carefully, this can lead to such an improvement that despite the
+factor of 1
+2 , B has a larger lower density compared to A. This was used in Theorem 8.
+2 5-AP Free Permutations
+We will ﬁrst construct a permutation of the integers, P , that avoids 5-APs. We use that any ﬁnite subset
+of the integers can be permuted to avoid 3-APs, as proven in [
+2]. If S is a permutation of a set of integers,
+s1, s 2, s 3, . . . , s n, and a, b are integers, then let aS + b be a × s1 + b, a × s2 + b, a × s3 + b, . . . , a × sn + b,
+so the relative order of the terms is maintained. Note that S avoids k-APs if and only if aS + b avoids
+k-APs for non-zero a as si1 , s i2 , . . . , s ik is a k-AP if and only if a × si1 + b, a × si2 + b, . . . , a × sik + b is
+a k-AP. Also, if T is another permutation of some set of integers, t1, t 2, t 3, . . . , t r, then let S, T denote
+the concatenation of the two permutations, s1, s 2, s 3, . . . , s n, t 1, t 2, t 3, . . . , t r. Throughout the following
+constructions, our permutations are made up of intervals that ha ve been permuted to avoid 3-APs.
+We call such intervals blocks.
+Theorem 1. There exists a permutation of the integers, P , that avoids 5-APs.
+Proof. Let Xi be a permutation of the integers in [ −8i, −8i−1 − 1] ∪ [8i−1, 8i − 1]. We will construct
+P using these blocks. Let
+X1 = −8, −4, 4, −6, 2, −2, 6, −7, 1, −3, 5, −5, 3, 7,
+X2n = 8X2n−1 + 7, 8X2n−1 + 3, 8X2n−1 + 5, 8X2n−1 + 1, 8X2n−1 + 6, 8X2n−1 + 2, 8X2n−1 + 4, 8X2n−1,
+X2n+1 = 8X2n, 8X2n + 4, 8X2n + 2, 8X2n + 6, 8X2n + 1, 8X2n + 5, 8X2n + 3, 8X2n + 7.
+Note that the integers in each block are grouped together by their residue classes mod 8. In all
+odd indexed blocks, including X1, the order of the residue classes is 0 , 4, 2, 6, 1, 5, 3, 7 and in all even
+indexed blocks the order is 7 , 3, 5, 1, 6, 2, 4, 0.
+Then let
+P = 0, X 1, −1, X 2, X 3, X 4, X 5, . . .
+.
+We will assume that P contains a 5-AP and derive a contradiction. Denote the terms of th is
+progression as a1, a 2, a 3, a 4, a 5, with common diﬀerence d.
+First we prove that each Xi avoids 3-APs by induction. Clearly X1 avoids 3-APs by inspection.
+Assume Xk avoids 3-APs for some k. Note that Xk+1 is made up of sub-blocks of the form 8 Xk + a for
+a ∈ { 0, 1, 2, 3, 4, 5, 6, 7}. Then 8 Xk + a avoids 3-APs for any integer a. So any 3-AP in Xk+1 cannot
+have all terms in one sub-block 8 Xk + a for some a ∈ {0, 1, 2, 3, 4, 5, 6, 7}. Assume there exists a 3-AP
+in Xk+1, with terms b1, b 2, b 3, which we shall prove cannot exist. As b1, b 2, b 3 must belong to more
+than one sub-block, the common diﬀerence of the terms is not divisib le by 8. So b1 and b2 belong
+to diﬀerent sub-blocks and b2 and b3 belong to diﬀerent sub-blocks. Therefore, due to how Xk+1 is
+constructed, b1 and b3 belong to diﬀerent sub-blocks as well. So b1, b 2, b 3, all have diﬀerent residues
+mod 8 and so b1 (mod 8), b2 (mod 8), b3 (mod 8) form a 3-AP mod 8 with distinct terms. However,
+the order of the sub-blocks (and, therefore, the order of the r esidue classes mod 8) in Xk+1 means that
+Xk+1 avoids 3-APs mod 8 with distinct terms. This can be seen by inspecting the permutations
+0, 4, 2, 6, 1, 5, 3, 7 and 7 , 3, 5, 1, 6, 2, 4, 0,
+the orders of the residue classes mod 8 in the blocks. Therefore, t here is no such b1, b 2, b 3 in Xk+1. So
+all Xi avoid 3-APs by induction. We split this into three cases based on whet her a2 and a3 are in the
+same block, whether they are in diﬀerent blocks or whether one of a2 or a3 is not in a block.
+Case 1 : First we will consider the case where a2 and a3 are in diﬀerent blocks. Denote the block a2
+belongs to as Xi. Then as a1 appears before a2 in P , we have that |a1|, |a2| ≤ 8i and |d| < 2 × 8i. By
+the triangle inequality, |a3| = |a2 + d| < 3 × 8i. But as a3 appears after a2 in P and is in a diﬀerent
+block to a2, it follows that a3 is in Xi+1. Similarly |a4| < 5 × 8i and |a5| < 7 × 8i with both appearing
+after a3 in P . So a4 and a5 are also in Xi+1. But then a3, a 4, a 5 form a 3-AP in Xi+1 which is a
+contradiction. ⋄
+3
+Case 2 : Now we consider the case when a2 and a3 are in the same block, denoted Xi. As a2 and a3 are
+in Xi, this implies that |a2| < 8i and |a3| < 8i so |d| < 2 × 8i. By the triangle inequality |a4| < 3 × 8i,
+and as Xi avoids 3-APs it follows that a4 cannot be in Xi. Therefore, a4 is in Xi+1. As |a5| < 5 × 8i
+and a5 appears in P after a4, we see that a5 is in Xi+1. So a2, a 3, a 4, a 5 are a 4-AP with a2, a 3 in
+Xi and a4, a 5 in Xi+1. We show that this cannot occur by proving that there can be no su ch 4-AP
+over consecutive blocks Xi and Xi+1. In fact this shows that there can be no 4-AP over consecutive
+blocks at all as the only other way there could be is if there were eithe r 3 consecutive terms in Xi or 3
+consecutive terms in Xi+1 which cannot happen. Let b1, b 2, b 3, b 4 be a 4-AP with common diﬀerence
+d and with b1, b 2 in Xi and b3, b 4 in Xi+1. We break this into sub-cases based on d. The ﬁrst one is
+when d is not divisible by 4, the second is when d is divisible by 4 but not 8 and the third is when d
+is divisible by 8.
+Case 2a : If d is not divisible by 4, then b1, b 2, b 3, b 4 are distinct mod 8 and as they form a 4-AP,
+we see that b1 (mod 8), b2 (mod 8), b3 (mod 8), b4 (mod 8) are a 4-AP mod 8 with distinct terms.
+However, the order of the residue classes mod 8 of Xi, X i+1 is either
+7, 3, 5, 1, 6, 2, 4, 0, 4, 2, 6, 1, 4, 3, 7 or 0 , 4, 2, 6, 1, 5, 3, 7, 3, 5, 1, 6, 2, 4, 0,
+depending on whether i is even or odd. These sequences do not contain 4-APs mod 8 so ther e is no
+such 4-AP with d not divisible by 4. ⋄
+Case 2b : If d ≡ 4 (mod 8), then b1 ≡ b3 (mod 8) and b2 ≡ b4 (mod 8) while b1 is not equivalent to
+b2 (mod 8). So there exists x, y ∈ { 0, 1, 2, 3, 4, 5, 6, 7} such that b1 ≡ b3 ≡ x (mod 8) and b2 ≡ b4 ≡ y
+(mod 8). As b1 appears in Xi before b2 then x appears before y in the order of the residue classes
+mod 8 of Xi. As b3 appears in Xi+1 before b4 then x appears before y in the order of the residue
+classes mod 8 of Xi+1. But by the deﬁnition of Xi and Xi+1, if x appears before y in the order of the
+residue classes mod 8 of Xi then y appears before x in the order of the residue classes mod 8 of Xi+1.
+Therefore, no such 4-AP with d ≡ 4 (mod 8) exists. ⋄
+Case 2c : Finally consider the case where d ≡ 0 (mod 8). Proceed by induction on i. First note
+that there is no 4-AP with b1, b 2 in X1 and b3, b 4 in X2 with d ≡ 0 (mod 8). This can be seen as the
+only terms in X1 with a diﬀerence divisible by 8 are
+{−4, 4}, {−6, 2}, {−2, 6}, {−7, 1}, {−3, 5}, {−5, 3}.
+So the only possible such progressions are
+{−4, 4, 12, 20}, {−6, 2, 10, 18}, {−2, 6, 14, 22}, {−7, 1, 9, 17}, {−3, 5, 13, 21}, {−5, 3, 11, 19}.
+However, 2 appears before 1 in X1, so 20 appears before 12 in X2. Similarly, due to the order of terms
+in X1 and the recursive deﬁnition of X2, the third term in each of the above progressions appears after
+the fourth term in X2. So there is no 4-AP with the ﬁrst two terms in X1 and the last two terms in
+X2 with common diﬀerence d ≡ 0 (mod 8).
+Assume there is no 4-AP with the ﬁrst two terms in Xk−1 and the last two terms in Xk with
+common diﬀerence d ≡ 0 (mod 8). Now consider a 4-AP, b1, b 2, b 3, b 4, with b1, b 2, in Xk and b3, b 4 in
+Xk+1 for d ≡ 0 (mod 8) and k > 1. Then there exists w ∈ {0, 1, 2, 3, 4, 5, 6, 7} such that
+b1 ≡ b2 ≡ b3 ≡ b4 ≡ w (mod 8) ,
+so b1, b 2 are in the sub-block 8 Xk−1 + w of Xk and b3, b 4 are in the sub-block 8 Xk + w of Xk+1.
+Then let cj = bj − w for j ∈ { 1, 2, 3, 4}. So cj is the multiple of 8 that is less than or equal to bj.
+As the smallest integer in [8 k−1, 8k − 1] is a multiple of 8 when k > 1, and the smallest integer of
+[−8k, −8k−1 − 1] is a multiple of 8, we see that cj is in the same block as bj. So c1, c 2 are in Xk and
+c3, c 4 are in Xk+1. As c1, c 2, c 3, c 4 are multiples of 8, it follows that c1, c 2 are in the sub-block 8 Xk−1
+and c3, c 4 are in the sub-block 8 Xk. It is clear that b1 appears before b2 in 8 Xk−1 + w, so b1 − w = c1
+appears before b2 − w = c2 in 8 Xk−1. In the same way, as b3 appears before b4 in 8 Xk + w, we have
+that b3 − w = c3 appears before b4 − w = c4 in 8 Xk. Note that 8 Xk−1 is in Xk and 8 Xk is in Xk+1
+so 8 Xk−1 appears before 8 Xk in P . So as b1, b 2, b 3, b 4 is a 4-AP in P with common diﬀerence d, the
+terms b1 − w, b 2 − w, b 3 − w, b 4 − w form a 4-AP in P with the same common diﬀerence d. Therefore,
+c1, c 2, c 3, c 4 is a 4-AP in P with common diﬀerence d with all terms cj and d being divisible by 8.
+4
+As c1 appears in the sub-block 8 Xk−1 before c2 and c3 appears in the sub-block 8 Xk before c4, it
+follows that c1
+8 appears before c2
+8 in Xk−1 and c3
+8 appears before c4
+8 in Xk. So c1
+8 , c2
+8 , c3
+8 , c4
+8 is a 4-AP
+in P with c1
+8 , c2
+8 in Xk−1 and c3
+8 , c4
+8 in Xk. Denote the common diﬀerence of this progression by d′ and
+note that d′ = d
+8 . We have shown that if the common diﬀerence is not divisible by 8, the p rogression
+cannot exist. So d′ ≡ 0 (mod 8). However, this contradicts our inductive assumption. It follows that
+there is no 4-AP with d ≡ 0 (mod 8) and with b1, b 2 in Xk and b3, b 4 in Xk+1.
+This completes the induction and so, no such 4-AP with d divisible by 8 appears in P . ⋄
+Therefore, from the above sub-cases, no 4-AP with terms b1, b 2 in Xi and b3, b 4 in Xi+1 exists for any
+i ≥ 1 in P . As mentioned, this means that there is no 4-AP with terms in consec utive blocks. It
+follows that a2 and a3 cannot belong to the same block. This concludes the proof of Case 2 . ⋄
+Case 3 : The ﬁnal case is when one of a2 or a3 is not in a block and is therefore equal to 0 or −1.
+Neither a2 nor a3 can be 0 as 0 is the ﬁrst term of P and a1 must appear in P before a2 and a3. If
+a2 is −1 then a1 appears before a2 in P so −8 ≤ a1 ≤ 7 and therefore |d| ≤ 8. We then have that
+|a3| ≤ 9, also |a4| ≤ 17 and |a5| ≤ 25. As a3, a 4, a 5 appear in P after −1, they are all in X2. But
+they would form a 3-AP which is a contradiction as X2 avoids these. So a2 cannot be −1. If a3 is −1
+then a1, a 2, a 3 is a 3-AP contained in 0 , X 1, −1. As a3 is odd, a1 must be odd. By considering how
+X1 is ordered, a2 must be odd. So d must be even which implies that the diﬀerence between a1 and
+a3 = −1 is divisible by 4. The only options for a1 are then −5, 3 and 7. Therefore, the only possible
+3-APs a1, a 2, a 3 could be the following,
+{−5, −3, −1}, {3, 1, −1}, {7, 3, −1}.
+However, −3 appears in P before −5, similarly 1 appears before 3 and 3 appears before 7. This means
+a3 cannot be −1. ⋄
+From the above cases we can conclude that P avoids 5-APs.
+This implies that α Z(5) = βZ(5) = 1. We now prove the same for doubly inﬁnite permutations.
+Theorem 2 follows easily from Theorem 1 if we take P to be the permutation deﬁned above and consider
+a doubly inﬁnite permutation S where 2 P + 1 is the permutation in S that continues to the left and
+2P is the permutation in S that continues to the right. Below we provide an alternative permut ation.
+Theorem 2. There exists a doubly inﬁnite permutation of the integers, T , that avoids 5-APs.
+Proof. Consider the doubly inﬁnite permutation
+T = . . . , Z 2i, Z 2i−2, . . . , Z 6, Z 4, Z 2, 0, Z 1, −1, Z 3, Z 5, . . . , Z 2i−1, Z 2i+1, . . . ,
+where Zi is a permutation of the integers in [ −8i, −8i−1 − 1] ∪ [8i−1, 8i − 1] that avoids 3-APs. Assume
+T contains a 5-AP a1, a 2, a 3, a 4, a 5 with common diﬀerence d. Denote the block a2 belongs to as Zj.
+Note that if a3 is in block Zi, then either i > j , i = j and i is odd, i < j or i = j and i is even. If
+i > j then i must be odd. This is because a3 appears after a2 in T and, therefore, Zi appears to the
+right of Zj in T . So if i > j then, from the structure of T , it follows that i must be odd. The ﬁrst
+two scenarios are covered in Case 1, the third in Case 2 and the four th in Case 3. Case 4 is the ﬁnal
+possibility that one of a2 or a3 is not in any blocks and is therefore either 0 or 1.
+Case 1 : Let a3 be in Zi with i ≥ j and i odd. Then |a2|, |a3| ≤ 8i and |d| < 2 × 8i. Both a4, a 5 cannot
+be in Zi as a3, a 4, a 5 would form a 3-AP. So a5 must be in a block that appears after Zi and therefore,
+as i is odd, |a5| ≥ 8i+1. But as |a5| = |a3 + 2d| < 5 × 8i, we reach a contradiction. So a3 is not in Zi
+for odd i with i ≥ j. ⋄
+Case 2 : Let a3 be in Zi for i < j . As a3 appears in T after a2, we see that j is even. Assume a2 is
+negative. The cases where a2 is positive are similar. The ﬁrst two sub-cases cover when a3 < 0 and
+the third is when a3 > 0.
+Case 2a : Let a3 ∈ Zi for i < j − 1 with a3 < 0. So a2 ∈ [−8j, −8j−1 − 1] and a3 ∈ [−8i, −8i−1 − 1].
+Therefore,
+8j−1 − 8i < d < 8j − 8i−1,
+and it follows that
+8j−1 − 2 × 8i < a 4 < 8j − 2 × 8i−1.
+5
+It is clear that a4 cannot be in Zj as a2 is in Zj and a3 ∈ Zi appears between a2 and a4. So,
+8j−1 − 2 × 8i < a 4 < 8j−1 which means a4 is in Zj−1. Therefore,
+8j−1 − 8i < a4 − a2
+2 = d < 8j + 8j−1
+2 ,
+which means
+8j−1 < 2 × 8j−1 − 3 × 8i < a 5 < 1
+2 8j + 3
+2 8j−1 = 11
+2 8j−1.
+So a5 ∈ Zj which is not possible as a2 is in Zj and a3 is not. ⋄
+Case 2b : Let a3 ∈ Zj−1 and a3 < 0 so a2 ∈ [−8j, −8j−1 − 1] and a3 ∈ [−8j−1, −8j−2 − 1] which
+means 0 < d < 8j − 8j−2. Note that j − 1 is odd and as a3, a 4, a 5 cannot all be in Zj−1, we see that a5
+appears after Zj−1 in an odd indexed block. So a5 ≥ 8j or a5 ≤ − 8j. However, as a5 > a 2, it follows
+that a5 ≥ 8j. Therefore,
+8j + 8j−1
+3 < a5 − a2
+3 = d < 8j − 8j−2,
+and so
+2 × 8j−1 = −2 × 8j−1 + 8j
+3 < a 4 < 8j − 2 × 8j−2.
+This means a4 is in Zj which is not possible as a2 ∈ Zj and a3 is not. ⋄
+Case 2c : Let a3 ∈ Zi for i < j and let a3 > 0. Then a2 ∈ [−8j, −8j−1 − 1], a3 ∈ [8i−1, 8i − 1]
+and 8 i−1 + 8 j−1 < d . So a1 ∈ Zk for k ≥ j and k is even, as a1 appears before a2 in T . We have
+a1 ∈ [−8k, −8k−1 − 1] as a1 < a 2. If k > j then this is the same as Cases 2 a and 2 b but instead of
+considering a2 and a3 we consider a1 and a2. If k = j then d < 8j − 8j−1 = 7 × 8j−1. Therefore
+8i−1 ≤ a3 < 6 × 8j−1. It follows that
+8j−1 + 2 × 8i−1 < a 4 < 6 × 8j−1 + 7 × 8j−1 = 13 × 8j−1.
+We see that a4 cannot be in Zj because a2 ∈ Zj and a3 is not, so 8 j ≤ a4 < 13 × 8j−1. Therefore,
+9
+2 8j−1 = 8j + 8j−1
+2 < a4 − a2
+2 = d < 7 × 8j−1,
+and this means
+8j−1 = 8 j − 7 × 8j−1 < a 4 − d = a3 = a2 + d < 6 × 8j−1,
+so a3 is in Zj. This cannot happen as a3 ∈ Zi for i < j . ⋄
+It follows from the above sub-cases that a3 cannot be in Zi for i < j . This concludes the proof of Case
+2. ⋄
+Case 3 : Let j be even and a3 ∈ Zj. Then |d| < 2 × 8j. So |a1| ≤ | a2| + |d| < 3 × 8j. It is clear that
+a1 cannot be in Zj as a1, a 2, a 3 would form a 3-AP in Zj so as j is even and a1 appears before a2, we
+see that |a1| ≥ 8j+1. This implies 8 j+1 ≤ |a1| < 3 × 8j which is a contradiction. ⋄
+Case 4 : Finally consider the case where one of a2 or a3 is either 0 or −1. If a2 or a3 were 0 then
+a1, a 2, a 3 or a2, a 3, a 4 would be a 3-AP in T with 0 as the middle term. This would involve 0 appearing
+between a term and its additive inverse in T . So the only such 3-APs in T are {−8i, 0, 8i} and
+{8i, 0, −8i} as all other terms belong to the same block as their additive inverse. So the only possible
+5-APs with a2 or a3 being 0 are
+{−2×8i, −8i, 0, 8i, 2×8i}, {2×8i, 8i, 0, −8i, −2×8i}, {8i, 0, −8i, −2×8i, −3×8i}, {−8i, 0, 8i, 2×8i, 3×8i}.
+However, 8i and −2 × 8i belong to the same block so 0 does not appear between them. There fore the
+ﬁrst three 5-APs do not occur in T . Also 8 i, 2 × 8i, 3 × 8i belong to Zi+1 which avoids 3-APs and
+therefore the fourth 5-AP does not occur in T . So neither a2 nor a3 can be 0.
+Similarly, if a2 or a3 were −1, then −1 would be the middle term of a 3-AP. The only such
+progressions are {−8i − 1, −1, 8i − 1} and {8i − 1, −1, −8i − 1} as all other terms, r, belong to the
+same block as −r − 2. So the only possible 5-APs with a2 or a3 being −1 are
+{2 × 8i − 1, 8i − 1, −1, −8i − 1, −2 × 8i − 1}, {−2 × 8i − 1, −8i − 1, −1, 8i − 1, 2 × 8i − 1},
+6
+{−8i − 1, −1, 8i − 1, 2 × 8i − 1, 3 × 8i − 1}, {8i − 1, −1, −8i − 1, −2 × 8i − 1, −3 × 8i − 1}.
+However, −8i − 1 and 2 × 8i − 1 belong to the same block so −1 does not appear in T between them.
+So the ﬁrst three 5-APs do not appear in T . Also −8i − 1, −2 × 8i − 1, −3 × 8i − 1 belong to Zi+1
+which avoids 3-APs and therefore the fourth 5-AP does not appea r in T . ⋄
+By the above cases, we can conclude that T avoids 5-APs.
+3 Monotone Arithmetic Progressions with restricted common
+diﬀerence
+We now prove that for any k ≥ 1 there is a permutation of the positive integers that avoids 4-APs
+with common diﬀerence not divisible by 2 k. This generalises the result,
+Theorem 3 ([7]). There exists a permutation of the positive integers in which every 4-AP that occurs
+as a subsequence has common diﬀerence divisible by 2.
+Their construction was based on separating integers into diﬀerent blocks based on their residues
+modulo 2, then ordering the blocks and scaling their intervals to have diﬀerent lengths based on those
+residues. We appropriately apply the same techniques for residues modulo 2 k for k ≥ 1 to achieve our
+result.
+As n is 3-permissible if and only if n is a power of 2, it is equivalent to prove that for any 3-
+permissible n, the positive integers can be permuted so that all 4-APs have a com mon diﬀerence
+divisible by n. We will use the permutation in the theorem later in the paper.
+Theorem 4. For every n that is 3-permissible, there exists a permutation of the positive in tegers such
+that all 4-APs in the permutation have common diﬀerence divisible by n.
+Proof. Choose a ≥ 3. Let X j
+i be a permutation of the integers equivalent to j (mod n) in [ ai, a i+n)
+that avoids 3-APs. We will refer to X j
+i as a block. Note that a block only contains integers from one
+residue class mod n. Then let S = s1, s 2, . . . , s n be a permutation of the integers in [1 , n ] such that S
+avoids 3-APs mod n. Now deﬁne r(i) as the unique integer r ∈ [1, n ] such that r ≡ i (mod n) and let
+bi = sr(i), noting that bi = bi+n. Finally let ci = ⌈ i
+n ⌉n − r(i) + 1. Then
+R = X b1
+c−n+1, X b2
+c−n+2, . . . , X bi
+c−n+i, . . . , X b−1
+c−1 , X b0
+c0 , X b1
+c1 , X b2
+c2 , X b3
+c3 , . . . , X bi
+ci , . . . ,
+which means
+R = X s1
+0 , X s2
+−1, X s3
+−2, . . . , X si+1
+−i , . . . , X sn−1
+−n+2, X sn
+−n+1, X s1
+n , X s2
+n−1, X s3
+n−2, . . . , X si+1
+n−i , . . . , X sn−1
+2 , X sn
+1 ,
+X s1
+2n, X s2
+2n−1, . . . , X sn−1
+n+2 , X sn
+n+1, X s1
+3n, . . . , X s1
+tn, X s2
+tn−1, . . . , X si+1
+tn−i, . . . , X sn−1
+(t−1)n+2, X sn
+(t−1)n+1, X s1
+(t+1)n, . . . .
+This is a permutation of all positive integers as for all integers v ≥ 0, there are exactly n blocks that
+each contain all the integers equivalent to a distinct residue mod n in the interval [ av, a v+1). We will
+show that any 4-AP in R has common diﬀerence d ≡ 0 (mod n).
+To prove this, we assume that R contains a 4-AP with terms m1, m 2, m 3, m 4, and common diﬀerence
+d not equivalent to 0 (mod n). We use this to obtain a contradiction.
+Note that if X sl
+i and X sl′
+k appear in R then i ≡ k (mod n) if and only if sl = sl′ , and if X sl
+i appears
+in R before X sl
+k then i < k and all integers in X sl
+i are less than any integer in X sl
+k .
+So take d not equivalent to 0 (mod n) and let mi ≡ sli−1 (mod n) for i ∈ { 2, 3, 4}. Then let
+m2 ∈ X
+sl1
+j , m3 ∈ X
+sl2
+h and m4 ∈ X
+sl3
+k . We will show that l1 < l 2 < l 3 and use this to derive a
+contradiction.
+Letting ( t − 1)n < j ≤ tn, we ﬁnd m2 ≤ aj+n and d = m2 − m1 < m 2 ≤ aj+n so m3 < 2 × aj+n
+and m4 < 3 × aj+n ≤ aj+n+1. Therefore, as m3 and m4 appear after m2 in R, it is clear that
+(t − 1)n < j, h, k < j + n + 1 so ( t − 1)n < j, h, k ≤ j + n ≤ (t + 1)n.
+The order of these blocks in R is:
+X s1
+tn, X s2
+tn−1, X s3
+tn−2, X s4
+tn−3, . . . , X sn−1
+(t−1)n+2, X sn
+(t−1)n+1, X s1
+(t+1)n, X s2
+(t+1)n−1, X s3
+(t+1)n−2, . . . , X sn−1
+tn+2, X sn
+tn+1.
+7
+We break this into two cases based on h.
+Case 1 : If ( t − 1)n < h ≤ tn, then because m3 ∈ X
+sl2
+h appears after m2 ∈ X
+sl1
+j in R, we have h ≤ j.
+If h = j then m2 and m3 are in the same block so m3 ≡ m2 (mod n) and d ≡ 0 (mod n) which is a
+contradiction. Therefore ( t − 1)n < h < j ≤ tn so X
+sl1
+j and X
+sl2
+h are of the form X si+1
+tn−i for 0 ≤ i ≤
+n − 1, and it follows that h < j implies l1 < l 2. Note that
+m3 ≤ ah+n and d = m3 − m2 < a h+n, so m4 = m3 + d < 3 × ah+n ≤ ah+n+1.
+Then as m4 ∈ X
+sl3
+k we have k < h + n + 1, so it follows that ( t − 1)n < k ≤ h + n < (t + 1)n. We
+break this into two sub-cases based on k.
+Case 1a : If ( t − 1)n < k ≤ tn, then because m4 ∈ X
+sl3
+k appears after m3 ∈ X
+sl2
+h in R, we have
+k ≤ h. If k = h then m3 and m4 are in the same block so m4 ≡ m3 (mod n) and d ≡ 0 (mod n) which
+is a contradiction. Therefore
+(t − 1)n < k < h < tn and so l2 < l 3. ⋄
+Case 1b : If tn < k ≤ h + n < (t + 1)n, then if k = h + n we have k ≡ h (mod n) so sl2 = sl3 . It
+follows that m4 ≡ m3 (mod n) which implies d ≡ 0 (mod n) which is a contradiction. Therefore
+tn < k < h + n < (t + 1)n and so l2 < l 3. ⋄
+Therefore if ( t − 1)n < h < tn , we have shown by the above sub-cases that l1 < l 2 < l 3. This concludes
+Case 1. ⋄
+Case 2 : If tn < h ≤ j + n ≤ (t + 1)n then note that if h = j + n it follows that sl1 = sl2 . So, m3 ≡ m2
+(mod n) and d ≡ 0 (mod n) which is a contradiction. Therefore,
+tn < h < j + n ≤ (t + 1)n and so l1 < l 2.
+As tn < h < (t + 1)n and m4 ∈ X
+sl3
+k appears after m3 ∈ X
+sl2
+h in R, it follows that either tn < k ≤ h or
+k > (t + 1)n. But k ≤ (t + 1)n and therefore tn < k ≤ h. Note that if k = h then m4 ≡ m3 (mod n)
+so d ≡ 0 (mod n) which is a contradiction. Therefore
+tn < k < h < (t + 1)n so l2 < l 3. ⋄
+In either case we have that l1 < l 2 < l 3. As S is a permutation of [1 , n ], we know sv ≡ sw (mod n)
+if and only if sv = sw, which holds if and only if v = w. So sl1 , s l2, s l3 are distinct mod n. S avoids
+3-APs mod n and l1 < l 2 < l 3, so sl1 , s l2, s l3 cannot form a 3-AP mod n. This implies m2, m 3, m 4
+is not a 3-AP and so m1, m 2, m 3, m 4 is not a 4-AP. Therefore there are no 4-APs in R with common
+diﬀerence not divisible by n.
+This contrasts with the result in [ 4],
+Theorem 5 ([4]). For each integer k > 1, every permutation of the positive integers contains an
+arithmetic progression of length 3 with common diﬀerence not divisible by k.
+This is a generalisation of an analogous result in [ 7] for k = 2. Note that if there existed an integer
+k ≥ 1 and a permutation, P , such that P contained no 3-AP with common diﬀerence divisible by k,
+then the subsequence made up of the multiples of k would contain no 3-APs. Then, by dividing each
+term of this subsequence by k, we would produce a permutation of the positive integers that avoid s
+3-APs. But no such permutation exists, as shown in [ 2], and therefore for every integer k ≥ 1, every
+permutation of the positive integers contains a 3-AP with common diﬀ erence divisible by k.
+8
+4 Density Bounds
+We now prove the claimed density bounds. These improved lower boun ds are given by alternating
+between blocks with positive and negative terms or by blocks with diﬀe rent residues modulo powers of
+2. This spreads out the terms and increases the lower density by re ducing the size of the gaps required
+to avoid 3-APs and 4-APs.
+For the ﬁrst result, we use the permutation from Theorem
+4, but remove certain intervals to
+eliminate the remaining 4-APs with common diﬀerence divisible by 2 k.
+Theorem 6. There exists a sequence of permutations of the positive inte gers such that βZ+(4) = 1 .
+Proof. Choose k ≥ 1 and let n = 2 k. Let a ≥ 3. Then let R be the permutation as deﬁned in
+Theorem 4. Deﬁne R′ to be a permutation with terms in the same relative order as R, but with the
+integers in [ ai+n
+2 , a i+n) removed for each block X j
+i in R. As R avoids 4-APs with common diﬀerence
+not divisible by n, it follows that R′ avoids such 4-APs as well. Assume R′ contains a 4-AP with
+common diﬀerence, d, which must be divisible by n. Then denote this 4-AP by m1, m 2, m 3, m 4 and
+let the block m2 belongs to be X j
+i , so m2 < ai+n
+2 . Therefore,
+d = m2 − m1 < m 2 < ai+n
+2 and so m3 = m2 + d < a i+n.
+As we have d ≡ 0 mod n, this means m1 ≡ m2 ≡ m3 ≡ m4 ≡ j mod n. As m3 appears in R′ after
+m2, we see that m3 is either in X j
+i or m3 is in X j
+f for f ≥ i + n. In the latter case, m3 ≥ ai+n which
+is a contradiction. So m3 is in X j
+i . Similarly, m4 = m3 + d < a i+n and m4 must be in X j
+i . However,
+m2, m 3, m 4 form a 3-AP in X j
+i which is a contradiction as X j
+i avoids 3-APs. Therefore there are no
+4-APs in R′. As |R′∩[1,aN ]|
+aN , is equal to
+an − 2
+2n
+∑ N −n
+i=1 ai
+aN + aN − aN −1
+naN + aN − aN −2
+naN + . . . + aN − aN −n+1
+naN
+= an − 2
+2n
+aN −n+1 − a
+aN (a − 1) + n − 1
+n − 1
+n
+( 1
+a + 1
+a2 + . . . + 1
+an−1
+)
+= 2n − 1
+2n + 1
+2n(a − 1) + 1
+naN −1(a − 1) − 1
+2naN −n−1(a − 1) − 1
+nan−1(a − 1) − 1
+n
+( 1 − 1
+an−1
+a − 1
+)
+= 2n − 1
+2n + 1
+naN −1(a − 1) − 1
+2naN −n−1(a − 1) − 1
+2n(a − 1) .
+Therefore
+lim inf
+N →∞
+|R′ ∩ [1, N ]|
+N = 2n − 1
+2n − 1
+2n(a − 1) = 1 − a
+2n(a − 1) .
+As k can be chosen to be arbitrarily large, n = 2 k can be arbitrarily large (while a ≥ 3) so as
+lim
+n→∞
+1 − a
+2n(a − 1) = 1,
+we have βZ+ (4) = 1.
+This leaves α Z+ (3) and βZ+(3) as the only functions for the positive integers to be resolved.
+Theorem 7. There exists a sequence of permutations of the integers such that βZ(4) ≥ 2
+3 and α Z(4) =
+1.
+Proof. Consider the permutation
+T = X2, Y 1, X 4, Y 3, . . . , X 2n, Y 2n−1, X 2n+2, Y 2n+1, . . . ,
+where Xi is a permutation of the even integers in [ ai, ai+2
+3 − 1] ∪ [− ai+2
+3 + 1, −ai] which avoid 3-APs
+and Yi is a permutation of the odd integers in [ ai, ai+2
+3 − 1] ∪ [− ai+2
+3 + 1, −ai] which avoid 3-APs for
+a > 3, with a divisible by 3. We will show T avoids 4-APs. Assume there exists a 4-AP with terms
+a1, a 2, a 3, a 4, with common diﬀerence d.
+9
+The ﬁrst case covers when a1 and a2 are of the same parity and belong to the same block, the
+second case is when a1 and a2 are of the same parity and in diﬀerent blocks, the third and fourth c ases
+are when a1 is even and a2 is odd and the ﬁfth case is when a1 is odd and a2 is even. So all cases are
+covered below.
+Case 1 : Let a1 and a2 belong to the same block. Without loss of generality, let this be Xi. Then a3
+cannot be in Xi, and a1, a 2, d, are even. It follows that |d| < 2
+3 ai+2 so −ai+2 < a 3 < a i+2. As a3 is
+even and appears after Xi, it follows that |a3| ≥ ai+2. So this case cannot occur. ⋄
+Case 2 : Let a1 and a2 be of the same parity in diﬀerent blocks. Without loss of generality, le t them
+be even. So let a1 be in Xi and a2 be in Xj. Then j > i + 1 and d is even. So |d| < aj+2
+3 + ai+2
+3 and
+|a3| < 2
+3 aj+2 + ai+2
+3 < a j+2. As a3 is even, if it appears after Xj then |a3| ≥ aj+2. Therefore a3 is in
+Xj. It follows that |a4| < 2
+3 aj+2 + ai+2
+3 < a j+2 and similarly a4 is in Xj. But then a2, a 3, a 4 are all in
+Xj which cannot occur as Xj avoids 3-APs. The case where a1 is in Yi and a2 is in Yj is similar. ⋄
+Case 3 : Let a1 be in Xi and a2 be in Yj for j > i . Then d is odd and |d| < aj+2
+3 + ai+2
+3 . Therefore
+|a3| < 2
+3 aj+2 + ai+2
+3 < a j+3. But as a3 is even and occurs after Yj, we have that |a3| ≥ aj+3. So this
+case cannot occur. ⋄
+Case 4 : Let a1 be in Xi and a2 be in Yi−1. Then d is odd and so a3 is even and appears after Yi−1,
+therefore |a3| ≥ ai+2. We see that
+|d| = |a2 − a1| < ai+1
+3 + ai+2
+3 and so |a3| = |a2 + d| < ai+2
+3 + 2
+3 ai+1 < a i+2.
+So this case cannot occur. ⋄
+Case 5 : Let a1 be in Yi and a2 be in Xj. Then j > i + 2, and d is odd with |d| < aj+2
+3 + ai+2
+3 . So
+|a3| < 2
+3 aj+2 + ai+2
+3 < a j+3 and as a3 is odd and appears after Xj, this means a3 is in Yj−1 or Yj+1.
+Case 5a : Let a3 be in Yj−1. Then
+|a3| < aj+1
+3 and so |a4| = |a3 + d| < aj+2
+3 + aj+1
+3 + ai+2
+3 < a j+2.
+But as a4 is even and appears after Yj−1, we see that |a4| ≥ aj+2. So this case cannot occur. ⋄
+Case 5b : Let a3 be in Yj+1. Then
+|a3| < aj+3
+3 so |a4| < aj+3
+3 + aj+2
+3 + ai+2
+3 < a j+4.
+But as a4 is even and appears after Yj+1, we see that |a4| ≥ aj+4. So this case cannot occur. ⋄
+By the above sub-cases, we see that the case where a1 is in Yi and a2 is in Xj cannot occur. This
+concludes Case 5. ⋄
+The above cases show that T avoids 4-APs.
+|T ∩ [−an, a n]|
+2an = a2 − 3
+6
+∑ n−2
+i=1 ai
+an + an − an−1
+2an = a2 − 3
+6
+an−1 − a
+an(a − 1) + 1
+2 − 1
+2a = a − 3
+6(a − 1) − a2 − 3
+6an−1(a − 1) + 1
+2 .
+It follows that
+lim inf
+N →∞
+|T ∩ [−N, N ]|
+2N = a − 3
+6(a − 1) + 1
+2 = 2
+3 − 1
+3(a − 1) .
+As a can be arbitrarily large, βZ(4) ≥ 2
+3 .
+|T ∩ [− an
+3 , an
+3 ]|
+2 an
+3
+= a2 − 3
+2
+∑ n−2
+i=1 ai
+an + 3
+an
+3 − an−1
+2an
+= a2 − 3
+2
+an−1 − a
+an(a − 1) + 1
+2 − 3
+2a
+= a − 3
+2(a − 1) − a2 − 3
+2an−1(a − 1) + 1
+2 .
+10
+So
+lim sup
+N →∞
+|T ∩ [−N, N ]|
+2N = a − 3
+2(a − 1) + 1
+2 = 1 − 1
+a − 1 .
+As a can be arbitrarily large, α Z(4) = 1.
+Theorem 8. There exists a sequence of permutations of the integers such that βZ(3) ≥ 3
+10 .
+Proof. Consider the permutation
+K = Y0, X 1, Y 2, X 3, Y 4, . . . , X 2k−1, Y 2k, . . .
+where Xi is a permutation of [2 i, ⌊ 8
+5 2i⌋] which avoids 3-APs and Yi is a permutation of [ −⌊ 8
+5 2i⌋, −2i]
+which avoids 3-APs. We shall show that K avoids 3-APs. Let a1, a 2, a 3 be a 3-AP with common
+diﬀerence d and let a1 be in the block Xi. The cases where a1 are in Yi are similar. Note that as a2
+appears in K after a1, it follows that a2 must be in Xi or Xj for j > i + 1 or Yk for k > i .
+Case 1 : If a2 is in Xi then |d| < 3
+5 2i. So 0 < 2
+5 2i < a 3 < 11
+5 2i < 2i+2. But as a3 cannot be in Xi and
+so appears in K after Xi, then a3 ≥ 2i+2 or a3 ≤ −2i+1 < 0. ⋄
+Case 2 : If a2 is in Xj for j > i + 1 then 2 j − 8
+5 2i < d < 8
+5 2j − 2i so
+8
+5 2j = 2 j+1 − 8
+5 2j−2 ≤ 2j+1 − 8
+5 2i < a 3 < 16
+5 2j − 2i < 2j+2.
+But there are no terms in K between 8
+5 2j and 2 j+2. ⋄
+Case 3 : If a2 is in Yk for k > i then − 8
+5 2k − 8
+5 2i < d ≤ −2k − 2i so
+−2k+2 = − 16
+5 2k − 8
+5 2k−1 ≤ − 16
+5 2k − 8
+5 2i < a 3 ≤ −2k+1 − 2i < − 8
+5 2k.
+But there are no terms in K in this range. ⋄
+By the above cases, K avoids 3-APs. By considering
+lim
+N →∞
+|K ∩ [−2N , 2N ]|
+2 × 2N = lim
+N →∞
+3
+5
+∑ N −1
+i=0 2i
+2N +1 = 3
+5 lim
+N →∞
+2N − 1
+2N +1 = 3
+10 ,
+we see that the lower density of K is 3
+10 and so βZ(3) ≥ 3
+10 .
+It is of interest to note that
+α Z(k) = sup
+R⊆Z
+lim sup
+n→∞
+|R ∩ [−n, n ]|
+2n
+= sup
+R⊆Z
+lim sup
+n→∞
+( |R ∩ [1, n ]|
+2n + |R ∩ [−n, −1]|
+2n
+)
+≤ sup
+R⊆Z
+lim sup
+n→∞
+|R ∩ [1, n ]|
+2n + sup
+R⊆Z
+lim sup
+n→∞
+|R ∩ [−n, −1]|
+2n
+= sup
+S⊆Z+
+lim sup
+n→∞
+|S ∩ [1, n ]|
+2n + sup
+S⊆Z+
+lim sup
+n→∞
+|S ∩ [1, n ]|
+2n
+= sup
+S⊆Z+
+lim sup
+n→∞
+|S ∩ [1, n ]|
+n
+= α Z+ (k),
+where the supremum is taken over all subsets R of the integers (all subsets S of the positive integers
+respectively) that avoid k-APs. Note that
+α Z+ (k) = α Z(k) = 1 for all k ≥ 4 as α Z+ (4) = α Z(4) = 1
+from [ 7] and Theorem 7. If the conjecture in [ 7] is true and α Z+ (3) = 1
+2 , then as 1
+2 ≤ α Z(3) ≤ α Z+ (3)
+by [ 4] and the above inequality, we would have α Z+ (3) = α Z(3) = 1
+2 .
+11
+5 Monotone Arithmetic Progressions Mod n
+We begin by stating the below lemma from [ 6].
+Lemma 9 ([6]). Let G be a group and N be a normal subgroup of G such that both N and G/N have
+orderings (well orderings) avoiding k-APs. Then G has an ordering (well ordering) avoiding k-APs.
+We show how the above result applies in our context of well orderings in G = Z/n Z and N = Z/m Z
+where m|n. In [ 8], Nathanson proved that if b = p1p2 . . . p t for pi < k not necessarily distinct and if
+m is k-permissible then mb is k-permissible. As it is clear that if pi < k then pi is k-permissible, the
+next result generalises this.
+Lemma 10. If n and m are k-permissible, then so is mn.
+Proof. Let a1, . . . , a n be a permutation of [1 , n ] that avoids k-APs mod n and let b1, . . . , b m be a
+permutation of [1 , m ] that avoids k-APs mod m.
+Then consider
+S = m(a1 − 1) +b1, m (a2 − 1) +b1, . . . , m (an − 1) +b1, m (a1 − 1) +b2, m (a2 − 1) +b2, . . . , m (an − 1) +b2,
+m(a1 − 1) + b3, . . . , m (a1 − 1) + bm, m (a2 − 1) + bm, . . . , m (an − 1) + bm.
+We will show that S is a permutation of [1 , mn ] that avoids k-APs mod mn and therefore show mn
+to be k-permissible. First note that this is a permutation of [1 , mn ] as m(ai − 1) runs through all
+multiples of m from 0 × m to ( n − 1) × m and bi runs through all integers from 1 to m. Assume there
+exists a k-AP mod mn in S, with terms c1, c 2, . . . , c k and with common diﬀerence d.
+Case 1 : Assume d is divisible by m so there exists an integer 0 < t < n such that d = mt. Then all
+terms of the progression are equivalent to each other mod m so
+c1 ≡ c2 ≡ . . . ≡ ck ≡ bs (mod m) for some s ∈ {1, . . . , m }.
+Then the k-AP is contained in
+m(a1 − 1) + bs, m (a2 − 1) + bs, . . . , m (an − 1) + bs.
+So ci = m(ari − 1) + bs and ri is a strictly increasing sequence for 1 ≤ i ≤ k due to how the terms are
+ordered in S. Then
+m(ari − 1) + bs + d ≡ m(ari+1 − 1) + bs (mod mn).
+So m(ari − 1) +d ≡ m(ari+1 − 1) (mod mn) and therefore ari − 1 +t ≡ ari+1 − 1 (mod n). This means
+ari + t ≡ ari+1 (mod n).
+Note that the terms ari (mod n) are all distinct. This is because if ari ≡ arj (mod n) then as
+ari, a rj ∈ [1, n ], we have ari = arj and so ci = cj. But the terms of the k-AP are all distinct, therefore
+i = j. It follows that the sequence ar1, a r2, . . . , a rk forms a k-AP mod n with common diﬀerence t and
+is contained in a1, a 2, . . . , a n which is a contradiction. ⋄
+Case 2 : Assume m does not divide d. Then every pair of consecutive terms in the progression, ci and
+ci+1, have diﬀerent residues mod m and as terms in S are arranged in blocks of their residues mod m,
+every term in the k-AP is distinct mod m. Note that the residues mod m of the terms in S are in the
+order b1, b 2, . . . , b m. So ci = m(afi − 1) + bgi where gi is a strictly increasing sequence for 1 ≤ i ≤ k.
+It follows that
+m(afi − 1) + bgi + d ≡ m(afi+1 − 1) + bgi+1 (mod mn).
+Therefore
+m(afi − 1) + bgi + d ≡ m(afi+1 − 1) + bgi+1 (mod m) and so bgi + d ≡ bgi+1 (mod m).
+If bgi ≡ bgj (mod m) then as bgi , b gj ∈ [1, m ], we have bgi = bgj . This means ci ≡ cj (mod m) and so
+i = j. Therefore, the terms bgi (mod m) are all distinct. It follows that the sequence bg1 , b g2, . . . , b gk
+forms a k-AP mod m with common diﬀerence d and is contained in b1, . . . , b m. This is a contradiction
+and so this case cannot occur. ⋄
+Therefore we can conclude that there is no k-AP mod mn in S.
+12
+This implies that if all the primes dividing n are k permissible, so is n. Conversely, we know from
+Nathanson [ 8], that if m is not k permissible and m divides n then n is not k-permissible. One way to
+see this is that m not being k-permissible means every permutation of the integers in [1 , m ] contains a
+k-AP mod m and when this progression is multiplied by the integer n
+m , it becomes a k-AP mod n. For
+any permutation of [1 , n ], the subsequence comprised of terms that are multiples of n
+m is a permutation
+of the integers in [1 , m ] multiplied by n
+m so it contains a k-AP mod n.
+Together this implies that n is k-permissible if and only if all prime factors of n are k-permissible.
+Therefore, we can restrict our attention to prime n. With this it is quite easy to rederive the result that
+the n that are 3-permissible are the powers of 2 (see [ 5, 6, 8] for alternate proofs). Any permutation
+of [1 , 2] clearly avoids 3-APs mod 2. For any odd prime p and permutation a1, . . . , a p of [1 , p ], the
+terms a1, a 2, 2a2 − a1 (mod p) form a 3-AP mod p. This is because 2 a2 − a1 (mod p) must be distinct
+from a1 and a2 as otherwise a1 ≡ a2 (mod p) which is a contradiction as a1, a 2, are distinct integers
+of [1 , p ]. Using this with Lemma 10 implies n is 3-permissible if and only if n is a power of 2.
+We can also use Lemma 10 to determine an inﬁnite number of n that are 4-permissible. The
+following permutations show that all primes less than or equal to 23 a re 4-permissible.
+2, 1
+3, 1, 2
+5, 1, 3, 4, 2
+7, 4, 2, 6, 3, 5, 1
+11, 2, 7, 9, 10, 6, 1, 4, 8, 5, 3
+13, 10, 3, 5, 4, 12, 8, 1, 2, 9, 6, 7, 11
+17, 3, 8, 7, 12, 1, 5, 13, 4, 15, 14, 9, 16, 6, 11, 10, 2
+19, 3, 1, 9, 6, 5, 2, 15, 7, 13, 14, 10, 8, 17, 4, 16, 18, 12, 11
+23, 1, 22, 15, 3, 11, 2, 13, 18, 17, 20, 7, 8, 10, 5, 9, 6, 21, 4, 19, 14, 12, 16
+So all n with no prime factors greater than 23 are 4-permissible.
+We now ﬁnd the structure of all permutations of [1 , 2k] which avoid 3-APs mod 2 k. This structure
+had been somewhat described in [ 5].
+Theorem 11 ([5]). Let n ≥ 1 be an integer. The number of permutations of [1, n ] that do not contain
+any 3-APs mod n is 2n−1 if n = 2 k for some k ≥ 1, and is 0 otherwise. A permutation, Q, of [1, 2k]
+that contains no 3-APs mod 2k consists of 2k−1 elements of the same parity, followed by the 2k−1
+elements of the opposite parity.
+They note in the proof that as the subsequence of the 2 k−1 terms of the same parity in Q must
+avoid 3-APs, these subsequences must be 2 S or 2 T − 1 for some S or T that are permutations of
+[1, 2k−1] that avoid 3-APs mod 2 k−1. From this they prove that all permutations of [1 , 2k] that avoid
+3-APs mod 2 k are exactly those of the form 2 S, 2T − 1 or 2 T − 1, 2S for some S and T which are
+permutations of [1 , 2k−1] that avoid 3-APs mod 2 k−1. We extend this characterisation in more detail.
+Let [ a + mb]′ be a permutation of all the integers in [1 , 2k] that are equivalent to a + mb (mod 2 k),
+where a, b are ﬁxed integers and m can be any odd integer, that avoids 3-APs mod 2 k. That is, [ a+mb]′
+contains all integers in [1 , 2k] that are equivalent to a + b (mod 2 b).
+Theorem 12. Permutations of [1, 2k] that avoid 3-APs mod 2k are exactly those of the form
+a, a + 2k−1 (mod 2 k), [a + m2k−2]′, [a + m2k−3]′, . . . , [a + m2]′, [a + m]′
+for an a ∈ [1, 2k]. There are 22k−1 such permutations.
+Proof. Let P be a permutation of [1 , 2k] that avoids 3-APs mod 2 k. We shall prove this has the claimed
+structure by induction on r where r is deﬁned below. If k = 0 or k = 1, then P trivially satisﬁes the
+structure in the theorem. Note that this structure can be rewrit ten as
+[a + m2k]′, [a + m2k−1]′, [a + m2k−2]′, [a + m2k−3]′, . . . , [a + m2]′, [a + m]′
+13
+as the ﬁrst two blocks only contain one term each. Additionally, the b lock [ a + m2k−t]′ has 2 t−1 terms
+in it for 1 ≤ t ≤ k. Let the ﬁrst term of P be a. Then denote the second term by b. It is clear that
+a, b, 2b − a (mod 2 k) is a 3-AP mod 2 k in P , unless 2 b − a ≡ a (mod 2 k) or 2 b − a ≡ b (mod 2 k). If
+2b − a ≡ b (mod 2 k) then a ≡ b (mod 2 k) but as a, b ∈ [1, 2k], we see that a = b. But a and b are
+distinct. If 2 b − a ≡ a (mod 2 k) then b ≡ a (mod 2 k−1) so b = a or b = a + 2k−1 (mod 2 k). But b
+is distinct from a so the second term is a + 2k−1 (mod 2 k). So the ﬁrst 2 1 terms are in the order as
+claimed.
+Now assume that the ﬁrst 2 r terms are in the order as claimed for some 1 ≤ r ≤ k − 1. This
+corresponds to the ﬁrst 2 r terms being
+[a + m2k]′, [a + m2k−1]′, . . . , [a + 2k−r]′ as 1 +
+r∑
+i=1
+2i−1 = 2 r.
+Label the 2 r + ith term in P by xi. Then the following term is x1. For any term y appearing before x1,
+if 2 x1 − y (mod 2 k) appeared in P after x1, then y, x 1, 2x1 − y (mod 2 k) forms a 3-AP mod 2 k. We
+see that 2 x1 − y (mod 2 k) cannot be equal to x1 as this implies that x1 ≡ y (mod 2 k) and therefore
+that x1 = y which is a contradiction as x1 and y are distinct terms of the permutation of [1 , 2k]. So
+for all terms y appearing before x1, we know 2 x1 − y (mod 2 k) must appear in P before x1. All terms
+appearing in P before x1 are equivalent to a + 2k−l (mod 2 k) for 0 ≤ l ≤ r so they are equivalent to
+a (mod 2 k−r). So for any y before x1, it follows that
+2x1 − y ≡ a (mod 2 k−r) and y ≡ a (mod 2 k−r).
+Therefore, 2 x1 ≡ 2a (mod 2 k−r) and so x1 ≡ a (mod 2 k−r−1). So 2 k−(r+1) divides x1 − a. Assume
+x1 is not equivalent to a + m2k−(r+1) (mod 2 k) for some odd m. Then x1 ≡ a + m2k−l (mod 2 k) for
+some odd m and some r + 1 < l ≤ k as all terms with l ≤ r occur before x1. However, this implies
+that 2 k−l is the highest power of 2 that divides x1 − a and so 2 k−(r+1) does not divide x1 − a. This
+contradiction means that x1 ≡ a + m2k−(r+1) (mod 2 k) for some odd m.
+Now consider xi for some ﬁxed i, for 2 ≤ i ≤ 2r. Then for all terms y before x1 in P , we know that
+2xi − y (mod 2 k) cannot appear after xi in P , as P avoids 3-APs mod 2 k. We see 2 xi − y (mod 2 k)
+cannot equal xi as then xi ≡ y (mod 2 k) and so xi = y which is a contradiction as y appears in P
+before xi. It follows that 2 xi − y (mod 2 k) appears in P before xi. If there exists y before x1 such
+that 2 xi − y (mod 2 k) occurs before x1 then by the argument above for x1, it is clear that
+xi ≡ a + m2k−(r+1) (mod 2 k)
+for m odd.
+Let the ﬁrst 2 r terms of P be y1, y 2, . . . , y 2r and assume there is no yj such that 2 xi − yj (mod 2 k)
+appears in P before x1. So for each of the yj before x1 in P , for 1 ≤ j ≤ 2r, there exists n, for
+1 ≤ n < i ≤ 2r, such that 2 xi − yj ≡ xn (mod 2 k). As there are 2 r values of yj and less than 2 r values
+of n, by the pigeonhole principle there must exist distinct 1 ≤ j < h ≤ 2r and an n, for 1 ≤ n < i ≤ 2r,
+such that
+2xi − yj ≡ xn ≡ 2xi − yh (mod 2 k).
+However, then yj ≡ yh (mod 2 k) but as yj and yh are terms of a permutation of [1 , 2k], this implies
+yj = yh and so j = h. This is a contradiction.
+So xi ≡ a + mi2k−(r+1) (mod 2 k) for mi odd and 1 ≤ i ≤ 2r. As there are 2 r terms equivalent to
+a + m2k−(r+1) (mod 2 k) for m odd in [1 , 2k], it is clear that x1, x 2, . . . , x 2r are exactly these terms. As
+P avoids 3-APs mod 2 k, so does x1, x 2, . . . , x 2r . It follows that x1, x 2, . . . , x 2r is a permutation of the
+form [ a + m2k−(r+1)]′. So the ﬁrst 2 r+1 terms of P are ordered as claimed. Therefore the induction is
+completed. So all the permutations of [1 , 2k] that avoid 3-APs mod 2 k are of the form
+a, a + 2k−1 (mod 2 k), [a + m2k−2]′, [a + m2k−3]′, . . . , [a + m2]′, [a + m]′.
+Now we show that all permutations of this form avoid 3-APs mod 2 k. Let a1, a 2, a 3, be a 3-AP
+mod 2 k in such a permutation. Then ai ≡ a + mi2k−li (mod 2 k) for odd mi and i ∈ {1, 2, 3}. We see
+that 0 ≤ l1 ≤ l2 ≤ l3 ≤ k as a2 appears after a1 and a3 appears after a2.
+Case 1 : If l1 = l2 = s then
+a3 ≡ 2a2 − a1 ≡ a + 2k−s(2m2 − m1) ≡ a + r2k−s (mod 2 k)
+14
+for r = 2n − m odd. So a1, a 2, a 3, are all in [ a + m2k−s]′ which avoids 3-APs mod 2 k. ⋄
+Case 2 : If l2 > l 1 then l2 ≥ l1 + 1 ≥ 1. So
+a3 ≡ 2a2 − a1 ≡ a + 2k−l2+1(m2 − m12l2−l1−1) (mod 2 k)
+which implies that 2 k−l2+1 divides a3 − a as m2 − m12l2−l1−1 is an integer and k − l2 + 1 ≤ k. But
+a3 ≡ a + m32k−l3 (mod 2 k) for m3 odd and l2 ≤ l3 ≤ k. This is a contradiction as k − l3 ≤ k − l2 and
+so the highest power of 2 that could divide a3 − a is 2 k−l2. ⋄
+So permutations of [1 , 2k] that avoid 3-APs mod 2 k are exactly those of the form
+a, a + 2k−1 (mod 2 k), [a + m2k−2]′, [a + m2k−3]′, . . . , [a + m2]′, [a + m]′.
+Let 1 ≤ t ≤ k. Then a permutation of [1 , 2t−1] that avoids 3-APs mod 2 t−1, has been multiplied by
+2k−t+1, had a − 2k−t added to its terms and then been reduced mod 2 k is a permutation of the form
+[a + m2k−t]′. Additionally each permutation of the form [ a + m2k−t]′ that has had 2 k−t − a added
+to its terms, been divided by 2 k−t+1 and reduced mod 2 t−1 is a permutation of [1 , 2t−1] that avoids
+3-APs mod 2 t−1. So the number of possible permutations that are of the form [ a + m2k−t]′ is the same
+as the number of permutations of [1 , 2t−1] that avoid 3-APs mod 2 t−1.
+Let φ(k) be the number of permutations of [1 , 2k] that avoid 3-APs mod 2 k. Then as this is the
+number of permutations of the form
+a, a + 2k−1 (mod 2 k), [a + m2k−2]′, [a + m2k−3]′, . . . , [a + m2]′, [a + m]′,
+we see that
+φ(k) = 2 kφ(k − 1)φ(k − 2) . . . φ (2)φ(1)φ(0)
+as there are 2 k choices for a and there are φ(t − 1) choices for [ a + m2k−t]′ with 1 ≤ t ≤ k. As φ(0) = 1
+is clear, it is straightforward to check that φ(k) = 2 2k−1.
+6 Open Questions
+There are still many unknown questions in this area. Here we lay out s ome of these, including sum-
+marising those we have mentioned.
+Question 1 ([
+2, 3, 7]). Do there exist permutations of the positive integers or the i ntegers that avoid
+4-APs?
+This is the most obvious open question and was asked in [ 2] in 1977, the ﬁrst paper on the topic.
+Showing βZ+(4) = 1 is a step towards resolving this in the positive integer case, bu t it seems some new
+techniques will need to be applied to answer it, either in showing that a ll permutations of the (positive)
+integers contain 4-APs or in constructing a permutation of the (po sitive) integers that avoids them.
+Question 2 ([2, 3]). Do there exists doubly inﬁnite permutations of the integers that avoid 4-APs?
+It was shown in [ 2] that there exist doubly inﬁnite permutations of the positive intege rs that avoid
+4-APs, but it is not known if the same is true of the integers. Note th at if there exists a permutation
+of the integers, P , that avoids 4-APs then there exists a doubly inﬁnite permutation o f the integers,
+2P − 1 going to the left and 2 P going to the right, that avoids 4-APs.
+Question 3 ([2, 4, 7]). What are the correct values of α Z(3), α Z+ (3), β Z(3), β Z+(3) and βZ(4)?
+As it seems likely that the density functions for subsets that avoid 3 -APs are signiﬁcantly less
+than 1, this would require a way to prove a nontrivial upper bound, ( less than 1), on these functions
+which has not been achieved yet. As mentioned before, it was conje ctured in [ 7] that α Z+(3) = 1
+2 and
+βZ+(3) = 1
+4 , so progress on this front would be of interest.
+Question 4 ([2, 6]). Are there permutations of [1, p ] that avoid 4-APs mod p for all primes p?
+This would answer the question for all n as explained above. It is known that all that, for all n and
+k ≥ 5, there are permutations of [1 , n ] that avoid k-APs, as proved in [ 6]. A further question would
+be to investigate the number of permutations that avoid k-APs mod n for k > 3, as suggested in [ 5].
+15
+Question 5 ([5]). How many permutations of [1, n ] avoid k-APs for k ≥ 3?
+This question has been studied for k = 3 in [ 1, 2, 7, 9], and lower bounds for larger k have been
+given in [ 4].
+Question 6 ([2, 3, 4, 7]). Is it possible to partition the positive integers into two se ts, each of which
+can be permuted to avoid 3-APs?
+In [ 2], the positive integers were partitioned into three sets, each of wh ich could be permuted to
+avoid 3-APs. In [ 3], it was mentioned that the corresponding question for integers wa s open. We note
+that the integers can be partitioned into 3 sets each of which can be permuted to avoid 3-APs. Let
+K be as in Theorem 8. Deﬁne X ′
+i as a permutation of [ ⌈ 8
+5 2i⌉, ⌊ 64
+25 2i⌋] that avoids 3-APs and Y ′
+i as a
+permutation of [ −⌊ 64
+25 2i⌋, −⌈ 8
+5 2i⌉] that avoids 3-APs. Then let
+K ′ = 0, 1, Y ′
+0, X ′
+1, Y ′
+2 , X ′
+3, Y ′
+4, . . . , X ′
+2k−1, Y ′
+2k . . .
+Similarly, deﬁne X ′′
+i as a permutation of [ ⌈ 64
+25 2i⌉, 2i+2) that avoids 3-APs and Y ′′
+i as a permutation of
+(−2i+2, −⌈ 64
+25 2i⌉] that avoids 3-APs. Then let
+K ′′ = Y ′′
+0 , X ′′
+1 , Y ′′
+2 , X ′′
+3 , Y ′′
+4 , . . . , X ′′
+2k−1, Y ′′
+2k . . .
+As K ′ and K ′′ are very similar to K, (the endpoints of their intervals are scaled by 8
+5 and 64
+25 respectively
+compared to K), it can be shown by the same argument as in Theorem 8 that they both avoid 3-APs.
+As the set K ∪ K ′ ∪ K ′′ is the set of all integers and each avoids 3-APs, we can partition the integers
+into 3 sequences that each avoid 3-APs. It was noted in [ 7] that if α Z+ (3)+ βZ+(3) < 1 then the positive
+integers cannot be partitioned into 2 sequences that each avoid 3- APs. Similarly, if α Z(3) + βZ(3) < 1
+then the integers cannot be partitioned into 2 sequences that eac h avoid 3-APs.
+References
+[1] Bill Correll and Randy W. Ho. A note on 3-free permutations. Integers, 17:A55, 2017.
+[2] J.A. Davis, R.C. Entringer, R.L. Graham, and G.J. Simmons. On perm utations containing no long
+arithmetic progressions. Acta Arithmetica, 34:81–90, 1977.
+[3] P. Erd˝ os and R. L. Graham. Old and new problems and results in combinatorial number the ory, vol-
+ume 28 of Monographies de L’Enseignement Math´ ematique. Universit´ e de Gen` eve, L’Enseignement
+Math´ ematique, Geneva, 1980.
+[4] Jesse Geneson. Forbidden arithmetic progressions in permutat ions of subsets of the integers. Dis-
+crete Mathematics, 342:1489–1491, 2019.
+[5] Marcel K. Goh and Rosie Y. Zhao. Arithmetic subsequences in a ra ndom ordering of an additive
+set. Integers Electronic Journal of Combinatorial Number Theor y, 21:A89, 2021.
+[6] Gyula K´ arolyi and Peter Komj´ ath. Well ordering groups with nomonotone arithmetic progressions.
+Order, 34:299–306, 2017.
+[7] Timothy D. LeSaulnier and Sujith Vijay. On permutations avoiding a rithmetic progressions. Dis-
+crete Mathematics, 311(2-3):205–207, 2011.
+[8] Melvyn B Nathanson. Permutations, periodicity, and chaos. Journal of Combinatorial Theory,
+Series A , 22(1):61–68, 1977.
+[9] Arun Sharma. Enumerating permutations that avoid three term arithmetic progressions. The
+Electronic Journal of Combinatorics , 16(1):R63, 2009.
+16

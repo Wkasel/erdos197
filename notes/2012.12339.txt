@@ -1,0 +1,1006 @@
+arXiv:2012.12339v3  [math.CO]  29 Sep 2021
+ARITHMETIC SUBSEQUENCES IN A RANDOM ORDERING
+OF AN ADDITIVE SET
+Marcel K. Goh
+Department of Mathematics and Statistics, McGill Universi ty
+Rosie Y. Zhao
+School of Computer Science, McGill University
+Abstract. For a ﬁnite set A of size n, an ordering is an injection from {1,2, . . . , n}
+to A. We present results concerning the asymptotic properties o f the length Ln of
+the longest arithmetic subsequence in a random ordering of a n additive set A. In
+the torsion-free case where A = [1, n]d ⊆ Zd, we prove that Ln ∼ 2d log n/ log log n.
+We show that the case A = Z/nZ behaves asymptotically like the torsion-free
+case with d = 1, and then use this fact to compute the expected length of th e
+longest arithmetic subsequence in a random ordering of an ar bitrary ﬁnite abelian
+group. We also prove that the number of orderings of Z/nZ without any arithmetic
+subsequence of length 3 is 2 n− 1 when n ≥ 2 is a power of 2, and zero otherwise.
+We conclude with a concrete application to elementary p-groups and a discussion
+of possible noncommutative generalisations.
+1. Introduction
+Arithmetic progressions are most often viewed as subsets of an ambient
+abelian group Z. Under this interpretation and with Z = Z, the group of
+integers, E. Szemer´ edi’s celebrated theorem states that a ny dense subset A of
+Z contains arbitrarily long arithmetic progressions [13]. T he story is diﬀerent
+when the elements of A are ordered in a sequence and we look for progressions in
+subsequences. For example, it is always possible to permute the ﬁrst n integers
+so that no subsequence of length 3 is an arithmetic progressi on [7]. Using this
+fact, J. A. Davis, R. C. Entringer, R. L. Graham, and G. J. Simm ons showed
+in 1977 that there are permutations of the positive integers that do not contain
+any arithmetic progressions of length 5 and permutations of Z avoiding 7-term
+arithmetic progressions [5]. Whether or not there exist per mutations of the
+positive integers not admitting any permutation of length 4 remains an open
+problem to this day, but J. Geneson has recently improved the result of Davis et
+al. for Z to 6-term arithmetic progressions [9].
+In an arbitrary abelian group Z, an entirely diﬀerent formulation of the
+problem studies bijections σ from Z to itself, declaring a k-term arithmetic
+progression to be a tuple ( z1,z 2,...,z k) ∈ Zk such that there exists some r
+for which zi+1 −zi = r for every 1 ≤ i < k. A permutation is said to destroy
+2 ARITHMETIC SUBSEQUENCES
+(3-term) arithmetic progressions if for every triple ( x,y,z ) ∈Z 3, either (x,y,z )
+is not a progression or
+(
+σ (x),σ (y),σ (z)
+)
+is not a progression. For Z inﬁnite,
+P. Hegarty showed that there exists a progression-destroyi ng permutation of Z
+if and only if Z/ Ω 2(Z) is equipotent to Z, where Ω 2(Z) is the subgroup of
+elements with even order [10]. When Z = (Z/p Z)d forp prime, N. D. Elkies and
+A. A. Swaminathan proved that there exist progression-dest roying permutations
+if and only if ( p,d ) /∈
+{
+(3, 1), (5, 1), (7, 1)
+}
+and p is odd [6].
+The above deﬁnition of a progression in a permutation is not t he one that
+we will study. Instead, we will order the elements of an additive set A from 1
+to |A| and count arithmetic progressions that appear in order in th e sequence.
+(Thus our deﬁnition is closer to the one used by Davis et al.; H egarty’s deﬁnition
+above is akin to requiring that the indices of an arithmetic s ubseqence form a
+progression as well.) Though it may be possible to ﬁnd perver se orderings of
+an additive set A that admit no arithmetic subsequences of a given length k,
+it is natural to suspect that as the size of A gets large, this becomes more and
+more unlikely in some formal sense. We can then replace a diﬃc ult extremal
+problem with a simpler probabilistic one. In this paper, we s how that when
+A = {1, 2,...,n } ⊆ Z, and the ordering is taken uniformly at random from
+Sn (the group of permutations of an n-element set), the length of the longest
+arithmetic progression converges to 2 logn/ log logn in probability. We also show
+analogous results when Z is a ﬁnite cyclic group and A is taken to be the whole
+group. In the case of an arbitrary ﬁnite abelian group Z, one cannot make any
+sensible asymptotic statements that depend only on the orde r of the group, but
+we will see that the counting methods used in the Zd and cyclic cases can be
+extended to give bounds on the expected number of arithmetic subsequences of
+a given length k in a random ordering of Z.
+Results of this type have appeared in the literature for prog ressions (view-
+ed as subsets) in a random set. In the case of a random subset of {1, 2,...,n },
+where each element is included independently with probabil ity 1/ 2, I. Benjamini,
+A. Yadin, and O. Zeitouni showed that the expected length of t he longest arith-
+metic progression is asymptotically 2 log n/ log 2, and that the asymptotics do
+not change if the integers are taken modulo n [2]. Returning to the setting of ran-
+dom sequences, A. Frieze proved in 1991 that the length of the longest monotone
+increasing subsequence of a random permutation of {1, 2,...,n } is concentrated
+around 2 √n, its asymptotic expected value [8].
+Deﬁnitions and notation. We will make frequent use of the following asymp-
+totic notation for nonnegative-valued functions f,g : N → R. We write f (n) =
+On
+(
+g(n)
+)
+if there exists a constant C such that f (n) ≤ C ·g(n) for all n ∈ N.
+When lim n→∞f (n)/g (n) = 0, we write f (n) = on
+(
+g(n)
+)
+, and if instead we
+have lim n→∞f (n)/g (n) = ∞, then we write f (n) = ωn
+(
+g(n)
+)
+. Lastly, if
+limn→∞f (n)/g (n) = 1, then we write f (n) ∼n g(n). In all cases, we may
+omit the subscript when the asymptotic variable is clear fro m context.
+In this paper, the notation [ a,b ] will indicate the discrete interval {n ∈
+Z : a ≤ n ≤ b}, unless otherwise stated. Formally, an additive set is a pair
+MARCEL K. GOH AND ROSIE Y. ZHAO 3
+(A,Z ), where (Z, +) is an abelian group with identity 0 and A ⊆Z is ﬁnite and
+nonempty. When the ambient group is evident from context, we will write A for
+(A,Z ). For n ∈ Z and z ∈Z, we let nz denote the iterated sum; so 2 z =z +z
+and −3z = −z −z −z. The order |z| of a group element z is the smallest positive
+integer n such that nz = 0. If no such integer exists, then we put |z| = ∞.
+A group all of whose elements have ﬁnite order is called a torsion group , while
+a group in which every non-identity element has inﬁnite orde r is a torsion-free
+group.
+For our purposes, an ordering σ of an additive set A is a bijection σ :
+[1, |A|] → A and we will regard such an ordering as a sequence by listing it s
+elements σ =
+(
+σ (1),σ (2),...,σ (|A|)
+)
+in order. More generally, a k-ordering of
+a set A, where k ≤ |A|, is an injection from [1 ,k ] → |A| and it can also be
+regarded as a sequence. We will say that a subsequence σi1,σ i2,...,σ ik with
+1 ≤i1 < i2 < · · ·< ik ≤ n is an arithmetic progression (or simply progression)
+of length k if for some a,r ∈Z,
+(σi1,σ i2,...,σ ik ) =
+(
+a,a +r,...,a + (k − 1)r
+)
+.
+The element a is called the base point andr is called the step or common diﬀer-
+ence. If r = 0, the progression is said to be trivial; because we will most often
+be looking at progressions in sequences without repetition , a progression will be
+assumed to be nontrivial unless otherwise stated.
+Let σ be an ordering of an additive set A of size n. We deﬁne L(σ ) to be
+the largest k for which there exists a subsequence of σ that is an arithmetic
+progression of length k. For example, if σ is the ordering (2 , 7, 1, 6, 3, 4, 5) of
+[1, 7], then L(σ ) = 4, due to the embedded 4-ordering (2 , 3, 4, 5). We can make
+σ random by ﬁxing an enumeration f : [1,n ] → A, selecting π uniformly at
+random from the group Sn, and then letting σ = f ◦π . This makes L(σ ) a
+random variable, which we will denote by Ln. We are interested in determining
+howLn grows as n gets large.
+2. Torsion-free groups
+By the structure theorem of ﬁnitely-generated abelian tors ion-free groups, every
+abelian torsion-free group is isomorphic to a lattice Zd for d ≥ 0 (when d = 0,
+this is the trivial group, so we will assume that d ≥ 1 for the rest of this section).
+A natural subset of Zd to consider is A = [1,n ]d. We ﬁrst prove a lemma for the
+simplest case d = 1, then generalise the result to any value of d.
+Lemma 1. For 1 ≤ k ≤ n, let Pnk be the number of k-orderings of [1,n ] that
+are arithmetic progressions, i.e., of the form
+(
+a,a +r,a + 2r,...,a + (k − 1)r
+)
+for some a,r ∈ Z. We have Pn1 =n and
+Pnk = 2n
+⌊n − 1
+k − 1
+⌋
+− (k − 1)
+( ⌊ n − 1
+k − 1
+⌋ 2
++
+⌊n − 1
+k − 1
+⌋ )
+()
+4 ARITHMETIC SUBSEQUENCES
+for 2 ≤k ≤n, as well as the bounds
+(n −k + 2)(n − 1)
+k − 1 −k + 1 ≤Pnk ≤ (n −k + 2)(n − 1)
+k − 1 +k − 3. ()
+Proof. The case k = 1 counts the n one-element sequences ( i) for 1 ≤ i ≤ n.
+Let 2 ≤ k ≤ n; here the chief constraint is that both a and a + (k − 1)r must
+belong to [1 ,n ]. We sum over the possible values of the step r. It must belong
+to one of the two discrete intervals ±
+[
+1,
+(
+(n − 1)/ (k − 1)
+)]
+, and the number of
+valid choices for a decreases as |r| increases. If r is positive, then it is easy to
+see that 1 ≤a ≤n − (k − 1)r by the above constraint. Similarly, if r is negative,
+then n + (k − 1)r + 1 ≤ a ≤ n. In general, with n, k, and r ﬁxed, the number
+of possibilities for a is n − (k − 1)|r|. Exploiting the symmetry of the two cases,
+we compute
+Pnk =
+⌊(n−1)/ (k−1)⌋∑
+r=1
+2
+(
+n − (k − 1)r
+)
+= 2n
+⌊n − 1
+k − 1
+⌋
+− 2(k − 1)
+⌊(n−1)/ (k−1)⌋∑
+r=1
+r,
+()
+yielding Equation (). Letting {x} denote the fractional part of x and using the
+identity ⌊x⌋ =x − {x}, from Equation ( ) we obtain
+Pnk = 2n
+( n − 1
+k − 1 −
+{ n − 1
+k − 1
+} )
+− (k − 1)
+(( n − 1
+k − 1 −
+{ n − 1
+k − 1
+} ) 2
++ n − 1
+k − 1 −
+{ n − 1
+k − 1
+} )
+=
+( n − 1
+k − 1
+) (
+2n − (n − 1) − (k − 1)
+)
+−
+(
+−2n + 2(n − 1) + (k − 1)
+) { n − 1
+k − 1
+}
+− (k − 1)
+{ n − 1
+k − 1
+} 2
+= (n −k + 2)(n − 1)
+k − 1 + (k − 3)
+{ n − 1
+k − 1
+}
+− (k − 1)
+{ n − 1
+k − 1
+} 2
+,
+()
+which, since both {x} and {x}2 are nonnegative and less than 1 for any x, proves
+Equation ().
+Lemma 2. Let Pnk be the number of k-orderings of [1,n ] that are an arith-
+metic progression. The number of k-orderings of [1,n ]d that form an arithmetic
+progression is
+Pnkd = (Pnk +n)d −nd. ()
+Proof. Let a,r ∈ [1,n ]d. Writing a = (a1,a 2,...,a d) and r = (r1,r 2,...,r d),
+the arithmetic progression
+(
+a,a +r,a + 2r,...,a + (k − 1)r
+)
+MARCEL K. GOH AND ROSIE Y. ZHAO 5
+has entries in [1 ,n ]d if and only if the projection onto the jth coordinate
+(
+aj,a j +rj,a j + 2rj,...,a j + (k − 1)rj
+)
+is an arithmetic progression and has entries in [1 ,n ]d for every 1 ≤ j ≤ d. All
+but one of the projections may be a trivial progression, with r = 0. We did not
+count the trivial progressions in Lemma 1 because we were cou nting sequences
+without repetition, so by including the n trivial progressions, the number of valid
+pairs (aj,r j) increases to Pnk +n for any j. Forming the product over all j, we
+arrive at (Pnk +n)d, but we also counted nd undesirable trivial progressions in
+Zd. Subtracting them proves the lemma.
+We were quite careful with the calculations in these lemmas, but to prove
+our ﬁrst main result, we will only need the fact that Pnkd ∼nn2d/ (k − 1)d. The
+bulk of the work is done in the next lemma, which has been formu lated more
+generally so that it may be reused in later sections. We will r equire the gamma
+function Γ(z) =
+∫ ∞
+0 xz−1e−xdx, which, in this form, is deﬁned for all complex
+numbers with ℜz >0 and for all nonnegative integers, Γ( n + 1) = n! (a classic
+treatment can be found in [15]). Our main result relies on the fact that for any
+f : N → R, there exists a function g : R → R, analytic on all of R, such that
+g(n) = f (n) for all n ∈ N. (This is a special case of a result of basic complex
+analysis; see for example, [1], page 197.)
+Lemma 3. Let (An,Z n) be a family of nonempty additive sets indexed by the
+positive integers and let Pn(k) denote the number of k-orderings of An that are
+an arithmetic progression. Suppose that
+i) for any ﬁxed k ∈ N, Pn(k + 1)/P n(k) → 1 as n → ∞; and
+ii) there exists a function f : N → R such that for all n, Pn(k) < k! for all
+k >f(n) and for any O
+(
+f (n)
+)
+function g(n), Pn
+(
+g(n)
+)
+→ ∞ as n → ∞.
+Let P ∗
+n(x) be the analytic continuation of Pn to all of R and let Ln denote
+the length of the longest arithmetic subsequence in an order ing of An chosen
+uniformly at random. There exists a function ψ : N → R that is O
+(
+f (n)
+)
+and
+ω (1) such that for all positive integers n,
+P ∗
+n (ψ (n))
+Γ(ψ (n) + 1) = 1 ( )
+and P{ψ (n) − 6 ≤Ln<ψ (n) + 1} → 1 as n → ∞.
+Proof. We ﬁrst prove the existence of the function ψ . Let n ∈ N and note ﬁrst
+thatP ∗
+n (1) = |An|, since this is the number of distinct base points. If |An| = 1, we
+setψ (n) = 1. Otherwise, we may consider the function hn(x) = P ∗
+n (x)−Γ(x+1),
+which is analytic on the real interval [1 , ∞) and positive at x = 1, since in this
+case hn(1) = |An| > 1. By hypothesis (ii), whenever k > f(n) is an integer we
+must have P ∗
+n (k) < Γ(k + 1). hn
+(
+f (n) + 1
+)
+< 0, so by the intermediate value
+theorem, there exists a point 1 < x∗ < f(n) + 1 for which hn(x∗) = 0 and we
+6 ARITHMETIC SUBSEQUENCES
+can set ψ (n) = x∗ (if there is more than one choice for x∗, we pick the smallest
+one). It is clear from this construction that ψ (n) must be O
+(
+f (n)
+)
+, and ψ (n)
+must also be ω (1); otherwise setting g =ψ violates hypothesis (ii) by continuity
+of the function Γ( x + 1).
+In the random ordering of An, there are
+( |An|
+k
+)
+subsequences of length k.
+Each of the k!
+( |An|
+k
+)
+= |An|!/ (|An|−k)! orderings of length k has an equal chance
+of appearing as a subsequence of the random ordering, so the p robability of a
+given subsequence of length k being an arithmetic progression is Pn(k)(|An| −
+k)!/ |An|!. Let C(k) be the set of all subsequences of length k in the original
+random sequence; we have |C(k)| =
+( |An|
+k
+)
+. For a subsequence S ∈ C (k), let BS
+be the event that S is a k-term arithmetic progression. Letting N (n,k ) denote
+the number of k-term arithmetic progressions in the ordering of An, we have, by
+linearity of expectation,
+E
+{
+N (n,k )
+}
+= E
+{ ∑
+S∈C(k)
+1BS
+}
+=
+∑
+S∈C(k)
+P{BS}
+=
+( |An|
+k
+) Pn(k)(|An| −k)!
+|An|! = Pn(k)
+k! .
+()
+By hypothesis (i), we see that
+E
+{
+N (n,k + 1)
+}
+E
+{
+N (n,k )
+} = Pn(k + 1)
+(k + 1)! · k!
+Pn(k) ∼n
+1
+k + 1 ()
+and hence the expected value of N (n,k ) decreases with k. We constructed ψ (n)
+so that E
+{
+N (n,ψ (n))} = 1, so a union bound now gives
+P{Ln ≥ψ (n) + 1} ≤ E
+{
+N (n,ψ (n) + 1)
+}
+= E
+{
+N (n,ψ (n) + 1)
+}
+E
+{
+N (n,ψ (n))
+}
+∼n
+1
+ψ (n) + 1,
+()
+which goes to zero as n → ∞ since ψ (n) → ∞.
+On the other hand, we have
+E
+{
+N (n,ψ (n))
+}
+E
+{
+N (n,ψ (n) − 1
+} ∼n
+1
+ψ (n), ()
+which implies that E
+{
+N (n,ψ (n) − 1)
+}
+∼n ψ (n). Continuing in this manner, we
+see that E
+{
+N (n,ψ (n) −s)
+}
+∼n ψ (n)s and limn→∞ E
+{
+N (n,ψ (n) −s)
+}
+= ∞ for
+all integers 1 ≤s<ψ (n). To turn this into a lower bound on Ln, one must also
+analyse the behaviour of the second moment
+E
+{
+N (n,k )2}
+= E
+{ ( ∑
+S∈C(k)
+1BS
+)( ∑
+T ∈C(k)
+1BT
+) }
+. ()
+MARCEL K. GOH AND ROSIE Y. ZHAO 7
+For any S in C(k) and 0 ≤ m ≤ k, let CSm(k) ⊆ C (k) denote the set of all
+subsequencesT of length k that have exactly m elements in common with S and
+that are themselves progressions (i.e., such that BT holds). Then, expanding the
+second moment to
+E
+{
+N (n,k )2}
+= E
+{ ∑
+S∈C(k)
+1BS
+k∑
+m=0
+⏐
+⏐CSm (k)
+⏐
+⏐
+}
+, ()
+we approach the inner summation by considering each set CSm(k) separately.
+Assuming both S and T are k-term arithmetic progressions, for 1 ≤m ≤k, we
+note that if T andS both contain m elements, then those m elements must form
+a subprogression of both T and S. There are no more than k2 ways to form a
+subprogression of length m in S, since there are k choices for the ﬁrst element
+of the subprogression and ≤k choices for the second element; these two choices
+determine the subprogression entirely. Now, given a speciﬁ c subprogression R of
+length m, we count the number of possibilities for T . The ﬁrst element of R is
+thejth element of T for some 1 ≤j ≤k, so there are no more than k possibilities
+for its position in T . There are also ≤ k choices for the second element of R,
+and after this, T is completely deﬁned. Thus |CSm(k)| ≤ k4 for all 1 ≤m ≤k.
+(This is a substantial overcount for m> 1; when m =k there is in fact only one
+possibility for T .) Next, we consider the set CS0(k) of all sequences that have no
+elements in common with S, which has size
+( |An|−k
+k
+)
+. Each of these subsequences
+is a progression with probability no more than
+Pn(k)
+( |An|−k
+k
+)
+k!
+= Pn(k)(|An| − 2k)!
+(|An| −k)! , ()
+so the expected number of progressions among these subseque nces is at most
+Pn(k)/k !. Putting these facts together, we ﬁnd that
+E
+{
+N (n,k )2}
+≤ Pn(k)
+k!
+( Pn(k)
+k! +
+k∑
+m=1
+k4
+)
+= Pn(k)
+k!
+( Pn(k)
+k! +k5
+)
+, ()
+meaning that V
+{
+N (n,k )
+}
+≤ Pn(k)k5/k !. We have, by the Chung-Erd˝ os in-
+equality [4],
+P{Ln <k } = P
+{
+N (n,k ) = 0
+}
+≤ V
+{
+N (n,k )
+}
+E
+{
+N (n,k )
+} 2 = k5
+Pn(k)/k !.
+Plugging in k =ψ (n) − 6, we have
+P{Ln <ψ (n) − 6} ≤ V
+{
+N (n,ψ (n) − 6)
+}
+E
+{
+N (n,ψ (n) − 6)
+} 2 ∼n
+(
+ψ (n) − 6
+) 5
+ψ (n)6 → 0.
+8 ARITHMETIC SUBSEQUENCES
+We have shown that P
+{
+ψ (n) − 6 ≤ Ln < ψ(n) + 1
+}
+→ 1, which is what we
+wanted.
+Note that this lemma does not use the commutativity of the gro ups Zn;
+in the ﬁnal section of this paper we brieﬂy discuss possible n oncommutative
+generalisations. Our ﬁrst main theorem is a direct conseque nce of the previous
+lemma.
+Theorem 4. For positive integers n andd, let Ln denote the longest arithmetic
+subsequence in an ordering of [1,n ]d, chosen uniformly at random. There exists
+a function ψ (n,d ) with ψ (n,d ) ∼n 2d logn/ log logn such that the probability
+that ψ (n,d ) − 6 ≤Ln<ψ (n,d ) + 1 tends to 1 as n approaches inﬁnity.
+Proof. Set Zn = Zd for all n, An = [1 ,n ]d and let P ∗
+n (k) be the analytic
+continuation of Pnkd as deﬁned in Lemma 2. A simple computation shows that
+for ﬁxed k and d, P(n+1)kd/P nkd → 1 as n → ∞ , and setting f (n) = n, we
+havePnkd = 0 < k! for all k > f(n). By our earlier observation that Pnkd ∼n
+n2d/ (k − 1)d, substituting any O(n) function for k we have limn→∞Pnkd = ∞.
+Thus we may apply Lemma 3 to obtain a function ψ (n,d ) satisfying
+Pn(ψ (n,d ))d
+ψ (n,d )! = 1,
+for all n ∈ N. The fact that Pnkd ∼n n2d/ (k − 1)d implies that ψ (n,d )! ∼n
+n2d/
+(
+ψ (n,d ) − 1
+) d
+, and Stirling’s formula gives ψ (n,d ) ∼n 2d logn/ log logn.
+The rest of the theorem follows from the previous lemma, and a fortiori we have
+Ln ∼n 2d logn/ log logn.
+Because the set of arithmetic progressions is invariant und er translation and
+dilation, as a corollary in the integer case we can replace [1 ,n ] with the entries
+of any arithmetic progression of length n.
+Corollary 5. Let S be an arithmetic progression of length n in Z, i.e., S is of
+the form
+S =
+(
+a,a +r,a + 2r,...,a + (n − 1)r
+)
+for some a,r ∈ Z, r ̸= 0. Randomly permute the entries of S and let Ln be the
+length of the longest arithmetic progression in the shuﬄed s equence. If ψ is the
+function given by Theorem 4, then ψ (n) − 6 ≤Ln < ψ(n) + 1 with probability
+tending to 1 as the length n of the arithmetic progression tends to inﬁnity.
+Counting exact values. For d = 1 and small values of n, one can easily
+generate the exact distribution of Ln using a computer. Let fn(k) denote the
+number of permutations of [1,n ] whose longest embedded arithmetic progression
+has length k; so P{Ln = k} = fn(k)/n !. Table 1 contains the values of fn(k)
+for n ≤ 10. No general formula for fn(k) has been found, but the case k = 2
+(these are known as 3 -free permutations) has received a fair amount of attention
+in the literature. A. Sharma found the explicit upper bound fn(2) ≤ (2. 7)n/ 21,
+MARCEL K. GOH AND ROSIE Y. ZHAO 9
+Table 1
+PERMUTATIONS OF [1 , n] WHOSE LONGEST PROGRESSION HAS LENGTH k
+n f n(1) fn(2) fn(3) fn(4) fn(5) fn(6) fn(7) fn(8) fn(9) fn(10)
+1 1
+2 0 2
+3 0 4 2
+4 0 10 12 2
+5 0 20 82 16 2
+6 0 48 516 134 20 2
+7 0 104 3232 1480 198 24 2
+8 0 282 21984 15702 2048 274 28 2
+9 0 496 168368 162368 28048 3204 362 32 2
+10 0 1066 1306404 1902496 374194 39420 4720 462 36 2
+valid for n ≥ 11, as well as the asymptotic result fn(2) = ωn(2nnk), which
+holds for any choice of k [12]. The lower bound was improved to (1 / 2)cn for
+n ≥ 8, where c = 2132 1/ 10 ≈ 2. 152, by T. D. LeSaulnier and S. Vijay [11].
+More recently, B. Correll, Jr. and R. W. Ho presented an eﬃcie nt dynamic
+programming algorithm to count 3-free permutations and use d these results to
+inductively reﬁne previously-known bounds [3].
+3. Finite additive groups
+The aim of this section is to extend our result for torsion-fr ee groups to ﬁnite
+abelian groups. Thus, for a ﬁnite abelian group Z, we are now studying the case
+A = Z. The extension proceeds smoothly in the case of cyclic group s, which
+in turn provides some information for arbitrary ﬁnite addit ive groups via the
+structure theorem.
+Cyclic groups. We shall prove that the case in which Z = Z/n Z and A = Z
+has the same asymptotics as the case A = [1,n ] ⊆ Z. Before we proceed, we
+recall that Euler’s totient function ϕ (n) counts the numbers coprime to and less
+than a given n, that is,
+ϕ (n) =
+⏐
+⏐{m ∈ [1,n ] : gcd(m,n ) = 1 }
+⏐
+⏐.
+A basic result of group theory states that for 1 ≤d<n , the number of elements
+of order d in Z/n Z is ϕ (d). We will write d\n to indicate that d divides n. As
+before, we count progressions in k-orderings of A, starting ﬁrst with the case
+that Z = Z/n Z, the cyclic group of order n.
+Lemma 6. Let Qnk denote the number of k-orderings of Z/n Z that form an
+arithmetic progression. For every n, Qn1 = n and Qnk = 0 for all k > n; for
+2 ≤k ≤n, we have
+Qnk =n
+(
+n −
+k−1∑
+j=1
+1[j\n]ϕ (j)
+)
+. ()
+10 ARITHMETIC SUBSEQUENCES
+In particular, Qnn =nϕ (n) and we also have the bounds
+n2 − 3
+π 2n(k − 1)2 −ok(nk2) ≤Qnk ≤n(n − 1). ()
+If n is prime, then Qnk =n(n − 1) for all k.
+Proof. The cases k = 1 and k > n are obvious, so let 2 ≤ k ≤ n. By the
+n-fold symmetry of Z/n Z, it suﬃces to count the number of k-term arithmetic
+progressions with base point 0, and then multiply the result by n. For any
+r ∈ Z/n Z \ {0}, the sequence
+(
+0,r, 2r,..., (k − 1)r
+)
+is a valid k-ordering if and only if the element 0 does not appear twice. T his is
+equivalent to the condition that the order of r be at least k. Since the order of
+a group element must divide n, to calculate the number of possible steps r we
+start with n and subtract the number of elements of order j for 1 ≤j ≤k where
+j\n; this equals ϕ (j) for all j <n. Multiplying this by the n possible base points
+yields the formula Equation ( ).
+The fact that Qnn =nϕ (n) follows from the observation that the summation
+equalsn −ϕ (n) when k =n. The upper bound in Equation ( ) is clear because
+the summation is at least 1 (for j = 1); if n is prime, then this bound is met
+with equality. To prove the lower bound, we use the asymptoti c formula
+k∑
+j=1
+ϕ (k) = 3
+π 2k2 +Ok
+(
+k(logk)2/ 3(log logk)2/ 3)
+, ()
+whose proof can be found in [14]. It yields
+Qnk =n
+(
+n −
+k−1∑
+j=1
+1[j\n]ϕ (j)
+)
+≥n
+(
+n −
+k−1∑
+j=1
+ϕ (j)
+)
+=n2 − 3
+π 2n(k − 1)2 −ok(nk2).
+()
+Now we can compute the length of the longest arithmetic subse quence in an
+ordering of a cyclic group, which is similar to the case d = 1 in Theorem 4.
+Theorem 7. For a positive integer n, let Ln denote the length of the longest
+arithmetic subsequence of an ordering of Z/n Z, chosen uniformly at random.
+There exists a function χ (n) withχ (n) ∼n 2 logn/ log logn such that χ (n) − 6 ≤
+Ln<χ (n) + 1 with probability tending to 1 as n tends to inﬁnity.
+Proof. Let Qnk be as in Lemma 6 and let Q∗
+n(x) be an analytic function on all
+of R such that Q∗
+n(k) = Qnk for all positive integers k. For a ﬁxed k, we have
+(n + 1)2 −Ok
+(
+(n + 1)k2)
+n(n − 1) ≤ Q(n+1)k
+Qnk
+≤ (n + 1)n
+n2 −Ok(nk2). ()
+MARCEL K. GOH AND ROSIE Y. ZHAO 11
+Takingn to inﬁnity in both bounds tells us that Q(n+1)k/Q nk → 1. Let f (n) =
+n1/ 3 +C, where C is chosen such that f (n)!>n (n − 1) for all n ∈ N. So Qnk ≤
+n(n − 1)<f (n)!<k ! for any k >f(n) and letting g(n) be any O(n1/ 3) function,
+we have, by the previous lemma, Qng(n) ≥n2 −O(ng(n)2) = n2 −o(n2) → ∞ ,
+so we can apply Lemma 3 with An =Zn = Z/n Z for all n to obtain a function
+χ satisfying
+Q∗
+n(χ (n))
+Γ(χ (n) + 1) = 1.
+Sinceχ (n)! = Qnχ (n) =n2 −o(n2) for all n ∈ N, another application of Stirling’s
+formula gives χ (n) ∼n 2 logn/ log logn, and we have χ (n) − 6 ≤Ln <χ (n) + 1
+with probability tending to 1.
+Note that although the function ψ (n, 1) obtained by applying Theorem 4 to
+d = 1 has the same asymptotics as χ (n) from Theorem 7, we have ψ (n, 1)<χ (n).
+This follows from the functional equations deﬁning ψ andχ and also makes sense
+intuitively, since it is easier, in some sense, to form a prog ression if one is allowed
+to loop around the edge of the interval, which is possible in t he cyclic case.
+As a concrete example, (0 , 2, 6, 1, 3, 5, 4) has the 4-term arithmetic subsequence
+(0, 6, 5, 4) when the sequence is regarded as an ordering of the group Z/ 7Z (the
+base point is 0 and the step size is 6), but it has no arithmetic subsequence of
+length 4 when regarded simply as an ordering of the discrete i nterval [0, 6].
+Exact values. Table 2 contains exact values of gn(k) = n! P{Ln =k} for small
+n, and comparing Tables 1 and 2, it is clear that Ln is expected to be longer
+whenAn = Z/n Z than when An = [1,n ]. A closer look at Table 2 reveals certain
+curiosities not present in the torsion-free case. Firstly, the sequence E{Ln} is
+not strictly increasing; for instance, we have E{L7} = 4. 25 and E{L8} ≈ 4. 136.
+The same can be said for L11 and L12, and this phenomenon can be attributed
+to the fact that Qnk is greater, in proportion to n, when n is prime. Next, we
+see that P{Ln =n} =nϕ (n), which follows directly from Lemma 6. Lastly, we
+note that an ordering of Z/n Z can be 3-free only if n is a power of 2. In fact, we
+can derive a simple explicit formula for the number of 3-free orderings of Z/n Z.
+Theorem 8. Let n ≥ 1 be an integer. The number gn(2) of orderings of Z/n Z
+that do not contain any arithmetic subsequence of length 3 eq uals 2n−1 ifn = 2m
+for some m ≥ 1, and is zero otherwise. An ordering of Z/ 2mZ that contains no
+progression of length 3 consists of 2m−1 elements of the same parity, followed by
+the 2m−1 elements of the opposite parity.
+Proof. In this proof all arithmetic operations are taken modulo n. Obviously
+g1(2) = 0, so we begin by supposing that n = p is an odd prime and ﬁxing an
+arbitrary ordering of Z/p Z. Let z1 and z2 denote the ﬁrst two elements of the
+sequence and consider r =z2 −z1. Since p is odd, z2 +r ̸=z1 and must therefore
+come later in the sequence. So there is an embedded progressi on of length 3.
+More generally, suppose that n ≥ 3 is not a power of 2 and let p be an odd prime
+that divides n. Note that the elements 0 ,n/p, 2n/p,..., (p − 1)n/p must appear
+12 ARITHMETIC SUBSEQUENCES
+Table 2
+PERMUTATIONS OF Z/nZ WHOSE LONGEST PROGRESSION HAS LENGTH k
+n g n(1) gn(2) gn(3) gn(4) gn(5) gn(6) gn(7) gn(8) gn(9) gn(10)
+1 1
+2 0 2
+3 0 0 6
+4 0 8 8 8
+5 0 0 40 60 20
+6 0 0 468 192 48 12
+7 0 0 462 3150 1176 210 42
+8 0 128 4192 27872 6592 1312 192 32
+9 0 0 57402 182790 99630 19656 2970 378 54
+10 0 0 67440 1795320 1594640 146200 22000 2840 320 40
+in some order in the sequence, and this sequence contains a 3- term progression
+if and only if the same ordering, with each element divided by n/p , is a 3-term
+progression. But this is an ordering of 0 , 1, 2,...,p − 1, and we already showed
+that every ordering of Z/p Z contains a 3-term arithmetic progression when p is
+an odd prime.
+Now we handle the case in which n = 2m, by induction on m. For the case
+m = 1, both orderings of Z/ 2Z are 3-free, and both can be split into an odd
+half and an even half. Now suppose that there are 2 n/ 2−1 orderings of Z/ (n/ 2)Z
+that are 3-free. For any pair ( S,T ) of such orderings, with S = (s1,s 2,...,s n/ 2)
+and T = (t1,t 2,...,t n/ 2), note that
+(2s1, 2s2,..., 2sn/ 2, 2t1 + 1, 2t2 + 1,..., 2t1 + 1)
+and
+(2t1 + 1, 2t2 + 1,..., 2tn/ 2 + 1, 2s1, 2s2,..., 2sn/ 2)
+are two orderings of Z/n Z that are 3-free and uniquely determined by the pair
+(S,T ). This means there are at least 2 · (2n/ 2−1)2 = 2n−1 orderings of Z/n Z
+with no 3-term arithmetic progressions. To see that we have, in fact, counted all
+of them, let an ordering of Z/n Z be given that is 3-free; we aim to show that it
+is of one of the two forms prescribed above. Let S be the subsequence of all even
+elements, and let T be the subsequence of all odd elements. Note that neither of
+these two subsequences can contain a progression of length 3 , so these sequences
+S and T were included in the count above. The last thing to show is tha t all
+the even elements are on one side of the ordering and all of the odd elements
+are on the other side. To do this, ﬁx an odd element z and consider z + 1 and
+z − 1. These elements are distinct (since n is a power of 2) and both even, but if
+one is to the left of z and one is to the right, then a 3-term progression appears.
+So both z + 1 and z − 1 are on the same side of z (without loss of generality,
+assume it is the left side). Next, consider z + 3 and z − 3. For the same reason
+MARCEL K. GOH AND ROSIE Y. ZHAO 13
+as before, they must both be on the same side of z, but if they are to the right
+ofz, then we would have one of the arithmetic subsequences ( z − 1,z + 1,z + 3)
+or (z + 1,z − 1,z − 3), depending on the order of z + 1 and z − 1. An analogous
+argument applies if z + 1 and z − 1 had been to the right of z. So z + 3 and
+z − 3 are on the same side of z as z + 1 and z − 1. Continuing in this manner
+for z ± 5,z ± 7,... , we ﬁnd that all of the even elements are on the same side
+of all of the odd elements, meaning that the sequences of the f orm given in the
+theorem statement are the only 3-free orderings. The induct ion is complete and
+the theorem is proved.
+Arbitrary ﬁnite abelian groups. Because the groups of order n may have
+wildly diﬀerent structures, we cannot hope to give a sensible asymptotic result
+that is valid for all ﬁnite additive groups. For example, bot h Z/ 2dZ and (Z/ 2Z)d
+have order 2d, but Theorem 7 tells us that a random ordering of the ﬁrst grou p
+will have an arithmetic subsequence of length asymptotic to 2 log(2d)/ log log(2d)
+with probability tending to 1, while an ordering of the secon d group cannot have
+a 3-term arithmetic subsequence. Every ﬁnite abelian group Z admits a unique
+invariant factor decomposition
+Z = Z/n 1Z × Z/n 2Z × · · · × Z/n dZ
+wheren1\n2,n2\n3, and so on (the factors increase in size from left to right). I n
+other words, Z/n dZ is the largest cyclic subgroup of Z andZ cannot be written
+as a product of fewer than d cyclic groups. Of course, we have n =n1n2 · · ·nd.
+With this decomposition, we can generalise the bounds obtai ned in Lemma 6 to
+all ﬁnite additive groups.
+Lemma 9. Let Z be a group of order n whose invariant factor decomposition
+is
+Z = Z/n 1Z × Z/n 2Z × · · · × Z/n dZ.
+Let Qnk be as in Lemma 6 and for 2 ≤ k ≤ nd, let Qk(Z) be the number of
+k-orderings of Z that are an arithmetic progression; so Qnk =Qk(Z/n Z). Let j
+be the smallest index for which k ≤nj. Then
+n
+d∏
+i=j
+ni −Ok(nk2d) ≤Qk(Z) ≤n
+d∏
+i=j
+ni −n. ()
+Proof. For the upper bound, we cannot simply take a product over the Qnik,
+because this does not count progressions whose projection o nto some factor is
+not a valid k-ordering. For example,
+(
+(0, 4), (2, 6), (0, 0)
+)
+is a valid progression
+in Z/ 4Z × Z/ 8Z, but its projection onto Z/ 4Z is (0, 2, 0), which is not a valid
+3-ordering. Instead, we form the product of trivial progres sions in the ﬁrst j − 1
+factors with the number ni2 of starting pairs in the last d −j + 1 factors, and
+then subtract the n progressions that are trivial in Z, obtaining
+Qnk ≤
+( j−1∏
+i=1
+ni
+)( d∏
+i=j
+ni
+2
+)
+−n =n
+d∏
+i=j
+ni −n. ()
+14 ARITHMETIC SUBSEQUENCES
+As for the lower bound, we can undercount the number of progre ssions in Z by
+counting the product of trivial progressions in the ﬁrst j − 1 factors and valid
+nontrivial progressions in the remaining d −j + 1 factors. This gives us
+Qk(Z) ≥
+( j−1∏
+i=1
+ni
+)( d∏
+i=j
+Qnik
+)
+≥
+( j−1∏
+i=1
+ni
+)( d∏
+i=j
+(
+ni
+2 − 3ni(k − 1)2/π 2 −ok(nik2)
+) )
+≥n
+d∏
+i=j
+ni −Ok(nk2d).
+()
+Thus for a ﬁnite abelian group Z and a given k, one can compute the de-
+composition of Z intod invariant factors Z/n 1Z,..., Z/n dZ and determine the
+smallest index j for which k ≤ nj. Then if Nk denotes the number of k-term
+arithmetic progressions that appear as subsequences in a ra ndom ordering of Z,
+we have
+nnjnj+1 · · ·nd −n
+k! −Ok(nk2d) ≤ E{Nk} ≤ nnjnj+1 · · ·nd −n
+k! . ()
+This fact can be used to construct sequences of abelian group sZn that can
+be fed into Lemma 3 to obtain asymptotic information about th e length of the
+maximal arithmetic subsequence.
+Elementary p-groups. We end this section by outlining an an explicit example
+in which n1 =n2 = · · · =nd =p, a prime number. An elementary p-group is an
+abelian group isomorphic to ( Z/p Z)d for some prime p and integer d. Thus we
+have a sequence of additive groups Zp = (Z/p Z)d indexed by the primes. Since
+Qpk =p(p − 1) for every 2 ≤k ≤p, by a calculation similar to that used in the
+proof of Lemma 2, the number of k-orderings of ( Z/p Z)d that are an arithmetic
+progression is (Qpk +p)d −pd =p2d −pd. Letting τ(p,d ) be the function from
+R to R satisfying
+p2d −pd
+Γ(τ(p,d ) + 1) = 1, ()
+we have τ(p,d ) ∼p 2d logp/ log logp and Lemma 3 tells us that τ(p,d ) − 6 ≤
+Lnτ(p,d ) + 1 with probability tending to one as p marches towards inﬁnity along
+the primes. (Strictly speaking, one would actually have to m odify the statement
+and hypotheses of Lemma 3 to allow for sequences of groups An indexed by any
+monotone increasing sequence of positive integers.) The sa me asymptotic result
+holds if the primes p are replaced by arbitrary integers n, but in this case the
+function τ(n,d ) is not monotone with respect to n. So although we still have
+τ(n,d ) ∼n 2d logn/ log logn, the values of τ(n,d ) will ﬂuctuate as n approaches
+inﬁnity, attaining local maxima at prime values of n.
+MARCEL K. GOH AND ROSIE Y. ZHAO 15
+4. Further work
+We will now discuss some related problems that have yet to be r esolved, as well
+as possible noncommutative generalisations. As mentioned in the introduction,
+it is still unknown whether permutations of the positive int egers must necessarily
+contain arithmetic progressions of length 4. Furthermore, the functions fn(k)
+and gn(k) remain largely unstudied, except in the case k = 2. One might study
+the number of ( k + 1)-free orderings of [1 ,n ] or Z/n Z, which corresponds to the
+partial sums
+k∑
+j=1
+fn(j) and
+k∑
+j=1
+gn(j),
+respectively.
+We end oﬀ by brieﬂy considering what happens when we remove th e condi-
+tion that the underlying group be abelian. We will denote a no n-abelian group by
+G and use multiplicative notation; thus for r ∈G we have, for instance, r2 =rr
+and r−3 = r−1r−1r−1. A left progression is a sequence ( a,ra,r 2a,...,r k−1a),
+wherea,r ∈G andk ∈ Z. With the same deﬁnitions for a,r, and k, a right pro-
+gression is a sequence (a,ar,ar 2,...,ar k−1). Note that the length of the longest
+left progression in a sequence is not the same, in general, as the length of the
+longest right progression. For example, in the free group F2, with generators
+a and b, the sequence ( a,ba,b 2a) contains a left progression of length 3 but no
+right progression of length 3.
+However, in the case that A ⊆G is closed under inverses, the number of k-
+orderings of A that are left progressions is the same as the number of k-orderings
+of A that are right progressions, because if S(A,k ) is the set of all k-orderings
+of A, there is a bijection f : S(A,k ) → S(A,k ) that maps ( s1,s 2,...,s k) to
+(s1−1,s 2−1,...,s k −1), and a sequence T ∈ S(A,k ) is a left progression if and
+only if f (T ) is a right progression. In particular, if every k-ordering of A is
+just as likely to arise as a subsequence of some ordering of A, then the expected
+number of left progressions of length k in a random ordering is the same as the
+expected number of right progressions.
+It would be interesting to compute asymptotic formulas for Ln, akin to the
+ones we found for Zd, Z/n Z, and ( Z/p Z)d, for families of non-abelian groups,
+such as the free groups Fd, the symmetric groups Sn, or the dihedral groups Dn.
+In an inﬁnite group such as Fd, one must select a ﬁnite subset A. A somewhat
+natural choice for the free group is the set of all reduced wor ds with length at
+mostn, but perhaps a more faithful analogue of [1 ,n ]d ⊆ Zd is the set of all words
+w ∈Fd such that f (w) ∈ [−n,n ]d wheref is the canonical homomorphism from
+Fd toFd/ [Fd,F d] ∼
+= Zd. In any case, both of these subsets of Fd are closed under
+inverses, so it suﬃces to study, say, the longest right progr ession. The second
+moment method we used in Lemma 3 did not rely on the group being abelian,
+but we anticipate that more sophisticated counting methods will be required to
+count the expected number of progressions in subsequences o f orderings when
+dealing with nonabelian groups.
+16 ARITHMETIC SUBSEQUENCES
+Acknowledgements
+The authors are indebted to Luc Devroye for his numerous corr ections and in-
+sightful comments. We would also like to thank our homies Jay a Bonelli, Anna
+Brandenberger, Joseph Dahdah, Jad Hamdan, Denali Relles, a nd Jonah Saks for
+their encouragement and technical feedback. Lastly, we tha nk the anonymous
+referee for spotting some errors in the preliminary draft, a nd for suggesting many
+improvements to the readablity of the paper and the clarity o f the proofs. Both
+authors are supported by the Natural Sciences and Engineeri ng Research Council
+of Canada.
+References
+[1] Lars Valerian Ahlfors, Complex Analysis (New York: McGraw-Hill, 1953).
+[2] Itai Benjamini, Ariel Yadin, and Ofer Zeitouni, “Maxima l arithmetic pro-
+gressions in random subsets,” Electronic Communications in Probabil-
+ity 12 (2007), 365–376.
+[3] Bill Correll, Jr. and Randy Wesley Ho, “A note on 3-free pe rmutations,” In-
+tegers: Electronic Journal of Combinatorial Number Theory 17 (2017), A55,
+10 pp.
+[4] Kai Lai Chung and Paul Erd˝ os, “On the application of the B orel-Cantelli
+lemma,” Transactions of the American Mathematical Society 72 (1952),
+179–186.
+[5] James Avery Davis, Roger Charles Entringer, Ronald Lewi s Graham, and
+Gustavus James Simmons, “On permutations containing no lon g arith-
+metic progressions,” Acta Arithmetica 34 (1977), 81–90.
+[6] Noam David Elkies and Ashvin Anand Swaminathan, “Permut ations that
+destroy arithmetic progressions in elementary p-groups,” Electronic Jour-
+nal of Combinatorics 24 (2017), P1.20.
+[7] Roger Charles Entringer and Douglas Elmer Jackson, “Ele mentary Prob-
+lem 2440,” American Mathematical Monthly 80 (1973), 1058.
+[8] Alan Frieze, “On the length of the longest monotone subse quence in a ran-
+dom permutation,” Annals of Applied Probability 1 (1991), 301–305.
+[9] Jesse Geneson, “Forbidden arithmetic progressions in p ermutations of sub-
+sets of the integers,” Discrete Mathematics 342 (2019), 1489–1491.
+[10] Peter Hegarty, “Permutations avoiding arithmetic pat terns,” Electronic
+Journal of Combinatorics 11 (2004), R39.
+[11] Timothy Dale LeSaulnier and Sujith Vijay, “On permutat ions avoid-
+ing arithmetic progressions,” Discrete Mathematics 311 (2011), 205–207.
+[12] Arun Sharma, “Enumerating permutations that avoid thr ee-term arith-
+metic progressions,” Electronic Journal of Combinatorics 16 (2009), R63.
+MARCEL K. GOH AND ROSIE Y. ZHAO 17
+[13] Endre Szemer´ edi, “On sets of integers containing no k elements in arith-
+metic progression,” Acta Arithmetica 27 (1975), 199–245.
+[14] Arnold Walﬁsz, Weylsche Exponentialsummen in der neueren Zahlentheo-
+rie (Berlin: VEB Deutscher Verlag der Wissenschaften, 1963).
+[15] Edmund Taylor Whittaker and George Neville Watson, A Course of Mod-
+ern Analysis, 4th ed. (Cambridge: Cambridge University Press, 1996).
