@@ -378,7 +378,7 @@ solution in a window class would imply feasibility at every finite horizon.
 
 \noindent Machine atlas (CP-SAT and CDCL cross-checks; certificates in the
 repository): bottom-half relief of depth $1$ and depth $\le 2$ infeasible at
-$N=256$ (and $1024$); \textbf{window-$2$ infeasible at $N=1024$} — hence dead
+$N=256$ (and $1024$); \textbf{window-$2$ infeasible at $N=1024$} (CP-SAT, 746s; independently CDCL/unary-ladder, 1760s) — hence dead
 at every horizon; window-$2$ at $N=256$ is feasible only via whole-block
 merges (minimum total displacement $41$), whose skeleton is
 $C_s = 2^{s}\cdot[3\cdot 2^{s-2}, 2^{s}]$, the top-quarter multiples of
