@@ -1,3 +1,4 @@
 X=64: n=170 clauses=27838
 FlexState(64): SAT (3s)
 X=256: n=682 clauses=460969
+Flex 64->256: UNSAT (2678s)
