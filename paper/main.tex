@@ -287,19 +287,103 @@ within the pure class calculus; deferred classes must be even, and the
 $2\cdot\mathrm{odd}$ phase requires range truncation.
 \end{proposition}
 
-\begin{proof}[Proof strategy for the main theorem (mutual double induction)]
-The construction is assembled by induction over pairs (scale, instance type),
-where the two instance types are the even-block team $\SA$ and its shifted
-copy $S_B$. The phase order within a scale step is: low-valuation phases by
-the self-absorbing class orders of Theorem~\ref{thm:vdc}; the
-$2\cdot\mathrm{odd}$ phase, which halves onto the odd kernel of an instance of
-the \emph{opposite} type at half the scale (supplying the truncation the
-class calculus cannot: completions leaving the block land in odd blocks, which
-belong to the other team); and the two deferred-class suffixes. The inductive
-hypothesis supplies the opposite-type arrangement; the base cases are
-machine-checked. \emph{Status: the phase-closure verifications are complete
-except for the boundary bookkeeping of the halving step, in progress.}
-\end{proof}
+\section{The chunk reduction}\label{sec:chunk}
+
+Every permutation of $\SA$ of order type $\omega$ decomposes into consecutive
+finite segments (\emph{chunks}); conversely, a choice of finite fibers and
+internal orders assembles into such a permutation. The following exact
+reformulation is the coordinate system for everything below.
+
+\begin{definition}
+A \emph{stage function} is any $s\colon \SA \to \N$ with finite fibers.
+Given $s$ and a linear order on each fiber, let $T$ be the concatenation.
+\end{definition}
+
+\begin{theorem}[Chunk reduction; exact]\label{thm:chunk}
+$T$ avoids monotone $3$-term APs if and only if:
+\begin{enumerate}
+\item[(A)] no AP triple $(x,y,z)$, $z=2y-x$, in $\SA$ has strictly monotone
+stages ($s(x)<s(y)<s(z)$ or $s(z)<s(y)<s(x)$); and
+\item[(B)] each fiber order contains the \emph{forced pairs}
+\[
+\begin{array}{ll}
+s(x)<s(y)=s(z):\ z \prec y, &\quad s(z)<s(y)=s(x):\ x \prec y,\\
+s(x)=s(y)<s(z):\ y \prec x, &\quad s(y)=s(z)<s(x):\ y \prec z,
+\end{array}
+\]
+and is non-monotone on every within-fiber triple. (Triples whose endpoint
+stages lie on one side of the middle's are automatically safe.)
+\end{enumerate}
+Hence $\SA$ is $3$-permutable if and only if some stage function satisfies
+(A) and (B). The fiber problems are finite and mutually independent given
+$s$.
+\end{theorem}
+
+\begin{lemma}[Same block]\label{lem:sameblock}
+In every AP triple of $\SA$ the middle $y$ and top $z$ lie in the same even
+block. ($z<2y\le 2^{k+1}$ and block $k{+}1$ is odd.)
+\end{lemma}
+
+\begin{lemma}[Escape]\label{lem:escape}
+If $y \ge 3\cdot 4^{s-1}$ (top quarter of block $2s$) and $x \le 4^{s-1}$,
+then $2y-x > 4^{s}$: completions of (lower value, top-quarter value) pairs
+land in the odd block above — out of team.
+\end{lemma}
+
+\begin{lemma}[Bottom-half characterization]\label{lem:bottomhalf}
+Deferring $D_k \subseteq$ block $k$ by uniform delay is (A)-clean if
+$D_k \subseteq (2^{k-1}, 3\cdot 2^{k-2}]$: the witness midpoints
+$y=(x+z)/2$ of a bottom-half $z$ against lower-block $x$ satisfy
+$2^{k-2} < y \le 2^{k-1}$, i.e.\ lie in the odd block below. Conversely a
+deferred top-half $z$ has genuine in-team witnesses, forcing its witness
+midpoints (bottom-quarter values) to defer with it.
+\end{lemma}
+
+\section{The negative atlas}\label{sec:negative}
+
+\begin{theorem}[Block-granular death]\label{thm:blockgranular}
+No stage function whose fibers are unions of whole even blocks satisfies
+(A)$\wedge$(B). \emph{Proof:} the fatal core $F_b$ (forced pairs into block
+$b$ from block $b{-}2$ below, plus block-$b$ triples) is UNSAT for $b=6$
+(machine, instant), and $v \mapsto 4v$ embeds $F_b$ into $F_{b+2}$: the map
+preserves $\SA$, sends block $j$ to block $j{+}2$, and preserves AP triples;
+UNSAT lifts to supersystems. Any block-granular scheme has a fiber boundary
+above block $4$ and therefore contains some $F_b$. \qed
+\end{theorem}
+
+\begin{theorem}[$\times 4$ restriction; window death is permanent]
+\label{thm:restriction}
+For the window class $\{s : s(v)-\mathrm{block}(v)/2 \in [0,w]\}$:
+feasibility at horizon $4N$ implies feasibility at horizon $N$ (restrict
+along $v \mapsto 4v$ and shift stages by one). Consequently the machine
+verdicts below are permanent (hold at all larger horizons), and an infinite
+solution in a window class would imply feasibility at every finite horizon.
+\end{theorem}
+
+\noindent Machine atlas (CP-SAT and CDCL cross-checks; certificates in the
+repository): bottom-half relief of depth $1$ and depth $\le 2$ infeasible at
+$N=256$ (and $1024$); \textbf{window-$2$ infeasible at $N=1024$} — hence dead
+at every horizon; window-$2$ at $N=256$ is feasible only via whole-block
+merges (minimum total displacement $41$), whose skeleton is
+$C_s = 2^{s}\cdot[3\cdot 2^{s-2}, 2^{s}]$, the top-quarter multiples of
+$2^{s}$ — precisely the set singled out by Lemma~\ref{lem:escape}.
+
+\medskip
+The surviving candidate shapes for a YES are stage functions with unbounded
+displacement (chunks mixing stragglers of unboundedly many blocks); the
+surviving NO program is to close the gap between
+Theorem~\ref{thm:blockgranular}/\ref{thm:restriction} and general finite-fiber
+schemes via the per-block deferral calculus of
+Lemma~\ref{lem:bottomhalf}. Both are finite-structure questions; the same
+lemmas hold verbatim for $S_B$ (machine-verified mirror at $4096$).
+
+\section{Historical note: suffix-stacked deferral}
+
+The deferral-state experiments (states exist at $M=32,64,128$; class
+coherence; sink algebra) are subsumed by the chunk coordinates: prefix-nested
+semantics permit top-half deferral that rigid chunks forbid, which is why the
+law's witnesses evade Lemma~\ref{lem:bottomhalf} while no closed-form law
+survived depth $4$.
 
 \section{Remarks and open problems}
 
