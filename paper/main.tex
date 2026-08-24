@@ -1,0 +1,193 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\SA}{S_{\mathrm{A}}}
+\newcommand{\pos}{\mathrm{pos}}
+
+\title{Structural rigidity in the Erd\H{o}s--Graham two-set permutation problem}
+\author{Will Kasel\thanks{With extensive machine assistance from Claude (Anthropic);
+SAT certificates and code at [repository]. All proofs have been verified by hand
+unless explicitly marked as machine-checked.}}
+\date{Draft: August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A sequence $a_1, a_2, \dots$ \emph{contains a monotone 3-AP} if some three terms in
+increasing or decreasing positions form an arithmetic progression in the matching
+order. Davis, Entringer, Graham and Simmons (1977) proved that every permutation of
+$\Z^+$ contains a monotone 3-AP, and Erd\H{o}s and Graham (1979) asked whether
+$\Z^+$ can be partitioned into two sets, each of which admits a permutation with no
+monotone 3-AP (three sets suffice; problem \#197 of the Erd\H{o}s problem
+collection). We prove several structural results constraining any solution.
+(i) A permutable set admits no infinite doubling orbit $u_{k+1}=2u_k-f_k$ with
+$f_k$ drawn from a fixed finite subset. (ii) In any 3-AP-free arrangement, every
+newly placed value must be balanced: the number of already-placed values in
+$[1,v)$ and in $(v,2v)$ agree up to the codensity of the set above $v$.
+(iii) No 3-AP-free arrangement of $\{k,2k,3k,5k\}\subseteq S$ places all
+ratio-$\ge 2$ pairs in increasing order. (iv) For the canonical dyadic partition,
+no solution can play any cofinite family of dyadic blocks as contiguous runs: a
+halving self-reduction plus finitely many machine-checked base cases shows the
+associated ``zone'' systems are infeasible, and a finish-time descent completes
+the argument. (v) In contrast, all natural finite fragments of the problem are
+satisfiable, and we give an exact characterization of solvability in terms of
+bounded-delay towers of finite arrangements, which pinpoints the problem's
+content in the growth of a single computable function. We also prove a clean
+absorption theorem for van der Corput orderings of odd residue classes which
+explains the fractal structure observed in all satisfying fragments.
+\end{abstract}
+
+\section{Introduction}
+
+% TODO: history: DEGS77, ErGr79/80 (p. 338: "very annoying question"),
+% LeSaulnier--Vijay 2011 (alpha/beta bounds + conjecture), Geneson 2018,
+% erdosproblems.com #197.
+
+\section{Definitions and conventions}
+
+\begin{definition}
+A set $S \subseteq \Z^+$ is \emph{permutable} if there is a bijection
+$\pi\colon \N \to S$ such that no $i<j<k$ have $\pi(i),\pi(j),\pi(k)$ forming an
+arithmetic progression with $\pi(i)<\pi(j)<\pi(k)$ or $\pi(i)>\pi(j)>\pi(k)$.
+\end{definition}
+
+The completion of an ordered pair: if $x$ is placed before $y$, the value
+$z = 2y - x$ (which continues the progression through $x,y$ in the direction of
+$y$) must not be placed after $y$; equivalently every such $z \in S$ placed later
+yields a monotone 3-AP. We use throughout the \emph{dyadic blocks}
+$B_k = (2^{k-1}, 2^k]$ and the canonical two-set candidate
+$\SA = \bigcup_{k \text{ even}} B_k$, $S_B = \Z^+ \setminus \SA$.
+
+\section{The orbit obstruction}
+
+\begin{lemma}[Orbit obstruction]\label{lem:orbit}
+Let $S$ be permutable and $F \subseteq S$ finite. There is no infinite sequence
+$u_0 < u_1 < \cdots$ in $S$ with $u_{k+1} = 2u_k - f_k$, $f_k \in F$.
+\end{lemma}
+
+\begin{proof}
+Let $q$ be the largest position of an element of $F$ in the permutation. Since
+the $u_k$ are distinct, at most $q$ of them occupy positions $\le q$; beyond the
+largest such index, each pair $(f_k, u_k)$ is increasingly placed, so its
+completion $u_{k+1} \in S$ must be placed before $u_k$, giving an infinite strictly
+decreasing sequence of positions.
+\end{proof}
+
+Taking $S = \Z^+$, $F = \{1,2\}$ recovers the theorem of Davis--Entringer--Graham--Simmons.
+
+\section{The balance law}
+
+\begin{lemma}[Balanced placement]\label{lem:balance}
+Let $S$ be permutable via $\pi$, and consider the moment a value $v$ is placed.
+Let $L$ (resp.\ $H$) be the number of already-placed values in $[1,v)$ (resp.\
+$(v,2v)$). Then $|H - L| \le |S^c \cap (v, 2v)| + O(1)$.
+\end{lemma}
+
+\begin{proof}
+Each placed $x < v$ forms an increasingly placed pair $(x,v)$ with completion
+$2v - x \in (v, 2v)$, distinct for distinct $x$; each completion lying in $S$
+must already be placed. This gives $H \ge L - |S^c \cap (v,2v)|$. Symmetrically,
+each placed $u \in (v, 2v)$ forms a decreasingly placed pair $(u,v)$ with
+completion $2v - u \in (0, v)$, whence $L \ge H - |S^c \cap (v,2v)| - O(1)$.
+\end{proof}
+
+\begin{corollary}[Records]\label{cor:records}
+When a left-to-right maximum $v$ is placed, at most $|S^c \cap (v,2v)| + O(1)$
+smaller values are already placed.
+\end{corollary}
+
+\section{Two absorption lemmas}
+
+\begin{lemma}[Ratio-ascent obstruction]\label{lem:R}
+Let $S \supseteq \{k, 2k, 3k, 5k\}$. No 3-AP-free arrangement of $S$ places $w$
+before $u$ for every pair $u \ge 2w$ (elements of $S$).
+\end{lemma}
+
+\begin{proof}
+The hypothesis forces $k \prec 2k$, $k \prec 3k$, $2k \prec 5k$. The progression
+$(k,2k,3k)$ with $k \prec 2k$, $k \prec 3k$ forces $3k \prec 2k$; then
+$3k \prec 2k \prec 5k$, and $(k,3k,5k)$ is an increasing 3-AP.
+\end{proof}
+
+\begin{theorem}[van der Corput absorption]\label{thm:vdc}
+Order the odd residues $c$ modulo $2^k$ by the bit-reversal (van der Corput) rank
+of $(c-1)/2 \bmod 2^{k-1}$. Then for any two classes $a$ ordered before $b$, the
+class $2b - a \bmod 2^k$ is ordered strictly before $b$.
+\end{theorem}
+
+\begin{proof}
+Write $\alpha = (a-1)/2$, $\beta = (b-1)/2$; the completion class has parameter
+$\zeta = 2\beta - \alpha \bmod 2^{k-1}$. If the lowest bits of $\alpha,\beta$
+agree, then so does $\zeta$'s, and dividing by 2 preserves the form
+$\zeta' = 2\beta' - \alpha'$. At the first bit where they differ, the assumption
+$\mathrm{rev}(\alpha) < \mathrm{rev}(\beta)$ forces $\alpha$'s bit to be $0$ and
+$\beta$'s to be $1$; since $\zeta \equiv \alpha$ at that bit, $\zeta$'s bit is
+$0$, so $\mathrm{rev}(\zeta) < \mathrm{rev}(\beta)$ strictly.
+\end{proof}
+
+\section{Contiguous blocks cannot work}
+
+\begin{definition}
+The \emph{zone system} $Z(M)$: arrange the interval $(M, 2M]$ so that (a) no
+monotone 3-AP occurs, and (b) for every $y < z$ in $(M,2M]$ with
+$2y - z \in (M/4, M/2]$, $z$ precedes $y$.
+\end{definition}
+
+Condition (b) is forced when the block $(M/4, M/2]$ is entirely placed before a
+contiguous run of $(M, 2M]$ within a team's sequence (its elements' completions
+$2y - x$ then must precede $y$).
+
+\begin{lemma}[Halving descent]\label{lem:halving}
+If $Z(M)$ is satisfiable then so is $Z(\lfloor M/2 \rfloor)$.
+\end{lemma}
+
+\begin{proof}
+Restrict a witness to the even values of $(M,2M]$ and halve; arithmetic
+progressions and the zone constraints scale exactly (the boundary cases are
+routine), and a superfluous top element may be deleted.
+\end{proof}
+
+\begin{lemma}[Base cases; machine-checked]\label{lem:bases}
+$Z(M)$ is unsatisfiable for $16 \le M \le 31$.
+\end{lemma}
+
+\begin{theorem}[No contiguous-run solutions]\label{thm:contig}
+In any 3-AP-free permutation of $\SA$, infinitely many blocks $B_{2k}$ are
+\emph{not} placed as contiguous runs.
+\end{theorem}
+
+\begin{proof}
+Suppose cofinitely many blocks are contiguous runs. Machine-checked
+computations (with Lemma~\ref{lem:halving} extending them to all $M \ge 16$;
+see also the run-tolerance bounds in Section~7) show that when block $B_{2k}$ is
+played as a run, all but $O(1)$ elements of $B_{2k-2}$ must be unplaced at that
+time, so $B_{2k-2}$ finishes after $B_{2k}$; iterating yields an infinite
+strictly decreasing sequence of finish positions.
+\end{proof}
+
+\section{Local realizability and the tower characterization}
+
+% TODO: pure-complete systems, horizon collapse, characterization via
+% bounded-delay towers (Koenig), computational SAT results to X = 1024/4096,
+% growth function g_X(L) and its role.
+
+\section{Remarks and open problems}
+
+% TODO: partition rigidity via records; the LV density program; the
+% interleaving-template question; measurement data.
+
+\end{document}

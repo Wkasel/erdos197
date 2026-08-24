@@ -3,3 +3,17 @@ n=2730
 clauses=5363244
 round 20: 863406 viol, 22s
 round 40: 854546 viol, 50s
+round 60: 833904 viol, 79s
+round 80: 783131 viol, 107s
+round 100: 770062 viol, 135s
+round 120: 767481 viol, 163s
+round 140: 768324 viol, 193s
+round 160: 772205 viol, 220s
+round 180: 775775 viol, 247s
+round 200: 779296 viol, 275s
+round 220: 782810 viol, 301s
+round 240: 782793 viol, 327s
+round 260: 776711 viol, 354s
+round 280: 769966 viol, 381s
+round 300: 762797 viol, 407s
+round 320: 756159 viol, 434s
