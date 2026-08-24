@@ -30,3 +30,14 @@ one-residue-class reservoirs per active block (g-witness profile), class-phase
 discipline (vdC self-absorbing orders), top-run supports.
 Test method: encode maintenance as bounded SAT checks (for-all duties sampled;
 exists-extension solved), iterate on invariant design against counterexamples.
+
+## The viability hierarchy (clean formalization of the invariant method)
+State_c(X) := doom-free orders of [complete-X + partial overhang extending c
+blocks up, with prescribed occupancy fractions]. Chains of State_c's (restriction
+semantics) with the duty schedule give SUFFICIENT conditions for S_A-permutability
+(fairness is built into the state shape: v placed by stage ~ log v). The
+hierarchy over c (overhang depth) converges to the true tower characterization.
+Program: find the smallest c and occupancy profile whose states chain
+empirically; then prove the ∀-extension lemma at that c by hand (delta-analysis
+with the class/absorption machinery). Current: c = 1 with 7/8-occupancy
+(free reservoir) under test (e44).

@@ -3,3 +3,4 @@ X=64: n=154 clauses=8091
 State(64): SAT (1s)
 X=256: n=618 clauses=143398
   round 50: 2775 (19s)
+State(64)->State(256): UNSAT (70s)
