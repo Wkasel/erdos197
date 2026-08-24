@@ -1,0 +1,3 @@
+=== overnight campaign start Mon Aug 24 01:15:55 PDT 2026 ===
+VALIDATION fatal-zone M=16 CP-SAT status: CpSolverStatus.INFEASIBLE (3=INFEASIBLE expected)
+g_256(64) = 153  OPTIMAL (95s)

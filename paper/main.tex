@@ -185,9 +185,28 @@ strictly decreasing sequence of finish positions.
 % bounded-delay towers (Koenig), computational SAT results to X = 1024/4096,
 % growth function g_X(L) and its role.
 
+\section{Partition rigidity}
+
+\begin{lemma}[Ray piercing]\label{lem:ray}
+Let $\Z^+ = A \sqcup B$ with both parts permutable. Then for every $a \in A$ and
+every $d \ge 1$, the set $\{k \ge 0 : a + 2^k d \in B\}$ is infinite, and
+symmetrically with $A$ and $B$ exchanged.
+\end{lemma}
+
+\begin{proof}
+If $a + 2^k d \in A$ for all $k \ge k_0$, the values $u_j = a + 2^{k_0+j} d$
+form an infinite orbit $u_{j+1} = 2u_j - a$ inside $A$ with $F = \{a\}$,
+contradicting Lemma~\ref{lem:orbit}.
+\end{proof}
+
+Both teams must therefore alternate along every affine doubling ray; partitions
+such as ``even 2-adic valuation vs.\ odd'' die immediately, and viable partitions
+are forced toward dyadic-interval alternation, motivating the canonical
+candidate $\SA$.
+
 \section{Remarks and open problems}
 
-% TODO: partition rigidity via records; the LV density program; the
-% interleaving-template question; measurement data.
+% TODO: the LV density program; the interleaving-template question;
+% measurement data (g-curves); the exact characterization discussion.
 
 \end{document}
