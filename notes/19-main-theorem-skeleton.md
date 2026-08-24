@@ -76,3 +76,22 @@ delta-vs-state constraint families enumerated and discharged:
   the phase recurses to the odd kernel; proof = double induction over
   (scale, class-depth). Suffix-stacking order proven forced (reversed stacking
   UNSAT via a Lemma-R configuration).
+
+## FINAL FORM (after notes/20): the ω-ification problem
+- R (recursive digit expansion: odd→0 recurse (v−1)/2; ≡0 mod 4→1 recurse v/4;
+  ≡6 mod 8→2 recurse (v−6)/8; ≡2 mod 8→3 recurse (v−2)/8) is a STATIC 3-AP-free
+  linear order on S_A: 0 doom violations at N = 2^12..2^16 (43,690 values),
+  explained by the exact REFLECTION LAW: at the first diverging digit of (x,y),
+  z = 2y − x takes x's digit ⟹ R(z)<R(y) ⟺ R(x)<R(y).
+- S_A thus stands to ω-orders as ℤ stood for Ardal–Brown–Jungić: static chaotic
+  order exists; the question is ω-ifiability (HS-obstruction absent: no full rays).
+- KEY NEW OBSERVATION (hand, tonight): inversion triples SELF-CLOSE: if the time
+  order T inverts R on (x,y) (x ≺_T y, R(x) > R(y)), the required reflection
+  z = 2y−x satisfies R(z) > R(y) (reflection law), and the new inversion (z,y)'s
+  own requirement is x ≺_T y — already true. No regress; obstructions are only
+  finite local conflicts among overlapping triples (cf. the observed greedy
+  3-cycle 45→35→54→45).
+- THE FINAL LEMMA (ω-ification): the closure system {for every T-inversion
+  (x,y): z ≺_T y} admits consistent finite stages with fair enumeration.
+  Equivalently: orient/schedule the inversion hypergraph acyclically at every
+  scale. This is the whole of Erdős #197's dyadic side, in final coordinates.
