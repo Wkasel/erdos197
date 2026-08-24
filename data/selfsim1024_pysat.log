@@ -1,0 +1,9 @@
+n=682 clauses=362906
+round 25: 52851 viol (13s)
+round 50: 29209 viol (55s)
+round 75: 11727 viol (162s)
+round 100: 15591 viol (271s)
+round 125: 7976 viol (335s)
+round 150: 4485 viol (410s)
+round 175: 2161 viol (472s)
+round 200: 1899 viol (561s)

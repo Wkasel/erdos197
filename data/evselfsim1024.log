@@ -1,0 +1,3 @@
+n=682 clauses=359616
+round 25: 38801 viol (21s)
+round 50: 33448 viol (92s)

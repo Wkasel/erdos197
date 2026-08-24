@@ -181,9 +181,48 @@ strictly decreasing sequence of finish positions.
 
 \section{Local realizability and the tower characterization}
 
-% TODO: pure-complete systems, horizon collapse, characterization via
-% bounded-delay towers (Koenig), computational SAT results to X = 1024/4096,
-% growth function g_X(L) and its role.
+\begin{definition}[Pure-complete systems]
+For an $\SA$-block top $X$, the \emph{pure-complete-$X$ system} asks for an
+arrangement of $\SA \cap [1, X]$ with no monotone 3-AP. (All completions of
+in-range pairs lie in $(X, 2X]$, an odd block, or inside the range; hence this
+is exactly the restriction of the infinite problem.)
+\end{definition}
+
+\begin{lemma}[Horizon collapse]
+Deleting any set of values from a valid arrangement preserves validity; hence
+auxiliary values above $X$ never aid the pure-complete-$X$ system.
+\end{lemma}
+
+\begin{theorem}[Tower characterization]
+$\SA$ is permutable iff there exists $B\colon \N \to \N$ such that for every
+block top $X$ the system [pure-complete-$X$ and every $v$ has at most $B(v)$
+predecessors] is satisfiable.
+\end{theorem}
+
+\begin{proof}
+($\Rightarrow$) restrict a permutation and take $B(v)$ its positions.
+($\Leftarrow$) the restriction sets are finite and nested; K\H{o}nig's lemma
+yields a consistent tower whose limit has each $v$ preceded by at most $B(v)$
+values, hence order type $\omega$; all constraints are finitary and inherited.
+\end{proof}
+
+Computationally: pure-complete-$X$ is satisfiable for $X \le 1024$ (machine
+certificates), and the completion-pressure function
+$g_X(L) = \min \max_{v \le L} \pos(v)$ satisfies $g_{256}(64) = 153$
+(optimal): eighty-seven percent of the block $(128,256]$ must precede the
+completion of $[1,64]$, with the residue concentrated in a single residue
+class modulo 8 --- the reservoir structure that any construction must
+implement. Divergence of $g_X(L)$ in $X$ for fixed $L$ would prove
+non-permutability; the mechanism is blocked by the measured subset-tolerance
+(near-total), and $g$ is expected to stabilize.
+
+\subsection{Self-similar witnesses and pumping}
+
+% TODO(pending computation): exact/eventual scale-invariance
+% (u \prec w \iff 4u \prec 4w) is satisfiable at X = 256 (audited witness);
+% status at X = 1024 pending. Pumping theorem: a two-layer self-similar witness
+% with uniform boundary handling generates an infinite solution; write in full
+% when the witness lands.
 
 \section{Partition rigidity}
 
