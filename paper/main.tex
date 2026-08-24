@@ -224,19 +224,17 @@ pure-complete systems remains satisfiable at $X = 256$ and $X = 1024$
 extend to a self-similar $4096$-arrangement (machine-certified infeasibility),
 so the self-similar tower also has dead branches.
 
-More significantly, the systems exhibit \emph{universal fragility}: requiring,
-in addition, that the $\pm 1$ neighbors (within the same block and team) of
-each forced completion also precede the pair's later element is infeasible
-already at modest scales --- for the dyadic team and for every
-alternating-interval family of ratio $2, 3, 4, 8$ that we tested, with or
-without scale-invariance. Valid arrangements are thus knife-edge exact: any
-construction scheme with bounded positional drift (in particular any
-``anchor descent'' pumping of a finite witness, and any rule in which position
-varies slowly with value) cannot produce valid arrangements at all scales.
-This localizes the difficulty of the Erd\H{o}s--Graham problem precisely: the
-finite fragments are always realizable, the infinite assembly must thread an
-exact braid at every scale, and no uniformly-described threading exists at the
-robustness radius required by rounding.
+We also record a calibration fact: requiring, in addition, that the $\pm 1$
+neighbors (within the same block and team) of each forced completion also
+precede the pair's later element (``radius-1 robustness'') is infeasible in
+every setting we tested --- including plain intervals $[1, n]$ from $n = 8$.
+Radius-1 robustness is thus unachievable generically in three-AP arrangement
+problems and cannot serve as a satisfiability criterion; in particular it does
+not discriminate between partitions, and pumping arguments must instead manage
+rounding drift on the thin family of far-pair constraints only. What does
+follow is the modest but genuine statement that no placement rule in which
+position varies slowly with value (Lipschitz-type rules) can produce valid
+arrangements beyond bounded scales.
 
 \section{Partition rigidity}
 
