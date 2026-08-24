@@ -1,0 +1,11 @@
+n=2730 clauses=5827686
+round 10: 919606 viol (32s)
+round 20: 948906 viol (63s)
+round 30: 928143 viol (93s)
+round 40: 944691 viol (125s)
+round 50: 992636 viol (188s)
+round 60: 918619 viol (234s)
+round 70: 855945 viol (295s)
+round 80: 850081 viol (345s)
+round 90: 764571 viol (400s)
+round 100: 820665 viol (469s)
