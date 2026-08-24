@@ -1,0 +1,457 @@
+arXiv:2404.13510v1 [math.CO] 21 Apr 2024
+
+CHARACTERIZATION OF ORDER STRUCTURES AVOIDING
+THREE-TERM ARITHMETIC PROGRESSIONS
+MINORU HIROSE AND SHINGO SAITO
+Abstract. It is known that the set of all nonnegative integers may be equipped
+with a total order that is chaotic in the sense that there is no monotone threeterm arithmetic progressions. Such chaotic order must be so complicated that
+the resulting ordered set cannot be order isomorphic to the set of all nonnegative integers or the set of all integers with the standard order. In this paper,
+we completely characterize order structures of chaotic orders on the set of all
+nonnegative integers, as well as on the set of all integers and on the set of all
+rational numbers.
+
+1. Introduction
+It has long been known ([3, 4, 5, 6]) that it is possible to arrange the integers
+1, . . . , n (and consequently any finitely many rational numbers) into a sequence
+a1 , . . . , an without a three-term subsequence forming an arithmetic progression, or
+more precisely without i, j, k with 1 ≤ i < j < k ≤ n and aj − ai = ak − aj . In
+contrast, Davis, Entringer, Graham, and Simmons [2] proved that it is impossible to
+arrange all of the positive integers (or equivalently all of the nonnegative integers)
+into a sequence a1 , a2 , . . . or a two-sided sequence . . . , a−1 , a0 , a1 , . . . without a
+three-term subsequence forming an arithmetic progression. On the other hand,
+Ardal, Brown, and Jungić [1] proved that there exists a total order  on Q such
+that there are no a, b, c ∈ Q with a ≺ b ≺ c and b − a = c − b, which implies that
+such total order exists on N (by which we mean the set of all nonnegative integers)
+and on Z; it should be noted that although they invoked Kőnig’s infinity lemma to
+obtain the total order on Q (and hence the resulting total order is rather abstract),
+they also gave an explicit total order on Z (and hence on N).
+To summarize these results, we find it convenient to introduce the following
+terminology. For a set S of rational numbers and a totally ordered set (X, ), we
+say that a bijection f : S → X is chaotic if there are no a, b, c ∈ S with f (a) ≺
+f (b) ≺ f (c) and b − a = c − b. Then the results of Davis, Entringer, Graham,
+and Simmons say that if S = N and X = N, Z with the standard order, then no
+bijection f : S → X is chaotic; the results of Ardal, Brown, and Jungić say that if
+S = N, Z, Q, then there exist a countably infinite totally ordered set (X, ) and a
+chaotic bijection f : S → X.
+This observation leads us to the following natural question: given S = N, Z, Q,
+which countably infinite totally ordered sets (X, ) admit a chaotic bijection f : S →
+X? Our main theorem completely answers this question. To state our main theorem, recall that a point p in a totally ordered set (X, ) is said to be isolated if
+2020 Mathematics Subject Classification. Primary 06A05; Secondary 11B25.
+Key words and phrases. Arithmetic progression; Order structure.
+1
+
+2
+
+MINORU HIROSE AND SHINGO SAITO
+
+it is isolated in the topological space X endowed with the order topology, namely
+(assuming that X has at least two elements) if either (i) {x ∈ X | x ≺ x0 } = {p}
+for some x0 ∈ X, (ii) {x ∈ X | x ≻ x0 } = {p} for some x0 ∈ X, or (iii)
+{x ∈ X | x0 ≺ x ≺ x1 } = {p} for some x0 , x1 ∈ X.
+Theorem 1.1 (Main Theorem). Let (X, ) be a countably infinite totally ordered
+set.
+(1) There exists a chaotic bijection f : N → X if and only if X has no isolated
+points.
+(2) There exists a chaotic bijection f : Z → X if and only if X has no isolated
+points.
+(3) There exists a chaotic bijection f : Q → X if and only if X has no isolated points and either X does not have a maximum or X does not have a
+minimum.
+2. Proof of the ‘only if’ parts of our main theorem
+This section proves the ‘only if’ parts of our main theorem. Let S ⊂ Q, and
+let (X, ) be a countably infinite totally ordered set. The key to the proof is the
+observation that for S ∈ {N, Z, Q}, every chaotic map f : S → X has a stronger
+property concerning the 2-adic order.
+2.1. Chaotic maps and binary maps. We begin by generalizing the definition
+of chaotic maps: we say that f : S → X is chaotic if f is injective and there are no
+a, b, c ∈ S such that f (a) ≺ f (b) ≺ f (c) and b − a = c − b.
+We then define a property that is stronger than being chaotic. Recall that the
+2-adic order ord2 r of r ∈ Q× = Q \ {0} is defined as the unique n ∈ Z such that
+2−n r can be written as a quotient of odd integers; ord2 0 is defined as ∞. We say
+that f : S → X is binary if f is injective and there are no a, b, c ∈ S such that
+f (a) ≺ f (b) ≺ f (c) and ord2 (b − a) = ord2 (c − b). It is obvious that every binary
+map f : S → X is chaotic.
+Example 2.1. If f : {0, 1, 2, 3, 4, 5, 6, 7} → X satisfies
+f (0) ≺ f (4) ≺ f (2) ≺ f (6) ≺ f (1) ≺ f (5) ≺ f (3) ≺ f (7),
+then f is binary. If f : {0, 1, 2, 3} → X satisfies
+f (2) ≺ f (3) ≺ f (0) ≺ f (1),
+then f is chaotic but not binary.
+Proposition 2.2. If S ∈ {N, Z, Q} and there exists a binary bijection f : S → X,
+then X has no isolated points.
+Proof. Assume that {x ∈ X | f (a) ≺ x ≺ f (b)} = {f (c)} for some a, b, c ∈ S.
+Take c′ ∈ S \ {c} with ord2 (c′ − c) > ord2 (a − c) and ord2 (c′ − c) > ord2 (b − c)
+(we can for example take c′ = c + 2n for a sufficiently large n ∈ N). Since f (c)
+is the only element of X between f (a) and f (b), it must be the case that either
+f (c′ ) ≺ f (a) ≺ f (c) or f (c) ≺ f (b) ≺ f (c′ ). Since ord2 (a − c′ ) = ord2 (c − a) and
+ord2 (b − c) = ord2 (c′ − b), the map f cannot be binary, which is a contradiction.
+In a similar manner, both assuming that {x ∈ X | x ≻ f (a)} = {f (c)} for some
+a, c ∈ S and assuming that {x ∈ X | x ≺ f (a)} = {f (c)} for some a, c ∈ S lead to
+a contradiction.
+
+
+CHARACTERIZATION OF ORDER STRUCTURES AVOIDING 3-APS
+
+3
+
+Remark 2.3. Proposition 2.2 remains valid for any set S ⊂ Q with the property
+that for every a ∈ S, the set {ord2 (b − a) | b ∈ S \ {a}} is unbounded from above.
+2.2. Chaotic maps are binary if S ∈ {N, Z, Q}. In this subsection, we prove
+that if S ∈ {N, Z, Q}, then every chaotic map f : S → X is in fact binary (Proposition 2.6). Note that this is not the case for general S, as the second example in
+Example 2.1 shows. We write N+ for the set of all positive integers.
+Lemma 2.4. Let f : S → X be chaotic and t ∈ N+ be odd. Suppose that a ∈ Q
+and d ∈ Q× are such that a + id ∈ S for all i ∈ N. Then f (a) ≺ f (a + d) if and
+only if f (a) ≺ f (a + td).
+Proof. The proof proceeds by induction on t. The lemma is trivial for t = 1.
+Suppose that the lemma is true for an odd positive integer t. In order to prove
+that the lemma is true for t + 2, we only have to prove that f (a) ≺ f (a + d) implies
+f (a) ≺ f (a + (t + 2)d).
+Set b = a + 2(t + 2)d ∈ S. Since f is chaotic and f (a) ≺ f (a + d), we have
+f (a) ≺ f (a + d) ≻ f (a + 2d) ≺ · · · ≻ f (b) ≺ f (b + d).
+It follows from the inductive hypothesis applied to b and d that f (b) ≺ f (b + td)
+(note that b + id = a + (2t + 4 + i)d ∈ S for all i ∈ N).
+If f (b + td) ≺ f (b + (t + 2)d), then we have f (b) ≺ f (b + td) ≺ f (b + (t + 2)d),
+and so
+f (b + (t + 2)d) ≻ f (b) ≺ f (b − (t + 2)d) = f (a + (t + 2)d) ≻ f (a),
+as required.
+If f (b + td) ≻ f (b + (t + 2)d), then we have
+f (b + (t + 2)d) ≺ f (b + td) ≻ f (b + (t − 2)d) ≺ . . .
+≺ f (b − (t + 2)d) = f (a + (t + 2)d) ≻ f (a + td).
+Since f (a) ≺ f (a + td), we may conclude that f (a) ≺ f (a + (t + 2)d).
+
+
+
+Lemma 2.5. Let f : S → X be chaotic, s ∈ N be even, and t ∈ N+ be odd. Suppose
+that a ∈ Q and d ∈ Q× are such that a + id ∈ S for all i ∈ N. Then f (a) ≺ f (a + d)
+if and only if f (a + sd) ≺ f (a + td).
+Proof. It suffices to prove that f (a) ≺ f (a + d) implies f (a + sd) ≺ f (a + td). Since
+f is chaotic, we have
+f (a) ≺ f (a + d) ≻ f (a + 2d) ≺ f (a + 3d) ≻ · · · .
+If s < t, then Lemma 2.4 and the fact that f (a + sd) ≺ f ((a + sd) + d) imply that
+f (a + sd) ≺ f ((a + sd) + (t − s)d) = f (a + td). If t < s, then Lemma 2.4 and the
+fact that f (a + td) ≻ f ((a + td) + d) imply that f (a + td) ≻ f ((a + td) + (s − t)d) =
+f (a + sd).
+
+Proposition 2.6. If S ∈ {N, Z, Q} and f : S → X is chaotic, then f is binary.
+Proof. Suppose that f is not binary. Then there exist a, b, c ∈ S such that f (a) ≺
+f (b) ≺ f (c) and ord2 (b − a) = ord2 (c − b) = n, say. Take the smallest m ∈ N+
+such that 2−n m(b − a) and 2−n m(c − b) are both (necessarily odd) integers. Put
+d = 2n /m.
+
+4
+
+MINORU HIROSE AND SHINGO SAITO
+
+If b = min{a, b, c}, then applying Lemma 2.5 to b and d shows that f (b) ≻
+f (a) = f (b + 2−n m(a − b)d) implies f (b) ≻ f (b + d), whereas f (b) ≺ f (c) =
+f (b + 2−n m(c − b)d) implies f (b) ≺ f (b + d); this is a contradiction.
+If a = min{a, b, c}, then applying Lemma 2.5 to a and d shows that f (a) ≺ f (b) =
+f (a+ 2−nm(b − a)d) implies f (a) ≺ f (a+ d), whereas f (b) = f (a+ 2−n m(b − a)d) ≺
+f (c) = f (a + 2−n m(c − a)d) implies f (a + d) ≺ f (a); this is a contradiction.
+If c = min{a, b, c}, then a similar argument leads us to a contradiction.
+
+Propositions 2.2 and 2.6 show that if S ∈ {N, Z, Q} and there exists a chaotic
+bijection f : S → X, then X has no isolated points. We may now complete the
+proof of the ‘only if’ parts of our main theorem by noticing the following simple
+proposition:
+Proposition 2.7. If f : Q → X is a chaotic bijection, then either X does not have
+a maximum or X does not have a minimum.
+Proof. If X has both a maximum and a minimum, say f (a) and f (b), then setting
+c = (a + b)/2, we have f (b) ≺ f (c) ≺ f (a) and c − b = a − c, a contradiction.
+
+3. Proof of the ‘if’ parts of our main theorem
+This section proves the ‘if’ parts of our main theorem. For S ⊂ Q and r ∈ Q,
+we write S + r = {a + r | a ∈ S}.
+3.1. Construction of binary maps from N and Z.
+Lemma 3.1. Let S ⊂ Q and r ∈ Q× .
+(1) If ord2 (a − b) 6= ord2 r for all a, b ∈ S, then S ∩ (S + r) = ∅.
+(2) Suppose that ord2 (a − b) < ord2 r for all distinct a, b ∈ S. Then for distinct
+a, b ∈ S ∪ (S + r), we have ord2 (a − b) ≤ ord2 r with equality if and only if
+a − b = ±r.
+(3) Suppose that ord2 (a − b) > ord2 r for all a, b ∈ S. Then for distinct a, b ∈
+S ∪ (S + r), we have ord2 (a − b) ≥ ord2 r with equality if and only if either
+a ∈ S and b ∈ S + r or a ∈ S + r and b ∈ S.
+Proof.
+(1) Obvious.
+(2) Let a, b ∈ S ∪ (S + r) be distinct. If either a, b ∈ S or a, b ∈ S + r, then
+we obviously have ord2 (a − b) < ord2 r. Therefore by symmetry we may
+assume that a ∈ S and b ∈ S + r. If a = b − r, then we clearly have
+ord2 (a − b) = ord2 r; otherwise a and b − r are distinct elements of S and
+so ord2 (a − (b − r)) < ord2 r, which implies that ord2 (a − b) < ord2 r.
+(3) Let a, b ∈ S ∪ (S + r) be distinct. If either a, b ∈ S or a, b ∈ S + r, then
+we obviously have ord2 (a − b) > ord2 r. Therefore by symmetry we may
+assume that a ∈ S and b ∈ S + r. Then we have ord2 (a − (b − r)) > ord2 r,
+which implies that ord2 (a − b) = ord2 r.
+
+In writing the proofs that follow, it is convenient to make the set-theoretical
+identification of a map ϕ : A → B with the its graph {(a, b) ∈ A × B | ϕ(a) = b}.
+Thus for maps ϕ1 : A1 → B1 and ϕ2 : A2 → B2 , the inclusion ϕ1 ⊂ ϕ2 means that
+A1 is a subset of A2 and that the restriction of ϕ2 to A1 is ϕ1 ; the union ϕ1 ∪ ϕ2
+represents a map from A1 ∪ A2 to B1 ∪ B2 , provided that ϕ1 (a) = ϕ2 (a) for all
+a ∈ A1 ∩ A2 .
+
+CHARACTERIZATION OF ORDER STRUCTURES AVOIDING 3-APS
+
+5
+
+Lemma 3.2. Let (X, ) be a totally ordered set without isolated points. Let S ⊂ Q
+be finite and r ∈ Q× be such that ord2 (a − b) < ord2 r for all distinct a, b ∈ S. If
+f : S → X is binary, S̃ = S ∪ (S + r), and x ∈ X \ Im f , then there exists a binary
+map f˜: S̃ → X with f ⊂ f˜ and x ∈ Im f˜.
+Proof. Take the enumeration a1 , . . . , am of S so that f (a1 ) ≺ · · · ≺ f (am ). We
+define an injection f˜: S̃ → X with f ⊂ f˜ and x ∈ Im f˜ by inductively defining
+f˜(ai + r) as an element of X such that f (ai−1 ) ≺ f˜(ai + r), f˜(ai−1 + r) ≺ f˜(ai + r),
+f˜(ai + r) ≺ f (ai+1 ), and f˜(ai + r) 6= f (ai ) for i = 1, . . . , m (ignore any condition
+in which 0 or m + 1 appears as a subscript), using the assumption that X has no
+isolated points and choosing x as f˜(ai + r) at the earliest opportunity.
+It remains to prove that f˜ is binary. For ease of notation, we define an equivalence
+relation ∼ on S̃ by setting a ∼ b if and only if a−b ∈ {0, ±r}; Lemma 3.1 (2) implies
+that this is indeed an equivalence relation because ord2 (±2r) = ord2 r + 1 > ord2 r.
+Note that for a, a′ , b, b′ ∈ S̃ with a ∼ a′ 6∼ b ∼ b′ , we have f˜(a) ≺ f˜(b) if and only
+if f˜(a′ ) ≺ f˜(b′ ). Suppose that f˜ is not binary. Then we may find a, b, c ∈ S̃ such
+that f˜(a) ≺ f˜(b) ≺ f˜(c) and ord2 (b − a) = ord2 (c − b) = n, say. Lemma 3.1 (2)
+shows that n ≤ ord2 r and moreover that n < ord2 r because a ∼ b ∼ c would
+contradict the fact that a, b, c are distinct elements of S̃. Therefore if we choose
+a′ , b′ , c′ ∈ S so that a ∼ a′ , b ∼ b′ , c ∼ c′ , then a ∼ a′ 6∼ b ∼ b′ 6∼ c ∼ c′ and so
+f˜(a′ ) ≺ f˜(b′ ) ≺ f˜(c′ ) and ord2 (b′ − a′ ) = ord2 (b − a) = ord2 (c − b) = ord2 (c′ − b′ );
+but this is a contradiction because the restriction of f˜ to S is equal to the binary
+map f . Hence we have proved that f˜ is binary.
+
+Proposition 3.3. If S ∈ {N, Z}, and (X, ) is a countably infinite totally ordered
+set without isolated points, then there exists a binary bijection f : S → X.
+Proof. Define a sequence r0 , r1 , · · · ∈ S by
+(
+2n
+rn =
+(−2)n
+
+if S = N;
+if S = Z,
+
+P
+and set Sn = { i∈A ri | A ⊂ {0, . . . , n − 1}} for n ∈ N. Note that for n ∈ N, since
+
+n
+
+if S = N;
+[0, 2 − 1] ∩ N
+n
+n
+Sn = [−2(2 − 1)/3, (2 − 1)/3] ∩ Z
+if S = Z and n is even;
+
+
+[−2(2n−1 − 1)/3, (2n+1 − 1)/3] ∩ Z if S = Z and n is odd,
+
+we have ord2 (a − b) < n = ord2 rn for all distinct a, b ∈ Sn . Fixing a bijection
+g : N → X, we shall inductively construct binary maps fn : Sn → X for n ∈ N so
+that f0 ⊂ f1 ⊂ · · · .
+Define a binary map f0 from S0 = {0} to X by setting f0 (0) = g(0). Let n ∈ N,
+and suppose that fn : Sn → X has been constructed. Take the smallest k ∈ N with
+g(k) ∈
+/ Im fn , and use Lemma 3.2 to construct a binary map fn+1 : Sn+1 → X with
+fn ⊂ fn+1 and S
+g(k) ∈ Im fn+1 .
+S∞
+Define f = ∞
+n=0 fn . Then f is a binary map from
+n=0 Sn = S to X. Since
+the construction ensures that g(0), . . . , g(k) ∈ Im fk for all k ∈ N, it follows that f
+is surjective.
+
+
+6
+
+MINORU HIROSE AND SHINGO SAITO
+
+3.2. Construction of binary maps from Q. We write Z(2) = {r ∈ Q | ord2 r ≥
+0}.
+Lemma 3.4. Let n ∈ N and q0 , . . . , qn−1 ∈ Z(2) with ord2 qi = i for all i =
+0, . . . , n − 1. Then for
+P every q ∈ Z(2) there exists a unique subset A of {0, . . . , n − 1}
+such that ord2 (q − i∈A qi ) ≥ n.
+Proof. We proceed by induction on n. The lemma is trivial for n = 0 because the
+only choice for A is ∅. Suppose that the lemma is true for a nonnegative integer n
+and that q0 , . . . , qn ∈ Z(2) satisfy ord2 qi = i for all i = 0, . . . , n.
+Let q ∈ Z(2) be given. The inductive hypothesis
+P shows that there exists a unique
+subset A′ of {0, . . . , n − 1} such that ord2 (q − i∈A′ qi ) ≥ n.
+subset P
+A of {0, . . . , n}. If ord2 (q −
+P We first show the existence of the required
+′
+q
+)
+≥
+n
++
+1,
+then
+take
+A
+=
+A
+;
+if
+ord
+(q
+−
+′
+i
+2
+i∈A′ qi ) = n, then setting
+i∈A
+P
+A = A′ ∪ {n} gives ord2 (q − i∈A qi ) ≥ n + 1 because ord2 (α + β) ≥ n + 1 for all
+α, β ∈ Q with ord2 α = ord2 β = n.
+What remains P
+to prove is the uniqueness ofP
+such A. Suppose that A ⊂ {0,P. . . , n}
+satisfies ord2 (q − i∈A qi ) ≥ n + 1. Since q − i∈A\{n} qi equals either q − i∈A qi
+P
+P
+or q − i∈A qi + qn , we must have ord2 (q − i∈A\{n} qi ) ≥ n because ord2 qn = n.
+′
+Therefore it follows from the inductive hypothesis
+Pthat A \ {n} = A , which means
+′
+′
+that A is either A or A ∪ {n}. If ord2 (q − i∈A′ qi ) ≥ n + 1 and ord2 (q −
+P
+i∈A′ ∪{n} qi ) ≥ n + 1 were both true, then we would also have ord2 qn ≥ n + 1,
+contradicting the assumption that ord2 qn = n. This completes the proof of the
+uniqueness of A.
+
+Lemma 3.5. There exists a sequence q0 , q1 , . . . ∈ Z(2) with the following properties:
+(1) ord2 qn = n for all n ∈ N;
+P
+(2) for every q ∈ Z(2) there exists a finite subset A of N such that q = n∈A qn .
+
+Proof. Fix a bijection h : N → Z(2) . For each n ∈ N, when q0 , . . . , qn−1
+P∈ Z(2) have
+been constructed, take the smallest ln ∈ N such that ord2 (h(ln ) − i∈A qi ) = n
+for some A ⊂ {0, . . . , n − 1} (such ln always exists because the condition follows
+for example from
+P ord2 h(ln ) = n; Lemma 3.4 implies that A is unique), and set
+qn = h(ln ) − i∈A qi .
+Suppose that (2) is false, and take
+P the smallest l ∈ N for which there is no finite
+subset A of N such that h(l) = i∈A qi . Choose N ∈ N so large that
+P for every
+k = 0, . . . , l − 1 there exists Ak ⊂ {0, . . . , N − 1} such that h(k) = i∈Ak qi . By
+P
+Lemma 3.4, there exists Al ⊂ {0, . . . , N − 1} such that ord2 (h(l) − i∈Al qi ) ≥ N .
+P
+P
+Set N ′ = ord2 (h(l) − i∈Al qi ). Since ord2 (h(k) − i∈Ak qi ) = ∞ > N ′ for
+k = 0, . . . , l − 1, we must have lN ′ ≥ l. Since l has the property required for lN ′ ,
+
+this means that lN ′ = l, contradicting the choice of l.
+Lemma
+3.6. There exists a sequence r0 , r1 , . . . ∈ Q× such that if we set Sn =
+P
+{ i∈A ri | A ⊂ {0, . . . , n − 1}} for n ∈ N, we have the following:
+S
+(1) ∞
+n=0 Sn = Q;
+(2) ord2 (a − b) < ord2 rn whenever n ∈ N is even and a, b ∈ Sn are distinct;
+(3) ord2 (a − b) > ord2 rn whenever n ∈ N is odd and a, b ∈ Sn .
+
+CHARACTERIZATION OF ORDER STRUCTURES AVOIDING 3-APS
+
+7
+
+Proof. Take a sequence q0 , q1 , . . . ∈ Z(2) as in Lemma 3.5, and define r0 , r1 , . . . ∈ Q×
+by
+(
+qn/2
+if n is even;
+rn =
+−(n+1)/2
+2
+if n is odd.
+To
+Pshow (1), we observe that every r ∈ Q can be written (in fact uniquely) as
+q + j∈B 2−j with q ∈ Z(2) and a finite set B ⊂ N+ .
+To show (2), suppose that n = 2m for some m ∈ N+ and that a, b ∈ S2m are
+distinct (we may assume that n ≥ 2 because S0 consists of only one element). Since
+a − b is a nonzero rational number that can be written as a linear combination of
+q0 , . . . , qm−1 and 2−1 , . . . , 2−m with coefficients in {0, ±1}, we have
+ord2 (a − b) ≤ max{ord2 q0 , . . . , ord2 qm−1 , ord2 2−1 , . . . , ord2 2−m }
+= m − 1 < m = ord2 rn .
+To show (3), suppose that n = 2m + 1 for some m ∈ N and that a, b ∈ S2m+1 .
+Since a − b can be written as a linear combination of q0 , . . . , qm and 2−1 , . . . , 2−m
+with coefficients in {0, ±1}, we have
+ord2 (a − b) ≥ min{ord2 q0 , . . . , ord2 qm , ord2 2−1 , . . . , ord2 2−m }
+= −m > −m − 1 = ord2 rn .
+
+
+
+Lemma 3.7. Let (X, ) be a totally ordered set without a maximum. Let S ⊂ Q be
+finite and r ∈ Q× be such that ord2 (a − b) > ord2 r for all a, b ∈ S. If f : S → X is
+binary and S̃ = S ∪ (S + r), then there exists a binary map f˜: S̃ → X with f ⊂ f˜.
+Proof. Take the enumeration a1 , . . . , am of S so that f (a1 ) ≺ · · · ≺ f (am ). We
+define an injection f˜: S̃ → X with f ⊂ f˜ by inductively defining f˜(ai + r) as
+an element of X larger than f (a1 ), . . . , f (am ), f˜(a1 + r), . . . , f˜(ai−1 + r), using the
+assumption that X has no maximum.
+To prove that f˜ is binary, take any a, b, c ∈ S̃ with f˜(a) ≺ f˜(b) ≺ f˜(c). We have
+either (i) a, b, c ∈ S, (ii) a, b ∈ S and c ∈ S + r, (iii) a ∈ S and b, c ∈ S + r, or
+(iv) a, b, c ∈ S + r. In cases (i) and (iv), we have ord2 (b − a) 6= ord2 (c − b) because
+f is binary. Lemma 3.1 implies that ord2 (b − a) > ord2 r = ord2 (c − b) in case (ii)
+and that ord2 (b − a) = ord2 r < ord2 (c − b) in case (iii).
+
+Proposition 3.8. Let (X, ) be a countably infinite totally ordered set. Suppose
+that X has no isolated points and that either X does not have a maximum or X
+does not have a minimum. Then there exists a binary bijection f : Q → X.
+Proof. By symmetry, we may assume that X does not have
+P a maximum. Take a
+sequence r0 , r1 , . . . ∈ Q× as in Lemma 3.6, and set Sn = { i∈A ri | A ⊂ {0, . . . , n −
+1}} for n ∈ N. Fixing a bijection g : N → X, we shall inductively construct binary
+maps fn : Sn → X for n ∈ N so that f0 ⊂ f1 ⊂ · · · .
+Define a binary map f0 from S0 = {0} to X by setting f0 (0) = g(0). Let n ∈ N,
+and suppose that fn : Sn → X has been constructed. If n is even, then take the
+smallest k ∈ N with g(k) ∈
+/ Im fn , and use Lemma 3.2 to construct a binary map
+fn+1 : Sn+1 → X with fn ⊂ fn+1 and g(k) ∈ Im fn+1 . If n is odd, then use
+Lemma 3.7 to construct
+a binary map fn+1 : Sn+1 → XSwith fn ⊂ fn+1 .
+S
+Define f = ∞
+f
+.
+Then f is a binary map from ∞
+n
+n=0
+n=0 Sn = Q to X. Since
+the construction ensures that g(0), . . . , g(k) ∈ Im f2k+1 for all k ∈ N, it follows that
+f is surjective.
+
+
+8
+
+MINORU HIROSE AND SHINGO SAITO
+
+Propositions 3.3 and 3.8 complete the proof of the ‘if’ parts of our main theorem.
+Acknowledgements
+This work was supported by JSPS KAKENHI Grant Numbers JP18K03243,
+JP18K13392, JP22K03244, and JP23K03072. The authors would like to thank
+Hideki Murahara for valuable discussions.
+References
+[1] H. Ardal, T. Brown, and V. Jungić, Chaotic orderings of the rationals and reals, Amer. Math.
+Monthly 118 (2011), no. 10, 921–925.
+[2] J. A. Davis, R. C. Entringer, R. L. Graham, and G. J. Simmons, On permutations containing
+no long arithmetic progressions, Acta Arith. 34 (1977/78), no. 1, 81–90.
+[3] R. C. Entringer and D. E. Jackson, Problems and Solutions: Elementary Problems: E2440,
+Amer. Math. Monthly 80 (1973), no. 9, 1058.
+[4] R. C. Lyndon, Problems and Solutions: Solutions of Elementary Problems: E2440, Amer.
+Math. Monthly 82 (1975), no. 1, 74–75.
+[5] T. Odda, Problems and Solutions: Solutions of Elementary Problems: E2440, Amer. Math.
+Monthly 82 (1975), no. 1, 74.
+[6] H. E. Thomas, Jr., Problems and Solutions: Solutions of Elementary Problems: E2440,
+Amer. Math. Monthly 82 (1975), no. 1, 75–76.
+Institute for Advanced Research, Nagoya University, Furo-cho, Chikusa-ku, Nagoya,
+464-8602, Japan
+Email address: minoru.hirose@math.nagoya-u.ac.jp
+Faculty of Arts and Science, Kyushu University, 744, Motooka, Nishi-ku, Fukuoka,
+819-0395, Japan
+Email address: ssaito@artsci.kyushu-u.ac.jp
+
+
