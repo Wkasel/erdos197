@@ -50,3 +50,14 @@ delta-vs-state constraint families enumerated and discharged:
   the d4 verdict is the canary. If d4 UNSAT: the law needs its own correction
   at depth 4 (defect within the defect? the P3-spillover in the mined data
   hinted the class fattens: ≡2 mod 16 PLUS part of ≡10 mod 16 at 1024).
+
+## Audit + reconciliation (evening)
+- law-d3 witness independently audited: 0 violations, 0 dooms, exact nesting,
+  defect classes ≡2 mod 2^{k/2} with moduli 8/16/32 at scales 64/256/1024. LAW
+  CONFIRMED with modulus formula m = 2^{k/2} exactly.
+- Agent's Σ system (bottom-eighth-interval reservoir in the NEW segment,
+  lag-2): UNSAT at X = 4..32 → dead at all scales. Its Prop 1 (new-segment
+  reservoirs forced into bottom half) stands but is orthogonal: the LAW defers
+  a thin class of the OLD top block — outside Prop 1's scope. No contradiction.
+- Synthesis: append-only towers with new-segment reservoirs are dead (agent's
+  program); the law's old-block-deferral is the surviving (and audited) shape.
