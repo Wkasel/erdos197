@@ -87,8 +87,15 @@ while True:
         json.dump(seq, open("data/pure4096.json", "w"))
         print(f"PURE-4096 (pysat): SAT ({time.time()-t0:.0f}s)", flush=True)
         break
+    # re-anchor phases to current order
+    curpos = {V[int(order[i])]: i for i in range(n)}
+    ph = []
+    for (i, j), var in t.items():
+        u, w = V[i], V[j]
+        ph.append(var if curpos[u] < curpos[w] else -var)
+    s.set_phases(ph)
     added = 0
-    for bi in bad_idx[:80000]:
+    for bi in bad_idx[:200000]:
         a_, b_ = iu[0][bi], iu[1][bi]
         i, j = int(order[a_]), int(order[b_])
         ks = np.nonzero(B[i] & B[:, j])[0]
@@ -97,6 +104,6 @@ while True:
             s.add_clause([-before(V[i], V[k]), -before(V[k], V[j]),
                           before(V[i], V[j])])
             added += 1
-            if added > 60000: break
+            if added > 150000: break
     if rounds % 10 == 0:
         print(f"round {rounds}: {len(bad_idx)} viol ({time.time()-t0:.0f}s)", flush=True)
