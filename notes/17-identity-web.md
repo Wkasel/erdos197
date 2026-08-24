@@ -33,3 +33,14 @@ A SINGLE VALUE (215). Viable states are "complete minus O(1) defect", not
 fraction-shaped. New working conjecture: defect size stays O(1) across scales;
 extension lemma reduces to bounded-defect states. Rolling chain (fixed viable
 state → next joint) running on pod (roll_256.log).
+
+## THE DEFECT LAW (evening breakthrough)
+Verified-chain anatomy (exact ladder witnesses): each completion level
+withholds EXACTLY one thin 2-adic class of its top block:
+  scale 64: class ≡2 mod 8 (4 values); scale 256: ≡2 mod 16 (8 values);
+  scale 1024: ≡2 mod 16 + spillover. LAW: defect(comp) = {v ∈ top block:
+  v ≡ 2 mod 2^{k/2}}, k = log2(comp); all defect values have ν₂ = 1 (2·odd).
+LAW-PINNED LADDERS: SAT at d=2 (4s) and d=3 (172s) — the first finitely-
+describable invariant surviving multi-level exact verification. d=4 running.
+Proof target: "every law-state extends to the next law-state" — defect values
+are 2·odd in a thinning class; the absorption/class calculus applies directly.
