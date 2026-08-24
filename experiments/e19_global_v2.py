@@ -91,41 +91,54 @@ class Solver:
                         adj[u].append(w)
                     else:
                         adj[w].append(u)
-            # cycle detection via iterative DFS
-            WHITE, GRAY, BLACK = 0, 1, 2
-            color = {v: WHITE for v in placed}
-            parent = {}
-            cycle = None
-            for start in placed:
-                if color[start] != WHITE: continue
-                stack = [(start, iter(adj[start]))]
-                color[start] = GRAY
-                while stack and cycle is None:
-                    node, it = stack[-1]
-                    adv = False
-                    for nxt in it:
-                        if color[nxt] == WHITE:
-                            color[nxt] = GRAY
-                            parent[nxt] = node
-                            stack.append((nxt, iter(adj[nxt])))
-                            adv = True
-                            break
-                        elif color[nxt] == GRAY:
-                            # found cycle: recover path node -> ... -> nxt
-                            path = [node]
-                            cur = node
-                            while cur != nxt:
-                                cur = parent[cur]
-                                path.append(cur)
-                            path.reverse()
-                            cycle = path
-                            break
-                    if cycle: break
-                    if not adv:
-                        color[node] = BLACK
-                        stack.pop()
-                if cycle: break
-            if cycle is None:
+            # batched cycle elimination: find many cycles per SAT round
+            def find_cycle(adjx):
+                WHITE, GRAY, BLACK = 0, 1, 2
+                color = {v: WHITE for v in placed}
+                parent = {}
+                for start in placed:
+                    if color[start] != WHITE: continue
+                    stack = [(start, iter(adjx[start]))]
+                    color[start] = GRAY
+                    while stack:
+                        node, it = stack[-1]
+                        adv = False
+                        for nxt in it:
+                            if color[nxt] == WHITE:
+                                color[nxt] = GRAY
+                                parent[nxt] = node
+                                stack.append((nxt, iter(adjx[nxt])))
+                                adv = True
+                                break
+                            elif color[nxt] == GRAY:
+                                path = [node]
+                                cur = node
+                                while cur != nxt:
+                                    cur = parent[cur]
+                                    path.append(cur)
+                                path.reverse()
+                                return path
+                        if not adv:
+                            color[node] = BLACK
+                            stack.pop()
+                return None
+
+            nfound = 0
+            cycle = find_cycle(adj)
+            while cycle is not None and nfound < 400:
+                lits = []
+                for i3 in range(len(cycle)):
+                    u, w = cycle[i3], cycle[(i3 + 1) % len(cycle)]
+                    lits.append(-before(u, w))
+                s.add_clause(lits)
+                nfound += 1
+                # remove one edge of this cycle from working graph
+                u0, w0 = cycle[0], cycle[1]
+                adj[u0] = [x for x in adj[u0] if x != w0]
+                cycle = find_cycle(adj)
+            if nfound:
+                continue
+            if True:
                 # topological order of placed
                 indeg = {v: 0 for v in placed}
                 for u in adj:
@@ -150,12 +163,6 @@ class Solver:
                         if indeg2[w] == 0:
                             bisect.insort(avail, w)
                 return out
-            # forbid the cycle
-            lits = []
-            for i in range(len(cycle)):
-                u, w = cycle[i], cycle[(i + 1) % len(cycle)]
-                lits.append(-before(u, w))
-            s.add_clause(lits)
 
     def run(self, plan):
         for (commit_to, mandatory, horizon) in plan:
