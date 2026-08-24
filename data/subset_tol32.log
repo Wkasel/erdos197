@@ -1,0 +1,4 @@
+M=32 T=1: max|S'| = 32 of 32 (1.00)  worst-zone (15,)
+M=32 T=2: max|S'| = 32 of 32 (1.00)  worst-zone (9, 13)
+M=32 T=3: max|S'| = 31 of 32 (0.97)  worst-zone (10, 14, 16)
+M=32 T=4: max|S'| = 31 of 32 (0.97)  worst-zone (9, 11, 13, 15)
