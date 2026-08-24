@@ -41,7 +41,7 @@ class OrderSAT:
     def add(self, *lits):
         self.clauses.append(list(lits))
 
-    def solve(self, max_rounds=200):
+    def solve(self, max_rounds=100000):
         s = Cadical195(bootstrap_with=self.clauses)
         rounds = 0
         while True:
@@ -57,50 +57,40 @@ class OrderSAT:
                     return self.varmap[(i, j)] in model
                 return self.varmap[(j, i)] not in model
 
-            # find 3-cycles: i->j if bef(i,j). complete tournament; find a
-            # directed triangle via degree argument
-            # order by number of wins; a cycle exists iff not transitive
+            # order by wins; batch-add violated transitivity triangles
             wins = [0] * self.n
             for i in range(self.n):
                 for j in range(self.n):
                     if i != j and bef(i, j):
                         wins[i] += 1
             order = sorted(range(self.n), key=lambda i: -wins[i])
-            # check consistency: order[i] should beat order[j] for i<j
-            bad = []
-            for a in range(self.n):
-                for b in range(a + 1, self.n):
-                    i, j = order[a], order[b]
-                    if not bef(i, j):
-                        # find k to make triangle i,j,k: j beats i; need k
-                        # with i beats k, k beats j
-                        for c in range(self.n):
-                            k = order[c]
-                            if k != i and k != j and bef(i, k) and bef(k, j):
-                                bad.append((j, i, k))  # j->i, i->k, k->j cycle
-                                break
-                        else:
-                            bad.append(None)
-                        break
-                if bad:
-                    break
-            if not bad:
-                # extract sequence
-                seq = [self.B[i] for i in order]
-                return seq
-            if bad[0] is None:
-                # fallback: forbid this exact inversion pattern minimally —
-                # shouldn't happen in a complete tournament
-                raise RuntimeError("triangle not found")
-            j, i, k = bad[0]
-            # cycle j->i->k->j : forbid it (add transitivity clause)
+
             def lit(i2, j2):
                 if i2 < j2:
                     return self.varmap[(i2, j2)]
                 return -self.varmap[(j2, i2)]
-            # j before i AND i before k -> j before k
-            s.add_clause([-lit(j, i), -lit(i, k), lit(j, k)])
-            self.clauses.append([-lit(j, i), -lit(i, k), lit(j, k)])
+
+            added = 0
+            for a in range(self.n):
+                for b in range(a + 1, self.n):
+                    i, j = order[a], order[b]
+                    if not bef(i, j):
+                        for c in range(self.n):
+                            k = order[c]
+                            if k != i and k != j and bef(i, k) and bef(k, j):
+                                # cycle j->i->k->j: add transitivity clause
+                                cl = [-lit(j, i), -lit(i, k), lit(j, k)]
+                                s.add_clause(cl)
+                                self.clauses.append(cl)
+                                added += 1
+                                break
+                        if added > 10000:
+                            break
+                if added > 10000:
+                    break
+            if not added:
+                seq = [self.B[i] for i in order]
+                return seq
 
 
 def decide(B, Z, return_seq=False):
@@ -126,7 +116,9 @@ def decide(B, Z, return_seq=False):
             if z > y and z in Bset:
                 enc.add(enc.before(z, y))
     res = enc.solve()
-    if res is False or res is None:
+    if res is None:
+        raise RuntimeError("transitivity rounds exhausted — indeterminate")
+    if res is False:
         return False
     return res if return_seq else True
 
