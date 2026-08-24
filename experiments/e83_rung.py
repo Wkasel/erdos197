@@ -91,6 +91,13 @@ while True:
     if not new:
         deltas = {v: max([0] + [j for j in L[v] if L[v][j] in model]) for v in V if v <= 16}
         print(f"RUNG m={m} CAP={CAP}: SAT ({time.time()-t0:.0f}s) low deltas={deltas}", flush=True)
+        import json
+        alld = {v: max([0] + [j for j in L[v] if L[v][j] in model]) for v in V}
+        wins = B.sum(axis=1)
+        order = [V[i] for i in sorted(range(n), key=lambda i: -int(wins[i]))]
+        json.dump({"delta": {str(v): int(d) for v, d in alld.items()},
+                   "order": order},
+                  open(f"data/rung_{m}_{CAP}_{DMAX}.json", "w"))
         break
     sol.append_formula(new)
     rounds += 1

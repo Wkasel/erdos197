@@ -319,6 +319,22 @@ Hence $\SA$ is $3$-permutable if and only if some stage function satisfies
 $s$.
 \end{theorem}
 
+\begin{theorem}[DEGS via chunks]\label{thm:degs}
+$\Z^+$ itself is not $3$-permutable. \emph{Proof:} suppose $s$ satisfies
+(A) with finite fibers and put $\sigma = s(1)$. For every $y$ with
+$s(y) > \sigma$, the triple $(1, y, 2y-1)$ forces $s(2y-1) \le s(y)$ by (A).
+The orbit $y_0,\, y_{i+1} = 2y_i - 1$ is strictly increasing; only finitely
+many of its members can have stage $\le \sigma$ (those fibers are finite),
+after which its stages are non-increasing, hence eventually confined to one
+finite fiber — impossible for an infinite set. \qed
+\end{theorem}
+
+\noindent This recovers the Davis–Entringer–Graham–Simmons theorem in the
+chunk coordinates and isolates what a permutable team must do: break every
+such reflected orbit out of the team. The dyadic team $\SA$ breaks
+single-reflector orbits in two steps (completions land in odd blocks); the
+question is whether the multi-scale accounting below can be survived.
+
 \begin{lemma}[Same block]\label{lem:sameblock}
 In every AP triple of $\SA$ the middle $y$ and top $z$ lie in the same even
 block. ($z<2y\le 2^{k+1}$ and block $k{+}1$ is odd.)
