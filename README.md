@@ -28,5 +28,5 @@ solver-independent, with its finitely many schema instances machine-audited
 by three independently written checkers (mutation-tested in
 `experiments/e117_mutation_suite.py`).
 
-Author: Will Kasel, 2026. Questions/refutations welcome — the entire
+Author: William Kasel, 2026. Questions/refutations welcome — the entire
 verification stack is designed to be run by a skeptic.

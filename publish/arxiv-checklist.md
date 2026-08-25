@@ -16,7 +16,7 @@
 
 ## Submission metadata (copy-paste)
 - Title: Structural rigidity in the Erdős–Graham two-set permutation problem
-- Authors: Will Kasel
+- Authors: William Kasel
 - Category: math.CO (Combinatorics)
 - MSC: 05D10 (Ramsey theory), 05A05 (Permutations)
 - Abstract: the PDF abstract is ~2,985 characters, over arXiv's 1,920-char
