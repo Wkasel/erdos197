@@ -1,0 +1,12 @@
+sanity M=48: odd-even order violates 0 APs (expect 0)
+sanity M=56: odd-even order violates 0 APs (expect 0)
+== M = 200  (mod 8 = 0)  n = 200 ==
+   built: 19900 vars, 2646600 clauses (2.2s)
+   T0: AP-freeness alone              -> SAT     (expect SAT) AGREE (2.6s)
+   E1: AP + b5<b3 + t5<t3             -> UNSAT   (expect UNSAT) AGREE (2.2s)
+   E2: AP + b3<b5 + t3<t5             -> UNSAT   (expect UNSAT) AGREE (2.3s)
+   E1h: + A2,A3 as well               -> UNSAT   (expect UNSAT) AGREE (1.8s)
+   E2h: + A2,A3 as well               -> UNSAT   (expect UNSAT) AGREE (1.8s)
+   F:  AP + A2 + A3 + b5<b3 + A1      -> UNSAT   (expect UNSAT) AGREE (2.2s)
+   Fs: AP + A2 + A3 + b5<b3 (no A1)   -> SAT     (expect SAT) AGREE (2.8s)
+   C3: AP + A1 + A2 + A3              -> UNSAT   (expect UNSAT) AGREE (2.8s)
