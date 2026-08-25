@@ -44,7 +44,17 @@ import sys
 import time
 
 import numpy as np
-from pysat.solvers import Cadical195
+from pysat.solvers import Cadical153, Cadical195
+
+# NB (audit A4 finding): the proof-logging solve uses Cadical153, NOT
+# Cadical195.  python-sat 1.9.dev15's Cadical195 proof capture emits an
+# INCOMPLETE DRAT trace at large scale: at M=512 the captured proof ends
+# with the empty clause yet formula+lemmas do not unit-propagate to a
+# conflict (drat-trim: "conflict claimed, but not detected"; confirmed
+# independently by a propagate() check), while the same pipeline at
+# M<=264 is complete.  Cadical153's file-based capture is complete at all
+# scales tried and its proofs verify.  Cadical195 remains in use for the
+# lazy clause-collection loop, which needs no proof.
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CERTS = os.path.join(ROOT, "data", "certs")
@@ -230,7 +240,7 @@ def emit(M):
         cnf += lazy_trans(M, cnf, V, n, pos, lit)
     print(f"  final CNF: {len(cnf)} clauses; proof-logging solve...",
           flush=True)
-    sol = Cadical195(bootstrap_with=cnf, with_proof=True)
+    sol = Cadical153(bootstrap_with=cnf, with_proof=True)
     res = sol.solve()
     assert res is False, f"M={M}: expected UNSAT, got {res}"
     proof = sol.get_proof()

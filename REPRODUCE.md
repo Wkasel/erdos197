@@ -27,7 +27,7 @@ Verified on macOS 26.5 (arm64), Python 3.11.15. Requirements:
 
 * Python 3.11 with the exact pins in `requirements-frozen.txt`
   (the load-bearing packages are `python-sat==1.9.dev15`, which bundles
-  CaDiCaL 1.9.5 as `Cadical195`, and `numpy`):
+  CaDiCaL 1.5.3/1.9.5 as `Cadical153`/`Cadical195`, and `numpy`):
 
   ```sh
   python3.11 -m venv .venv
@@ -101,10 +101,24 @@ harness does not manufacture UNSAT everywhere.
 ### Step 4 — DRAT certificates (`repro_drat_certs.py` + `tools/drat-trim`)
 
 Both headline UNSAT instances are re-certified **from scratch on every
-run**: the CNFs are rebuilt, solved by CaDiCaL 1.9.5 with proof logging
-(pysat `Cadical195`, `with_proof=True`), and the emitted DRAT refutations
-are checked by the independent `drat-trim` verifier (must print
+run**: the CNFs are rebuilt, solved by CaDiCaL with proof logging (pysat
+`Cadical153`, `with_proof=True`), and the emitted DRAT refutations are
+checked by the independent `drat-trim` verifier (must print
 `s VERIFIED`).
+
+> **Toolchain finding (audit A4).** The proof-logging solve deliberately
+> uses `Cadical153`, not `Cadical195`: python-sat 1.9.dev15's
+> `Cadical195` proof capture was found to emit an *incomplete* DRAT
+> trace at large scale — at `M = 512` the captured proof ends with the
+> empty clause, yet formula + lemmas do not unit-propagate to a conflict
+> (drat-trim: `c conflict claimed, but not detected`; confirmed by an
+> independent `propagate()` check), while the identical pipeline at
+> `M ≤ 264` is complete. `Cadical153`'s file-based capture is complete
+> and its proofs verify at both scales. `Cadical195` is still used where
+> no proof is needed (the lazy clause-collection loop, and the direct
+> solves of steps 3/5). This is exactly the failure mode independent
+> proof checking exists to catch — solver verdicts are never trusted
+> bare in this package.
 
 * `M = 128` — **eager** encoding: the CNF contains the 3 C3 units, all
   8,064 AP clauses, and **all** 682,752 transitivity clauses; it is a
@@ -163,5 +177,9 @@ the script reports `TOTAL failures: 0`.
 ## Measured wall time
 
 Full `./reproduce.sh` on an M-series MacBook (macOS 26.5, arm64,
-Python 3.11.15): see the `total wall time` line it prints; the run
-recorded for this commit is noted in the commit message.
+Python 3.11.15), the end-to-end run recorded for this commit:
+**1014 s (~17 min)**, all steps PASS. Breakdown: steps 0–2 ≈ 2 s
+(the schema checker and closure engine are symbolic, not search);
+step 3 ≈ 535 s (the two M=512-scale solves dominate); step 4 ≈ 475 s
+(lazy loop + proof-logging solve + drat-trim on ~1.9M proof lines);
+step 5 ≈ 3 s.

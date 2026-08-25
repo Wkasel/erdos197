@@ -12,7 +12,7 @@ main theorem (see `notes/33-og-proof.md`, `paper/main.tex` thm:c3core):
 | file | scale | encoding | contents |
 |---|---|---|---|
 | `c3_M128.cnf.gz` | M=128 | eager | 3 units + 8,064 AP clauses + 682,752 transitivity clauses (ALL of them: complete O(n^3) axiomatization) |
-| `c3_M128.drat.gz` | M=128 | | DRAT refutation emitted by CaDiCaL 1.9.5 (pysat `Cadical195`, `with_proof=True`) |
+| `c3_M128.drat.gz` | M=128 | | DRAT refutation emitted by CaDiCaL 1.5.3 (pysat `Cadical153`, `with_proof=True`; see note below on why not `Cadical195`) |
 | `c3_M512.cnf.gz` | M=512 | lazy-audited | 3 units + 130,560 AP clauses + the transitivity instances collected by a lazy refinement loop (~1.4M; exact count varies run to run) |
 | `c3_M512.drat.gz` | M=512 | | DRAT refutation of that CNF |
 
@@ -56,6 +56,15 @@ audit_cnf("data/certs/c3_M128.cnf", 128)
 audit_cnf("data/certs/c3_M512.cnf", 512)
 EOF
 ```
+
+**Why `Cadical153` for proof logging:** python-sat 1.9.dev15's
+`Cadical195` proof capture emits an incomplete DRAT trace at large scale
+(at M=512 the captured proof ends with the empty clause but formula +
+lemmas do not unit-propagate to a conflict; drat-trim reports
+`c conflict claimed, but not detected`).  `Cadical153`'s capture is
+complete and verifies at both scales, so the emitter uses it for the
+proof-logging solve.  Details: `experiments/repro_drat_certs.py` header
+and `REPRODUCE.md` step 4.
 
 drat-trim is not packaged on PyPI or Homebrew; the single-file C source
 is vendored at `tools/drat-trim/` (from
