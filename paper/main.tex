@@ -91,6 +91,32 @@ yields a monotone 3-AP. We use throughout the \emph{dyadic blocks}
 $B_k = (2^{k-1}, 2^k]$ and the canonical two-set candidate
 $\SA = \bigcup_{k \text{ even}} B_k$, $S_B = \Z^+ \setminus \SA$.
 
+\begin{remark}[Ground set: $\Z^+$ versus $\N \ni 0$; the Lean formalization]
+\label{rem:lean}
+The original sources pose the problem for the positive integers: Davis,
+Entringer, Graham and Simmons ask whether a two-set partition of $\Z^+$ is
+possible, and Erd\H{o}s--Graham (1979, p.~338) repeat the question verbatim
+for $\Z^+$. The Lean formalization in the DeepMind
+\emph{formal-conjectures} repository
+(\texttt{FormalConjectures/ErdosProblems/197.lean}) instead partitions
+Lean's $\N = \{0, 1, 2, \dots\}$, which \emph{includes $0$}, and asks for
+bijections $f\colon \N \simeq A$, $g\colon \N \simeq B$ avoiding monotone
+$3$-term APs --- the bijection-from-$\N$ requirement being exactly our
+order-type-$\omega$ convention. The two formulations are not verbatim
+equivalent: a positive answer over $\N$ yields one over $\Z^+$ (delete the
+value $0$; deletion preserves $3$-AP-freeness), but conversely adjoining
+$0$ to one part adds genuine constraints --- the progressions $(0, d, 2d)$
+with $d, 2d$ in that part --- and we are not aware of a general argument
+that a permutable set stays permutable after adjoining $0$. Our results
+are insensitive to the nuance: Theorem~\ref{thm:main} shows $\SA$ itself
+is not permutable, and since deletion preserves validity, $\SA \cup \{0\}$
+is not permutable either; hence the dyadic partition fails in both
+formulations, whichever part receives $0$. (In the Lean encoding the
+underlying AP predicate allows zero or negative common differences, but
+injectivity of the permutation rules out $d = 0$, and $d < 0$ is the
+decreasing case, so the notion of ``monotone $3$-AP'' agrees with ours.)
+\end{remark}
+
 \section{The orbit obstruction}
 
 \begin{lemma}[Orbit obstruction]\label{lem:orbit}
