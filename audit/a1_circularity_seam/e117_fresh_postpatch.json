@@ -1,0 +1,619 @@
+{
+ "tested": 28,
+ "caught": 28,
+ "holes": [],
+ "results": [
+  {
+   "id": "CTRL-e113",
+   "control": true,
+   "ok": true,
+   "detail": null,
+   "per_call": [
+    [
+     "check_layer1",
+     16,
+     "ok"
+    ],
+    [
+     "check_layer1",
+     20,
+     "ok"
+    ],
+    [
+     "check_flip",
+     16,
+     "ok"
+    ],
+    [
+     "check_flip",
+     24,
+     "ok"
+    ],
+    [
+     "sharpness_4mod8",
+     20,
+     "ok"
+    ]
+   ]
+  },
+  {
+   "id": "CTRL-e113b",
+   "control": true,
+   "ok": true,
+   "detail": null,
+   "per_call": [
+    [
+     "cross_l1",
+     16,
+     "ok"
+    ],
+    [
+     "cross_flip",
+     16,
+     "ok"
+    ]
+   ]
+  },
+  {
+   "id": "MUT-01",
+   "kind": "(i) wrong AP arithmetic",
+   "target": "e113",
+   "desc": "mirror AP (b3, m-1, t5) in flip Case I replaced by the non-AP triple (b3, m-1, t3): b3+t3 = 3M != 2(m0-1)",
+   "verdict": "CAUGHT",
+   "detail": "check_flip(16): AssertionError((19, 23, 29))",
+   "per_call": [
+    [
+     "check_flip",
+     16,
+     "AssertionError((19, 23, 29))"
+    ],
+    [
+     "check_flip",
+     24,
+     "AssertionError((27, 35, 45))"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-02",
+   "kind": "(ii) violated precondition",
+   "target": "e113",
+   "desc": "G4-inward flood in flip Case I seeded with tag 'out' (claims m-1 < m+1) though only (m+1, m-1) is a fact",
+   "verdict": "CAUGHT",
+   "detail": "check_flip(16): AssertionError()",
+   "per_call": [
+    [
+     "check_flip",
+     16,
+     "AssertionError()"
+    ],
+    [
+     "check_flip",
+     24,
+     "AssertionError()"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-03",
+   "kind": "(iii) wrong residue (G4 center at 4 mod 8)",
+   "target": "e113",
+   "desc": "flip schema run at M = 4 mod 8 with BOTH the entry residue guard and the explicit mod-8 lock assert stripped -- the deep leader-membership asserts must still reject",
+   "verdict": "CAUGHT",
+   "detail": "check_flip(20): AssertionError()",
+   "per_call": [
+    [
+     "check_flip",
+     20,
+     "AssertionError()"
+    ],
+    [
+     "check_flip",
+     28,
+     "AssertionError()"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-03b",
+   "kind": "(iii) wrong residue (sharpness tamper)",
+   "target": "e113",
+   "desc": "sharpness check claims m0-1 = 1 mod 4 is a valid Case-I G4 center residue at M = 4 mod 8",
+   "verdict": "CAUGHT",
+   "detail": "sharpness_4mod8(20): AssertionError()",
+   "per_call": [
+    [
+     "sharpness_4mod8",
+     20,
+     "AssertionError()"
+    ],
+    [
+     "sharpness_4mod8",
+     28,
+     "AssertionError()"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-04",
+   "kind": "(iv) flipped conclusion literal",
+   "target": "e113",
+   "desc": "mirror R3 on (b5, m+1, t3) in flip Case II concludes (m+1, b5) instead of (b5, m+1)",
+   "verdict": "CAUGHT",
+   "detail": "check_flip(16): AssertionError((16, 21, 25, 29, (29, 25), (25, 21)))",
+   "per_call": [
+    [
+     "check_flip",
+     16,
+     "AssertionError((16, 21, 25, 29, (29, 25), (25, 21)))"
+    ],
+    [
+     "check_flip",
+     24,
+     "AssertionError((24, 29, 37, 45, (45, 37), (37, 29)))"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-05",
+   "kind": "(v) off-by-one interval end",
+   "target": "e113",
+   "desc": "odd ladder gets one extra rung: last value 2M+1 lies outside (M, 2M]",
+   "verdict": "CAUGHT",
+   "detail": "check_layer1(16): AssertionError()",
+   "per_call": [
+    [
+     "check_layer1",
+     16,
+     "AssertionError()"
+    ],
+    [
+     "check_layer1",
+     20,
+     "AssertionError()"
+    ],
+    [
+     "check_flip",
+     16,
+     "AssertionError()"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-05b",
+   "kind": "(v) off-by-one interval end (d=4)",
+   "target": "e113",
+   "desc": "d=4 ladder count off by one: rung beyond 2M",
+   "verdict": "CAUGHT",
+   "detail": "check_layer1(16): AssertionError()",
+   "per_call": [
+    [
+     "check_layer1",
+     16,
+     "AssertionError()"
+    ],
+    [
+     "check_flip",
+     16,
+     "AssertionError()"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-06",
+   "kind": "(vi) dropped case branch",
+   "target": "e113",
+   "desc": "layer1 Case I runs only one LADB phase branch",
+   "verdict": "CAUGHT",
+   "detail": "check_layer1(16): AssertionError((16, {('I-G4', True), ('I-P2', True, False), ('II-P2', True, True), ('II-G4', True), ('II-P2', False, True), ('II-P2', True, False), ('I-P2', True, True), ('II-P2', False, False), ('II-...",
+   "per_call": [
+    [
+     "check_layer1",
+     16,
+     "AssertionError((16, {('I-G4', True), ('I-P2', True, False), ('II-P2', True, True), ('II-G4', True), ('II-P2', False, True), ('II-P2', True, False), ('I-P2', True, True), ('II-P2', False, False), ('II-..."
+    ],
+    [
+     "check_layer1",
+     20,
+     "AssertionError((20, {('I-G4', True), ('I-P2', True, False), ('II-P2', True, True), ('II-G4', True), ('II-P2', False, True), ('II-P2', True, False), ('I-P2', True, True), ('II-P2', False, False), ('II-..."
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-17",
+   "kind": "(vi) dropped case branch",
+   "target": "e113",
+   "desc": "flip Case II (LADB loop) dropped entirely",
+   "verdict": "CAUGHT",
+   "detail": "check_flip(16): AssertionError((16, {('I-EVEN2', False), ('I-LADA', True), ('II-EVEN2', False), ('I-LADA', False), ('I-EVEN2', True), ('II-EVEN2', True)}))",
+   "per_call": [
+    [
+     "check_flip",
+     16,
+     "AssertionError((16, {('I-EVEN2', False), ('I-LADA', True), ('II-EVEN2', False), ('I-LADA', False), ('I-EVEN2', True), ('II-EVEN2', True)}))"
+    ],
+    [
+     "check_flip",
+     24,
+     "AssertionError((24, {('I-EVEN2', False), ('I-LADA', True), ('II-EVEN2', False), ('I-LADA', False), ('I-EVEN2', True), ('II-EVEN2', True)}))"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-07",
+   "kind": "(vii) wrong mirror value",
+   "target": "e113",
+   "desc": "lemma_P outward-up induction reflects through the wrong mirror 2c-w+2 (consistently, so only the AP arithmetic check can see it)",
+   "verdict": "CAUGHT",
+   "detail": "check_layer1(16): AssertionError((24, 25, 28))",
+   "per_call": [
+    [
+     "check_layer1",
+     16,
+     "AssertionError((24, 25, 28))"
+    ],
+    [
+     "check_layer1",
+     20,
+     "AssertionError((28, 29, 32))"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-08",
+   "kind": "(viii) transitivity gap",
+   "target": "e113",
+   "desc": "flip Case II chain t3 < b6 < m+1 replaced by broken chain t3 < t10 < m+1 ((t3, t10) never derived)",
+   "verdict": "CAUGHT",
+   "detail": "check_flip(24): AssertionError((24, 45, 38, 37))",
+   "per_call": [
+    [
+     "check_flip",
+     16,
+     "ok"
+    ],
+    [
+     "check_flip",
+     24,
+     "AssertionError((24, 45, 38, 37))"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-09a",
+   "kind": "(ix) wrong leader/trailer status",
+   "target": "e113",
+   "desc": "lemma_Z returns the trailer rungs as the leader set",
+   "verdict": "CAUGHT",
+   "detail": "check_layer1(16): AssertionError()",
+   "per_call": [
+    [
+     "check_layer1",
+     16,
+     "AssertionError()"
+    ],
+    [
+     "check_flip",
+     16,
+     "AssertionError()"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-09b",
+   "kind": "(ix) wrong leader/trailer status",
+   "target": "e113",
+   "desc": "fiat_zig claims leaders but orients their downward edges as trailers",
+   "verdict": "CAUGHT",
+   "detail": "check_layer1(16): AssertionError((16, {(23, 27), (27, 23)}))",
+   "per_call": [
+    [
+     "check_layer1",
+     16,
+     "AssertionError((16, {(23, 27), (27, 23)}))"
+    ],
+    [
+     "check_flip",
+     16,
+     "AssertionError((16, {(25, 21), (21, 25)}))"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-10",
+   "kind": "(x) tampered final contradiction",
+   "target": "e113",
+   "desc": "axiom A3 (t10, b3) silently removed from the layer1 hypothesis base; the Case-I closing 3-cycle must fail to consume it",
+   "verdict": "CAUGHT",
+   "detail": "check_layer1(16): AssertionError((16, {(22, 19)}))",
+   "per_call": [
+    [
+     "check_layer1",
+     16,
+     "AssertionError((16, {(22, 19)}))"
+    ],
+    [
+     "check_layer1",
+     20,
+     "AssertionError((20, {(30, 23)}))"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-10b",
+   "kind": "(x) tampered final contradiction",
+   "target": "e113",
+   "desc": "flip Case I branch conclusions tampered to the non-opposite pair (b5, m-1) vs (m-1, b3) -- both derivable, but they close no cycle",
+   "verdict": "CAUGHT",
+   "detail": "check_flip(16): AssertionError()",
+   "per_call": [
+    [
+     "check_flip",
+     16,
+     "AssertionError()"
+    ],
+    [
+     "check_flip",
+     24,
+     "AssertionError()"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-11",
+   "kind": "(+) derivation bypass",
+   "target": "e113",
+   "desc": "flip Case I EVEN2 derivation chain replaced by directly injecting the conclusion into ctx.facts (raw set add, bypassing rule/trans)",
+   "verdict": "CAUGHT",
+   "detail": "check_flip(16): AssertionError((16, {(23, 21)}))",
+   "per_call": [
+    [
+     "check_flip",
+     16,
+     "AssertionError((16, {(23, 21)}))"
+    ],
+    [
+     "check_flip",
+     24,
+     "AssertionError((24, {(35, 29)}))"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-11b",
+   "kind": "(+) derivation bypass via assume",
+   "target": "e113",
+   "desc": "flip Case I EVEN2 derivation chain replaced by smuggling the conclusion in as a hypothesis (assume); only meaningful against the patched checker",
+   "verdict": "CAUGHT",
+   "detail": "check_flip(16): AssertionError((16, {(23, 21)}))",
+   "per_call": [
+    [
+     "check_flip",
+     16,
+     "AssertionError((16, {(23, 21)}))"
+    ],
+    [
+     "check_flip",
+     24,
+     "AssertionError((24, {(35, 29)}))"
+    ]
+   ],
+   "note": "pre-patch this dies on AttributeError (no assume method): vacuous; the post-patch run is the real test"
+  },
+  {
+   "id": "MUT-18",
+   "kind": "(+) smuggled extra hypothesis in fiat_zig",
+   "target": "e113",
+   "desc": "fiat_zig assumes one extra long-range edge beyond the declared Lemma-D phase set; nothing downstream consumes it, so only audit()'s assumed==declared check can fire (and fiat_edges must disagree with the tampered loop)",
+   "verdict": "CAUGHT",
+   "detail": "check_layer1(16): AssertionError((16, {(19, 31)}))",
+   "per_call": [
+    [
+     "check_layer1",
+     16,
+     "AssertionError((16, {(19, 31)}))"
+    ],
+    [
+     "check_flip",
+     16,
+     "AssertionError((16, {(17, 29)}))"
+    ]
+   ],
+   "note": "post-patch-only probe: tests the audit() wiring itself"
+  },
+  {
+   "id": "MUT-19",
+   "kind": "(+) case-split fact injected raw",
+   "target": "e113",
+   "desc": "layer1 Case I case-split fact (t5, m0) injected via raw ctx.facts.add instead of assume: it is then neither assumed nor derived, so only audit()'s facts==assumed|derived check can fire",
+   "verdict": "CAUGHT",
+   "detail": "check_layer1(16): AssertionError((16, {(27, 24)}))",
+   "per_call": [
+    [
+     "check_layer1",
+     16,
+     "AssertionError((16, {(27, 24)}))"
+    ],
+    [
+     "check_layer1",
+     20,
+     "AssertionError((20, {(35, 30)}))"
+    ]
+   ],
+   "note": "post-patch-only probe: tests the audit() wiring itself"
+  },
+  {
+   "id": "MUT-20",
+   "kind": "(+) tampered declared hypothesis set",
+   "target": "e113",
+   "desc": "declared AX drops axiom (b3, b5) while base() still assumes it: audit()'s exact set comparison must fire in the first audited branch",
+   "verdict": "CAUGHT",
+   "detail": "check_layer1(16): AssertionError((16, {(19, 21)}))",
+   "per_call": [
+    [
+     "check_layer1",
+     16,
+     "AssertionError((16, {(19, 21)}))"
+    ],
+    [
+     "check_layer1",
+     20,
+     "AssertionError((20, {(23, 25)}))"
+    ]
+   ],
+   "note": "post-patch-only probe: tests the audit() wiring itself"
+  },
+  {
+   "id": "MUT-16",
+   "kind": "(ii)/(ix) wrong flood class",
+   "target": "e113",
+   "desc": "layer1 Case I G4 flood fed the mod-4 class A ladder (offsets 1 mod 4) instead of class B",
+   "verdict": "CAUGHT",
+   "detail": "check_layer1(16): AssertionError((16, 25, 2, 'leader count in', []))",
+   "per_call": [
+    [
+     "check_layer1",
+     16,
+     "AssertionError((16, 25, 2, 'leader count in', []))"
+    ],
+    [
+     "check_layer1",
+     20,
+     "AssertionError((20, 29, 2, 'leader count in', []))"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-12",
+   "kind": "(+) implication table tamper",
+   "target": "e113b",
+   "desc": "one implication dropped from the closure engine's table; verify_engine's brute-force re-derivation must catch the mismatch at import",
+   "verdict": "CAUGHT",
+   "detail": "at exec/import: AssertionError('closure engine implication table mismatch at M=12')",
+   "per_call": [],
+   "note": null
+  },
+  {
+   "id": "MUT-13",
+   "kind": "(+) unsound closure engine",
+   "target": "e113b",
+   "desc": "engine wrapped to report contradiction unconditionally; the AP-free-witness canary must fire at import",
+   "verdict": "CAUGHT",
+   "detail": "at exec/import: AssertionError('closure engine UNSOUND at M=12: refutes both orders of (b1,b2)')",
+   "per_call": [],
+   "note": null
+  },
+  {
+   "id": "MUT-14",
+   "kind": "(vi) dropped phase branch",
+   "target": "e113b",
+   "desc": "one of the four phase axioms dropped from the layer1 crossval tree",
+   "verdict": "CAUGHT",
+   "detail": "cross_l1(16): AssertionError()",
+   "per_call": [
+    [
+     "cross_l1",
+     16,
+     "AssertionError()"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-14b",
+   "kind": "(vi) dropped case branch",
+   "target": "e113b",
+   "desc": "one order of the (t5, m0) split dropped from the layer1 crossval tree",
+   "verdict": "CAUGHT",
+   "detail": "cross_l1(16): AssertionError()",
+   "per_call": [
+    [
+     "cross_l1",
+     16,
+     "AssertionError()"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-15a",
+   "kind": "(x) tampered axiom set (removal)",
+   "target": "e113b",
+   "desc": "axiom A3 removed from the layer1 crossval base: the closure must fail to close some branch",
+   "verdict": "CAUGHT",
+   "detail": "cross_l1(16) returned False",
+   "per_call": [
+    [
+     "cross_l1",
+     16,
+     "returned False"
+    ],
+    [
+     "cross_l1",
+     20,
+     "returned False"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-15b",
+   "kind": "(x) tampered axiom set (orientation flip)",
+   "target": "e113b",
+   "desc": "axiom A3 flipped to (b3, t10) in the layer1 crossval base",
+   "verdict": "CAUGHT",
+   "detail": "cross_l1(16) returned False",
+   "per_call": [
+    [
+     "cross_l1",
+     16,
+     "returned False"
+    ],
+    [
+     "cross_l1",
+     20,
+     "returned False"
+    ]
+   ],
+   "note": null
+  },
+  {
+   "id": "MUT-15c",
+   "kind": "(x) tampered axiom set (flip tree)",
+   "target": "e113b",
+   "desc": "axiom A1 (t5, b5) removed from the flip crossval base",
+   "verdict": "CAUGHT",
+   "detail": "cross_flip(16) returned False",
+   "per_call": [
+    [
+     "cross_flip",
+     16,
+     "returned False"
+    ],
+    [
+     "cross_flip",
+     24,
+     "returned False"
+    ]
+   ],
+   "note": null
+  }
+ ]
+}
