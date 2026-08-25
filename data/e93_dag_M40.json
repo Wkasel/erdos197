@@ -1,0 +1,596 @@
+{
+ "M": 40,
+ "target": "47<78",
+ "dag_nodes": 27,
+ "dag_depth": 20,
+ "max_case_splits": 3,
+ "attack_indexing": "1-indexed generation order; #1-7 are 15-attacks j=1..7 (guard 65+2j before 40+j), #8-15 are 16-attacks j=1..8 (guard 64+2j before 40+j)",
+ "S_star": {
+  "attacks": [
+   "A1:67<41",
+   "A2:69<42",
+   "A4:73<44",
+   "A5:75<45",
+   "A6:77<46",
+   "A8:66<41",
+   "A10:70<43",
+   "A11:72<44"
+  ],
+  "n_triples": 59
+ },
+ "obstructions": {
+  "up_from_attacks_derives": 0,
+  "slup_adds": 0,
+  "min_lemma_free_support": 34
+ },
+ "nodes": [
+  {
+   "literal": "66<53",
+   "depth": 1,
+   "attacks": [
+    "A1:67<41",
+    "A4:73<44",
+    "A5:75<45",
+    "A8:66<41",
+    "A10:70<43"
+   ],
+   "triples": [
+    "(41, 53, 65)",
+    "(41, 57, 73)",
+    "(43, 57, 71)",
+    "(44, 57, 70)",
+    "(45, 53, 61)",
+    "(45, 57, 69)",
+    "(49, 57, 65)",
+    "(49, 61, 73)",
+    "(53, 57, 61)",
+    "(53, 59, 65)",
+    "(53, 61, 69)",
+    "(53, 65, 77)",
+    "(55, 59, 63)",
+    "(55, 61, 67)",
+    "(57, 61, 65)",
+    "(57, 65, 73)",
+    "(57, 66, 75)",
+    "(57, 67, 77)",
+    "(59, 63, 67)",
+    "(59, 65, 71)",
+    "(59, 66, 73)",
+    "(61, 65, 69)",
+    "(61, 66, 71)",
+    "(61, 69, 77)",
+    "(63, 65, 67)",
+    "(63, 67, 71)",
+    "(67, 71, 75)",
+    "(69, 71, 73)",
+    "(71, 73, 75)"
+   ],
+   "intermediates": [],
+   "support_size": 34,
+   "raw_support_size": 34,
+   "case_splits": 2
+  },
+  {
+   "literal": "51<61",
+   "depth": 2,
+   "attacks": [
+    "A1:67<41",
+    "A2:69<42",
+    "A4:73<44",
+    "A5:75<45",
+    "A6:77<46"
+   ],
+   "triples": [
+    "(41, 53, 65)",
+    "(41, 57, 73)",
+    "(42, 57, 72)",
+    "(42, 60, 78)",
+    "(44, 57, 70)",
+    "(44, 60, 76)",
+    "(45, 53, 61)",
+    "(45, 57, 69)",
+    "(45, 61, 77)",
+    "(46, 56, 66)",
+    "(48, 54, 60)",
+    "(48, 57, 66)",
+    "(49, 57, 65)",
+    "(49, 61, 73)",
+    "(51, 55, 59)",
+    "(51, 61, 71)",
+    "(53, 57, 61)",
+    "(53, 59, 65)",
+    "(53, 61, 69)",
+    "(53, 65, 77)",
+    "(54, 58, 62)",
+    "(54, 60, 66)",
+    "(55, 59, 63)",
+    "(55, 61, 67)",
+    "(56, 61, 66)",
+    "(56, 66, 76)",
+    "(57, 59, 61)",
+    "(57, 61, 65)",
+    "(57, 65, 73)",
+    "(57, 66, 75)",
+    "(57, 67, 77)",
+    "(58, 62, 66)",
+    "(58, 63, 68)",
+    "(59, 63, 67)",
+    "(59, 65, 71)",
+    "(59, 66, 73)",
+    "(59, 67, 75)",
+    "(60, 66, 72)",
+    "(60, 69, 78)",
+    "(61, 63, 65)",
+    "(61, 65, 69)",
+    "(61, 69, 77)",
+    "(62, 66, 70)",
+    "(63, 65, 67)",
+    "(63, 67, 71)",
+    "(63, 68, 73)",
+    "(68, 73, 78)",
+    "(69, 71, 73)",
+    "(71, 73, 75)"
+   ],
+   "intermediates": [
+    "66<53"
+   ],
+   "support_size": 55,
+   "raw_support_size": 55,
+   "case_splits": 3
+  },
+  {
+   "literal": "71<61",
+   "depth": 3,
+   "attacks": [],
+   "triples": [
+    "(51, 61, 71)"
+   ],
+   "intermediates": [
+    "51<61"
+   ],
+   "support_size": 2,
+   "raw_support_size": 55,
+   "case_splits": 0
+  },
+  {
+   "literal": "55<61",
+   "depth": 4,
+   "attacks": [],
+   "triples": [
+    "(51, 55, 59)",
+    "(55, 59, 63)",
+    "(55, 61, 67)",
+    "(59, 63, 67)",
+    "(63, 67, 71)"
+   ],
+   "intermediates": [
+    "51<61",
+    "71<61"
+   ],
+   "support_size": 7,
+   "raw_support_size": 53,
+   "case_splits": 0
+  },
+  {
+   "literal": "67<61",
+   "depth": 5,
+   "attacks": [],
+   "triples": [
+    "(55, 61, 67)"
+   ],
+   "intermediates": [
+    "55<61"
+   ],
+   "support_size": 2,
+   "raw_support_size": 53,
+   "case_splits": 0
+  },
+  {
+   "literal": "59<53",
+   "depth": 6,
+   "attacks": [],
+   "triples": [
+    "(53, 57, 61)",
+    "(53, 59, 65)",
+    "(55, 59, 63)",
+    "(57, 59, 61)",
+    "(57, 61, 65)",
+    "(59, 63, 67)",
+    "(59, 65, 71)",
+    "(61, 63, 65)",
+    "(63, 65, 67)",
+    "(63, 67, 71)"
+   ],
+   "intermediates": [
+    "55<61",
+    "67<61"
+   ],
+   "support_size": 12,
+   "raw_support_size": 53,
+   "case_splits": 1
+  },
+  {
+   "literal": "59<65",
+   "depth": 7,
+   "attacks": [],
+   "triples": [
+    "(53, 59, 65)"
+   ],
+   "intermediates": [
+    "59<53"
+   ],
+   "support_size": 2,
+   "raw_support_size": 53,
+   "case_splits": 0
+  },
+  {
+   "literal": "71<65",
+   "depth": 8,
+   "attacks": [],
+   "triples": [
+    "(59, 65, 71)"
+   ],
+   "intermediates": [
+    "59<65"
+   ],
+   "support_size": 2,
+   "raw_support_size": 53,
+   "case_splits": 0
+  },
+  {
+   "literal": "59<57",
+   "depth": 8,
+   "attacks": [],
+   "triples": [
+    "(53, 57, 61)",
+    "(57, 59, 61)",
+    "(57, 61, 65)"
+   ],
+   "intermediates": [
+    "59<53",
+    "59<65"
+   ],
+   "support_size": 5,
+   "raw_support_size": 53,
+   "case_splits": 0
+  },
+  {
+   "literal": "59<61",
+   "depth": 9,
+   "attacks": [],
+   "triples": [
+    "(57, 59, 61)"
+   ],
+   "intermediates": [
+    "59<57"
+   ],
+   "support_size": 2,
+   "raw_support_size": 53,
+   "case_splits": 0
+  },
+  {
+   "literal": "63<61",
+   "depth": 9,
+   "attacks": [],
+   "triples": [
+    "(61, 63, 65)",
+    "(63, 65, 67)",
+    "(63, 67, 71)"
+   ],
+   "intermediates": [
+    "67<61",
+    "71<65"
+   ],
+   "support_size": 5,
+   "raw_support_size": 53,
+   "case_splits": 0
+  },
+  {
+   "literal": "55<65",
+   "depth": 9,
+   "attacks": [],
+   "triples": [
+    "(59, 65, 71)",
+    "(67, 71, 75)",
+    "(63, 67, 71)",
+    "(55, 65, 75)",
+    "(59, 63, 67)",
+    "(55, 59, 63)"
+   ],
+   "intermediates": [
+    "71<65"
+   ],
+   "support_size": 7,
+   "raw_support_size": 55,
+   "case_splits": 0
+  },
+  {
+   "literal": "71<69",
+   "depth": 9,
+   "attacks": [],
+   "triples": [
+    "(49, 57, 65)",
+    "(49, 61, 73)",
+    "(57, 61, 65)",
+    "(57, 65, 73)",
+    "(61, 65, 69)",
+    "(69, 71, 73)"
+   ],
+   "intermediates": [
+    "71<61",
+    "71<65"
+   ],
+   "support_size": 8,
+   "raw_support_size": 55,
+   "case_splits": 0
+  },
+  {
+   "literal": "63<65",
+   "depth": 10,
+   "attacks": [],
+   "triples": [
+    "(61, 63, 65)"
+   ],
+   "intermediates": [
+    "63<61"
+   ],
+   "support_size": 2,
+   "raw_support_size": 53,
+   "case_splits": 0
+  },
+  {
+   "literal": "47<61",
+   "depth": 10,
+   "attacks": [],
+   "triples": [
+    "(47, 59, 71)",
+    "(47, 61, 75)",
+    "(59, 67, 75)",
+    "(67, 71, 75)"
+   ],
+   "intermediates": [
+    "71<61",
+    "67<61",
+    "59<61"
+   ],
+   "support_size": 7,
+   "raw_support_size": 58,
+   "case_splits": 0
+  },
+  {
+   "literal": "71<73",
+   "depth": 10,
+   "attacks": [],
+   "triples": [
+    "(69, 71, 73)"
+   ],
+   "intermediates": [
+    "71<69"
+   ],
+   "support_size": 2,
+   "raw_support_size": 55,
+   "case_splits": 0
+  },
+  {
+   "literal": "67<65",
+   "depth": 11,
+   "attacks": [],
+   "triples": [
+    "(63, 65, 67)"
+   ],
+   "intermediates": [
+    "63<65"
+   ],
+   "support_size": 2,
+   "raw_support_size": 53,
+   "case_splits": 0
+  },
+  {
+   "literal": "67<57",
+   "depth": 12,
+   "attacks": [],
+   "triples": [
+    "(53, 61, 69)",
+    "(53, 65, 77)",
+    "(57, 61, 65)",
+    "(57, 67, 77)",
+    "(61, 65, 69)",
+    "(61, 69, 77)"
+   ],
+   "intermediates": [
+    "67<61",
+    "67<65"
+   ],
+   "support_size": 8,
+   "raw_support_size": 53,
+   "case_splits": 0
+  },
+  {
+   "literal": "51<65",
+   "depth": 13,
+   "attacks": [
+    "A2:69<42",
+    "A10:70<43",
+    "A11:72<44"
+   ],
+   "triples": [
+    "(42, 57, 72)",
+    "(43, 57, 71)",
+    "(44, 57, 70)",
+    "(45, 53, 61)",
+    "(45, 57, 69)",
+    "(51, 55, 59)",
+    "(53, 57, 61)",
+    "(53, 61, 69)",
+    "(55, 59, 63)",
+    "(57, 61, 65)",
+    "(59, 63, 67)",
+    "(63, 67, 71)"
+   ],
+   "intermediates": [
+    "51<61",
+    "55<65",
+    "67<57"
+   ],
+   "support_size": 18,
+   "raw_support_size": 59,
+   "case_splits": 0
+  },
+  {
+   "literal": "51<42",
+   "depth": 14,
+   "attacks": [
+    "A2:69<42",
+    "A4:73<44"
+   ],
+   "triples": [
+    "(42, 51, 60)",
+    "(44, 61, 78)",
+    "(49, 57, 65)",
+    "(49, 61, 73)",
+    "(51, 60, 69)",
+    "(57, 61, 65)",
+    "(57, 65, 73)",
+    "(60, 69, 78)",
+    "(61, 65, 69)"
+   ],
+   "intermediates": [
+    "51<61",
+    "51<65"
+   ],
+   "support_size": 13,
+   "raw_support_size": 60,
+   "case_splits": 0
+  },
+  {
+   "literal": "51<60",
+   "depth": 15,
+   "attacks": [],
+   "triples": [
+    "(42, 51, 60)"
+   ],
+   "intermediates": [
+    "51<42"
+   ],
+   "support_size": 2,
+   "raw_support_size": 60,
+   "case_splits": 0
+  },
+  {
+   "literal": "69<60",
+   "depth": 16,
+   "attacks": [],
+   "triples": [
+    "(51, 60, 69)"
+   ],
+   "intermediates": [
+    "51<60"
+   ],
+   "support_size": 2,
+   "raw_support_size": 60,
+   "case_splits": 0
+  },
+  {
+   "literal": "71<60",
+   "depth": 17,
+   "attacks": [],
+   "triples": [],
+   "intermediates": [
+    "71<69",
+    "69<60"
+   ],
+   "support_size": 2,
+   "raw_support_size": 62,
+   "case_splits": 0
+  },
+  {
+   "literal": "69<78",
+   "depth": 17,
+   "attacks": [],
+   "triples": [
+    "(60, 69, 78)"
+   ],
+   "intermediates": [
+    "69<60"
+   ],
+   "support_size": 2,
+   "raw_support_size": 60,
+   "case_splits": 0
+  },
+  {
+   "literal": "61<44",
+   "depth": 18,
+   "attacks": [
+    "A2:69<42",
+    "A4:73<44",
+    "A10:70<43",
+    "A11:72<44"
+   ],
+   "triples": [
+    "(42, 57, 72)",
+    "(43, 57, 71)",
+    "(44, 57, 70)",
+    "(44, 61, 78)",
+    "(45, 53, 61)",
+    "(45, 57, 69)",
+    "(48, 54, 60)",
+    "(48, 57, 66)",
+    "(49, 57, 65)",
+    "(49, 61, 73)",
+    "(53, 57, 61)",
+    "(53, 58, 63)",
+    "(53, 61, 69)",
+    "(54, 58, 62)",
+    "(54, 60, 66)",
+    "(57, 61, 65)",
+    "(57, 65, 73)",
+    "(58, 62, 66)",
+    "(58, 63, 68)",
+    "(59, 66, 73)",
+    "(61, 65, 69)",
+    "(61, 66, 71)",
+    "(62, 66, 70)",
+    "(63, 68, 73)",
+    "(68, 73, 78)"
+   ],
+   "intermediates": [
+    "66<53",
+    "71<65",
+    "59<57",
+    "71<73",
+    "71<60",
+    "69<78"
+   ],
+   "support_size": 35,
+   "raw_support_size": 62,
+   "case_splits": 1
+  },
+  {
+   "literal": "61<78",
+   "depth": 19,
+   "attacks": [],
+   "triples": [
+    "(44, 61, 78)"
+   ],
+   "intermediates": [
+    "61<44"
+   ],
+   "support_size": 2,
+   "raw_support_size": 62,
+   "case_splits": 0
+  },
+  {
+   "literal": "47<78",
+   "depth": 20,
+   "attacks": [],
+   "triples": [],
+   "intermediates": [
+    "47<61",
+    "61<78"
+   ],
+   "support_size": 2,
+   "raw_support_size": 67,
+   "case_splits": 0
+  }
+ ]
+}
