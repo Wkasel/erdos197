@@ -7,8 +7,10 @@ canonical dyadic partition of ℤ⁺ does not witness a positive answer to
 remains open).
 
 - **Paper:** [`paper/main.pdf`](paper/main.pdf) — the full proof:
-  chunk reduction → order-gadget reduction (unconditional) → the C3 core
-  theorem (hand proof; sharp mod-8 phase diagram).
+  order-gadget reduction (unconditional, proved directly on permutations)
+  → the C3 core theorem (hand proof; sharp mod-8 phase diagram); an exact
+  chunk reduction serves as the discovery coordinate system and an
+  alternative route.
 - **One-command verification:** `./reproduce.sh` (see
   [`REPRODUCE.md`](REPRODUCE.md)) — re-runs the strict schema checker on
   every hand-proof instance, two independent cross-validators, fresh

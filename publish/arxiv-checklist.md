@@ -14,7 +14,7 @@
 - MSC: 05D10 (Ramsey theory), 05A05 (Permutations)
 - Abstract: use the abstract from paper/main.tex verbatim (plain-text it:
   strip TeX macros \Z → Z, \SA → S_A as needed).
-- Comments field: "17 pages. Machine-verification scripts, DRAT
+- Comments field: "18 pages. Machine-verification scripts, DRAT
   certificates, and a one-command reproduction kit at
   https://github.com/Wkasel/erdos197"
 - License: arXiv non-exclusive license (default) is fine.
@@ -23,7 +23,7 @@
 - Source: upload publish/arxiv-bundle.tar.gz (contains main.tex only;
   arXiv compiles with TeX Live — the file uses only amsmath/amssymb/
   amsthm/geometry/hyperref, all standard).
-- Check the arXiv-produced PDF page count (17) and that no references
+- Check the arXiv-produced PDF page count (18) and that no references
   show as ?? before pressing Submit.
 
 ## After it's announced

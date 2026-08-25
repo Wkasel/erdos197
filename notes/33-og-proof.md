@@ -77,7 +77,9 @@ half-classes mod 2d, and adjacent rungs strictly alternate
 leader/trailer.  A proof may case-split on the phase of any ladder
 ("phase dichotomy") and detach any conclusion derived in both branches.
 
-**Lemma E (transfer).**  M even.  On the odd d=2 ladder
+**Lemma E (transfer).**  M even, M ≥ 12 (below 12 the four rungs
+named here collide, e.g. t₅ = b₃ at M = 8; every use is at M ≥ 12).
+On the odd d=2 ladder
 w_i = M + 1 + 2i (i = 0 … M/2 − 1) the four odd C3 values sit at
 b₃ = w₁, b₅ = w₂, t₅ = w_{M/2−3}, t₃ = w_{M/2−2}.  Lemma Z therefore
 locks the orientations of the pairs (b₃, b₅) and (t₅, t₃) together:
@@ -335,8 +337,10 @@ Then A1 contradicts Theorem FLIP.  ∎
 (Hand bound: the schemas verify from M = 16 up; M = 16 is also the
 smallest scale at which the order gadget is well-formed, notes/30 §0.
 The machine base ledger — AP+C3 UNSAT at every M ≡ 0 (mod 8) in
-16..256 and at 512, e104 part 3 / e89 / e96 — is now corroboration,
-not a dependency.)
+16..256 and at 512, e104 part 3 — is now corroboration, not a
+dependency.  e89 and e96 P5 verify the full 15-attack gadget OG(M)
+UNSAT, a strictly weaker statement than AP+C3 UNSAT; they corroborate
+the corollaries below, not the C3 core itself.)
 
 **Corollary (Lemma OG on the mod-8 class).**  The order gadget OG(M)
 (paper def:og) contains among its attack units the three C3 axioms
@@ -345,7 +349,8 @@ constraint (i) is AP-freeness.  Hence OG(M) is infeasible for every
 M ≡ 0 (mod 8), M ≥ 16.
 
 **Corollary (the dyadic partition).**  Every scale of the dyadic
-family M = 2^{2t−1} (t ≥ 3) is ≡ 0 (mod 8) and ≥ 32.  By the paper's
+family M = 2^{2t−1} (t ≥ 4, the family used by thm:ogred) is
+≡ 0 (mod 8) and ≥ 128.  By the paper's
 unconditional reduction (thm:ogred, audited by e96), infeasibility of
 OG(2^{2t−1}) for infinitely many t implies that S_A admits no
 3-AP-free permutation.  **Hence S_A is not 3-permutable and the

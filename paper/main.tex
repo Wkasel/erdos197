@@ -20,7 +20,8 @@
 \newcommand{\OG}{\mathrm{OG}}
 
 \title{Structural rigidity in the Erd\H{o}s--Graham two-set permutation problem}
-\author{Will Kasel\thanks{With extensive machine assistance from Claude (Anthropic);
+\author{Will Kasel\thanks{With extensive machine assistance from Claude
+(Anthropic) and from the SAT solvers CaDiCaL and OR-Tools CP-SAT;
 SAT certificates, code, and a one-command reproduction kit are available in the
 accompanying repository (see Data Availability). All proofs have been verified by hand
 unless explicitly marked as machine-checked.}}
@@ -81,21 +82,25 @@ of its terms, read in order of position, form an increasing or a decreasing
 arithmetic progression (a \emph{monotone 3-AP}). Every finite set of integers
 admits an admissible arrangement: place the odd values before the even values
 and recurse, using the fact that the first and third term of a 3-AP share a
-parity \cite{DEGS77}. For infinite sets the situation changes completely.
+parity (stated for intervals in \cite{DEGS77}, which credits earlier notes of
+this observation; for arbitrary finite sets in \cite{ErGr79}). For infinite sets the situation changes completely.
 Davis, Entringer, Graham and Simmons \cite{DEGS77} proved that every
 permutation of $\Z^+$ (of order type $\omega$) contains an increasing 3-AP —
 in particular a monotone one — so $\Z^+$ itself admits no admissible
 permutation. They also constructed a partition of $\Z^+$ into \emph{three}
 sets, each admitting an admissible permutation, and asked (Concluding
 Remarks~3, p.~89) whether two sets suffice. Erd\H{o}s and Graham repeated the
-question in \cite{ErGr79} (p.~338), calling it ``a very annoying question'';
-it is problem \#197 of the Erd\H{o}s problem collection \cite{Bl}, where it
-is stated for $\N$ and carries a Lean formalisation \cite{FC}.
+question in \cite{ErGr79} (p.~338), calling it ``a very annoying question''
+(see also their monograph \cite{ErGr80}); it is problem \#197 of the
+Erd\H{o}s problem collection \cite{Bl}, where it is stated for $\N$ and
+carries a Lean formalisation \cite{FC}.
 
 The modern literature around the problem concerns densities and longer
-progressions. LeSaulnier and Vijay \cite{LV11} showed that the upper density
-of a set admitting an admissible permutation is at least $1/2$ ($\alpha_{\N}(3)
-\ge 1/2$) and the lower density at least $1/4$, and conjectured both sharp;
+progressions. LeSaulnier and Vijay \cite{LV11} exhibited a set admitting an
+admissible permutation with upper density $1/2$ and lower density $1/4$;
+writing $\alpha_{\N}(3)$ (resp.\ $\beta_{\N}(3)$) for the supremum of upper
+(resp.\ lower) densities of such sets, this gives $\alpha_{\N}(3) \ge 1/2$
+and $\beta_{\N}(3) \ge 1/4$, and they conjectured both bounds sharp.
 Geneson \cite{Gen26} recently disproved the upper-density conjecture, proving
 $\alpha_{\N}(3) \ge 2/3$. His witness is strikingly relevant here: it is a
 union of ratio-$4$ doubling blocks $[L\cdot 4^j + m,\, 2L\cdot 4^j]$ — an
@@ -107,14 +112,15 @@ onward) lives precisely in the region Geneson's construction excises: the
 two results are consistent, and together they locate the obstruction at the
 block bottoms exactly. Permutations of $\Z$ and of subsets of $\Z^+$
 avoiding longer monotone progressions were constructed by Geneson
-\cite{Gen18} and Adenwalla \cite{Ad24}. Hirose and Saito \cite{HS24}
+\cite{Gen18} and Adenwalla \cite{Ad24}. Hirose and Saito \cite{HS24} ---
+continuing a line begun by Ardal, Brown and Jungi\'c \cite{ABJ11} on
+AP-avoiding (``chaotic'') orderings of $\mathbb{Q}$ and $\mathbb{R}$ ---
 characterised the \emph{order types} of total orders on $\N$, $\Z$ and $\mathbb{Q}$
 admitting no monotone 3-AP; from their standpoint the difficulty of \#197 is
 that order type $\omega$ is forced, where avoidance is hardest.
 
-The natural candidate for a two-set partition — implicit already in the
-parity heuristic of \cite{DEGS77} and adopted as the default attack in all
-informal discussion of the problem we are aware of — is the \emph{dyadic
+The natural first candidate for a two-set partition — implicit already in
+the parity heuristic of \cite{DEGS77} — is the \emph{dyadic
 partition}: let
 \[
 \SA \;=\; \bigcup_{k \text{ even}} \left(2^{k-1},\, 2^{k}\right], \qquad
@@ -143,7 +149,12 @@ candidate stage functions until a single finite obstruction emerges: an
 \emph{order gadget} $\OG(M)$ on the interval $(M, 2M]$, fifteen precedence
 axioms induced by the two values $15$ and $16$, whose infeasibility at
 infinitely many dyadic scales implies the main theorem unconditionally
-(Theorem~\ref{thm:ogred}). Third — and this is the mathematical heart — we
+(Theorem~\ref{thm:ogred}). We stress that Theorem~\ref{thm:ogred} is
+proved directly on a hypothetical permutation and is logically independent
+of the chunk calculus: the chunk coordinates served as the discovery
+instrument, and give an alternative route to the same reduction
+(Remark~\ref{rem:ogchunk}), but the proof chain of the main theorem is
+just Theorem~\ref{thm:ogred} plus Theorem~\ref{thm:c3core}. Third — and this is the mathematical heart — we
 prove by hand that already a three-axiom core of $\OG(M)$ is inconsistent
 with admissibility for every $M \equiv 0 \pmod 8$ (Theorem~\ref{thm:c3core}),
 via a toolkit of ladder lemmas whose single appeal to the residue of $M$
@@ -191,7 +202,7 @@ $\SA = \bigcup_{k \text{ even}} B_k$, $S_B = \Z^+ \setminus \SA$.
 \label{rem:lean}
 The original sources pose the problem for the positive integers: Davis,
 Entringer, Graham and Simmons ask whether a two-set partition of $\Z^+$ is
-possible, and Erd\H{o}s--Graham (1979, p.~338) repeat the question verbatim
+possible, and Erd\H{o}s--Graham (1979, p.~338) repeat the question, again
 for $\Z^+$. The Lean formalization in the DeepMind
 \emph{formal-conjectures} repository
 (\texttt{FormalConjectures/ErdosProblems/197.lean}) instead partitions
@@ -208,9 +219,12 @@ are insensitive to the nuance: Theorem~\ref{thm:main} shows $\SA$ itself
 is not permutable, and since deletion preserves validity, $\SA \cup \{0\}$
 is not permutable either; hence the dyadic partition fails in both
 formulations, whichever part receives $0$. (In the Lean encoding the
-underlying AP predicate allows zero or negative common differences, but
-injectivity of the permutation rules out $d = 0$, and $d < 0$ is the
-decreasing case, so the notion of ``monotone $3$-AP'' agrees with ours.)
+values live in $\N$, so the common difference is a natural number and never
+negative; \texttt{HasMonotoneAP} requires strictly increasing indices whose
+value list equals $(a, a+d, a+2d)$ or its reverse, the reversed disjunct
+being the decreasing case. The predicate permits $d = 0$, but injectivity
+of the permutation rules that out, so the notion of ``monotone $3$-AP''
+agrees with ours.)
 \end{remark}
 
 \section{The orbit obstruction}
@@ -312,12 +326,19 @@ In any 3-AP-free permutation of $\SA$, infinitely many blocks $B_{2k}$ are
 \end{theorem}
 
 \begin{proof}
-Suppose cofinitely many blocks are contiguous runs. Machine-checked
-computations (with Lemma~\ref{lem:halving} extending them to all $M \ge 16$;
-see also the run-tolerance bounds in Section~7) show that when block $B_{2k}$ is
-played as a run, all but $O(1)$ elements of $B_{2k-2}$ must be unplaced at that
-time, so $B_{2k-2}$ finishes after $B_{2k}$; iterating yields an infinite
-strictly decreasing sequence of finish positions.
+Lemmas~\ref{lem:halving} and~\ref{lem:bases} together make $Z(M)$
+unsatisfiable for every $M \ge 16$ (halve repeatedly into $[16, 31]$).
+Suppose for contradiction that every block $B_{2k}$ with $k \ge k_0 \ge 3$
+is placed as a contiguous run. Contiguous runs are disjoint segments of the
+permutation, so for each $k > k_0$ one of the runs $B_{2k-2}$, $B_{2k}$
+entirely precedes the other. If $B_{2k-2}$'s run came first, then the whole
+block $(M/4, M/2]$, $M = 2^{2k-1}$, would be placed before the run of
+$(M, 2M]$, forcing condition (b) of the zone system as explained above ---
+so the run of $B_{2k}$ would witness $Z(M)$ with $M \ge 16$, which is
+unsatisfiable. Hence $B_{2k}$'s run precedes $B_{2k-2}$'s for every
+$k > k_0$, and the finish positions of the runs of
+$B_{2k_0}, B_{2k_0+2}, B_{2k_0+4}, \dots$ form an infinite strictly
+decreasing sequence of positive integers --- impossible.
 \end{proof}
 
 \section{Local realizability and the tower characterization}
@@ -396,9 +417,7 @@ such as ``even 2-adic valuation vs.\ odd'' die immediately, and viable partition
 are forced toward dyadic-interval alternation, motivating the canonical
 candidate $\SA$.
 
-\section{Toward the main theorem: suffix-stacked class deferral}
-
-% DRAFT SECTION — the construction program in its corrected form.
+\section{Suffix-stacked class deferral}
 
 \begin{definition}[Deferral states]
 For a scale $M$ (a power of two) let $D_M \subseteq (M/2, M]$ denote a single
@@ -433,7 +452,9 @@ $2\cdot\mathrm{odd}$ phase requires range truncation.
 Every permutation of $\SA$ of order type $\omega$ decomposes into consecutive
 finite segments (\emph{chunks}); conversely, a choice of finite fibers and
 internal orders assembles into such a permutation. The following exact
-reformulation is the coordinate system for everything below.
+reformulation is the coordinate system for the elimination phase
+(Sections~\ref{sec:negative}--\ref{sec:ladder}); as noted in the
+introduction, the reduction of Section~\ref{sec:og} is proved without it.
 
 \begin{definition}
 A \emph{stage function} is any $s\colon \SA \to \N$ with finite fibers.
@@ -459,6 +480,29 @@ Hence $\SA$ is $3$-permutable if and only if some stage function satisfies
 (A) and (B). The fiber problems are finite and mutually independent given
 $s$.
 \end{theorem}
+
+\begin{proof}
+Along positions of $T$ the stage is non-decreasing, and within a stage the
+fiber order gives the positions. Suppose $T$ avoids monotone $3$-APs. If
+(A) failed at $(x,y,z)$ with $s(x)<s(y)<s(z)$, then $x,y,z$ occur in $T$ in
+that position order with $x<y<z$ — an increasing $3$-AP (the case
+$s(z)<s(y)<s(x)$ gives a decreasing one). If a forced pair of (B) failed,
+say $s(x)<s(y)=s(z)$ with $y \prec z$ in their fiber, then $x, y, z$ occur
+in position order — again an AP; the other three rows and the within-fiber
+non-monotonicity requirement are identical. Conversely, suppose (A) and (B)
+hold and let $(x,y,z)$, $z = 2y-x$, be placed monotonically in $T$, say
+$\pos(x)<\pos(y)<\pos(z)$ (the decreasing case is symmetric). Then
+$s(x) \le s(y) \le s(z)$. Strict inequalities throughout contradict (A);
+$s(x)=s(y)<s(z)$ puts $x \prec y$ in one fiber, contradicting the row
+$s(x)=s(y)<s(z) \Rightarrow y \prec x$ of (B); $s(x)<s(y)=s(z)$ puts
+$y \prec z$, contradicting $z \prec y$; and $s(x)=s(y)=s(z)$ is a monotone
+within-fiber triple, excluded by (B). Triples whose endpoint stages lie on
+one side of the middle's stage can never be placed monotonically, since the
+middle's position is then extremal among the three; this is the safety
+clause. The full case table over all stage patterns and fiber orders has
+additionally been machine-checked exhaustively
+(\texttt{e96\_reduction\_check.py}, part P2).
+\end{proof}
 
 \begin{lemma}[Normalization: running-max chunking]\label{lem:normal}
 Every $3$-AP-free permutation $\pi$ of $\SA$ (of order type $\omega$)
@@ -608,8 +652,9 @@ $L_{b+1}(m{+}1) \ge L_b(m)$ for the capped set $[1, 4^b]$.
 The machinery of Sections~\ref{sec:chunk}--\ref{sec:ladder} compresses,
 for the canonical candidate $\SA$, into a one-scale-at-a-time statement
 about linear orders of single dyadic blocks. This section states that
-reduction precisely and proves it unconditionally, and reports the machine
-verification of its finite instances; Section~\ref{sec:c3} then proves the
+reduction precisely and proves it unconditionally --- directly on a
+hypothetical permutation, without using the chunk calculus --- and reports
+the machine verification of its finite instances; Section~\ref{sec:c3} then proves the
 required infeasibility by hand on the residue class $M \equiv 0 \pmod 8$
 --- which contains every dyadic scale --- completing the proof of the main
 theorem (Theorem~\ref{thm:main}). Throughout,
@@ -860,7 +905,8 @@ apply Lemma~\ref{lem:zigzag} to that seed.
 \end{proof}
 
 \begin{lemma}[Transfer lock]\label{lem:transfer}
-Let $M$ be even. On the odd $d=2$ ladder $w_i = M + 1 + 2i$
+Let $M$ be even, $M \ge 12$ (below $12$ the four rungs named here
+collide, e.g.\ $t_5 = b_3$ at $M = 8$). On the odd $d=2$ ladder $w_i = M + 1 + 2i$
 ($0 \le i \le M/2 - 1$) the four odd C3 values sit at $b_3 = w_1$,
 $b_5 = w_2$, $t_5 = w_{M/2-3}$, $t_3 = w_{M/2-2}$, and
 Lemma~\ref{lem:zigzag} locks the pair orientations together:
@@ -1120,8 +1166,8 @@ need per-residue analogues of Theorems~\ref{thm:l1}--\ref{thm:flip}
 built from the same flood toolkit. This statement is not needed for
 Theorem~\ref{thm:main}. The Erd\H{o}s--Graham problem \#197 itself
 remains open: Theorem~\ref{thm:main} eliminates the canonical
-candidate partition (and with it the natural route to a YES), but
-does not decide whether some other two-set partition works.
+candidate partition, but does not decide whether some other two-set
+partition works.
 \end{remark}
 
 \section{Historical note: suffix-stacked deferral}
@@ -1132,19 +1178,18 @@ semantics permit top-half deferral that rigid chunks forbid, which is why the
 law's witnesses evade Lemma~\ref{lem:bottomhalf} while no closed-form law
 survived depth $4$.
 
-\section{Remarks and open problems}
-
-% TODO: the LV density program; measurement data (g-curves); the exact
-% characterization discussion.
-
 \section*{Data availability}
 All experiment scripts, machine-audit checkers (including the mutation-test
 suite for the checkers themselves), solver logs, witness data, and DRAT
 certificates for the finite base cases are contained in the accompanying
-repository, together with \texttt{reproduce.sh}, a single script that
-re-runs the complete verification stack from a pinned environment.
+repository, \url{https://github.com/Wkasel/erdos197}, together with
+\texttt{reproduce.sh}, a single script that re-runs the complete
+verification stack from a pinned environment. The DRAT certificates cover
+the finite base instances only; the validity of the $\forall M$ schemas
+rests on the hand proofs of Sections~\ref{sec:og}--\ref{sec:c3} and their
+per-step machine audit (Remark~\ref{rem:c3machine}).
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
 
 \bibitem{DEGS77} J.~A. Davis, R.~C. Entringer, R.~L. Graham and
 G.~J. Simmons, \emph{On permutations containing no long arithmetic
@@ -1158,6 +1203,10 @@ related topics}, Enseign.\ Math.\ (2) \textbf{25} (1979), 325--344.
 and results in combinatorial number theory}, Monographies de
 L'Enseignement Math\'ematique \textbf{28}, Gen\`eve, 1980.
 
+\bibitem{ABJ11} H.~Ardal, T.~Brown and V.~Jungi\'c, \emph{Chaotic orderings
+of the rationals and reals}, Amer.\ Math.\ Monthly \textbf{118} (2011),
+921--925.
+
 \bibitem{LV11} T.~D. LeSaulnier and S.~Vijay, \emph{On permutations avoiding
 arithmetic progressions}, Discrete Math.\ \textbf{311} (2011), 205--207.
 
@@ -1170,8 +1219,8 @@ in permutations of integers}, Discrete Math.\ \textbf{347} (2024), 114183;
 arXiv:2211.04451.
 
 \bibitem{HS24} M.~Hirose and S.~Saito, \emph{Characterization of order
-structures avoiding three-term arithmetic progressions}, arXiv:2404.13510
-(2024).
+structures avoiding three-term arithmetic progressions}, Order \textbf{42}
+(2025), 231--239; arXiv:2404.13510.
 
 \bibitem{Gen26} J.~Geneson, \emph{Density bounds for permutations avoiding
 monotone arithmetic progressions}, arXiv:2608.12604 (2026).

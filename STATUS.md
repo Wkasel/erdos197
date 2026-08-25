@@ -12,12 +12,16 @@ theorem eliminates the canonical candidate and the natural YES route.
 
 ## The proof chain (paper/main.tex)
 
-1. **Chunk reduction** (thm:chunk, exact) + **order-gadget reduction**
-   (thm:ogred, unconditional): if OG(2^{2t−1}) is infeasible for
-   infinitely many t ≥ 4, then S_A is not 3-permutable.  OG(M) = order
-   the block (M, 2M] AP-freely with 15 guard-precedence attacks from the
-   values 15, 16.  [Hand proof; boundary arithmetic + case table audited
-   by e96_reduction_check.]
+1. **Order-gadget reduction** (thm:ogred, unconditional): if
+   OG(2^{2t−1}) is infeasible for infinitely many t ≥ 4, then S_A is
+   not 3-permutable.  OG(M) = order the block (M, 2M] AP-freely with
+   15 guard-precedence attacks from the values 15, 16.  [Hand proof,
+   argued directly on a hypothetical permutation; boundary arithmetic +
+   case table audited by e96_reduction_check.]  NOTE: thm:ogred does
+   NOT depend on the chunk reduction (thm:chunk, exact, now proved in
+   the paper); the chunk calculus was the discovery coordinate system
+   and gives an alternative route (paper rem:ogchunk), but the main
+   chain is just thm:ogred + thm:c3core.
 2. **C3 core theorem** (thm:c3core, hand): for every M ≡ 0 (mod 8),
    M ≥ 16, AP-freeness on (M, 2M] is inconsistent with the 3-axiom core
    C3 = {t₅≺b₅, t₃≺b₆, t₁₀≺b₃} ⊂ OG(M)'s attacks (b_j = M+j,
@@ -58,9 +62,10 @@ theorem eliminates the canonical candidate and the natural YES route.
   script's own Lemma-H bookkeeping check (appendix/halving material,
   not on the Target chain).
 - **Machine-only (corroboration, no longer load-bearing):** AP+C3 UNSAT
-  sweeps (e104/e89/e96: all M ≡ 0 mod 8 in 16..256, and 512), OG(M)
-  UNSAT for 16 ≤ M ≤ 200 and M = 512, the S1 forcing sweep (e101), the
-  v1 closure trees (e112).
+  sweeps (e104 part 3: all M ≡ 0 mod 8 in 16..256, and 512), OG(M)
+  UNSAT for 16 ≤ M ≤ 200 and M = 512 (e89, e96 P5 — note these check
+  the full 15-attack gadget, a weaker UNSAT statement than AP+C3), the
+  S1 forcing sweep (e101), the v1 closure trees (e112).
 - **Supporting theorems in the paper (hand):** orbit obstruction,
   balance law, Lemma R, vdC absorption, no-contiguous-runs, tower
   characterization, chunk reduction + normalization, block-granular

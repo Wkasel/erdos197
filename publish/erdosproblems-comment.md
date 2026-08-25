@@ -27,7 +27,9 @@ The discovery phase was heavily machine-assisted (SAT solvers), but the
 final chain is human-readable; its finitely many schema instances are
 machine-audited by three independently written checkers (with mutation
 testing of the checkers), plus DRAT certificates for the finite base
-cases. A one-command reproduction kit is in the repository:
+cases. Independent verification is invited: `reproduce.sh` re-runs the
+complete verification stack from a pinned environment in about 17
+minutes on a laptop.
 
 - Paper: [arXiv link once live]
 - Code, certificates, reproduce.sh: https://github.com/Wkasel/erdos197

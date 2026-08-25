@@ -3,4 +3,4 @@ __pycache__/
 data/certs/*.cnf
 data/certs/*.drat
 tools/drat-trim/drat-trim
-paper/main.pdf
+.venv/

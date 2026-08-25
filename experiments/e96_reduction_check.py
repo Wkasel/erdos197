@@ -117,9 +117,9 @@ ck(bad_force == 0, "s(x)<s(y) + (A)+(B)  ==>  z before y (attack forced)")
 # ---------- P4: running-max normalization ----------
 print("== P4: running-max normalization on random permutations ==")
 SA = [v for v in range(1, 4097)
-      if (v.bit_length() % 2 == 0)]  # v in B_k = (2^(k-1), 2^k], k = bitlen
+      if ((v - 1).bit_length() % 2 == 0)]  # v in B_k = (2^(k-1), 2^k], k = (v-1).bit_length()
 def block(v):
-    return v.bit_length()
+    return (v - 1).bit_length()
 rng = random.Random(96)
 ok_all = True
 for trial in range(200):
