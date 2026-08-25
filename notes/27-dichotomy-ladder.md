@@ -108,3 +108,10 @@ extracting now (e88) — target: a scale-invariant finite pattern + hand proof.
 Note: guard pairs' downward completions 2b_j − t = 16 leave the block —
 the gadget is genuinely self-contained (crowns appear only as the numbers
 15, 16 in the offsets).
+
+## Late fleet verdicts (batch)
+- LADDER X=256 d=2 (free extras): SAT (42559s) — weak necessary condition
+  passes, as expected.
+- LAW X=64 d=3 (law-pinned): UNSAT (48064s) — the ≡2 mod 2^{k/2} defect law
+  is definitively wrong/too rigid at (64, d3); the law frame is closed.
+  (Chunk/OG frame superseded it; this is consistency, not news.)
