@@ -28,7 +28,9 @@ Mutation kinds (per the audit brief):
   (ix)   wrong leader/trailer status                MUT-09a, MUT-09b
   (x)    tampered final contradiction / axiom set   MUT-10, MUT-10b,
                                                     MUT-15a/b/c
-  (+)    derivation-bypass probes (fact smuggling)  MUT-11, MUT-11b
+  (+)    derivation-bypass probes (fact smuggling)  MUT-11, MUT-11b,
+                                                    MUT-18, MUT-19,
+                                                    MUT-20
   (+)    closure-engine integrity probes            MUT-12, MUT-13
 
 Anchors are given as candidate lists so the suite runs against both the
@@ -290,6 +292,53 @@ MUTATIONS = [
         calls=[("check_flip", 16), ("check_flip", 24)],
         note="pre-patch this dies on AttributeError (no assume method): "
              "vacuous; the post-patch run is the real test"),
+    dict(
+        id="MUT-18", kind="(+) smuggled extra hypothesis in fiat_zig",
+        target="e113",
+        desc="fiat_zig assumes one extra long-range edge beyond the "
+             "declared Lemma-D phase set; nothing downstream consumes "
+             "it, so only audit()'s assumed==declared check can fire "
+             "(and fiat_edges must disagree with the tampered loop)",
+        subs=[[(
+            "    e0 = 0 if leader_first else 1\n"
+            "    leaders = set()",
+            "    e0 = 0 if leader_first else 1\n"
+            "    leaders = set()\n"
+            "    ctx.assume(lad[0], lad[-1])  # [MUT] smuggled hypothesis",
+        )]],
+        calls=[("check_layer1", 16), ("check_flip", 16)],
+        note="post-patch-only probe: tests the audit() wiring itself"),
+    dict(
+        id="MUT-19", kind="(+) case-split fact injected raw",
+        target="e113",
+        desc="layer1 Case I case-split fact (t5, m0) injected via raw "
+             "ctx.facts.add instead of assume: it is then neither "
+             "assumed nor derived, so only audit()'s "
+             "facts==assumed|derived check can fire",
+        subs=[[(
+            "        ctx.assume(t5, m0)\n"
+            "        polar(ctx, M, L, 'trail')\n"
+            "        # seeds: c*+-2 < c* are ODD2 zigzag edges "
+            "(c*+-2 = 3 mod 4 leaders)",
+            "        ctx.facts.add((t5, m0))\n"
+            "        polar(ctx, M, L, 'trail')\n"
+            "        # seeds: c*+-2 < c* are ODD2 zigzag edges "
+            "(c*+-2 = 3 mod 4 leaders)",
+        )]],
+        calls=[("check_layer1", 16), ("check_layer1", 20)],
+        note="post-patch-only probe: tests the audit() wiring itself"),
+    dict(
+        id="MUT-20", kind="(+) tampered declared hypothesis set",
+        target="e113",
+        desc="declared AX drops axiom (b3, b5) while base() still "
+             "assumes it: audit()'s exact set comparison must fire in "
+             "the first audited branch",
+        subs=[[(
+            "    AX = frozenset({(t3, b6), (t10, b3), (b3, b5)})",
+            "    AX = frozenset({(t3, b6), (t10, b3)})",
+        )]],
+        calls=[("check_layer1", 16), ("check_layer1", 20)],
+        note="post-patch-only probe: tests the audit() wiring itself"),
     dict(
         id="MUT-16", kind="(ii)/(ix) wrong flood class", target="e113",
         desc="layer1 Case I G4 flood fed the mod-4 class A ladder "

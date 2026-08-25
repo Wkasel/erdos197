@@ -377,7 +377,7 @@ def check_layer1(M):
     for lf in (True, False):
         ctx = base()
         L = with_odd2(ctx)
-        ctx.facts.add((t5, m0))
+        ctx.assume(t5, m0)
         polar(ctx, M, L, 'trail')
         # seeds: c*+-2 < c* are ODD2 zigzag edges (c*+-2 = 3 mod 4 leaders)
         assert (cstar - 2) in L and (cstar + 2) in L
@@ -385,17 +385,19 @@ def check_layer1(M):
         lb = fiat_zig(ctx, *lad4(M, 3), lf)
         lemma_P(ctx, cstar, 4, lb, (cstar + 2, 'in'), 'trail', [b3])
         assert ctx.has(b3, cstar)
+        audit(ctx, AX | {(t5, m0)} | fiat_edges(*lad4(M, 3), lf))
         discharged.add(('I-G4', lf))
         # (b) P2-outward at c* over evens: c* < t10  [both EVEN2 phases]
         for lf2 in (True, False):
             ctx2 = base()
             L2 = with_odd2(ctx2)
-            ctx2.facts.add((t5, m0))
+            ctx2.assume(t5, m0)
             polar(ctx2, M, L2, 'trail')
             assert ctx2.has(cstar, m0)
             ev = fiat_zig(ctx2, *even_ladder(M), lf2)
             lemma_P(ctx2, cstar, 2, ev, (m0, 'out'), 'lead', [t10])
             assert ctx2.has(cstar, t10)
+            audit(ctx2, AX | {(t5, m0)} | fiat_edges(*even_ladder(M), lf2))
             discharged.add(('I-P2', lf, lf2))
     # machine-checked contradiction, Case I: b3 < c* (every LADB phase),
     # c* < t10 (every EVEN2 phase) are branch-independent conclusions of
@@ -403,15 +405,16 @@ def check_layer1(M):
     # 3-cycle.  Assemble it explicitly: the trans step CONSUMES A3 from
     # the hypothesis set, so a tampered/absent A3 fails here.
     ctxc = base()
-    ctxc.facts.add((b3, cstar))        # conclusion (a), all LADB phases
-    ctxc.facts.add((cstar, t10))       # conclusion (b), all EVEN2 phases
+    ctxc.assume(b3, cstar)             # conclusion (a), all LADB phases
+    ctxc.assume(cstar, t10)            # conclusion (b), all EVEN2 phases
     ctxc.trans(cstar, t10, b3)         # uses A3: t10 < b3
     assert ctxc.has(cstar, b3) and ctxc.has(b3, cstar)   # explicit 2-cycle
+    audit(ctxc, AX | {(b3, cstar), (cstar, t10)})
     # ---- Case II: m0 < t5 ----
     for lf in (True, False):
         ctx = base()
         L = with_odd2(ctx)
-        ctx.facts.add((m0, t5))
+        ctx.assume(m0, t5)
         polar(ctx, M, L, 'lead')
         # c** is an ODD2 leader: seeds c** < c**+-2
         assert cstar2 in L
@@ -419,25 +422,28 @@ def check_layer1(M):
         la = fiat_zig(ctx, *lad4(M, 1), lf)
         lemma_P(ctx, cstar2, 4, la, (cstar2 + 2, 'out'), 'lead', [t3])
         assert ctx.has(cstar2, t3)
+        audit(ctx, AX | {(m0, t5)} | fiat_edges(*lad4(M, 1), lf))
         discharged.add(('II-G4', lf))
         for lf2 in (True, False):
             ctx2 = base()
             L2 = with_odd2(ctx2)
-            ctx2.facts.add((m0, t5))
+            ctx2.assume(m0, t5)
             polar(ctx2, M, L2, 'lead')
             assert ctx2.has(m0, cstar2)
             ev = fiat_zig(ctx2, *even_ladder(M), lf2)
             lemma_P(ctx2, cstar2, 2, ev, (m0, 'in'), 'trail', [b6])
             assert ctx2.has(b6, cstar2)
+            audit(ctx2, AX | {(m0, t5)} | fiat_edges(*even_ladder(M), lf2))
             discharged.add(('II-P2', lf, lf2))
     # machine-checked contradiction, Case II: c** < t3 (every LADA phase),
     # b6 < c** (every EVEN2 phase); with axiom A2 (t3 < b6) they close a
     # 3-cycle.  The trans step consumes A2 from the hypothesis set.
     ctxc = base()
-    ctxc.facts.add((cstar2, t3))       # conclusion (a), all LADA phases
-    ctxc.facts.add((b6, cstar2))       # conclusion (b), all EVEN2 phases
+    ctxc.assume(cstar2, t3)            # conclusion (a), all LADA phases
+    ctxc.assume(b6, cstar2)            # conclusion (b), all EVEN2 phases
     ctxc.trans(cstar2, t3, b6)         # uses A2: t3 < b6
     assert ctxc.has(cstar2, b6) and ctxc.has(b6, cstar2)  # explicit 2-cycle
+    audit(ctxc, AX | {(cstar2, t3), (b6, cstar2)})
     # branch-completeness: every (case x phase) leaf must have been
     # discharged -- a dropped case or phase branch fails here.
     assert discharged == {
@@ -449,10 +455,11 @@ def check_layer1(M):
         ('II-P2', False, True), ('II-P2', False, False)}, (M, discharged)
     # ---- Lemma E: b5<b3 (now forced) implies t3<t5 ----
     ctx = Ctx(M)
-    ctx.facts.add((b5, b3))
+    ctx.assume(b5, b3)
     L = lemma_Z(ctx, *odd_ladder(M), (b5, b3))
     assert all((v - M) % 4 == 1 for v in L)
     assert t3 in L and ctx.has(t3, t5)
+    audit(ctx, {(b5, b3)})
     return True
 
 
@@ -467,8 +474,12 @@ def check_flip(M):
 
     def base():
         ctx = Ctx(M)
-        ctx.facts.update([(t5, b5), (t3, b6), (t10, b3), (b5, b3)])
+        ctx.assume_all([(t5, b5), (t3, b6), (t10, b3), (b5, b3)])
         return ctx
+
+    # declared hypothesis set for audit() (A1, A2, A3, layer-1 theorem);
+    # deliberately repeats the base() literals (see AX in check_layer1)
+    AXF = frozenset({(t5, b5), (t3, b6), (t10, b3), (b5, b3)})
 
     def with_odd2(ctx):
         L = lemma_Z(ctx, *odd_ladder(M), (b5, b3))
@@ -487,7 +498,7 @@ def check_flip(M):
     for lf in (True, False):        # LADA phases
         ctx = base()
         L = with_odd2(ctx)
-        ctx.facts.add((t5, m0))
+        ctx.assume(t5, m0)
         polar(ctx, M, L, 'trail')
         # chain: m-1 < t10 (flood, checked below per EVEN2 phase),
         # here: G4-inward at m-1 over class A: b5 < m-1
@@ -496,11 +507,12 @@ def check_flip(M):
         la = fiat_zig(ctx, *lad4(M, 1), lf)
         lemma_P(ctx, cI, 4, la, (cI + 2, 'in'), 'trail', [b5])
         assert ctx.has(*concIa)
+        audit(ctx, AXF | {(t5, m0)} | fiat_edges(*lad4(M, 1), lf))
         discharged.add(('I-LADA', lf))
     for lf2 in (True, False):       # EVEN2 phases
         ctx = base()
         L = with_odd2(ctx)
-        ctx.facts.add((t5, m0))
+        ctx.assume(t5, m0)
         polar(ctx, M, L, 'trail')
         assert ctx.has(cI, m0)
         ev = fiat_zig(ctx, *even_ladder(M), lf2)
@@ -509,6 +521,7 @@ def check_flip(M):
         ctx.rule(b3, cI, t5, (cI, b3), (cI, t5))     # mirror R4
         ctx.trans(cI, t5, b5)                        # A1
         assert ctx.has(*concIb)
+        audit(ctx, AXF | {(t5, m0)} | fiat_edges(*even_ladder(M), lf2))
         discharged.add(('I-EVEN2', lf2))
     # machine-checked contradiction, Case I: b5 < m-1 (every LADA phase)
     # vs m-1 < b5 (every EVEN2 phase) -- syntactically opposite literals.
@@ -517,18 +530,19 @@ def check_flip(M):
     for lf in (True, False):        # LADB phases
         ctx = base()
         L = with_odd2(ctx)
-        ctx.facts.add((m0, t5))
+        ctx.assume(m0, t5)
         polar(ctx, M, L, 'lead')
         assert cII in L
         assert ctx.has(cII, cII + 2) and ctx.has(cII, cII - 2)
         lb = fiat_zig(ctx, *lad4(M, 3), lf)
         lemma_P(ctx, cII, 4, lb, (cII + 2, 'out'), 'lead', [t5])
         assert ctx.has(*concIIa)
+        audit(ctx, AXF | {(m0, t5)} | fiat_edges(*lad4(M, 3), lf))
         discharged.add(('II-LADB', lf))
     for lf2 in (True, False):
         ctx = base()
         L = with_odd2(ctx)
-        ctx.facts.add((m0, t5))
+        ctx.assume(m0, t5)
         polar(ctx, M, L, 'lead')
         assert ctx.has(m0, cII)
         ev = fiat_zig(ctx, *even_ladder(M), lf2)
@@ -537,6 +551,7 @@ def check_flip(M):
         ctx.rule(b5, cII, t3, (t3, cII), (b5, cII))  # mirror R3
         ctx.trans(t5, b5, cII)                       # A1
         assert ctx.has(*concIIb)
+        audit(ctx, AXF | {(m0, t5)} | fiat_edges(*even_ladder(M), lf2))
         discharged.add(('II-EVEN2', lf2))
     # machine-checked contradiction, Case II: m+1 < t5 vs t5 < m+1.
     assert concIIa == concIIb[::-1] and concIIa != concIIb
