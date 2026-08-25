@@ -1,0 +1,145 @@
+M=44: n=44 triples=462 attacks=15
+M=44: first conflict at attack #10 = 16-attack j=3: 78<47  (0s, 34 lazy rounds)
+M=44: forced bottom-vs-guard orders under prefix 1..9 (13):
+    75<45 (t13=75 before b_1)
+    74<45 (t14=74 before b_1)
+    77<46 (t11=77 before b_2)
+    76<46 (t12=76 before b_2)
+    79<47 (t9=79 before b_3)
+    47<78 (b_3 before t10=78)
+    81<48 (t7=81 before b_4)
+    83<49 (t5=83 before b_5)
+    49<82 (b_5 before t6=82)
+    85<50 (t3=85 before b_6)
+    50<84 (b_6 before t4=84)
+    87<51 (t1=87 before b_7)
+    51<86 (b_7 before t2=86)
+M=44: b_7<t_2 forced: True   total 0s, 7348 cuts
+
+M=48: n=48 triples=552 attacks=15
+M=48: first conflict at attack #9 = 16-attack j=2: 84<50  (0s, 32 lazy rounds)
+M=48: forced bottom-vs-guard orders under prefix 1..8 (12):
+    83<49 (t13=83 before b_1)
+    82<49 (t14=82 before b_1)
+    85<50 (t11=85 before b_2)
+    50<84 (b_2 before t12=84)
+    87<51 (t9=87 before b_3)
+    51<86 (b_3 before t10=86)
+    89<52 (t7=89 before b_4)
+    91<53 (t5=91 before b_5)
+    53<90 (b_5 before t6=90)
+    93<54 (t3=93 before b_6)
+    95<55 (t1=95 before b_7)
+    55<94 (b_7 before t2=94)
+M=48: b_7<t_2 forced: True   total 0s, 8744 cuts
+
+M=50: n=50 triples=600 attacks=15
+M=50: first conflict at attack #8 = 16-attack j=1: 86<51  (0s, 18 lazy rounds)
+M=50: forced bottom-vs-guard orders under prefix 1..7 (9):
+    87<51 (t13=87 before b_1)
+    51<86 (b_1 before t14=86)
+    89<52 (t11=89 before b_2)
+    91<53 (t9=91 before b_3)
+    93<54 (t7=93 before b_4)
+    95<55 (t5=95 before b_5)
+    55<94 (b_5 before t6=94)
+    97<56 (t3=97 before b_6)
+    99<57 (t1=99 before b_7)
+M=50: b_7<t_2 forced: False   total 0s, 10217 cuts
+
+M=56: n=56 triples=756 attacks=15
+M=56: first conflict at attack #10 = 16-attack j=3: 102<59  (0s, 24 lazy rounds)
+M=56: forced bottom-vs-guard orders under prefix 1..9 (13):
+    99<57 (t13=99 before b_1)
+    98<57 (t14=98 before b_1)
+    101<58 (t11=101 before b_2)
+    100<58 (t12=100 before b_2)
+    103<59 (t9=103 before b_3)
+    59<102 (b_3 before t10=102)
+    105<60 (t7=105 before b_4)
+    107<61 (t5=107 before b_5)
+    61<106 (b_5 before t6=106)
+    109<62 (t3=109 before b_6)
+    62<108 (b_6 before t4=108)
+    111<63 (t1=111 before b_7)
+    63<110 (b_7 before t2=110)
+M=56: b_7<t_2 forced: True   total 0s, 12239 cuts
+
+M=60: n=60 triples=870 attacks=15
+M=60: first conflict at attack #10 = 16-attack j=3: 110<63  (0s, 30 lazy rounds)
+M=60: forced bottom-vs-guard orders under prefix 1..9 (13):
+    107<61 (t13=107 before b_1)
+    106<61 (t14=106 before b_1)
+    109<62 (t11=109 before b_2)
+    108<62 (t12=108 before b_2)
+    111<63 (t9=111 before b_3)
+    63<110 (b_3 before t10=110)
+    113<64 (t7=113 before b_4)
+    115<65 (t5=115 before b_5)
+    65<114 (b_5 before t6=114)
+    117<66 (t3=117 before b_6)
+    66<116 (b_6 before t4=116)
+    119<67 (t1=119 before b_7)
+    67<118 (b_7 before t2=118)
+M=60: b_7<t_2 forced: True   total 0s, 15283 cuts
+
+M=64: n=64 triples=992 attacks=15
+M=64: first conflict at attack #9 = 16-attack j=2: 116<66  (0s, 31 lazy rounds)
+M=64: forced bottom-vs-guard orders under prefix 1..8 (12):
+    115<65 (t13=115 before b_1)
+    114<65 (t14=114 before b_1)
+    117<66 (t11=117 before b_2)
+    66<116 (b_2 before t12=116)
+    119<67 (t9=119 before b_3)
+    67<118 (b_3 before t10=118)
+    121<68 (t7=121 before b_4)
+    123<69 (t5=123 before b_5)
+    69<122 (b_5 before t6=122)
+    125<70 (t3=125 before b_6)
+    127<71 (t1=127 before b_7)
+    71<126 (b_7 before t2=126)
+M=64: b_7<t_2 forced: True   total 0s, 15556 cuts
+
+M=72: n=72 triples=1260 attacks=15
+M=72: first conflict at attack #9 = 16-attack j=2: 132<74  (0s, 31 lazy rounds)
+M=72: forced bottom-vs-guard orders under prefix 1..8 (12):
+    131<73 (t13=131 before b_1)
+    130<73 (t14=130 before b_1)
+    133<74 (t11=133 before b_2)
+    74<132 (b_2 before t12=132)
+    135<75 (t9=135 before b_3)
+    75<134 (b_3 before t10=134)
+    137<76 (t7=137 before b_4)
+    139<77 (t5=139 before b_5)
+    77<138 (b_5 before t6=138)
+    141<78 (t3=141 before b_6)
+    143<79 (t1=143 before b_7)
+    79<142 (b_7 before t2=142)
+M=72: b_7<t_2 forced: True   total 0s, 20476 cuts
+
+M=80: n=80 triples=1560 attacks=15
+M=80: first conflict at attack #9 = 16-attack j=2: 148<82  (0s, 33 lazy rounds)
+M=80: forced bottom-vs-guard orders under prefix 1..8 (12):
+    147<81 (t13=147 before b_1)
+    146<81 (t14=146 before b_1)
+    149<82 (t11=149 before b_2)
+    82<148 (b_2 before t12=148)
+    151<83 (t9=151 before b_3)
+    83<150 (b_3 before t10=150)
+    153<84 (t7=153 before b_4)
+    155<85 (t5=155 before b_5)
+    85<154 (b_5 before t6=154)
+    157<86 (t3=157 before b_6)
+    159<87 (t1=159 before b_7)
+    87<158 (b_7 before t2=158)
+M=80: b_7<t_2 forced: True   total 0s, 28890 cuts
+
+=== SUMMARY: M -> (conflict index, conflict attack, b_7<t_2 forced)
+M= 44  #10  16-attack j=3: 78<47          b7<t2_forced=True  n_forced=13
+M= 48  # 9  16-attack j=2: 84<50          b7<t2_forced=True  n_forced=12
+M= 50  # 8  16-attack j=1: 86<51          b7<t2_forced=False  n_forced=9
+M= 56  #10  16-attack j=3: 102<59         b7<t2_forced=True  n_forced=13
+M= 60  #10  16-attack j=3: 110<63         b7<t2_forced=True  n_forced=13
+M= 64  # 9  16-attack j=2: 116<66         b7<t2_forced=True  n_forced=12
+M= 72  # 9  16-attack j=2: 132<74         b7<t2_forced=True  n_forced=12
+M= 80  # 9  16-attack j=2: 148<82         b7<t2_forced=True  n_forced=12
