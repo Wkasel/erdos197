@@ -1,0 +1,2 @@
+K=10: n=512 attacks=15 triples=65280
+OG K=10 (15:True 16:True): UNSAT (75s, 40 rounds)

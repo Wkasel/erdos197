@@ -1,0 +1,40 @@
+== P1: gadget boundary arithmetic ==
+  [ok] M=40 x=15: in-block completions exactly j=1..7
+  [ok] M=40 x=16: in-block completions exactly j=1..8
+  [ok] M=40: (16,8) completion is 2M (in block)
+  [ok] M=40: guards (>=2M-14) and bottoms (<=M+8) disjoint
+  [ok] M=44 x=15: in-block completions exactly j=1..7
+  [ok] M=44 x=16: in-block completions exactly j=1..8
+  [ok] M=44: (16,8) completion is 2M (in block)
+  [ok] M=44: guards (>=2M-14) and bottoms (<=M+8) disjoint
+  [ok] M=47 x=15: in-block completions exactly j=1..7
+  [ok] M=47 x=16: in-block completions exactly j=1..8
+  [ok] M=47: (16,8) completion is 2M (in block)
+  [ok] M=47: guards (>=2M-14) and bottoms (<=M+8) disjoint
+  [ok] M=128 x=15: in-block completions exactly j=1..7
+  [ok] M=128 x=16: in-block completions exactly j=1..8
+  [ok] M=128: (16,8) completion is 2M (in block)
+  [ok] M=128: guards (>=2M-14) and bottoms (<=M+8) disjoint
+  [ok] M=512 x=15: in-block completions exactly j=1..7
+  [ok] M=512 x=16: in-block completions exactly j=1..8
+  [ok] M=512: (16,8) completion is 2M (in block)
+  [ok] M=512: guards (>=2M-14) and bottoms (<=M+8) disjoint
+  [ok] M=2048 x=15: in-block completions exactly j=1..7
+  [ok] M=2048 x=16: in-block completions exactly j=1..8
+  [ok] M=2048: (16,8) completion is 2M (in block)
+  [ok] M=2048: guards (>=2M-14) and bottoms (<=M+8) disjoint
+  [ok] M=8192 x=15: in-block completions exactly j=1..7
+  [ok] M=8192 x=16: in-block completions exactly j=1..8
+  [ok] M=8192: (16,8) completion is 2M (in block)
+  [ok] M=8192: guards (>=2M-14) and bottoms (<=M+8) disjoint
+  [ok] self-attack degeneracies only at M in [8, 9, 10, 11, 12, 13, 14, 15] (max 15)
+  [ok] brute force M=8..299 confirms: collision iff M in [8, 9, 10, 11, 12, 13, 14, 15]; every M >= 16 is a well-formed instance
+== P2/P3: chunk case-table and attack forcing (exhaustive) ==
+  [ok] case table exact over 60 stage/fiber cases
+  [ok] s(x)<s(y) + (A)+(B)  ==>  z before y (attack forced)
+== P4: running-max normalization on random permutations ==
+  [ok] 200 random pi: s nondecreasing along pos; delta(v) >= 0 for all v
+== P5: OG(128) with eager transitivity (independent encoding) ==
+  [ok] OG(128) eager: UNSAT (690831 clauses, 15 attacks, 4032 triples, 1s)
+
+TOTAL failures: 0

@@ -90,7 +90,11 @@ single-block! And within one block the stage machinery collapses (stages +
 fiber orders ⟺ one total order of the block; the case table degenerates to
 plain non-monotonicity + attack precedences). Hence:
 
-**Crown theorem at horizon 4^m ⟺ OG_{2m} infeasible**, where OG_K is the
+**Crown theorem at horizon 4^m ⟸ OG_{2m} infeasible** (this direction is
+what the NO route uses and it is unconditional; the converse — rebuilding a
+full capped scheme from an OG witness — is justified only by the e86
+family-MUS at 256 being single-block and is UNPROVEN at other scales; do
+not state it as an equivalence), where OG_K is the
 pure order problem: order block (M, 2M] (M = 2^{K−1}) with (i) all in-block
 AP triples non-monotone, (ii) attack precedences t_{15−2j} ≺ b_j and
 t_{16−2j} ≺ b_j (b_j = M+j, t_i = 2M−i): each of the bottom-eight values
@@ -99,11 +103,28 @@ guarded by an adjacent top PAIR {t_{15−2j}, t_{16−2j}} (b_8 by t_0 alone).
 Machine: OG_8 UNSAT (2s); drop either attack family → SAT (both crowns
 essential ✓ matches coalition); **OG_10 UNSAT (108s)**; OG_12 running.
 
-**If OG_K is UNSAT for all even K ≥ 8, then in any valid scheme both crowns
-cannot lie strictly below any block ⟹ some crown has stage ≥ t for every
-t ⟹ contradiction ⟹ S_A IS NOT PERMUTABLE.** (Pigeonhole over the two
-crowns; chunk reduction exactness.) The remaining mathematics is ONE
-scale-uniform statement about interval orders. Triple-level MUS of OG_8
+**If OG_K is UNSAT for infinitely many even K ≥ 8, then S_A IS NOT
+PERMUTABLE.**  CORRECTED ARGUMENT (the old phrasing "some crown has stage
+≥ t for every t" tacitly assumed δ ≥ 0, which arbitrary chunkings do not
+give; use the finite-fiber overflow directly — repair verified in
+e96_reduction_check and written up in paper/main.tex, section "The order
+gadget and the main theorem"): in any valid scheme, for each block B_{2t}
+with OG(2^{2t−1}) UNSAT, NOT all eight bottom values b_1..b_8 can have
+stage > max(s(15), s(16)) — otherwise the induced block order satisfies
+all of OG (in-block APs non-monotone unconditionally; each attack
+t_{x−2j} ≺ b_j forced whenever s(x) < s(b_j) via (A) + the
+s(x)<s(y)=s(z) ⟹ z≺y row of (B)) — so some bottom-eight value has stage
+≤ max(s(15), s(16)); infinitely many such blocks put infinitely many
+distinct values into the finitely many finite fibers below that stage.
+Contradiction, with NO normalization needed.  (Note the per-block
+condition consumed is "some bottom-eight value dives", weaker than
+"crown below the whole block"; and "infinitely many K" suffices — the
+hypothesis need not cover all K.)  Even simpler, the whole argument runs
+directly on the permutation with singleton chunks: P = max(pos(15),
+pos(16)); if every bottom-eight of a block sits after position P, the
+position order restricted to the block satisfies OG.  The remaining
+mathematics is ONE scale-uniform statement about interval orders.
+Triple-level MUS of OG_8
 extracting now (e88) — target: a scale-invariant finite pattern + hand proof.
 Note: guard pairs' downward completions 2b_j − t = 16 leave the block —
 the gadget is genuinely self-contained (crowns appear only as the numbers
@@ -115,3 +136,39 @@ the gadget is genuinely self-contained (crowns appear only as the numbers
 - LAW X=64 d=3 (law-pinned): UNSAT (48064s) — the ≡2 mod 2^{k/2} defect law
   is definitively wrong/too rigid at (64, d3); the law frame is closed.
   (Chunk/OG frame superseded it; this is consistency, not news.)
+
+## STATUS LEDGER (session 8 — post-verification integration)
+
+PROVEN UNCONDITIONALLY (hand proofs, machine-audited; written up in
+paper/main.tex "The order gadget and the main theorem"):
+- Reduction theorem: if OG(2^{2t−1}) is infeasible for infinitely many
+  t ≥ 4, then S_A is not 3-permutable.  Proof = per-block dichotomy +
+  finite-fiber overflow (corrected pigeonhole above; no δ ≥ 0
+  normalization needed).  Component checks: e96_reduction_check (boundary
+  arithmetic, chunk case table exhaustive, attack forcing, normalization),
+  plus verifier reconstruction of thm:chunk row by row.
+- Normalization lemma (running-max chunking ⟹ WLOG δ ≥ 0, finite
+  fibers) — needed by thm:divergence's restriction step, now stated and
+  proved in the paper (chunk section); the OG route does NOT need it.
+
+MACHINE-VERIFIED (Cadical195; lazy transitivity cross-validated against
+eager encodings):
+- OG(M) UNSAT at EVERY tested scale: all of M = 16..200, plus M = 128
+  (eager re-check e96, 1s) and M = 512 (re-run 75s).  Gadget degenerates
+  below M = 16.  M = 2048 unresolved (og_12: 200+ rounds, no verdict).
+- Of the dyadic family {128, 512, 2048, 8192, ...} needed by the
+  reduction: only 128 and 512 are verified.  No finite sweep can
+  discharge the hypothesis (supports grow with M — notes/30 G1).
+- Crown ladder rungs: L(4) = 2, L(5) = 3; crown coalition {15,16} exact
+  at 256; max(δ15, δ16) ≥ 3 at 1024.
+
+THE ONE REMAINING MATHEMATICAL GAP (NO route):
+- Scale-uniform OG infeasibility (sharpest target: the C3 core
+  {t₅≺b₅, t₃≺b₆, t₁₀≺b₃} on M ≡ 0 mod 8 — notes/30 S8).  Parametric
+  proof status, gaps G1–G7, and the parity-locked lemma layer: notes/30
+  (post-audit revision).
+
+SUPERSEDED / CLOSED FRAMES: defect law (above); note-28 M=40 kernel
+66<53 does not lift (notes/30 G4); j = 7 final-attack identity not
+universal (notes/30 G5); lemma layer O1–O8 is M ≡ 0 (mod 4) only
+(notes/30 G6 — reverse-forced elsewhere).

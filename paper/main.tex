@@ -11,11 +11,13 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{question}[theorem]{Question}
+\newtheorem{conjecture}[theorem]{Conjecture}
 
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\SA}{S_{\mathrm{A}}}
 \newcommand{\pos}{\mathrm{pos}}
+\newcommand{\OG}{\mathrm{OG}}
 
 \title{Structural rigidity in the Erd\H{o}s--Graham two-set permutation problem}
 \author{Will Kasel\thanks{With extensive machine assistance from Claude (Anthropic);
@@ -46,7 +48,15 @@ associated ``zone'' systems are infeasible, and a finish-time descent completes
 the argument. (v) In contrast, all natural finite fragments of the problem are
 satisfiable, and we give an exact characterization of solvability in terms of
 bounded-delay towers of finite arrangements, which pinpoints the problem's
-content in the growth of a single computable function. We also prove a clean
+content in the growth of a single computable function.
+(vi) For the dyadic partition we prove an unconditional reduction to a single
+scale-uniform statement: an ``order gadget'' $\OG(M)$ on the interval
+$(M, 2M]$ --- no monotone in-block $3$-AP, plus fifteen guard-precedence
+axioms induced by the values $15$ and $16$ --- whose infeasibility at
+infinitely many dyadic scales $M = 2^{2t-1}$ implies that $\SA$ admits no
+valid permutation; machine verification gives infeasibility for every
+$16 \le M \le 200$ and for $M = 512$, isolating one conjecture as the
+remaining content of the negative program for this partition. We also prove a clean
 absorption theorem for van der Corput orderings of odd residue classes which
 explains the fractal structure observed in all satisfying fragments.
 \end{abstract}
@@ -319,6 +329,30 @@ Hence $\SA$ is $3$-permutable if and only if some stage function satisfies
 $s$.
 \end{theorem}
 
+\begin{lemma}[Normalization: running-max chunking]\label{lem:normal}
+Every $3$-AP-free permutation $\pi$ of $\SA$ (of order type $\omega$)
+admits a valid scheme --- a stage function with finite fibers satisfying
+(A)$\wedge$(B), whose concatenation is $\pi$ itself --- with
+$s(v) \ge \mathrm{block}(v)/2$ for every $v$.
+\end{lemma}
+
+\begin{proof}
+Set $s(v) = \max_{q \le \pos(v)} \mathrm{block}(\pi(q))/2$ (the running
+maximum of half-block-indices). Along positions $s$ is non-decreasing, so
+its fibers are consecutive segments of $\pi$ and the concatenation (with
+the fiber orders induced by $\pi$) is $\pi$; Theorem~\ref{thm:chunk} then
+gives (A)$\wedge$(B). Since $\mathrm{block}(v)/2$ enters the maximum at
+$v$'s own position, $s(v) \ge \mathrm{block}(v)/2$. Each fiber is finite:
+$\pi$ is onto $\SA$, so a value of block index $> 2\sigma$ occurs at some
+finite position, after which the running maximum exceeds $\sigma$.
+\end{proof}
+
+\noindent The point of Lemma~\ref{lem:normal} is that non-negative
+\emph{displacement} (next section) is a harmless normalization, not an
+automatic property: an arbitrary chunk decomposition can place a
+high-block value in an early chunk. Restrictions of normalized schemes
+stay normalized, which is what the divergence criterion below consumes.
+
 \begin{theorem}[DEGS via chunks]\label{thm:degs}
 $\Z^+$ itself is not $3$-permutable. \emph{Proof:} suppose $s$ satisfies
 (A) with finite fibers and put $\sigma = s(1)$. For every $y$ with
@@ -395,13 +429,16 @@ lemmas hold verbatim for $S_B$ (machine-verified mirror at $4096$).
 
 \section{The displacement ladder}\label{sec:ladder}
 
-For a stage function $s$ write $\delta(v) = s(v) - \mathrm{block}(v)/2 \ge 0$
-(\emph{displacement}). Define
+For a stage function $s$ write $\delta(v) = s(v) - \mathrm{block}(v)/2$
+(\emph{displacement}); a scheme is \emph{normalized} if $\delta \ge 0$
+everywhere, which by Lemma~\ref{lem:normal} is no loss of generality for
+schemes induced by genuine permutations. Define
 \[
-L(m) \;=\; \min_{\text{schemes at horizon } 4^m}\ \max_{v \le 16} \delta(v),
+L(m) \;=\; \min_{\text{normalized schemes at horizon } 4^m}\ \max_{v \le 16} \delta(v),
 \]
-the minimum over all finite-fiber schemes satisfying (A)$\wedge$(B) at
-horizon $4^m$ (no bound on any other value's displacement).
+the minimum over all normalized finite-fiber schemes satisfying
+(A)$\wedge$(B) at horizon $4^m$ (no bound on any other value's
+displacement).
 
 \begin{proposition}[Ladder rungs; machine-certified, solver-cross-checked]
 $L(3) \le 1$; \ $L(4) = 2$ (infeasibility of the cap $\delta \le 1$ on
@@ -416,11 +453,13 @@ top, apex of the $\equiv 0$ skeleton).
 
 \begin{theorem}[Divergence criterion]\label{thm:divergence}
 If $L(m) \to \infty$ then $\SA$ is not $3$-permutable. \emph{Proof:} an
-infinite valid permutation induces, for every $m$, a valid scheme at horizon
-$4^m$ (restriction; completions of values $\le 4^m$ that lie beyond the
-horizon fall in the odd block $(4^m, 2\cdot 4^m]$, out of team), and the ten
-displacements $\delta(3), \delta(4), \dots, \delta(16)$ are constants of the
-infinite scheme. For $m$ with $L(m) > \max_{v\le 16}\delta(v)$ this is a
+infinite valid permutation induces (Lemma~\ref{lem:normal}) a
+\emph{normalized} valid scheme, and by restriction a normalized valid
+scheme at every horizon $4^m$ (completions of values $\le 4^m$ that lie
+beyond the horizon fall in the odd block $(4^m, 2\cdot 4^m]$, out of
+team), and the ten displacements
+$\delta(3), \delta(4), \dots, \delta(16)$ are constants of the infinite
+scheme. For $m$ with $L(m) > \max_{v\le 16}\delta(v)$ this is a
 contradiction, by the exactness of Theorem~\ref{thm:chunk}. \qed
 \end{theorem}
 
@@ -431,6 +470,197 @@ of displacement in minimal solutions ($\delta$ profile $(m{-}2, m{-}3,
 self-propagating squeeze $L(m{+}1) \ge L(m) + 1$; the $\times 4$
 restriction alone yields only the diagonal transfer
 $L_{b+1}(m{+}1) \ge L_b(m)$ for the capped set $[1, 4^b]$.
+
+\section{The order gadget and the main theorem}\label{sec:og}
+
+The machinery of Sections~\ref{sec:chunk}--\ref{sec:ladder} compresses,
+for the canonical candidate $\SA$, into a one-scale-at-a-time statement
+about linear orders of single dyadic blocks. This section states that
+reduction precisely and proves it unconditionally, reports the machine
+verification of its finite instances, and then states honestly what is
+proved, what is machine-checked, and what remains open. Throughout,
+$b_j = M + j$ (\emph{bottoms}) and $t_i = 2M - i$ (\emph{tops}) denote
+elements of the interval $(M, 2M]$.
+
+\begin{definition}[Order gadget]\label{def:og}
+For an integer $M \ge 16$, the \emph{order gadget} $\OG(M)$ asks for a
+linear order $\prec$ of the interval $(M, 2M]$ such that
+\begin{enumerate}
+\item[(i)] \emph{(no monotone AP)} for every arithmetic progression
+$a < b < c$ inside $(M, 2M]$, neither $a \prec b \prec c$ nor
+$c \prec b \prec a$ holds; and
+\item[(ii)] \emph{(guards precede bottoms)} for $x \in \{15, 16\}$ and
+$1 \le j \le x/2$, the \emph{guard} $t_{x-2j} = 2M + 2j - x$ precedes
+the \emph{bottom} $b_j = M + j$.
+\end{enumerate}
+$\OG(M)$ is \emph{infeasible} if no such order exists. (For $M \le 15$
+some guard coincides with the bottom it protects --- $t_{x-2j} = b_j$
+exactly when $M = x - j$, e.g.\ $t_{14} = b_1$ at $M = 15$ --- and the
+gadget degenerates; we never use those scales. For $16 \le M \le 22$ a
+guard can coincide with a \emph{different} bottom, which is harmless:
+every attack pair is a genuine pair for all $M \ge 16$.)
+\end{definition}
+
+Three pieces of boundary arithmetic, each a one-line computation
+(machine-checked exhaustively in the repository, script
+\texttt{e96\_reduction\_check.py}), make the gadget exactly the trace of
+the infinite problem on one block: for $x \in \{15,16\}$ the completion
+$2b_j - x$ lies in $(M, 2M]$ precisely for $j \le x/2$, and then equals
+the guard $t_{x-2j}$ (at $(x, j) = (16, 8)$ it is $2M$ itself, still
+inside the half-open block) --- so (ii) lists \emph{all} in-block
+completions of pairs $(x, b_j)$ and nothing else; all other completions
+against $15$ and $16$ escape into the odd block above; and the
+guard--bottom pair's own downward completion $2b_j - t_{x-2j} = x$ is the
+attacking value itself, below the block, so the attack edges generate no
+unmodeled in-block constraint.
+
+\begin{theorem}[Order-gadget reduction; unconditional]\label{thm:ogred}
+If $\OG(2^{2t-1})$ is infeasible for infinitely many $t \ge 4$, then
+$\SA$ is not $3$-permutable.
+\end{theorem}
+
+\begin{proof}
+Suppose $\pi$ is a $3$-AP-free permutation of $\SA$ and let
+$P = \max(\pos(15), \pos(16))$; note $15, 16 \in B_4 \subseteq \SA$. Fix
+$t \ge 4$ and put $M = 2^{2t-1}$, so that $(M, 2M] = B_{2t} \subseteq
+\SA$ and $15, 16 < M$.
+
+We claim that some bottom $b_j$ with $1 \le j \le 8$ has
+$\pos(b_j) \le P$. Suppose not, and order the block by position:
+$u \prec v :\!\iff \pos(u) < \pos(v)$. Constraint (i) is inherited from
+$\pi$. For (ii), take $x \in \{15, 16\}$ and $1 \le j \le x/2$. The pair
+$(x, b_j)$ is placed increasingly ($\pos(x) \le P < \pos(b_j)$, $x < M <
+b_j$), and its completion $z = 2b_j - x = t_{x-2j}$ lies in
+$(M, 2M] \subseteq \SA$ and differs from $b_j$ (else $M = x - j \le
+15$). If $\pos(z) > \pos(b_j)$, then $(x, b_j, z)$ is a monotone $3$-AP
+of $\pi$; hence $\pos(z) < \pos(b_j)$, i.e.\ $t_{x-2j} \prec b_j$. Thus
+$\prec$ witnesses $\OG(M)$, contradicting infeasibility.
+
+So for every $t \ge 4$ with $\OG(2^{2t-1})$ infeasible, some element of
+$\{M+1, \dots, M+8\}$, $M = 2^{2t-1}$, occupies a position $\le P$.
+These blocks are disjoint, so infinitely many such $t$ would place
+infinitely many distinct values among the first $P$ positions ---
+impossible.
+\end{proof}
+
+\begin{remark}[Chunk form; the crowns cannot defend every block]
+\label{rem:ogchunk}
+In the coordinates of Theorem~\ref{thm:chunk} the identical argument
+reads: in any valid scheme $s$, for every $t \ge 4$ with
+$\OG(2^{2t-1})$ infeasible, some bottom value in
+$\{M+1, \dots, M+8\}$ of block $B_{2t}$ has stage
+$\le \max(s(15), s(16))$. For if all eight had strictly larger stage,
+the induced order on the block (by stage, then fiber position) would
+satisfy $\OG(M)$: condition (i) holds for in-block triples directly by
+(A) and (B), and each attack $t_{x-2j} \prec b_j$ is forced whenever
+$s(x) < s(b_j)$ --- by (A) the guard's stage cannot strictly exceed the
+bottom's, and at equal stages the forced-pair row
+$s(x) < s(y) = s(z) \Rightarrow z \prec y$ of (B) applies. The overflow
+step is then the finiteness of the fibers at stages
+$\le \max(s(15), s(16))$; \emph{no} displacement normalization
+(Lemma~\ref{lem:normal}) is needed anywhere in this route. This is the
+precise sense in which the two \emph{crowns} $15$ and $16$ of
+Section~\ref{sec:ladder} cannot defend every dyadic block: they would
+have to be placed below the bottom-eight of all but finitely many
+blocks. We use only the direction scheme $\Rightarrow$ order; the
+converse (rebuilding a capped scheme from an $\OG$ witness, which would
+make the crown-cap infeasibility at a horizon \emph{equivalent} to
+$\OG$ infeasibility at its top scale) has been verified only at the
+single scale $M = 128$, where the relevant family-MUS is single-block,
+and is not used here.
+\end{remark}
+
+\begin{proposition}[Machine verification; Cadical195]\label{prop:ogmachine}
+$\OG(M)$ is infeasible for every $M$ with $16 \le M \le 200$, and
+for $M = 512$. In particular both tested scales of the dyadic family
+$\{2^{2t-1}\}_{t \ge 4} = \{128, 512, 2048, \dots\}$ are infeasible.
+The encodings assert (i) over all in-block triples and (ii) as unit
+clauses; order axioms are handled by lazy transitivity refinement,
+which is sound for infeasibility verdicts and was cross-validated
+against full eager $O(n^3)$ transitivity encodings at $M = 40, 44$ and
+--- as an end-to-end recheck --- at $M = 128$ (fresh eager instance,
+$690{,}831$ clauses, UNSAT in about a second). The run at $M = 2048$
+is unresolved (no verdict after $200+$ refinement rounds), and the
+support growth reported below makes it unlikely that any finite sweep
+can settle the general statement.
+\end{proposition}
+
+\begin{corollary}[Conditional death of the canonical candidate]
+\label{cor:conditional}
+If $\OG(M)$ is infeasible for all $M \ge 16$ --- or merely for
+infinitely many $M$ of the form $2^{2t-1}$ --- then the canonical
+dyadic partition $\Z^+ = \SA \sqcup S_B$ is not a solution of the
+Erd\H{o}s--Graham problem: $\SA$ admits no permutation free of monotone
+$3$-APs.
+\end{corollary}
+
+\subsection{Status of the scale-uniform statement}
+
+Everything above this subsection is unconditional. What is missing is
+exactly the hypothesis of Theorem~\ref{thm:ogred}: a proof of
+$\OG$-infeasibility at infinitely many dyadic scales. We record the
+sharpest machine-checked finite facts, then the conjecture they
+support, then the known obstructions to the obvious proof strategies.
+
+\begin{proposition}[Attack cores; machine-checked]\label{prop:cores}
+For every swept $M$ (all of $40 \le M \le 100$, both parities, and
+$M \in \{104, 108, 112, 120, 128, 150, 200\}$), constraint (i)
+together with only the eleven attack units
+$15\{1..7\} \cup 16\{1..4\}$ --- that is, $t_{15-2j} \prec b_j$ for
+$j \le 7$ and $t_{16-2j} \prec b_j$ for $j \le 4$ --- is already
+infeasible. On residue subclasses, sharper cores hold at every swept
+scale: the four units $\{t_{13} \prec b_1,\ t_{11} \prec b_2,\
+t_5 \prec b_5,\ t_{10} \prec b_3\}$ are infeasible with (i) exactly
+when $M \equiv 0 \pmod 4$, and the three units
+\[
+\mathrm{C3} \;=\; \{\,t_5 \prec b_5,\quad t_3 \prec b_6,\quad
+t_{10} \prec b_3\,\}
+\]
+are infeasible with (i) exactly when $M \equiv 0 \pmod 8$ (satisfiable
+at every other swept residue, including $M \equiv 4 \bmod 8$).
+\end{proposition}
+
+Every scale of the dyadic family is $\equiv 0 \pmod 8$, so
+Theorem~\ref{thm:ogred} needs only the following, which is the
+sharpest known form of the missing statement.
+
+\begin{conjecture}[Scale-uniform order-gadget infeasibility]
+\label{conj:og}
+$\OG(M)$ is infeasible for every $M \ge 16$. Sharpest sufficient form:
+for every $M \equiv 0 \pmod 8$, the no-monotone-AP constraint (i) on
+$(M, 2M]$ is inconsistent with the three order axioms $\mathrm{C3}$.
+\end{conjecture}
+
+\emph{What is known toward Conjecture~\ref{conj:og}, and what
+obstructs it.} The full parametric analysis lives in the repository
+(notes 27, 28, 30 and the \texttt{e87}--\texttt{e96} experiment
+suite); we summarize its verified state. (1) A complete
+pencil-checkable refutation of $\OG(40)$ exists (a $27$-node lemma
+DAG using only AP-reflection and transitivity), but its root lemma
+exploits band collisions unique to $M = 40$ and provably admits no
+forced parametric lift; it cannot be the base of a uniform proof.
+(2) A layer of forced-order lemmas behind the refutation (bottoms
+pushed before their own guards; mid-band collision orders) is
+machine-certified at $M \in \{40, 44, 48, 52, 60, 100, 128\}$ --- all
+$\equiv 0 \pmod 4$ --- and an adversarial audit shows this layer is
+genuinely \emph{parity-locked}: at $M \not\equiv 0 \pmod 4$ several of
+its lemmas are forced in the \emph{reverse} orientation, and the
+half-integral anchors it uses do not exist, so any uniform proof must
+either stay within the residue class $M \equiv 0 \pmod 4$ (which
+suffices for the dyadic family) or be rebuilt per residue class.
+(3) Deletion-minimal certificate supports grow roughly linearly with
+$M$ ($\approx 8$ triples per unit of $M$ between scales $44$ and
+$60$), which suggests --- but does not prove --- that no fixed finite
+list of parametric AP-triples certifies infeasibility at all scales;
+a genuinely scale-uniform mechanism (or a compactness/limit argument
+over order types of $(M, 2M]$) appears to be required. (4) The residue
+class $M \equiv 3 \pmod{16}$ resists the generic attack prefix and
+needs a fourth $16$-attack (verified through $M = 131$); it is
+irrelevant to the dyadic family but shows the attack calculus is not
+residue-free. These are stated as precise open verifications in the
+repository's gap ledger; none of them affects the unconditional
+Theorem~\ref{thm:ogred} or the machine record of
+Proposition~\ref{prop:ogmachine}.
 
 \section{Historical note: suffix-stacked deferral}
 
