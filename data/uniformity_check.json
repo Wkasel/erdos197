@@ -1,0 +1,977 @@
+{
+ "M_adv": [
+  41,
+  43,
+  45,
+  47,
+  49,
+  53,
+  100,
+  128
+ ],
+ "steps": {
+  "41": {
+   "fam15_SAT": true,
+   "jstar": 2,
+   "core10_SAT": false,
+   "core11_SAT": false,
+   "C4_SAT": true,
+   "C3_SAT": true,
+   "S11": {
+    "b3<t10": "-",
+    "b5<t6": "-",
+    "b7<t2": "-",
+    "b5<t6_under_15fam": "-"
+   },
+   "S12": {
+    "O1a": "-",
+    "O1b": "R",
+    "O2a": "-",
+    "O2b": "R",
+    "O3a": "R",
+    "O3b": "R",
+    "O3c": "F",
+    "O4a": "R",
+    "O4b": "R",
+    "O4c": "F",
+    "O5": "-",
+    "O6a": "-",
+    "O6b": "PARITY-SKIP",
+    "O6c": "F",
+    "O7a": "PARITY-SKIP",
+    "O7b": "R",
+    "O7c": "F",
+    "O8a": "-",
+    "O8b": "F"
+   },
+   "S13_oddG6": {
+    "AP(b5,m3,t2)": true,
+    "m3<b5": "F",
+    "m3<t2": "F"
+   },
+   "S14": {
+    "b7<b21": "-",
+    "b21<t2": "-",
+    "b7<t2": "-"
+   },
+   "S16": {
+    "F1": "PARITY-SKIP",
+    "F2": "PARITY-SKIP",
+    "F3": "PARITY-SKIP",
+    "F4": "PARITY-SKIP",
+    "F5": "PARITY-SKIP",
+    "F6": "PARITY-SKIP",
+    "F7": "PARITY-SKIP"
+   }
+  },
+  "43": {
+   "fam15_SAT": true,
+   "jstar": 3,
+   "core10_SAT": false,
+   "core11_SAT": false,
+   "C4_SAT": true,
+   "C3_SAT": true,
+   "S11": {
+    "b3<t10": "F",
+    "b5<t6": "-",
+    "b7<t2": "-",
+    "b5<t6_under_15fam": "-"
+   },
+   "S12": {
+    "O1a": "F",
+    "O1b": "R",
+    "O2a": "F",
+    "O2b": "R",
+    "O3a": "R",
+    "O3b": "R",
+    "O3c": "F",
+    "O4a": "R",
+    "O4b": "R",
+    "O4c": "F",
+    "O5": "F",
+    "O6a": "-",
+    "O6b": "PARITY-SKIP",
+    "O6c": "F",
+    "O7a": "PARITY-SKIP",
+    "O7b": "R",
+    "O7c": "-",
+    "O8a": "F",
+    "O8b": "F"
+   },
+   "S13_oddG6": {
+    "AP(b5,m3,t2)": true,
+    "m3<b5": "F",
+    "m3<t2": "F"
+   },
+   "S14": {
+    "b7<b21": "F",
+    "b21<t2": "-",
+    "b7<t2": "-"
+   },
+   "S16": {
+    "F1": "PARITY-SKIP",
+    "F2": "PARITY-SKIP",
+    "F3": "PARITY-SKIP",
+    "F4": "PARITY-SKIP",
+    "F5": "PARITY-SKIP",
+    "F6": "PARITY-SKIP",
+    "F7": "PARITY-SKIP"
+   }
+  },
+  "45": {
+   "fam15_SAT": true,
+   "jstar": 2,
+   "core10_SAT": false,
+   "core11_SAT": false,
+   "C4_SAT": true,
+   "C3_SAT": true,
+   "S11": {
+    "b3<t10": "-",
+    "b5<t6": "-",
+    "b7<t2": "-",
+    "b5<t6_under_15fam": "-"
+   },
+   "S12": {
+    "O1a": "-",
+    "O1b": "-",
+    "O2a": "-",
+    "O2b": "-",
+    "O3a": "-",
+    "O3b": "-",
+    "O3c": "F",
+    "O4a": "-",
+    "O4b": "-",
+    "O4c": "F",
+    "O5": "-",
+    "O6a": "-",
+    "O6b": "PARITY-SKIP",
+    "O6c": "F",
+    "O7a": "PARITY-SKIP",
+    "O7b": "R",
+    "O7c": "-",
+    "O8a": "-",
+    "O8b": "F"
+   },
+   "S13_oddG6": {
+    "AP(b5,m3,t2)": true,
+    "m3<b5": "F",
+    "m3<t2": "F"
+   },
+   "S14": {
+    "b7<b21": "-",
+    "b21<t2": "-",
+    "b7<t2": "-"
+   },
+   "S16": {
+    "F1": "PARITY-SKIP",
+    "F2": "PARITY-SKIP",
+    "F3": "PARITY-SKIP",
+    "F4": "PARITY-SKIP",
+    "F5": "PARITY-SKIP",
+    "F6": "PARITY-SKIP",
+    "F7": "PARITY-SKIP"
+   }
+  },
+  "47": {
+   "fam15_SAT": true,
+   "jstar": 3,
+   "core10_SAT": false,
+   "core11_SAT": false,
+   "C4_SAT": true,
+   "C3_SAT": true,
+   "S11": {
+    "b3<t10": "F",
+    "b5<t6": "-",
+    "b7<t2": "-",
+    "b5<t6_under_15fam": "-"
+   },
+   "S12": {
+    "O1a": "F",
+    "O1b": "R",
+    "O2a": "F",
+    "O2b": "R",
+    "O3a": "R",
+    "O3b": "R",
+    "O3c": "F",
+    "O4a": "R",
+    "O4b": "R",
+    "O4c": "F",
+    "O5": "F",
+    "O6a": "-",
+    "O6b": "PARITY-SKIP",
+    "O6c": "F",
+    "O7a": "PARITY-SKIP",
+    "O7b": "R",
+    "O7c": "-",
+    "O8a": "F",
+    "O8b": "F"
+   },
+   "S13_oddG6": {
+    "AP(b5,m3,t2)": true,
+    "m3<b5": "-",
+    "m3<t2": "-"
+   },
+   "S14": {
+    "b7<b21": "F",
+    "b21<t2": "-",
+    "b7<t2": "-"
+   },
+   "S16": {
+    "F1": "PARITY-SKIP",
+    "F2": "PARITY-SKIP",
+    "F3": "PARITY-SKIP",
+    "F4": "PARITY-SKIP",
+    "F5": "PARITY-SKIP",
+    "F6": "PARITY-SKIP",
+    "F7": "PARITY-SKIP"
+   }
+  },
+  "49": {
+   "fam15_SAT": true,
+   "jstar": 2,
+   "core10_SAT": false,
+   "core11_SAT": false,
+   "C4_SAT": true,
+   "C3_SAT": true,
+   "S11": {
+    "b3<t10": "-",
+    "b5<t6": "-",
+    "b7<t2": "-",
+    "b5<t6_under_15fam": "-"
+   },
+   "S12": {
+    "O1a": "-",
+    "O1b": "-",
+    "O2a": "-",
+    "O2b": "-",
+    "O3a": "-",
+    "O3b": "-",
+    "O3c": "F",
+    "O4a": "-",
+    "O4b": "-",
+    "O4c": "F",
+    "O5": "-",
+    "O6a": "-",
+    "O6b": "PARITY-SKIP",
+    "O6c": "F",
+    "O7a": "PARITY-SKIP",
+    "O7b": "R",
+    "O7c": "-",
+    "O8a": "-",
+    "O8b": "F"
+   },
+   "S13_oddG6": {
+    "AP(b5,m3,t2)": true,
+    "m3<b5": "F",
+    "m3<t2": "F"
+   },
+   "S14": {
+    "b7<b21": "-",
+    "b21<t2": "-",
+    "b7<t2": "-"
+   },
+   "S16": {
+    "F1": "PARITY-SKIP",
+    "F2": "PARITY-SKIP",
+    "F3": "PARITY-SKIP",
+    "F4": "PARITY-SKIP",
+    "F5": "PARITY-SKIP",
+    "F6": "PARITY-SKIP",
+    "F7": "PARITY-SKIP"
+   }
+  },
+  "53": {
+   "fam15_SAT": true,
+   "jstar": 2,
+   "core10_SAT": false,
+   "core11_SAT": false,
+   "C4_SAT": true,
+   "C3_SAT": true,
+   "S11": {
+    "b3<t10": "-",
+    "b5<t6": "-",
+    "b7<t2": "-",
+    "b5<t6_under_15fam": "-"
+   },
+   "S12": {
+    "O1a": "-",
+    "O1b": "-",
+    "O2a": "-",
+    "O2b": "-",
+    "O3a": "-",
+    "O3b": "-",
+    "O3c": "F",
+    "O4a": "-",
+    "O4b": "-",
+    "O4c": "F",
+    "O5": "-",
+    "O6a": "-",
+    "O6b": "PARITY-SKIP",
+    "O6c": "F",
+    "O7a": "PARITY-SKIP",
+    "O7b": "R",
+    "O7c": "-",
+    "O8a": "-",
+    "O8b": "-"
+   },
+   "S13_oddG6": {
+    "AP(b5,m3,t2)": true,
+    "m3<b5": "F",
+    "m3<t2": "F"
+   },
+   "S14": {
+    "b7<b21": "-",
+    "b21<t2": "-",
+    "b7<t2": "-"
+   },
+   "S16": {
+    "F1": "PARITY-SKIP",
+    "F2": "PARITY-SKIP",
+    "F3": "PARITY-SKIP",
+    "F4": "PARITY-SKIP",
+    "F5": "PARITY-SKIP",
+    "F6": "PARITY-SKIP",
+    "F7": "PARITY-SKIP"
+   }
+  },
+  "100": {
+   "fam15_SAT": true,
+   "jstar": 3,
+   "core10_SAT": false,
+   "core11_SAT": false,
+   "C4_SAT": false,
+   "C3_SAT": true,
+   "S11": {
+    "b3<t10": "F",
+    "b5<t6": "F",
+    "b7<t2": "F",
+    "b5<t6_under_15fam": "-"
+   },
+   "S12": {
+    "O1a": "F",
+    "O1b": "F",
+    "O2a": "F",
+    "O2b": "F",
+    "O3a": "F",
+    "O3b": "F",
+    "O3c": "F",
+    "O4a": "F",
+    "O4b": "F",
+    "O4c": "F",
+    "O5": "F",
+    "O6a": "F",
+    "O6b": "F",
+    "O6c": "F",
+    "O7a": "F",
+    "O7b": "F",
+    "O7c": "F",
+    "O8a": "F",
+    "O8b": "F"
+   },
+   "S13": {
+    "AP(b4,m2,t2)": true,
+    "m2<b4": "F",
+    "m2<t2": "F"
+   },
+   "S14": {
+    "b7<b21": "F",
+    "b21<t2": "F",
+    "b7<t2": "F"
+   },
+   "S16": {
+    "F1": "ok",
+    "F2": "ok",
+    "F3": "ok",
+    "F4": "ok",
+    "F5": "ok",
+    "F6": "ok",
+    "F7": "ok"
+   }
+  },
+  "128": {
+   "fam15_SAT": true,
+   "jstar": 2,
+   "core10_SAT": false,
+   "core11_SAT": false,
+   "C4_SAT": false,
+   "C3_SAT": false,
+   "S11": {
+    "b3<t10": "F",
+    "b5<t6": "F",
+    "b7<t2": "F",
+    "b5<t6_under_15fam": "-"
+   },
+   "S12": {
+    "O1a": "F",
+    "O1b": "F",
+    "O2a": "F",
+    "O2b": "F",
+    "O3a": "F",
+    "O3b": "F",
+    "O3c": "F",
+    "O4a": "F",
+    "O4b": "F",
+    "O4c": "F",
+    "O5": "F",
+    "O6a": "F",
+    "O6b": "F",
+    "O6c": "F",
+    "O7a": "F",
+    "O7b": "F",
+    "O7c": "F",
+    "O8a": "F",
+    "O8b": "F"
+   },
+   "S13": {
+    "AP(b4,m2,t2)": true,
+    "m2<b4": "F",
+    "m2<t2": "F"
+   },
+   "S14": {
+    "b7<b21": "F",
+    "b21<t2": "F",
+    "b7<t2": "F"
+   },
+   "S16": {
+    "F1": "ok",
+    "F2": "ok",
+    "F3": "ok",
+    "F4": "ok",
+    "F5": "ok",
+    "F6": "ok",
+    "F7": "ok"
+   }
+  }
+ },
+ "failures": [
+  {
+   "step": "S11",
+   "M": 41,
+   "msg": "invariant b3<t10 not forced (status -)"
+  },
+  {
+   "step": "S11",
+   "M": 41,
+   "msg": "invariant b5<t6 not forced (status -)"
+  },
+  {
+   "step": "S11",
+   "M": 41,
+   "msg": "invariant b7<t2 not forced (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 41,
+   "msg": "lemma O1a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 41,
+   "msg": "lemma O1b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 41,
+   "msg": "lemma O2a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 41,
+   "msg": "lemma O2b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 41,
+   "msg": "lemma O3a not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 41,
+   "msg": "lemma O3b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 41,
+   "msg": "lemma O4a not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 41,
+   "msg": "lemma O4b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 41,
+   "msg": "lemma O5 not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 41,
+   "msg": "lemma O6a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 41,
+   "msg": "lemma O7b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 41,
+   "msg": "lemma O8a not forced under H* (status -)"
+  },
+  {
+   "step": "S14",
+   "M": 41,
+   "msg": "chain literal b7<b21 not forced (status -)"
+  },
+  {
+   "step": "S14",
+   "M": 41,
+   "msg": "chain literal b21<t2 not forced (status -)"
+  },
+  {
+   "step": "S14",
+   "M": 41,
+   "msg": "chain literal b7<t2 not forced (status -)"
+  },
+  {
+   "step": "S11",
+   "M": 43,
+   "msg": "invariant b5<t6 not forced (status -)"
+  },
+  {
+   "step": "S11",
+   "M": 43,
+   "msg": "invariant b7<t2 not forced (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 43,
+   "msg": "lemma O1b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 43,
+   "msg": "lemma O2b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 43,
+   "msg": "lemma O3a not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 43,
+   "msg": "lemma O3b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 43,
+   "msg": "lemma O4a not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 43,
+   "msg": "lemma O4b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 43,
+   "msg": "lemma O6a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 43,
+   "msg": "lemma O7b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 43,
+   "msg": "lemma O7c not forced under H* (status -)"
+  },
+  {
+   "step": "S14",
+   "M": 43,
+   "msg": "chain literal b21<t2 not forced (status -)"
+  },
+  {
+   "step": "S14",
+   "M": 43,
+   "msg": "chain literal b7<t2 not forced (status -)"
+  },
+  {
+   "step": "S11",
+   "M": 45,
+   "msg": "invariant b3<t10 not forced (status -)"
+  },
+  {
+   "step": "S11",
+   "M": 45,
+   "msg": "invariant b5<t6 not forced (status -)"
+  },
+  {
+   "step": "S11",
+   "M": 45,
+   "msg": "invariant b7<t2 not forced (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 45,
+   "msg": "lemma O1a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 45,
+   "msg": "lemma O1b not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 45,
+   "msg": "lemma O2a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 45,
+   "msg": "lemma O2b not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 45,
+   "msg": "lemma O3a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 45,
+   "msg": "lemma O3b not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 45,
+   "msg": "lemma O4a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 45,
+   "msg": "lemma O4b not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 45,
+   "msg": "lemma O5 not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 45,
+   "msg": "lemma O6a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 45,
+   "msg": "lemma O7b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 45,
+   "msg": "lemma O7c not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 45,
+   "msg": "lemma O8a not forced under H* (status -)"
+  },
+  {
+   "step": "S14",
+   "M": 45,
+   "msg": "chain literal b7<b21 not forced (status -)"
+  },
+  {
+   "step": "S14",
+   "M": 45,
+   "msg": "chain literal b21<t2 not forced (status -)"
+  },
+  {
+   "step": "S14",
+   "M": 45,
+   "msg": "chain literal b7<t2 not forced (status -)"
+  },
+  {
+   "step": "S11",
+   "M": 47,
+   "msg": "invariant b5<t6 not forced (status -)"
+  },
+  {
+   "step": "S11",
+   "M": 47,
+   "msg": "invariant b7<t2 not forced (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 47,
+   "msg": "lemma O1b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 47,
+   "msg": "lemma O2b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 47,
+   "msg": "lemma O3a not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 47,
+   "msg": "lemma O3b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 47,
+   "msg": "lemma O4a not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 47,
+   "msg": "lemma O4b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 47,
+   "msg": "lemma O6a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 47,
+   "msg": "lemma O7b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 47,
+   "msg": "lemma O7c not forced under H* (status -)"
+  },
+  {
+   "step": "S13/G6",
+   "M": 47,
+   "msg": "odd-M analogue m3<b5 NOT forced (status -) -- the proposed odd-parity pivot step fails"
+  },
+  {
+   "step": "S14",
+   "M": 47,
+   "msg": "chain literal b21<t2 not forced (status -)"
+  },
+  {
+   "step": "S14",
+   "M": 47,
+   "msg": "chain literal b7<t2 not forced (status -)"
+  },
+  {
+   "step": "S11",
+   "M": 49,
+   "msg": "invariant b3<t10 not forced (status -)"
+  },
+  {
+   "step": "S11",
+   "M": 49,
+   "msg": "invariant b5<t6 not forced (status -)"
+  },
+  {
+   "step": "S11",
+   "M": 49,
+   "msg": "invariant b7<t2 not forced (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 49,
+   "msg": "lemma O1a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 49,
+   "msg": "lemma O1b not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 49,
+   "msg": "lemma O2a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 49,
+   "msg": "lemma O2b not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 49,
+   "msg": "lemma O3a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 49,
+   "msg": "lemma O3b not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 49,
+   "msg": "lemma O4a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 49,
+   "msg": "lemma O4b not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 49,
+   "msg": "lemma O5 not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 49,
+   "msg": "lemma O6a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 49,
+   "msg": "lemma O7b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 49,
+   "msg": "lemma O7c not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 49,
+   "msg": "lemma O8a not forced under H* (status -)"
+  },
+  {
+   "step": "S14",
+   "M": 49,
+   "msg": "chain literal b7<b21 not forced (status -)"
+  },
+  {
+   "step": "S14",
+   "M": 49,
+   "msg": "chain literal b21<t2 not forced (status -)"
+  },
+  {
+   "step": "S14",
+   "M": 49,
+   "msg": "chain literal b7<t2 not forced (status -)"
+  },
+  {
+   "step": "S11",
+   "M": 53,
+   "msg": "invariant b3<t10 not forced (status -)"
+  },
+  {
+   "step": "S11",
+   "M": 53,
+   "msg": "invariant b5<t6 not forced (status -)"
+  },
+  {
+   "step": "S11",
+   "M": 53,
+   "msg": "invariant b7<t2 not forced (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 53,
+   "msg": "lemma O1a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 53,
+   "msg": "lemma O1b not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 53,
+   "msg": "lemma O2a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 53,
+   "msg": "lemma O2b not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 53,
+   "msg": "lemma O3a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 53,
+   "msg": "lemma O3b not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 53,
+   "msg": "lemma O4a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 53,
+   "msg": "lemma O4b not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 53,
+   "msg": "lemma O5 not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 53,
+   "msg": "lemma O6a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 53,
+   "msg": "lemma O7b not forced under H* (status R)"
+  },
+  {
+   "step": "S12",
+   "M": 53,
+   "msg": "lemma O7c not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 53,
+   "msg": "lemma O8a not forced under H* (status -)"
+  },
+  {
+   "step": "S12",
+   "M": 53,
+   "msg": "lemma O8b not forced under H* (status -)"
+  },
+  {
+   "step": "S14",
+   "M": 53,
+   "msg": "chain literal b7<b21 not forced (status -)"
+  },
+  {
+   "step": "S14",
+   "M": 53,
+   "msg": "chain literal b21<t2 not forced (status -)"
+  },
+  {
+   "step": "S14",
+   "M": 53,
+   "msg": "chain literal b7<t2 not forced (status -)"
+  }
+ ],
+ "threshold": {
+  "30": "UNSAT",
+  "31": "UNSAT",
+  "32": "UNSAT",
+  "33": "UNSAT",
+  "34": "UNSAT",
+  "35": "UNSAT",
+  "36": "UNSAT",
+  "37": "UNSAT",
+  "38": "UNSAT",
+  "39": "UNSAT",
+  "40": "UNSAT"
+ },
+ "M0_candidate": 30
+}

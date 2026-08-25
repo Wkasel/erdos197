@@ -1,0 +1,26 @@
+== (a) full OG(M) threshold, M = 16..29 ==
+  M=16: UNSAT   (0s)
+  M=17: UNSAT   (0s)
+  M=18: UNSAT   (0s)
+  M=19: UNSAT   (0s)
+  M=20: UNSAT   (0s)
+  M=21: UNSAT   (0s)
+  M=22: UNSAT   (0s)
+  M=23: UNSAT   (0s)
+  M=24: UNSAT   (0s)
+  M=25: UNSAT   (0s)
+  M=26: UNSAT   (0s)
+  M=27: UNSAT   (0s)
+  M=28: UNSAT   (0s)
+  M=29: UNSAT   (0s)
+
+== (b) eager-encoding cross-validation ==
+  M=43 H2+(t21<t27) UNSAT (O1b reversed): eager SAT=False  AGREE   (0s)
+  M=43 H2+(t27<t21) SAT: eager SAT=True  AGREE   (0s)
+  M=43 H2+(b7<t2) SAT (chain literal undetermined): eager SAT=True  AGREE   (0s)
+  M=43 H2+(t2<b7) SAT: eager SAT=True  AGREE   (1s)
+  M=41 H1+(b5<t6) SAT (invariant undetermined): eager SAT=True  AGREE   (1s)
+  M=41 H1+(t6<b5) SAT: eager SAT=True  AGREE   (1s)
+  M=41 H1+(t9<t11) UNSAT (O4a reversed): eager SAT=False  AGREE   (1s)
+  M=41 H1+(t11<t9) SAT: eager SAT=True  AGREE   (1s)
+  cross-validation PASSED
