@@ -1,5 +1,9 @@
 # Erdős #197 — Overnight Campaign Report (2026-08-24)
 
+> **HISTORICAL SNAPSHOT (superseded).** This report predates the completion
+> of the main theorem. Current state: S_A is proven not 3-permutable (see
+> STATUS.md and paper/main.tex); Erdős #197 itself remains open.
+
 ## TL;DR
 No resolution yet — but the problem's structure is now mapped at a depth nobody
 has published. Eight proven theorems/lemmas, a machine-certified atlas of what
