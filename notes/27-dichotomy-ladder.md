@@ -62,3 +62,24 @@ diving the other. Refined divergence conjecture:
 Crown rung at m=5 (cap {15,16} ≤ 2, rest free): e84 launched.
 Cross-refs: window-2 MUS {15} (window space); e76 (cap 15 → δ(16)=2 dive);
 prediction "block tops = divergence locus" (notes/09, session 2).
+
+## CROWN THEOREM (two rungs, machine-certified)
+- N=256: cap δ(15),δ(16) ≤ 1, rest free ≤ 8: INFEASIBLE ⟹ max(δ15,δ16) ≥ 2.
+- N=1024: cap ≤ 2, rest free ≤ 8: UNSAT (pysat 5181s, 69 rounds)
+  ⟹ **max(δ(15), δ(16)) ≥ 3.**
+Reframed: the crowns must reach the top block's stage-region at every
+horizon (δ ≥ m−2 ⟺ stage ≥ m). If this holds ∀m: S_A not permutable
+(two fixed values, finite displacements, restriction contradiction).
+Robustness run: DMAX=14 rerun at 1024 (exclude ceiling artifacts) — running.
+Crown rung 3 (N=4096, cap ≤ 3): launched fleet5.
+
+## The cascade mechanism (hand, toward the induction)
+Deferring block-6 crowns (60, 64) to stage σ forces, per witness pair
+(x ∈ block 4, midpoint (x+60)/2 ∈ {35..38} ⊂ block-6 bottom): either the
+midpoint defers to ≥ σ too, or the block-4 attacker x rises above the
+midpoint's stage. So high crowns drag either (i) a block-4 value upward
+(→ its own crown pressure) or (ii) growing bottom-mass of block 6 up to σ,
+which re-attacks block 6's top sliver and recurses. Target formal lemma:
+deferred mass at stage σ in block 2t forces (crown of block 2t−2 at ≥ σ−c)
+or (positive-fraction of block 2t−2 at ≥ σ−1) — mass exhaustion over m
+scales then yields the crown divergence. Bookkeeping in progress.
