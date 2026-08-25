@@ -1,0 +1,130 @@
+{
+ "44": {
+  "mod8": 4,
+  "Q1_under_L0": {
+   "t3<t5(L1)": "free",
+   "b5<b3(L1)": "free",
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "Q2Q3_under_L0+L1": {
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "time_s": 0.0
+ },
+ "48": {
+  "mod8": 0,
+  "Q1_under_L0": {
+   "t3<t5(L1)": "free",
+   "b5<b3(L1)": "free",
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "Q2Q3_under_L0+L1": {
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "time_s": 0.1
+ },
+ "52": {
+  "mod8": 4,
+  "Q1_under_L0": {
+   "t3<t5(L1)": "free",
+   "b5<b3(L1)": "free",
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "Q2Q3_under_L0+L1": {
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "time_s": 0.1
+ },
+ "56": {
+  "mod8": 0,
+  "Q1_under_L0": {
+   "t3<t5(L1)": "free",
+   "b5<b3(L1)": "free",
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "Q2Q3_under_L0+L1": {
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "time_s": 0.1
+ },
+ "60": {
+  "mod8": 4,
+  "Q1_under_L0": {
+   "t3<t5(L1)": "free",
+   "b5<b3(L1)": "free",
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "Q2Q3_under_L0+L1": {
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "time_s": 0.1
+ },
+ "64": {
+  "mod8": 0,
+  "Q1_under_L0": {
+   "t3<t5(L1)": "free",
+   "b5<b3(L1)": "free",
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "Q2Q3_under_L0+L1": {
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "time_s": 0.1
+ },
+ "72": {
+  "mod8": 0,
+  "Q1_under_L0": {
+   "t3<t5(L1)": "free",
+   "b5<b3(L1)": "free",
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "Q2Q3_under_L0+L1": {
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "time_s": 0.2
+ },
+ "76": {
+  "mod8": 4,
+  "Q1_under_L0": {
+   "t3<t5(L1)": "free",
+   "b5<b3(L1)": "free",
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "Q2Q3_under_L0+L1": {
+   "b5<t5(flip)": "free",
+   "t3<b6(A2)": "free",
+   "t10<b3(A3)": "free"
+  },
+  "time_s": 0.2
+ }
+}

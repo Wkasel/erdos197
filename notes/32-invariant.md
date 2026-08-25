@@ -168,3 +168,15 @@ use the clean k* = 3 form.
   biased (high-act-first) MUS for L3 boundedness, r4 sanity.
 * Eager independent re-verification of S1 at M = 72, 76, 58, 41: inline
   (documented in the session log; reproducible from e103b's build()).
+
+---
+
+## Addendum (post-TASK-P): program executed
+
+The proof program sketched above is now carried out in notes/33 (v2):
+S1 layers 0-2 are hand-proved (layer 0 by the ladder-seam-gadget of
+notes/33 A.2; layers 1-2 by the transfer lemma E + flood lemma P with
+the (m0, t5) interleave split), the C3 core is refuted for every
+M = 0 (mod 8), M >= 16, and the interleave-transport prediction of S2
+is realized exactly as stated (one cross-parity split + cross-parity
+mirror APs).  See notes/33 sections 4-7; verification e113/e113b.

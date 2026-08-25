@@ -1,0 +1,108 @@
+{
+ "part3": {
+  "40": {
+   "nu2": 3,
+   "mod8": 0,
+   "D3+C3": "SAT",
+   "expected(k*=3 iff nu2>=4)": "SAT",
+   "match": true,
+   "time_s": 0.0
+  },
+  "44": {
+   "nu2": 2,
+   "mod8": 4,
+   "D3+C3": "SAT",
+   "expected(k*=3 iff nu2>=4)": "SAT",
+   "match": true,
+   "time_s": 0.0
+  },
+  "48": {
+   "nu2": 4,
+   "mod8": 0,
+   "D3+C3": "UNSAT",
+   "expected(k*=3 iff nu2>=4)": "UNSAT",
+   "match": true,
+   "time_s": 0.0
+  },
+  "52": {
+   "nu2": 2,
+   "mod8": 4,
+   "D3+C3": "SAT",
+   "expected(k*=3 iff nu2>=4)": "SAT",
+   "match": true,
+   "time_s": 0.0
+  },
+  "56": {
+   "nu2": 3,
+   "mod8": 0,
+   "D3+C3": "SAT",
+   "expected(k*=3 iff nu2>=4)": "SAT",
+   "match": true,
+   "time_s": 0.0
+  },
+  "64": {
+   "nu2": 6,
+   "mod8": 0,
+   "D3+C3": "UNSAT",
+   "expected(k*=3 iff nu2>=4)": "UNSAT",
+   "match": true,
+   "time_s": 0.1
+  },
+  "72": {
+   "nu2": 3,
+   "mod8": 0,
+   "D3+C3": "SAT",
+   "expected(k*=3 iff nu2>=4)": "SAT",
+   "match": true,
+   "time_s": 0.0
+  },
+  "80": {
+   "nu2": 4,
+   "mod8": 0,
+   "D3+C3": "UNSAT",
+   "expected(k*=3 iff nu2>=4)": "UNSAT",
+   "match": true,
+   "time_s": 0.2
+  },
+  "88": {
+   "nu2": 3,
+   "mod8": 0,
+   "D3+C3": "SAT",
+   "expected(k*=3 iff nu2>=4)": "SAT",
+   "match": true,
+   "time_s": 0.1
+  },
+  "96": {
+   "nu2": 5,
+   "mod8": 0,
+   "D3+C3": "UNSAT",
+   "expected(k*=3 iff nu2>=4)": "UNSAT",
+   "match": true,
+   "time_s": 0.3
+  },
+  "104": {
+   "nu2": 3,
+   "mod8": 0,
+   "D3+C3": "SAT",
+   "expected(k*=3 iff nu2>=4)": "SAT",
+   "match": true,
+   "time_s": 0.1
+  },
+  "112": {
+   "nu2": 4,
+   "mod8": 0,
+   "D3+C3": "UNSAT",
+   "expected(k*=3 iff nu2>=4)": "UNSAT",
+   "match": true,
+   "time_s": 0.6
+  },
+  "128": {
+   "nu2": 7,
+   "mod8": 0,
+   "D3+C3": "UNSAT",
+   "expected(k*=3 iff nu2>=4)": "UNSAT",
+   "match": true,
+   "time_s": 1.1
+  }
+ }
+}
