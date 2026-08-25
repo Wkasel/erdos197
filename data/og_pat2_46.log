@@ -1,0 +1,4 @@
+M=46 pat1 ((4, 20), (6, 4), (8, -12)) -> (51, 70, 89): NOT-CONFIRMED after 10 shuffles
+M=46 pat2 ((4, 28), (6, 4), (8, -20)) -> (53, 70, 87): IN-SOME-MUS (shuffle 0)
+M=46 pat4 ((4, 76), (6, 28), (8, -20)) -> (65, 76, 87): NOT-CONFIRMED after 10 shuffles
+M=46 pat5 ((6, -4), (6, 12), (6, 28)) -> (68, 72, 76): NOT-CONFIRMED after 10 shuffles

@@ -1,0 +1,51 @@
+M=40: MUS 59 triples -> 130 consistent patterns
+M=41: MUS 74 triples -> 141 consistent patterns
+M=42: MUS 66 triples -> 124 consistent patterns
+M=43: MUS 48 triples -> 78 consistent patterns
+M=44: MUS 60 triples -> 99 consistent patterns
+M=45: MUS 65 triples -> 97 consistent patterns
+M=46: MUS 61 triples -> 90 consistent patterns
+M=47: MUS 76 triples -> 99 consistent patterns
+M=48: MUS 92 triples -> 136 consistent patterns
+M=49: MUS 80 triples -> 108 consistent patterns
+M=50: MUS 87 triples -> 113 consistent patterns
+M=51: MUS 65 triples -> 70 consistent patterns
+M=52: MUS 97 triples -> 127 consistent patterns
+M=53: MUS 83 triples -> 88 consistent patterns
+M=54: MUS 106 triples -> 129 consistent patterns
+M=55: MUS 85 triples -> 80 consistent patterns
+M=56: MUS 88 triples -> 92 consistent patterns
+M=60: MUS 120 triples -> 105 consistent patterns
+
+=== patterns at ALL target M [40, 44, 48, 52]: 7 ===
+  (M+1, (3M-6)/2, 2M-7)                      presence[40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,60]=y...y...y.y.y.y.y. e.g. M=40 -> (41, 57, 73)
+  (M+5, (3M+2)/2, 2M-3)                      presence[40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,60]=y...y...y...y.y... e.g. M=40 -> (45, 61, 77)
+  (M+7, (3M+2)/2, 2M-5)                      presence[40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,60]=y...y...y...y....y e.g. M=40 -> (47, 61, 75)
+  (M+17, (3M-2)/2, 2M-19)                    presence[40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,60]=y...y...y...y.y.yy e.g. M=40 -> (57, 59, 61)
+  (M+19, (3M+14)/2, 2M-5)                    presence[40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,60]=y...y...y...y...y. e.g. M=40 -> (59, 67, 75)
+  ((3M-2)/2, (3M+6)/2, (3M+14)/2)            presence[40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,60]=y...y...y.y.y.y.y. e.g. M=40 -> (59, 63, 67)
+  ((3M+2)/2, (7M-16)/4, 2M-9)                presence[40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,60]=y...y...y...y..... e.g. M=40 -> (61, 66, 71)
+
+=== patterns at ALL 11 tested M: 0 ===
+
+=== common within M≡0 (mod 4) [40, 44, 48, 52, 56, 60]: 1 ===
+  (M+17, (3M-2)/2, 2M-19)
+
+=== common within M≡1 (mod 4) [41, 45, 49, 53]: 2 ===
+  (M+17, (3M+9)/2, 2M-8)
+  ((3M-7)/2, (3M+1)/2, (3M+9)/2)
+
+=== common within M≡2 (mod 4) [42, 46, 50, 54]: 1 ===
+  ((3M-8)/2, (3M-6)/2, (3M-4)/2)
+
+=== common within M≡3 (mod 4) [43, 47, 51, 55]: 0 ===
+
+=== p-vector families (which residue classes have a common pattern with this shape) ===
+  (M+a,3M/2,2M-a): residues [0, 1]
+      r=0: ['(M+17, (3M-2)/2, 2M-19)']
+      r=1: ['(M+17, (3M+9)/2, 2M-8)']
+  (3M/2,3M/2,3M/2): residues [1, 2]
+      r=1: ['((3M-7)/2, (3M+1)/2, (3M+9)/2)']
+      r=2: ['((3M-8)/2, (3M-6)/2, (3M-4)/2)']
+
+wrote data/parametric_core.json

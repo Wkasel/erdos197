@@ -1,0 +1,4 @@
+M=42 pat0 ((4, 4), (6, -12), (8, -28)) -> (43, 60, 77): NOT-CONFIRMED after 10 shuffles
+M=42 pat2 ((4, 28), (6, 4), (8, -20)) -> (49, 64, 79): NOT-CONFIRMED after 10 shuffles
+M=42 pat3 ((4, 68), (6, -4), (8, -76)) -> (59, 62, 65): NOT-CONFIRMED after 10 shuffles
+M=42 pat5 ((6, -4), (6, 12), (6, 28)) -> (62, 66, 70): NOT-CONFIRMED after 10 shuffles
