@@ -21,7 +21,8 @@
 
 \title{Structural rigidity in the Erd\H{o}s--Graham two-set permutation problem}
 \author{Will Kasel\thanks{With extensive machine assistance from Claude (Anthropic);
-SAT certificates and code at [repository]. All proofs have been verified by hand
+SAT certificates, code, and a one-command reproduction kit are available in the
+accompanying repository (see Data Availability). All proofs have been verified by hand
 unless explicitly marked as machine-checked.}}
 \date{Draft: August 2026}
 
@@ -29,13 +30,14 @@ unless explicitly marked as machine-checked.}}
 \maketitle
 
 \begin{abstract}
-A sequence $a_1, a_2, \dots$ \emph{contains a monotone 3-AP} if some three terms in
-increasing or decreasing positions form an arithmetic progression in the matching
-order. Davis, Entringer, Graham and Simmons (1977) proved that every permutation of
-$\Z^+$ contains a monotone 3-AP, and Erd\H{o}s and Graham (1979) asked whether
-$\Z^+$ can be partitioned into two sets, each of which admits a permutation with no
-monotone 3-AP (three sets suffice; problem \#197 of the Erd\H{o}s problem
-collection). We prove several structural results constraining any solution.
+A sequence $a_1, a_2, \dots$ \emph{contains a monotone 3-AP} if some three terms,
+taken in order of position, form an increasing or a decreasing arithmetic
+progression. Davis, Entringer, Graham and Simmons (1977) proved that every
+permutation of $\Z^+$ contains an increasing --- in particular monotone --- 3-AP,
+constructed a partition of $\Z^+$ into three sets each admitting a permutation
+with no monotone 3-AP, and asked whether two sets suffice; Erd\H{o}s and Graham
+(1979, p.~338) repeated this as ``a very annoying question'' (problem \#197 of
+the Erd\H{o}s problem collection). We prove several structural results constraining any solution.
 (i) A permutable set admits no infinite doubling orbit $u_{k+1}=2u_k-f_k$ with
 $f_k$ drawn from a fixed finite subset. (ii) In any 3-AP-free arrangement, every
 newly placed value must be balanced: the number of already-placed values in
@@ -68,13 +70,95 @@ canonical dyadic partition does not resolve the Erd\H{o}s--Graham problem.
 We also prove a clean
 absorption theorem for van der Corput orderings of odd residue classes which
 explains the fractal structure observed in all satisfying fragments.
+Problem \#197 itself remains open: our theorem eliminates one candidate
+partition, and decides nothing about other two-set partitions.
 \end{abstract}
 
 \section{Introduction}
 
-% TODO: history: DEGS77, ErGr79/80 (p. 338: "very annoying question"),
-% LeSaulnier--Vijay 2011 (alpha/beta bounds + conjecture), Geneson 2018,
-% erdosproblems.com #197.
+Call a linear arrangement of a set of integers \emph{admissible} if no three
+of its terms, read in order of position, form an increasing or a decreasing
+arithmetic progression (a \emph{monotone 3-AP}). Every finite set of integers
+admits an admissible arrangement: place the odd values before the even values
+and recurse, using the fact that the first and third term of a 3-AP share a
+parity \cite{DEGS77}. For infinite sets the situation changes completely.
+Davis, Entringer, Graham and Simmons \cite{DEGS77} proved that every
+permutation of $\Z^+$ (of order type $\omega$) contains an increasing 3-AP —
+in particular a monotone one — so $\Z^+$ itself admits no admissible
+permutation. They also constructed a partition of $\Z^+$ into \emph{three}
+sets, each admitting an admissible permutation, and asked (Concluding
+Remarks~3, p.~89) whether two sets suffice. Erd\H{o}s and Graham repeated the
+question in \cite{ErGr79} (p.~338), calling it ``a very annoying question'';
+it is problem \#197 of the Erd\H{o}s problem collection \cite{Bl}, where it
+is stated for $\N$ and carries a Lean formalisation \cite{FC}.
+
+The modern literature around the problem concerns densities and longer
+progressions. LeSaulnier and Vijay \cite{LV11} showed that the upper density
+of a set admitting an admissible permutation is at least $1/2$ ($\alpha_{\N}(3)
+\ge 1/2$) and the lower density at least $1/4$, and conjectured both sharp;
+Geneson \cite{Gen26} recently disproved the upper-density conjecture, proving
+$\alpha_{\N}(3) \ge 2/3$. Permutations of $\Z$ and of subsets of $\Z^+$
+avoiding longer monotone progressions were constructed by Geneson
+\cite{Gen18} and Adenwalla \cite{Ad24}. Hirose and Saito \cite{HS24}
+characterised the \emph{order types} of total orders on $\N$, $\Z$ and $\Q$
+admitting no monotone 3-AP; from their standpoint the difficulty of \#197 is
+that order type $\omega$ is forced, where avoidance is hardest.
+
+The natural candidate for a two-set partition — implicit already in the
+parity heuristic of \cite{DEGS77} and adopted as the default attack in all
+informal discussion of the problem we are aware of — is the \emph{dyadic
+partition}: let
+\[
+\SA \;=\; \bigcup_{k \text{ even}} \left(2^{k-1},\, 2^{k}\right], \qquad
+S_B \;=\; \Z^+ \setminus \SA,
+\]
+so that each team is a union of doubling blocks and the completion
+$2y - x$ of a pair $x < y$ within a block falls in the other team's
+territory. Our main result eliminates this candidate.
+
+\begin{quote}
+\textbf{Main Theorem} (Theorem~\ref{thm:main}). \emph{$\SA$ admits no
+permutation of order type $\omega$ free of monotone $3$-term arithmetic
+progressions. Consequently the dyadic partition does not witness a positive
+answer to problem \#197.}
+\end{quote}
+
+The proof has an unusual architecture, which we believe is of independent
+interest. First, an exact \emph{chunk reduction} (Theorem~\ref{thm:chunk})
+translates the existence of an admissible permutation into the existence of
+a stage function with finite fibres satisfying two checkable conditions; in
+these coordinates the theorem of \cite{DEGS77} (in its monotone form) has a
+four-line proof, and self-similarity of $\SA$ under $v \mapsto 4v$ becomes
+an induction engine. Second, a sequence of machine-assisted eliminations
+(Sections~\ref{sec:negative}--\ref{sec:ladder}) shrinks the search space of
+candidate stage functions until a single finite obstruction emerges: an
+\emph{order gadget} $\OG(M)$ on the interval $(M, 2M]$, fifteen precedence
+axioms induced by the two values $15$ and $16$, whose infeasibility at
+infinitely many dyadic scales implies the main theorem unconditionally
+(Theorem~\ref{thm:ogred}). Third — and this is the mathematical heart — we
+prove by hand that already a three-axiom core of $\OG(M)$ is inconsistent
+with admissibility for every $M \equiv 0 \pmod 8$ (Theorem~\ref{thm:c3core}),
+via a toolkit of ladder lemmas whose single appeal to the residue of $M$
+occurs at two ``flood centres'' near $3M/2$. The mod-$8$ condition is sharp:
+the same three axioms are satisfiable whenever $M \not\equiv 0 \pmod 8$,
+matching the machine's phase diagram exactly.
+
+A word on methodology. The elimination phase and the discovery of the
+gadget, the three-axiom core, and the residue phenomenon were carried out
+with large-scale SAT-solver experimentation (CaDiCaL, OR-Tools), with every
+negative claim cross-validated by independent encodings and solvers. The
+final proof chain, however, does not rest on any solver verdict: the
+reductions and the C3 core theorem are human-readable arguments, and each
+of their finitely many schema instances has been machine-audited by three
+independently written checkers, including mutation testing of the checkers
+themselves. A complete reproduction kit (scripts, pinned environments, and
+DRAT certificates for the finite base cases) accompanies the paper.
+
+Problem \#197 itself remains open. Beyond eliminating the leading candidate,
+the methods here — the chunk calculus, the attack/guard analysis of small
+values against doubling blocks, and the residue-locked ladder toolkit —
+apply to any two-set partition whose parts are unions of intervals, and we
+expect them to bear on the general question.
 
 \section{Definitions and conventions}
 
@@ -132,7 +216,7 @@ completion $u_{k+1} \in S$ must be placed before $u_k$, giving an infinite stric
 decreasing sequence of positions.
 \end{proof}
 
-Taking $S = \Z^+$, $F = \{1,2\}$ recovers the theorem of Davis--Entringer--Graham--Simmons.
+Taking $S = \Z^+$, $F = \{1,2\}$ recovers the theorem of Davis--Entringer--Graham--Simmons (more precisely its monotone form; \cite{DEGS77} in fact proves that an \emph{increasing} 3-AP always occurs).
 
 \section{The balance law}
 
@@ -398,8 +482,9 @@ after which its stages are non-increasing, hence eventually confined to one
 finite fiber — impossible for an infinite set. \qed
 \end{theorem}
 
-\noindent This recovers the Davis–Entringer–Graham–Simmons theorem in the
-chunk coordinates and isolates what a permutable team must do: break every
+\noindent This recovers the Davis–Entringer–Graham–Simmons theorem (in its
+monotone form; \cite{DEGS77} proves the stronger increasing-3-AP statement)
+in the chunk coordinates and isolates what a permutable team must do: break every
 such reflected orbit out of the team. The dyadic team $\SA$ breaks
 single-reflector orbits in two steps (completions land in odd blocks); the
 question is whether the multi-scale accounting below can be survived.
@@ -1039,5 +1124,53 @@ survived depth $4$.
 
 % TODO: the LV density program; measurement data (g-curves); the exact
 % characterization discussion.
+
+\section*{Data availability}
+All experiment scripts, machine-audit checkers (including the mutation-test
+suite for the checkers themselves), solver logs, witness data, and DRAT
+certificates for the finite base cases are contained in the accompanying
+repository, together with \texttt{reproduce.sh}, a single script that
+re-runs the complete verification stack from a pinned environment.
+
+\begin{thebibliography}{9}
+
+\bibitem{DEGS77} J.~A. Davis, R.~C. Entringer, R.~L. Graham and
+G.~J. Simmons, \emph{On permutations containing no long arithmetic
+progressions}, Acta Arith.\ \textbf{34} (1977), 81--90.
+
+\bibitem{ErGr79} P.~Erd\H{o}s and R.~L. Graham, \emph{Old and new problems
+and results in combinatorial number theory: van der Waerden's theorem and
+related topics}, Enseign.\ Math.\ (2) \textbf{25} (1979), 325--344.
+
+\bibitem{ErGr80} P.~Erd\H{o}s and R.~L. Graham, \emph{Old and new problems
+and results in combinatorial number theory}, Monographies de
+L'Enseignement Math\'ematique \textbf{28}, Gen\`eve, 1980.
+
+\bibitem{LV11} T.~D. LeSaulnier and S.~Vijay, \emph{On permutations avoiding
+arithmetic progressions}, Discrete Math.\ \textbf{311} (2011), 205--207.
+
+\bibitem{Gen18} J.~Geneson, \emph{Forbidden arithmetic progressions in
+permutations of subsets of the integers}, Discrete Math.\ \textbf{342}
+(2019), 1489--1491; arXiv:1803.06334.
+
+\bibitem{Ad24} S.~Adenwalla, \emph{Avoiding monotone arithmetic progressions
+in permutations of integers}, Discrete Math.\ \textbf{347} (2024), 114183;
+arXiv:2211.04451.
+
+\bibitem{HS24} M.~Hirose and S.~Saito, \emph{Characterization of order
+structures avoiding three-term arithmetic progressions}, arXiv:2404.13510
+(2024).
+
+\bibitem{Gen26} J.~Geneson, \emph{Density bounds for permutations avoiding
+monotone arithmetic progressions}, arXiv:2608.12604 (2026).
+
+\bibitem{Bl} T.~F. Bloom, \emph{Erd\H{o}s Problem \#197},
+\url{https://www.erdosproblems.com/197}, accessed 2026-08-25.
+
+\bibitem{FC} Google DeepMind, \emph{Formal Conjectures}:
+\texttt{FormalConjectures/ErdosProblems/197.lean},
+\url{https://github.com/google-deepmind/formal-conjectures}.
+
+\end{thebibliography}
 
 \end{document}

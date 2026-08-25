@@ -1,0 +1,4 @@
+M=232 (mod8=0): UNSAT (11s) expect=UNSAT OK
+M=236 (mod8=4): SAT (2s) expect=SAT OK
+M=936 (mod8=0): UNSAT (1543s) expect=UNSAT OK
+M=932 (mod8=4): SAT (1788s) expect=SAT OK
