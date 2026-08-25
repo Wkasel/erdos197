@@ -2,3 +2,4 @@ m=5 CAP=2 DMAX=14 MODE=crown: n=682 clauses=6588002 triples=83544 build=16s
   round 25 (31s)
   round 50 (140s)
   round 75 (304s)
+RUNG2 m=5 CAP=2 crown: UNSAT (2995s, 99 rounds)

@@ -1,2 +1,3 @@
 m=6 CAP=3 DMAX=8 MODE=crown: n=2730 clauses=61275628 triples=1340811 build=132s
   round 25 (1377s)
+  round 50 (3045s)
