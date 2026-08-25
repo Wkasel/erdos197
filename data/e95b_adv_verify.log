@@ -1,0 +1,30 @@
+parsed 59 MUS triples
+  [ok] 59 triples parsed 
+values covered by MUS: 34
+  [ok] attack #14 is (78,47) (78, 47)
+  [ok] restricted: attacks 1-13 SAT 
+  [ok] restricted: attacks 1-13 force 47<78 
+  [ok] restricted: attacks 1-14 UNSAT 
+  [ok] restricted backbone size = 69 (og40_backbone.txt claims 69)
+  (0s)
+  [ok] M=44 full instance UNSAT (all attacks, all triples) 
+  [ok] F1 (45, 63, 81) is a listed triple 
+  [ok] F1: in-some-MUS at M=44 (core size 87, needed=True)   (0s)
+  [ok] F2 (49, 67, 85) is a listed triple 
+  [FAIL] F2: in-some-MUS at M=44 (core size 84, needed=False)   (1s)
+  [ok] F3 (51, 67, 83) is a listed triple 
+  [FAIL] F3: in-some-MUS at M=44 (core size 84, needed=False)   (1s)
+  [ok] F4 (61, 65, 69) is a listed triple 
+  [FAIL] F4: in-some-MUS at M=44 (core size 84, needed=False)   (1s)
+  [ok] F5 (63, 73, 83) is a listed triple 
+  [ok] F5: in-some-MUS at M=44 (core size 83, needed=True)   (1s)
+  [ok] F6 (65, 69, 73) is a listed triple 
+  [ok] F6: in-some-MUS at M=44 (core size 83, needed=True)   (1s)
+  [ok] F7 (67, 73, 79) is a listed triple 
+  [FAIL] F7: in-some-MUS at M=44 (core size 84, needed=False)   (1s)
+
+== TOTAL 1s; failures: 4
+  FAIL: F2: in-some-MUS at M=44 (core size 84, needed=False)   (1s)
+  FAIL: F3: in-some-MUS at M=44 (core size 84, needed=False)   (1s)
+  FAIL: F4: in-some-MUS at M=44 (core size 84, needed=False)   (1s)
+  FAIL: F7: in-some-MUS at M=44 (core size 84, needed=False)   (1s)

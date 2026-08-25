@@ -1,0 +1,123 @@
+== V1: j*(M), fam15 SAT
+  [ok] M=40: fam15 SAT 
+  [ok] M=40: j*=3 (expect 3) 
+  [ok] M=44: fam15 SAT 
+  [ok] M=44: j*=3 (expect 3) 
+  [ok] M=48: fam15 SAT 
+  [ok] M=48: j*=2 (expect 2) 
+  [ok] M=52: fam15 SAT 
+  [ok] M=52: j*=3 (expect 3) 
+  [ok] M=60: fam15 SAT 
+  [ok] M=60: j*=3 (expect 3) 
+  (0s)
+== V2: H* SAT + bottom-vs-guard table (S11)
+  [ok] M=40: H* SAT 
+  [ok] M=40: bvg row {1: 'R', 2: 'R', 3: 'F', 4: '-', 5: 'F', 6: '-', 7: 'F'} (expect {1: 'R', 2: 'R', 3: 'F', 4: '-', 5: 'F', 6: '-', 7: 'F'})
+  [ok] M=44: H* SAT 
+  [ok] M=44: bvg row {1: 'R', 2: 'R', 3: 'F', 4: '-', 5: 'F', 6: 'F', 7: 'F'} (expect {1: 'R', 2: 'R', 3: 'F', 4: '-', 5: 'F', 6: 'F', 7: 'F'})
+  [ok] M=48: H* SAT 
+  [ok] M=48: bvg row {1: 'R', 2: 'F', 3: 'F', 4: '-', 5: 'F', 6: '-', 7: 'F'} (expect {1: 'R', 2: 'F', 3: 'F', 4: '-', 5: 'F', 6: '-', 7: 'F'})
+  [ok] M=52: H* SAT 
+  [ok] M=52: bvg row {1: 'R', 2: 'R', 3: 'F', 4: '-', 5: 'F', 6: 'F', 7: 'F'} (expect {1: 'R', 2: 'R', 3: 'F', 4: '-', 5: 'F', 6: 'F', 7: 'F'})
+  [ok] M=60: H* SAT 
+  [ok] M=60: bvg row {1: 'R', 2: 'R', 3: 'F', 4: '-', 5: 'F', 6: 'F', 7: 'F'} (expect {1: 'R', 2: 'R', 3: 'F', 4: '-', 5: 'F', 6: 'F', 7: 'F'})
+  (0s)
+== V3: b5 vs t6 under fam15 alone (should be '-' at every M)
+  [ok] M=40: b5 vs t6 under fam15: - 
+  [ok] M=44: b5 vs t6 under fam15: - 
+  [ok] M=48: b5 vs t6 under fam15: - 
+  [ok] M=52: b5 vs t6 under fam15: - 
+  [ok] M=60: b5 vs t6 under fam15: - 
+  (0s)
+== V4: O1..O8 forced under H* (S12), each M separately
+  [ok] O1a M+19<M+13: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O1b t21<t27: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O2a M+11<M+21: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O2b t29<t19: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O3a t13<t19: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O3b t13<t23: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O3c t13<M+17: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O4a t9<t11: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O4b t9<t7: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O4c t11<t2: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O5  M+7<M+21: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O6a M+21<t2: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O6b m2<t2: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O6c t19<t2: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O7a m2<M+4: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O7b M+21<M+4: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O7c t19<M+4: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O8a M+31<M+21: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  [ok] O8b t9<M+21: {40: 'F', 44: 'F', 48: 'F', 52: 'F', 60: 'F'} (claim: F at 44,48,52,60; also F at 40)
+  (0s)
+== V5: final-chain literals (S13/S14, Part-10 analogue)
+  [ok] M=40: chain {'b7<m2': 'F', 'm2<t2': 'F', 'm2<b4': 'F', 'b7<b21': 'F', 'b21<t2': 'F', 'b7<t2': 'F'} (expect {'b7<m2': 'F', 'm2<t2': 'F', 'm2<b4': 'F', 'b7<b21': 'F', 'b21<t2': 'F', 'b7<t2': 'F'})
+  [ok] M=44: chain {'b7<m2': '-', 'm2<t2': 'F', 'm2<b4': 'F', 'b7<b21': 'F', 'b21<t2': 'F', 'b7<t2': 'F'} (expect {'b7<m2': '-', 'm2<t2': 'F', 'm2<b4': 'F', 'b7<b21': 'F', 'b21<t2': 'F', 'b7<t2': 'F'})
+  [ok] M=48: chain {'b7<m2': 'F', 'm2<t2': 'F', 'm2<b4': 'F', 'b7<b21': 'F', 'b21<t2': 'F', 'b7<t2': 'F'} (expect {'b7<m2': 'F', 'm2<t2': 'F', 'm2<b4': 'F', 'b7<b21': 'F', 'b21<t2': 'F', 'b7<t2': 'F'})
+  [ok] M=52: chain {'b7<m2': '-', 'm2<t2': 'F', 'm2<b4': 'F', 'b7<b21': 'F', 'b21<t2': 'F', 'b7<t2': 'F'} (expect {'b7<m2': '-', 'm2<t2': 'F', 'm2<b4': 'F', 'b7<b21': 'F', 'b21<t2': 'F', 'b7<t2': 'F'})
+  [ok] M=60: chain {'b7<m2': '-', 'm2<t2': 'F', 'm2<b4': 'F', 'b7<b21': 'F', 'b21<t2': 'F', 'b7<t2': 'F'} (expect {'b7<m2': '-', 'm2<t2': 'F', 'm2<b4': 'F', 'b7<b21': 'F', 'b21<t2': 'F', 'b7<t2': 'F'})
+  (0s)
+== V6: kernel 66<53 -- ALL 25 slope lifts incl. PIN-excluded ones
+  [ok] 66<53 forced lifts over ALL slope pairs: [] (G4 claims NONE; any hit breaks S12/G4)
+  (0s)
+== V7: M=50 (caveat c)
+  [ok] M=50: fam15 SAT 
+  [ok] M=50: fam15+16{1} UNSAT (j*=1) 
+  [ok] M=50: b7 vs t2 under fam15: - (claim not forced) 
+  (0s)
+== V8: j* at 56,64,72,80 (claims 3,2,2,2)
+  [ok] M=56: j*=3 (expect 3) 
+  [ok] M=64: j*=2 (expect 2) 
+  [ok] M=72: j*=2 (expect 2) 
+  [ok] M=80: j*=2 (expect 2) 
+  (1s)
+== V9: exceptional M=51, 67
+  [ok] M=51: 10-unit core SAT (exception) 
+  [ok] M=51: fam15+16{1..4} UNSAT (j*=4) 
+  [ok] M=67: 10-unit core SAT (exception) 
+  [ok] M=67: fam15+16{1..4} UNSAT (j*=4) 
+  (2s)
+== V10/V11: C4 and C3 residue behavior
+  [ok] M=40: C4 SAT=False (expect False); C3 SAT=False (expect False) 
+  [ok] M=42: C4 SAT=True (expect True); C3 SAT=True (expect True) 
+  [ok] M=44: C4 SAT=False (expect False); C3 SAT=True (expect True) 
+  [ok] M=45: C4 SAT=True (expect True); C3 SAT=True (expect True) 
+  [ok] M=46: C4 SAT=True (expect True); C3 SAT=True (expect True) 
+  [ok] M=48: C4 SAT=False (expect False); C3 SAT=False (expect False) 
+  [ok] M=50: C4 SAT=True (expect True); C3 SAT=True (expect True) 
+  [ok] M=51: C4 SAT=True (expect True); C3 SAT=True (expect True) 
+  [ok] M=52: C4 SAT=False (expect False); C3 SAT=True (expect True) 
+  [ok] M=54: C4 SAT=True (expect True); C3 SAT=True (expect True) 
+  [ok] M=56: C4 SAT=False (expect False); C3 SAT=False (expect False) 
+  [ok] M=58: C4 SAT=True (expect True); C3 SAT=True (expect True) 
+  [ok] M=60: C4 SAT=False (expect False); C3 SAT=True (expect True) 
+  [ok] M=64: C4 SAT=False (expect False); C3 SAT=False (expect False) 
+  [ok] M=68: C4 SAT=False (expect False); C3 SAT=True (expect True) 
+  (2s)
+== V12: F1..F7 arithmetic (symbolic + numeric)
+  [ok] F1: AP + interval + integrality at M=40,44,...,60 
+  [ok] F2: AP + interval + integrality at M=40,44,...,60 
+  [ok] F3: AP + interval + integrality at M=40,44,...,60 
+  [ok] F4: AP + interval + integrality at M=40,44,...,60 
+  [ok] F5: AP + interval + integrality at M=40,44,...,60 
+  [ok] F6: AP + interval + integrality at M=40,44,...,60 
+  [ok] F7: AP + interval + integrality at M=40,44,...,60 
+== V13: S5 coincidence equations (unique solution M=40)
+  [ok] M+17=m_-6: M=40 
+  [ok] M+19=m_-2: M=40 
+  [ok] M+21=m_2: M=40 
+  [ok] m_2=t_19: M=40 
+  [ok] m_12=t_14: M=40 
+  [ok] m_12=q_-16: M=40 
+  [ok] q_-16=t_14: M=40 
+== V14: shared-AP counts vs step_check.json (S12 table)
+  [ok] b7<b21: |44|=124 |60|=246 shared bottom=41 top=37 (note claims 41/37)
+  [ok] b21<t2: |44|=131 |60|=262 shared bottom=42 top=39 (note claims 42/39)
+  [ok] m2<b4: |44|=131 |60|=262 shared bottom=37 top=36 (note claims 37/36)
+  [ok] b7<t2: |44|=138 |60|=270 shared bottom=41 top=42 (note claims 41/42)
+  [ok] b7<b21: sizes 124/246 (note 124/246) 
+  [ok] b21<t2: sizes 131/262 (note 131/262) 
+  [ok] m2<b4: sizes 131/262 (note 131/262) 
+  [ok] b7<t2: sizes 138/270 (note 138/270) 
+
+== TOTAL 2s; failures: 0
