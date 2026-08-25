@@ -83,3 +83,28 @@ which re-attacks block 6's top sliver and recurses. Target formal lemma:
 deferred mass at stage σ in block 2t forces (crown of block 2t−2 at ≥ σ−c)
 or (positive-fraction of block 2t−2 at ≥ σ−1) — mass exhaustion over m
 scales then yields the crown divergence. Bookkeeping in progress.
+
+## THE ORDER GADGET (session 7 — the breakthrough)
+Family-MUS of crown-cap infeasibility at 256 = {atk15:8, atk16:8, blk:8}:
+single-block! And within one block the stage machinery collapses (stages +
+fiber orders ⟺ one total order of the block; the case table degenerates to
+plain non-monotonicity + attack precedences). Hence:
+
+**Crown theorem at horizon 4^m ⟺ OG_{2m} infeasible**, where OG_K is the
+pure order problem: order block (M, 2M] (M = 2^{K−1}) with (i) all in-block
+AP triples non-monotone, (ii) attack precedences t_{15−2j} ≺ b_j and
+t_{16−2j} ≺ b_j (b_j = M+j, t_i = 2M−i): each of the bottom-eight values
+guarded by an adjacent top PAIR {t_{15−2j}, t_{16−2j}} (b_8 by t_0 alone).
+
+Machine: OG_8 UNSAT (2s); drop either attack family → SAT (both crowns
+essential ✓ matches coalition); **OG_10 UNSAT (108s)**; OG_12 running.
+
+**If OG_K is UNSAT for all even K ≥ 8, then in any valid scheme both crowns
+cannot lie strictly below any block ⟹ some crown has stage ≥ t for every
+t ⟹ contradiction ⟹ S_A IS NOT PERMUTABLE.** (Pigeonhole over the two
+crowns; chunk reduction exactness.) The remaining mathematics is ONE
+scale-uniform statement about interval orders. Triple-level MUS of OG_8
+extracting now (e88) — target: a scale-invariant finite pattern + hand proof.
+Note: guard pairs' downward completions 2b_j − t = 16 leave the block —
+the gadget is genuinely self-contained (crowns appear only as the numbers
+15, 16 in the offsets).
