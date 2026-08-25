@@ -163,12 +163,50 @@ eager encodings):
   at 256; max(δ15, δ16) ≥ 3 at 1024.
 
 THE ONE REMAINING MATHEMATICAL GAP (NO route):
-- Scale-uniform OG infeasibility (sharpest target: the C3 core
-  {t₅≺b₅, t₃≺b₆, t₁₀≺b₃} on M ≡ 0 mod 8 — notes/30 S8).  Parametric
-  proof status, gaps G1–G7, and the parity-locked lemma layer: notes/30
-  (post-audit revision).
+- [CLOSED — session 10, see below] Scale-uniform OG infeasibility
+  (sharpest target: the C3 core {t₅≺b₅, t₃≺b₆, t₁₀≺b₃} on M ≡ 0 mod 8
+  — notes/30 S8).  Historical parametric status: notes/30.
 
 SUPERSEDED / CLOSED FRAMES: defect law (above); note-28 M=40 kernel
 66<53 does not lift (notes/30 G4); j = 7 final-attack identity not
 universal (notes/30 G5); lemma layer O1–O8 is M ≡ 0 (mod 4) only
 (notes/30 G6 — reverse-forced elsewhere).
+
+## STATUS LEDGER (session 10 — THE GAP IS CLOSED; MAIN THEOREM PROVEN)
+
+notes/33 v2 contains the complete hand proof of the C3 core: for every
+M ≡ 0 (mod 8), M ≥ 16, AP-freeness + C3 is contradictory.  Toolkit:
+Lemma Z (zigzag), Lemma D (phase dichotomy), Lemma E (transfer lock),
+Lemma P (mirror flood; the mod-8 lock is the center-class condition on
+m₀ ± 1).  Theorem L1 (A2+A3 force b₅≺b₃, t₃≺t₅ at M ≡ 0 mod 4, M ≥ 12)
++ Theorem FLIP (then A1 is contradictory at M ≡ 0 mod 8, M ≥ 16).
+
+AUDIT (integration session, 2026-08-25): e113 strict schema checker
+re-run fresh — layer1 100/100 scales (12..400 + 512, 1024), flip 51/51
+(16..400 + 512, 1024), sharpness 35/35, zero failures.  e113b closure
+cross-validation re-run fresh — 51/51 + 27/27, zero failures.  NEW
+e114_theorem_spotcheck: independent end-to-end SAT checks of the theorem
+STATEMENTS at scales never touched by any discovery loop — L1 forcing
+UNSAT at M = 148, 212, 264; C3 UNSAT at M = 264, 328; sharpness SAT at
+M = 268, 332.  Hand-trace of Z/D/E/P residue arithmetic, mirror APs
+(b₃+t₅ = 2(m₀−1), b₅+t₃ = 2(m₀+1), mirrors t₁/t₅/t₇/b₇/M+8/2M−4
+in-block), and case-detachment logic: no gaps found.  VERDICT: SOUND.
+Parallel adversarial audit (e115, separate session, interim at
+integration time): independent closure engine closes all branches at
+fresh scales up to M = 1000 with sane 4-mod-8 controls; e113 schema
+passes at adversarial M = 2048, 4096; independent SAT encoder concurs
+at M = 404, 408, 520 (bigger scales still running).
+
+CONSEQUENCE (now unconditional, in paper/main.tex thm:main):
+    S_A IS NOT 3-PERMUTABLE — the canonical dyadic partition does not
+    resolve Erdős #197.
+Chain: C3 core (thm:c3core, hand) ⟹ OG(M) infeasible ∀ M ≡ 0 mod 8,
+M ≥ 16 (C3 ⊂ attack list, (i) = AP-freeness) ⟹ [thm:ogred,
+unconditional reduction, audited e96] S_A not 3-permutable.  Every
+dyadic scale 2^{2t−1}, t ≥ 4 is ≡ 0 mod 8 and ≥ 128.
+
+STILL OPEN (not needed for the main theorem): full OG infeasibility at
+residues ≢ 0 mod 8 (C3 satisfiable there; other attack subsets take
+over); Erdős #197 itself (other 2-partitions undecided).  The crown
+ladder / displacement-divergence program (this note's original frame) is
+SUBSUMED: the OG route delivered the theorem without needing L(m) → ∞.
