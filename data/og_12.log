@@ -1,1 +1,5 @@
 K=12: n=2048 attacks=15 triples=1047552
+  round 50 (1565s)
+  round 100 (2604s)
+  round 150 (3740s)
+  round 200 (5685s)
