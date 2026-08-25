@@ -1,0 +1,1274 @@
+{
+ "40": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "b3<b6",
+    "b3<t10",
+    "b5<b6",
+    "t3<b6",
+    "t3<t10",
+    "t5<b5",
+    "t5<b6",
+    "t5<t10"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "b6<b3",
+    "b6<b5",
+    "b6<t3",
+    "t10<b3",
+    "t10<b5",
+    "t10<t3",
+    "t10<t5",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "b5<t5",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "UNSAT",
+   "forced": []
+  }
+ },
+ "44": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6",
+    "t5<b5"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b5",
+    "t3<b6",
+    "t3<t5",
+    "t5<b3",
+    "t5<b5"
+   ]
+  }
+ },
+ "48": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "b3<b6",
+    "b3<t10",
+    "b5<b6",
+    "t3<b6",
+    "t3<t10",
+    "t5<b5",
+    "t5<b6",
+    "t5<t10"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "b6<b3",
+    "b6<b5",
+    "b6<t3",
+    "t10<b3",
+    "t10<b5",
+    "t10<t3",
+    "t10<t5",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "b5<t5",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "UNSAT",
+   "forced": []
+  }
+ },
+ "52": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6",
+    "t5<b5"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b5",
+    "t3<b6",
+    "t3<t5",
+    "t5<b3",
+    "t5<b5"
+   ]
+  }
+ },
+ "56": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "b3<b6",
+    "b3<t10",
+    "b5<b6",
+    "t3<b6",
+    "t3<t10",
+    "t5<b5",
+    "t5<b6",
+    "t5<t10"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "b6<b3",
+    "b6<b5",
+    "b6<t3",
+    "t10<b3",
+    "t10<b5",
+    "t10<t3",
+    "t10<t5",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "b5<t5",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "UNSAT",
+   "forced": []
+  }
+ },
+ "60": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6",
+    "t5<b5"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b5",
+    "t3<b6",
+    "t3<t5",
+    "t5<b3",
+    "t5<b5"
+   ]
+  }
+ },
+ "64": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "b3<b6",
+    "b3<t10",
+    "b5<b6",
+    "t3<b6",
+    "t3<t10",
+    "t5<b5",
+    "t5<b6",
+    "t5<t10"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "b6<b3",
+    "b6<b5",
+    "b6<t3",
+    "t10<b3",
+    "t10<b5",
+    "t10<t3",
+    "t10<t5",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "b5<t5",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "UNSAT",
+   "forced": []
+  }
+ },
+ "68": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6",
+    "t5<b5"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b5",
+    "t3<b6",
+    "t3<t5",
+    "t5<b3",
+    "t5<b5"
+   ]
+  }
+ },
+ "72": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "b3<b6",
+    "b3<t10",
+    "b5<b6",
+    "t3<b6",
+    "t3<t10",
+    "t5<b5",
+    "t5<b6",
+    "t5<t10"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "b6<b3",
+    "b6<b5",
+    "b6<t3",
+    "t10<b3",
+    "t10<b5",
+    "t10<t3",
+    "t10<t5",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "b5<t5",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "UNSAT",
+   "forced": []
+  }
+ },
+ "76": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6",
+    "t5<b5"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b5",
+    "t3<b6",
+    "t3<t5",
+    "t5<b3",
+    "t5<b5"
+   ]
+  }
+ },
+ "80": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "b3<b6",
+    "b3<t10",
+    "b5<b6",
+    "t3<b6",
+    "t3<t10",
+    "t5<b5",
+    "t5<b6",
+    "t5<t10"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "b6<b3",
+    "b6<b5",
+    "b6<t3",
+    "t10<b3",
+    "t10<b5",
+    "t10<t3",
+    "t10<t5",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "b5<t5",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "UNSAT",
+   "forced": []
+  }
+ },
+ "84": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6",
+    "t5<b5"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b5",
+    "t3<b6",
+    "t3<t5",
+    "t5<b3",
+    "t5<b5"
+   ]
+  }
+ },
+ "88": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "b3<b6",
+    "b3<t10",
+    "b5<b6",
+    "t3<b6",
+    "t3<t10",
+    "t5<b5",
+    "t5<b6",
+    "t5<t10"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "b6<b3",
+    "b6<b5",
+    "b6<t3",
+    "t10<b3",
+    "t10<b5",
+    "t10<t3",
+    "t10<t5",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "b5<t5",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "UNSAT",
+   "forced": []
+  }
+ },
+ "92": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6",
+    "t5<b5"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b5",
+    "t3<b6",
+    "t3<t5",
+    "t5<b3",
+    "t5<b5"
+   ]
+  }
+ },
+ "96": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "b3<b6",
+    "b3<t10",
+    "b5<b6",
+    "t3<b6",
+    "t3<t10",
+    "t5<b5",
+    "t5<b6",
+    "t5<t10"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "b6<b3",
+    "b6<b5",
+    "b6<t3",
+    "t10<b3",
+    "t10<b5",
+    "t10<t3",
+    "t10<t5",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "b5<t5",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "UNSAT",
+   "forced": []
+  }
+ },
+ "100": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6",
+    "t5<b5"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b5",
+    "t3<b6",
+    "t3<t5",
+    "t5<b3",
+    "t5<b5"
+   ]
+  }
+ },
+ "104": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "b3<b6",
+    "b3<t10",
+    "b5<b6",
+    "t3<b6",
+    "t3<t10",
+    "t5<b5",
+    "t5<b6",
+    "t5<t10"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "b6<b3",
+    "b6<b5",
+    "b6<t3",
+    "t10<b3",
+    "t10<b5",
+    "t10<t3",
+    "t10<t5",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "b5<t5",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "UNSAT",
+   "forced": []
+  }
+ },
+ "108": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6",
+    "t5<b5"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b5",
+    "t3<b6",
+    "t3<t5",
+    "t5<b3",
+    "t5<b5"
+   ]
+  }
+ },
+ "112": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "b3<b6",
+    "b3<t10",
+    "b5<b6",
+    "t3<b6",
+    "t3<t10",
+    "t5<b5",
+    "t5<b6",
+    "t5<t10"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "b6<b3",
+    "b6<b5",
+    "b6<t3",
+    "t10<b3",
+    "t10<b5",
+    "t10<t3",
+    "t10<t5",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "b5<t5",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "UNSAT",
+   "forced": []
+  }
+ },
+ "116": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6",
+    "t5<b5"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b5",
+    "t3<b6",
+    "t3<t5",
+    "t5<b3",
+    "t5<b5"
+   ]
+  }
+ },
+ "120": {
+  "A1": {
+   "base": "SAT",
+   "forced": [
+    "t5<b5"
+   ]
+  },
+  "A2": {
+   "base": "SAT",
+   "forced": [
+    "t3<b6"
+   ]
+  },
+  "A3": {
+   "base": "SAT",
+   "forced": [
+    "t10<b3"
+   ]
+  },
+  "A1+A2": {
+   "base": "SAT",
+   "forced": [
+    "b3<b6",
+    "b3<t10",
+    "b5<b6",
+    "t3<b6",
+    "t3<t10",
+    "t5<b5",
+    "t5<b6",
+    "t5<t10"
+   ]
+  },
+  "A1+A3": {
+   "base": "SAT",
+   "forced": [
+    "b6<b3",
+    "b6<b5",
+    "b6<t3",
+    "t10<b3",
+    "t10<b5",
+    "t10<t3",
+    "t10<t5",
+    "t5<b5"
+   ]
+  },
+  "A2+A3": {
+   "base": "SAT",
+   "forced": [
+    "b5<b3",
+    "b5<t5",
+    "t10<b3",
+    "t10<b6",
+    "t3<b3",
+    "t3<b6",
+    "t3<t5"
+   ]
+  },
+  "A1+A2+A3": {
+   "base": "UNSAT",
+   "forced": []
+  }
+ }
+}
