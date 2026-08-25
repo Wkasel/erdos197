@@ -1,0 +1,143 @@
+arXiv:1004.1740v1 [math.CO] 10 Apr 2010
+
+On Permutations Avoiding Arithmetic Progressions
+Timothy D. LeSaulnier and Sujith Vijay
+Department of Mathematics
+University of Illinois at Urbana-Champaign
+Urbana, IL 61801, USA.
+
+Let M(n) denote the number of permutations of {1, 2, . . . , n} that do not contain a
+3-term arithmetic progression as a subsequence. For example, M(4) = 10, corresponding
+to the permutations (1243), (1324), (2143), (2413), (4213) and their reversals. In 1977,
+Davis, Entringer, Graham and Simmons [1] established the following bounds on M(n):
+2n−1 ≤ M(n) ≤ ⌊(n + 1)/2⌋ !⌈(n + 1)/2⌉ !
+These bounds were recently improved by Sharma [3], who showed that
+M(n) ≤
+and that
+
+2.7n
+for n ≥ 11
+21
+
+M(n)
+= ∞ for any fixed k.
+n→∞ 2n nk
+lim
+
+= 2 was attributed to the Editor of the ProbIn [3] the question whether n→∞
+lim MM(n+1)
+(n)
+lem Section of the American Mathematical Monthly (where the function M(n) made its
+earliest known appearance, in 1975), and was mentioned as still open. We begin with an
+observation that settles this question in the negative. Indeed, we establish the following
+stronger lower bound on M(n).
+Theorem 1. M(n) ≥ (1/2)cn for n ≥ 8, where c = (2132)1/10 = 2.152....
+Proof. The following inequalities were proved in [1] to show that M(n) ≥ 2n−1 :
+M(2n) ≥ 2[M(n)]2 ; M(2n + 1) ≥ 2M(n)M(n + 1)
+1
+
+These recurrences follow from the observation that if σ1 and σ2 are 3AP -free permutations
+of {2, 4, . . . , 2n} and {1, 3, . . . , 2n − 1}, concatenating them in either order yields 3AP free permutations σ1 σ2 and σ2 σ1 of {1, 2, . . . , 2n}, since the first and third terms of any
+3AP have the same parity. Note that these recurrences imply the stronger lower bound
+M(n) ≥ (1/2)cn for n ≥ 8, where c = (2M(10))1/10 = 2.152.... Since M(8) = 282, M(9) =
+496, M(10) = 1066, M(11) = 2460, M(12) = 6128, M(13) = 12840, M(14) = 29380 and
+M(15) = 73904 (see [1]), the inequality holds for 8 ≤ n ≤ 15. We can now use induction
+on k to show that it also holds for 2k ≤ n < 2k+1, k ≥ 4.
+We now look at permutations of infinite subsets of integers. Davis et al. [1] observed
+that any permutation of the positive integers contains a 3-term AP as a subsequence. (Let
+a1 be the first term, and let k be the least integer such that ak > a1 . Then 2ak − a1 occurs
+to the right of both a1 and ak .) They also constructed a permutation of the positive
+integers in which no 5-term AP occurs as a subsequence. The corresponding question for
+4-term APs remains open. However, if we restrict our attention to arithmetic progressions
+with odd common difference, the problem becomes tractable.
+Theorem 2. Any permutation of the positive integers must contain a 3-term AP with
+odd common difference as a subsequence. Furthermore, there exists a permutation of
+the positive integers in which no 4-term AP with odd common difference occurs as a
+subsequence.
+Proof. We first show that any 3AP-free permutation σ = (t1 , t2 , . . . , t11 ) of {1, 2, . . . , 11}
+with t1 = 2 and t2 = 1 must contain a 3-term AP with odd common difference as a
+subsequence. Indeed, 4 must appear in σ before 3, 5 after 4, 7 after 4, 6 before 7, 11
+before 6, and 8 before 11. Now we have the subsequence (8, 9, 10) if 9 occurs before 10 in
+σ and the subsequence (11, 10, 9) otherwise. This proves our claim.
+Let a1 , a2 , . . . be a permutation of the positive integers. Ignoring terms less than a1
+if necessary, we can assume that a1 = 1. Let k be the least index such that ak is even,
+and let aj = max(a1 , a2 , . . . , ak−1 ). If aj < 2ak − 1, then we have (a1 , ak , 2ak − 1) as a
+subsequence. If aj ≥ 2ak − 1 > ak , let d = aj − ak . Since aj and aj − d occur before
+aj + d, aj + 2d, . . . , aj + 9d, and d is odd, it follows from the above claim that the permutation contains a 3-term AP with odd common difference.
+We now exhibit a permutation of the positive integers that contains no 4-term AP with
+odd common difference as a subsequence. For i ≥ 1, let σi be a 3AP-free permutation of
+
+2
+
+the following set of 2i consecutive even numbers:
+{(4i + 2)/3, (4i + 8)/3, . . . , (4i+1 − 4)/3}
+Similarly, let πi be a 3AP-free permutation of the following set of 2i−1 consecutive odd
+numbers:
+{(4i + 2)/6, (4i + 14)/6, . . . , (4i+1 − 6)/6}
+Observe that the concatenated sequence σ1 π1 σ2 π2 σ3 π3 · · · is a permutation of the positive
+integers. By virtue of our construction, if an odd number x occurs in this sequence before
+an even number y, then 2x − y < 0. It follows that no 4-term AP with odd common
+difference occurs as a subsequence.
+Following [3], we will call a subset S of integers n-free if S can be permuted so that
+it does not contain any n-term AP as a subsequence. Given a subset S of the positive
+integers, let d(S) and d(S) denote, respectively, the upper and lower densities of S. In
+other words,
+d(S) = lim sup
+n→∞
+
+A(n)
+A(n)
+and d(S) = lim inf
+where A(n) = |A ∩ [1, n]|.
+n→∞
+n
+n
+
+Define, for n ≥ 3,
+α(n) = sup {d(S) : S is n-free} and β(n) = sup {d(S) : S is n-free}.
+S
+
+S
+
+Since the set of positive integers is 5-free, α(n) = β(n) = 1 for n ≥ 5. Bounds for α(3)
+and β(3) were sought in [1]. We show the following:
+Theorem 3. α(4) = 1, α(3) ≥ 1/2, β(4) ≥ 1/3, β(3) ≥ 1/4.
+(a)
+
+Proof. Given an integer a ≥ 2, define Si = {a2i , a2i + 1, . . . , a2i+1 }, and let σia be a
+S
+(a)
+(a)
+3AP-free permutation of Si . Define S (a) = i≥0 Si . We claim that S (a) is 4-free.
+Clearly the concatenated sequence σ0a σ1a · · · does not contain a decreasing 3-term AP.
+Suppose it contains an increasing 4-term AP x1 , x2 , x3 , x4 . Since x2 , x3 and x4 cannot all
+(a)
+belong to the same set Si , we must have x4 ≥ 2x3 or x3 ≥ 2x2 . But then x2 ≤ 0 or
+x1 ≤ 0, yielding a contradiction. Note that d(S (a) ) = a/(a + 1) and d(S (a) ) = 1/(a + 1).
+Since a can be arbitrarily large, it follows that α(4) = 1. Taking a = 2, we get β(4) ≥ 1/3.
+Let p0 = 1, q0 = 2, and for k ≥ 1, define pk = 2qk−1 and qk =S3qk−1 − 1. Let τk be
+a 3AP-free permutation of Tk = {pk , pk + 1, . . . , qk }, and let T = k≥0 Tk . It is easy to
+3
+
+verify that d(T ) = 1/2 and d(T ) = 1/4. We claim that the concatenated sequence τ0 τ1 · · ·
+contains no 3-term AP as a subsequence. Indeed, if the (increasing) 3AP x1 , x2 , x3 occurs
+as a subsequence, with x2 and x3 belonging to different sets Tk and Tℓ , then x3 ≥ 2x2 , so
+x1 ≤ 0, yielding a contradiction. If x2 and x3 belong to the same set Tk , then x1 ∈ Tℓ
+with ℓ < k. But x3 − x2 < qk ≤ x2 − x1 , contradicting our assumption that x1 , x2 , x3 is a
+3AP. Therefore, T is 3-free. Thus α(3) ≥ 1/2 and β(3) ≥ 1/4.
+Erdős and Graham [2] (see also [1]) asked if it was possible to partition the positive
+integers into two 3-free sets. Clearly, the answer is negative if α(3) + β(3) < 1. We
+believe this to be the case, and conjecture that the lower bounds in the above theorem
+are optimal, i.e., α(3) = 1/2 and β(3) = 1/4. However, we have not even been able to
+show that β(3) < 1.
+
+References
+[1] J. A. Davis, R. C. Entringer, R. L. Graham and G. J. Simmons, On Permutations
+Containing No Long Arithmetic Progressions, Acta Arithmetica 34 (1977), 81-90.
+[2] P. Erdős and R. L. Graham, Old and New Problems and Results in Combinatorial
+Number Theory, L’Enseignment Mathematique, Monograph No. 28, Geneva, 1980.
+[3] A. Sharma, Enumerating Permutations That Avoid Three Term Arithmetic Progressions, The Electronic Journal of Combinatorics 16 (2009), #R63.
+
+4
+
+
