@@ -51,16 +51,19 @@ theorem eliminates the canonical candidate and the natural YES route.
   theorem statements at scales untouched by discovery — L1-forcing
   UNSAT at M = 148, 212, 264; C3 UNSAT at M = 264, 328; ≡4 mod 8
   sharpness SAT at M = 268, 332.
-- **Adversarial audit (e115, parallel session; partly still running at
-  integration time):** from-scratch closure engine (independent data
-  structures) closes every case-tree branch at fresh scales L1 = {204,
-  244, 404, 520, 1000}, FLIP = {208, 328, 520, 1000}, with 4-mod-8
-  controls correctly NOT closing (engine sanity); e113 schema re-run at
-  adversarial scales incl. M = 2048, 4096 — all pass; independent SAT
-  encoder confirms L1/C3 UNSAT at M = 404, 408, 520 (larger scales in
-  flight).  The one audit failure so far is a KeyError bug in the audit
-  script's own Lemma-H bookkeeping check (appendix/halving material,
-  not on the Target chain).
+- **Adversarial audit (e115, parallel session; completed 2026-08-25):**
+  from-scratch closure engine (independent data structures) closes every
+  case-tree branch at fresh scales L1 = {204, 244, 404, 520, 1000},
+  FLIP = {208, 328, 520, 1000}, with 4-mod-8 controls correctly NOT
+  closing (engine sanity); e113 schema re-run at adversarial scales
+  incl. M = 2048, 4096 — all pass; independent SAT encoder
+  (e115_audit_sat.py, record data/e115_audit_sat.json): all 11 checks
+  pass — L1-forcing UNSAT at M = 404, 520; C3 UNSAT at M = 408, 520;
+  sharpness SAT at M = 412 (≡4 mod 8) and M = 413 (odd) with models
+  independently re-validated; L0 forced at M = 302; Lemma-E lock at
+  M = 46, 52.  The one audit failure found was a KeyError bug in the
+  audit script's own Lemma-H bookkeeping check (appendix/halving
+  material, not on the target chain).
 - **Machine-only (corroboration, no longer load-bearing):** AP+C3 UNSAT
   sweeps (e104 part 3: all M ≡ 0 mod 8 in 16..256, and 512), OG(M)
   UNSAT for 16 ≤ M ≤ 200 and M = 512 (e89, e96 P5 — note these check
