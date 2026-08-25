@@ -13,7 +13,7 @@ main theorem (see `notes/33-og-proof.md`, `paper/main.tex` thm:c3core):
 |---|---|---|---|
 | `c3_M128.cnf.gz` | M=128 | eager | 3 units + 8,064 AP clauses + 682,752 transitivity clauses (ALL of them: complete O(n^3) axiomatization) |
 | `c3_M128.drat.gz` | M=128 | | DRAT refutation emitted by CaDiCaL 1.9.5 (pysat `Cadical195`, `with_proof=True`) |
-| `c3_M512.cnf.gz` | M=512 | lazy-audited | 3 units + 130,560 AP clauses + 1,400,000 transitivity instances collected by a lazy refinement loop |
+| `c3_M512.cnf.gz` | M=512 | lazy-audited | 3 units + 130,560 AP clauses + the transitivity instances collected by a lazy refinement loop (~1.4M; exact count varies run to run) |
 | `c3_M512.drat.gz` | M=512 | | DRAT refutation of that CNF |
 
 Variable encoding: elements are M+1..2M, indexed 0..n-1 (n = M); the

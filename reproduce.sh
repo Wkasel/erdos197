@@ -74,8 +74,12 @@ if [ ! -x tools/drat-trim/drat-trim ]; then
         || fail 4
 fi
 for M in $SCALES; do
-    if tools/drat-trim/drat-trim data/certs/c3_M$M.cnf data/certs/c3_M$M.drat \
-        | grep -q "^s VERIFIED"
+    # NB: drat-trim precedes "s VERIFIED" with a bare \r (it erases its
+    # progress line), so strip CRs before the anchored match.
+    DTOUT=$(tools/drat-trim/drat-trim data/certs/c3_M$M.cnf \
+                data/certs/c3_M$M.drat) \
+        || { echo "  drat-trim c3_M$M: nonzero exit"; fail 4; }
+    if printf '%s\n' "$DTOUT" | tr -d '\r' | grep -q "^s VERIFIED"
     then echo "  drat-trim c3_M$M: s VERIFIED"
     else echo "  drat-trim c3_M$M: verification FAILED"; fail 4
     fi
