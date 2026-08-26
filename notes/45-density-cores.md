@@ -135,6 +135,30 @@ balance are block-granular / Case-1-like shapes, which N1+N2 already
 handle.  The M = 16 frac-1/4 escape is the same shape one scale up
 (minority 5 in the LOW block).
 
+**Escape anatomy — the sumset dodge (hand-readable).**  Under the full
+seam chain the FORCED monotone structure is exactly the cross-triple
+hypergraph H = {(u, y, 2y-u) : u in B0, y in B1, 2y-u in B2}: such a
+triple monochromatic in T is position-forced increasing => T dies.
+(All other AP shapes have two members in one block and can be
+order-dodged — which is why every proper seam subset is SAT.)  So each
+color class C with U = C ∩ B0, Y = C ∩ B1 must satisfy
+(2Y - U) ∩ B2 ∩ C = emptyset — a SUMSET avoidance condition, plus the
+in-block order theory.  The machine escapes are exactly sumset dodges:
+- M = 32, bounds (2,4,8), SAT: A ∩ B0 = {56, 60} (both ≡ 0 mod 4) =>
+  2Y_A - U_A is all even => A keeps the whole ODD half of B2; while
+  B ∩ B1 = {68, 72, 76, 80} sits in the BOTTOM quarter of B1, where
+  2y - u <= 128 never reaches B2 at all — B has zero forced triples.
+- M = 24, frac 1/16, SAT: same shape (A ∩ B1 = {52, 56, 60}, 4-spaced
+  lattice, bottom of the block).
+Raising the bounds to (3, 6, 12) kills every such dodge at
+M = 24..40+: minorities of size >= 3 per block can no longer stay
+simultaneously lattice-aligned, range-hidden, and consistent with the
+in-block order theory.  The hand-schema target for N6 is precisely a
+sumset/range lemma formalizing this ("a 3-element minority cannot keep
+2Y - U off itself at two seams"), with the in-block rung theory
+supplying the rest — the natural MUS target (e88/e90 path applied to
+the balanced M = 16 core).
+
 **Why this is the Case-2 bridge**: everywhere-split partitions have
 per-block minority counts -> infinity; a fixed ABSOLUTE bound triple
 (c0, c1, c2) that stays UNSAT at all large M would be a rung schema
