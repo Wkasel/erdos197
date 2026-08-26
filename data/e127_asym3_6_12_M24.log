@@ -1,0 +1,2 @@
+  asym3_6_12_M24 v=0: SAT [1.9s] {"A": {"sizes": [21, 42, 84], "n_inv": 2090, "n_inv_seam1": 437, "n_inv_seam2": 1653, "n_mono": 520}, "B": {"sizes": [3, 6, 12], "n_inv": 0, "n_inv_seam1": 0, "n_inv_seam2": 0, "n_mono": 0}}
+== asym3_6_12_M24: v* = 0

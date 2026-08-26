@@ -74,7 +74,8 @@ def _mk_vars(n, start=1):
     return off, nxt - 1
 
 
-def solve_budget(M, abs_bounds, vA, vB, budget=3600.0, solver=Cadical195):
+def solve_budget(M, abs_bounds, vA, vB, budget=3600.0, solver=Cadical195,
+                 majority_B=False):
     """Coupled 3-block window (M, 8M], per-team block lower bounds
     abs_bounds = (c0, c1, c2) (None => exact balance ceil(|blk|/2)),
     NO hard seam units; instead each team T has inversion indicators on
@@ -134,12 +135,15 @@ def solve_budget(M, abs_bounds, vA, vB, budget=3600.0, solver=Cadical195):
     tid = top
     bounds = {}
     for bi, (bn, blk) in enumerate((('B0', B0), ('B1', B1), ('B2', B2))):
-        bnd = (math.ceil(len(blk) / 2) if abs_bounds is None
-               else abs_bounds[bi])
-        bounds[bn] = bnd
-        if bnd <= 0:
-            continue
-        for sign in (1, -1):
+        base = (math.ceil(len(blk) / 2) if abs_bounds is None
+                else abs_bounds[bi])
+        # sign +1 counts team A (ai true), -1 counts team B
+        bndA = base
+        bndB = math.ceil(len(blk) / 2) if majority_B else base
+        bounds[bn] = {'A': bndA, 'B': bndB}
+        for sign, bnd in ((1, bndA), (-1, bndB)):
+            if bnd <= 0:
+                continue
             enc = CardEnc.atleast(lits=[sign * ai[v] for v in blk],
                                   bound=bnd, top_id=tid,
                                   encoding=EncType.seqcounter)
@@ -201,8 +205,9 @@ def audit(M, bounds, vA, vB, info):
         b1 = [v for v in col if 2 * M < v <= 4 * M]
         b2 = [v for v in col if v > 4 * M]
         for bn, blk in (('B0', b0), ('B1', b1), ('B2', b2)):
-            if len(blk) < bounds[bn]:
-                errs.append(f'{team}: |{bn}|={len(blk)} < {bounds[bn]}')
+            if len(blk) < bounds[bn][team]:
+                errs.append(f'{team}: |{bn}|={len(blk)} < '
+                            f'{bounds[bn][team]}')
         p = {v: i for i, v in enumerate(order)}
         vals = sorted(col)
         vs = set(vals)
@@ -236,7 +241,8 @@ def audit(M, bounds, vA, vB, info):
     return errs, anatomy
 
 
-def vstar_scan(M, abs_bounds, vmax, budget, tag, vlist=None, asym=False):
+def vstar_scan(M, abs_bounds, vmax, budget, tag, vlist=None, asym=False,
+               majority_B=False):
     """UNSAT region is downward closed in v (larger budget = weaker
     constraint), so scan upward for `const`; for `bal` bracket by
     doubling then binary-search."""
@@ -245,7 +251,8 @@ def vstar_scan(M, abs_bounds, vmax, budget, tag, vlist=None, asym=False):
 
     def q(v):
         vA = None if asym else v
-        verdict, el, info = solve_budget(M, abs_bounds, vA, v, budget)
+        verdict, el, info = solve_budget(M, abs_bounds, vA, v, budget,
+                                         majority_B=majority_B)
         row = {'tag': tag, 'M': M, 'bounds': abs_bounds, 'v': v,
                'verdict': verdict, 'time': el}
         if verdict == 'SAT':
@@ -324,7 +331,7 @@ def vstar_scan(M, abs_bounds, vmax, budget, tag, vlist=None, asym=False):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('mode', choices=['const', 'bal', 'asym'])
+    ap.add_argument('mode', choices=['const', 'bal', 'asym', 'majb'])
     ap.add_argument('--M', type=int, required=True)
     ap.add_argument('--bounds', type=str, default='3,6,12')
     ap.add_argument('--vmax', type=int, default=None)
@@ -335,14 +342,15 @@ def main():
     args = ap.parse_args()
     os.makedirs(DATA, exist_ok=True)
     vlist = ([int(x) for x in args.vs.split(',')] if args.vs else None)
-    if args.mode in ('const', 'asym'):
+    if args.mode in ('const', 'asym', 'majb'):
         bounds = tuple(int(x) for x in args.bounds.split(','))
         vmax = args.vmax if args.vmax is not None else 24
-        pre = 'asym' if args.mode == 'asym' else 'const'
+        pre = args.mode
         tag = (args.tag
                or f'{pre}{"_".join(map(str, bounds))}_M{args.M}')
         vstar_scan(args.M, bounds, vmax, args.budget, tag, vlist,
-                   asym=(args.mode == 'asym'))
+                   asym=(args.mode in ('asym', 'majb')),
+                   majority_B=(args.mode == 'majb'))
     else:
         vmax = args.vmax if args.vmax is not None else 4096
         tag = args.tag or f'bal_M{args.M}'
