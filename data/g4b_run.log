@@ -1,0 +1,85 @@
+== CHECK 0: partition sanity ==
+  tri_top          A=12520 B=3864 cover=True
+  tri_bot          A=12520 B=3864 cover=True
+  tri_mixTB        A=12520 B=3864 cover=True
+  tri_top_sliv     A=12518 B=3866 cover=True
+  tri_tau4_int     A=12520 B=3864 cover=True
+  quad_top         A=1992 B=14392 cover=True
+  quad_bot_sliv6   A=1998 B=14386 cover=True
+  tri_halfBT       A=12520 B=3864 cover=True
+  tri_none         A=12520 B=3864 cover=True
+== CHECK A: seam-law catalogue (brute force vs formulas) ==
+  tri_top          seam a_2= 5 m=   32 sig=0 tau=0 channels={'DUST': 1, 'C0': 848, 'FAN': 7} OK
+  tri_top          seam a_3= 8 m=  256 sig=0 tau=0 channels={'C0': 12756, 'FAN': 16} OK
+  tri_top          seam a_4=12 m= 4096 sig=0 tau=0 channels={'DUST': 1, 'C0': 114756, 'FAN': 7} OK
+  tri_bot          seam a_2= 5 m=   32 sig=0 tau=0 channels={'FAN': 8, 'C0': 848} OK
+  tri_bot          seam a_3= 8 m=  256 sig=0 tau=0 channels={'C0': 12757, 'DUST': 1, 'FAN': 16} OK
+  tri_bot          seam a_4=12 m= 4096 sig=0 tau=0 channels={'FAN': 8, 'C0': 114756} OK
+  tri_mixTB        seam a_2= 5 m=   32 sig=0 tau=0 channels={'DUST': 1, 'FAN': 8, 'C0': 848} OK
+  tri_mixTB        seam a_3= 8 m=  256 sig=0 tau=0 channels={'C0': 12758, 'DUST': 1, 'FAN': 16} OK
+  tri_mixTB        seam a_4=12 m= 4096 sig=0 tau=0 channels={'C0': 114756, 'FAN': 7} OK
+  tri_top_sliv     seam a_2= 5 m=   32 sig=4 tau=0 channels={'DUST': 1, 'C0': 1057, 'C2@1': 3, 'FAN': 10, 'SLIVIN@1': 2, 'C1': 26, 'C2': 1} OK
+  tri_top_sliv     seam a_3= 8 m=  256 sig=5 tau=0 channels={'C0': 10597, 'C1': 28, 'C2': 4, 'FAN': 13} OK
+  tri_top_sliv     seam a_4=12 m= 4096 sig=6 tau=0 channels={'DUST': 1, 'C0': 148469, 'FAN': 10, 'C1': 39, 'C2': 2} OK
+  tri_tau4_int     seam a_2= 5 m=   32 sig=0 tau=4 channels={'DUST': 1, 'C4': 20, 'C0': 565, 'C5': 2} OK
+  tri_tau4_int     seam a_3= 8 m=  256 sig=0 tau=4 channels={'C0': 14853, 'C4': 76} OK
+  tri_tau4_int     seam a_4=12 m= 4096 sig=0 tau=4 channels={'DUST': 1, 'C4': 20, 'C0': 80946, 'C5': 2} OK
+  quad_top         seam a_2= 6 m=   64 sig=0 tau=0 channels={'DUST': 1, 'C0': 1824, 'FAN': 7} OK
+  quad_top         seam a_3=11 m= 2048 sig=0 tau=0 channels={'C0': 102356, 'FAN': 16} OK
+  quad_bot_sliv6   seam a_2= 6 m=   64 sig=6 tau=0 channels={'FAN': 14, 'C0': 2762, 'C1': 30, 'C2': 1} OK
+  quad_bot_sliv6   seam a_3=11 m= 2048 sig=6 tau=0 channels={'C0': 68545, 'C1': 42, 'DUST': 1, 'C2': 5, 'FAN': 10} OK
+  tri_halfBT       seam a_2= 5 m=   32 sig=0 tau=0 channels={'C0': 850, 'FAN': 7} OK
+  tri_halfBT       seam a_3= 8 m=  256 sig=0 tau=0 channels={'C0': 12759, 'FAN': 16} OK
+  tri_halfBT       seam a_4=12 m= 4096 sig=0 tau=0 channels={'C0': 114754, 'FAN': 7} OK
+  tri_none         seam a_2= 5 m=   32 sig=0 tau=0 channels={'C0': 888} OK
+  tri_none         seam a_3= 8 m=  256 sig=0 tau=0 channels={'C0': 12816} OK
+  tri_none         seam a_4=12 m= 4096 sig=0 tau=0 channels={'C0': 114816} OK
+== CHECK E: T-PIN-STAGE bookkeeping ==
+  tri_top      interior blocks/stage (k<=8): [1, 0, 1, 2, 3, 4, 5, 6, 7] cumA=362 cumB=342 strictly growing=True
+  quad_top     interior blocks/stage (k<=8): [1, 1, 3, 5, 7, 9, 11, 13, 15] cumA=742 cumB=703 strictly growing=True
+  disjointness + divergence: OK
+== CHECK B: C3 core vs top-pair puncture (rung content of T-PIN-STAGE on split-crown blocks) ==
+  B intact M=64 (control)                      UNSAT   n=64 units=3 [0.1s] (as expected)
+  B minus{2M} M=64                             UNSAT   n=63 units=3 [0.1s]
+  B minus{2M-1} M=64                           UNSAT   n=63 units=3 [0.0s]
+  B minus both M=64                            UNSAT   n=62 units=3 [0.1s]
+  B intact M=128 (control)                     UNSAT   n=128 units=3 [0.6s] (as expected)
+  B minus{2M} M=128                            UNSAT   n=127 units=3 [0.6s]
+  B minus{2M-1} M=128                          UNSAT   n=127 units=3 [0.7s]
+  B minus both M=128                           UNSAT   n=126 units=3 [0.6s]
+  B intact M=256 (control)                     UNSAT   n=256 units=3 [2.9s] (as expected)
+  B minus{2M} M=256                            UNSAT   n=255 units=3 [4.6s]
+  B minus{2M-1} M=256                          UNSAT   n=255 units=3 [4.6s]
+  B minus both M=256                           UNSAT   n=254 units=3 [5.7s]
+  B minus{2M} M=68 (4 mod 8 control)           SAT     n=67 units=3 [0.0s] (as expected)
+== CHECK D: per-j spot — OG_5 pair rung {31,32} on (M, 2M] ==
+  D OG5 M=64 F={31,32}                         UNSAT   n=64 units=31 [0.0s]
+  D OG5 M=128 F={31,32}                        UNSAT   n=128 units=31 [0.6s]
+  D OG5 M=256 F={31,32}                        UNSAT   n=256 units=31 [4.7s]
+== CHECK C: stage rung STG(M, F) — two consecutive in-team blocks + fixed attackers ==
+  C intact M=64 F=x3                           SAT     n=192 units=65 [0.2s]
+  C punct M=64 F=x3                            SAT     n=190 units=64 [0.3s]
+  C intact M=64 F=x15                          SAT     n=192 units=71 [0.2s]
+  C punct M=64 F=x15                           SAT     n=190 units=70 [0.2s]
+  C intact M=64 F=p15_16                       UNSAT   n=192 units=143 [0.1s]
+  C punct M=64 F=p15_16                        UNSAT   n=190 units=139 [0.1s]
+  C intact M=64 F=p21_22                       UNSAT   n=192 units=149 [0.1s]
+  C punct M=64 F=p21_22                        UNSAT   n=190 units=145 [0.1s]
+  C intact M=128 F=x3                          SAT     n=384 units=129 [1.3s]
+  C punct M=128 F=x3                           SAT     n=382 units=128 [1.2s]
+  C intact M=128 F=x15                         SAT     n=384 units=135 [1.4s]
+  C punct M=128 F=x15                          SAT     n=382 units=134 [1.4s]
+  C intact M=128 F=p15_16                      UNSAT   n=384 units=271 [4.4s]
+  C punct M=128 F=p15_16                       UNSAT   n=382 units=267 [3.2s]
+  C intact M=128 F=p21_22                      UNSAT   n=384 units=277 [4.9s]
+  C punct M=128 F=p21_22                       UNSAT   n=382 units=273 [2.5s]
+  C intact M=256 F=x3                          SAT     n=768 units=257 [6.4s]
+  C punct M=256 F=x3                           SAT     n=766 units=256 [69.8s]
+  C intact M=256 F=x15                         SAT     n=768 units=263 [98.0s]
+  C punct M=256 F=x15                          SAT     n=766 units=262 [93.8s]
+  C intact M=256 F=p15_16                      UNSAT   n=768 units=527 [69.7s]
+  C punct M=256 F=p15_16                       UNSAT   n=766 units=523 [38.3s]
+  C intact M=256 F=p21_22                      UNSAT   n=768 units=533 [245.0s]
+  C punct M=256 F=p21_22                       UNSAT   n=766 units=529 [91.8s]
+wrote /Users/will/Dev/personal/tasks/math/erdos197/data/g4b_results.json
+CHECK 0=True A=True E=True

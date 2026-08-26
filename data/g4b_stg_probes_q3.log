@@ -1,0 +1,14 @@
+== Q3: puncture robustness of STG pair rungs ==
+  Q3 M=64 punctB F=(21, 22)                    UNSAT   n=190 units=145 [0.1s]
+  Q3 M=64 punctB F=(3, 5)                      UNSAT   n=190 units=125 [0.1s]
+  Q3 M=64 punct_all4 F=(21, 22)                UNSAT   n=188 units=141 [0.1s]
+  Q3 M=64 punct_all4 F=(3, 5)                  UNSAT   n=188 units=123 [0.1s]
+  Q3 M=64 punct8_arb F=(21, 22)                UNSAT   n=184 units=135 [0.1s]
+  Q3 M=64 punct8_arb F=(3, 5)                  UNSAT   n=184 units=116 [0.2s]
+  Q3 M=128 punctB F=(21, 22)                   UNSAT   n=382 units=273 [5.3s]
+  Q3 M=128 punctB F=(3, 5)                     UNSAT   n=382 units=253 [1.0s]
+  Q3 M=128 punct_all4 F=(21, 22)               UNSAT   n=380 units=269 [2.9s]
+  Q3 M=128 punct_all4 F=(3, 5)                 UNSAT   n=380 units=251 [1.0s]
+  Q3 M=128 punct8_arb F=(21, 22)               UNSAT   n=376 units=263 [4.6s]
+  Q3 M=128 punct8_arb F=(3, 5)                 UNSAT   n=376 units=244 [1.0s]
+wrote /Users/will/Dev/personal/tasks/math/erdos197/data/g4b_stg_probes_q3.json

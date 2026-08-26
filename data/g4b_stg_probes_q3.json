@@ -1,0 +1,122 @@
+[
+ {
+  "n": 190,
+  "aps": 8868,
+  "units": 145,
+  "result": "UNSAT",
+  "rounds": 7,
+  "time": 0.1,
+  "tag": "Q3 M=64 punctB F=(21, 22)",
+  "want": null
+ },
+ {
+  "n": 190,
+  "aps": 8868,
+  "units": 125,
+  "result": "UNSAT",
+  "rounds": 13,
+  "time": 0.1,
+  "tag": "Q3 M=64 punctB F=(3, 5)",
+  "want": null
+ },
+ {
+  "n": 188,
+  "aps": 8619,
+  "units": 141,
+  "result": "UNSAT",
+  "rounds": 5,
+  "time": 0.1,
+  "tag": "Q3 M=64 punct_all4 F=(21, 22)",
+  "want": null
+ },
+ {
+  "n": 188,
+  "aps": 8619,
+  "units": 123,
+  "result": "UNSAT",
+  "rounds": 13,
+  "time": 0.1,
+  "tag": "Q3 M=64 punct_all4 F=(3, 5)",
+  "want": null
+ },
+ {
+  "n": 184,
+  "aps": 8099,
+  "units": 135,
+  "result": "UNSAT",
+  "rounds": 6,
+  "time": 0.1,
+  "tag": "Q3 M=64 punct8_arb F=(21, 22)",
+  "want": null
+ },
+ {
+  "n": 184,
+  "aps": 8099,
+  "units": 116,
+  "result": "UNSAT",
+  "rounds": 13,
+  "time": 0.2,
+  "tag": "Q3 M=64 punct8_arb F=(3, 5)",
+  "want": null
+ },
+ {
+  "n": 382,
+  "aps": 36164,
+  "units": 273,
+  "result": "UNSAT",
+  "rounds": 9,
+  "time": 5.3,
+  "tag": "Q3 M=128 punctB F=(21, 22)",
+  "want": null
+ },
+ {
+  "n": 382,
+  "aps": 36164,
+  "units": 253,
+  "result": "UNSAT",
+  "rounds": 12,
+  "time": 1.0,
+  "tag": "Q3 M=128 punctB F=(3, 5)",
+  "want": null
+ },
+ {
+  "n": 380,
+  "aps": 35659,
+  "units": 269,
+  "result": "UNSAT",
+  "rounds": 10,
+  "time": 2.9,
+  "tag": "Q3 M=128 punct_all4 F=(21, 22)",
+  "want": null
+ },
+ {
+  "n": 380,
+  "aps": 35659,
+  "units": 251,
+  "result": "UNSAT",
+  "rounds": 13,
+  "time": 1.0,
+  "tag": "Q3 M=128 punct_all4 F=(3, 5)",
+  "want": null
+ },
+ {
+  "n": 376,
+  "aps": 34627,
+  "units": 263,
+  "result": "UNSAT",
+  "rounds": 9,
+  "time": 4.6,
+  "tag": "Q3 M=128 punct8_arb F=(21, 22)",
+  "want": null
+ },
+ {
+  "n": 376,
+  "aps": 34627,
+  "units": 244,
+  "result": "UNSAT",
+  "rounds": 13,
+  "time": 1.0,
+  "tag": "Q3 M=128 punct8_arb F=(3, 5)",
+  "want": null
+ }
+]

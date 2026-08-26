@@ -1,0 +1,54 @@
+{
+ "ok": true,
+ "note": "1block M=512 row in g4c_verify_E.log (Glucose42, UNSAT 53.6s); these rows Cadical195 after harness kill",
+ "rows": [
+  {
+   "tag": "1block M=1024 F=21,22",
+   "n": 1024,
+   "units": 21,
+   "mode": "lazy",
+   "solver": "Glucose42",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "match": true,
+   "time": 1996.3,
+   "rounds": 119
+  },
+  {
+   "tag": "chain M=1024 F=513,514",
+   "n": 1024,
+   "units": 513,
+   "mode": "lazy",
+   "solver": "Glucose42",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "match": true,
+   "time": 152.8,
+   "rounds": 48
+  },
+  {
+   "tag": "chain M=2048 F=1025,1026",
+   "n": 2048,
+   "units": 1025,
+   "mode": "lazy",
+   "solver": "Glucose42",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "match": true,
+   "time": 2325.3,
+   "rounds": 96
+  },
+  {
+   "tag": "STG intact M=512 F=(15, 16)",
+   "n": 1536,
+   "units": 1039,
+   "mode": "lazy",
+   "solver": "Glucose42",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "match": true,
+   "time": 279.3,
+   "rounds": 49
+  }
+ ]
+}

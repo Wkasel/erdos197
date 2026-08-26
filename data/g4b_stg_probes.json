@@ -1,0 +1,146 @@
+[
+ {
+  "n": 192,
+  "aps": 9120,
+  "units": 131,
+  "result": "UNSAT",
+  "rounds": 10,
+  "time": 0.2,
+  "tag": "Q1 M=64 F=(3, 4)",
+  "want": null
+ },
+ {
+  "n": 192,
+  "aps": 9120,
+  "units": 131,
+  "result": "UNSAT",
+  "rounds": 7,
+  "time": 0.1,
+  "tag": "Q1 M=64 F=(3, 5)",
+  "want": null
+ },
+ {
+  "n": 192,
+  "aps": 9120,
+  "units": 150,
+  "result": "UNSAT",
+  "rounds": 10,
+  "time": 0.1,
+  "tag": "Q1 M=64 F=(19, 27)",
+  "want": null
+ },
+ {
+  "n": 192,
+  "aps": 9120,
+  "units": 150,
+  "result": "UNSAT",
+  "rounds": 8,
+  "time": 0.1,
+  "tag": "Q1 M=64 F=(21, 25)",
+  "want": null
+ },
+ {
+  "n": 192,
+  "aps": 9120,
+  "units": 134,
+  "result": "UNSAT",
+  "rounds": 8,
+  "time": 0.1,
+  "tag": "Q1 M=64 F=(5, 9)",
+  "want": null
+ },
+ {
+  "n": 384,
+  "aps": 36672,
+  "units": 259,
+  "result": "UNSAT",
+  "rounds": 10,
+  "time": 2.8,
+  "tag": "Q1 M=128 F=(3, 4)",
+  "want": null
+ },
+ {
+  "n": 384,
+  "aps": 36672,
+  "units": 259,
+  "result": "UNSAT",
+  "rounds": 12,
+  "time": 0.8,
+  "tag": "Q1 M=128 F=(3, 5)",
+  "want": null
+ },
+ {
+  "n": 384,
+  "aps": 36672,
+  "units": 278,
+  "result": "UNSAT",
+  "rounds": 15,
+  "time": 0.9,
+  "tag": "Q1 M=128 F=(19, 27)",
+  "want": null
+ },
+ {
+  "n": 384,
+  "aps": 36672,
+  "units": 278,
+  "result": "UNSAT",
+  "rounds": 9,
+  "time": 0.7,
+  "tag": "Q1 M=128 F=(21, 25)",
+  "want": null
+ },
+ {
+  "n": 384,
+  "aps": 36672,
+  "units": 262,
+  "result": "UNSAT",
+  "rounds": 14,
+  "time": 0.7,
+  "tag": "Q1 M=128 F=(5, 9)",
+  "want": null
+ },
+ {
+  "n": 224,
+  "aps": 12432,
+  "units": 97,
+  "result": "SAT",
+  "rounds": 35,
+  "time": 0.3,
+  "witness_verified": true,
+  "tag": "Q2 M=32 3blocks F=(3,)",
+  "want": null
+ },
+ {
+  "n": 224,
+  "aps": 12432,
+  "units": 103,
+  "result": "SAT",
+  "rounds": 28,
+  "time": 0.3,
+  "witness_verified": true,
+  "tag": "Q2 M=32 3blocks F=(15,)",
+  "want": null
+ },
+ {
+  "n": 448,
+  "aps": 49952,
+  "units": 193,
+  "result": "SAT",
+  "rounds": 30,
+  "time": 1.8,
+  "witness_verified": true,
+  "tag": "Q2 M=64 3blocks F=(3,)",
+  "want": null
+ },
+ {
+  "n": 448,
+  "aps": 49952,
+  "units": 199,
+  "result": "SAT",
+  "rounds": 30,
+  "time": 2.0,
+  "witness_verified": true,
+  "tag": "Q2 M=64 3blocks F=(15,)",
+  "want": null
+ }
+]

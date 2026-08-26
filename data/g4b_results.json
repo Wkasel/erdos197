@@ -1,0 +1,745 @@
+{
+ "when": "2026-08-26 04:16:47",
+ "check0": true,
+ "checkA_ok": true,
+ "checkA_rows": [
+  {
+   "variant": "tri_top",
+   "seam_level": 5,
+   "m": 32,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "DUST": 1,
+    "C0": 848,
+    "FAN": 7
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_top",
+   "seam_level": 8,
+   "m": 256,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "C0": 12756,
+    "FAN": 16
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_top",
+   "seam_level": 12,
+   "m": 4096,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "DUST": 1,
+    "C0": 114756,
+    "FAN": 7
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_bot",
+   "seam_level": 5,
+   "m": 32,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "FAN": 8,
+    "C0": 848
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_bot",
+   "seam_level": 8,
+   "m": 256,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "C0": 12757,
+    "DUST": 1,
+    "FAN": 16
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_bot",
+   "seam_level": 12,
+   "m": 4096,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "FAN": 8,
+    "C0": 114756
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_mixTB",
+   "seam_level": 5,
+   "m": 32,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "DUST": 1,
+    "FAN": 8,
+    "C0": 848
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_mixTB",
+   "seam_level": 8,
+   "m": 256,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "C0": 12758,
+    "DUST": 1,
+    "FAN": 16
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_mixTB",
+   "seam_level": 12,
+   "m": 4096,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "C0": 114756,
+    "FAN": 7
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_top_sliv",
+   "seam_level": 5,
+   "m": 32,
+   "sigma": 4,
+   "tau": 0,
+   "channel_counts": {
+    "DUST": 1,
+    "C0": 1057,
+    "C2@1": 3,
+    "FAN": 10,
+    "SLIVIN@1": 2,
+    "C1": 26,
+    "C2": 1
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_top_sliv",
+   "seam_level": 8,
+   "m": 256,
+   "sigma": 5,
+   "tau": 0,
+   "channel_counts": {
+    "C0": 10597,
+    "C1": 28,
+    "C2": 4,
+    "FAN": 13
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_top_sliv",
+   "seam_level": 12,
+   "m": 4096,
+   "sigma": 6,
+   "tau": 0,
+   "channel_counts": {
+    "DUST": 1,
+    "C0": 148469,
+    "FAN": 10,
+    "C1": 39,
+    "C2": 2
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_tau4_int",
+   "seam_level": 5,
+   "m": 32,
+   "sigma": 0,
+   "tau": 4,
+   "channel_counts": {
+    "DUST": 1,
+    "C4": 20,
+    "C0": 565,
+    "C5": 2
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_tau4_int",
+   "seam_level": 8,
+   "m": 256,
+   "sigma": 0,
+   "tau": 4,
+   "channel_counts": {
+    "C0": 14853,
+    "C4": 76
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_tau4_int",
+   "seam_level": 12,
+   "m": 4096,
+   "sigma": 0,
+   "tau": 4,
+   "channel_counts": {
+    "DUST": 1,
+    "C4": 20,
+    "C0": 80946,
+    "C5": 2
+   },
+   "ok": true
+  },
+  {
+   "variant": "quad_top",
+   "seam_level": 6,
+   "m": 64,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "DUST": 1,
+    "C0": 1824,
+    "FAN": 7
+   },
+   "ok": true
+  },
+  {
+   "variant": "quad_top",
+   "seam_level": 11,
+   "m": 2048,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "C0": 102356,
+    "FAN": 16
+   },
+   "ok": true
+  },
+  {
+   "variant": "quad_bot_sliv6",
+   "seam_level": 6,
+   "m": 64,
+   "sigma": 6,
+   "tau": 0,
+   "channel_counts": {
+    "FAN": 14,
+    "C0": 2762,
+    "C1": 30,
+    "C2": 1
+   },
+   "ok": true
+  },
+  {
+   "variant": "quad_bot_sliv6",
+   "seam_level": 11,
+   "m": 2048,
+   "sigma": 6,
+   "tau": 0,
+   "channel_counts": {
+    "C0": 68545,
+    "C1": 42,
+    "DUST": 1,
+    "C2": 5,
+    "FAN": 10
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_halfBT",
+   "seam_level": 5,
+   "m": 32,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "C0": 850,
+    "FAN": 7
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_halfBT",
+   "seam_level": 8,
+   "m": 256,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "C0": 12759,
+    "FAN": 16
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_halfBT",
+   "seam_level": 12,
+   "m": 4096,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "C0": 114754,
+    "FAN": 7
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_none",
+   "seam_level": 5,
+   "m": 32,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "C0": 888
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_none",
+   "seam_level": 8,
+   "m": 256,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "C0": 12816
+   },
+   "ok": true
+  },
+  {
+   "variant": "tri_none",
+   "seam_level": 12,
+   "m": 4096,
+   "sigma": 0,
+   "tau": 0,
+   "channel_counts": {
+    "C0": 114816
+   },
+   "ok": true
+  }
+ ],
+ "checkE": true,
+ "sat_rows": [
+  {
+   "n": 64,
+   "aps": 992,
+   "units": 3,
+   "result": "UNSAT",
+   "rounds": 42,
+   "time": 0.1,
+   "tag": "B intact M=64 (control)",
+   "want": "UNSAT"
+  },
+  {
+   "n": 63,
+   "aps": 961,
+   "units": 3,
+   "result": "UNSAT",
+   "rounds": 48,
+   "time": 0.1,
+   "tag": "B minus{2M} M=64",
+   "want": null
+  },
+  {
+   "n": 63,
+   "aps": 960,
+   "units": 3,
+   "result": "UNSAT",
+   "rounds": 45,
+   "time": 0.0,
+   "tag": "B minus{2M-1} M=64",
+   "want": null
+  },
+  {
+   "n": 62,
+   "aps": 930,
+   "units": 3,
+   "result": "UNSAT",
+   "rounds": 57,
+   "time": 0.1,
+   "tag": "B minus both M=64",
+   "want": null
+  },
+  {
+   "n": 128,
+   "aps": 4032,
+   "units": 3,
+   "result": "UNSAT",
+   "rounds": 47,
+   "time": 0.6,
+   "tag": "B intact M=128 (control)",
+   "want": "UNSAT"
+  },
+  {
+   "n": 127,
+   "aps": 3969,
+   "units": 3,
+   "result": "UNSAT",
+   "rounds": 41,
+   "time": 0.6,
+   "tag": "B minus{2M} M=128",
+   "want": null
+  },
+  {
+   "n": 127,
+   "aps": 3968,
+   "units": 3,
+   "result": "UNSAT",
+   "rounds": 43,
+   "time": 0.7,
+   "tag": "B minus{2M-1} M=128",
+   "want": null
+  },
+  {
+   "n": 126,
+   "aps": 3906,
+   "units": 3,
+   "result": "UNSAT",
+   "rounds": 44,
+   "time": 0.6,
+   "tag": "B minus both M=128",
+   "want": null
+  },
+  {
+   "n": 256,
+   "aps": 16256,
+   "units": 3,
+   "result": "UNSAT",
+   "rounds": 34,
+   "time": 2.9,
+   "tag": "B intact M=256 (control)",
+   "want": "UNSAT"
+  },
+  {
+   "n": 255,
+   "aps": 16129,
+   "units": 3,
+   "result": "UNSAT",
+   "rounds": 35,
+   "time": 4.6,
+   "tag": "B minus{2M} M=256",
+   "want": null
+  },
+  {
+   "n": 255,
+   "aps": 16128,
+   "units": 3,
+   "result": "UNSAT",
+   "rounds": 32,
+   "time": 4.6,
+   "tag": "B minus{2M-1} M=256",
+   "want": null
+  },
+  {
+   "n": 254,
+   "aps": 16002,
+   "units": 3,
+   "result": "UNSAT",
+   "rounds": 34,
+   "time": 5.7,
+   "tag": "B minus both M=256",
+   "want": null
+  },
+  {
+   "n": 67,
+   "aps": 1089,
+   "units": 3,
+   "result": "SAT",
+   "rounds": 31,
+   "time": 0.0,
+   "witness_verified": true,
+   "tag": "B minus{2M} M=68 (4 mod 8 control)",
+   "want": "SAT"
+  },
+  {
+   "n": 64,
+   "aps": 992,
+   "units": 31,
+   "result": "UNSAT",
+   "rounds": 14,
+   "time": 0.0,
+   "tag": "D OG5 M=64 F={31,32}",
+   "want": null
+  },
+  {
+   "n": 128,
+   "aps": 4032,
+   "units": 31,
+   "result": "UNSAT",
+   "rounds": 16,
+   "time": 0.6,
+   "tag": "D OG5 M=128 F={31,32}",
+   "want": null
+  },
+  {
+   "n": 256,
+   "aps": 16256,
+   "units": 31,
+   "result": "UNSAT",
+   "rounds": 16,
+   "time": 4.7,
+   "tag": "D OG5 M=256 F={31,32}",
+   "want": null
+  },
+  {
+   "n": 192,
+   "aps": 9120,
+   "units": 65,
+   "result": "SAT",
+   "rounds": 29,
+   "time": 0.2,
+   "witness_verified": true,
+   "tag": "C intact M=64 F=x3",
+   "want": null
+  },
+  {
+   "n": 190,
+   "aps": 8868,
+   "units": 64,
+   "result": "SAT",
+   "rounds": 36,
+   "time": 0.3,
+   "witness_verified": true,
+   "tag": "C punct M=64 F=x3",
+   "want": null
+  },
+  {
+   "n": 192,
+   "aps": 9120,
+   "units": 71,
+   "result": "SAT",
+   "rounds": 30,
+   "time": 0.2,
+   "witness_verified": true,
+   "tag": "C intact M=64 F=x15",
+   "want": null
+  },
+  {
+   "n": 190,
+   "aps": 8868,
+   "units": 70,
+   "result": "SAT",
+   "rounds": 30,
+   "time": 0.2,
+   "witness_verified": true,
+   "tag": "C punct M=64 F=x15",
+   "want": null
+  },
+  {
+   "n": 192,
+   "aps": 9120,
+   "units": 143,
+   "result": "UNSAT",
+   "rounds": 6,
+   "time": 0.1,
+   "tag": "C intact M=64 F=p15_16",
+   "want": null
+  },
+  {
+   "n": 190,
+   "aps": 8868,
+   "units": 139,
+   "result": "UNSAT",
+   "rounds": 7,
+   "time": 0.1,
+   "tag": "C punct M=64 F=p15_16",
+   "want": null
+  },
+  {
+   "n": 192,
+   "aps": 9120,
+   "units": 149,
+   "result": "UNSAT",
+   "rounds": 7,
+   "time": 0.1,
+   "tag": "C intact M=64 F=p21_22",
+   "want": null
+  },
+  {
+   "n": 190,
+   "aps": 8868,
+   "units": 145,
+   "result": "UNSAT",
+   "rounds": 7,
+   "time": 0.1,
+   "tag": "C punct M=64 F=p21_22",
+   "want": null
+  },
+  {
+   "n": 384,
+   "aps": 36672,
+   "units": 129,
+   "result": "SAT",
+   "rounds": 37,
+   "time": 1.3,
+   "witness_verified": true,
+   "tag": "C intact M=128 F=x3",
+   "want": null
+  },
+  {
+   "n": 382,
+   "aps": 36164,
+   "units": 128,
+   "result": "SAT",
+   "rounds": 31,
+   "time": 1.2,
+   "witness_verified": true,
+   "tag": "C punct M=128 F=x3",
+   "want": null
+  },
+  {
+   "n": 384,
+   "aps": 36672,
+   "units": 135,
+   "result": "SAT",
+   "rounds": 45,
+   "time": 1.4,
+   "witness_verified": true,
+   "tag": "C intact M=128 F=x15",
+   "want": null
+  },
+  {
+   "n": 382,
+   "aps": 36164,
+   "units": 134,
+   "result": "SAT",
+   "rounds": 37,
+   "time": 1.4,
+   "witness_verified": true,
+   "tag": "C punct M=128 F=x15",
+   "want": null
+  },
+  {
+   "n": 384,
+   "aps": 36672,
+   "units": 271,
+   "result": "UNSAT",
+   "rounds": 10,
+   "time": 4.4,
+   "tag": "C intact M=128 F=p15_16",
+   "want": null
+  },
+  {
+   "n": 382,
+   "aps": 36164,
+   "units": 267,
+   "result": "UNSAT",
+   "rounds": 10,
+   "time": 3.2,
+   "tag": "C punct M=128 F=p15_16",
+   "want": null
+  },
+  {
+   "n": 384,
+   "aps": 36672,
+   "units": 277,
+   "result": "UNSAT",
+   "rounds": 9,
+   "time": 4.9,
+   "tag": "C intact M=128 F=p21_22",
+   "want": null
+  },
+  {
+   "n": 382,
+   "aps": 36164,
+   "units": 273,
+   "result": "UNSAT",
+   "rounds": 9,
+   "time": 2.5,
+   "tag": "C punct M=128 F=p21_22",
+   "want": null
+  },
+  {
+   "n": 768,
+   "aps": 147072,
+   "units": 257,
+   "result": "SAT",
+   "rounds": 44,
+   "time": 6.4,
+   "witness_verified": true,
+   "tag": "C intact M=256 F=x3",
+   "want": null
+  },
+  {
+   "n": 766,
+   "aps": 146052,
+   "units": 256,
+   "result": "SAT",
+   "rounds": 223,
+   "time": 69.8,
+   "witness_verified": true,
+   "tag": "C punct M=256 F=x3",
+   "want": null
+  },
+  {
+   "n": 768,
+   "aps": 147072,
+   "units": 263,
+   "result": "SAT",
+   "rounds": 293,
+   "time": 98.0,
+   "witness_verified": true,
+   "tag": "C intact M=256 F=x15",
+   "want": null
+  },
+  {
+   "n": 766,
+   "aps": 146052,
+   "units": 262,
+   "result": "SAT",
+   "rounds": 320,
+   "time": 93.8,
+   "witness_verified": true,
+   "tag": "C punct M=256 F=x15",
+   "want": null
+  },
+  {
+   "n": 768,
+   "aps": 147072,
+   "units": 527,
+   "result": "UNSAT",
+   "rounds": 17,
+   "time": 69.7,
+   "tag": "C intact M=256 F=p15_16",
+   "want": null
+  },
+  {
+   "n": 766,
+   "aps": 146052,
+   "units": 523,
+   "result": "UNSAT",
+   "rounds": 15,
+   "time": 38.3,
+   "tag": "C punct M=256 F=p15_16",
+   "want": null
+  },
+  {
+   "n": 768,
+   "aps": 147072,
+   "units": 533,
+   "result": "UNSAT",
+   "rounds": 16,
+   "time": 245.0,
+   "tag": "C intact M=256 F=p21_22",
+   "want": null
+  },
+  {
+   "n": 766,
+   "aps": 146052,
+   "units": 529,
+   "result": "UNSAT",
+   "rounds": 16,
+   "time": 91.8,
+   "tag": "C punct M=256 F=p21_22",
+   "want": null
+  }
+ ]
+}

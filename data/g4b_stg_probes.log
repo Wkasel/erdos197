@@ -1,0 +1,17 @@
+== Q1: arbitrary fixed pairs on 2 consecutive blocks ==
+  Q1 M=64 F=(3, 4)                             UNSAT   n=192 units=131 [0.2s]
+  Q1 M=64 F=(3, 5)                             UNSAT   n=192 units=131 [0.1s]
+  Q1 M=64 F=(19, 27)                           UNSAT   n=192 units=150 [0.1s]
+  Q1 M=64 F=(21, 25)                           UNSAT   n=192 units=150 [0.1s]
+  Q1 M=64 F=(5, 9)                             UNSAT   n=192 units=134 [0.1s]
+  Q1 M=128 F=(3, 4)                            UNSAT   n=384 units=259 [2.8s]
+  Q1 M=128 F=(3, 5)                            UNSAT   n=384 units=259 [0.8s]
+  Q1 M=128 F=(19, 27)                          UNSAT   n=384 units=278 [0.9s]
+  Q1 M=128 F=(21, 25)                          UNSAT   n=384 units=278 [0.7s]
+  Q1 M=128 F=(5, 9)                            UNSAT   n=384 units=262 [0.7s]
+== Q2: single attacker on 3 consecutive blocks ==
+  Q2 M=32 3blocks F=(3,)                       SAT     n=224 units=97 [0.3s]
+  Q2 M=32 3blocks F=(15,)                      SAT     n=224 units=103 [0.3s]
+  Q2 M=64 3blocks F=(3,)                       SAT     n=448 units=193 [1.8s]
+  Q2 M=64 3blocks F=(15,)                      SAT     n=448 units=199 [2.0s]
+wrote /Users/will/Dev/personal/tasks/math/erdos197/data/g4b_stg_probes.json

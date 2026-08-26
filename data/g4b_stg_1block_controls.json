@@ -1,0 +1,89 @@
+[
+ {
+  "n": 64,
+  "aps": 992,
+  "units": 3,
+  "result": "SAT",
+  "rounds": 34,
+  "time": 0.0,
+  "witness_verified": true,
+  "tag": "1block M=64 F=(3, 4)"
+ },
+ {
+  "n": 64,
+  "aps": 992,
+  "units": 21,
+  "result": "UNSAT",
+  "rounds": 19,
+  "time": 0.0,
+  "tag": "1block M=64 F=(21, 22)"
+ },
+ {
+  "n": 64,
+  "aps": 992,
+  "units": 3,
+  "result": "SAT",
+  "rounds": 20,
+  "time": 0.0,
+  "witness_verified": true,
+  "tag": "1block M=64 F=(3, 5)"
+ },
+ {
+  "n": 128,
+  "aps": 4032,
+  "units": 3,
+  "result": "SAT",
+  "rounds": 37,
+  "time": 0.1,
+  "witness_verified": true,
+  "tag": "1block M=128 F=(3, 4)"
+ },
+ {
+  "n": 128,
+  "aps": 4032,
+  "units": 21,
+  "result": "UNSAT",
+  "rounds": 20,
+  "time": 0.4,
+  "tag": "1block M=128 F=(21, 22)"
+ },
+ {
+  "n": 128,
+  "aps": 4032,
+  "units": 3,
+  "result": "SAT",
+  "rounds": 38,
+  "time": 0.1,
+  "witness_verified": true,
+  "tag": "1block M=128 F=(3, 5)"
+ },
+ {
+  "n": 256,
+  "aps": 16256,
+  "units": 3,
+  "result": "SAT",
+  "rounds": 49,
+  "time": 0.9,
+  "witness_verified": true,
+  "tag": "1block M=256 F=(3, 4)"
+ },
+ {
+  "n": 256,
+  "aps": 16256,
+  "units": 21,
+  "result": "UNSAT",
+  "rounds": 17,
+  "time": 4.6,
+  "tag": "1block M=256 F=(21, 22)"
+ },
+ {
+  "n": 256,
+  "aps": 16256,
+  "units": 3,
+  "result": "SAT",
+  "rounds": 46,
+  "time": 0.6,
+  "witness_verified": true,
+  "tag": "1block M=256 F=(3, 5)"
+ }
+]

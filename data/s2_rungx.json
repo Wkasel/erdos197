@@ -1,0 +1,35 @@
+{
+ "rungx": [
+  {
+   "n": 1282,
+   "aps": 327808,
+   "units": 11,
+   "result": "TIMEOUT",
+   "rounds": 271,
+   "time": 5783.9,
+   "kind": "rung_x",
+   "schedule": "lin",
+   "team": "B",
+   "t": 9,
+   "I_t": [
+    266,
+    522
+   ],
+   "I_t2": [
+    1036,
+    2060
+   ],
+   "I_t2_full_hi": 2060,
+   "core": null,
+   "neck_t1": 9,
+   "attackers": [
+    1,
+    3,
+    4,
+    8
+   ],
+   "n_units": 11,
+   "note": ""
+  }
+ ]
+}

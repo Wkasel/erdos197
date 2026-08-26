@@ -1,0 +1,67 @@
+[
+ {
+  "n": 128,
+  "aps": 4032,
+  "units": 7,
+  "result": "SAT",
+  "rounds": 49,
+  "time": 0.2,
+  "witness_verified": true,
+  "tag": "1block M=128 F=(7, 8)"
+ },
+ {
+  "n": 128,
+  "aps": 4032,
+  "units": 11,
+  "result": "UNSAT",
+  "rounds": 22,
+  "time": 0.5,
+  "tag": "1block M=128 F=(11, 12)"
+ },
+ {
+  "n": 128,
+  "aps": 4032,
+  "units": 13,
+  "result": "UNSAT",
+  "rounds": 24,
+  "time": 0.7,
+  "tag": "1block M=128 F=(13, 14)"
+ },
+ {
+  "n": 128,
+  "aps": 4032,
+  "units": 17,
+  "result": "UNSAT",
+  "rounds": 18,
+  "time": 0.5,
+  "tag": "1block M=128 F=(17, 18)"
+ },
+ {
+  "n": 128,
+  "aps": 4032,
+  "units": 41,
+  "result": "UNSAT",
+  "rounds": 16,
+  "time": 0.2,
+  "tag": "1block M=128 F=(41, 42)"
+ },
+ {
+  "n": 128,
+  "aps": 4032,
+  "units": 10,
+  "result": "SAT",
+  "rounds": 28,
+  "time": 0.1,
+  "witness_verified": true,
+  "tag": "1block M=128 F=(9, 13)"
+ },
+ {
+  "n": 128,
+  "aps": 4032,
+  "units": 15,
+  "result": "UNSAT",
+  "rounds": 32,
+  "time": 0.1,
+  "tag": "1block M=128 F=(15, 17)"
+ }
+]

@@ -1,0 +1,20 @@
+== G4c PART D: fresh-CEGAR battery (big) ==
+  STG intact M=128 F=(15, 16)                  UNSAT   (expect UNSAT) n=384 units=271 [1.6s] OK
+  STG punct M=128 F=(15, 16)                   UNSAT   (expect UNSAT) n=382 units=267 [1.7s] OK
+  STG intact M=128 F=(21, 22)                  UNSAT   (expect UNSAT) n=384 units=277 [1.7s] OK
+  STG punct M=128 F=(21, 22)                   UNSAT   (expect UNSAT) n=382 units=273 [1.5s] OK
+  STG intact M=128 F=(3, 4) (Q1)               UNSAT   (expect UNSAT) n=384 units=259 [2.0s] OK
+  STG intact M=128 F=(3, 5) (Q1)               UNSAT   (expect UNSAT) n=384 units=259 [0.9s] OK
+  STG intact M=128 F=(19, 27) (Q1)             UNSAT   (expect UNSAT) n=384 units=278 [1.2s] OK
+  STG intact M=128 F=(21, 25) (Q1)             UNSAT   (expect UNSAT) n=384 units=278 [0.6s] OK
+  STG intact M=128 F=(5, 9) (Q1)               UNSAT   (expect UNSAT) n=384 units=262 [0.9s] OK
+  STG punctB M=128 F=(21, 22) (Q3)             UNSAT   (expect UNSAT) n=382 units=273 [1.7s] OK
+  STG punctB M=128 F=(3, 5) (Q3)               UNSAT   (expect UNSAT) n=382 units=253 [0.9s] OK
+  STG punct_all4 M=128 F=(21, 22) (Q3)         UNSAT   (expect UNSAT) n=380 units=269 [1.6s] OK
+  STG punct_all4 M=128 F=(3, 5) (Q3)           UNSAT   (expect UNSAT) n=380 units=251 [0.7s] OK
+  STG punct8_arb M=128 F=(21, 22) (Q3)         UNSAT   (expect UNSAT) n=376 units=263 [1.6s] OK
+  STG punct8_arb M=128 F=(3, 5) (Q3)           UNSAT   (expect UNSAT) n=376 units=244 [1.0s] OK
+  STG intact M=256 F=(15, 16)                  UNSAT   (expect UNSAT) n=768 units=527 [16.3s] OK
+  STG punct M=256 F=(15, 16)                   UNSAT   (expect UNSAT) n=766 units=523 [12.1s] OK
+  STG intact M=256 F=(21, 22)                  UNSAT   (expect UNSAT) n=768 units=533 [16.7s] OK
+  STG punct M=256 F=(21, 22)                   UNSAT   (expect UNSAT) n=766 units=529 [15.0s] OK

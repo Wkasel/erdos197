@@ -1,0 +1,46 @@
+== G4c PART B: complete-encoding battery (small) ==
+  B intact M=64                                UNSAT   (expect UNSAT) n=64 units=3 [0.0s] OK
+  B minus2M M=64                               UNSAT   (expect UNSAT) n=63 units=3 [0.0s] OK
+  B minus2M-1 M=64                             UNSAT   (expect UNSAT) n=63 units=3 [0.0s] OK
+  B minusboth M=64                             UNSAT   (expect UNSAT) n=62 units=3 [0.0s] OK
+  B intact M=128                               UNSAT   (expect UNSAT) n=128 units=3 [0.2s] OK
+  B minus2M M=128                              UNSAT   (expect UNSAT) n=127 units=3 [0.3s] OK
+  B minus2M-1 M=128                            UNSAT   (expect UNSAT) n=127 units=3 [0.3s] OK
+  B minusboth M=128                            UNSAT   (expect UNSAT) n=126 units=3 [0.3s] OK
+  B minus2M M=68 (4mod8 ctrl)                  SAT     (expect SAT) n=67 units=3 [0.0s] OK
+  D OG5 M=64 F=31,32                           UNSAT   (expect UNSAT) n=64 units=31 [0.0s] OK
+  D OG5 M=128 F=31,32                          UNSAT   (expect UNSAT) n=128 units=31 [0.3s] OK
+  1block M=64 F=(21, 22)                       UNSAT   (expect UNSAT) n=64 units=21 [0.0s] OK
+  1block M=64 F=(3, 4)                         SAT     (expect SAT) n=64 units=3 [0.0s] OK
+  1block M=64 F=(3, 5)                         SAT     (expect SAT) n=64 units=3 [0.0s] OK
+  1block M=128 F=(21, 22)                      UNSAT   (expect UNSAT) n=128 units=21 [0.3s] OK
+  1block M=128 F=(3, 4)                        SAT     (expect SAT) n=128 units=3 [0.3s] OK
+  1block M=128 F=(3, 5)                        SAT     (expect SAT) n=128 units=3 [0.3s] OK
+  1block M=128 F=(7, 8)                        SAT     (expect SAT) n=128 units=7 [0.3s] OK
+  1block M=128 F=(9, 13)                       SAT     (expect SAT) n=128 units=10 [0.3s] OK
+  1block M=128 F=(11, 12)                      UNSAT   (expect UNSAT) n=128 units=11 [0.3s] OK
+  1block M=128 F=(13, 14)                      UNSAT   (expect UNSAT) n=128 units=13 [0.3s] OK
+  1block M=128 F=(15, 17)                      UNSAT   (expect UNSAT) n=128 units=15 [0.3s] OK
+  1block M=128 F=(17, 18)                      UNSAT   (expect UNSAT) n=128 units=17 [0.3s] OK
+  1block M=128 F=(41, 42)                      UNSAT   (expect UNSAT) n=128 units=41 [0.3s] OK
+  STG intact M=64 F=(3,)                       SAT     (expect SAT) n=192 units=65 [1.0s] OK
+  STG intact M=64 F=(15,)                      SAT     (expect SAT) n=192 units=71 [1.0s] OK
+  STG intact M=64 F=(15, 16)                   UNSAT   (expect UNSAT) n=192 units=143 [0.9s] OK
+  STG intact M=64 F=(21, 22)                   UNSAT   (expect UNSAT) n=192 units=149 [0.9s] OK
+  STG intact M=64 F=(3, 4)                     UNSAT   (expect UNSAT) n=192 units=131 [0.9s] OK
+  STG intact M=64 F=(3, 5)                     UNSAT   (expect UNSAT) n=192 units=131 [0.9s] OK
+  STG intact M=64 F=(5, 9)                     UNSAT   (expect UNSAT) n=192 units=134 [0.9s] OK
+  STG intact M=64 F=(19, 27)                   UNSAT   (expect UNSAT) n=192 units=150 [0.9s] OK
+  STG intact M=64 F=(21, 25)                   UNSAT   (expect UNSAT) n=192 units=150 [1.0s] OK
+  STG punct M=64 F=(15, 16)                    UNSAT   (expect UNSAT) n=190 units=139 [0.9s] OK
+  STG punct M=64 F=(21, 22)                    UNSAT   (expect UNSAT) n=190 units=145 [0.9s] OK
+  STG punctB M=64 F=(21, 22)                   UNSAT   (expect UNSAT) n=190 units=145 [0.9s] OK
+  STG punctB M=64 F=(3, 5)                     UNSAT   (expect UNSAT) n=190 units=125 [0.9s] OK
+  STG punct_all4 M=64 F=(21, 22)               UNSAT   (expect UNSAT) n=188 units=141 [0.9s] OK
+  STG punct_all4 M=64 F=(3, 5)                 UNSAT   (expect UNSAT) n=188 units=123 [0.9s] OK
+  STG punct8_arb M=64 F=(21, 22)               UNSAT   (expect UNSAT) n=184 units=135 [0.8s] OK
+  STG punct8_arb M=64 F=(3, 5)                 UNSAT   (expect UNSAT) n=184 units=116 [0.7s] OK
+  chain M=128 F=65,66                          UNSAT   (expect UNSAT) n=128 units=65 [0.3s] OK
+  3block M=32 F=(3,)                           SAT     (expect SAT) n=224 units=97 [1.4s] OK
+  3block M=32 F=(15,)                          SAT     (expect SAT) n=224 units=103 [1.5s] OK
+PART B: ALL OK

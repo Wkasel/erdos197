@@ -1,0 +1,12 @@
+{
+ "what": "Independent CP-SAT (ortools, integer-position encoding, AllDifferent + reified AP constraints) cross-check of key g4b Cadical/CEGAR verdicts",
+ "rows": [
+  {"tag": "1block M=64 F={21,22}", "cegar": "UNSAT", "cpsat": "INFEASIBLE", "time_s": 7.7, "agree": true},
+  {"tag": "1block M=64 F={3,4}", "cegar": "SAT (witness verified)", "cpsat": "FEASIBLE", "time_s": 52.0, "agree": true},
+  {"tag": "2block M=64 F={3,4}", "cegar": "UNSAT", "cpsat": "INFEASIBLE", "time_s": 0.6, "agree": true},
+  {"tag": "chain M=128 F={65,66}", "cegar": "UNSAT", "cpsat": "INFEASIBLE", "time_s": 17.6, "agree": true},
+  {"tag": "chain M=256 F={65,66}", "cegar": "UNSAT", "cpsat": "UNKNOWN (600 s timeout)", "agree": null},
+  {"tag": "1block M=128 F={11,12}", "cegar": "UNSAT", "cpsat": "UNKNOWN (500 s timeout)", "agree": null}
+ ],
+ "conclusion": "4/4 decidable instances agree across two independent encodings and solvers; 2 CP-SAT timeouts (no disagreement anywhere)."
+}

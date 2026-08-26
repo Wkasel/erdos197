@@ -1,0 +1,9 @@
+== G4c PART C: complete-encoding battery (n ~ 256) ==
+  B intact M=256                               UNSAT   (expect UNSAT) n=256 units=3 [2.4s] OK
+  B minusboth M=256                            UNSAT   (expect UNSAT) n=254 units=3 [2.5s] OK
+  D OG5 M=256 F=31,32                          UNSAT   (expect UNSAT) n=256 units=31 [2.5s] OK
+  1block M=256 F=21,22                         UNSAT   (expect UNSAT) n=256 units=21 [2.5s] OK
+  chain M=256 F=(65, 66)                       UNSAT   (expect UNSAT) n=256 units=65 [2.5s] OK
+  chain M=256 F=(100, 101)                     UNSAT   (expect UNSAT) n=256 units=100 [2.4s] OK
+  chain M=256 F=(129, 130)                     UNSAT   (expect UNSAT) n=256 units=129 [2.3s] OK
+PART C: ALL OK

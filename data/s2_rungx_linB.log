@@ -1,1 +1,3 @@
 == CHECK 6: RUNG-X (fixed-set seam/cross rungs) ==
+  RUNG-X lin/B t=9 I_t=[266, 522] I_t2=[1036, 2060] core=None neck(t+1)=9 attackers=[1, 3, 4, 8]: TIMEOUT [5783.9s n=1282 units=11]
+saved /Users/will/Dev/personal/tasks/math/erdos197/data/s2_rungx.json

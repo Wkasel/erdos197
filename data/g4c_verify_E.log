@@ -1,0 +1,7 @@
+== G4c PART E: scale escalation M = 512 / 1024 ==
+  1block M=512 F=21,22                         UNSAT   (expect UNSAT) n=512 units=21 [53.6s] OK
+  1block M=1024 F=21,22                        UNSAT   (expect UNSAT) n=1024 units=21 [1996.3s] OK
+  chain M=1024 F=513,514                       UNSAT   (expect UNSAT) n=1024 units=513 [152.8s] OK
+  chain M=2048 F=1025,1026                     UNSAT   (expect UNSAT) n=2048 units=1025 [2325.3s] OK
+  STG intact M=512 F=(15, 16)                  UNSAT   (expect UNSAT) n=1536 units=1039 [279.3s] OK
+E-REST ALL OK

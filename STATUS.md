@@ -1,4 +1,4 @@
-# Erdős #197 campaign — STATUS (2026-08-26)
+# Erdős #197 campaign — STATUS (2026-08-26, post-G4)
 
 ## Bottom line
 
@@ -269,6 +269,76 @@ survive thm:ogred + thm:c3core on its full interior blocks (every
 interior scale is ≡ 0 mod 8), and G3 showed planted halves are landing
 pads.  That G4 screen is the single next experiment.**
 
+### G4b (notes/42, 2026-08-26): THE LAST SHAPE IS DEAD — and the death
+### argument generalized past every geometry
+
+Stage-alternating ownership (the one YES-shape left after TASK V) was
+attacked by theory + machine (experiments/g4b_seam_law.py + probes):
+
+- **The stage-seam law** (7-channel exact catalogue, machine-exact on
+  9 variants × 26 seams × 24 attackers): the d_t dial does not exist in
+  stage geometry — the cross-stage channel X2 is CLOSED, bottom slivers
+  are pure poison (every fixed receiver attacker fires, no threshold),
+  donation protects nobody, and a NEW dense channel opens: a fixed x
+  attacks EVERY value of a non-top in-stage block with completions in
+  the next in-team block — Θ(M) units per block pair (the STG rung).
+- **T-PIN-STAGE** (hand, thm:ogred verbatim): pair + infinitely many
+  intact blocks counted in TOTAL across stages ⇒ death; j = 4 pair is
+  unconditional (thm:c3core); the C3 core SURVIVES top-pair punctures
+  (machine, 3 scales × 3 puncture states + mod-8 control), so forced
+  splitting of all but O(1) pairs per stage has NO orientation
+  loophole.  Every seam-pair split hands the new owner a fixed-cohort
+  FAN — no stage-alternating team is clean (the two clean teams of the
+  octave world have no analogue here).
+- **STG rungs**: every fixed pair tested kills two consecutive blocks
+  (7 pairs × 3 scales × 5 puncture patterns, all UNSAT; singles always
+  SAT, even on three blocks).  **The single-block collapse (§4b): the
+  pair phenomenon is NOT crown-specific** — {21,22} kills a single
+  intact block at M = 64..256; threshold at M = 128: everything from
+  ≈{11,12} up is UNSAT; chain form: a pair INSIDE block (64,128] kills
+  (128,256]..(512,1024].  {15,16} was never magic, only conveniently
+  located.  **T-PIN-BLOCKS**: modulo this generic-pair rung family,
+  ANY team of ANY partition containing infinitely many full (or
+  boundedly-punctured) dyadic blocks is dead.
+- RUNG-X postscript: gm/B t=9 plateau seam rung (the one OG-density
+  seam family) came home UNSAT [667 s, n=1280, 137 units]; every
+  parity class of every S1 schedule now has a machine-true rung family
+  or a proven-sparse seam.
+
+### G4c (notes/43, 2026-08-26): adversarial re-verification — all
+### certificates CONFIRMED, rungs extended to M = 1024
+
+Fresh oracle, fresh classifier, fresh instance builders, different
+solver (Glucose42 vs Cadical195), COMPLETE encodings (full
+transitivity, no CEGAR) for n ≤ 300, fresh lazy loop above that,
+independent witness checking (experiments/g4c_verify.py, data/
+g4c_verify_*).  Every G4b death certificate re-verifies: the 24-row
+seam-law catalogue reproduces exactly; exact big-int walks confirm X2
+closure and neck divergence to seam ~2^20000 and FAN arithmetic at
+2^20102; all SAT/UNSAT verdicts match across ~76 instances including
+the rebuilt gm/B RUNG-X (instance identity re-derived from the Geneson
+construction); scale escalation: 1-block {21,22} UNSAT at M = 512 and
+1024, chain rungs UNSAT with the pair inside (512,1024] and
+(1024,2048], STG {15,16} UNSAT at M = 512.  Zero mismatches anywhere.
+The generic-pair core is machine-true across a 16× scale range under
+three independent proof engines.
+
+**Shape coverage after G4 (the honest dichotomy — notes/43 §2):** call
+a block C-clean for team T if T owns all but ≤ C of it.  Case 1: some
+team has infinitely many C-clean blocks for some constant C — dead
+modulo the generic-pair rung schema (this contains every shape ever
+proposed: canonical, octave-alternating any schedule, stage-
+alternating, irregular block-granular, all finite modifications).
+Case 2: both teams' intruder counts diverge in every block — the
+EVERYWHERE-SPLIT regime, the entire remaining YES-space; not refuted
+(its finite theory is SAT everywhere), patrolled only by lem:orbit.
+The NO program is now a numbered 7-lemma list (notes/43 §3): N1
+pigeonholes [HAND], N2 generic-pair core schema [RUNG — THE crux],
+N3 bounded-dust robustness [RUNG], N4 dichotomy frame [HAND-trivial],
+N5 dense-subset cores [OPEN], N6 coupled-scale accounting [OPEN],
+N7 density ceiling [OPEN, maybe dispensable].  N1+N2 close Case 1;
+N5-N7 are the Case-2 attack.
+
 ### Best surviving YES-candidate (pre-G3 text, kept for the record)
 
 **Growing-sliver swap with alternating crown ownership**: ratio-2 block
@@ -311,45 +381,45 @@ its own residue class and core), and killing the block-poor escape at
 i.e. a robust version of the crown ladder for dense-but-not-full
 blocks — currently the ladder is only proven for intact blocks).
 
-### Decisive next experiments
+### Decisive next experiments (post-G4 ordering, by leverage)
 
-1. **YES route (G4, replaces the completed H4/G3/V campaign)**:
-   stage-alternating ownership partitions — teams own super-blocks
-   (2^{a_k}, 2^{a_{k+1}}] with growing stage lengths (Geneson-style),
-   crown pairs split per the trichotomy, donated slivers only at stage
-   seams.  Generator × {stage growth, seam schedule, crown placement},
-   g2/g3 screen suite at 2^12–2^18, plus the seam analogue of the d_t
-   law.  Any clean-pair survivor goes to chunk-stage SAT at m=4 locally,
-   m=5 on RunPod.
-2. **NO route (e120)**: joint multi-pair consistency gadget — attackers
-   {2^j−1, 2^j} for j = 4, 5, 6 all colored, blocks at two adjacent
-   scales simultaneously, asking whether split/park choices can be made
-   consistently and at what total donation price; plus finish mindon4
-   (budget 5+) and the m=5 same-mode CAP=0 run (does the block-poor
-   escape survive when the minority team's own crown pairs bite?).
+1. **N2 schema hunt (THE crux)**: MUS anatomy of the generic-pair core
+   across {11,12}..{21,22} × M = 64..1024 (the e88/e90 path that found
+   C3) — a scale-stable hand schema converts ALL of Case 1 into a
+   two-lemma theorem and retires every per-shape argument at once.
+2. **NO route in Case 2 (e120, now THE experimental front)**:
+   dense-subset / coupled two-scale split-block gadgets — does a pair
+   rung fire on an in-team subset of density ≥ 1/2 + ε of a block (N5)?
+   Plus the coupled donation-price ledger at adjacent scales (N6);
+   finish mindon4 (budget 5+) and the m=5 same-mode CAP=0 run.
+3. **RunPod bulk**: generic-pair rungs at M = 2048/4096 + systematic
+   pair-threshold maps at several scales (is the {11,12} threshold
+   scale-stable?) — cheap now that the complete encoding is known to
+   decide these instances in seconds-to-minutes.
 
-### Honest assessment (updated 2026-08-26, post-verdict)
+### Honest assessment (updated 2026-08-26, post-G4c)
 
-Every natural candidate partition is now dead, several at theorem or
-theorem-modulo-rungs level, and the whole sliver-swap shape family —
-fixed, growing, and tuned per-parity — is closed by an exact
-conservation law verified adversarially by independent code (14
-candidate partitions, 0 law mismatches).  The death machinery matured:
-NECK + T-PIN are theorems, the rungs are machine-true wherever the neck
-is bounded, and T-SHARP certifies that the one gap the family sat in
-(growing reflectors) can never be closed by a growth-hypothesis lemma —
-only by placement forcing, which the crown/rung route supplies.
-Against NO: two genuinely clean partition teams now exist (geo/A,
-geomirror/B, density 2/3 at peaks) — single-team death machinery does
-not bite everything, the obstruction is always the PAIRING; and the one
-remaining shape (stage-alternating ownership) is untested and does
-evade the d_t parity dichotomy, though it must thread thm:ogred on full
-interior blocks via total crown splitting, which G3 showed has a
-strictly positive price in exact partitions.  Current estimate:
-**NO ≈ 75–80 %, YES ≈ 20–25 %**, with the G4 stage-alternating screen
-the single decisive next experiment: a clean survivor there would be
-the strongest YES-candidate of the campaign; a death would leave no
-natural YES-shape at all.
+Every named partition shape is now dead: the canonical partition at
+full theorem level; octave-alternating (any donation schedule) by the
+d_t law / NECK + machine-true rungs; stage-alternating by the seam law
++ T-PIN-STAGE + STG rungs; and all block-granular geometry at once by
+T-PIN-BLOCKS modulo the generic-pair rung schema — whose instances
+have never once failed (three independent solver engines, M = 64 to
+1024, ~90 UNSAT certificates, adversarially re-verified with complete
+encodings and a fresh oracle in G4c).  The YES-space has been squeezed
+into a single regime with a clean definition — everywhere-split
+partitions, both teams' per-block presence unbounded — which no
+concrete candidate has ever inhabited successfully, but which no
+current mechanism refutes (its finite theory is SAT at every horizon;
+only lem:orbit patrols it).  Against NO: the everywhere-split regime
+is large, structurally unlike anything killed so far, its death needs
+genuinely new mathematics (N5–N7: dense-subset cores, coupled-scale
+accounting, density ceilings — all OPEN), and the campaign's history
+of "SAT everywhere" for the finite 2-colored theory is a real warning
+that finite certificates may simply not exist there.  Current
+estimate: **NO ≈ 85 %, YES ≈ 15 %** (up from 75–80 pre-G4: the last
+proposed shape died and the death mechanism went generic; capped
+because Case 2 is untouched and needs new ideas, not new compute).
 
 ## Key files
 
@@ -360,3 +430,10 @@ natural YES-shape at all.
   = gap closed + audit record).
 - experiments/e113_c3_hand_proof.py, e113b_closure_crossval.py,
   e114_theorem_spotcheck.py — verification suite; data/e113*, e114*.
+- notes/42-seam-law.md + experiments/g4b_seam_law.py, g4b_stg_probes.py
+  — the stage-seam law, T-PIN-STAGE, STG rungs, the generic-pair
+  single-block collapse (T-PIN-BLOCKS); data/g4b_*.
+- notes/43-g4c-verdict.md + experiments/g4c_verify.py — adversarial
+  re-verification (fresh oracle, complete encodings, Glucose42),
+  scale escalation to M = 1024, the Case-1/Case-2 dichotomy and the
+  numbered NO program N1–N7; data/g4c_verify_*.

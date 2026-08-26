@@ -1,0 +1,9 @@
+{
+ "n": 1280,
+ "aps": 327040,
+ "units": 137,
+ "result": "UNSAT",
+ "rounds": 246,
+ "time": 1307.7,
+ "note": "campaign CEGAR loop on the G4c-rebuilt instance (fresh construction)"
+}

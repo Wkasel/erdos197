@@ -1,0 +1,228 @@
+{
+ "ok": true,
+ "identity_match": true,
+ "note": "19 battery rows verified under BOTH Glucose42 (g4c_verify_D_glucose_partial.log) and Cadical195 (this log); gm rung: instance rebuilt from scratch matches s2 record exactly (n=1280, units=137, cohort, intervals) and is UNSAT.",
+ "rows": [
+  {
+   "tag": "STG intact M=128 F=(15, 16)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 384,
+   "units": 271,
+   "time": 1.6,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG punct M=128 F=(15, 16)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 382,
+   "units": 267,
+   "time": 1.7,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG intact M=128 F=(21, 22)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 384,
+   "units": 277,
+   "time": 1.7,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG punct M=128 F=(21, 22)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 382,
+   "units": 273,
+   "time": 1.5,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG intact M=128 F=(3, 4) (Q1)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 384,
+   "units": 259,
+   "time": 2.0,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG intact M=128 F=(3, 5) (Q1)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 384,
+   "units": 259,
+   "time": 0.9,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG intact M=128 F=(19, 27) (Q1)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 384,
+   "units": 278,
+   "time": 1.2,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG intact M=128 F=(21, 25) (Q1)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 384,
+   "units": 278,
+   "time": 0.6,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG intact M=128 F=(5, 9) (Q1)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 384,
+   "units": 262,
+   "time": 0.9,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG punctB M=128 F=(21, 22) (Q3)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 382,
+   "units": 273,
+   "time": 1.7,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG punctB M=128 F=(3, 5) (Q3)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 382,
+   "units": 253,
+   "time": 0.9,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG punct_all4 M=128 F=(21, 22) (Q3)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 380,
+   "units": 269,
+   "time": 1.6,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG punct_all4 M=128 F=(3, 5) (Q3)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 380,
+   "units": 251,
+   "time": 0.7,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG punct8_arb M=128 F=(21, 22) (Q3)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 376,
+   "units": 263,
+   "time": 1.6,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG punct8_arb M=128 F=(3, 5) (Q3)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 376,
+   "units": 244,
+   "time": 1.0,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG intact M=256 F=(15, 16)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 768,
+   "units": 527,
+   "time": 16.3,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG punct M=256 F=(15, 16)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 766,
+   "units": 523,
+   "time": 12.1,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG intact M=256 F=(21, 22)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 768,
+   "units": 533,
+   "time": 16.7,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "STG punct M=256 F=(21, 22)",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "n": 766,
+   "units": 529,
+   "time": 15.0,
+   "match": true,
+   "mode": "lazy",
+   "solver": "Cadical195"
+  },
+  {
+   "tag": "RUNG-X gm/B t=9 (rebuilt instance)",
+   "n": 1280,
+   "units": 137,
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "match": true,
+   "time": 1307.7,
+   "rounds": 246,
+   "mode": "lazy",
+   "solver": "Cadical195 (campaign CEGAR loop on G4c-rebuilt instance; G4c fresh-loop runs were killed by session harness / see g4c_hedge_gm.log)"
+  }
+ ]
+}

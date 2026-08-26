@@ -1,0 +1,82 @@
+{
+ "ok": true,
+ "rows": [
+  {
+   "tag": "B intact M=256",
+   "n": 256,
+   "units": 3,
+   "mode": "complete",
+   "solver": "Glucose42",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "match": true,
+   "time": 2.4
+  },
+  {
+   "tag": "B minusboth M=256",
+   "n": 254,
+   "units": 3,
+   "mode": "complete",
+   "solver": "Glucose42",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "match": true,
+   "time": 2.5
+  },
+  {
+   "tag": "D OG5 M=256 F=31,32",
+   "n": 256,
+   "units": 31,
+   "mode": "complete",
+   "solver": "Glucose42",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "match": true,
+   "time": 2.5
+  },
+  {
+   "tag": "1block M=256 F=21,22",
+   "n": 256,
+   "units": 21,
+   "mode": "complete",
+   "solver": "Glucose42",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "match": true,
+   "time": 2.5
+  },
+  {
+   "tag": "chain M=256 F=(65, 66)",
+   "n": 256,
+   "units": 65,
+   "mode": "complete",
+   "solver": "Glucose42",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "match": true,
+   "time": 2.5
+  },
+  {
+   "tag": "chain M=256 F=(100, 101)",
+   "n": 256,
+   "units": 100,
+   "mode": "complete",
+   "solver": "Glucose42",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "match": true,
+   "time": 2.4
+  },
+  {
+   "tag": "chain M=256 F=(129, 130)",
+   "n": 256,
+   "units": 129,
+   "mode": "complete",
+   "solver": "Glucose42",
+   "verdict": "UNSAT",
+   "expect": "UNSAT",
+   "match": true,
+   "time": 2.3
+  }
+ ]
+}
