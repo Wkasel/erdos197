@@ -246,6 +246,10 @@ two-ladder template — a plausible UNIFORM off-diagonal metatheorem:
 "every lane law of §3 is witnessed by a two-half phase clash at v*
 with two-ladder Lemma-D closure."
 
+## 6. THE TEMPLATE SWEEP (e124m): the mechanism across all cells
+
+[filled in below after the run — see §6-results]
+
 ## 7. THIRD HAND SCHEMA: the ODD class falls (lane C at x = 11)
 
 The presumed-hard case — odd M, where no integer m0 = 3M/2 exists —
@@ -282,20 +286,23 @@ on THREE classes (0, 2, 5 mod 8) spanning ALL parity regimes (even
 m0, odd m0, half-integer center).  Nothing about the remaining five
 {11,12} classes looks different in kind.
 
-### 4.5 → 6. What remains open on this front
+## 8. What remains open on this front
 
-  - The other seven residue cells per pair as HAND schemas: the lane
-    laws of §3 are exact machine statements (uniform, thresholded);
-    each wants its own half/flood anatomy.  The B2/B6/C lanes at
-    x = 11 are natural next targets (≡ 2 mod 4 classes, odd class).
-  - The ≡ 2 mod 4 flip classes: m0 = 3M/2 is ODD there; the entire
-    notes/33 toolkit (even center m0, odd ladder about it) needs its
-    parity-dual.  Nothing conceptually new expected, but it is real
-    work (the B2(11) anatomy is the right first probe: same e124d
-    minimal-halves scan at M ≡ 2 mod 8).
-  - Odd M (lane C): no integer m0 at all — the phase battleground
-    must be a different value (probably m0 ± 1/2's neighbours, i.e.
-    the pair (3M±1)/2).  Farthest from current technology.
+(Rewritten end-of-session; the original list's items 2 and 3 — the
+≡ 2 mod 4 flip classes and odd M — were both CLOSED, §5 and §7.)
+
+  - Cells the e124m sweep leaves unclosed (see §6-results): each
+    needs either a bespoke anatomy (different v*/center) or a wider
+    ladder pool — no sign yet of a conceptual obstruction.
+  - Remaining {11,12} cells beyond the sweep, then per-pair
+    completion: the goal state is all 8 residues × all pairs.  The
+    honest quantifier gap for Case 1 remains INFINITELY MANY pairs:
+    the lane laws slide mod 8 uniformly (statement per lane, x free),
+    so the right endgame is a PARAMETRIC schema verification along
+    each lane (e123-style: constants affine in x), not per-cell.
   - Pairs x ≡ 7 mod 8 off the diagonal (x = 23, 31, ...): outside
     the e122 catalogue; extend e122 to x = 23..29 and check the lane
     laws extrapolate (they should: catalogues are mod-8 periodic).
+  - The Case-1 composition ALSO needs the T-PIN side per pair (the
+    attackers block-ordered before the 1-clean block) — unchanged,
+    N1 territory, not this front's gap.

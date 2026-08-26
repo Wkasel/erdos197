@@ -45,6 +45,12 @@ CELLS = [
     ("A4d(19)_r0", 19, [(9, 5), (10, 5), (11, 4), (14, 3)], 0, 32),
     ("B6(21)_r0", 21, [(13, 4), (15, 3), (20, 1)], 0, 32),
     ("A4d(13)_r2", 13, [(3, 5), (4, 5), (5, 4), (8, 3)], 2, 26),
+    # the three remaining ODD cells of {11,12} (with C(11)_r5 verified
+    # in e124p, these complete all four odd residues); center = 3M//2
+    # = c- for odd M (floor), which e124n showed is the right center.
+    ("K11_r1", 11, [(0, 6), (3, 4), (5, 3)], 1, 41),
+    ("K11_r3", 11, [(1, 5), (4, 4), (7, 2)], 3, 27),
+    ("K11_r7", 11, [(4, 4), (6, 3), (9, 1)], 7, 31),
 ]
 
 
@@ -175,17 +181,48 @@ def main():
             out["cells"].append({"cell": name, "ok": False, "vstar": i,
                                  "reason": "no ladder pair"})
             continue
-        # verify at 8 scales + 4 controls
+        # verify at 8 scales + 4 controls; on a branch failure at some
+        # scale, re-search ladders with that scale included (a pair can
+        # close at the searched scales yet fail between them -- the
+        # B6(13) M=40 lesson) and re-verify, up to 3 rounds.
         vMs = in_class_scales(M0, K, 8)
         cMs = in_class_scales(M0 + 4, K, 4)
-        fails = []
-        for m in vMs:
+        for _round in range(3):
+            fails = []
+            for m in vMs:
+                for hn, S, pp in halves:
+                    sv = branches_ok(m, seeds_for(m, S, pp), choice[hn])
+                    if sv:
+                        fails.append((m, hn, sv))
+                if m <= 80 and not solver_check(m, K,
+                                                expect_unsat=True):
+                    fails.append((m, "solver", "expected UNSAT"))
+            br_fails = [f for f in fails if f[1] in ("hi", "lo")]
+            if not br_fails or any(f[1] == "solver" for f in fails):
+                break
+            retryMs = sorted(set(testMs) | {f[0] for f in br_fails})
+            redo = {f[1] for f in br_fails}
+            ok_retry = True
             for hn, S, pp in halves:
-                sv = branches_ok(m, seeds_for(m, S, pp), choice[hn])
-                if sv:
-                    fails.append((m, hn, sv))
-            if m <= 80 and not solver_check(m, K, expect_unsat=True):
-                fails.append((m, "solver", "expected UNSAT"))
+                if hn not in redo:
+                    continue
+                found = None
+                for sz in (2, 3):
+                    for combo in itertools.combinations(
+                            ("O", "E", "Q1", "Q3", "Q2", "Q4"), sz):
+                        if all(branches_ok(m, seeds_for(m, S, pp),
+                                           combo) == 0
+                               for m in retryMs):
+                            found = combo
+                            break
+                    if found:
+                        break
+                if found is None:
+                    ok_retry = False
+                else:
+                    choice[hn] = found
+            if not ok_retry:
+                break
         ctrl = []
         for m in cMs:
             sv = sum(branches_ok(m, seeds_for(m, S, pp), choice[hn])
