@@ -600,6 +600,155 @@ def partC(only=None):
 
 
 # ----------------------------------------------------------------------
+# Part C3: coupled complementary coloring over THREE consecutive blocks
+# ----------------------------------------------------------------------
+
+def solve_coupled3(M, kb_frac_num, kb_frac_den, budget=3600.0):
+    """B0 = (M, 2M], B1 = (2M, 4M], B2 = (4M, 8M].  Same as Part C but
+    with THREE blocks and TWO seams: coloring c_v in {A, B}; each team
+    its own order; guarded APs (all three in team); block-order units
+    at BOTH seams (B0 < B1 < B2 within each team — double
+    non-procrastination); balance: each team owns >= (num/den) of EACH
+    block.  SAT <=> a coloring + two orders escape the 2-seam coupling."""
+    V = sorted(range(M + 1, 8 * M + 1))
+    n = len(V)
+    idx = {v: i for i, v in enumerate(V)}
+    offA, top = _mk_vars(n, start=1)
+    offB, top = _mk_vars(n, start=top + 1)
+    ai = {}
+    for v in V:
+        top += 1
+        ai[v] = top
+
+    def litT(off):
+        def lit(u, w):
+            i, j = idx[u], idx[w]
+            return off[(i, j)] if i < j else -off[(j, i)]
+        return lit
+
+    litA, litB = litT(offA), litT(offB)
+    Vs = set(V)
+    B0 = [v for v in V if v <= 2 * M]
+    B1 = [v for v in V if 2 * M < v <= 4 * M]
+    B2 = [v for v in V if v > 4 * M]
+    cls = []
+    for team, lit, g in (('A', litA, lambda v: -ai[v]),
+                         ('B', litB, lambda v: ai[v])):
+        for b in V:
+            for d in range(1, min(b - V[0], V[-1] - b) + 1):
+                a, c = b - d, b + d
+                if a in Vs and c in Vs:
+                    gg = [g(a), g(b), g(c)]
+                    cls.append(gg + [-lit(a, b), -lit(b, c)])
+                    cls.append(gg + [lit(a, b), lit(b, c)])
+        for lowblk, highblk in ((B0, B1), (B1, B2), (B0, B2)):
+            for u in lowblk:
+                for w in highblk:
+                    cls.append([g(u), g(w), lit(u, w)])
+    for off in (offA, offB):
+        for i in range(n):
+            for j in range(i + 1, n):
+                xij = off[(i, j)]
+                for kk in range(j + 1, n):
+                    cls.append([-xij, -off[(j, kk)], off[(i, kk)]])
+                    cls.append([xij, off[(j, kk)], -off[(i, kk)]])
+    import math
+    cards = []
+    tid = top
+    bounds = {}
+    for blkname, blk in (('B0', B0), ('B1', B1), ('B2', B2)):
+        bnd = math.ceil(kb_frac_num * len(blk) / kb_frac_den)
+        bounds[blkname] = bnd
+        for sign in (1, -1):
+            enc = CardEnc.atleast(lits=[sign * ai[v] for v in blk],
+                                  bound=bnd, top_id=tid,
+                                  encoding=EncType.seqcounter)
+            tid = enc.nv if enc.nv > tid else tid
+            cards += enc.clauses
+    t0 = time.time()
+    with Cadical195(bootstrap_with=cls) as s:
+        for c in cards:
+            s.add_clause(c)
+        ok = s.solve()
+        el = round(time.time() - t0, 1)
+        if not ok:
+            return 'UNSAT', el, {'bounds': bounds}
+        model = set(l for l in s.get_model() if l > 0)
+    colA = [v for v in V if ai[v] in model]
+    colB = [v for v in V if ai[v] not in model]
+    posneg = lambda l: (l in model) if l > 0 else (abs(l) not in model)
+    info = {'A': colA, 'B': colB, 'bounds': bounds}
+    for team, lit, col in (('A', litA, colA), ('B', litB, colB)):
+        wins = {v: 0 for v in col}
+        for i, u in enumerate(col):
+            for w in col[i + 1:]:
+                if posneg(lit(u, w)):
+                    wins[u] += 1
+                else:
+                    wins[w] += 1
+        order = sorted(col, key=lambda v: -wins[v])
+        err = check_coupled3_team(order, col, M, bounds)
+        if err:
+            return 'WITNESS-FAIL', el, {'team': team, 'werr': err}
+        info[f'order{team}'] = order
+    return 'SAT', el, info
+
+
+def check_coupled3_team(order, col, M, bounds):
+    b0 = [v for v in col if v <= 2 * M]
+    b1 = [v for v in col if 2 * M < v <= 4 * M]
+    b2 = [v for v in col if v > 4 * M]
+    if (len(b0) < bounds['B0'] or len(b1) < bounds['B1']
+            or len(b2) < bounds['B2']):
+        return (f'balance violated ({len(b0)}, {len(b1)}, {len(b2)})'
+                f' < {bounds}')
+    p = {v: i for i, v in enumerate(order)}
+    for low, high in ((b0, b1), (b1, b2), (b0, b2)):
+        for u in low:
+            for w in high:
+                if p[u] > p[w]:
+                    return f'block order violated ({u}, {w})'
+    vals = sorted(col)
+    vs = set(vals)
+    for b in vals:
+        for d in range(1, min(b - vals[0], vals[-1] - b) + 1):
+            a, c = b - d, b + d
+            if a in vs and c in vs:
+                if p[a] < p[b] < p[c] or p[c] < p[b] < p[a]:
+                    return f'monotone AP {(a, b, c)}'
+    return None
+
+
+def partC3(only=None):
+    print('== e120 PART C3: 3-block / 2-seam coupled coloring ==',
+          flush=True)
+    out = {'part': 'C3', 'rows': []}
+    for M in (16, 24, 32):
+        tag = f'C3 M={M}'
+        if only and only not in tag:
+            continue
+        v, el, info = solve_coupled3(M, 1, 2)   # exact balance
+        row = {'tag': tag, 'M': M, 'balance': '1/2', 'verdict': v,
+               'time': el, 'bounds': info.get('bounds')}
+        if v == 'SAT':
+            row['A_sizes'] = [
+                len([x for x in info['A'] if x <= 2 * M]),
+                len([x for x in info['A'] if 2 * M < x <= 4 * M]),
+                len([x for x in info['A'] if x > 4 * M])]
+            row['colorA'] = info['A']
+        if v == 'WITNESS-FAIL':
+            row['werr'] = info.get('werr')
+        out['rows'].append(row)
+        stream(row)
+        print(f'  {tag} balance=1/2: {v} [{el}s]'
+              + (f" A sizes {row.get('A_sizes')}" if v == 'SAT' else ''),
+              flush=True)
+        with open(os.path.join(DATA, 'e120_C3.json'), 'w') as f:
+            json.dump(out, f, indent=1)
+    return out
+
+
+# ----------------------------------------------------------------------
 # Part E: fixed pair, TWO-block STG window, per-block density dial
 # ----------------------------------------------------------------------
 
@@ -749,6 +898,8 @@ def main():
         partB(args.only)
     elif args.part == 'C':
         partC(args.only)
+    elif args.part == 'C3':
+        partC3(args.only)
     elif args.part == 'D':
         partD(args.only)
     elif args.part == 'E':
