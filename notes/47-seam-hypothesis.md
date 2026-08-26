@@ -132,7 +132,7 @@ pairs by Roth/Behrend, so o(N²) caps this construction family.)
 
 **Verdict on the normalization route: lem:normal generalizes (N-GEN),
 the hypothesis does not follow, and no single-team statement — DNP or
-DNP(v) for any budget v(N) up to Θ(N) — is true.**  Any proof of DNP
+DNP(v) for any budget v(N) up to N^{1−o(1)} — is true.**  Any proof of DNP
 must use both teams jointly and the Case-2 density floor; the
 counterexample teams are AP-free-sparse, and their co-teams are dead
 (the complement of {2^j} contains the reflector-1 orbit 3, 5, 9, 17,
@@ -328,14 +328,13 @@ N-program) not a seam question at all.
    attacked via v*(M) → ∞ (if true): every valid pair then pays
    diverging procrastination at every anchor — an obligation with
    anatomy, not a possibility.
-2. **The asymmetric question is the leverage point**: if the core stays
-   UNSAT with one team's budget unconstrained, the hypothesis needed
-   drops to SINGLE-team cleanness i.o. — still false for sparse teams
-   (§1), but a Case-2 minority is NOT free: its density diverges, and
-   a dense-enough team cannot be 3-AP-free-sparse in its own window
-   (its in-window AP theory is nonempty).  The re-descent rung family
-   should be built HERE: window gadget + "team T has ≥ p in each block
-   and ≤ v inversions" with (p, v) both dialed.
+2. **The asymmetric leverage point is DEAD (measured, §4)**: both
+   one-sided budget variants are SAT at v = 0, so there is no
+   single-team finite core at any density assignment tried.  What
+   replaces it is the regime map (§4b): sub-linear minorities are not
+   a seam problem at all (density rungs), and the two-sided budget at
+   ε-balance is the honest remaining instrument.  The (p, v)-dial
+   gadget of the old route lives on as the ε-balance v* trend.
 3. **The exposure rung (L-EXPOSE, next experiment)**: an inversion pair
    with u, u±1 both late re-creates the generic-pair geometry INSIDE
    the window — check by machine whether witnesses' late sets are
