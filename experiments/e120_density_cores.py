@@ -604,7 +604,7 @@ def partC(only=None):
 # ----------------------------------------------------------------------
 
 def solve_coupled3(M, kb_frac_num, kb_frac_den, budget=3600.0,
-                   seams='both', abs_bounds=None):
+                   seams='both', abs_bounds=None, support=None):
     """B0 = (M, 2M], B1 = (2M, 4M], B2 = (4M, 8M].  Same as Part C but
     with THREE blocks and TWO seams: coloring c_v in {A, B}; each team
     its own order; guarded APs (all three in team); block-order units
@@ -612,8 +612,13 @@ def solve_coupled3(M, kb_frac_num, kb_frac_den, budget=3600.0,
     non-procrastination); balance: each team owns >= (num/den) of EACH
     block.  SAT <=> a coloring + two orders escape the 2-seam coupling.
     seams: 'both' | 'low' (only B0<B1) | 'high' (only B1<B2) |
-    'none' (no block-order units — pure 3-octave window control)."""
+    'none' (no block-order units — pure 3-octave window control).
+    support: optional subset of the window — only these values exist
+    (deleted values belong to NEITHER team; used for deletion-minimal
+    support extraction).  abs_bounds then apply to surviving values."""
     V = sorted(range(M + 1, 8 * M + 1))
+    if support is not None:
+        V = sorted(set(V) & set(support))
     n = len(V)
     idx = {v: i for i, v in enumerate(V)}
     offA, top = _mk_vars(n, start=1)
