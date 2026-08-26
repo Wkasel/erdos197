@@ -1,0 +1,7 @@
+edge rho1=1, dial k2 (of 64 ):
+  intact: UNSAT [0.1s]
+  k2=32: UNSAT [0.2s] drop2= None
+  UNSAT already at k2=M — block2 half-density suffices with intact block1
+edge rho2=1, dial k1 (of 32 ):
+  k1=16: UNSAT [0.2s] drop1= 
+  k1=1: UNSAT [0.2s]
