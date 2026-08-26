@@ -1,1 +1,2 @@
 C3abs M=80 bounds=(2,2,2): UNSAT [1414s]
+C3abs M=96 bounds=(2,2,2): UNSAT [6420s]
