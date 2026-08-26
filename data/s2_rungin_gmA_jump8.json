@@ -1,0 +1,22 @@
+{
+ "n": 159,
+ "aps": 6241,
+ "units": 34,
+ "result": "UNSAT",
+ "rounds": 16,
+ "time": 1.2,
+ "kind": "rung_in",
+ "schedule": "gm",
+ "team": "A",
+ "r": 8,
+ "interval": [
+  130,
+  288
+ ],
+ "neck": -30,
+ "pair": [
+  4,
+  5
+ ],
+ "n_units": 34
+}

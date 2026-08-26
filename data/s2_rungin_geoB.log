@@ -1,0 +1,5 @@
+== CHECK 5: RUNG-IN (fixed-pair in-interval rungs) ==
+  RUNG-IN geo/B r=7 I=(72,144] neck=0 pair=(21, 22): UNSAT [0.1s n=72 units=21]
+  RUNG-IN geo/B r=9 I=(272,544] neck=0 pair=(21, 22): UNSAT [6.0s n=272 units=21]
+  RUNG-IN geo/B r=11 I=(1056,2112] neck=0 pair=(21, 22): UNSAT [337.4s n=1056 units=21]
+saved data/s2_rungin_geoB.json

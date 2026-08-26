@@ -1,0 +1,1 @@
+{"n": 1013, "aps": 256036, "units": 7, "result": "SAT", "rounds": 449, "time": 589.0, "witness_verified": true, "schedule": "lin", "t": 11, "M": 1024, "s": 11, "cs": [15], "attackers": [37], "ext_sliver": false}

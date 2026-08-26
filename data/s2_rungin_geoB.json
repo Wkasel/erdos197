@@ -1,0 +1,70 @@
+{
+ "rungin": [
+  {
+   "n": 72,
+   "aps": 1260,
+   "units": 21,
+   "result": "UNSAT",
+   "rounds": 19,
+   "time": 0.1,
+   "kind": "rung_in",
+   "schedule": "geo",
+   "team": "B",
+   "r": 7,
+   "interval": [
+    73,
+    144
+   ],
+   "neck": 0,
+   "pair": [
+    21,
+    22
+   ],
+   "n_units": 21
+  },
+  {
+   "n": 272,
+   "aps": 18360,
+   "units": 21,
+   "result": "UNSAT",
+   "rounds": 17,
+   "time": 6.0,
+   "kind": "rung_in",
+   "schedule": "geo",
+   "team": "B",
+   "r": 9,
+   "interval": [
+    273,
+    544
+   ],
+   "neck": 0,
+   "pair": [
+    21,
+    22
+   ],
+   "n_units": 21
+  },
+  {
+   "n": 1056,
+   "aps": 278256,
+   "units": 21,
+   "result": "UNSAT",
+   "rounds": 67,
+   "time": 337.4,
+   "kind": "rung_in",
+   "schedule": "geo",
+   "team": "B",
+   "r": 11,
+   "interval": [
+    1057,
+    2112
+   ],
+   "neck": 0,
+   "pair": [
+    21,
+    22
+   ],
+   "n_units": 21
+  }
+ ]
+}

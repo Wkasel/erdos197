@@ -1,0 +1,28 @@
+{
+ "neck": {
+  "lemma": "NECK exactness: fixed-x attacks on I_r are exactly the two neck channels",
+  "cases": [
+   {
+    "sched": "lin",
+    "checked": 120,
+    "mismatches": 0
+   },
+   {
+    "sched": "geo",
+    "checked": 120,
+    "mismatches": 0
+   },
+   {
+    "sched": "frac",
+    "checked": 120,
+    "mismatches": 0
+   },
+   {
+    "sched": "gm",
+    "checked": 120,
+    "mismatches": 0
+   }
+  ],
+  "pass": true
+ }
+}

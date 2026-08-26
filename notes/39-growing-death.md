@@ -15,13 +15,20 @@ reflectors / scale-adapted attackers, and exactly under what condition?
    many DISTINCT reflector values past exponentially larger orbit
    elements.  Growth alone can never be a death certificate; forced
    *early placement* can.
-2. The crown/order-gadget mechanism DOES extend, with the attacker
-   varying by scale (x_t = 2 s_t + c), provided the per-scale gadgets
-   SG(t, c) on the TRUNCATED interval (2^{t-1} + s_t, 2^t] stay
-   infeasible.  The fixed-attacker pigeonhole of thm:ogred is replaced
-   by a new overflow argument — an infinite position regress up the
-   value scale (T-REGRESS) — which needs no fixed attacker at all.
-   The machine rungs (this session) are in §5.
+2. The crown/order-gadget mechanism DOES extend — but in FIXED-PAIR
+   form, not the expected scale-adapted form.  Teams are interval
+   unions with necks n_r = 2 s_r − s_{r+1}; the NECK lemma (§4) shows
+   every schedule leaves some team attacked by a fixed pair of its own
+   values at infinitely many scales (bounded necks: in-interval;
+   unbounded: across the seams), and T-PIN (thm:ogred's pigeonhole
+   verbatim) reduces death to per-scale finite UNSAT rungs.  The
+   scale-adapted route (x_t = 2 s_t + c with a position-regress
+   overflow, T-REGRESS §4b) is closed by machine: single-attacker
+   rungs are SAT everywhere, only PAIRS force, and pair conclusions
+   admit a per-scale sacrifice.  Machine rungs (§5): pair rungs UNSAT
+   at 4 schedules × 3 scales; RUNG-IN geo/B UNSAT at 3 scales — geo is
+   dead modulo its rung family; C3's own core dies under truncation,
+   so the rungs ride a new, unknown core (the next-C3 crux).
 
 Everything below is machine-checked by experiments/s2_growing_death.py
 (data/s2_*.json); the checks are cited inline.
@@ -186,7 +193,16 @@ Schedule map: lin (n_r = r − 1 → ∞ both parities) and frac and gm
 n_r = 0 on odd r — team B pierced in-interval by any fixed pair (its
 intervals have neck 0) while team A escapes all fixed attacks (necks
 → ∞ on its parity, 0 on the other); one attacked team suffices, since
-a partition needs both teams permutable.
+a partition needs both teams permutable.  gm's stage jumps have
+n_r < 0 (r = 8: −30; r = 15: −4032): there EVERY in-team value attacks
+the jump interval in-interval.
+
+Machine (CHECK 8, data/s2_neck.json): on the real team sets of all
+four schedules, r = 8..13, every in-team x ≤ 40: brute-force attack
+enumeration matches the two channel predictions EXACTLY — existence
+iffs, exact counts ((x − n_r)/2-style formulas), and channel
+completeness (no completion 2y − x, y ∈ I_r, lands in-team outside
+I_r ∪ I_{r+2}).  480 (r, x) points, 0 mismatches.
 
 **Theorem T-PIN (pigeonhole, thm:ogred's argument verbatim).**  If team
 T contains a fixed pair {a, a+1} attacking at infinitely many scales,
@@ -231,9 +247,11 @@ route in a precise way (§5):
   at every scale (distinct values ⇒ unbounded positions permitted —
   exactly the T-SHARP procrastination escape).  Quantitatively the
   sacrifice is expensive (with x₁ early, the sacrificed x₂ must follow
-  > 64 of the 247 window elements at t = 9, threshold in (64, 128],
-  and the SAT witness cohort at k = 128 is a union of mod-8 residue
-  classes — the C3 g-class structure in vivo) but never impossible.
+  > 64 of the 247 window elements at t = 9: UNSAT for sacrifice bound
+  k ≤ 64, SAT at k = 96, so the forced depth lies in (64, 96]; the
+  k = 96 witness cohort preceding x₂ is 96 window values, ALL odd, and
+  at k = 128 it is all 123 odd values plus two ≡ 6 (mod 8) — the C3
+  g-class hierarchy in vivo) but never impossible.
 So varying attackers fire per scale only in pair form, and pair
 conclusions do not overflow.  The neck lemma makes this moot: fixed
 pairs never stopped existing — they just moved to the seams.
@@ -297,15 +315,112 @@ Three structural remarks.
 
 **Relation to C3.**  The pair {x_1, x_2} = {2s_t+15, 2s_t+16} forces
 exactly the C3-shifted core {2M−5 ≺ M+s+5, 2M−3 ≺ M+s+6,
-2M−10 ≺ M+s+3} among its attacks (completions are s-independent).  So
-"thm:c3core survives truncation of the bottom s_t values" ⇒ pair rungs;
-the single-attacker rungs (c = 15 alone, etc.) are the cleaner currency
-for T-REGRESS since a value v is ONE attacker, not a pair (and its
-neighbor v±1 may belong to the partner).
+2M−10 ≺ M+s+3} among its attacks (completions are s-independent), so
+"thm:c3core survives truncation of the bottom s_t values" would have
+implied the pair rungs for free.  The machine KILLS the transfer
+(§5, CHECK 4b): the C3-shifted core is SAT at lin t = 9, 10, 11 while
+the full pair system stays UNSAT — under truncation the UNSAT
+certificate migrates to a different, currently unknown core.  The
+single-attacker rungs (c = 15 alone, etc.) would have been the cleaner
+currency for T-REGRESS since a value v is ONE attacker, not a pair
+(and its neighbor v±1 may belong to the partner) — but they are SAT
+everywhere tested (§5).
 
-## 5. Machine rungs (CHECK 4/4b)
+## 5. Machine rungs (CHECK 4–7)
 
-RESULTS_PLACEHOLDER
+Every instance is a finite linear-order system built by
+experiments/s2_growing_death.py and solved with Cadical195 under lazy
+transitivity (UNSAT-sound: the CEGAR loop only ever ADDS clauses; every
+SAT row carries an explicitly re-verified witness order).  All rows
+stream to data/s2_sg_rungs.jsonl.
+
+**Controls (s = 0: the untruncated OG window (M, 2M]).**  Pair
+{15, 16}: UNSAT at M = 256 (7 s) and M = 512 (163 s) — thm:ogred's
+finite core reproduced by this code path.  Singles c = 3, and c = 15
+and c = 16 ALONE: SAT with verified witnesses — the pair phenomenon
+is intrinsic already in the classic window (OG's "dropping either
+guard family → SAT", reproduced).
+
+**CHECK 4 — pair rungs SG(t, {15, 16}), attackers x = 2 s_t + 15/16:
+UNSAT at 4 schedules × 3 scales, no exception.**
+
+| schedule (s_9/s_10/s_11) | t = 9 | t = 10 | t = 11 |
+|---|---|---|---|
+| lin  (9/10/11)    | UNSAT n=247, x=33,34 [18 s]   | UNSAT n=502, x=35,36 [216 s]   | UNSAT n=1013, x=37,38 [742 s] |
+| geo  (16/32/32)   | UNSAT n=240, x=47,48 [13 s]   | UNSAT n=480, x=79,80 [150 s]   | UNSAT n=992, x=79,80 [582 s]  |
+| frac (56/102/186) | UNSAT n=200, x=127,128 [5 s]  | UNSAT n=410, x=219,220 [73 s]  | UNSAT n=838, x=387,388 [191 s]|
+| gm   (32/32/32)   | UNSAT n=224, x=79,80 [5 s]    | UNSAT n=480, x=79,80 [150 s]   | UNSAT n=992, x=79,80 [585 s]  |
+
+Truncation never rescues the pair gadget — not even frac's
+s_t = 2M/t (22 % of the block gone at t = 9, attackers pushed to
+x ≈ M/2).
+
+**CHECK 4 — single rungs SG(t, (c)): SAT everywhere tested.**
+c ∈ {15, 16, 17, 18} at t = 9, 10 for all four schedules; c = 15 at
+lin t = 11; wide probes c ∈ {63, 64} (geo, gm); offset scan at lin
+t = 9 up to c = 200 (c = 32, 64, 96, 110, 128, 160, 200 — attacker x
+up to 218 against window bottom 266): SAT with verified witnesses,
+every one (data/s2_single_cscan_t9.json, s2_single_t11.json).
+Per-VALUE forcing fails: hypothesis (i) of T-REGRESS is false at every
+point tested, for every schedule — the regress route is closed by
+machine, not saved by it.
+
+**CHECK 4b — the C3 core does NOT survive truncation.**  Control s = 0
+(= thm:c3core, M = 512): UNSAT [67 s].  The C3-shifted 3-precedence
+core at lin t = 9/10/11 (s = 9/10/11): SAT with verified witnesses
+[1.5 / 164 / 38 s].  Truncating merely 9 of 256 bottom values already
+revives the C3 core, while the full pair system above stays UNSAT: the
+UNSAT certificate migrates to a different, currently unknown core.
+
+**CHECK 7 — sacrifice depth (how pair-only the forcing is).**  lin
+t = 9, x₁ = 33 early, x₂ = 34 allowed at most k window predecessors:
+UNSAT for k ∈ {0, 1, 2, 4, 8, 16, 32, 64}, SAT at k = 96 — the forced
+sacrifice depth lies in (64, 96] of a 247-element window (classic
+s = 0 control: same shape, UNSAT k ≤ 32 tested).  The k = 96 witness
+cohort preceding x₂ is 96 values, ALL odd (mod-8 residues {1,3,5,7});
+at k = 128 it is all 123 odd values plus two ≡ 6 (mod 8) — C3's
+g-class hierarchy (odd leaves first, then 6 mod 8) appearing in an
+adversarial witness nobody asked to be structured.
+(data/s2_sacrifice_t9.json, s2_sac_t9_hi.json)
+
+**CHECK 5 — RUNG-IN (fixed-pair in-interval rungs): UNSAT at every
+bounded/negative-neck point tested.**
+- geo/B, fixed pair {21, 22} ⊂ B, neck-0 intervals I_r =
+  (2^{r-1} + s_r, 2^r + s_{r+1}], 21 units each:
+  r = 7 UNSAT [0.1 s, n=72], r = 9 UNSAT [6 s, n=272], r = 11 UNSAT
+  [337 s, n=1056].  The unit count is SCALE-INDEPENDENT (≈ x/2 per
+  attacker) while the window doubles — a bounded core on a growing
+  interval, exactly the shape thm:c3core conquered for full blocks.
+  If the rungs hold at all large odd r, T-PIN kills geo/B and hence
+  the geo schedule.
+- gm/A at the stage-jump octave r = 8 (neck −30 < 0: EVERY in-team
+  value attacks in-interval), pair {4, 5} ⊂ A: UNSAT [1.2 s, n=159,
+  34 units] (data/s2_rungin_gmA_jump8.json).  Whether jump rungs kill
+  gm hinges on which parity the sparse jump octaves recur at — stage
+  arithmetic, not order theory.
+
+**CHECK 6 — RUNG-X (fixed-set seam rungs, growing-neck parities).**
+Instances launched: lin/B t = 9 (seam I_9 ∪ I_11, n = 1282, fixed set
+{1, 3, 4, 8}, 11 units), gm/B t = 9 (plateau neck 32, fixed 20-attacker
+set x ≤ 31, 137 units, n = 1280), frac/B t = 9 (n = 1481, 52 units).
+Solvers still IN FLIGHT at session close (budget 5400 s each; results
+land in data/s2_rungx_{linB,gmB,fracB}.json + .log and
+s2_sg_rungs.jsonl when done).  The unit-density arithmetic already
+separates the cases: lin/frac seam units grow like n_{t+1}/2 = Θ(t)
+against windows of size Θ(2^t) — vanishing density, so small-scale SAT
+(inconclusive) is the expected verdict, and death for lin/frac would
+have to couple consecutive seams (that composite IS the §3 sliver
+orbit, closed by T-SHARP) or find a richer core; gm's plateau seams
+carry a FIXED cohort of ~M_{k−1} attackers with Θ(s) units — the one
+seam family with OG-like density, and the best UNSAT candidate.
+
+**Verdict of the rungs.**  The fixed-attacker pigeonhole is alive and
+scale-robust exactly where the NECK lemma predicts: pair cores survive
+arbitrary truncation (CHECK 4), bounded-neck interval rungs fire at
+every scale tested (CHECK 5), and the escapes that would void a
+varying-attacker argument (single-SAT, sacrifice, C3-migration) are
+all machine-real (CHECK 4/4b/7) — death must ride FIXED pairs, and
+does, wherever the per-scale core is rich enough.
 
 ## 6. What is provable now — the honest map
 
@@ -315,28 +430,52 @@ RESULTS_PLACEHOLDER
   exactly sharp at |F| < ∞.  SLIVER-ORBIT: the exact schedule
   inequality; geo/A and gm are orbit-free, lin and frac carry slow
   orbits on both teams (which by T-SHARP proves nothing by itself).
-- **Provable conditionally (rungs → death):**  T-REGRESS.  The proof
-  above is complete except for hypothesis (i), an infinite family of
-  finite UNSAT statements — the same epistemic shape as thm:ogred +
-  thm:c3core before the C3 hand proof, with the pigeonhole upgraded to
-  the position regress.  Coverage (ii) is pure arithmetic and settled
-  per schedule (full for lin; bounded-ratio window needed for geo/frac;
-  gm has holes).
+  Lemma NECK: every schedule leaves some team fixed-pair-attacked at
+  infinitely many scales — the attack surface conserved in exact form.
+  T-PIN: fixed-pair rungs at infinitely many scales ⇒ death (the
+  thm:ogred pigeonhole, verbatim).
+- **Provable conditionally (rungs → death):**  via T-PIN — geo is dead
+  modulo the RUNG-IN family (machine-UNSAT at r = 7/9/11, fixed pair
+  {21, 22}, bounded core on growing windows): the same epistemic shape
+  as thm:ogred + thm:c3core before the C3 hand proof.  T-REGRESS
+  (varying attackers, position-regress overflow) is also a complete
+  conditional proof, but its premise — single-attacker rungs — is
+  machine-FALSE at every point tested: the theorem stands, its
+  hypothesis does not occur in this family.
 - **Not provable (dead ends, certified):**  any "growing orbit ⇒ dead"
-  theorem (T-SHARP); any fixed-attacker crown argument against growing
-  slivers (the attack window (s_t, s_t + x/2] empties once 2 s_t ≥ x).
-- **Open crux (the next C3):**  a hand schema proving SG(t, c) UNSAT
-  for the truncated intervals at all large t — the analogue of
-  thm:c3core with the block bottom shifted by s_t.  The machine rungs
-  in §5 delimit exactly for which (s_t/M, c) this holds.
+  theorem (T-SHARP); any fixed-attacker KEPT-BOTTOM crown argument
+  against growing slivers (the attack window empties once 2 s_t ≥ x —
+  but the NECK lemma re-aims the same pair at intervals or seams, so
+  this closes a proof route, not the mechanism); per-value regress
+  T-REGRESS on these schedules (single rungs SAT); transferring
+  thm:c3core to truncated windows verbatim (CHECK 4b: its core is SAT
+  already at s = 9).
+- **Open crux (the next C3):**  a hand schema proving the per-scale
+  cores UNSAT at all large scales in their family — RUNG-IN(geo-like
+  bounded-neck intervals; machine-true at 3 scales, scale-independent
+  unit count) and the pair rungs SG(t, {15, 16}) (machine-true at 12
+  schedule-scale points, core unknown since C3 dies under truncation).
+  For the growing-neck parities the seam cores (RUNG-X; solvers in
+  flight) are the analogous family — their unit density separates gm
+  (OG-like, Θ(s) units, plausible rungs) from lin/frac (Θ(log t)-sparse
+  seams, plausibly SAT forever: for those two schedules the fixed-pair
+  route needs a genuinely richer per-scale core, or a new mechanism).
 
 ## Reproduce
-    .venv/bin/python experiments/s2_growing_death.py sharp   # ~1 min
-    .venv/bin/python experiments/s2_growing_death.py orbit   # ~1 min
-    .venv/bin/python experiments/s2_growing_death.py shadow  # ~1 min
-    .venv/bin/python experiments/s2_growing_death.py sg --sg-sched lin \
-        --sg-scales 9,10,11,12 --budget 3000                 # hours
-    .venv/bin/python experiments/s2_growing_death.py c3      # hours
-Artifacts: data/s2_sharp.json, s2_orbit.json, s2_shadow.json,
-s2_sg_{lin,geo,frac,gm}.json, s2_c3.json, s2_sg_rungs.jsonl (streaming
-per-instance records), logs data/s2_sg_*.log, data/s2_c3.log.
+    PY=.venv/bin/python; S=experiments/s2_growing_death.py
+    $PY $S sharp    # ~1 min   (T-SHARP constructions, CHECK 1)
+    $PY $S shadow   # ~1 min   (L-STEP finite shadows, CHECK 2)
+    $PY $S orbit    # ~1 min   (SLIVER-ORBIT walks/blocks, CHECK 3)
+    $PY $S sg  --sg-sched lin --sg-scales 9,10,11 --budget 3000   # hours
+    $PY $S c3  --sg-sched lin --sg-scales 9,10,11                 # ~6 min
+    $PY $S rungin --sg-sched geo --team B --pair 21,22 \
+        --sg-scales 7,9,11 --budget 5400                          # ~6 min
+    $PY $S rungx  --sg-sched gm  --team B --sg-scales 9 \
+        --budget 5400                                  # seam gadgets
+    $PY $S sac --sg-sched lin --sac-t 9 --sac-ks 64,96,128        # ~1 min
+Artifacts: data/s2_sharp.json, s2_orbit.json (with full re-verifiable
+walk certificates), s2_shadow.json, s2_sg_rungs.jsonl (every
+control/rung row, streaming), s2_sacrifice_t9.json + s2_sac_t9_hi.json,
+s2_single_cscan_t9.json, s2_single_t11.json, s2_rungin_geoB.json,
+s2_rungin_gmA_jump8.json, s2_rungx_{linB,gmB,fracB}.json, logs
+data/s2_*.log.

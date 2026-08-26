@@ -564,6 +564,10 @@ def check_orbit():
                     max_s_along_walk=smax,
                     chain_head=[(t, o, k) for (t, o, k) in chain[:8]],
                     reflectors_head=refl[:8],
+                    # full certificate (values as strings: big ints) so the
+                    # walk is re-verifiable without re-searching
+                    chain_full=[[t, str(o), k] for (t, o, k) in chain],
+                    reflectors_full=[str(f) for f in refl],
                     reflectors_distinct=len(set(refl)),
                     outcome='EXISTS (certified walk, exact ints)')
             else:
@@ -677,19 +681,21 @@ def sg_c3(sched_name, t, budget=1800, s_override=None):
     return r
 
 
-def check_c3(scales=(9, 10, 11, 12), budget=3000, jsonl=None):
+def check_c3(scales=(9, 10, 11, 12), budget=3000, jsonl=None,
+             scheds=None, skip_control=False):
     out = {'lemma': 'C3-shifted core on truncated windows '
                     '(thm:c3core truncation survival)', 'cases': []}
-    # control: s=0 is the original C3 (known UNSAT at M = 0 mod 8)
-    r = sg_c3(None, 10, budget=budget, s_override=0)
-    r['want'] = 'UNSAT (original C3, M=512)'
-    out['cases'].append(r)
-    print(f"  C3 control s=0 t=10: {r['result']} [{r['time']}s]",
-          flush=True)
-    if jsonl:
-        with open(jsonl, 'a') as fh:
-            fh.write(json.dumps({'kind': 'c3', **r}, default=str) + '\n')
-    for sched_name in ('lin', 'geo', 'frac', 'gm'):
+    if not skip_control:
+        # control: s=0 is the original C3 (known UNSAT at M = 0 mod 8)
+        r = sg_c3(None, 10, budget=budget, s_override=0)
+        r['want'] = 'UNSAT (original C3, M=512)'
+        out['cases'].append(r)
+        print(f"  C3 control s=0 t=10: {r['result']} [{r['time']}s]",
+              flush=True)
+        if jsonl:
+            with open(jsonl, 'a') as fh:
+                fh.write(json.dumps({'kind': 'c3', **r}, default=str) + '\n')
+    for sched_name in (scheds or ('lin', 'geo', 'frac', 'gm')):
         for t in scales:
             r = sg_c3(sched_name, t, budget=budget)
             out['cases'].append(r)
@@ -813,6 +819,136 @@ def sg_sacrifice(sched_name, t, c1=15, c2=16, k=0, budget=900,
                                 before(V[i], V[j])])
 
 
+def interval_I(sched, r):
+    """Team interval I_r = (2^{r-1} + s_r, 2^r + s_{r+1}] (notes/39 §4):
+    kept body of block r + received sliver of block r+1.  Returns
+    (lo, hi) with values lo+1 .. hi."""
+    lo = (1 << (r - 1)) + min(sched(r), 1 << (r - 1))
+    hi = (1 << r) + min(sched(r + 1), 1 << r)
+    return lo, hi
+
+
+def neck(sched, r):
+    """n_r = 2 s_r - s_{r+1} (notes/39 §4; == G3's d_r)."""
+    return 2 * min(sched(r), 1 << (r - 1)) - min(sched(r + 1), 1 << r)
+
+
+def rung_in(sched_name, team, r, pair=(21, 22), budget=3600):
+    """RUNG-IN(r): AP-free order of I_r with the fixed pair's in-interval
+    attacks forced (attackers early).  T-PIN premise: works for teams
+    whose parity has bounded neck (e.g. geo/B, neck 0)."""
+    sched = SCHEDULES[sched_name]
+    lo, hi = interval_I(sched, r)
+    V = list(range(lo + 1, hi + 1))
+    assert all(team_of(v, sched) == team for v in V), "interval not in-team"
+    units = []
+    for x in pair:
+        assert team_of(x, sched) == team and x <= lo, "attacker unusable"
+        for y in V:
+            z = 2 * y - x
+            if lo < z <= hi:
+                units.append((z, y))
+    res = ap_order_sat(V, units=units, budget=budget)
+    res.update(kind='rung_in', schedule=sched_name, team=team, r=r,
+               interval=[lo + 1, hi], neck=neck(sched, r),
+               pair=list(pair), n_units=len(units))
+    return res
+
+
+def rung_x(sched_name, team, t, attackers=None, core=None, budget=3600):
+    """RUNG-X(t): seam gadget.  V = I_t u I_{t+2} (or the bottom `core`
+    values of I_{t+2}: UNSAT on the subset is sound, SAT is inconclusive)
+    with ALL attacks by the fixed in-team attacker set within V forced
+    (cross I_t -> I_{t+2} and any in-interval ones).  Default attackers:
+    every in-team value x <= n_{t+1} - 1 (the exact cross condition,
+    notes/39 §4) that generates at least one attack."""
+    sched = SCHEDULES[sched_name]
+    lo1, hi1 = interval_I(sched, t)
+    lo2, hi2 = interval_I(sched, t + 2)
+    full2 = hi2
+    if core:
+        hi2 = min(hi2, lo2 + core)
+    V = list(range(lo1 + 1, hi1 + 1)) + list(range(lo2 + 1, hi2 + 1))
+    assert all(team_of(v, sched) == team for v in V), "seam not in-team"
+    Vs = set(V)
+    if attackers is None:
+        nx = neck(sched, t + 1)
+        attackers = [x for x in range(1, max(2, nx))
+                     if team_of(x, sched) == team and x <= lo1]
+    units, used = [], []
+    for x in attackers:
+        assert team_of(x, sched) == team and x <= lo1, "attacker unusable"
+        mine = [(2 * y - x, y) for y in V if 2 * y - x in Vs]
+        if mine:
+            used.append(x)
+            units.extend(mine)
+    res = ap_order_sat(V, units=units, budget=budget)
+    res.update(kind='rung_x', schedule=sched_name, team=team, t=t,
+               I_t=[lo1 + 1, hi1], I_t2=[lo2 + 1, hi2],
+               I_t2_full_hi=full2, core=core, neck_t1=neck(sched, t + 1),
+               attackers=used, n_units=len(units),
+               note='SAT with core set is inconclusive' if core else '')
+    return res
+
+
+def check_neck(scales=range(8, 14), xmax=40):
+    """CHECK 8: NECK lemma exactness on the real team sets.  For each
+    schedule, r in scales, and in-team x <= min(xmax, lo(I_r)): the
+    brute-force attack sets with y in I_r must match the two channel
+    predictions EXACTLY (existence iff and counts):
+      in-interval (y, 2y-x in I_r):        iff x >= n_r + 2,
+                                           count (H1+x)//2 - L1;
+      cross-seam (y in I_r, 2y-x in I_r+2): iff x <= n_{r+1} - 1,
+                                           count H1 - (L2+1+x+1)//2 + 1;
+    and NO completion 2y - x with y in I_r lands in-team anywhere else
+    (channel completeness).  Scales with truncated slivers are skipped
+    (the interval view needs s < half block)."""
+    out = {'lemma': 'NECK exactness: fixed-x attacks on I_r are exactly '
+                    'the two neck channels', 'cases': [], 'pass': True}
+    for sched_name, sched in SCHEDULES.items():
+        checked = mismatches = 0
+        for r in scales:
+            if any(sched(r + i) >= (1 << (r + i - 2)) for i in range(4)):
+                continue                      # truncation regime: skip
+            team = 'A' if r % 2 == 0 else 'B'
+            L1, H1 = interval_I(sched, r)
+            L2, H2 = interval_I(sched, r + 2)
+            I1 = set(range(L1 + 1, H1 + 1))
+            I2 = set(range(L2 + 1, H2 + 1))
+            assert all(team_of(v, sched) == team for v in I1 | I2)
+            n_r, n_r1 = neck(sched, r), neck(sched, r + 1)
+            for x in range(1, min(xmax, L1) + 1):
+                if team_of(x, sched) != team:
+                    continue
+                inn = [(y, 2 * y - x) for y in I1 if 2 * y - x in I1]
+                cross = [(y, 2 * y - x) for y in I1 if 2 * y - x in I2]
+                stray = [(y, 2 * y - x) for y in I1
+                         if (z := 2 * y - x) > y and z not in I1
+                         and z not in I2
+                         and team_of(z, sched) == team]
+                want_in = max(0, (H1 + x) // 2 - L1)
+                want_cr = max(0, H1 - (L2 + 1 + x + 1) // 2 + 1)
+                ok = (bool(inn) == (x >= n_r + 2)
+                      and len(inn) == want_in
+                      and bool(cross) == (x <= n_r1 - 1)
+                      and len(cross) == want_cr
+                      and not stray)
+                checked += 1
+                if not ok:
+                    mismatches += 1
+                    out['pass'] = False
+                    out['cases'].append(
+                        {'sched': sched_name, 'r': r, 'x': x,
+                         'in': len(inn), 'want_in': want_in,
+                         'cross': len(cross), 'want_cross': want_cr,
+                         'stray': stray[:5]})
+        out['cases'].append({'sched': sched_name, 'checked': checked,
+                             'mismatches': mismatches})
+        print(f"  NECK {sched_name}: {checked} (r, x) points, "
+              f"{mismatches} mismatches", flush=True)
+    return out
+
+
 def check_sg(scale_sets=None, budget=1800, jsonl=None,
              skip_controls=False):
     out = {'lemma': 'SG(t, c) rungs: kept interval (2^{t-1}+s_t, 2^t] '
@@ -871,13 +1007,23 @@ def check_sg(scale_sets=None, budget=1800, jsonl=None,
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('part', choices=['sharp', 'shadow', 'orbit', 'sg',
-                                     'c3', 'all'])
+                                     'c3', 'rungin', 'rungx', 'sac',
+                                     'neck', 'all'])
     ap.add_argument('--json', default=None)
     ap.add_argument('--budget', type=float, default=1800)
     ap.add_argument('--sg-sched', default=None,
-                    help='restrict sg to one schedule')
+                    help='restrict sg/c3/rungin/rungx to one schedule')
     ap.add_argument('--sg-scales', default=None,
-                    help='comma list of t values for sg')
+                    help='comma list of t values for sg/c3/rungin/rungx')
+    ap.add_argument('--team', default=None, help='team for rungin/rungx')
+    ap.add_argument('--pair', default=None,
+                    help='comma list of fixed attackers (rungin/rungx)')
+    ap.add_argument('--core', type=int, default=None,
+                    help='rungx: keep only bottom CORE values of I_{t+2}')
+    ap.add_argument('--sac-ks', default='64,96,128',
+                    help='comma list of sacrifice bounds k (sac)')
+    ap.add_argument('--sac-t', type=int, default=9)
+    ap.add_argument('--tag', default='', help='suffix for output filenames')
     args = ap.parse_args()
 
     results = {}
@@ -895,8 +1041,75 @@ def main():
         scales = tuple(int(x) for x in
                        (args.sg_scales or '9,10,11,12').split(','))
         jsonl = os.path.join(REPO, 'data', 's2_sg_rungs.jsonl')
+        scheds = (args.sg_sched,) if args.sg_sched else None
         results['c3'] = check_c3(scales=scales, budget=args.budget,
-                                 jsonl=jsonl)
+                                 jsonl=jsonl, scheds=scheds,
+                                 skip_control=bool(args.sg_sched)
+                                 and args.sg_sched != 'lin')
+    if args.part == 'rungin':
+        print("== CHECK 5: RUNG-IN (fixed-pair in-interval rungs) ==",
+              flush=True)
+        sched_name = args.sg_sched or 'geo'
+        team = args.team or 'B'
+        pair = tuple(int(x) for x in (args.pair or '21,22').split(','))
+        scales = [int(x) for x in (args.sg_scales or '7,9,11').split(',')]
+        jsonl = os.path.join(REPO, 'data', 's2_sg_rungs.jsonl')
+        rows = []
+        for r in scales:
+            row = rung_in(sched_name, team, r, pair=pair,
+                          budget=args.budget)
+            rows.append(row)
+            with open(jsonl, 'a') as fh:
+                fh.write(json.dumps(row, default=str) + '\n')
+            print(f"  RUNG-IN {sched_name}/{team} r={r} "
+                  f"I=({row['interval'][0]-1},{row['interval'][1]}] "
+                  f"neck={row['neck']} pair={pair}: {row['result']} "
+                  f"[{row.get('time')}s n={row['n']} "
+                  f"units={row['units']}]", flush=True)
+        results['rungin'] = rows
+    if args.part == 'rungx':
+        print("== CHECK 6: RUNG-X (fixed-set seam/cross rungs) ==",
+              flush=True)
+        sched_name = args.sg_sched or 'lin'
+        team = args.team or 'B'
+        pair = tuple(int(x) for x in args.pair.split(',')) if args.pair \
+            else None
+        scales = [int(x) for x in (args.sg_scales or '9').split(',')]
+        jsonl = os.path.join(REPO, 'data', 's2_sg_rungs.jsonl')
+        rows = []
+        for t in scales:
+            row = rung_x(sched_name, team, t, attackers=pair,
+                         core=args.core, budget=args.budget)
+            rows.append(row)
+            with open(jsonl, 'a') as fh:
+                fh.write(json.dumps(row, default=str) + '\n')
+            print(f"  RUNG-X {sched_name}/{team} t={t} "
+                  f"I_t={row['I_t']} I_t2={row['I_t2']} "
+                  f"core={row['core']} neck(t+1)={row['neck_t1']} "
+                  f"attackers={row['attackers']}: {row['result']} "
+                  f"[{row.get('time')}s n={row['n']} "
+                  f"units={row['units']}]", flush=True)
+        results['rungx'] = rows
+    if args.part in ('neck', 'all'):
+        print("== CHECK 8: NECK lemma exactness ==", flush=True)
+        results['neck'] = check_neck()
+    if args.part == 'sac':
+        print("== CHECK 7: sacrifice thresholds ==", flush=True)
+        t = args.sac_t
+        sched_name = args.sg_sched or 'lin'
+        rows = []
+        for k in (int(x) for x in args.sac_ks.split(',')):
+            row = sg_sacrifice(sched_name, t, k=k, budget=args.budget)
+            if row.get('result') == 'SAT':
+                pre = row.get('window_before_x2', [])
+                row['pre_count'] = len(pre)
+                row['pre_mod8'] = sorted({v % 8 for v in pre})
+            rows.append(row)
+            print(f"  SAC {sched_name} t={t} k={k}: {row['result']} "
+                  f"[{row.get('time')}s]"
+                  + (f" pre={row['pre_count']} mod8={row['pre_mod8']}"
+                     if row.get('result') == 'SAT' else ''), flush=True)
+        results['sac'] = rows
     if args.part in ('sg', 'all'):
         print("== CHECK 4: SG rungs ==", flush=True)
         ss = None

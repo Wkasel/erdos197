@@ -166,6 +166,64 @@ finite-F gap — a **lem:orbit-grow** (f_m ≤ C s_t) would kill the family
 a second, unconditional way.  Remaining YES-shapes must break octave
 alternation itself (stage-alternating ownership à la Geneson).
 
+### Growing-death theory: which G3 signatures are theorems (S2, notes/39, 2026-08-26)
+
+G3's verdicts rested on the portable-crown SIGNATURE (fixed attacker
+recurring at infinitely many scales); S2 built the theory layer that
+says which signatures convert to death theorems.  Everything below is
+machine-checked on the S1 partitions at ≥ 3 scales
+(experiments/s2_growing_death.py, data/s2_*).
+
+- **The orbit mechanism does NOT extend — lem:orbit is exactly sharp at
+  |F| < ∞ (T-SHARP).**  For every unbounded growth bound g there is a
+  permutable set containing an infinite orbit with distinct reflectors
+  f_k ≤ g(k) + C (f_k = Θ(log u_k) achievable) — greedy constructions
+  built at K = 20/40/60 steps, AP-exhaustively verified.  So the
+  **lem:orbit-grow hoped for in the G3 notes does not exist**: no size
+  or growth hypothesis on reflectors can replace finiteness.  What
+  survives is the placement dichotomy (L-STEP/L-DESC): infinite orbits
+  force infinitely many DISTINCT late reflectors, each procrastinated
+  past an exponentially larger value — death must come from forcing
+  reflectors EARLY (per-scale finite cores), never from growth alone.
+  SLIVER-ORBIT gives the exact schedule criterion s_{t+2} ≤ 2s_{t+1}−2:
+  lin/frac carry certified slow orbits on both teams (exact-int walks
+  to octave ~413), geo/A and gm are orbit-clean — either way, by
+  T-SHARP these orbits prove nothing alone.
+- **The crown mechanism DOES extend, in fixed-pair form (NECK + T-PIN).**
+  Teams are interval unions I_t = (2^{t−1}+s_t, 2^t+s_{t+1}] with neck
+  n_r = 2s_r − s_{r+1}; a fixed x attacks in-interval iff x ≥ n_t + 2
+  and across the seam iff x ≤ n_{t+1} − 1.  **Lemma NECK: on every
+  schedule some team carries a fixed pair of its own values attacking
+  at infinitely many of its scales** (bounded necks ⇒ pierced
+  in-interval; unbounded ⇒ every fixed pair seam-attacks).  T-PIN
+  (thm:ogred's pigeonhole verbatim) reduces death to an infinite family
+  of finite UNSAT rungs with FIXED attackers.  Scale-ADAPTED attackers
+  (x_t = 2s_t + c) fire only in pair form and cannot overflow: single
+  rungs are SAT everywhere (c ≤ 200 scanned), the pair's second member
+  can be sacrificed per scale (depth (64, 96] of 247 at lin t=9, cohort
+  = C3's g-classes: all odds, then ≡ 6 mod 8), and T-SHARP's
+  procrastination makes distinct per-scale sacrifices legal — T-REGRESS
+  (the varying-attacker overflow) is closed.
+- **Machine rungs**: pair rungs SG(t, {15,16}) UNSAT at 4 schedules × 3
+  scales (t = 9/10/11, deepest truncation 36 % of the block); the
+  C3-shifted core is SAT under truncation (already at s = 9 of 256) —
+  the C3 certificate does NOT transfer, the pair UNSAT rides an unknown
+  new core (THE open crux); **RUNG-IN geo/B (neck-0 intervals, fixed
+  pair {21,22}) UNSAT at r = 7/9/11** with scale-independent unit count
+  — geo is dead conditional on this rung family, the same epistemic
+  shape as thm:ogred+thm:c3core before the C3 hand proof; gm stage-jump
+  rung (r = 8, neck −30, pair {4,5}) also UNSAT; RUNG-X seam rungs
+  (lin/gm/frac t = 9) in flight at close — unit-density arithmetic:
+  gm's plateau seams are the only OG-density seam family (fixed
+  ~M_{k−1}-attacker cohort, Θ(s) units), lin/frac seams are
+  Θ(log)-sparse and plausibly SAT forever.
+- Net: for bounded/zero-neck schedules the growing-sliver death is now
+  **theorem-modulo-rungs with the rungs machine-true at 3 scales**; for
+  growing-neck schedules (lin, frac) the fixed pairs sit on sparse
+  seams and the per-scale core there is the open front.  The single
+  crux for the whole family: a hand schema (next-C3) for truncated/
+  interval cores.
+
 ### Best surviving YES-candidate (pre-G3 text, kept for the record)
 
 **Growing-sliver swap with alternating crown ownership**: ratio-2 block

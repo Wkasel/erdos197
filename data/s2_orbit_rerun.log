@@ -1,0 +1,10 @@
+== CHECK 3: SLIVER-ORBIT ==
+  SLIVER-ORBIT lin/A: predicted EXISTS -> EXISTS (certified walk, exact ints)
+  SLIVER-ORBIT lin/B: predicted EXISTS -> EXISTS (certified walk, exact ints)
+  SLIVER-ORBIT geo/A: predicted BLOCKED -> BLOCKED (exhaustive at 3 scales)
+  SLIVER-ORBIT geo/B: predicted EXISTS -> EXISTS (certified walk, exact ints)
+  SLIVER-ORBIT frac/A: predicted EXISTS -> EXISTS (certified walk, exact ints)
+  SLIVER-ORBIT frac/B: predicted EXISTS -> EXISTS (certified walk, exact ints)
+  SLIVER-ORBIT gm/A: predicted BLOCKED -> BLOCKED (exhaustive at 3 scales)
+  SLIVER-ORBIT gm/B: predicted BLOCKED -> BLOCKED (exhaustive at 3 scales)
+saved /Users/will/Dev/personal/tasks/math/erdos197/data/s2_orbit.json
