@@ -604,7 +604,7 @@ def partC(only=None):
 # ----------------------------------------------------------------------
 
 def solve_coupled3(M, kb_frac_num, kb_frac_den, budget=3600.0,
-                   seams='both'):
+                   seams='both', abs_bounds=None):
     """B0 = (M, 2M], B1 = (2M, 4M], B2 = (4M, 8M].  Same as Part C but
     with THREE blocks and TWO seams: coloring c_v in {A, B}; each team
     its own order; guarded APs (all three in team); block-order units
@@ -647,6 +647,7 @@ def solve_coupled3(M, kb_frac_num, kb_frac_den, budget=3600.0,
         seam_pairs = {'both': ((B0, B1), (B1, B2), (B0, B2)),
                       'low': ((B0, B1),),
                       'high': ((B1, B2),),
+                      'outer': ((B0, B2),),
                       'none': ()}[seams]
         for lowblk, highblk in seam_pairs:
             for u in lowblk:
@@ -663,8 +664,12 @@ def solve_coupled3(M, kb_frac_num, kb_frac_den, budget=3600.0,
     cards = []
     tid = top
     bounds = {}
-    for blkname, blk in (('B0', B0), ('B1', B1), ('B2', B2)):
-        bnd = math.ceil(kb_frac_num * len(blk) / kb_frac_den)
+    for bi, (blkname, blk) in enumerate((('B0', B0), ('B1', B1),
+                                         ('B2', B2))):
+        if abs_bounds is not None:
+            bnd = abs_bounds[bi]
+        else:
+            bnd = math.ceil(kb_frac_num * len(blk) / kb_frac_den)
         bounds[blkname] = bnd
         for sign in (1, -1):
             enc = CardEnc.atleast(lits=[sign * ai[v] for v in blk],
@@ -713,6 +718,7 @@ def check_coupled3_team(order, col, M, bounds, seams='both'):
     seam_pairs = {'both': ((b0, b1), (b1, b2), (b0, b2)),
                   'low': ((b0, b1),),
                   'high': ((b1, b2),),
+                  'outer': ((b0, b2),),
                   'none': ()}[seams]
     for low, high in seam_pairs:
         for u in low:

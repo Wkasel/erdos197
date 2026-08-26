@@ -115,7 +115,11 @@ while ONE seam never kills (controls at M = 16 balanced, all SAT:
 seams=none 0.4 s, seams=low-only 2.2 s, seams=high-only 0.8 s; plus
 Part C's 2-block M = 16/32/64 SAT).  **The two seams are jointly
 load-bearing: this is the first firing N6 ledger core.**  One scale
-coupling cannot kill; two can.
+coupling cannot kill; two can.  Also SAT: seams=outer only (B0 < B2,
+middle free) at M = 16 [0.6 s] and M = 24 [7.3 s] — every proper
+subset of the seam chain escapes; the full chain B0 < B1 < B2 (the
+middle block SANDWICHED) is exactly what fires.  The hypothesis is
+honestly double non-procrastination and cannot be thinned.
 
 **The balance dial — the UNSAT region WIDENS with scale, in both
 fractional and ABSOLUTE terms:**
