@@ -177,6 +177,19 @@ cross-checked under Glucose42 at 24/32.  (ii) **the floor TIGHTENS
 with scale**: even the minimal triple (3,3,3) fires from M = 32 on,
 while every bound-2 escape that survives is the same sumset dodge
 (minority pinned at the bound, mod-4 lattice, range-hidden).
+
+Continued at M = 48: **(2,2,2) is UNSAT [135 s] and (1,1,1) is SAT**
+[43 s, escape A-sizes (47, 1, 100)] — the critical constant at M = 48
+is EXACTLY 2, and the (1,1,1) escape survives by leaving a 1-CLEAN
+block (A has a single value in B1).  So at M = 48 the C3 gadget kills
+every coloring EXCEPT those with a 1-clean block — and infinitely
+many 1-clean blocks is precisely Case 1, where N1+N2 rungs already
+fire.  **If the constant-2 schema is scale-stable (M = 64 probe in
+flight) the dichotomy closes at C = 1**: any partition either gives
+some team infinitely many 1-clean blocks (Case 1, dead modulo N2) or
+eventually has >= 2 per team per block, hence >= (2,2,2) in every
+window triple (M, 8M] (dead modulo the C3 schema + double
+non-procrastination).
 Everywhere-split partitions eventually have >= 3 per team per block,
 so a proof that (3,6,12) (or (3,3,3)) stays UNSAT for ALL large M —
 the coupled schema hunt, now with deletion-minimal supports as input —
