@@ -159,14 +159,30 @@ sumset/range lemma formalizing this ("a 3-element minority cannot keep
 supplying the rest — the natural MUS target (e88/e90 path applied to
 the balanced M = 16 core).
 
-**Why this is the Case-2 bridge**: everywhere-split partitions have
-per-block minority counts -> infinity; a fixed ABSOLUTE bound triple
-(c0, c1, c2) that stays UNSAT at all large M would be a rung schema
-killing every everywhere-split partition (modulo the double
-non-procrastination hypothesis at two consecutive seams — the same
-L-DESC/T-REGRESS caveat as Parts B/D, now needed at two seams).  The
-absolute floor DROPPED from (5,10,20)-ish at M = 16 to (3,6,12) at
-M = 24; constant-bound probes at M = 32+ are the decisive next test.
+**The constant-bound schema (the Case-2 bridge datum).**  Fix ABSOLUTE
+lower bounds (c0, c1, c2): each team owns >= c_i of block i (window
+values only — the rest of Z+ unconstrained).  Machine verdicts:
+
+| bounds | M=16 | M=24 | M=32 | M=40 | M=48 |
+|--------|------|------|------|------|------|
+| (3, 6, 12) | SAT | **UNSAT** | **UNSAT** (+Glucose) | **UNSAT** | **UNSAT** [187 s] |
+| (3, 3, 3)  | SAT [12,3,37] | SAT [3,45,43] | **UNSAT** (+Glucose) | see log | — |
+| (2, 4, 8)  | —   | —   | SAT [2,60,56] | SAT [2,76,78] | — |
+| (2, 6, 12) | —   | —   | **UNSAT** | — | — |
+| (3, 4, 8) / (3, 6, 6) | — | — | **UNSAT** | — | — |
+
+Two headline facts.  (i) **(3,6,12) is UNSAT at every scale from
+M = 24 to 48** — a scale-stable constant-bound rung over a 2x range,
+cross-checked under Glucose42 at 24/32.  (ii) **the floor TIGHTENS
+with scale**: even the minimal triple (3,3,3) fires from M = 32 on,
+while every bound-2 escape that survives is the same sumset dodge
+(minority pinned at the bound, mod-4 lattice, range-hidden).
+Everywhere-split partitions eventually have >= 3 per team per block,
+so a proof that (3,6,12) (or (3,3,3)) stays UNSAT for ALL large M —
+the coupled schema hunt, now with deletion-minimal supports as input —
+kills Case 2 modulo the double non-procrastination hypothesis at two
+consecutive seams (the L-DESC/T-REGRESS caveat of notes/39, now needed
+at two seams: N7 may be dispensable after all).
 
 ## Part D — existential-attacker two-scale gadget
 
