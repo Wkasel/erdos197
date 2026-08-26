@@ -294,6 +294,167 @@ def partB(only=None):
 
 
 # ----------------------------------------------------------------------
+# Part D: existential-attacker two-scale gadget (the faithful N5 form)
+# ----------------------------------------------------------------------
+
+def solve_twoscale(M, k0, k1, budget=3600.0):
+    """B0 = (M/2, M], B1 = (M, 2M].  Adversary keeps S0 (>= k0 of B0)
+    and S1 (>= k1 of B1).  Hypothesis (T-PIN / non-procrastination):
+    every kept B0 value precedes every kept B1 value in the team's
+    order.  Constraints: guarded APs among ALL kept triples of B0 u B1
+    (cross-block APs (u, y, 2y-u) become the chain attacks
+    automatically), block-order units, cardinalities.  SAT <=> escape."""
+    assert M % 2 == 0
+    V = sorted(range(M // 2 + 1, 2 * M + 1))
+    n = len(V)
+    idx = {v: i for i, v in enumerate(V)}
+    off, top = _mk_vars(n, start=1)
+    sel = {}
+    for v in V:
+        top += 1
+        sel[v] = top
+
+    def lit(u, w):
+        i, j = idx[u], idx[w]
+        return off[(i, j)] if i < j else -off[(j, i)]
+
+    Vs = set(V)
+    B0 = [v for v in V if v <= M]
+    B1 = [v for v in V if v > M]
+    cls = []
+    for b in V:
+        for d in range(1, min(b - V[0], V[-1] - b) + 1):
+            a, c = b - d, b + d
+            if a in Vs and c in Vs:
+                g = [-sel[a], -sel[b], -sel[c]]
+                cls.append(g + [-lit(a, b), -lit(b, c)])
+                cls.append(g + [lit(a, b), lit(b, c)])
+    for u in B0:
+        for w in B1:
+            cls.append([-sel[u], -sel[w], lit(u, w)])
+    for i in range(n):
+        for j in range(i + 1, n):
+            xij = off[(i, j)]
+            for kk in range(j + 1, n):
+                cls.append([-xij, -off[(j, kk)], off[(i, kk)]])
+                cls.append([xij, off[(j, kk)], -off[(i, kk)]])
+    cards = []
+    tid = top
+    for blk, bnd in ((B0, k0), (B1, k1)):
+        enc = CardEnc.atleast(lits=[sel[v] for v in blk], bound=bnd,
+                              top_id=tid, encoding=EncType.seqcounter)
+        tid = max(tid, enc.nv)
+        cards += enc.clauses
+    t0 = time.time()
+    with Cadical195(bootstrap_with=cls) as s:
+        for c in cards:
+            s.add_clause(c)
+        ok = s.solve()
+        el = round(time.time() - t0, 1)
+        if not ok:
+            return 'UNSAT', el, {}
+        model = set(l for l in s.get_model() if l > 0)
+    S = [v for v in V if sel[v] in model]
+    posneg = lambda l: (l in model) if l > 0 else (abs(l) not in model)
+    wins = {v: 0 for v in S}
+    for i, u in enumerate(S):
+        for w in S[i + 1:]:
+            if posneg(lit(u, w)):
+                wins[u] += 1
+            else:
+                wins[w] += 1
+    order = sorted(S, key=lambda v: -wins[v])
+    err = check_twoscale(order, S, M, k0, k1)
+    S0 = [v for v in S if v <= M]
+    S1 = [v for v in S if v > M]
+    return ('SAT' if err is None else 'WITNESS-FAIL'), el, \
+        {'S0': S0, 'S1': S1,
+         'drop0': sorted(set(B0) - set(S0)),
+         'drop1': sorted(set(B1) - set(S1)), 'werr': err}
+
+
+def check_twoscale(order, S, M, k0, k1):
+    S0 = [v for v in S if v <= M]
+    S1 = [v for v in S if v > M]
+    if len(S0) < k0 or len(S1) < k1:
+        return f'sizes ({len(S0)}, {len(S1)}) < ({k0}, {k1})'
+    p = {v: i for i, v in enumerate(order)}
+    for u in S0:
+        for w in S1:
+            if p[u] > p[w]:
+                return f'block order violated ({u}, {w})'
+    vals = sorted(S)
+    vs = set(vals)
+    for b in vals:
+        for d in range(1, min(b - vals[0], vals[-1] - b) + 1):
+            a, c = b - d, b + d
+            if a in vs and c in vs:
+                if p[a] < p[b] < p[c] or p[c] < p[b] < p[a]:
+                    return f'monotone AP {(a, b, c)}'
+    return None
+
+
+def partD(only=None):
+    """Joint density dial: k0 = ceil(rho |B0|), k1 = ceil(rho |B1|);
+    binary search rho on a 1/64 grid between 1/2 and 1."""
+    print('== e120 PART D: existential-attacker two-scale dial ==',
+          flush=True)
+    out = {'part': 'D', 'rows': [], 'summary': []}
+    import math
+    for M in (64, 96, 128):
+        tag = f'D M={M}'
+        if only and only not in tag:
+            continue
+        n0, n1 = M // 2, M
+
+        def q(num, den=64):
+            k0 = math.ceil(num * n0 / den)
+            k1 = math.ceil(num * n1 / den)
+            v, el, info = solve_twoscale(M, k0, k1)
+            row = {'tag': tag, 'M': M, 'rho': f'{num}/{den}',
+                   'k0': k0, 'k1': k1, 'verdict': v, 'time': el,
+                   'drop0': info.get('drop0'), 'drop1': info.get('drop1')}
+            out['rows'].append(row)
+            stream(row)
+            print(f'  {tag} rho={num}/{den} (k0={k0}, k1={k1}): {v} '
+                  f'[{el}s]' + (f" drop0={info.get('drop0')} "
+                                f"drop1={info.get('drop1')}"
+                                if v == 'SAT' else ''), flush=True)
+            if v == 'WITNESS-FAIL':
+                raise RuntimeError(f'{tag}: {info.get("werr")}')
+            return v
+
+        # intact control then binary search on the 1/64 grid
+        if q(64) != 'UNSAT':
+            print(f'  {tag}: intact SAT — no rung', flush=True)
+            continue
+        lo, hi = 32, 64          # rho = lo/64 .. hi/64
+        if q(lo) != 'SAT':
+            print(f'  {tag}: UNSAT already at rho=1/2 !', flush=True)
+            out['summary'].append({'M': M, 'rho_star': '<=1/2'})
+            stream({'tag': tag + ' SUMMARY', 'M': M, 'rho_star': '<=1/2'})
+            with open(os.path.join(DATA, 'e120_D.json'), 'w') as f:
+                json.dump(out, f, indent=1)
+            continue
+        while hi - lo > 1:
+            mid = (lo + hi) // 2
+            if q(mid) == 'SAT':
+                lo = mid
+            else:
+                hi = mid
+        s = {'M': M, 'rho_star_grid': f'{lo}/64',
+             'rho_star': round(lo / 64, 4),
+             'first_unsat': f'{hi}/64'}
+        out['summary'].append(s)
+        stream({'tag': tag + ' SUMMARY', **s})
+        print(f'  >> {tag}: last escape at rho={lo}/64='
+              f'{lo / 64:.3f}, UNSAT-for-all from rho={hi}/64', flush=True)
+        with open(os.path.join(DATA, 'e120_D.json'), 'w') as f:
+            json.dump(out, f, indent=1)
+    return out
+
+
+# ----------------------------------------------------------------------
 # Part C: coupled complementary coloring of two consecutive blocks
 # ----------------------------------------------------------------------
 
@@ -350,10 +511,10 @@ def solve_coupled(M, kb, budget=3600.0):
     # balance per block per team
     cards = []
     tid = top
-    for blk in (B0, B1):
+    for blk, bnd in ((B0, kb), (B1, 2 * kb)):   # same DENSITY kb/M per block
         for sign in (1, -1):
             lits = [sign * ai[v] for v in blk]
-            enc = CardEnc.atleast(lits=lits, bound=kb, top_id=tid,
+            enc = CardEnc.atleast(lits=lits, bound=bnd, top_id=tid,
                                   encoding=EncType.seqcounter)
             tid = enc.nv if enc.nv > tid else tid
             cards += enc.clauses
@@ -390,8 +551,8 @@ def check_coupled_team(order, col, M, kb):
     """Independent: block balance, block order, no monotone AP."""
     b0 = [v for v in col if v <= 2 * M]
     b1 = [v for v in col if v > 2 * M]
-    if len(b0) < kb or len(b1) < kb:
-        return f'balance violated ({len(b0)}, {len(b1)}) < {kb}'
+    if len(b0) < kb or len(b1) < 2 * kb:
+        return f'balance violated ({len(b0)}, {len(b1)}) < ({kb}, {2 * kb})'
     p = {v: i for i, v in enumerate(order)}
     for u in b0:
         for w in b1:
@@ -450,6 +611,8 @@ def main():
         partB(args.only)
     elif args.part == 'C':
         partC(args.only)
+    elif args.part == 'D':
+        partD(args.only)
     else:
         sys.exit('unknown part')
     print(f'TOTAL {round(time.time() - t0, 1)}s', flush=True)
