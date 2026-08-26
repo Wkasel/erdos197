@@ -676,6 +676,8 @@ def solve_coupled3(M, kb_frac_num, kb_frac_den, budget=3600.0,
         else:
             bnd = math.ceil(kb_frac_num * len(blk) / kb_frac_den)
         bounds[blkname] = bnd
+        if bnd <= 0:
+            continue
         for sign in (1, -1):
             enc = CardEnc.atleast(lits=[sign * ai[v] for v in blk],
                                   bound=bnd, top_id=tid,

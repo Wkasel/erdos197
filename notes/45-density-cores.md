@@ -225,6 +225,18 @@ verbatim to infinitely many disjoint two-block windows).
 Per-block cardinalities k1 >= rho M, k2 >= rho 2M.  Results stream
 into data/e120_E.{log,json}.
 
+RESOLVED at M = 32, F = {15,16}: last escape at per-block density
+rho = 25/32 = 0.781; **UNSAT for ALL subsets with per-block density
+>= 26/32 = 0.8125** [862 s at the critical point].  A FIXED low pair
+is density-robust at ~0.78 on the two-block window — the same ~0.78
+floor as the B2 edge pair, now from a fixed attacker with T-PIN
+applying verbatim.  Edge dials (data/e120_E2_edges.log): with block1
+intact, HALF-density in block2 already fires (k2 = M UNSAT); with
+block2 intact, k1 = 1 fires.  Baselines: block1-alone k_crit = 29/32,
+block2-alone 61/64 — the two-block coupling buys the drop from ~0.95
+to 0.78.  (M = 64 refinement bracketed SAT at 24/32, UNSAT at 32/32;
+the 28/32 near-critical query still running at session end.)
+
 ## Mechanism notes (chain escape anatomy, M = 64)
 
 - The minimal chain escape (drop even midpoints) leaves 17 units in
