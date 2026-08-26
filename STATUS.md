@@ -1,4 +1,4 @@
-# Erdős #197 campaign — STATUS (2026-08-25)
+# Erdős #197 campaign — STATUS (2026-08-26)
 
 ## Bottom line
 
@@ -224,6 +224,51 @@ machine-checked on the S1 partitions at ≥ 3 scales
   crux for the whole family: a hand schema (next-C3) for truncated/
   interval cores.
 
+### Growing-sliver verdict (TASK V, notes/40, 2026-08-26): ALL DEAD — the family is closed
+
+Final adversarial pass over the last surviving shape.  Two campaigns:
+
+- **Tuned per-parity schedules (v2_tuned_screen.py): 6/6 dead, no
+  both-clean variant exists.**  The S1 finding (geo/A = first clean
+  partition team, clean because d_even → ∞ and d_odd ≡ 0) raised the
+  tuning question: can a per-parity donation schedule give BOTH teams
+  receding kept bottoms?  Six tunes screened (geomix / geomirror / geo3 /
+  addgeo / linmix / neck2 — exponential, mirrored, mod-3, additive,
+  per-parity-linear, constant-neck; natural crowns; 2^12/2^15/2^18; all
+  SAT): every per-team verdict matches the d_t law exactly (12/12,
+  including the edge case neck2/A whose receiver surface stays clean
+  because its only lawful attacker x = 1 lives in B).  Making both
+  teams' kept bottoms recede (geomix/addgeo/linmix) arms every fixed
+  attacker against both received slivers — both teams die as receivers.
+  The mirror tune produces the SECOND clean team (geomirror/B, parity
+  mirror of geo/A) with a doubly-dead partner: cleanliness is cheap for
+  one team, impossible for two — one dial, two hands.
+- **Independent re-verification of every S1 death certificate
+  (v1_growing_verify.py, all checks PASS):** fresh membership oracle ==
+  g3 generator; d_t law exact iff (543 attacks + 513 blanks, 0
+  mismatches, t ≤ 40); crown recurrences re-derived at exact high
+  octaves (big ints, t ≤ 60, incl. genstage stage-jump lists and the
+  geo_alt crown-plant family at all odd j ≤ 59); brute-force attack
+  scan at 2^16 EQUAL to d_t predictions (nat) for all x ≤ 64; both
+  RAY-GROW witnesses re-walked and DFS-extended to octave 80 (geo/B
+  reflectors grow to ~2^40 ≈ 4 s_t — censoring at 2^18 was real, and
+  the earlier CHECK4 failure was a verifier scan-budget bug, fixed);
+  independent bit-reversal SAT sanity at 2^12.
+
+**Verdict: the sliver-swap program (notes/35 fixed + notes/38 growing +
+notes/40 tuned) is closed — every octave-alternating block partition
+with ANY donation schedule carries the portable-crown death pattern on
+at least one team, by the d_t law / Lemma NECK, with T-PIN reducing
+bounded-neck cases to machine-true rungs.  What survives: two clean
+single teams (geo/A, geomirror/B, density 2/3 at peaks) proving the
+pairing, not single-team permutability, is the obstruction.  The only
+untested YES-shape left is stage-alternating ownership (à la Geneson,
+teams owning growing runs of consecutive octaves, slivers only at stage
+seams) — which must already split every crown pair {2^j−1, 2^j} to
+survive thm:ogred + thm:c3core on its full interior blocks (every
+interior scale is ≡ 0 mod 8), and G3 showed planted halves are landing
+pads.  That G4 screen is the single next experiment.**
+
 ### Best surviving YES-candidate (pre-G3 text, kept for the record)
 
 **Growing-sliver swap with alternating crown ownership**: ratio-2 block
@@ -268,10 +313,14 @@ blocks — currently the ladder is only proven for intact blocks).
 
 ### Decisive next experiments
 
-1. **YES route (H4)**: growing-sliver swap generator + full g2 screen
-   suite at 2^16–2^20, schedules s_t ∈ {t, 2^{t/2}, Geneson-matched};
-   any clean survivor goes to chunk-stage SAT at m=4 locally, m=5 on
-   RunPod (~25M clauses, streaming DIMACS).
+1. **YES route (G4, replaces the completed H4/G3/V campaign)**:
+   stage-alternating ownership partitions — teams own super-blocks
+   (2^{a_k}, 2^{a_{k+1}}] with growing stage lengths (Geneson-style),
+   crown pairs split per the trichotomy, donated slivers only at stage
+   seams.  Generator × {stage growth, seam schedule, crown placement},
+   g2/g3 screen suite at 2^12–2^18, plus the seam analogue of the d_t
+   law.  Any clean-pair survivor goes to chunk-stage SAT at m=4 locally,
+   m=5 on RunPod.
 2. **NO route (e120)**: joint multi-pair consistency gadget — attackers
    {2^j−1, 2^j} for j = 4, 5, 6 all colored, blocks at two adjacent
    scales simultaneously, asking whether split/park choices can be made
@@ -279,16 +328,28 @@ blocks — currently the ladder is only proven for intact blocks).
    (budget 5+) and the m=5 same-mode CAP=0 run (does the block-poor
    escape survive when the minority team's own crown pairs bite?).
 
-### Honest assessment
+### Honest assessment (updated 2026-08-26, post-verdict)
 
-Every natural candidate partition is now dead, several unconditionally;
-the conserved-attack-surface principle and the strictly-rising
-multi-crown price point toward NO.  Against that: the finite theory is
-SAT everywhere with composable escapes, the growing-sliver shape is
-genuinely untested, and lem:orbit's finite-reflector hypothesis is a
-real gap in the death machinery.  Current estimate: **NO ≈ 65–70 %,
-YES ≈ 30–35 %**, with the growing-sliver screen (H4) the cheapest
-experiment most likely to move the estimate in either direction.
+Every natural candidate partition is now dead, several at theorem or
+theorem-modulo-rungs level, and the whole sliver-swap shape family —
+fixed, growing, and tuned per-parity — is closed by an exact
+conservation law verified adversarially by independent code (14
+candidate partitions, 0 law mismatches).  The death machinery matured:
+NECK + T-PIN are theorems, the rungs are machine-true wherever the neck
+is bounded, and T-SHARP certifies that the one gap the family sat in
+(growing reflectors) can never be closed by a growth-hypothesis lemma —
+only by placement forcing, which the crown/rung route supplies.
+Against NO: two genuinely clean partition teams now exist (geo/A,
+geomirror/B, density 2/3 at peaks) — single-team death machinery does
+not bite everything, the obstruction is always the PAIRING; and the one
+remaining shape (stage-alternating ownership) is untested and does
+evade the d_t parity dichotomy, though it must thread thm:ogred on full
+interior blocks via total crown splitting, which G3 showed has a
+strictly positive price in exact partitions.  Current estimate:
+**NO ≈ 75–80 %, YES ≈ 20–25 %**, with the G4 stage-alternating screen
+the single decisive next experiment: a clean survivor there would be
+the strongest YES-candidate of the campaign; a death would leave no
+natural YES-shape at all.
 
 ## Key files
 

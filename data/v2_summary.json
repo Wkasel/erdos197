@@ -1,0 +1,168 @@
+{
+ "NMAX": 262144,
+ "horizons": [
+  4096,
+  32768,
+  262144
+ ],
+ "purpose": "tuned per-parity schedules: can BOTH teams be clean? (d_t law says no)",
+ "candidates": [
+  {
+   "name": "geomix",
+   "verdict": "DEAD-SIGNATURE",
+   "deathA": [
+    "CROWNP"
+   ],
+   "signalsA": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "deathB": [
+    "CROWNP"
+   ],
+   "signalsB": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "prediction_matches": {
+    "A": true,
+    "B": true
+   },
+   "sat_all_ok": true,
+   "both_teams_clean": false
+  },
+  {
+   "name": "geomirror",
+   "verdict": "DEAD-SIGNATURE",
+   "deathA": [
+    "CROWNP",
+    "ORBIT"
+   ],
+   "signalsA": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "deathB": [],
+   "signalsB": [
+    "ADAPT-kept-bottom"
+   ],
+   "prediction_matches": {
+    "A": true,
+    "B": true
+   },
+   "sat_all_ok": true,
+   "both_teams_clean": false
+  },
+  {
+   "name": "geo3",
+   "verdict": "DEAD-SIGNATURE",
+   "deathA": [
+    "CROWNP"
+   ],
+   "signalsA": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top"
+   ],
+   "deathB": [
+    "CROWN",
+    "CROWNP"
+   ],
+   "signalsB": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top"
+   ],
+   "prediction_matches": {
+    "A": true,
+    "B": true
+   },
+   "sat_all_ok": true,
+   "both_teams_clean": false
+  },
+  {
+   "name": "addgeo",
+   "verdict": "DEAD-SIGNATURE",
+   "deathA": [
+    "CROWNP"
+   ],
+   "signalsA": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "deathB": [
+    "CROWN",
+    "CROWNP"
+   ],
+   "signalsB": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "prediction_matches": {
+    "A": true,
+    "B": true
+   },
+   "sat_all_ok": true,
+   "both_teams_clean": false
+  },
+  {
+   "name": "linmix",
+   "verdict": "DEAD-SIGNATURE",
+   "deathA": [
+    "CROWNP",
+    "ORBIT"
+   ],
+   "signalsA": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "deathB": [
+    "CROWN",
+    "CROWNP",
+    "ORBIT"
+   ],
+   "signalsB": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "prediction_matches": {
+    "A": true,
+    "B": true
+   },
+   "sat_all_ok": true,
+   "both_teams_clean": false
+  },
+  {
+   "name": "neck2",
+   "verdict": "DEAD-SIGNATURE",
+   "deathA": [
+    "CROWNP"
+   ],
+   "signalsA": [
+    "ADAPT-kept-bottom"
+   ],
+   "deathB": [
+    "CROWN",
+    "CROWNP",
+    "ORBIT"
+   ],
+   "signalsB": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "prediction_matches": {
+    "A": true,
+    "B": true
+   },
+   "sat_all_ok": true,
+   "both_teams_clean": false
+  }
+ ],
+ "both_clean_survivors": []
+}

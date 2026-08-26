@@ -1,0 +1,10541 @@
+{
+ "name": "geomirror",
+ "desc": "s = 2^{floor((t-1)/2)}  (mirror of geo: d_odd -> inf, d_even = 0)",
+ "s_values": {
+  "1": 1,
+  "2": 1,
+  "3": 2,
+  "4": 2,
+  "5": 4,
+  "6": 4,
+  "7": 8,
+  "8": 8,
+  "9": 16,
+  "10": 16,
+  "11": 32,
+  "12": 32,
+  "13": 64,
+  "14": 64,
+  "15": 128,
+  "16": 128,
+  "17": 256,
+  "18": 256
+ },
+ "d_values": {
+  "1": 1,
+  "2": 0,
+  "3": 2,
+  "4": 0,
+  "5": 4,
+  "6": 0,
+  "7": 8,
+  "8": 0,
+  "9": 16,
+  "10": 0,
+  "11": 32,
+  "12": 0,
+  "13": 64,
+  "14": 0,
+  "15": 128,
+  "16": 0,
+  "17": 256
+ },
+ "prediction": {
+  "A": [
+   "kept-bottom (d<=6 at 15 octaves, e.g. t=[10, 12, 14, 16])",
+   "recv-top (d>=2 at 15 octaves, e.g. t=[11, 13, 15, 17])"
+  ],
+  "B": [
+   "CLEAN predicted"
+  ]
+ },
+ "prediction_matches": {
+  "A": true,
+  "B": true
+ },
+ "sizeA": 174762,
+ "sizeB": 87382,
+ "teamA": {
+  "label": "v2_geomirror/A",
+  "size": 174762,
+  "min": 2,
+  "max": 262144,
+  "scans": [
+   {
+    "H": 4096,
+    "n": 2730,
+    "flags": [
+     "ORBIT",
+     "RAY-GROW",
+     "CROWNP",
+     "ADAPT-kept-bottom",
+     "ADAPT-recv-top"
+    ],
+    "orbit_fmax64": {
+     "fmax": 64,
+     "F_size": 42,
+     "full_F": {
+      "len": 45,
+      "F": [
+       2,
+       4,
+       5,
+       6,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49,
+       50,
+       51,
+       52,
+       53,
+       54,
+       55,
+       56,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       64
+      ],
+      "span_octaves": 8,
+      "start": 12,
+      "end": 2092,
+      "censored": true,
+      "chain": [
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49,
+       50,
+       51,
+       52,
+       53,
+       54,
+       55,
+       56,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       64,
+       65,
+       66,
+       68,
+       72,
+       142,
+       272,
+       542,
+       1047,
+       2092
+      ],
+      "reflectors": [
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       2,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49,
+       50,
+       51,
+       52,
+       53,
+       54,
+       55,
+       56,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       64,
+       64,
+       64,
+       2,
+       12,
+       2,
+       37,
+       2
+      ]
+     },
+     "top_single": [
+      {
+       "len": 6,
+       "F": [
+        37
+       ],
+       "span_octaves": 1,
+       "start": 38,
+       "end": 69,
+       "censored": false,
+       "chain": [
+        38,
+        39,
+        41,
+        45,
+        53,
+        69
+       ],
+       "reflectors": [
+        37,
+        37,
+        37,
+        37,
+        37
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        38
+       ],
+       "span_octaves": 1,
+       "start": 39,
+       "end": 70,
+       "censored": false,
+       "chain": [
+        39,
+        40,
+        42,
+        46,
+        54,
+        70
+       ],
+       "reflectors": [
+        38,
+        38,
+        38,
+        38,
+        38
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        39
+       ],
+       "span_octaves": 1,
+       "start": 40,
+       "end": 71,
+       "censored": false,
+       "chain": [
+        40,
+        41,
+        43,
+        47,
+        55,
+        71
+       ],
+       "reflectors": [
+        39,
+        39,
+        39,
+        39,
+        39
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        40
+       ],
+       "span_octaves": 1,
+       "start": 41,
+       "end": 72,
+       "censored": false,
+       "chain": [
+        41,
+        42,
+        44,
+        48,
+        56,
+        72
+       ],
+       "reflectors": [
+        40,
+        40,
+        40,
+        40,
+        40
+       ]
+      },
+      {
+       "len": 5,
+       "F": [
+        5
+       ],
+       "span_octaves": 4,
+       "start": 38,
+       "end": 533,
+       "censored": false,
+       "chain": [
+        38,
+        71,
+        137,
+        269,
+        533
+       ],
+       "reflectors": [
+        5,
+        5,
+        5,
+        5
+       ]
+      }
+     ],
+     "top_pair": [
+      {
+       "len": 10,
+       "F": [
+        5,
+        39
+       ],
+       "span_octaves": 5,
+       "start": 40,
+       "end": 1027,
+       "censored": false,
+       "chain": [
+        40,
+        41,
+        43,
+        47,
+        55,
+        71,
+        137,
+        269,
+        533,
+        1027
+       ],
+       "reflectors": [
+        39,
+        39,
+        39,
+        39,
+        39,
+        5,
+        5,
+        5,
+        39
+       ]
+      },
+      {
+       "len": 10,
+       "F": [
+        6,
+        40
+       ],
+       "span_octaves": 5,
+       "start": 41,
+       "end": 1028,
+       "censored": false,
+       "chain": [
+        41,
+        42,
+        44,
+        48,
+        56,
+        72,
+        138,
+        270,
+        534,
+        1028
+       ],
+       "reflectors": [
+        40,
+        40,
+        40,
+        40,
+        40,
+        6,
+        6,
+        6,
+        40
+       ]
+      },
+      {
+       "len": 8,
+       "F": [
+        5,
+        40
+       ],
+       "span_octaves": 2,
+       "start": 41,
+       "end": 238,
+       "censored": false,
+       "chain": [
+        41,
+        42,
+        44,
+        48,
+        56,
+        72,
+        139,
+        238
+       ],
+       "reflectors": [
+        40,
+        40,
+        40,
+        40,
+        40,
+        5,
+        40
+       ]
+      },
+      {
+       "len": 8,
+       "F": [
+        37,
+        40
+       ],
+       "span_octaves": 1,
+       "start": 38,
+       "end": 72,
+       "censored": false,
+       "chain": [
+        38,
+        39,
+        41,
+        42,
+        44,
+        48,
+        56,
+        72
+       ],
+       "reflectors": [
+        37,
+        37,
+        40,
+        40,
+        40,
+        40,
+        40
+       ]
+      },
+      {
+       "len": 7,
+       "F": [
+        5,
+        6
+       ],
+       "span_octaves": 6,
+       "start": 38,
+       "end": 2107,
+       "censored": true,
+       "chain": [
+        38,
+        71,
+        137,
+        268,
+        531,
+        1056,
+        2107
+       ],
+       "reflectors": [
+        5,
+        5,
+        6,
+        5,
+        6,
+        5
+       ]
+      }
+     ],
+     "flag": true,
+     "flag_reason": "censored chain of span 8 octaves (len 45, F=[2, 4, 5, 6, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64]) still alive at horizon \u2014 candidate infinite orbit (lem:orbit death if it persists)"
+    },
+    "ray_fixed": {
+     "cap": "fixed 64",
+     "caps_per_octave": {
+      "1": 1,
+      "2": 2,
+      "3": 4,
+      "4": 8,
+      "5": 16,
+      "6": 32,
+      "7": 64,
+      "8": 64,
+      "9": 64,
+      "10": 64,
+      "11": 64,
+      "12": 64
+     },
+     "per_start": [
+      {
+       "t0": 1,
+       "t_last": 1,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 2,
+       "t_last": 3,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 3,
+       "t_last": 3,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 4,
+       "t_last": 12,
+       "span": 8,
+       "censored": true
+      },
+      {
+       "t0": 5,
+       "t_last": 12,
+       "span": 7,
+       "censored": true
+      },
+      {
+       "t0": 6,
+       "t_last": 12,
+       "span": 6,
+       "censored": true
+      },
+      {
+       "t0": 7,
+       "t_last": 12,
+       "span": 5,
+       "censored": true
+      },
+      {
+       "t0": 8,
+       "t_last": 12,
+       "span": 4,
+       "censored": true
+      },
+      {
+       "t0": 9,
+       "t_last": 12,
+       "span": 3,
+       "censored": true
+      },
+      {
+       "t0": 10,
+       "t_last": 12,
+       "span": 2,
+       "censored": true
+      },
+      {
+       "t0": 11,
+       "t_last": 12,
+       "span": 1,
+       "censored": true
+      },
+      {
+       "t0": 12,
+       "t_last": 12,
+       "span": 0,
+       "censored": true
+      }
+     ],
+     "best": {
+      "t0": 4,
+      "t_last": 12,
+      "span": 8,
+      "censored": true
+     },
+     "flag": true,
+     "witness": {
+      "start": 11,
+      "end": 2081,
+      "len": 9,
+      "verified": true,
+      "chain": [
+       11,
+       20,
+       38,
+       72,
+       139,
+       267,
+       529,
+       1043,
+       2081
+      ],
+      "reflectors": [
+       2,
+       2,
+       4,
+       5,
+       11,
+       5,
+       15,
+       5
+      ],
+      "max_reflector": 15
+     },
+     "flag_reason": "censored ray of span 8 octaves (start octave 4) alive at horizon with reflectors <= cap \u2014 growing-reflector orbit analogue"
+    },
+    "ray_grow": {
+     "cap": "4*s_t + 64",
+     "caps_per_octave": {
+      "1": 1,
+      "2": 2,
+      "3": 4,
+      "4": 8,
+      "5": 16,
+      "6": 32,
+      "7": 64,
+      "8": 96,
+      "9": 128,
+      "10": 128,
+      "11": 192,
+      "12": 192
+     },
+     "per_start": [
+      {
+       "t0": 1,
+       "t_last": 1,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 2,
+       "t_last": 3,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 3,
+       "t_last": 3,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 4,
+       "t_last": 12,
+       "span": 8,
+       "censored": true
+      },
+      {
+       "t0": 5,
+       "t_last": 12,
+       "span": 7,
+       "censored": true
+      },
+      {
+       "t0": 6,
+       "t_last": 12,
+       "span": 6,
+       "censored": true
+      },
+      {
+       "t0": 7,
+       "t_last": 12,
+       "span": 5,
+       "censored": true
+      },
+      {
+       "t0": 8,
+       "t_last": 12,
+       "span": 4,
+       "censored": true
+      },
+      {
+       "t0": 9,
+       "t_last": 12,
+       "span": 3,
+       "censored": true
+      },
+      {
+       "t0": 10,
+       "t_last": 12,
+       "span": 2,
+       "censored": true
+      },
+      {
+       "t0": 11,
+       "t_last": 12,
+       "span": 1,
+       "censored": true
+      },
+      {
+       "t0": 12,
+       "t_last": 12,
+       "span": 0,
+       "censored": true
+      }
+     ],
+     "best": {
+      "t0": 4,
+      "t_last": 12,
+      "span": 8,
+      "censored": true
+     },
+     "flag": true,
+     "witness": {
+      "start": 11,
+      "end": 2081,
+      "len": 9,
+      "verified": true,
+      "chain": [
+       11,
+       20,
+       38,
+       72,
+       139,
+       267,
+       529,
+       1043,
+       2081
+      ],
+      "reflectors": [
+       2,
+       2,
+       4,
+       5,
+       11,
+       5,
+       15,
+       5
+      ],
+      "max_reflector": 15
+     },
+     "flag_reason": "censored ray of span 8 octaves (start octave 4) alive at horizon with reflectors <= cap \u2014 growing-reflector orbit analogue"
+    },
+    "crown_g2": {
+     "attacker_max": 64,
+     "crown_pair_rows": [],
+     "occupied_octaves": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12
+     ],
+     "attackers_tested": 42,
+     "top": [
+      {
+       "x": 16,
+       "octaves_above": 5,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 0.8,
+       "attacks_per_octave": [
+        2,
+        8,
+        8,
+        8,
+        0
+       ],
+       "mean_attacks": 5.2,
+       "attacked_offsets": [
+        [
+         5,
+         1,
+         2
+        ],
+        [
+         6,
+         5,
+         12
+        ],
+        [
+         8,
+         9,
+         16
+        ],
+        [
+         10,
+         17,
+         24
+        ]
+       ]
+      },
+      {
+       "x": 14,
+       "octaves_above": 5,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 0.8,
+       "attacks_per_octave": [
+        1,
+        7,
+        7,
+        7,
+        0
+       ],
+       "mean_attacks": 4.4,
+       "attacked_offsets": [
+        [
+         5,
+         1,
+         1
+        ],
+        [
+         6,
+         5,
+         11
+        ],
+        [
+         8,
+         9,
+         15
+        ],
+        [
+         10,
+         17,
+         23
+        ]
+       ]
+      },
+      {
+       "x": 15,
+       "octaves_above": 5,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 0.8,
+       "attacks_per_octave": [
+        1,
+        7,
+        7,
+        7,
+        0
+       ],
+       "mean_attacks": 4.4,
+       "attacked_offsets": [
+        [
+         5,
+         1,
+         1
+        ],
+        [
+         6,
+         5,
+         11
+        ],
+        [
+         8,
+         9,
+         15
+        ],
+        [
+         10,
+         17,
+         23
+        ]
+       ]
+      },
+      {
+       "x": 20,
+       "octaves_above": 4,
+       "octaves_attacked": 3,
+       "recurrence_ratio": 0.75,
+       "attacks_per_octave": [
+        10,
+        10,
+        10,
+        0
+       ],
+       "mean_attacks": 7.5,
+       "attacked_offsets": [
+        [
+         6,
+         5,
+         14
+        ],
+        [
+         8,
+         9,
+         18
+        ],
+        [
+         10,
+         17,
+         26
+        ]
+       ]
+      },
+      {
+       "x": 18,
+       "octaves_above": 4,
+       "octaves_attacked": 3,
+       "recurrence_ratio": 0.75,
+       "attacks_per_octave": [
+        9,
+        9,
+        9,
+        0
+       ],
+       "mean_attacks": 6.75,
+       "attacked_offsets": [
+        [
+         6,
+         5,
+         13
+        ],
+        [
+         8,
+         9,
+         17
+        ],
+        [
+         10,
+         17,
+         25
+        ]
+       ]
+      },
+      {
+       "x": 19,
+       "octaves_above": 4,
+       "octaves_attacked": 3,
+       "recurrence_ratio": 0.75,
+       "attacks_per_octave": [
+        9,
+        9,
+        9,
+        0
+       ],
+       "mean_attacks": 6.75,
+       "attacked_offsets": [
+        [
+         6,
+         5,
+         13
+        ],
+        [
+         8,
+         9,
+         17
+        ],
+        [
+         10,
+         17,
+         25
+        ]
+       ]
+      },
+      {
+       "x": 17,
+       "octaves_above": 4,
+       "octaves_attacked": 3,
+       "recurrence_ratio": 0.75,
+       "attacks_per_octave": [
+        8,
+        8,
+        8,
+        0
+       ],
+       "mean_attacks": 6.0,
+       "attacked_offsets": [
+        [
+         6,
+         5,
+         12
+        ],
+        [
+         8,
+         9,
+         16
+        ],
+        [
+         10,
+         17,
+         24
+        ]
+       ]
+      },
+      {
+       "x": 2,
+       "octaves_above": 8,
+       "octaves_attacked": 6,
+       "recurrence_ratio": 0.75,
+       "attacks_per_octave": [
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+       ],
+       "mean_attacks": 0.75,
+       "attacked_offsets": [
+        [
+         2,
+         2,
+         2
+        ],
+        [
+         4,
+         3,
+         3
+        ],
+        [
+         5,
+         4,
+         4
+        ],
+        [
+         6,
+         5,
+         5
+        ],
+        [
+         8,
+         9,
+         9
+        ],
+        [
+         10,
+         17,
+         17
+        ]
+       ]
+      },
+      {
+       "x": 4,
+       "octaves_above": 7,
+       "octaves_attacked": 5,
+       "recurrence_ratio": 0.714,
+       "attacks_per_octave": [
+        1,
+        2,
+        0,
+        2,
+        2,
+        2,
+        0
+       ],
+       "mean_attacks": 1.29,
+       "attacked_offsets": [
+        [
+         3,
+         1,
+         1
+        ],
+        [
+         4,
+         3,
+         4
+        ],
+        [
+         6,
+         5,
+         6
+        ],
+        [
+         8,
+         9,
+         10
+        ],
+        [
+         10,
+         17,
+         18
+        ]
+       ]
+      },
+      {
+       "x": 64,
+       "octaves_above": 3,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.667,
+       "attacks_per_octave": [
+        32,
+        32,
+        0
+       ],
+       "mean_attacks": 21.33,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         40
+        ],
+        [
+         10,
+         17,
+         48
+        ]
+       ]
+      },
+      {
+       "x": 62,
+       "octaves_above": 3,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.667,
+       "attacks_per_octave": [
+        31,
+        31,
+        0
+       ],
+       "mean_attacks": 20.67,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         39
+        ],
+        [
+         10,
+         17,
+         47
+        ]
+       ]
+      },
+      {
+       "x": 63,
+       "octaves_above": 3,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.667,
+       "attacks_per_octave": [
+        31,
+        31,
+        0
+       ],
+       "mean_attacks": 20.67,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         39
+        ],
+        [
+         10,
+         17,
+         47
+        ]
+       ]
+      }
+     ],
+     "recurring_attackers": [],
+     "crown_pairs": [],
+     "flag": false,
+     "flag_reason": "no attacker recurs across scales"
+    },
+    "crown_persistence_gap1": {
+     "flag": true,
+     "flagged_attackers": [
+      2,
+      4,
+      5,
+      6,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+     ]
+    },
+    "crown_persistence_gap2": {
+     "attacker_max": 64,
+     "top_octave": 12,
+     "min_octs": 4,
+     "top_gap": 2,
+     "flagged_attackers": [
+      2,
+      4,
+      5,
+      6,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+     ],
+     "rows": [
+      {
+       "x": 2,
+       "n_attacked": 9,
+       "attacked_octaves": [
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+       ],
+       "top_attacked": 11,
+       "persists": true,
+       "examples": [
+        [
+         2,
+         4,
+         6
+        ],
+        [
+         2,
+         11,
+         20
+        ],
+        [
+         2,
+         20,
+         38
+        ]
+       ]
+      },
+      {
+       "x": 4,
+       "n_attacked": 8,
+       "attacked_octaves": [
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+       ],
+       "top_attacked": 11,
+       "persists": true,
+       "examples": [
+        [
+         4,
+         5,
+         6
+        ],
+        [
+         4,
+         11,
+         18
+        ],
+        [
+         4,
+         37,
+         70
+        ]
+       ]
+      },
+      {
+       "x": 5,
+       "n_attacked": 7,
+       "attacked_octaves": [
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+       ],
+       "top_attacked": 11,
+       "persists": true,
+       "examples": [
+        [
+         5,
+         11,
+         17
+        ],
+        [
+         5,
+         37,
+         69
+        ],
+        [
+         5,
+         71,
+         137
+        ]
+       ]
+      },
+      {
+       "x": 6,
+       "n_attacked": 7,
+       "attacked_octaves": [
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+       ],
+       "top_attacked": 11,
+       "persists": true,
+       "examples": [
+        [
+         6,
+         11,
+         16
+        ],
+        [
+         6,
+         37,
+         68
+        ],
+        [
+         6,
+         72,
+         138
+        ]
+       ]
+      },
+      {
+       "x": 11,
+       "n_attacked": 5,
+       "attacked_octaves": [
+        6,
+        8,
+        9,
+        10,
+        11
+       ],
+       "top_attacked": 11,
+       "persists": true,
+       "examples": [
+        [
+         11,
+         37,
+         63
+        ],
+        [
+         11,
+         137,
+         263
+        ],
+        [
+         11,
+         270,
+         529
+        ]
+       ]
+      },
+      {
+       "x": 12,
+       "n_attacked": 5,
+       "attacked_octaves": [
+        6,
+        8,
+        9,
+        10,
+        11
+       ],
+       "top_attacked": 11,
+       "persists": true,
+       "examples": [
+        [
+         12,
+         37,
+         62
+        ],
+        [
+         12,
+         137,
+         262
+        ],
+        [
+         12,
+         271,
+         530
+        ]
+       ]
+      },
+      {
+       "x": 13,
+       "n_attacked": 5,
+       "attacked_octaves": [
+        6,
+        8,
+        9,
+        10,
+        11
+       ],
+       "top_attacked": 11,
+       "persists": true,
+       "examples": [
+        [
+         13,
+         37,
+         61
+        ],
+        [
+         13,
+         137,
+         261
+        ],
+        [
+         13,
+         271,
+         529
+        ]
+       ]
+      },
+      {
+       "x": 14,
+       "n_attacked": 6,
+       "attacked_octaves": [
+        5,
+        6,
+        8,
+        9,
+        10,
+        11
+       ],
+       "top_attacked": 11,
+       "persists": true,
+       "examples": [
+        [
+         14,
+         17,
+         20
+        ],
+        [
+         14,
+         37,
+         60
+        ],
+        [
+         14,
+         137,
+         260
+        ]
+       ]
+      },
+      {
+       "x": 15,
+       "n_attacked": 6,
+       "attacked_octaves": [
+        5,
+        6,
+        8,
+        9,
+        10,
+        11
+       ],
+       "top_attacked": 11,
+       "persists": true,
+       "examples": [
+        [
+         15,
+         17,
+         19
+        ],
+        [
+         15,
+         37,
+         59
+        ],
+        [
+         15,
+         137,
+         259
+        ]
+       ]
+      },
+      {
+       "x": 16,
+       "n_attacked": 5,
+       "attacked_octaves": [
+        5,
+        6,
+        8,
+        10,
+        11
+       ],
+       "top_attacked": 11,
+       "persists": true,
+       "examples": [
+        [
+         16,
+         17,
+         18
+        ],
+        [
+         16,
+         37,
+         58
+        ],
+        [
+         16,
+         137,
+         258
+        ]
+       ]
+      },
+      {
+       "x": 17,
+       "n_attacked": 4,
+       "attacked_octaves": [
+        6,
+        8,
+        10,
+        11
+       ],
+       "top_attacked": 11,
+       "persists": true,
+       "examples": [
+        [
+         17,
+         37,
+         57
+        ],
+        [
+         17,
+         137,
+         257
+        ],
+        [
+         17,
+         529,
+         1041
+        ]
+       ]
+      },
+      {
+       "x": 18,
+       "n_attacked": 4,
+       "attacked_octaves": [
+        6,
+        8,
+        10,
+        11
+       ],
+       "top_attacked": 11,
+       "persists": true,
+       "examples": [
+        [
+         18,
+         37,
+         56
+        ],
+        [
+         18,
+         137,
+         256
+        ],
+        [
+         18,
+         529,
+         1040
+        ]
+       ]
+      },
+      {
+       "x": 19,
+       "n_attacked": 4,
+       "attacked_octaves": [
+        6,
+        8,
+        10,
+        11
+       ],
+       "top_attacked": 11,
+       "persists": true,
+       "examples": [
+        [
+         19,
+         37,
+         55
+        ],
+        [
+         19,
+         137,
+         255
+        ],
+        [
+         19,
+         529,
+         1039
+        ]
+       ]
+      },
+      {
+       "x": 20,
+       "n_attacked": 4,
+       "attacked_octaves": [
+        6,
+        8,
+        10,
+        11
+       ],
+       "top_attacked": 11,
+       "persists": true,
+       "examples": [
+        [
+         20,
+         37,
+         54
+        ],
+        [
+         20,
+         137,
+         254
+        ],
+        [
+         20,
+         529,
+         1038
+        ]
+       ]
+      }
+     ],
+     "flag": true,
+     "flag_reason": "attackers [2, 4, 5, 6, 11, 12, 13, 14, 15, 16, 17, 18] attack in >= 4 octaves persisting to the horizon (top octave 12)"
+    },
+    "sliver": {
+     "width": 8,
+     "per_octave": [
+      {
+       "t": 1,
+       "block": [
+        2,
+        2
+       ],
+       "density": 1.0,
+       "sliver_width": 1,
+       "sliver_load": 1.0
+      },
+      {
+       "t": 2,
+       "block": [
+        3,
+        4
+       ],
+       "density": 0.5,
+       "sliver_width": 2,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 3,
+       "block": [
+        5,
+        8
+       ],
+       "density": 0.5,
+       "sliver_width": 4,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 4,
+       "block": [
+        9,
+        16
+       ],
+       "density": 0.75,
+       "sliver_width": 8,
+       "sliver_load": 0.75
+      },
+      {
+       "t": 5,
+       "block": [
+        17,
+        32
+       ],
+       "density": 0.25,
+       "sliver_width": 8,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 6,
+       "block": [
+        33,
+        64
+       ],
+       "density": 0.875,
+       "sliver_width": 8,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 8,
+       "block": [
+        129,
+        256
+       ],
+       "density": 0.9375,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 10,
+       "block": [
+        513,
+        1024
+       ],
+       "density": 0.9688,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 12,
+       "block": [
+        2049,
+        4096
+       ],
+       "density": 0.9844,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      }
+     ],
+     "large_scale_mean_load": 0.2,
+     "flag": false,
+     "flag_reason": "slivers unloaded at large scales"
+    },
+    "adaptive": {
+     "rows": [
+      {
+       "t": 5,
+       "surface": "recv-top",
+       "s_t": 4,
+       "d_t": 4,
+       "n_attackers": 4,
+       "x_min": 2,
+       "x_max": 16,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 3"
+      },
+      {
+       "t": 6,
+       "surface": "kept-bottom",
+       "s_t": 4,
+       "d_t": 0,
+       "n_attackers": 14,
+       "x_min": 2,
+       "x_max": 20,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 2 (sliver-mediated)"
+      },
+      {
+       "t": 7,
+       "surface": "recv-top",
+       "s_t": 8,
+       "d_t": 8,
+       "n_attackers": 11,
+       "x_min": 2,
+       "x_max": 64,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 7"
+      },
+      {
+       "t": 8,
+       "surface": "kept-bottom",
+       "s_t": 8,
+       "d_t": 0,
+       "n_attackers": 50,
+       "x_min": 2,
+       "x_max": 72,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 2 (sliver-mediated)"
+      },
+      {
+       "t": 9,
+       "surface": "recv-top",
+       "s_t": 16,
+       "d_t": 16,
+       "n_attackers": 9,
+       "x_min": 2,
+       "x_max": 15,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 15"
+      },
+      {
+       "t": 10,
+       "surface": "kept-bottom",
+       "s_t": 16,
+       "d_t": 0,
+       "n_attackers": 186,
+       "x_min": 2,
+       "x_max": 272,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 2 (sliver-mediated)"
+      },
+      {
+       "t": 11,
+       "surface": "recv-top",
+       "s_t": 32,
+       "d_t": 32,
+       "n_attackers": 14,
+       "x_min": 2,
+       "x_max": 20,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 31"
+      }
+     ],
+     "summary": {
+      "kept-bottom": {
+       "octaves": 2,
+       "attackable": 2,
+       "rate": 1.0,
+       "flag": true,
+       "fixed_attacker_octaves": 2
+      },
+      "recv-top": {
+       "octaves": 2,
+       "attackable": 2,
+       "rate": 1.0,
+       "flag": true,
+       "fixed_attacker_octaves": 2
+      }
+     },
+     "flags": [
+      "ADAPT-kept-bottom",
+      "ADAPT-recv-top"
+     ],
+     "flag": true,
+     "flag_reason": "scale-adapted attacker families recur on ['ADAPT-kept-bottom', 'ADAPT-recv-top']"
+    },
+    "time": 0.1
+   },
+   {
+    "H": 32768,
+    "n": 11050,
+    "flags": [
+     "ORBIT",
+     "RAY-GROW",
+     "CROWN",
+     "CROWNP",
+     "ADAPT-kept-bottom",
+     "ADAPT-recv-top"
+    ],
+    "orbit_fmax64": {
+     "fmax": 64,
+     "F_size": 42,
+     "full_F": {
+      "len": 48,
+      "F": [
+       2,
+       4,
+       5,
+       6,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49,
+       50,
+       51,
+       52,
+       53,
+       54,
+       55,
+       56,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       64
+      ],
+      "span_octaves": 11,
+      "start": 12,
+      "end": 16512,
+      "censored": true,
+      "chain": [
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49,
+       50,
+       51,
+       52,
+       53,
+       54,
+       55,
+       56,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       64,
+       65,
+       66,
+       68,
+       72,
+       142,
+       272,
+       542,
+       1047,
+       2092,
+       4147,
+       8288,
+       16512
+      ],
+      "reflectors": [
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       2,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49,
+       50,
+       51,
+       52,
+       53,
+       54,
+       55,
+       56,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       64,
+       64,
+       64,
+       2,
+       12,
+       2,
+       37,
+       2,
+       37,
+       6,
+       64
+      ]
+     },
+     "top_single": [
+      {
+       "len": 6,
+       "F": [
+        11
+       ],
+       "span_octaves": 5,
+       "start": 270,
+       "end": 8299,
+       "censored": false,
+       "chain": [
+        270,
+        529,
+        1047,
+        2083,
+        4155,
+        8299
+       ],
+       "reflectors": [
+        11,
+        11,
+        11,
+        11,
+        11
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        12
+       ],
+       "span_octaves": 5,
+       "start": 271,
+       "end": 8300,
+       "censored": false,
+       "chain": [
+        271,
+        530,
+        1048,
+        2084,
+        4156,
+        8300
+       ],
+       "reflectors": [
+        12,
+        12,
+        12,
+        12,
+        12
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        13
+       ],
+       "span_octaves": 5,
+       "start": 272,
+       "end": 8301,
+       "censored": false,
+       "chain": [
+        272,
+        531,
+        1049,
+        2085,
+        4157,
+        8301
+       ],
+       "reflectors": [
+        13,
+        13,
+        13,
+        13,
+        13
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        37
+       ],
+       "span_octaves": 1,
+       "start": 38,
+       "end": 69,
+       "censored": false,
+       "chain": [
+        38,
+        39,
+        41,
+        45,
+        53,
+        69
+       ],
+       "reflectors": [
+        37,
+        37,
+        37,
+        37,
+        37
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        38
+       ],
+       "span_octaves": 1,
+       "start": 39,
+       "end": 70,
+       "censored": false,
+       "chain": [
+        39,
+        40,
+        42,
+        46,
+        54,
+        70
+       ],
+       "reflectors": [
+        38,
+        38,
+        38,
+        38,
+        38
+       ]
+      }
+     ],
+     "top_pair": [
+      {
+       "len": 10,
+       "F": [
+        5,
+        39
+       ],
+       "span_octaves": 5,
+       "start": 40,
+       "end": 1027,
+       "censored": false,
+       "chain": [
+        40,
+        41,
+        43,
+        47,
+        55,
+        71,
+        137,
+        269,
+        533,
+        1027
+       ],
+       "reflectors": [
+        39,
+        39,
+        39,
+        39,
+        39,
+        5,
+        5,
+        5,
+        39
+       ]
+      },
+      {
+       "len": 8,
+       "F": [
+        11,
+        38
+       ],
+       "span_octaves": 7,
+       "start": 154,
+       "end": 16506,
+       "censored": true,
+       "chain": [
+        154,
+        270,
+        529,
+        1047,
+        2083,
+        4155,
+        8272,
+        16506
+       ],
+       "reflectors": [
+        38,
+        11,
+        11,
+        11,
+        11,
+        38,
+        38
+       ]
+      },
+      {
+       "len": 8,
+       "F": [
+        11,
+        39
+       ],
+       "span_octaves": 7,
+       "start": 141,
+       "end": 16511,
+       "censored": true,
+       "chain": [
+        141,
+        271,
+        531,
+        1051,
+        2091,
+        4143,
+        8275,
+        16511
+       ],
+       "reflectors": [
+        11,
+        11,
+        11,
+        11,
+        39,
+        11,
+        39
+       ]
+      },
+      {
+       "len": 8,
+       "F": [
+        11,
+        40
+       ],
+       "span_octaves": 7,
+       "start": 141,
+       "end": 16506,
+       "censored": true,
+       "chain": [
+        141,
+        271,
+        531,
+        1051,
+        2091,
+        4142,
+        8273,
+        16506
+       ],
+       "reflectors": [
+        11,
+        11,
+        11,
+        11,
+        40,
+        11,
+        40
+       ]
+      },
+      {
+       "len": 8,
+       "F": [
+        5,
+        11
+       ],
+       "span_octaves": 7,
+       "start": 72,
+       "end": 8305,
+       "censored": false,
+       "chain": [
+        72,
+        139,
+        267,
+        529,
+        1047,
+        2083,
+        4155,
+        8305
+       ],
+       "reflectors": [
+        5,
+        11,
+        5,
+        11,
+        11,
+        11,
+        5
+       ]
+      }
+     ],
+     "flag": true,
+     "flag_reason": "censored chain of span 11 octaves (len 48, F=[2, 4, 5, 6, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64]) still alive at horizon \u2014 candidate infinite orbit (lem:orbit death if it persists)"
+    },
+    "ray_fixed": {
+     "cap": "fixed 64",
+     "caps_per_octave": {
+      "1": 1,
+      "2": 2,
+      "3": 4,
+      "4": 8,
+      "5": 16,
+      "6": 32,
+      "7": 64,
+      "8": 64,
+      "9": 64,
+      "10": 64,
+      "11": 64,
+      "12": 64,
+      "13": 64,
+      "14": 64,
+      "15": 64
+     },
+     "per_start": [
+      {
+       "t0": 1,
+       "t_last": 1,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 2,
+       "t_last": 3,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 3,
+       "t_last": 3,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 4,
+       "t_last": 15,
+       "span": 11,
+       "censored": true
+      },
+      {
+       "t0": 5,
+       "t_last": 15,
+       "span": 10,
+       "censored": true
+      },
+      {
+       "t0": 6,
+       "t_last": 15,
+       "span": 9,
+       "censored": true
+      },
+      {
+       "t0": 7,
+       "t_last": 15,
+       "span": 8,
+       "censored": true
+      },
+      {
+       "t0": 8,
+       "t_last": 15,
+       "span": 7,
+       "censored": true
+      },
+      {
+       "t0": 9,
+       "t_last": 15,
+       "span": 6,
+       "censored": true
+      },
+      {
+       "t0": 10,
+       "t_last": 15,
+       "span": 5,
+       "censored": true
+      },
+      {
+       "t0": 11,
+       "t_last": 15,
+       "span": 4,
+       "censored": true
+      },
+      {
+       "t0": 12,
+       "t_last": 15,
+       "span": 3,
+       "censored": true
+      },
+      {
+       "t0": 13,
+       "t_last": 15,
+       "span": 2,
+       "censored": true
+      },
+      {
+       "t0": 14,
+       "t_last": 15,
+       "span": 1,
+       "censored": true
+      },
+      {
+       "t0": 15,
+       "t_last": 15,
+       "span": 0,
+       "censored": true
+      }
+     ],
+     "best": {
+      "t0": 4,
+      "t_last": 15,
+      "span": 11,
+      "censored": true
+     },
+     "flag": true,
+     "witness": {
+      "start": 11,
+      "end": 16450,
+      "len": 12,
+      "verified": true,
+      "chain": [
+       11,
+       20,
+       38,
+       72,
+       139,
+       267,
+       529,
+       1043,
+       2084,
+       4131,
+       8257,
+       16450
+      ],
+      "reflectors": [
+       2,
+       2,
+       4,
+       5,
+       11,
+       5,
+       15,
+       2,
+       37,
+       5,
+       64
+      ],
+      "max_reflector": 64
+     },
+     "flag_reason": "censored ray of span 11 octaves (start octave 4) alive at horizon with reflectors <= cap \u2014 growing-reflector orbit analogue"
+    },
+    "ray_grow": {
+     "cap": "4*s_t + 64",
+     "caps_per_octave": {
+      "1": 1,
+      "2": 2,
+      "3": 4,
+      "4": 8,
+      "5": 16,
+      "6": 32,
+      "7": 64,
+      "8": 96,
+      "9": 128,
+      "10": 128,
+      "11": 192,
+      "12": 192,
+      "13": 320,
+      "14": 320,
+      "15": 576
+     },
+     "per_start": [
+      {
+       "t0": 1,
+       "t_last": 1,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 2,
+       "t_last": 3,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 3,
+       "t_last": 3,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 4,
+       "t_last": 15,
+       "span": 11,
+       "censored": true
+      },
+      {
+       "t0": 5,
+       "t_last": 15,
+       "span": 10,
+       "censored": true
+      },
+      {
+       "t0": 6,
+       "t_last": 15,
+       "span": 9,
+       "censored": true
+      },
+      {
+       "t0": 7,
+       "t_last": 15,
+       "span": 8,
+       "censored": true
+      },
+      {
+       "t0": 8,
+       "t_last": 15,
+       "span": 7,
+       "censored": true
+      },
+      {
+       "t0": 9,
+       "t_last": 15,
+       "span": 6,
+       "censored": true
+      },
+      {
+       "t0": 10,
+       "t_last": 15,
+       "span": 5,
+       "censored": true
+      },
+      {
+       "t0": 11,
+       "t_last": 15,
+       "span": 4,
+       "censored": true
+      },
+      {
+       "t0": 12,
+       "t_last": 15,
+       "span": 3,
+       "censored": true
+      },
+      {
+       "t0": 13,
+       "t_last": 15,
+       "span": 2,
+       "censored": true
+      },
+      {
+       "t0": 14,
+       "t_last": 15,
+       "span": 1,
+       "censored": true
+      },
+      {
+       "t0": 15,
+       "t_last": 15,
+       "span": 0,
+       "censored": true
+      }
+     ],
+     "best": {
+      "t0": 4,
+      "t_last": 15,
+      "span": 11,
+      "censored": true
+     },
+     "flag": true,
+     "witness": {
+      "start": 11,
+      "end": 16385,
+      "len": 12,
+      "verified": true,
+      "chain": [
+       11,
+       20,
+       38,
+       72,
+       139,
+       267,
+       529,
+       1045,
+       2085,
+       4133,
+       8261,
+       16385
+      ],
+      "reflectors": [
+       2,
+       2,
+       4,
+       5,
+       11,
+       5,
+       13,
+       5,
+       37,
+       5,
+       137
+      ],
+      "max_reflector": 137
+     },
+     "flag_reason": "censored ray of span 11 octaves (start octave 4) alive at horizon with reflectors <= cap \u2014 growing-reflector orbit analogue"
+    },
+    "crown_g2": {
+     "attacker_max": 64,
+     "crown_pair_rows": [
+      {
+       "x": 64,
+       "octaves_above": 4,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        32,
+        32,
+        32,
+        32
+       ],
+       "mean_attacks": 32.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         40
+        ],
+        [
+         10,
+         17,
+         48
+        ],
+        [
+         12,
+         33,
+         64
+        ],
+        [
+         14,
+         65,
+         96
+        ]
+       ]
+      },
+      {
+       "x": 63,
+       "octaves_above": 4,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        31,
+        31,
+        31,
+        31
+       ],
+       "mean_attacks": 31.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         39
+        ],
+        [
+         10,
+         17,
+         47
+        ],
+        [
+         12,
+         33,
+         63
+        ],
+        [
+         14,
+         65,
+         95
+        ]
+       ]
+      },
+      {
+       "x": 16,
+       "octaves_above": 6,
+       "octaves_attacked": 6,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        2,
+        8,
+        8,
+        8,
+        8,
+        8
+       ],
+       "mean_attacks": 7.0,
+       "attacked_offsets": [
+        [
+         5,
+         1,
+         2
+        ],
+        [
+         6,
+         5,
+         12
+        ],
+        [
+         8,
+         9,
+         16
+        ],
+        [
+         10,
+         17,
+         24
+        ],
+        [
+         12,
+         33,
+         40
+        ],
+        [
+         14,
+         65,
+         72
+        ]
+       ]
+      },
+      {
+       "x": 15,
+       "octaves_above": 6,
+       "octaves_attacked": 6,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        1,
+        7,
+        7,
+        7,
+        7,
+        7
+       ],
+       "mean_attacks": 6.0,
+       "attacked_offsets": [
+        [
+         5,
+         1,
+         1
+        ],
+        [
+         6,
+         5,
+         11
+        ],
+        [
+         8,
+         9,
+         15
+        ],
+        [
+         10,
+         17,
+         23
+        ],
+        [
+         12,
+         33,
+         39
+        ],
+        [
+         14,
+         65,
+         71
+        ]
+       ]
+      }
+     ],
+     "occupied_octaves": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      14
+     ],
+     "attackers_tested": 42,
+     "top": [
+      {
+       "x": 64,
+       "octaves_above": 4,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        32,
+        32,
+        32,
+        32
+       ],
+       "mean_attacks": 32.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         40
+        ],
+        [
+         10,
+         17,
+         48
+        ],
+        [
+         12,
+         33,
+         64
+        ],
+        [
+         14,
+         65,
+         96
+        ]
+       ]
+      },
+      {
+       "x": 62,
+       "octaves_above": 4,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        31,
+        31,
+        31,
+        31
+       ],
+       "mean_attacks": 31.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         39
+        ],
+        [
+         10,
+         17,
+         47
+        ],
+        [
+         12,
+         33,
+         63
+        ],
+        [
+         14,
+         65,
+         95
+        ]
+       ]
+      },
+      {
+       "x": 63,
+       "octaves_above": 4,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        31,
+        31,
+        31,
+        31
+       ],
+       "mean_attacks": 31.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         39
+        ],
+        [
+         10,
+         17,
+         47
+        ],
+        [
+         12,
+         33,
+         63
+        ],
+        [
+         14,
+         65,
+         95
+        ]
+       ]
+      },
+      {
+       "x": 60,
+       "octaves_above": 4,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        30,
+        30,
+        30,
+        30
+       ],
+       "mean_attacks": 30.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         38
+        ],
+        [
+         10,
+         17,
+         46
+        ],
+        [
+         12,
+         33,
+         62
+        ],
+        [
+         14,
+         65,
+         94
+        ]
+       ]
+      },
+      {
+       "x": 61,
+       "octaves_above": 4,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        30,
+        30,
+        30,
+        30
+       ],
+       "mean_attacks": 30.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         38
+        ],
+        [
+         10,
+         17,
+         46
+        ],
+        [
+         12,
+         33,
+         62
+        ],
+        [
+         14,
+         65,
+         94
+        ]
+       ]
+      },
+      {
+       "x": 58,
+       "octaves_above": 4,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        29,
+        29,
+        29,
+        29
+       ],
+       "mean_attacks": 29.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         37
+        ],
+        [
+         10,
+         17,
+         45
+        ],
+        [
+         12,
+         33,
+         61
+        ],
+        [
+         14,
+         65,
+         93
+        ]
+       ]
+      },
+      {
+       "x": 59,
+       "octaves_above": 4,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        29,
+        29,
+        29,
+        29
+       ],
+       "mean_attacks": 29.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         37
+        ],
+        [
+         10,
+         17,
+         45
+        ],
+        [
+         12,
+         33,
+         61
+        ],
+        [
+         14,
+         65,
+         93
+        ]
+       ]
+      },
+      {
+       "x": 56,
+       "octaves_above": 4,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        28,
+        28,
+        28,
+        28
+       ],
+       "mean_attacks": 28.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         36
+        ],
+        [
+         10,
+         17,
+         44
+        ],
+        [
+         12,
+         33,
+         60
+        ],
+        [
+         14,
+         65,
+         92
+        ]
+       ]
+      },
+      {
+       "x": 57,
+       "octaves_above": 4,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        28,
+        28,
+        28,
+        28
+       ],
+       "mean_attacks": 28.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         36
+        ],
+        [
+         10,
+         17,
+         44
+        ],
+        [
+         12,
+         33,
+         60
+        ],
+        [
+         14,
+         65,
+         92
+        ]
+       ]
+      },
+      {
+       "x": 54,
+       "octaves_above": 4,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        27,
+        27,
+        27,
+        27
+       ],
+       "mean_attacks": 27.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         35
+        ],
+        [
+         10,
+         17,
+         43
+        ],
+        [
+         12,
+         33,
+         59
+        ],
+        [
+         14,
+         65,
+         91
+        ]
+       ]
+      },
+      {
+       "x": 55,
+       "octaves_above": 4,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        27,
+        27,
+        27,
+        27
+       ],
+       "mean_attacks": 27.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         35
+        ],
+        [
+         10,
+         17,
+         43
+        ],
+        [
+         12,
+         33,
+         59
+        ],
+        [
+         14,
+         65,
+         91
+        ]
+       ]
+      },
+      {
+       "x": 52,
+       "octaves_above": 4,
+       "octaves_attacked": 4,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        26,
+        26,
+        26,
+        26
+       ],
+       "mean_attacks": 26.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         34
+        ],
+        [
+         10,
+         17,
+         42
+        ],
+        [
+         12,
+         33,
+         58
+        ],
+        [
+         14,
+         65,
+         90
+        ]
+       ]
+      }
+     ],
+     "recurring_attackers": [
+      64,
+      62,
+      63,
+      60,
+      61,
+      58,
+      59,
+      56,
+      57,
+      54,
+      55,
+      52,
+      53,
+      50,
+      51,
+      48,
+      49,
+      46,
+      47,
+      44,
+      45,
+      42,
+      43,
+      40,
+      41,
+      38,
+      39,
+      37,
+      20,
+      18,
+      19,
+      17,
+      16,
+      14,
+      15
+     ],
+     "crown_pairs": [
+      [
+       15,
+       16
+      ],
+      [
+       63,
+       64
+      ]
+     ],
+     "flag": true,
+     "flag_reason": "attackers [64, 62, 63, 60, 61, 58, 59, 56, 57, 54, 55, 52] attack >= 90% of occupied octaves above them (15/16-analogues: crown pairs [[15, 16], [63, 64]])"
+    },
+    "crown_persistence_gap1": {
+     "flag": true,
+     "flagged_attackers": [
+      2,
+      4,
+      5,
+      6,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64
+     ]
+    },
+    "crown_persistence_gap2": {
+     "attacker_max": 64,
+     "top_octave": 15,
+     "min_octs": 4,
+     "top_gap": 2,
+     "flagged_attackers": [
+      2,
+      4,
+      5,
+      6,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64
+     ],
+     "rows": [
+      {
+       "x": 2,
+       "n_attacked": 12,
+       "attacked_octaves": [
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         2,
+         4,
+         6
+        ],
+        [
+         2,
+         11,
+         20
+        ],
+        [
+         2,
+         20,
+         38
+        ]
+       ]
+      },
+      {
+       "x": 4,
+       "n_attacked": 11,
+       "attacked_octaves": [
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         4,
+         5,
+         6
+        ],
+        [
+         4,
+         11,
+         18
+        ],
+        [
+         4,
+         37,
+         70
+        ]
+       ]
+      },
+      {
+       "x": 5,
+       "n_attacked": 10,
+       "attacked_octaves": [
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         5,
+         11,
+         17
+        ],
+        [
+         5,
+         37,
+         69
+        ],
+        [
+         5,
+         71,
+         137
+        ]
+       ]
+      },
+      {
+       "x": 6,
+       "n_attacked": 10,
+       "attacked_octaves": [
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         6,
+         11,
+         16
+        ],
+        [
+         6,
+         37,
+         68
+        ],
+        [
+         6,
+         72,
+         138
+        ]
+       ]
+      },
+      {
+       "x": 11,
+       "n_attacked": 8,
+       "attacked_octaves": [
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         11,
+         37,
+         63
+        ],
+        [
+         11,
+         137,
+         263
+        ],
+        [
+         11,
+         270,
+         529
+        ]
+       ]
+      },
+      {
+       "x": 12,
+       "n_attacked": 8,
+       "attacked_octaves": [
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         12,
+         37,
+         62
+        ],
+        [
+         12,
+         137,
+         262
+        ],
+        [
+         12,
+         271,
+         530
+        ]
+       ]
+      },
+      {
+       "x": 13,
+       "n_attacked": 8,
+       "attacked_octaves": [
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         13,
+         37,
+         61
+        ],
+        [
+         13,
+         137,
+         261
+        ],
+        [
+         13,
+         271,
+         529
+        ]
+       ]
+      },
+      {
+       "x": 14,
+       "n_attacked": 9,
+       "attacked_octaves": [
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         14,
+         17,
+         20
+        ],
+        [
+         14,
+         37,
+         60
+        ],
+        [
+         14,
+         137,
+         260
+        ]
+       ]
+      },
+      {
+       "x": 15,
+       "n_attacked": 9,
+       "attacked_octaves": [
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         15,
+         17,
+         19
+        ],
+        [
+         15,
+         37,
+         59
+        ],
+        [
+         15,
+         137,
+         259
+        ]
+       ]
+      },
+      {
+       "x": 16,
+       "n_attacked": 8,
+       "attacked_octaves": [
+        5,
+        6,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         16,
+         17,
+         18
+        ],
+        [
+         16,
+         37,
+         58
+        ],
+        [
+         16,
+         137,
+         258
+        ]
+       ]
+      },
+      {
+       "x": 17,
+       "n_attacked": 7,
+       "attacked_octaves": [
+        6,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         17,
+         37,
+         57
+        ],
+        [
+         17,
+         137,
+         257
+        ],
+        [
+         17,
+         529,
+         1041
+        ]
+       ]
+      },
+      {
+       "x": 18,
+       "n_attacked": 7,
+       "attacked_octaves": [
+        6,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         18,
+         37,
+         56
+        ],
+        [
+         18,
+         137,
+         256
+        ],
+        [
+         18,
+         529,
+         1040
+        ]
+       ]
+      },
+      {
+       "x": 19,
+       "n_attacked": 7,
+       "attacked_octaves": [
+        6,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         19,
+         37,
+         55
+        ],
+        [
+         19,
+         137,
+         255
+        ],
+        [
+         19,
+         529,
+         1039
+        ]
+       ]
+      },
+      {
+       "x": 20,
+       "n_attacked": 7,
+       "attacked_octaves": [
+        6,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         20,
+         37,
+         54
+        ],
+        [
+         20,
+         137,
+         254
+        ],
+        [
+         20,
+         529,
+         1038
+        ]
+       ]
+      },
+      {
+       "x": 37,
+       "n_attacked": 5,
+       "attacked_octaves": [
+        8,
+        10,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         37,
+         137,
+         237
+        ],
+        [
+         37,
+         529,
+         1021
+        ],
+        [
+         37,
+         2081,
+         4125
+        ]
+       ]
+      },
+      {
+       "x": 38,
+       "n_attacked": 5,
+       "attacked_octaves": [
+        8,
+        10,
+        12,
+        13,
+        14
+       ],
+       "top_attacked": 14,
+       "persists": true,
+       "examples": [
+        [
+         38,
+         137,
+         236
+        ],
+        [
+         38,
+         529,
+         1020
+        ],
+        [
+         38,
+         2081,
+         4124
+        ]
+       ]
+      }
+     ],
+     "flag": true,
+     "flag_reason": "attackers [2, 4, 5, 6, 11, 12, 13, 14, 15, 16, 17, 18] attack in >= 4 octaves persisting to the horizon (top octave 15)"
+    },
+    "sliver": {
+     "width": 8,
+     "per_octave": [
+      {
+       "t": 1,
+       "block": [
+        2,
+        2
+       ],
+       "density": 1.0,
+       "sliver_width": 1,
+       "sliver_load": 1.0
+      },
+      {
+       "t": 2,
+       "block": [
+        3,
+        4
+       ],
+       "density": 0.5,
+       "sliver_width": 2,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 3,
+       "block": [
+        5,
+        8
+       ],
+       "density": 0.5,
+       "sliver_width": 4,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 4,
+       "block": [
+        9,
+        16
+       ],
+       "density": 0.75,
+       "sliver_width": 8,
+       "sliver_load": 0.75
+      },
+      {
+       "t": 5,
+       "block": [
+        17,
+        32
+       ],
+       "density": 0.25,
+       "sliver_width": 8,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 6,
+       "block": [
+        33,
+        64
+       ],
+       "density": 0.875,
+       "sliver_width": 8,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 8,
+       "block": [
+        129,
+        256
+       ],
+       "density": 0.9375,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 10,
+       "block": [
+        513,
+        1024
+       ],
+       "density": 0.9688,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 12,
+       "block": [
+        2049,
+        4096
+       ],
+       "density": 0.9844,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 14,
+       "block": [
+        8193,
+        16384
+       ],
+       "density": 0.9922,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      }
+     ],
+     "large_scale_mean_load": 0.1,
+     "flag": false,
+     "flag_reason": "slivers unloaded at large scales"
+    },
+    "adaptive": {
+     "rows": [
+      {
+       "t": 5,
+       "surface": "recv-top",
+       "s_t": 4,
+       "d_t": 4,
+       "n_attackers": 4,
+       "x_min": 2,
+       "x_max": 16,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 3"
+      },
+      {
+       "t": 6,
+       "surface": "kept-bottom",
+       "s_t": 4,
+       "d_t": 0,
+       "n_attackers": 14,
+       "x_min": 2,
+       "x_max": 20,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 2 (sliver-mediated)"
+      },
+      {
+       "t": 7,
+       "surface": "recv-top",
+       "s_t": 8,
+       "d_t": 8,
+       "n_attackers": 11,
+       "x_min": 2,
+       "x_max": 64,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 7"
+      },
+      {
+       "t": 8,
+       "surface": "kept-bottom",
+       "s_t": 8,
+       "d_t": 0,
+       "n_attackers": 50,
+       "x_min": 2,
+       "x_max": 72,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 2 (sliver-mediated)"
+      },
+      {
+       "t": 9,
+       "surface": "recv-top",
+       "s_t": 16,
+       "d_t": 16,
+       "n_attackers": 9,
+       "x_min": 2,
+       "x_max": 15,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 15"
+      },
+      {
+       "t": 10,
+       "surface": "kept-bottom",
+       "s_t": 16,
+       "d_t": 0,
+       "n_attackers": 186,
+       "x_min": 2,
+       "x_max": 272,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 2 (sliver-mediated)"
+      },
+      {
+       "t": 11,
+       "surface": "recv-top",
+       "s_t": 32,
+       "d_t": 32,
+       "n_attackers": 14,
+       "x_min": 2,
+       "x_max": 20,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 31"
+      },
+      {
+       "t": 12,
+       "surface": "kept-bottom",
+       "s_t": 32,
+       "d_t": 0,
+       "n_attackers": 714,
+       "x_min": 2,
+       "x_max": 1056,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 2 (sliver-mediated)"
+      },
+      {
+       "t": 13,
+       "surface": "recv-top",
+       "s_t": 64,
+       "d_t": 64,
+       "n_attackers": 41,
+       "x_min": 2,
+       "x_max": 63,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 63"
+      },
+      {
+       "t": 14,
+       "surface": "kept-bottom",
+       "s_t": 64,
+       "d_t": 0,
+       "n_attackers": 2794,
+       "x_min": 2,
+       "x_max": 4160,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 2 (sliver-mediated)"
+      }
+     ],
+     "summary": {
+      "kept-bottom": {
+       "octaves": 4,
+       "attackable": 4,
+       "rate": 1.0,
+       "flag": true,
+       "fixed_attacker_octaves": 4
+      },
+      "recv-top": {
+       "octaves": 3,
+       "attackable": 3,
+       "rate": 1.0,
+       "flag": true,
+       "fixed_attacker_octaves": 3
+      }
+     },
+     "flags": [
+      "ADAPT-kept-bottom",
+      "ADAPT-recv-top"
+     ],
+     "flag": true,
+     "flag_reason": "scale-adapted attacker families recur on ['ADAPT-kept-bottom', 'ADAPT-recv-top']"
+    },
+    "time": 0.3
+   },
+   {
+    "H": 262144,
+    "n": 174762,
+    "flags": [
+     "ORBIT",
+     "RAY-GROW",
+     "CROWNP",
+     "ADAPT-kept-bottom",
+     "ADAPT-recv-top"
+    ],
+    "orbit_fmax64": {
+     "fmax": 64,
+     "F_size": 42,
+     "full_F": {
+      "len": 51,
+      "F": [
+       2,
+       4,
+       5,
+       6,
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49,
+       50,
+       51,
+       52,
+       53,
+       54,
+       55,
+       56,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       64
+      ],
+      "span_octaves": 14,
+      "start": 12,
+      "end": 131582,
+      "censored": true,
+      "chain": [
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       19,
+       20,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49,
+       50,
+       51,
+       52,
+       53,
+       54,
+       55,
+       56,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       64,
+       65,
+       66,
+       68,
+       72,
+       142,
+       272,
+       542,
+       1047,
+       2092,
+       4147,
+       8280,
+       16496
+      ],
+      "reflectors": [
+       11,
+       12,
+       13,
+       14,
+       15,
+       16,
+       17,
+       18,
+       2,
+       37,
+       38,
+       39,
+       40,
+       41,
+       42,
+       43,
+       44,
+       45,
+       46,
+       47,
+       48,
+       49,
+       50,
+       51,
+       52,
+       53,
+       54,
+       55,
+       56,
+       57,
+       58,
+       59,
+       60,
+       61,
+       62,
+       63,
+       64,
+       64,
+       64,
+       2,
+       12,
+       2,
+       37,
+       2,
+       37,
+       14,
+       64
+      ]
+     },
+     "top_single": [
+      {
+       "len": 7,
+       "F": [
+        41
+       ],
+       "span_octaves": 6,
+       "start": 2095,
+       "end": 131497,
+       "censored": true,
+       "chain": [
+        2095,
+        4149,
+        8257,
+        16473,
+        32905,
+        65769,
+        131497
+       ],
+       "reflectors": [
+        41,
+        41,
+        41,
+        41,
+        41,
+        41
+       ]
+      },
+      {
+       "len": 7,
+       "F": [
+        42
+       ],
+       "span_octaves": 6,
+       "start": 2096,
+       "end": 131498,
+       "censored": true,
+       "chain": [
+        2096,
+        4150,
+        8258,
+        16474,
+        32906,
+        65770,
+        131498
+       ],
+       "reflectors": [
+        42,
+        42,
+        42,
+        42,
+        42,
+        42
+       ]
+      },
+      {
+       "len": 7,
+       "F": [
+        43
+       ],
+       "span_octaves": 6,
+       "start": 2097,
+       "end": 131499,
+       "censored": true,
+       "chain": [
+        2097,
+        4151,
+        8259,
+        16475,
+        32907,
+        65771,
+        131499
+       ],
+       "reflectors": [
+        43,
+        43,
+        43,
+        43,
+        43,
+        43
+       ]
+      },
+      {
+       "len": 7,
+       "F": [
+        44
+       ],
+       "span_octaves": 6,
+       "start": 2098,
+       "end": 131500,
+       "censored": true,
+       "chain": [
+        2098,
+        4152,
+        8260,
+        16476,
+        32908,
+        65772,
+        131500
+       ],
+       "reflectors": [
+        44,
+        44,
+        44,
+        44,
+        44,
+        44
+       ]
+      },
+      {
+       "len": 7,
+       "F": [
+        45
+       ],
+       "span_octaves": 6,
+       "start": 2099,
+       "end": 131501,
+       "censored": true,
+       "chain": [
+        2099,
+        4153,
+        8261,
+        16477,
+        32909,
+        65773,
+        131501
+       ],
+       "reflectors": [
+        45,
+        45,
+        45,
+        45,
+        45,
+        45
+       ]
+      }
+     ],
+     "top_pair": [
+      {
+       "len": 8,
+       "F": [
+        41,
+        48
+       ],
+       "span_octaves": 1,
+       "start": 42,
+       "end": 71,
+       "censored": false,
+       "chain": [
+        42,
+        43,
+        45,
+        49,
+        50,
+        52,
+        56,
+        71
+       ],
+       "reflectors": [
+        41,
+        41,
+        41,
+        48,
+        48,
+        48,
+        41
+       ]
+      },
+      {
+       "len": 7,
+       "F": [
+        41,
+        42
+       ],
+       "span_octaves": 6,
+       "start": 2095,
+       "end": 131497,
+       "censored": true,
+       "chain": [
+        2095,
+        4149,
+        8257,
+        16473,
+        32905,
+        65769,
+        131497
+       ],
+       "reflectors": [
+        41,
+        41,
+        41,
+        41,
+        41,
+        41
+       ]
+      },
+      {
+       "len": 7,
+       "F": [
+        41,
+        43
+       ],
+       "span_octaves": 6,
+       "start": 2095,
+       "end": 131497,
+       "censored": true,
+       "chain": [
+        2095,
+        4149,
+        8257,
+        16473,
+        32905,
+        65769,
+        131497
+       ],
+       "reflectors": [
+        41,
+        41,
+        41,
+        41,
+        41,
+        41
+       ]
+      },
+      {
+       "len": 7,
+       "F": [
+        41,
+        45
+       ],
+       "span_octaves": 6,
+       "start": 2095,
+       "end": 131497,
+       "censored": true,
+       "chain": [
+        2095,
+        4149,
+        8257,
+        16473,
+        32905,
+        65769,
+        131497
+       ],
+       "reflectors": [
+        41,
+        41,
+        41,
+        41,
+        41,
+        41
+       ]
+      },
+      {
+       "len": 7,
+       "F": [
+        42,
+        43
+       ],
+       "span_octaves": 6,
+       "start": 2096,
+       "end": 131498,
+       "censored": true,
+       "chain": [
+        2096,
+        4150,
+        8258,
+        16474,
+        32906,
+        65770,
+        131498
+       ],
+       "reflectors": [
+        42,
+        42,
+        42,
+        42,
+        42,
+        42
+       ]
+      }
+     ],
+     "flag": true,
+     "flag_reason": "censored chain of span 14 octaves (len 51, F=[2, 4, 5, 6, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64]) still alive at horizon \u2014 candidate infinite orbit (lem:orbit death if it persists)"
+    },
+    "ray_fixed": {
+     "cap": "fixed 64",
+     "caps_per_octave": {
+      "1": 1,
+      "2": 2,
+      "3": 4,
+      "4": 8,
+      "5": 16,
+      "6": 32,
+      "7": 64,
+      "8": 64,
+      "9": 64,
+      "10": 64,
+      "11": 64,
+      "12": 64,
+      "13": 64,
+      "14": 64,
+      "15": 64,
+      "16": 64,
+      "17": 64,
+      "18": 64
+     },
+     "per_start": [
+      {
+       "t0": 1,
+       "t_last": 1,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 2,
+       "t_last": 3,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 3,
+       "t_last": 3,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 4,
+       "t_last": 18,
+       "span": 14,
+       "censored": true
+      },
+      {
+       "t0": 5,
+       "t_last": 18,
+       "span": 13,
+       "censored": true
+      },
+      {
+       "t0": 6,
+       "t_last": 18,
+       "span": 12,
+       "censored": true
+      },
+      {
+       "t0": 7,
+       "t_last": 18,
+       "span": 11,
+       "censored": true
+      },
+      {
+       "t0": 8,
+       "t_last": 18,
+       "span": 10,
+       "censored": true
+      },
+      {
+       "t0": 9,
+       "t_last": 18,
+       "span": 9,
+       "censored": true
+      },
+      {
+       "t0": 10,
+       "t_last": 18,
+       "span": 8,
+       "censored": true
+      },
+      {
+       "t0": 11,
+       "t_last": 18,
+       "span": 7,
+       "censored": true
+      },
+      {
+       "t0": 12,
+       "t_last": 18,
+       "span": 6,
+       "censored": true
+      },
+      {
+       "t0": 13,
+       "t_last": 18,
+       "span": 5,
+       "censored": true
+      },
+      {
+       "t0": 14,
+       "t_last": 18,
+       "span": 4,
+       "censored": true
+      },
+      {
+       "t0": 15,
+       "t_last": 18,
+       "span": 3,
+       "censored": true
+      },
+      {
+       "t0": 16,
+       "t_last": 18,
+       "span": 2,
+       "censored": true
+      },
+      {
+       "t0": 17,
+       "t_last": 18,
+       "span": 1,
+       "censored": true
+      },
+      {
+       "t0": 18,
+       "t_last": 18,
+       "span": 0,
+       "censored": true
+      }
+     ],
+     "best": {
+      "t0": 4,
+      "t_last": 18,
+      "span": 14,
+      "censored": true
+     },
+     "flag": true,
+     "witness": {
+      "start": 11,
+      "end": 131396,
+      "len": 15,
+      "verified": true,
+      "chain": [
+       11,
+       20,
+       38,
+       72,
+       139,
+       267,
+       529,
+       1043,
+       2084,
+       4131,
+       8257,
+       16451,
+       32897,
+       65730,
+       131396
+      ],
+      "reflectors": [
+       2,
+       2,
+       4,
+       5,
+       11,
+       5,
+       15,
+       2,
+       37,
+       5,
+       63,
+       5,
+       64,
+       64
+      ],
+      "max_reflector": 64
+     },
+     "flag_reason": "censored ray of span 14 octaves (start octave 4) alive at horizon with reflectors <= cap \u2014 growing-reflector orbit analogue"
+    },
+    "ray_grow": {
+     "cap": "4*s_t + 64",
+     "caps_per_octave": {
+      "1": 1,
+      "2": 2,
+      "3": 4,
+      "4": 8,
+      "5": 16,
+      "6": 32,
+      "7": 64,
+      "8": 96,
+      "9": 128,
+      "10": 128,
+      "11": 192,
+      "12": 192,
+      "13": 320,
+      "14": 320,
+      "15": 576,
+      "16": 576,
+      "17": 1088,
+      "18": 1088
+     },
+     "per_start": [
+      {
+       "t0": 1,
+       "t_last": 1,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 2,
+       "t_last": 3,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 3,
+       "t_last": 3,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 4,
+       "t_last": 18,
+       "span": 14,
+       "censored": true
+      },
+      {
+       "t0": 5,
+       "t_last": 18,
+       "span": 13,
+       "censored": true
+      },
+      {
+       "t0": 6,
+       "t_last": 18,
+       "span": 12,
+       "censored": true
+      },
+      {
+       "t0": 7,
+       "t_last": 18,
+       "span": 11,
+       "censored": true
+      },
+      {
+       "t0": 8,
+       "t_last": 18,
+       "span": 10,
+       "censored": true
+      },
+      {
+       "t0": 9,
+       "t_last": 18,
+       "span": 9,
+       "censored": true
+      },
+      {
+       "t0": 10,
+       "t_last": 18,
+       "span": 8,
+       "censored": true
+      },
+      {
+       "t0": 11,
+       "t_last": 18,
+       "span": 7,
+       "censored": true
+      },
+      {
+       "t0": 12,
+       "t_last": 18,
+       "span": 6,
+       "censored": true
+      },
+      {
+       "t0": 13,
+       "t_last": 18,
+       "span": 5,
+       "censored": true
+      },
+      {
+       "t0": 14,
+       "t_last": 18,
+       "span": 4,
+       "censored": true
+      },
+      {
+       "t0": 15,
+       "t_last": 18,
+       "span": 3,
+       "censored": true
+      },
+      {
+       "t0": 16,
+       "t_last": 18,
+       "span": 2,
+       "censored": true
+      },
+      {
+       "t0": 17,
+       "t_last": 18,
+       "span": 1,
+       "censored": true
+      },
+      {
+       "t0": 18,
+       "t_last": 18,
+       "span": 0,
+       "censored": true
+      }
+     ],
+     "best": {
+      "t0": 4,
+      "t_last": 18,
+      "span": 14,
+      "censored": true
+     },
+     "flag": true,
+     "witness": {
+      "start": 11,
+      "end": 131329,
+      "len": 15,
+      "verified": true,
+      "chain": [
+       11,
+       20,
+       38,
+       72,
+       139,
+       267,
+       529,
+       1043,
+       2084,
+       4131,
+       8257,
+       16452,
+       32902,
+       65667,
+       131329
+      ],
+      "reflectors": [
+       2,
+       2,
+       4,
+       5,
+       11,
+       5,
+       15,
+       2,
+       37,
+       5,
+       62,
+       2,
+       137,
+       5
+      ],
+      "max_reflector": 137
+     },
+     "flag_reason": "censored ray of span 14 octaves (start octave 4) alive at horizon with reflectors <= cap \u2014 growing-reflector orbit analogue"
+    },
+    "crown_g2": {
+     "attacker_max": 64,
+     "crown_pair_rows": [],
+     "occupied_octaves": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      14,
+      16,
+      18
+     ],
+     "attackers_tested": 42,
+     "top": [
+      {
+       "x": 16,
+       "octaves_above": 8,
+       "octaves_attacked": 7,
+       "recurrence_ratio": 0.875,
+       "attacks_per_octave": [
+        2,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        0
+       ],
+       "mean_attacks": 6.25,
+       "attacked_offsets": [
+        [
+         5,
+         1,
+         2
+        ],
+        [
+         6,
+         5,
+         12
+        ],
+        [
+         8,
+         9,
+         16
+        ],
+        [
+         10,
+         17,
+         24
+        ],
+        [
+         12,
+         33,
+         40
+        ],
+        [
+         14,
+         65,
+         72
+        ],
+        [
+         16,
+         129,
+         136
+        ]
+       ]
+      },
+      {
+       "x": 14,
+       "octaves_above": 8,
+       "octaves_attacked": 7,
+       "recurrence_ratio": 0.875,
+       "attacks_per_octave": [
+        1,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        0
+       ],
+       "mean_attacks": 5.38,
+       "attacked_offsets": [
+        [
+         5,
+         1,
+         1
+        ],
+        [
+         6,
+         5,
+         11
+        ],
+        [
+         8,
+         9,
+         15
+        ],
+        [
+         10,
+         17,
+         23
+        ],
+        [
+         12,
+         33,
+         39
+        ],
+        [
+         14,
+         65,
+         71
+        ],
+        [
+         16,
+         129,
+         135
+        ]
+       ]
+      },
+      {
+       "x": 15,
+       "octaves_above": 8,
+       "octaves_attacked": 7,
+       "recurrence_ratio": 0.875,
+       "attacks_per_octave": [
+        1,
+        7,
+        7,
+        7,
+        7,
+        7,
+        7,
+        0
+       ],
+       "mean_attacks": 5.38,
+       "attacked_offsets": [
+        [
+         5,
+         1,
+         1
+        ],
+        [
+         6,
+         5,
+         11
+        ],
+        [
+         8,
+         9,
+         15
+        ],
+        [
+         10,
+         17,
+         23
+        ],
+        [
+         12,
+         33,
+         39
+        ],
+        [
+         14,
+         65,
+         71
+        ],
+        [
+         16,
+         129,
+         135
+        ]
+       ]
+      },
+      {
+       "x": 20,
+       "octaves_above": 7,
+       "octaves_attacked": 6,
+       "recurrence_ratio": 0.857,
+       "attacks_per_octave": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        0
+       ],
+       "mean_attacks": 8.57,
+       "attacked_offsets": [
+        [
+         6,
+         5,
+         14
+        ],
+        [
+         8,
+         9,
+         18
+        ],
+        [
+         10,
+         17,
+         26
+        ],
+        [
+         12,
+         33,
+         42
+        ],
+        [
+         14,
+         65,
+         74
+        ],
+        [
+         16,
+         129,
+         138
+        ]
+       ]
+      },
+      {
+       "x": 18,
+       "octaves_above": 7,
+       "octaves_attacked": 6,
+       "recurrence_ratio": 0.857,
+       "attacks_per_octave": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        0
+       ],
+       "mean_attacks": 7.71,
+       "attacked_offsets": [
+        [
+         6,
+         5,
+         13
+        ],
+        [
+         8,
+         9,
+         17
+        ],
+        [
+         10,
+         17,
+         25
+        ],
+        [
+         12,
+         33,
+         41
+        ],
+        [
+         14,
+         65,
+         73
+        ],
+        [
+         16,
+         129,
+         137
+        ]
+       ]
+      },
+      {
+       "x": 19,
+       "octaves_above": 7,
+       "octaves_attacked": 6,
+       "recurrence_ratio": 0.857,
+       "attacks_per_octave": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        0
+       ],
+       "mean_attacks": 7.71,
+       "attacked_offsets": [
+        [
+         6,
+         5,
+         13
+        ],
+        [
+         8,
+         9,
+         17
+        ],
+        [
+         10,
+         17,
+         25
+        ],
+        [
+         12,
+         33,
+         41
+        ],
+        [
+         14,
+         65,
+         73
+        ],
+        [
+         16,
+         129,
+         137
+        ]
+       ]
+      },
+      {
+       "x": 17,
+       "octaves_above": 7,
+       "octaves_attacked": 6,
+       "recurrence_ratio": 0.857,
+       "attacks_per_octave": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        0
+       ],
+       "mean_attacks": 6.86,
+       "attacked_offsets": [
+        [
+         6,
+         5,
+         12
+        ],
+        [
+         8,
+         9,
+         16
+        ],
+        [
+         10,
+         17,
+         24
+        ],
+        [
+         12,
+         33,
+         40
+        ],
+        [
+         14,
+         65,
+         72
+        ],
+        [
+         16,
+         129,
+         136
+        ]
+       ]
+      },
+      {
+       "x": 64,
+       "octaves_above": 6,
+       "octaves_attacked": 5,
+       "recurrence_ratio": 0.833,
+       "attacks_per_octave": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        0
+       ],
+       "mean_attacks": 26.67,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         40
+        ],
+        [
+         10,
+         17,
+         48
+        ],
+        [
+         12,
+         33,
+         64
+        ],
+        [
+         14,
+         65,
+         96
+        ],
+        [
+         16,
+         129,
+         160
+        ]
+       ]
+      },
+      {
+       "x": 62,
+       "octaves_above": 6,
+       "octaves_attacked": 5,
+       "recurrence_ratio": 0.833,
+       "attacks_per_octave": [
+        31,
+        31,
+        31,
+        31,
+        31,
+        0
+       ],
+       "mean_attacks": 25.83,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         39
+        ],
+        [
+         10,
+         17,
+         47
+        ],
+        [
+         12,
+         33,
+         63
+        ],
+        [
+         14,
+         65,
+         95
+        ],
+        [
+         16,
+         129,
+         159
+        ]
+       ]
+      },
+      {
+       "x": 63,
+       "octaves_above": 6,
+       "octaves_attacked": 5,
+       "recurrence_ratio": 0.833,
+       "attacks_per_octave": [
+        31,
+        31,
+        31,
+        31,
+        31,
+        0
+       ],
+       "mean_attacks": 25.83,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         39
+        ],
+        [
+         10,
+         17,
+         47
+        ],
+        [
+         12,
+         33,
+         63
+        ],
+        [
+         14,
+         65,
+         95
+        ],
+        [
+         16,
+         129,
+         159
+        ]
+       ]
+      },
+      {
+       "x": 60,
+       "octaves_above": 6,
+       "octaves_attacked": 5,
+       "recurrence_ratio": 0.833,
+       "attacks_per_octave": [
+        30,
+        30,
+        30,
+        30,
+        30,
+        0
+       ],
+       "mean_attacks": 25.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         38
+        ],
+        [
+         10,
+         17,
+         46
+        ],
+        [
+         12,
+         33,
+         62
+        ],
+        [
+         14,
+         65,
+         94
+        ],
+        [
+         16,
+         129,
+         158
+        ]
+       ]
+      },
+      {
+       "x": 61,
+       "octaves_above": 6,
+       "octaves_attacked": 5,
+       "recurrence_ratio": 0.833,
+       "attacks_per_octave": [
+        30,
+        30,
+        30,
+        30,
+        30,
+        0
+       ],
+       "mean_attacks": 25.0,
+       "attacked_offsets": [
+        [
+         8,
+         9,
+         38
+        ],
+        [
+         10,
+         17,
+         46
+        ],
+        [
+         12,
+         33,
+         62
+        ],
+        [
+         14,
+         65,
+         94
+        ],
+        [
+         16,
+         129,
+         158
+        ]
+       ]
+      }
+     ],
+     "recurring_attackers": [],
+     "crown_pairs": [],
+     "flag": false,
+     "flag_reason": "no attacker recurs across scales"
+    },
+    "crown_persistence_gap1": {
+     "flag": true,
+     "flagged_attackers": [
+      2,
+      4,
+      5,
+      6,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64
+     ]
+    },
+    "crown_persistence_gap2": {
+     "attacker_max": 64,
+     "top_octave": 18,
+     "min_octs": 4,
+     "top_gap": 2,
+     "flagged_attackers": [
+      2,
+      4,
+      5,
+      6,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64
+     ],
+     "rows": [
+      {
+       "x": 2,
+       "n_attacked": 15,
+       "attacked_octaves": [
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         2,
+         4,
+         6
+        ],
+        [
+         2,
+         11,
+         20
+        ],
+        [
+         2,
+         20,
+         38
+        ]
+       ]
+      },
+      {
+       "x": 4,
+       "n_attacked": 14,
+       "attacked_octaves": [
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         4,
+         5,
+         6
+        ],
+        [
+         4,
+         11,
+         18
+        ],
+        [
+         4,
+         37,
+         70
+        ]
+       ]
+      },
+      {
+       "x": 5,
+       "n_attacked": 13,
+       "attacked_octaves": [
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         5,
+         11,
+         17
+        ],
+        [
+         5,
+         37,
+         69
+        ],
+        [
+         5,
+         71,
+         137
+        ]
+       ]
+      },
+      {
+       "x": 6,
+       "n_attacked": 13,
+       "attacked_octaves": [
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         6,
+         11,
+         16
+        ],
+        [
+         6,
+         37,
+         68
+        ],
+        [
+         6,
+         72,
+         138
+        ]
+       ]
+      },
+      {
+       "x": 11,
+       "n_attacked": 11,
+       "attacked_octaves": [
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         11,
+         37,
+         63
+        ],
+        [
+         11,
+         137,
+         263
+        ],
+        [
+         11,
+         270,
+         529
+        ]
+       ]
+      },
+      {
+       "x": 12,
+       "n_attacked": 11,
+       "attacked_octaves": [
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         12,
+         37,
+         62
+        ],
+        [
+         12,
+         137,
+         262
+        ],
+        [
+         12,
+         271,
+         530
+        ]
+       ]
+      },
+      {
+       "x": 13,
+       "n_attacked": 11,
+       "attacked_octaves": [
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         13,
+         37,
+         61
+        ],
+        [
+         13,
+         137,
+         261
+        ],
+        [
+         13,
+         271,
+         529
+        ]
+       ]
+      },
+      {
+       "x": 14,
+       "n_attacked": 12,
+       "attacked_octaves": [
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         14,
+         17,
+         20
+        ],
+        [
+         14,
+         37,
+         60
+        ],
+        [
+         14,
+         137,
+         260
+        ]
+       ]
+      },
+      {
+       "x": 15,
+       "n_attacked": 12,
+       "attacked_octaves": [
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         15,
+         17,
+         19
+        ],
+        [
+         15,
+         37,
+         59
+        ],
+        [
+         15,
+         137,
+         259
+        ]
+       ]
+      },
+      {
+       "x": 16,
+       "n_attacked": 11,
+       "attacked_octaves": [
+        5,
+        6,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         16,
+         17,
+         18
+        ],
+        [
+         16,
+         37,
+         58
+        ],
+        [
+         16,
+         137,
+         258
+        ]
+       ]
+      },
+      {
+       "x": 17,
+       "n_attacked": 10,
+       "attacked_octaves": [
+        6,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         17,
+         37,
+         57
+        ],
+        [
+         17,
+         137,
+         257
+        ],
+        [
+         17,
+         529,
+         1041
+        ]
+       ]
+      },
+      {
+       "x": 18,
+       "n_attacked": 10,
+       "attacked_octaves": [
+        6,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         18,
+         37,
+         56
+        ],
+        [
+         18,
+         137,
+         256
+        ],
+        [
+         18,
+         529,
+         1040
+        ]
+       ]
+      },
+      {
+       "x": 19,
+       "n_attacked": 10,
+       "attacked_octaves": [
+        6,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         19,
+         37,
+         55
+        ],
+        [
+         19,
+         137,
+         255
+        ],
+        [
+         19,
+         529,
+         1039
+        ]
+       ]
+      },
+      {
+       "x": 20,
+       "n_attacked": 10,
+       "attacked_octaves": [
+        6,
+        8,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         20,
+         37,
+         54
+        ],
+        [
+         20,
+         137,
+         254
+        ],
+        [
+         20,
+         529,
+         1038
+        ]
+       ]
+      },
+      {
+       "x": 37,
+       "n_attacked": 8,
+       "attacked_octaves": [
+        8,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         37,
+         137,
+         237
+        ],
+        [
+         37,
+         529,
+         1021
+        ],
+        [
+         37,
+         2081,
+         4125
+        ]
+       ]
+      },
+      {
+       "x": 38,
+       "n_attacked": 8,
+       "attacked_octaves": [
+        8,
+        10,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+       ],
+       "top_attacked": 17,
+       "persists": true,
+       "examples": [
+        [
+         38,
+         137,
+         236
+        ],
+        [
+         38,
+         529,
+         1020
+        ],
+        [
+         38,
+         2081,
+         4124
+        ]
+       ]
+      }
+     ],
+     "flag": true,
+     "flag_reason": "attackers [2, 4, 5, 6, 11, 12, 13, 14, 15, 16, 17, 18] attack in >= 4 octaves persisting to the horizon (top octave 18)"
+    },
+    "sliver": {
+     "width": 8,
+     "per_octave": [
+      {
+       "t": 1,
+       "block": [
+        2,
+        2
+       ],
+       "density": 1.0,
+       "sliver_width": 1,
+       "sliver_load": 1.0
+      },
+      {
+       "t": 2,
+       "block": [
+        3,
+        4
+       ],
+       "density": 0.5,
+       "sliver_width": 2,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 3,
+       "block": [
+        5,
+        8
+       ],
+       "density": 0.5,
+       "sliver_width": 4,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 4,
+       "block": [
+        9,
+        16
+       ],
+       "density": 0.75,
+       "sliver_width": 8,
+       "sliver_load": 0.75
+      },
+      {
+       "t": 5,
+       "block": [
+        17,
+        32
+       ],
+       "density": 0.25,
+       "sliver_width": 8,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 6,
+       "block": [
+        33,
+        64
+       ],
+       "density": 0.875,
+       "sliver_width": 8,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 8,
+       "block": [
+        129,
+        256
+       ],
+       "density": 0.9375,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 10,
+       "block": [
+        513,
+        1024
+       ],
+       "density": 0.9688,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 12,
+       "block": [
+        2049,
+        4096
+       ],
+       "density": 0.9844,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 14,
+       "block": [
+        8193,
+        16384
+       ],
+       "density": 0.9922,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 16,
+       "block": [
+        32769,
+        65536
+       ],
+       "density": 0.9961,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 18,
+       "block": [
+        131073,
+        262144
+       ],
+       "density": 0.998,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      }
+     ],
+     "large_scale_mean_load": 0.0,
+     "flag": false,
+     "flag_reason": "slivers unloaded at large scales"
+    },
+    "adaptive": {
+     "rows": [
+      {
+       "t": 5,
+       "surface": "recv-top",
+       "s_t": 4,
+       "d_t": 4,
+       "n_attackers": 4,
+       "x_min": 2,
+       "x_max": 16,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 3"
+      },
+      {
+       "t": 6,
+       "surface": "kept-bottom",
+       "s_t": 4,
+       "d_t": 0,
+       "n_attackers": 14,
+       "x_min": 2,
+       "x_max": 20,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 2 (sliver-mediated)"
+      },
+      {
+       "t": 7,
+       "surface": "recv-top",
+       "s_t": 8,
+       "d_t": 8,
+       "n_attackers": 11,
+       "x_min": 2,
+       "x_max": 64,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 7"
+      },
+      {
+       "t": 8,
+       "surface": "kept-bottom",
+       "s_t": 8,
+       "d_t": 0,
+       "n_attackers": 50,
+       "x_min": 2,
+       "x_max": 72,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 2 (sliver-mediated)"
+      },
+      {
+       "t": 9,
+       "surface": "recv-top",
+       "s_t": 16,
+       "d_t": 16,
+       "n_attackers": 9,
+       "x_min": 2,
+       "x_max": 15,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 15"
+      },
+      {
+       "t": 10,
+       "surface": "kept-bottom",
+       "s_t": 16,
+       "d_t": 0,
+       "n_attackers": 186,
+       "x_min": 2,
+       "x_max": 272,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 2 (sliver-mediated)"
+      },
+      {
+       "t": 11,
+       "surface": "recv-top",
+       "s_t": 32,
+       "d_t": 32,
+       "n_attackers": 14,
+       "x_min": 2,
+       "x_max": 20,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 31"
+      },
+      {
+       "t": 12,
+       "surface": "kept-bottom",
+       "s_t": 32,
+       "d_t": 0,
+       "n_attackers": 714,
+       "x_min": 2,
+       "x_max": 1056,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 2 (sliver-mediated)"
+      },
+      {
+       "t": 13,
+       "surface": "recv-top",
+       "s_t": 64,
+       "d_t": 64,
+       "n_attackers": 41,
+       "x_min": 2,
+       "x_max": 63,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 63"
+      },
+      {
+       "t": 14,
+       "surface": "kept-bottom",
+       "s_t": 64,
+       "d_t": 0,
+       "n_attackers": 2794,
+       "x_min": 2,
+       "x_max": 4160,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 2 (sliver-mediated)"
+      },
+      {
+       "t": 15,
+       "surface": "recv-top",
+       "s_t": 128,
+       "d_t": 128,
+       "n_attackers": 50,
+       "x_min": 2,
+       "x_max": 72,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 127"
+      },
+      {
+       "t": 16,
+       "surface": "kept-bottom",
+       "s_t": 128,
+       "d_t": 0,
+       "n_attackers": 11050,
+       "x_min": 2,
+       "x_max": 16512,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 2 (sliver-mediated)"
+      },
+      {
+       "t": 17,
+       "surface": "recv-top",
+       "s_t": 256,
+       "d_t": 256,
+       "n_attackers": 169,
+       "x_min": 2,
+       "x_max": 255,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = 255"
+      }
+     ],
+     "summary": {
+      "kept-bottom": {
+       "octaves": 5,
+       "attackable": 5,
+       "rate": 1.0,
+       "flag": true,
+       "fixed_attacker_octaves": 5
+      },
+      "recv-top": {
+       "octaves": 5,
+       "attackable": 5,
+       "rate": 1.0,
+       "flag": true,
+       "fixed_attacker_octaves": 5
+      }
+     },
+     "flags": [
+      "ADAPT-kept-bottom",
+      "ADAPT-recv-top"
+     ],
+     "flag": true,
+     "flag_reason": "scale-adapted attacker families recur on ['ADAPT-kept-bottom', 'ADAPT-recv-top']"
+    },
+    "time": 3.8
+   }
+  ],
+  "sat": [
+   {
+    "H": 4096,
+    "n": 2730,
+    "witness": "abj, fully verified",
+    "result": "SAT",
+    "cdcl": "SAT, model verified",
+    "time": 5.0
+   },
+   {
+    "H": 32768,
+    "n": 11050,
+    "witness": "abj, fully verified",
+    "result": "SAT",
+    "time": 0.8
+   },
+   {
+    "H": 262144,
+    "n": 174762,
+    "witness": "abj, verified on 2046 sampled gaps",
+    "result": "SAT",
+    "time": 1.2
+   }
+  ],
+  "flags_by_horizon": {
+   "4096": [
+    "ORBIT",
+    "RAY-GROW",
+    "CROWNP",
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top"
+   ],
+   "32768": [
+    "ORBIT",
+    "RAY-GROW",
+    "CROWN",
+    "CROWNP",
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top"
+   ],
+   "262144": [
+    "ORBIT",
+    "RAY-GROW",
+    "CROWNP",
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top"
+   ]
+  },
+  "death_signatures_at_top": [
+   "CROWNP",
+   "ORBIT"
+  ],
+  "signals_at_top": [
+   "ADAPT-kept-bottom",
+   "ADAPT-recv-top",
+   "RAY-GROW"
+  ]
+ },
+ "teamB": {
+  "label": "v2_geomirror/B",
+  "size": 87382,
+  "min": 1,
+  "max": 131328,
+  "scans": [
+   {
+    "H": 4096,
+    "n": 1366,
+    "flags": [
+     "CROWN",
+     "ADAPT-kept-bottom"
+    ],
+    "orbit_fmax64": {
+     "fmax": 64,
+     "F_size": 22,
+     "full_F": {
+      "len": 15,
+      "F": [
+       1,
+       3,
+       7,
+       8,
+       9,
+       10,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36
+      ],
+      "span_octaves": 1,
+      "start": 22,
+      "end": 36,
+      "censored": false,
+      "chain": [
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36
+      ],
+      "reflectors": [
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34
+      ]
+     },
+     "top_single": [
+      {
+       "len": 4,
+       "F": [
+        25
+       ],
+       "span_octaves": 1,
+       "start": 26,
+       "end": 33,
+       "censored": false,
+       "chain": [
+        26,
+        27,
+        29,
+        33
+       ],
+       "reflectors": [
+        25,
+        25,
+        25
+       ]
+      },
+      {
+       "len": 4,
+       "F": [
+        26
+       ],
+       "span_octaves": 1,
+       "start": 27,
+       "end": 34,
+       "censored": false,
+       "chain": [
+        27,
+        28,
+        30,
+        34
+       ],
+       "reflectors": [
+        26,
+        26,
+        26
+       ]
+      },
+      {
+       "len": 4,
+       "F": [
+        27
+       ],
+       "span_octaves": 1,
+       "start": 28,
+       "end": 35,
+       "censored": false,
+       "chain": [
+        28,
+        29,
+        31,
+        35
+       ],
+       "reflectors": [
+        27,
+        27,
+        27
+       ]
+      },
+      {
+       "len": 4,
+       "F": [
+        28
+       ],
+       "span_octaves": 1,
+       "start": 29,
+       "end": 36,
+       "censored": false,
+       "chain": [
+        29,
+        30,
+        32,
+        36
+       ],
+       "reflectors": [
+        28,
+        28,
+        28
+       ]
+      },
+      {
+       "len": 4,
+       "F": [
+        21
+       ],
+       "span_octaves": 0,
+       "start": 22,
+       "end": 29,
+       "censored": false,
+       "chain": [
+        22,
+        23,
+        25,
+        29
+       ],
+       "reflectors": [
+        21,
+        21,
+        21
+       ]
+      }
+     ],
+     "top_pair": [
+      {
+       "len": 7,
+       "F": [
+        21,
+        28
+       ],
+       "span_octaves": 1,
+       "start": 22,
+       "end": 36,
+       "censored": false,
+       "chain": [
+        22,
+        23,
+        25,
+        29,
+        30,
+        32,
+        36
+       ],
+       "reflectors": [
+        21,
+        21,
+        21,
+        28,
+        28,
+        28
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        25,
+        28
+       ],
+       "span_octaves": 1,
+       "start": 26,
+       "end": 36,
+       "censored": false,
+       "chain": [
+        26,
+        27,
+        29,
+        30,
+        32,
+        36
+       ],
+       "reflectors": [
+        25,
+        25,
+        28,
+        28,
+        28
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        22,
+        25
+       ],
+       "span_octaves": 1,
+       "start": 23,
+       "end": 36,
+       "censored": false,
+       "chain": [
+        23,
+        24,
+        26,
+        27,
+        29,
+        36
+       ],
+       "reflectors": [
+        22,
+        22,
+        25,
+        25,
+        22
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        23,
+        26
+       ],
+       "span_octaves": 1,
+       "start": 24,
+       "end": 34,
+       "censored": false,
+       "chain": [
+        24,
+        25,
+        27,
+        28,
+        30,
+        34
+       ],
+       "reflectors": [
+        23,
+        23,
+        26,
+        26,
+        26
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        21,
+        27
+       ],
+       "span_octaves": 1,
+       "start": 22,
+       "end": 35,
+       "censored": false,
+       "chain": [
+        22,
+        23,
+        25,
+        29,
+        31,
+        35
+       ],
+       "reflectors": [
+        21,
+        21,
+        21,
+        27,
+        27
+       ]
+      }
+     ],
+     "flag": false,
+     "flag_reason": "no long censored doubling chain"
+    },
+    "ray_fixed": {
+     "cap": "fixed 64",
+     "caps_per_octave": {
+      "1": 1,
+      "2": 2,
+      "3": 4,
+      "4": 8,
+      "5": 16,
+      "6": 32,
+      "7": 64,
+      "8": 64,
+      "9": 64,
+      "10": 64,
+      "11": 64,
+      "12": 64
+     },
+     "per_start": [
+      {
+       "t0": 2,
+       "t_last": 2,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 3,
+       "t_last": 3,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 4,
+       "t_last": 4,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 5,
+       "t_last": 6,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 6,
+       "t_last": 6,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 7,
+       "t_last": 8,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 8,
+       "t_last": 8,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 9,
+       "t_last": 10,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 10,
+       "t_last": 10,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 11,
+       "t_last": 12,
+       "span": 1,
+       "censored": true
+      },
+      {
+       "t0": 12,
+       "t_last": 12,
+       "span": 0,
+       "censored": true
+      }
+     ],
+     "best": {
+      "t0": 11,
+      "t_last": 12,
+      "span": 1,
+      "censored": true
+     },
+     "flag": false,
+     "witness": null,
+     "flag_reason": "no censored ray of span >= 6 (best span 1)"
+    },
+    "ray_grow": {
+     "cap": "4*s_t + 64",
+     "caps_per_octave": {
+      "1": 1,
+      "2": 2,
+      "3": 4,
+      "4": 8,
+      "5": 16,
+      "6": 32,
+      "7": 64,
+      "8": 96,
+      "9": 128,
+      "10": 128,
+      "11": 192,
+      "12": 192
+     },
+     "per_start": [
+      {
+       "t0": 2,
+       "t_last": 2,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 3,
+       "t_last": 3,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 4,
+       "t_last": 4,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 5,
+       "t_last": 6,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 6,
+       "t_last": 6,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 7,
+       "t_last": 8,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 8,
+       "t_last": 8,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 9,
+       "t_last": 10,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 10,
+       "t_last": 10,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 11,
+       "t_last": 12,
+       "span": 1,
+       "censored": true
+      },
+      {
+       "t0": 12,
+       "t_last": 12,
+       "span": 0,
+       "censored": true
+      }
+     ],
+     "best": {
+      "t0": 11,
+      "t_last": 12,
+      "span": 1,
+      "censored": true
+     },
+     "flag": false,
+     "witness": null,
+     "flag_reason": "no censored ray of span >= 6 (best span 1)"
+    },
+    "crown_g2": {
+     "attacker_max": 64,
+     "crown_pair_rows": [],
+     "occupied_octaves": [
+      2,
+      3,
+      4,
+      5,
+      7,
+      9,
+      11
+     ],
+     "attackers_tested": 22,
+     "top": [
+      {
+       "x": 36,
+       "octaves_above": 3,
+       "octaves_attacked": 3,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        14,
+        10,
+        2
+       ],
+       "mean_attacks": 8.67,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         22
+        ],
+        [
+         9,
+         17,
+         26
+        ],
+        [
+         11,
+         33,
+         34
+        ]
+       ]
+      },
+      {
+       "x": 34,
+       "octaves_above": 3,
+       "octaves_attacked": 3,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        13,
+        9,
+        1
+       ],
+       "mean_attacks": 7.67,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         21
+        ],
+        [
+         9,
+         17,
+         25
+        ],
+        [
+         11,
+         33,
+         33
+        ]
+       ]
+      },
+      {
+       "x": 35,
+       "octaves_above": 3,
+       "octaves_attacked": 3,
+       "recurrence_ratio": 1.0,
+       "attacks_per_octave": [
+        13,
+        9,
+        1
+       ],
+       "mean_attacks": 7.67,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         21
+        ],
+        [
+         9,
+         17,
+         25
+        ],
+        [
+         11,
+         33,
+         33
+        ]
+       ]
+      },
+      {
+       "x": 32,
+       "octaves_above": 3,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.667,
+       "attacks_per_octave": [
+        12,
+        8,
+        0
+       ],
+       "mean_attacks": 6.67,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         20
+        ],
+        [
+         9,
+         17,
+         24
+        ]
+       ]
+      },
+      {
+       "x": 33,
+       "octaves_above": 3,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.667,
+       "attacks_per_octave": [
+        12,
+        8,
+        0
+       ],
+       "mean_attacks": 6.67,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         20
+        ],
+        [
+         9,
+         17,
+         24
+        ]
+       ]
+      },
+      {
+       "x": 30,
+       "octaves_above": 3,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.667,
+       "attacks_per_octave": [
+        11,
+        7,
+        0
+       ],
+       "mean_attacks": 6.0,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         19
+        ],
+        [
+         9,
+         17,
+         23
+        ]
+       ]
+      },
+      {
+       "x": 31,
+       "octaves_above": 3,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.667,
+       "attacks_per_octave": [
+        11,
+        7,
+        0
+       ],
+       "mean_attacks": 6.0,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         19
+        ],
+        [
+         9,
+         17,
+         23
+        ]
+       ]
+      },
+      {
+       "x": 28,
+       "octaves_above": 3,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.667,
+       "attacks_per_octave": [
+        10,
+        6,
+        0
+       ],
+       "mean_attacks": 5.33,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         18
+        ],
+        [
+         9,
+         17,
+         22
+        ]
+       ]
+      },
+      {
+       "x": 29,
+       "octaves_above": 3,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.667,
+       "attacks_per_octave": [
+        10,
+        6,
+        0
+       ],
+       "mean_attacks": 5.33,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         18
+        ],
+        [
+         9,
+         17,
+         22
+        ]
+       ]
+      },
+      {
+       "x": 26,
+       "octaves_above": 3,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.667,
+       "attacks_per_octave": [
+        9,
+        5,
+        0
+       ],
+       "mean_attacks": 4.67,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         17
+        ],
+        [
+         9,
+         17,
+         21
+        ]
+       ]
+      },
+      {
+       "x": 27,
+       "octaves_above": 3,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.667,
+       "attacks_per_octave": [
+        9,
+        5,
+        0
+       ],
+       "mean_attacks": 4.67,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         17
+        ],
+        [
+         9,
+         17,
+         21
+        ]
+       ]
+      },
+      {
+       "x": 24,
+       "octaves_above": 3,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.667,
+       "attacks_per_octave": [
+        8,
+        4,
+        0
+       ],
+       "mean_attacks": 4.0,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         16
+        ],
+        [
+         9,
+         17,
+         20
+        ]
+       ]
+      }
+     ],
+     "recurring_attackers": [
+      36,
+      34,
+      35
+     ],
+     "crown_pairs": [],
+     "flag": true,
+     "flag_reason": "attackers [36, 34, 35] attack >= 90% of occupied octaves above them (15/16-analogues: crown pairs [])"
+    },
+    "crown_persistence_gap1": {
+     "flag": false,
+     "flagged_attackers": []
+    },
+    "crown_persistence_gap2": {
+     "attacker_max": 64,
+     "top_octave": 12,
+     "min_octs": 4,
+     "top_gap": 2,
+     "flagged_attackers": [],
+     "rows": [
+      {
+       "x": 7,
+       "n_attacked": 1,
+       "attacked_octaves": [
+        5
+       ],
+       "top_attacked": 5,
+       "persists": false,
+       "examples": [
+        [
+         7,
+         21,
+         35
+        ]
+       ]
+      },
+      {
+       "x": 8,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        4,
+        5
+       ],
+       "top_attacked": 5,
+       "persists": false,
+       "examples": [
+        [
+         8,
+         9,
+         10
+        ],
+        [
+         8,
+         21,
+         34
+        ]
+       ]
+      },
+      {
+       "x": 9,
+       "n_attacked": 1,
+       "attacked_octaves": [
+        5
+       ],
+       "top_attacked": 5,
+       "persists": false,
+       "examples": [
+        [
+         9,
+         21,
+         33
+        ]
+       ]
+      },
+      {
+       "x": 10,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        5,
+        7
+       ],
+       "top_attacked": 7,
+       "persists": false,
+       "examples": [
+        [
+         10,
+         21,
+         32
+        ],
+        [
+         10,
+         73,
+         136
+        ]
+       ]
+      },
+      {
+       "x": 21,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        7,
+        9
+       ],
+       "top_attacked": 9,
+       "persists": false,
+       "examples": [
+        [
+         21,
+         73,
+         125
+        ],
+        [
+         21,
+         273,
+         525
+        ]
+       ]
+      },
+      {
+       "x": 22,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        7,
+        9
+       ],
+       "top_attacked": 9,
+       "persists": false,
+       "examples": [
+        [
+         22,
+         73,
+         124
+        ],
+        [
+         22,
+         273,
+         524
+        ]
+       ]
+      },
+      {
+       "x": 23,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        7,
+        9
+       ],
+       "top_attacked": 9,
+       "persists": false,
+       "examples": [
+        [
+         23,
+         73,
+         123
+        ],
+        [
+         23,
+         273,
+         523
+        ]
+       ]
+      },
+      {
+       "x": 24,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        7,
+        9
+       ],
+       "top_attacked": 9,
+       "persists": false,
+       "examples": [
+        [
+         24,
+         73,
+         122
+        ],
+        [
+         24,
+         273,
+         522
+        ]
+       ]
+      }
+     ],
+     "flag": false,
+     "flag_reason": "no attacker persists to the horizon in >= 4 octaves"
+    },
+    "sliver": {
+     "width": 8,
+     "per_octave": [
+      {
+       "t": 2,
+       "block": [
+        3,
+        4
+       ],
+       "density": 0.5,
+       "sliver_width": 2,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 3,
+       "block": [
+        5,
+        8
+       ],
+       "density": 0.5,
+       "sliver_width": 4,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 4,
+       "block": [
+        9,
+        16
+       ],
+       "density": 0.25,
+       "sliver_width": 8,
+       "sliver_load": 0.25
+      },
+      {
+       "t": 5,
+       "block": [
+        17,
+        32
+       ],
+       "density": 0.75,
+       "sliver_width": 8,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 7,
+       "block": [
+        65,
+        128
+       ],
+       "density": 0.875,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 9,
+       "block": [
+        257,
+        512
+       ],
+       "density": 0.9375,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 11,
+       "block": [
+        1025,
+        2048
+       ],
+       "density": 0.9688,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      }
+     ],
+     "large_scale_mean_load": 0.125,
+     "flag": false,
+     "flag_reason": "slivers unloaded at large scales"
+    },
+    "adaptive": {
+     "rows": [
+      {
+       "t": 5,
+       "surface": "kept-bottom",
+       "s_t": 4,
+       "d_t": 4,
+       "n_attackers": 4,
+       "x_min": 7,
+       "x_max": 10,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 6 (sliver-mediated)"
+      },
+      {
+       "t": 6,
+       "surface": "recv-top",
+       "s_t": 4,
+       "d_t": 0,
+       "n_attackers": 3,
+       "x_min": 30,
+       "x_max": 32,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = -1"
+      },
+      {
+       "t": 7,
+       "surface": "kept-bottom",
+       "s_t": 8,
+       "d_t": 8,
+       "n_attackers": 17,
+       "x_min": 10,
+       "x_max": 36,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 10 (sliver-mediated)"
+      },
+      {
+       "t": 8,
+       "surface": "recv-top",
+       "s_t": 8,
+       "d_t": 0,
+       "n_attackers": 7,
+       "x_min": 122,
+       "x_max": 128,
+       "has_fixed_x_le_64": false,
+       "pred": "x <= d_t-1 = -1"
+      },
+      {
+       "t": 9,
+       "surface": "kept-bottom",
+       "s_t": 16,
+       "d_t": 16,
+       "n_attackers": 80,
+       "x_min": 21,
+       "x_max": 136,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 18 (sliver-mediated)"
+      },
+      {
+       "t": 10,
+       "surface": "recv-top",
+       "s_t": 16,
+       "d_t": 0,
+       "n_attackers": 0,
+       "x_min": null,
+       "x_max": null,
+       "has_fixed_x_le_64": false,
+       "pred": "x <= d_t-1 = -1"
+      },
+      {
+       "t": 11,
+       "surface": "kept-bottom",
+       "s_t": 32,
+       "d_t": 32,
+       "n_attackers": 323,
+       "x_min": 34,
+       "x_max": 528,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 34 (sliver-mediated)"
+      }
+     ],
+     "summary": {
+      "kept-bottom": {
+       "octaves": 2,
+       "attackable": 2,
+       "rate": 1.0,
+       "flag": true,
+       "fixed_attacker_octaves": 2
+      },
+      "recv-top": {
+       "octaves": 2,
+       "attackable": 1,
+       "rate": 0.5,
+       "flag": false,
+       "fixed_attacker_octaves": 0
+      }
+     },
+     "flags": [
+      "ADAPT-kept-bottom"
+     ],
+     "flag": true,
+     "flag_reason": "scale-adapted attacker families recur on ['ADAPT-kept-bottom']"
+    },
+    "time": 0.0
+   },
+   {
+    "H": 32768,
+    "n": 21718,
+    "flags": [
+     "ADAPT-kept-bottom"
+    ],
+    "orbit_fmax64": {
+     "fmax": 64,
+     "F_size": 22,
+     "full_F": {
+      "len": 15,
+      "F": [
+       1,
+       3,
+       7,
+       8,
+       9,
+       10,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36
+      ],
+      "span_octaves": 1,
+      "start": 22,
+      "end": 36,
+      "censored": false,
+      "chain": [
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36
+      ],
+      "reflectors": [
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34
+      ]
+     },
+     "top_single": [
+      {
+       "len": 4,
+       "F": [
+        25
+       ],
+       "span_octaves": 1,
+       "start": 26,
+       "end": 33,
+       "censored": false,
+       "chain": [
+        26,
+        27,
+        29,
+        33
+       ],
+       "reflectors": [
+        25,
+        25,
+        25
+       ]
+      },
+      {
+       "len": 4,
+       "F": [
+        26
+       ],
+       "span_octaves": 1,
+       "start": 27,
+       "end": 34,
+       "censored": false,
+       "chain": [
+        27,
+        28,
+        30,
+        34
+       ],
+       "reflectors": [
+        26,
+        26,
+        26
+       ]
+      },
+      {
+       "len": 4,
+       "F": [
+        27
+       ],
+       "span_octaves": 1,
+       "start": 28,
+       "end": 35,
+       "censored": false,
+       "chain": [
+        28,
+        29,
+        31,
+        35
+       ],
+       "reflectors": [
+        27,
+        27,
+        27
+       ]
+      },
+      {
+       "len": 4,
+       "F": [
+        28
+       ],
+       "span_octaves": 1,
+       "start": 29,
+       "end": 36,
+       "censored": false,
+       "chain": [
+        29,
+        30,
+        32,
+        36
+       ],
+       "reflectors": [
+        28,
+        28,
+        28
+       ]
+      },
+      {
+       "len": 4,
+       "F": [
+        21
+       ],
+       "span_octaves": 0,
+       "start": 22,
+       "end": 29,
+       "censored": false,
+       "chain": [
+        22,
+        23,
+        25,
+        29
+       ],
+       "reflectors": [
+        21,
+        21,
+        21
+       ]
+      }
+     ],
+     "top_pair": [
+      {
+       "len": 7,
+       "F": [
+        21,
+        28
+       ],
+       "span_octaves": 1,
+       "start": 22,
+       "end": 36,
+       "censored": false,
+       "chain": [
+        22,
+        23,
+        25,
+        29,
+        30,
+        32,
+        36
+       ],
+       "reflectors": [
+        21,
+        21,
+        21,
+        28,
+        28,
+        28
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        25,
+        28
+       ],
+       "span_octaves": 1,
+       "start": 26,
+       "end": 36,
+       "censored": false,
+       "chain": [
+        26,
+        27,
+        29,
+        30,
+        32,
+        36
+       ],
+       "reflectors": [
+        25,
+        25,
+        28,
+        28,
+        28
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        22,
+        25
+       ],
+       "span_octaves": 1,
+       "start": 23,
+       "end": 36,
+       "censored": false,
+       "chain": [
+        23,
+        24,
+        26,
+        27,
+        29,
+        36
+       ],
+       "reflectors": [
+        22,
+        22,
+        25,
+        25,
+        22
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        23,
+        26
+       ],
+       "span_octaves": 1,
+       "start": 24,
+       "end": 34,
+       "censored": false,
+       "chain": [
+        24,
+        25,
+        27,
+        28,
+        30,
+        34
+       ],
+       "reflectors": [
+        23,
+        23,
+        26,
+        26,
+        26
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        21,
+        27
+       ],
+       "span_octaves": 1,
+       "start": 22,
+       "end": 35,
+       "censored": false,
+       "chain": [
+        22,
+        23,
+        25,
+        29,
+        31,
+        35
+       ],
+       "reflectors": [
+        21,
+        21,
+        21,
+        27,
+        27
+       ]
+      }
+     ],
+     "flag": false,
+     "flag_reason": "no long censored doubling chain"
+    },
+    "ray_fixed": {
+     "cap": "fixed 64",
+     "caps_per_octave": {
+      "1": 1,
+      "2": 2,
+      "3": 4,
+      "4": 8,
+      "5": 16,
+      "6": 32,
+      "7": 64,
+      "8": 64,
+      "9": 64,
+      "10": 64,
+      "11": 64,
+      "12": 64,
+      "13": 64,
+      "14": 64,
+      "15": 64
+     },
+     "per_start": [
+      {
+       "t0": 2,
+       "t_last": 2,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 3,
+       "t_last": 3,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 4,
+       "t_last": 4,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 5,
+       "t_last": 6,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 6,
+       "t_last": 6,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 7,
+       "t_last": 8,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 8,
+       "t_last": 8,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 9,
+       "t_last": 10,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 10,
+       "t_last": 10,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 11,
+       "t_last": 12,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 12,
+       "t_last": 12,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 13,
+       "t_last": 13,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 14,
+       "t_last": 14,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 15,
+       "t_last": 15,
+       "span": 0,
+       "censored": true
+      }
+     ],
+     "best": {
+      "t0": 5,
+      "t_last": 6,
+      "span": 1,
+      "censored": false
+     },
+     "flag": false,
+     "witness": null,
+     "flag_reason": "no censored ray of span >= 6 (best span 1)"
+    },
+    "ray_grow": {
+     "cap": "4*s_t + 64",
+     "caps_per_octave": {
+      "1": 1,
+      "2": 2,
+      "3": 4,
+      "4": 8,
+      "5": 16,
+      "6": 32,
+      "7": 64,
+      "8": 96,
+      "9": 128,
+      "10": 128,
+      "11": 192,
+      "12": 192,
+      "13": 320,
+      "14": 320,
+      "15": 576
+     },
+     "per_start": [
+      {
+       "t0": 2,
+       "t_last": 2,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 3,
+       "t_last": 3,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 4,
+       "t_last": 4,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 5,
+       "t_last": 6,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 6,
+       "t_last": 6,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 7,
+       "t_last": 8,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 8,
+       "t_last": 8,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 9,
+       "t_last": 10,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 10,
+       "t_last": 10,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 11,
+       "t_last": 12,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 12,
+       "t_last": 12,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 13,
+       "t_last": 14,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 14,
+       "t_last": 14,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 15,
+       "t_last": 15,
+       "span": 0,
+       "censored": true
+      }
+     ],
+     "best": {
+      "t0": 5,
+      "t_last": 6,
+      "span": 1,
+      "censored": false
+     },
+     "flag": false,
+     "witness": null,
+     "flag_reason": "no censored ray of span >= 6 (best span 1)"
+    },
+    "crown_g2": {
+     "attacker_max": 64,
+     "crown_pair_rows": [],
+     "occupied_octaves": [
+      2,
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15
+     ],
+     "attackers_tested": 22,
+     "top": [
+      {
+       "x": 36,
+       "octaves_above": 5,
+       "octaves_attacked": 3,
+       "recurrence_ratio": 0.6,
+       "attacks_per_octave": [
+        14,
+        10,
+        2,
+        0,
+        0
+       ],
+       "mean_attacks": 5.2,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         22
+        ],
+        [
+         9,
+         17,
+         26
+        ],
+        [
+         11,
+         33,
+         34
+        ]
+       ]
+      },
+      {
+       "x": 34,
+       "octaves_above": 5,
+       "octaves_attacked": 3,
+       "recurrence_ratio": 0.6,
+       "attacks_per_octave": [
+        13,
+        9,
+        1,
+        0,
+        0
+       ],
+       "mean_attacks": 4.6,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         21
+        ],
+        [
+         9,
+         17,
+         25
+        ],
+        [
+         11,
+         33,
+         33
+        ]
+       ]
+      },
+      {
+       "x": 35,
+       "octaves_above": 5,
+       "octaves_attacked": 3,
+       "recurrence_ratio": 0.6,
+       "attacks_per_octave": [
+        13,
+        9,
+        1,
+        0,
+        0
+       ],
+       "mean_attacks": 4.6,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         21
+        ],
+        [
+         9,
+         17,
+         25
+        ],
+        [
+         11,
+         33,
+         33
+        ]
+       ]
+      },
+      {
+       "x": 32,
+       "octaves_above": 5,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.4,
+       "attacks_per_octave": [
+        12,
+        8,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 4.0,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         20
+        ],
+        [
+         9,
+         17,
+         24
+        ]
+       ]
+      },
+      {
+       "x": 33,
+       "octaves_above": 5,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.4,
+       "attacks_per_octave": [
+        12,
+        8,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 4.0,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         20
+        ],
+        [
+         9,
+         17,
+         24
+        ]
+       ]
+      },
+      {
+       "x": 30,
+       "octaves_above": 5,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.4,
+       "attacks_per_octave": [
+        11,
+        7,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 3.6,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         19
+        ],
+        [
+         9,
+         17,
+         23
+        ]
+       ]
+      },
+      {
+       "x": 31,
+       "octaves_above": 5,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.4,
+       "attacks_per_octave": [
+        11,
+        7,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 3.6,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         19
+        ],
+        [
+         9,
+         17,
+         23
+        ]
+       ]
+      },
+      {
+       "x": 28,
+       "octaves_above": 5,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.4,
+       "attacks_per_octave": [
+        10,
+        6,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 3.2,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         18
+        ],
+        [
+         9,
+         17,
+         22
+        ]
+       ]
+      },
+      {
+       "x": 29,
+       "octaves_above": 5,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.4,
+       "attacks_per_octave": [
+        10,
+        6,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 3.2,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         18
+        ],
+        [
+         9,
+         17,
+         22
+        ]
+       ]
+      },
+      {
+       "x": 26,
+       "octaves_above": 5,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.4,
+       "attacks_per_octave": [
+        9,
+        5,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 2.8,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         17
+        ],
+        [
+         9,
+         17,
+         21
+        ]
+       ]
+      },
+      {
+       "x": 27,
+       "octaves_above": 5,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.4,
+       "attacks_per_octave": [
+        9,
+        5,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 2.8,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         17
+        ],
+        [
+         9,
+         17,
+         21
+        ]
+       ]
+      },
+      {
+       "x": 24,
+       "octaves_above": 5,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.4,
+       "attacks_per_octave": [
+        8,
+        4,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 2.4,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         16
+        ],
+        [
+         9,
+         17,
+         20
+        ]
+       ]
+      }
+     ],
+     "recurring_attackers": [],
+     "crown_pairs": [],
+     "flag": false,
+     "flag_reason": "no attacker recurs across scales"
+    },
+    "crown_persistence_gap1": {
+     "flag": false,
+     "flagged_attackers": []
+    },
+    "crown_persistence_gap2": {
+     "attacker_max": 64,
+     "top_octave": 15,
+     "min_octs": 4,
+     "top_gap": 2,
+     "flagged_attackers": [],
+     "rows": [
+      {
+       "x": 7,
+       "n_attacked": 1,
+       "attacked_octaves": [
+        5
+       ],
+       "top_attacked": 5,
+       "persists": false,
+       "examples": [
+        [
+         7,
+         21,
+         35
+        ]
+       ]
+      },
+      {
+       "x": 8,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        4,
+        5
+       ],
+       "top_attacked": 5,
+       "persists": false,
+       "examples": [
+        [
+         8,
+         9,
+         10
+        ],
+        [
+         8,
+         21,
+         34
+        ]
+       ]
+      },
+      {
+       "x": 9,
+       "n_attacked": 1,
+       "attacked_octaves": [
+        5
+       ],
+       "top_attacked": 5,
+       "persists": false,
+       "examples": [
+        [
+         9,
+         21,
+         33
+        ]
+       ]
+      },
+      {
+       "x": 10,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        5,
+        7
+       ],
+       "top_attacked": 7,
+       "persists": false,
+       "examples": [
+        [
+         10,
+         21,
+         32
+        ],
+        [
+         10,
+         73,
+         136
+        ]
+       ]
+      },
+      {
+       "x": 21,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        7,
+        9
+       ],
+       "top_attacked": 9,
+       "persists": false,
+       "examples": [
+        [
+         21,
+         73,
+         125
+        ],
+        [
+         21,
+         273,
+         525
+        ]
+       ]
+      },
+      {
+       "x": 22,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        7,
+        9
+       ],
+       "top_attacked": 9,
+       "persists": false,
+       "examples": [
+        [
+         22,
+         73,
+         124
+        ],
+        [
+         22,
+         273,
+         524
+        ]
+       ]
+      },
+      {
+       "x": 23,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        7,
+        9
+       ],
+       "top_attacked": 9,
+       "persists": false,
+       "examples": [
+        [
+         23,
+         73,
+         123
+        ],
+        [
+         23,
+         273,
+         523
+        ]
+       ]
+      },
+      {
+       "x": 24,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        7,
+        9
+       ],
+       "top_attacked": 9,
+       "persists": false,
+       "examples": [
+        [
+         24,
+         73,
+         122
+        ],
+        [
+         24,
+         273,
+         522
+        ]
+       ]
+      }
+     ],
+     "flag": false,
+     "flag_reason": "no attacker persists to the horizon in >= 4 octaves"
+    },
+    "sliver": {
+     "width": 8,
+     "per_octave": [
+      {
+       "t": 2,
+       "block": [
+        3,
+        4
+       ],
+       "density": 0.5,
+       "sliver_width": 2,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 3,
+       "block": [
+        5,
+        8
+       ],
+       "density": 0.5,
+       "sliver_width": 4,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 4,
+       "block": [
+        9,
+        16
+       ],
+       "density": 0.25,
+       "sliver_width": 8,
+       "sliver_load": 0.25
+      },
+      {
+       "t": 5,
+       "block": [
+        17,
+        32
+       ],
+       "density": 0.75,
+       "sliver_width": 8,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 7,
+       "block": [
+        65,
+        128
+       ],
+       "density": 0.875,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 9,
+       "block": [
+        257,
+        512
+       ],
+       "density": 0.9375,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 11,
+       "block": [
+        1025,
+        2048
+       ],
+       "density": 0.9688,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 13,
+       "block": [
+        4097,
+        8192
+       ],
+       "density": 0.9844,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 15,
+       "block": [
+        16385,
+        32768
+       ],
+       "density": 0.9922,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      }
+     ],
+     "large_scale_mean_load": 0.0,
+     "flag": false,
+     "flag_reason": "slivers unloaded at large scales"
+    },
+    "adaptive": {
+     "rows": [
+      {
+       "t": 5,
+       "surface": "kept-bottom",
+       "s_t": 4,
+       "d_t": 4,
+       "n_attackers": 4,
+       "x_min": 7,
+       "x_max": 10,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 6 (sliver-mediated)"
+      },
+      {
+       "t": 6,
+       "surface": "recv-top",
+       "s_t": 4,
+       "d_t": 0,
+       "n_attackers": 3,
+       "x_min": 30,
+       "x_max": 32,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = -1"
+      },
+      {
+       "t": 7,
+       "surface": "kept-bottom",
+       "s_t": 8,
+       "d_t": 8,
+       "n_attackers": 17,
+       "x_min": 10,
+       "x_max": 36,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 10 (sliver-mediated)"
+      },
+      {
+       "t": 8,
+       "surface": "recv-top",
+       "s_t": 8,
+       "d_t": 0,
+       "n_attackers": 7,
+       "x_min": 122,
+       "x_max": 128,
+       "has_fixed_x_le_64": false,
+       "pred": "x <= d_t-1 = -1"
+      },
+      {
+       "t": 9,
+       "surface": "kept-bottom",
+       "s_t": 16,
+       "d_t": 16,
+       "n_attackers": 80,
+       "x_min": 21,
+       "x_max": 136,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 18 (sliver-mediated)"
+      },
+      {
+       "t": 10,
+       "surface": "recv-top",
+       "s_t": 16,
+       "d_t": 0,
+       "n_attackers": 0,
+       "x_min": null,
+       "x_max": null,
+       "has_fixed_x_le_64": false,
+       "pred": "x <= d_t-1 = -1"
+      },
+      {
+       "t": 11,
+       "surface": "kept-bottom",
+       "s_t": 32,
+       "d_t": 32,
+       "n_attackers": 323,
+       "x_min": 34,
+       "x_max": 528,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 34 (sliver-mediated)"
+      },
+      {
+       "t": 12,
+       "surface": "recv-top",
+       "s_t": 32,
+       "d_t": 0,
+       "n_attackers": 0,
+       "x_min": null,
+       "x_max": null,
+       "has_fixed_x_le_64": false,
+       "pred": "x <= d_t-1 = -1"
+      },
+      {
+       "t": 13,
+       "surface": "kept-bottom",
+       "s_t": 64,
+       "d_t": 64,
+       "n_attackers": 1344,
+       "x_min": 73,
+       "x_max": 2080,
+       "has_fixed_x_le_64": false,
+       "pred": "x >= d_t+2 = 66 (sliver-mediated)"
+      },
+      {
+       "t": 14,
+       "surface": "recv-top",
+       "s_t": 64,
+       "d_t": 0,
+       "n_attackers": 0,
+       "x_min": null,
+       "x_max": null,
+       "has_fixed_x_le_64": false,
+       "pred": "x <= d_t-1 = -1"
+      }
+     ],
+     "summary": {
+      "kept-bottom": {
+       "octaves": 3,
+       "attackable": 3,
+       "rate": 1.0,
+       "flag": true,
+       "fixed_attacker_octaves": 2
+      },
+      "recv-top": {
+       "octaves": 4,
+       "attackable": 1,
+       "rate": 0.25,
+       "flag": false,
+       "fixed_attacker_octaves": 0
+      }
+     },
+     "flags": [
+      "ADAPT-kept-bottom"
+     ],
+     "flag": true,
+     "flag_reason": "scale-adapted attacker families recur on ['ADAPT-kept-bottom']"
+    },
+    "time": 0.1
+   },
+   {
+    "H": 262144,
+    "n": 87382,
+    "flags": [
+     "ADAPT-kept-bottom"
+    ],
+    "orbit_fmax64": {
+     "fmax": 64,
+     "F_size": 22,
+     "full_F": {
+      "len": 15,
+      "F": [
+       1,
+       3,
+       7,
+       8,
+       9,
+       10,
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36
+      ],
+      "span_octaves": 1,
+      "start": 22,
+      "end": 36,
+      "censored": false,
+      "chain": [
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34,
+       35,
+       36
+      ],
+      "reflectors": [
+       21,
+       22,
+       23,
+       24,
+       25,
+       26,
+       27,
+       28,
+       29,
+       30,
+       31,
+       32,
+       33,
+       34
+      ]
+     },
+     "top_single": [
+      {
+       "len": 4,
+       "F": [
+        25
+       ],
+       "span_octaves": 1,
+       "start": 26,
+       "end": 33,
+       "censored": false,
+       "chain": [
+        26,
+        27,
+        29,
+        33
+       ],
+       "reflectors": [
+        25,
+        25,
+        25
+       ]
+      },
+      {
+       "len": 4,
+       "F": [
+        26
+       ],
+       "span_octaves": 1,
+       "start": 27,
+       "end": 34,
+       "censored": false,
+       "chain": [
+        27,
+        28,
+        30,
+        34
+       ],
+       "reflectors": [
+        26,
+        26,
+        26
+       ]
+      },
+      {
+       "len": 4,
+       "F": [
+        27
+       ],
+       "span_octaves": 1,
+       "start": 28,
+       "end": 35,
+       "censored": false,
+       "chain": [
+        28,
+        29,
+        31,
+        35
+       ],
+       "reflectors": [
+        27,
+        27,
+        27
+       ]
+      },
+      {
+       "len": 4,
+       "F": [
+        28
+       ],
+       "span_octaves": 1,
+       "start": 29,
+       "end": 36,
+       "censored": false,
+       "chain": [
+        29,
+        30,
+        32,
+        36
+       ],
+       "reflectors": [
+        28,
+        28,
+        28
+       ]
+      },
+      {
+       "len": 4,
+       "F": [
+        21
+       ],
+       "span_octaves": 0,
+       "start": 22,
+       "end": 29,
+       "censored": false,
+       "chain": [
+        22,
+        23,
+        25,
+        29
+       ],
+       "reflectors": [
+        21,
+        21,
+        21
+       ]
+      }
+     ],
+     "top_pair": [
+      {
+       "len": 7,
+       "F": [
+        21,
+        28
+       ],
+       "span_octaves": 1,
+       "start": 22,
+       "end": 36,
+       "censored": false,
+       "chain": [
+        22,
+        23,
+        25,
+        29,
+        30,
+        32,
+        36
+       ],
+       "reflectors": [
+        21,
+        21,
+        21,
+        28,
+        28,
+        28
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        25,
+        28
+       ],
+       "span_octaves": 1,
+       "start": 26,
+       "end": 36,
+       "censored": false,
+       "chain": [
+        26,
+        27,
+        29,
+        30,
+        32,
+        36
+       ],
+       "reflectors": [
+        25,
+        25,
+        28,
+        28,
+        28
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        22,
+        25
+       ],
+       "span_octaves": 1,
+       "start": 23,
+       "end": 36,
+       "censored": false,
+       "chain": [
+        23,
+        24,
+        26,
+        27,
+        29,
+        36
+       ],
+       "reflectors": [
+        22,
+        22,
+        25,
+        25,
+        22
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        23,
+        26
+       ],
+       "span_octaves": 1,
+       "start": 24,
+       "end": 34,
+       "censored": false,
+       "chain": [
+        24,
+        25,
+        27,
+        28,
+        30,
+        34
+       ],
+       "reflectors": [
+        23,
+        23,
+        26,
+        26,
+        26
+       ]
+      },
+      {
+       "len": 6,
+       "F": [
+        21,
+        27
+       ],
+       "span_octaves": 1,
+       "start": 22,
+       "end": 35,
+       "censored": false,
+       "chain": [
+        22,
+        23,
+        25,
+        29,
+        31,
+        35
+       ],
+       "reflectors": [
+        21,
+        21,
+        21,
+        27,
+        27
+       ]
+      }
+     ],
+     "flag": false,
+     "flag_reason": "no long censored doubling chain"
+    },
+    "ray_fixed": {
+     "cap": "fixed 64",
+     "caps_per_octave": {
+      "1": 1,
+      "2": 2,
+      "3": 4,
+      "4": 8,
+      "5": 16,
+      "6": 32,
+      "7": 64,
+      "8": 64,
+      "9": 64,
+      "10": 64,
+      "11": 64,
+      "12": 64,
+      "13": 64,
+      "14": 64,
+      "15": 64,
+      "16": 64,
+      "17": 64,
+      "18": 64
+     },
+     "per_start": [
+      {
+       "t0": 2,
+       "t_last": 2,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 3,
+       "t_last": 3,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 4,
+       "t_last": 4,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 5,
+       "t_last": 6,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 6,
+       "t_last": 6,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 7,
+       "t_last": 8,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 8,
+       "t_last": 8,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 9,
+       "t_last": 10,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 10,
+       "t_last": 10,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 11,
+       "t_last": 12,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 12,
+       "t_last": 12,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 13,
+       "t_last": 13,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 14,
+       "t_last": 14,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 15,
+       "t_last": 15,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 16,
+       "t_last": 16,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 17,
+       "t_last": 17,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 18,
+       "t_last": 18,
+       "span": 0,
+       "censored": true
+      }
+     ],
+     "best": {
+      "t0": 5,
+      "t_last": 6,
+      "span": 1,
+      "censored": false
+     },
+     "flag": false,
+     "witness": null,
+     "flag_reason": "no censored ray of span >= 6 (best span 1)"
+    },
+    "ray_grow": {
+     "cap": "4*s_t + 64",
+     "caps_per_octave": {
+      "1": 1,
+      "2": 2,
+      "3": 4,
+      "4": 8,
+      "5": 16,
+      "6": 32,
+      "7": 64,
+      "8": 96,
+      "9": 128,
+      "10": 128,
+      "11": 192,
+      "12": 192,
+      "13": 320,
+      "14": 320,
+      "15": 576,
+      "16": 576,
+      "17": 1088,
+      "18": 1088
+     },
+     "per_start": [
+      {
+       "t0": 2,
+       "t_last": 2,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 3,
+       "t_last": 3,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 4,
+       "t_last": 4,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 5,
+       "t_last": 6,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 6,
+       "t_last": 6,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 7,
+       "t_last": 8,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 8,
+       "t_last": 8,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 9,
+       "t_last": 10,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 10,
+       "t_last": 10,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 11,
+       "t_last": 12,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 12,
+       "t_last": 12,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 13,
+       "t_last": 14,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 14,
+       "t_last": 14,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 15,
+       "t_last": 16,
+       "span": 1,
+       "censored": false
+      },
+      {
+       "t0": 16,
+       "t_last": 16,
+       "span": 0,
+       "censored": false
+      },
+      {
+       "t0": 17,
+       "t_last": 18,
+       "span": 1,
+       "censored": true
+      },
+      {
+       "t0": 18,
+       "t_last": 18,
+       "span": 0,
+       "censored": true
+      }
+     ],
+     "best": {
+      "t0": 17,
+      "t_last": 18,
+      "span": 1,
+      "censored": true
+     },
+     "flag": false,
+     "witness": null,
+     "flag_reason": "no censored ray of span >= 6 (best span 1)"
+    },
+    "crown_g2": {
+     "attacker_max": 64,
+     "crown_pair_rows": [],
+     "occupied_octaves": [
+      2,
+      3,
+      4,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17
+     ],
+     "attackers_tested": 22,
+     "top": [
+      {
+       "x": 36,
+       "octaves_above": 6,
+       "octaves_attacked": 3,
+       "recurrence_ratio": 0.5,
+       "attacks_per_octave": [
+        14,
+        10,
+        2,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 4.33,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         22
+        ],
+        [
+         9,
+         17,
+         26
+        ],
+        [
+         11,
+         33,
+         34
+        ]
+       ]
+      },
+      {
+       "x": 34,
+       "octaves_above": 6,
+       "octaves_attacked": 3,
+       "recurrence_ratio": 0.5,
+       "attacks_per_octave": [
+        13,
+        9,
+        1,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 3.83,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         21
+        ],
+        [
+         9,
+         17,
+         25
+        ],
+        [
+         11,
+         33,
+         33
+        ]
+       ]
+      },
+      {
+       "x": 35,
+       "octaves_above": 6,
+       "octaves_attacked": 3,
+       "recurrence_ratio": 0.5,
+       "attacks_per_octave": [
+        13,
+        9,
+        1,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 3.83,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         21
+        ],
+        [
+         9,
+         17,
+         25
+        ],
+        [
+         11,
+         33,
+         33
+        ]
+       ]
+      },
+      {
+       "x": 32,
+       "octaves_above": 6,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.333,
+       "attacks_per_octave": [
+        12,
+        8,
+        0,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 3.33,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         20
+        ],
+        [
+         9,
+         17,
+         24
+        ]
+       ]
+      },
+      {
+       "x": 33,
+       "octaves_above": 6,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.333,
+       "attacks_per_octave": [
+        12,
+        8,
+        0,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 3.33,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         20
+        ],
+        [
+         9,
+         17,
+         24
+        ]
+       ]
+      },
+      {
+       "x": 30,
+       "octaves_above": 6,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.333,
+       "attacks_per_octave": [
+        11,
+        7,
+        0,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 3.0,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         19
+        ],
+        [
+         9,
+         17,
+         23
+        ]
+       ]
+      },
+      {
+       "x": 31,
+       "octaves_above": 6,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.333,
+       "attacks_per_octave": [
+        11,
+        7,
+        0,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 3.0,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         19
+        ],
+        [
+         9,
+         17,
+         23
+        ]
+       ]
+      },
+      {
+       "x": 28,
+       "octaves_above": 6,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.333,
+       "attacks_per_octave": [
+        10,
+        6,
+        0,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 2.67,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         18
+        ],
+        [
+         9,
+         17,
+         22
+        ]
+       ]
+      },
+      {
+       "x": 29,
+       "octaves_above": 6,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.333,
+       "attacks_per_octave": [
+        10,
+        6,
+        0,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 2.67,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         18
+        ],
+        [
+         9,
+         17,
+         22
+        ]
+       ]
+      },
+      {
+       "x": 26,
+       "octaves_above": 6,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.333,
+       "attacks_per_octave": [
+        9,
+        5,
+        0,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 2.33,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         17
+        ],
+        [
+         9,
+         17,
+         21
+        ]
+       ]
+      },
+      {
+       "x": 27,
+       "octaves_above": 6,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.333,
+       "attacks_per_octave": [
+        9,
+        5,
+        0,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 2.33,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         17
+        ],
+        [
+         9,
+         17,
+         21
+        ]
+       ]
+      },
+      {
+       "x": 24,
+       "octaves_above": 6,
+       "octaves_attacked": 2,
+       "recurrence_ratio": 0.333,
+       "attacks_per_octave": [
+        8,
+        4,
+        0,
+        0,
+        0,
+        0
+       ],
+       "mean_attacks": 2.0,
+       "attacked_offsets": [
+        [
+         7,
+         9,
+         16
+        ],
+        [
+         9,
+         17,
+         20
+        ]
+       ]
+      }
+     ],
+     "recurring_attackers": [],
+     "crown_pairs": [],
+     "flag": false,
+     "flag_reason": "no attacker recurs across scales"
+    },
+    "crown_persistence_gap1": {
+     "flag": false,
+     "flagged_attackers": []
+    },
+    "crown_persistence_gap2": {
+     "attacker_max": 64,
+     "top_octave": 18,
+     "min_octs": 4,
+     "top_gap": 2,
+     "flagged_attackers": [],
+     "rows": [
+      {
+       "x": 7,
+       "n_attacked": 1,
+       "attacked_octaves": [
+        5
+       ],
+       "top_attacked": 5,
+       "persists": false,
+       "examples": [
+        [
+         7,
+         21,
+         35
+        ]
+       ]
+      },
+      {
+       "x": 8,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        4,
+        5
+       ],
+       "top_attacked": 5,
+       "persists": false,
+       "examples": [
+        [
+         8,
+         9,
+         10
+        ],
+        [
+         8,
+         21,
+         34
+        ]
+       ]
+      },
+      {
+       "x": 9,
+       "n_attacked": 1,
+       "attacked_octaves": [
+        5
+       ],
+       "top_attacked": 5,
+       "persists": false,
+       "examples": [
+        [
+         9,
+         21,
+         33
+        ]
+       ]
+      },
+      {
+       "x": 10,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        5,
+        7
+       ],
+       "top_attacked": 7,
+       "persists": false,
+       "examples": [
+        [
+         10,
+         21,
+         32
+        ],
+        [
+         10,
+         73,
+         136
+        ]
+       ]
+      },
+      {
+       "x": 21,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        7,
+        9
+       ],
+       "top_attacked": 9,
+       "persists": false,
+       "examples": [
+        [
+         21,
+         73,
+         125
+        ],
+        [
+         21,
+         273,
+         525
+        ]
+       ]
+      },
+      {
+       "x": 22,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        7,
+        9
+       ],
+       "top_attacked": 9,
+       "persists": false,
+       "examples": [
+        [
+         22,
+         73,
+         124
+        ],
+        [
+         22,
+         273,
+         524
+        ]
+       ]
+      },
+      {
+       "x": 23,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        7,
+        9
+       ],
+       "top_attacked": 9,
+       "persists": false,
+       "examples": [
+        [
+         23,
+         73,
+         123
+        ],
+        [
+         23,
+         273,
+         523
+        ]
+       ]
+      },
+      {
+       "x": 24,
+       "n_attacked": 2,
+       "attacked_octaves": [
+        7,
+        9
+       ],
+       "top_attacked": 9,
+       "persists": false,
+       "examples": [
+        [
+         24,
+         73,
+         122
+        ],
+        [
+         24,
+         273,
+         522
+        ]
+       ]
+      }
+     ],
+     "flag": false,
+     "flag_reason": "no attacker persists to the horizon in >= 4 octaves"
+    },
+    "sliver": {
+     "width": 8,
+     "per_octave": [
+      {
+       "t": 2,
+       "block": [
+        3,
+        4
+       ],
+       "density": 0.5,
+       "sliver_width": 2,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 3,
+       "block": [
+        5,
+        8
+       ],
+       "density": 0.5,
+       "sliver_width": 4,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 4,
+       "block": [
+        9,
+        16
+       ],
+       "density": 0.25,
+       "sliver_width": 8,
+       "sliver_load": 0.25
+      },
+      {
+       "t": 5,
+       "block": [
+        17,
+        32
+       ],
+       "density": 0.75,
+       "sliver_width": 8,
+       "sliver_load": 0.5
+      },
+      {
+       "t": 7,
+       "block": [
+        65,
+        128
+       ],
+       "density": 0.875,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 9,
+       "block": [
+        257,
+        512
+       ],
+       "density": 0.9375,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 11,
+       "block": [
+        1025,
+        2048
+       ],
+       "density": 0.9688,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 13,
+       "block": [
+        4097,
+        8192
+       ],
+       "density": 0.9844,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 15,
+       "block": [
+        16385,
+        32768
+       ],
+       "density": 0.9922,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      },
+      {
+       "t": 17,
+       "block": [
+        65537,
+        131072
+       ],
+       "density": 0.9961,
+       "sliver_width": 8,
+       "sliver_load": 0.0
+      }
+     ],
+     "large_scale_mean_load": 0.0,
+     "flag": false,
+     "flag_reason": "slivers unloaded at large scales"
+    },
+    "adaptive": {
+     "rows": [
+      {
+       "t": 5,
+       "surface": "kept-bottom",
+       "s_t": 4,
+       "d_t": 4,
+       "n_attackers": 4,
+       "x_min": 7,
+       "x_max": 10,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 6 (sliver-mediated)"
+      },
+      {
+       "t": 6,
+       "surface": "recv-top",
+       "s_t": 4,
+       "d_t": 0,
+       "n_attackers": 3,
+       "x_min": 30,
+       "x_max": 32,
+       "has_fixed_x_le_64": true,
+       "pred": "x <= d_t-1 = -1"
+      },
+      {
+       "t": 7,
+       "surface": "kept-bottom",
+       "s_t": 8,
+       "d_t": 8,
+       "n_attackers": 17,
+       "x_min": 10,
+       "x_max": 36,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 10 (sliver-mediated)"
+      },
+      {
+       "t": 8,
+       "surface": "recv-top",
+       "s_t": 8,
+       "d_t": 0,
+       "n_attackers": 7,
+       "x_min": 122,
+       "x_max": 128,
+       "has_fixed_x_le_64": false,
+       "pred": "x <= d_t-1 = -1"
+      },
+      {
+       "t": 9,
+       "surface": "kept-bottom",
+       "s_t": 16,
+       "d_t": 16,
+       "n_attackers": 80,
+       "x_min": 21,
+       "x_max": 136,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 18 (sliver-mediated)"
+      },
+      {
+       "t": 10,
+       "surface": "recv-top",
+       "s_t": 16,
+       "d_t": 0,
+       "n_attackers": 0,
+       "x_min": null,
+       "x_max": null,
+       "has_fixed_x_le_64": false,
+       "pred": "x <= d_t-1 = -1"
+      },
+      {
+       "t": 11,
+       "surface": "kept-bottom",
+       "s_t": 32,
+       "d_t": 32,
+       "n_attackers": 323,
+       "x_min": 34,
+       "x_max": 528,
+       "has_fixed_x_le_64": true,
+       "pred": "x >= d_t+2 = 34 (sliver-mediated)"
+      },
+      {
+       "t": 12,
+       "surface": "recv-top",
+       "s_t": 32,
+       "d_t": 0,
+       "n_attackers": 0,
+       "x_min": null,
+       "x_max": null,
+       "has_fixed_x_le_64": false,
+       "pred": "x <= d_t-1 = -1"
+      },
+      {
+       "t": 13,
+       "surface": "kept-bottom",
+       "s_t": 64,
+       "d_t": 64,
+       "n_attackers": 1344,
+       "x_min": 73,
+       "x_max": 2080,
+       "has_fixed_x_le_64": false,
+       "pred": "x >= d_t+2 = 66 (sliver-mediated)"
+      },
+      {
+       "t": 14,
+       "surface": "recv-top",
+       "s_t": 64,
+       "d_t": 0,
+       "n_attackers": 0,
+       "x_min": null,
+       "x_max": null,
+       "has_fixed_x_le_64": false,
+       "pred": "x <= d_t-1 = -1"
+      },
+      {
+       "t": 15,
+       "surface": "kept-bottom",
+       "s_t": 128,
+       "d_t": 128,
+       "n_attackers": 5383,
+       "x_min": 130,
+       "x_max": 8256,
+       "has_fixed_x_le_64": false,
+       "pred": "x >= d_t+2 = 130 (sliver-mediated)"
+      },
+      {
+       "t": 16,
+       "surface": "recv-top",
+       "s_t": 128,
+       "d_t": 0,
+       "n_attackers": 0,
+       "x_min": null,
+       "x_max": null,
+       "has_fixed_x_le_64": false,
+       "pred": "x <= d_t-1 = -1"
+      },
+      {
+       "t": 17,
+       "surface": "kept-bottom",
+       "s_t": 256,
+       "d_t": 256,
+       "n_attackers": 21760,
+       "x_min": 273,
+       "x_max": 32896,
+       "has_fixed_x_le_64": false,
+       "pred": "x >= d_t+2 = 258 (sliver-mediated)"
+      }
+     ],
+     "summary": {
+      "kept-bottom": {
+       "octaves": 5,
+       "attackable": 5,
+       "rate": 1.0,
+       "flag": true,
+       "fixed_attacker_octaves": 2
+      },
+      "recv-top": {
+       "octaves": 5,
+       "attackable": 1,
+       "rate": 0.2,
+       "flag": false,
+       "fixed_attacker_octaves": 0
+      }
+     },
+     "flags": [
+      "ADAPT-kept-bottom"
+     ],
+     "flag": true,
+     "flag_reason": "scale-adapted attacker families recur on ['ADAPT-kept-bottom']"
+    },
+    "time": 0.7
+   }
+  ],
+  "sat": [
+   {
+    "H": 4096,
+    "n": 1366,
+    "witness": "abj, fully verified",
+    "result": "SAT",
+    "cdcl": "SAT, model verified",
+    "time": 1.1
+   },
+   {
+    "H": 32768,
+    "n": 21718,
+    "witness": "abj, fully verified",
+    "result": "SAT",
+    "time": 0.7
+   },
+   {
+    "H": 262144,
+    "n": 87382,
+    "witness": "abj, verified on 2046 sampled gaps",
+    "result": "SAT",
+    "time": 1.0
+   }
+  ],
+  "flags_by_horizon": {
+   "4096": [
+    "CROWN",
+    "ADAPT-kept-bottom"
+   ],
+   "32768": [
+    "ADAPT-kept-bottom"
+   ],
+   "262144": [
+    "ADAPT-kept-bottom"
+   ]
+  },
+  "death_signatures_at_top": [],
+  "signals_at_top": [
+   "ADAPT-kept-bottom"
+  ]
+ },
+ "sat_all_ok": true,
+ "verdict": "DEAD-SIGNATURE",
+ "both_teams_clean": false,
+ "time": 14.9
+}
