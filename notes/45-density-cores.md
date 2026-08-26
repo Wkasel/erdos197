@@ -267,3 +267,17 @@ the 28/32 near-critical query still running at session end.)
 - Part C additionally imposes block-order for BOTH teams at the same
   seam (both teams non-procrastinating) — the strongest hypothesis;
   its UNSAT would be a finite N6 ledger core under that hypothesis.
+- Part C3 imposes it at TWO consecutive seams for both teams (double
+  non-procrastination), and the seam controls show every proper subset
+  of that hypothesis is escapable — so the C3 cores are exactly as
+  strong as the hypothesis.  Converting "both teams block-ordered at
+  two consecutive seams, infinitely often" from an assumption into a
+  theorem (or excluding its failure by a separate rung family — the
+  procrastinator teams have their own exposure: a team is
+  non-block-ordered only if it re-descends below a previous block
+  infinitely often, which is the L-DESC well-founded-descent
+  territory) is now THE gap between the C3 schema and a Case-2 death.
+  Note the C3 window values are only (M, 8M] — everything below M and
+  between windows is UNCONSTRAINED, so the schema composes freely
+  across disjoint window instances at scales M·8^k: the pigeonhole
+  side is trivial; only the seam hypothesis is real.
