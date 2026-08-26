@@ -14,9 +14,18 @@ needs) -- and whether every pair has one.
 
 Run: .venv/bin/python experiments/e124_family_miner.py
 Output: data/e124_families.json
+
+2026-08-26 session note: the final e122_n2_residue.json was lost with
+the e122 session (killed at M=135); input is now the reconstruction
+data/e122_n2_residue_recon.json (built by e124_prep_catalogue.py from
+the complete-sweep partial checkpoint, M = 16..128).  Also fixed: the
+constant-delta requirement is now enforced DURING chain extension (the
+committed version had dead code there and only filtered afterwards,
+which both blows up and keeps subset-chains alive).
 """
 import itertools
 import json
+import os
 
 BASE = "/Users/will/Dev/personal/tasks/math/erdos197/data"
 
@@ -28,6 +37,8 @@ def match_step(c1, c2, s):
     UNIT-SLOT, so return the assignment as a tuple of (di,dj) aligned to
     sorted(c1)."""
     out = []
+    if len(c1) != len(c2):      # zip would silently truncate
+        return out
     c1s = sorted(c1)
     for perm in itertools.permutations(sorted(c2)):
         ds = []
@@ -44,7 +55,11 @@ def match_step(c1, c2, s):
 
 
 def main():
-    d = json.load(open(f"{BASE}/e122_n2_residue.json"))
+    src = f"{BASE}/e122_n2_residue.json"
+    if not os.path.exists(src):
+        src = f"{BASE}/e122_n2_residue_recon.json"
+    print(f"catalogue: {src}")
+    d = json.load(open(src))
     cores = {}      # x -> list of (coretuple, law)
     for e in d["cores"]:
         x = e["x"]
@@ -76,18 +91,19 @@ def main():
             if len(lane) < 3:
                 continue
             # extend chains core-by-core along the lane
-            chains = [[(lane[0], cr)] for cr, _, _ in cores[lane[0]]]
+            chains = [[(lane[0], cr, None)] for cr, _, _ in cores[lane[0]]]
             for x2 in lane[1:]:
                 nxt = []
                 for ch in chains:
-                    x1, cr1 = ch[-1]
+                    x1, cr1, _ = ch[-1]
                     if x2 - x1 != s:
                         continue
+                    prev_delta = ch[-1][2] if len(ch) >= 2 else None
                     for cr2, _, _ in cores[x2]:
                         for ds, perm in match_step(cr1, cr2, s):
                             # delta must equal the chain's existing delta
-                            if len(ch) >= 2:
-                                pds = ch[-1][1] and None
+                            if prev_delta is not None and ds != prev_delta:
+                                continue
                             nxt.append(ch + [(x2, cr2, ds)])
                 chains = [c for c in chains] + nxt
             # keep chains of length >= 3 with CONSTANT delta
