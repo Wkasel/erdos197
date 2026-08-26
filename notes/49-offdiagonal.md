@@ -248,7 +248,47 @@ with two-ladder Lemma-D closure."
 
 ## 6. THE TEMPLATE SWEEP (e124m): the mechanism across all cells
 
-[filled in below after the run — see §6-results]
+The pipeline of §4/§5/§7 (phase-kill scan → two-ladder Lemma-D search
+→ multi-scale closure verification + solver cross-checks + SAT
+controls at the complementary class), run MECHANICALLY per cell.
+Engineering lessons folded in: kills are scale-stable and cheap to
+find at small M, but ladder tests must use SPREAD scales (small
+scales close accidentally; pairs picked only at large scales can fail
+between them) with a verify-retry loop; degeneracy guard (unit value
+= center).  Cell record: data/e124m_template.json + _rerun.json.
+
+### §6-results
+
+Every cell verified at 8 scales spanning ≥ 56 in M, with Cadical
+UNSAT cross-checks (M ≤ 80) and SAT controls at the complementary
+class.  v* = phase battleground, [ladders] per half:
+
+    cell         class    v*   halves (hi / lo)              ladders
+    K4      {11,12} r0    t1  {t0b6,t2b5}/{t1b5,t3b4}     [O+Q2]/[O+Q3]  (§4, 20 scales + 2048)
+    B2(11)  {11,12} r2    t2  {t5b3,t7b2}/{t2b5,t5b3}     [E+Q1] both    (§5, 20 scales + 514)
+    K11_r4  {11,12} r4    t1  {t0b6,t6b3}/{t0b6,t3b4}     [O+Q2] both    (68..124)
+    C(11)   {11,12} r5    t2  {t2b5,t5b3}/{t0b6,t2b5}     [D1+Q1]/[D1+Q1+Q3] (§7, 19 scales)
+    B6(11)  {11,12} r6    t2  {t3b4,t5b3}/{t5b3,t10b1}    [E+Q1] both    (22..78)
+    K11_r1  {11,12} r1    t2  {t3b4,t5b3}/{t0b6,t3b4}     [O+Q2]/[O+Q4]  (41..97)
+    K11_r3  {11,12} r3    t3  {t4b4,t7b2}/{t1b5,t7b2}     [E+Q2]/[E+Q4]  (27..83)
+    K11_r7  {11,12} r7    t3  {t4b4,t6b3}/{t6b3,t9b1}     [E+Q1] both    (31..87)
+    B2(13)  {13,14} r4    t1  {t4b5,t7b3}/{t7b3,t9b2}     [O+Q3]/[O+Q1]  (28..84)
+    B6(13)  {13,14} r0    t1  {t7b3,t12b1}/{t5b4,t7b3}    [O+Q3]/[O+E+Q1] (32..88)
+    B6(15)  {15,16} r2    t2  {t7b4,t9b3}/{t9b3,t14b1}    [E+Q1] both    (26..82)
+    B2(17)  {17,18} r0    t1  {t8b5,t11b3}/{t11b3,t13b2}  [O+Q3]/[O+Q1]  (24..80)
+    B2(19)  {19,20} r2    t2  {t13b3,t15b2}/{t10b5,t13b3} [E+Q1] both    (34..90)
+    A4d(13) {13,14} r2    t2  {t3b5,t5b4}/{t4b5,t8b3}     [E+Q1] both    (26..82)
+    [A4d(19) r0, B6(21) r0 — see log; slow ladder searches]
+
+**HEADLINE: pair {11,12} is CLOSED AT ALL EIGHT RESIDUES mod 8 by
+verified two-ladder hand schemas** (thresholds ≤ 68; below-threshold
+scales covered by e122's machine UNSAT at every M = 16..135).  This
+is the first pair with complete per-residue hand-schema coverage:
+Case 1 for a team owning {11,12} has NO residue escape at any scale
+M ≥ 68, modulo only the N1/T-PIN pigeonhole side.  The battleground
+v* is always one of t1/t2/t3 (the top three block values), the
+halves are always 2 units, and the ladder sets are always the
+full d=2 ladder of v*'s parity + one or two d=4 quarter ladders.
 
 ## 7. THIRD HAND SCHEMA: the ODD class falls (lane C at x = 11)
 

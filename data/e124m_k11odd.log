@@ -1,0 +1,5 @@
+K11_r1 (x=11, r=1): v*=t2; hi<={t3b4+t5b3} [O+Q2], lo<={t0b6+t3b4} [O+Q4]; verified 8 scales 41..97: ALL OK; controls [(45, 8), (53, 8), (61, 8), (69, 8)] (3s)
+K11_r3 (x=11, r=3): v*=t3; hi<={t4b4+t7b2} [E+Q2], lo<={t1b5+t7b2} [E+Q4]; verified 8 scales 27..83: ALL OK; controls [(31, 3), (39, 4), (47, 4), (55, 3)] (5s)
+K11_r7 (x=11, r=7): v*=t3; hi<={t4b4+t6b3} [E+Q1], lo<={t6b3+t9b1} [E+Q1]; verified 8 scales 31..87: ALL OK; controls [(35, 3), (43, 5), (51, 4), (59, 6)] (8s)
+
+TEMPLATE: 3/3 cells closed -> /Users/will/Dev/personal/tasks/math/erdos197/data/e124m_template_rerun.json
