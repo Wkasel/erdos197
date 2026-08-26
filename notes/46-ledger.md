@@ -148,6 +148,65 @@ over scales only become death via the T-PIN pigeonhole under pattern
 recurrence.  The ledger statements are the infinite quantifiers; the
 measurements test their finite shadows.
 
+## 5. Verdicts (as of this session's measurements)
+
+**L1 as drafted: REFUTED by the controls.**  iid balanced colorings are
+everywhere-split with ALL ratio-2 window densities ≤ 0.525 at a ≥ 512 —
+no concentration whatsoever — so "every everywhere-split partition
+concentrates" is false.  BUT those controls die by lem:orbit (doubling
+supercritical, §4A(b)), so the repaired statement survives everything
+measured:
+
+> **L1' (repaired).**  In every everywhere-split partition in which
+> BOTH teams are doubling-subcritical (no infinite finite-reflector
+> orbit — a necessary condition for YES), some team has, for every
+> horizon, near-clean ratio-2 windows: subcriticality at balanced
+> density forces window concentration.
+
+Every orbit-free coloring we possess is window-concentrated (§4A(d')),
+and the only known subcriticality mechanisms (h1 §2: bounded-ratio runs
++ 2-adic misalignment of interval ladders) ARE concentration.  L1' is
+the new candidate lemma; its proof target: a team with density ≥ δ in
+every window of every scale and no C-clean ratio-2 windows contains an
+infinite doubling orbit (quantify the branching argument that makes
+random colorings supercritical, replacing independence by positive
+density + diffuseness).
+
+**L2 strong form (forced donation→donation recurrence): REFUTED.**
+Donation-to-donation completion flux is identically 0 on every coloring
+measured; donations can be placed pair-sparsely (gaps ≥ 3) at endpoints,
+so nothing in the completion geometry forces minority material at t to
+reproduce minority material at t+1.
+
+**L2 per-pair price form: SUPPORTED so far.**  p(k) = 3, 7, 7, 11 for
+k = 1..4 forced pairs at M = 64 — the per-block price GROWS with
+attacker-pair count despite full endpoint sharing — and the supply
+lemma makes Θ(M) live pairs unavoidable for any locally-dense team
+(measured: live-pair counts saturate their gap-1 supply on every dense
+team).  The surviving ledger route: (supply lemma) + (p(k) → ∞, to be
+proven as an N2-style schema) + T-PIN-style pigeonhole over scales
+⇒ every locally-dense team pays unboundedly growing per-block prices
+⇒ minority counts are pinned Θ(M), both teams near density 1/2 at all
+large scales ⇒ combine with L1' (subcritical + diffuse is impossible)
+for the contradiction.  The two open lemmas are exactly L1' and
+"p(k) → ∞".
+
+**Dodger shape (the YES-material).**  A surviving everywhere-split
+partition must be: (i) doubling-subcritical in BOTH teams (anti-random
+correlation engineering — no known mechanism except interval
+concentration, which L1' would forbid); (ii) window-diffuse at every
+ratio-2 scale (to starve interval rungs); (iii) its minority/donation
+material pair-sparse (all gaps ≥ 3, e.g. top-zone APs 2M−{3,7,11,15})
+to avoid handing the partner attacker pairs while still breaking every
+live pair's endpoint system — against p(k) growth this needs ω(1)
+donations per block anyway once Θ(M) pairs are live; and (iv) P(t) → ∞
+slowly to escape each fixed-C robustness statement scale-by-scale.
+No coloring with properties (i)+(ii) simultaneously is known to exist.
+
+Status update for the N-program: N6 now HAS candidate statements (L1',
+p(k) → ∞) with finite machine support, where notes/43 recorded "no
+candidate statement is currently written down".
+
 ## 4. Results
 
 ### 4A. Counting (data/e121_A.json, horizon 2^14)
