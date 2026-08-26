@@ -164,17 +164,8 @@ def solve_budget(M, abs_bounds, vA, vB, budget=3600.0, solver=Cadical195,
     with solver(bootstrap_with=cls) as s:
         for c in cards:
             s.add_clause(c)
-        if budget:
-            import threading
-            timer = threading.Timer(budget, s.interrupt)
-            timer.start()
-            ok = s.solve_limited(expect_interrupt=True)
-            timer.cancel()
-        else:
-            ok = s.solve()
+        ok = s.solve()
         el = round(time.time() - t0, 1)
-        if ok is None:
-            return 'TIMEOUT', el, {'bounds': bounds}
         if not ok:
             return 'UNSAT', el, {'bounds': bounds}
         model = set(l for l in s.get_model() if l > 0)
@@ -192,6 +183,31 @@ def solve_budget(M, abs_bounds, vA, vB, budget=3600.0, solver=Cadical195,
                     wins[w] += 1
         info[f'order{team}'] = sorted(col, key=lambda v: -wins[v])
     return 'SAT', el, info
+
+
+def _worker(kw, outq):
+    outq.put(solve_budget(**kw))
+
+
+def solve_budget_sub(kw, budget):
+    """Run solve_budget in a subprocess with a hard wall-clock kill
+    (pysat holds the GIL during solve, so in-process timers never
+    fire)."""
+    import multiprocessing as mp
+    import queue as _q
+    ctx = mp.get_context('fork')
+    outq = ctx.Queue()
+    p = ctx.Process(target=_worker, args=(kw, outq))
+    t0 = time.time()
+    p.start()
+    try:
+        verdict, el, info = outq.get(timeout=budget)
+        p.join()
+        return verdict, el, info
+    except _q.Empty:
+        p.terminate()
+        p.join()
+        return 'TIMEOUT', round(time.time() - t0, 1), {'bounds': None}
 
 
 def audit(M, bounds, vA, vB, info):
@@ -251,8 +267,9 @@ def vstar_scan(M, abs_bounds, vmax, budget, tag, vlist=None, asym=False,
 
     def q(v):
         vA = None if asym else v
-        verdict, el, info = solve_budget(M, abs_bounds, vA, v, budget,
-                                         majority_B=majority_B)
+        verdict, el, info = solve_budget_sub(
+            dict(M=M, abs_bounds=abs_bounds, vA=vA, vB=v,
+                 majority_B=majority_B), budget)
         row = {'tag': tag, 'M': M, 'bounds': abs_bounds, 'v': v,
                'verdict': verdict, 'time': el}
         if verdict == 'SAT':

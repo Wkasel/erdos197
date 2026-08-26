@@ -1,0 +1,35 @@
+{
+ "tag": "const3_6_12_M24",
+ "M": 24,
+ "bounds": [
+  3,
+  6,
+  12
+ ],
+ "rows": [
+  {
+   "tag": "const3_6_12_M24",
+   "M": 24,
+   "bounds": [
+    3,
+    6,
+    12
+   ],
+   "v": 0,
+   "verdict": "UNSAT",
+   "time": 7.7
+  },
+  {
+   "tag": "const3_6_12_M24",
+   "M": 24,
+   "bounds": [
+    3,
+    6,
+    12
+   ],
+   "v": 1,
+   "verdict": "UNSAT",
+   "time": 189.5
+  }
+ ]
+}

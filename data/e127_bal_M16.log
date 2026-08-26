@@ -1,0 +1,1 @@
+  bal_M16 v=480: SAT [4.4s] {"A": {"sizes": [8, 16, 32], "n_inv": 258, "n_inv_seam1": 67, "n_inv_seam2": 191, "n_mono": 25}, "B": {"sizes": [8, 16, 32], "n_inv": 39, "n_inv_seam1": 39, "n_inv_seam2": 0, "n_mono": 0}}

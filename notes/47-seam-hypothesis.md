@@ -120,11 +120,12 @@ octave by octave but interleave each consecutive pair of octaves (top
 half of octave k's cells placed after the bottom half of octave k+1's).
 Every pair (u, w), u ∈ octave k, w ∈ octave k+1 has w/u < 4, so all
 these pairs are adjacent-seam inversions of the anchors they cover, and
-the cell spread makes every anchor N ∈ [2^{k−1}, 2^k) receive
-Θ(m_k · m_{k+1}) = Θ(ε²N) of them.  **A single permutable team can
-carry Θ(N) adjacent-seam inversions at EVERY anchor.**  (Upper bound
-for such free teams: a 3-AP-free team has ≤ r_3(8N)² = o(N²) in-window
-pairs by Roth, so o(N²) is the ceiling of this construction family.)
+the cell spread gives every anchor N ∈ [2^{k−1}, 2^k) order
+m_k · m_{k+1} = Θ(N) of them up to the constant-fraction cell losses of
+the greedy bookkeeping.  **A single permutable team can carry
+Θ(N^{1−o(1)}) adjacent-seam inversions at EVERY anchor.**  (Ceiling for
+such free teams: a 3-AP-free team has ≤ r_3(8N)² = o(N²) in-window
+pairs by Roth/Behrend, so o(N²) caps this construction family.)
 
 **Verdict on the normalization route: lem:normal generalizes (N-GEN),
 the hypothesis does not follow, and no single-team statement — DNP or
@@ -181,6 +182,16 @@ extremal quantity (no orders); v* = μ would mean inversions are cheap
 once the coloring is fixed; v* > μ would mean the order theory taxes
 procrastination beyond the counting minimum.
 
+**Warning: μ = 0 is achievable even at exact balance** — the parity
+coloring (one team = evens of B0 ∪ B1 + odds of B2) makes 2y − u the
+wrong parity for both teams, zero H-triples — yet the balanced core is
+UNSAT at v = 0.  So the two-seam death does NOT ride H alone: the
+mixed shapes (two members in one block), individually order-dodgeable,
+are jointly lethal under block order, and v* measures the tax on THAT
+joint theory as well.  (This corrects a possible over-reading of
+notes/45's escape anatomy: H is the position-FORCED family, not the
+whole engine.)
+
 ## 4. Machine results (e127): the price of procrastination
 
 Instance: coloring of (M, 8M] + per-team orders + guarded APs + block
@@ -203,10 +214,23 @@ cores exactly.
 |---|-----|-----|-----|--------|----|
 | 16 | UNSAT 2.0s | UNSAT 24.0s | UNSAT 243.6s | (running) | ≥ 3 (running) |
 
-**Asymmetric budget (team A unconstrained, team B budgeted) —
-tests whether the schema survives on ONE team's cleanness:** (running)
+**Asymmetric budgets — the schema NEVER fires on one team's cleanness
+alone.  Both one-sided weakenings are SAT already at v = 0:**
 
-(tables to be completed as the scans land; jsonl is the record)
+| variant | M | verdict | escape anatomy |
+|---------|---|---------|----------------|
+| asym: A free, B ≥ (3,6,12) budgeted | 24 | SAT at v=0 [1.9s] | B = minority pinned at (3,6,12), seam-clean, 0 mono-H; A = majority procrastinates freely: 2090 inversions, 520 mono-H triples (every one broken by an inverted seam edge — §3 audit passes) |
+| majb: A free ≥ (3,6,12), B MAJORITY (≥ half each block) budgeted | 24 | SAT at v=0 [5.2s] | B = 13/24/48 majority, seam-clean, 0 mono-H (range-hides B1-material); A = 11/24/48 reverses nearly everything: 33 of its 35 low values late, late set gap-DENSE (28 of 32 gaps ≤ 2), 643 inversions, 113 mono-H |
+
+Two morals.  (i) **DNP is irreducibly two-sided**: no one-team
+weakening (not even "the block-majority team is clean") gives a finite
+core — matching the seam controls, every one-sided hypothesis is
+escapable.  The dense free team simply reverses its low blocks
+wholesale.  (ii) The free team's late set is NOT pair-sparse — but a
+3-block window cannot charge the exposure of late values (their attack
+units (u, y, 2y−u) with u late land in the NEXT block up, outside the
+instance).  The L-EXPOSE question is therefore not settled by these
+escapes; it needs the 4-block overlapping-window gadget (§5).
 
 ## 5. G2 route map after this note
 
