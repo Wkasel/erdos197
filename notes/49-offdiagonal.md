@@ -187,7 +187,66 @@ verified schema ({11,12}, {15,16}=C3(5), and by translation
 candidates for the rest) or a uniform lane statement awaiting the
 same treatment.
 
-### 4.5 What remains open on this front
+## 5. SECOND HAND SCHEMA: the ≡ 2 mod 4 flip class (B2 lane at x = 11)
+
+The same pipeline (e124j anatomy scan → e124k minimal ladders →
+e124l verifier) closed the second named target IN FULL, revealing the
+parity DUAL of the dyadic schema.
+
+### 5.1 Statement (pair {11,12}, M ≡ 2 mod 8, M ≥ 18; m0 = 3M/2 ODD)
+
+Core B2 = {t2≺b5, t5≺b3, t7≺b2} (attacker 12's j=5 unit + attacker
+11's j=3,2 units).  Phase battleground: t2 = 2M−2 (EVEN value, odd
+center — dual of the dyadic case's odd t1 / even m0):
+
+    HALF-A2:  AP + {t5≺b3, t7≺b2}  forces  m0 ≺ t2
+    HALF-B2:  AP + {t2≺b5, t5≺b3}  forces  t2 ≺ m0
+
+t2 ≠ m0 (M ≠ 4) ⇒ AP + B2 UNSAT ⇒ the {11,12} rung fires on the whole
+class M ≡ 2 mod 8.  Anatomy note: the two half-flips OVERLAP in the
+shared unit t5≺b3 — a 3-unit core carrying two 2-unit halves (the K4
+dyadic core's halves were disjoint, hence size 4; here sharing is
+possible and the core stays size 3.  Conjecture: that is exactly WHY
+{11,12} needs size 4 on the dyadic class — no shareable unit exists
+there).
+
+### 5.2 Derivation and verification (e124j/k/l)
+
+Each half: Lemma D on the even ladder E = (M+2, ..., 2M) and the
+quarter ladder Q1 = (M+1, M+5, ..., 2M−1) (= the mod-4 value class of
+t5, the SHARED unit — again the quarter ladder carries the pinch
+class); 4 polarity branches; zigzag propagation closes all.  Minimal
+ladder sets uniform across scales ({E,Q1} or {E,Q3}, e124k).
+Machine verification e113-style (e124l, data/e124l_b2_schema.*):
+  - 20/20 scales M = 18, 26, ..., 170: all 4+4 branches close;
+  - independent Cadical cross-check M ≤ 96: AP + B2 UNSAT;
+  - adversarial M = 258, 514: all branches close (2 s / 9 s);
+  - sharpness controls, 20 scales M = 22, ..., 174 (≡ 6 mod 8):
+    surviving branches + Cadical SAT confirmations.  Zero failures.
+
+With §4 + §5, pair {11,12} has verified hand schemas on BOTH named
+lanes: M ≡ 0 mod 8 (dyadic, K4) and M ≡ 2 mod 8 (the first ≡ 2 mod 4
+flip cell ever closed by hand).  The remaining {11,12} cells: 4 mod 8
+(catalogue core {t0<b6,t3<b4,t6<b3}), 6 mod 8 (B6 lane), and the four
+odd classes (C lane at ≡ 5; three others).
+
+### 5.3 The emerging uniform picture
+
+Three schema instances are now hand-verified ({15,16} dyadic = C3,
+{11,12} dyadic = K4, {11,12} ≡ 2 mod 8 = B2), and they share ONE
+shape: a phase battleground value v* adjacent to the block top
+(t1 or t2), a center m0, two premise half-sets each forcing one phase,
+and Lemma-D case analysis over exactly TWO ladders per half — the
+full d=2 ladder of v*'s parity class and one d=4 quarter ladder
+carrying the half's key unit's value class.  The residue lock selects
+which parity pairing (odd v*/even m0 at 0 mod 8, even v*/odd m0 at
+2 mod 8) is available.  This is strong evidence the remaining six
+{11,12} cells and the other pairs' lanes all yield to the same
+two-ladder template — a plausible UNIFORM off-diagonal metatheorem:
+"every lane law of §3 is witnessed by a two-half phase clash at v*
+with two-ladder Lemma-D closure."
+
+### 4.5 → 6. What remains open on this front
 
   - The other seven residue cells per pair as HAND schemas: the lane
     laws of §3 are exact machine statements (uniform, thresholded);
