@@ -347,7 +347,13 @@ def _longest_chain(Sarr, F, N):
         fs.append(nxt[1])
         chain.append(int(Sarr[i]))
     end = chain[-1]
-    censored = bool(2 * end - max(F) > N)   # all successors beyond horizon
+    # Censored = continuation cannot be ruled out at this horizon: SOME
+    # successor 2*end - f lies beyond N.  (The old max(F) test demanded
+    # ALL successors exceed N and missed infinite orbits whose large-f
+    # successor lands in-window but out-of-team while the small-f
+    # successor — the one the true orbit uses — is beyond the horizon;
+    # H2 found exactly this on the sliver-swap teams.)
+    censored = bool(2 * end - min(F) > N)
     return {'len': len(chain), 'F': [int(f) for f in F],
             'span_octaves': octave(end) - octave(chain[0]),
             'start': chain[0], 'end': end, 'censored': censored,

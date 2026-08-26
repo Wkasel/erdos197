@@ -1,0 +1,748 @@
+{
+ "NMAX": 65536,
+ "sat_horizons": [
+  512,
+  1024,
+  4096
+ ],
+ "scan_horizons": [
+  512,
+  1024,
+  4096,
+  65536
+ ],
+ "attacker_max": 64,
+ "orbit_fmax": 48,
+ "persistence_calibration": {
+  "sa": {
+   "flag": true,
+   "expected": true,
+   "flagged_attackers": [
+    3,
+    4,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    33,
+    34
+   ],
+   "pass": true
+  },
+  "geneson": {
+   "flag": false,
+   "expected": false,
+   "flagged_attackers": [],
+   "pass": true
+  },
+  "geneson_c": {
+   "flag": true,
+   "expected": true,
+   "flagged_attackers": [
+    1,
+    2,
+    3,
+    4,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+   ],
+   "pass": true
+  }
+ },
+ "orbit_certificates": {
+  "8/A": {
+   "o1": 14,
+   "o2": 8,
+   "f1": 20,
+   "f2": 2,
+   "start": 46,
+   "steps": 55,
+   "chain_head": [
+    46,
+    72,
+    142,
+    264,
+    526,
+    1032
+   ],
+   "verified_to": 60
+  },
+  "8/B": {
+   "o1": 12,
+   "o2": 8,
+   "f1": 16,
+   "f2": 4,
+   "start": 76,
+   "steps": 54,
+   "chain_head": [
+    76,
+    136,
+    268,
+    520,
+    1036,
+    2056
+   ],
+   "verified_to": 60
+  },
+  "12/A": {
+   "o1": 19,
+   "o2": 12,
+   "f1": 26,
+   "f2": 5,
+   "start": 51,
+   "steps": 55,
+   "chain_head": [
+    51,
+    76,
+    147,
+    268,
+    531,
+    1036
+   ],
+   "verified_to": 60
+  },
+  "12/B": {
+   "o1": 13,
+   "o2": 11,
+   "f1": 15,
+   "f2": 9,
+   "start": 77,
+   "steps": 54,
+   "chain_head": [
+    77,
+    139,
+    269,
+    523,
+    1037,
+    2059
+   ],
+   "verified_to": 60
+  },
+  "16/A": {
+   "o1": 24,
+   "o2": 16,
+   "f1": 32,
+   "f2": 8,
+   "start": 56,
+   "steps": 55,
+   "chain_head": [
+    56,
+    80,
+    152,
+    272,
+    536,
+    1040
+   ],
+   "verified_to": 60
+  },
+  "16/B": {
+   "o1": 23,
+   "o2": 13,
+   "f1": 33,
+   "f2": 3,
+   "start": 87,
+   "steps": 54,
+   "chain_head": [
+    87,
+    141,
+    279,
+    525,
+    1047,
+    2061
+   ],
+   "verified_to": 60
+  }
+ },
+ "candidates": [
+  {
+   "name": "dyadic_none",
+   "verdict": "DEAD",
+   "mechanism": "paper theorem: S_A dead via crowns 15/16 + C3; screens show CROWN+SLIVER on both teams",
+   "flagsA": {
+    "CROWN": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     1024,
+     4096,
+     65536
+    ]
+   },
+   "flagsB": {
+    "CROWN": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ]
+   }
+  },
+  {
+   "name": "dyadic_bottom8",
+   "verdict": "DEAD",
+   "mechanism": "lem:orbit HARD DEATH both teams (verified infinite period-2 orbit systems: A {'o1': 14, 'o2': 8, 'f1': 20, 'f2': 2}, B {'o1': 12, 'o2': 8, 'f1': 16, 'f2': 4}); donation gives each team a landing pad in every other octave, restoring the doubling orbits S_A broke + portable crown pairs one octave up",
+   "flagsA": {
+    "CROWN": [
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     1024,
+     4096,
+     65536
+    ],
+    "ORBIT": [
+     4096,
+     65536
+    ]
+   },
+   "flagsB": {
+    "CROWN": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "ORBIT": [
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     4096,
+     65536
+    ]
+   }
+  },
+  {
+   "name": "dyadic_bottom12",
+   "verdict": "DEAD",
+   "mechanism": "lem:orbit HARD DEATH both teams (verified infinite period-2 orbit systems: A {'o1': 19, 'o2': 12, 'f1': 26, 'f2': 5}, B {'o1': 13, 'o2': 11, 'f1': 15, 'f2': 9}); donation gives each team a landing pad in every other octave, restoring the doubling orbits S_A broke + portable crown pairs one octave up",
+   "flagsA": {
+    "CROWN": [
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     1024,
+     4096,
+     65536
+    ],
+    "ORBIT": [
+     4096,
+     65536
+    ]
+   },
+   "flagsB": {
+    "CROWN": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "ORBIT": [
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     4096,
+     65536
+    ]
+   }
+  },
+  {
+   "name": "dyadic_bottom16",
+   "verdict": "DEAD",
+   "mechanism": "lem:orbit HARD DEATH both teams (verified infinite period-2 orbit systems: A {'o1': 24, 'o2': 16, 'f1': 32, 'f2': 8}, B {'o1': 23, 'o2': 13, 'f1': 33, 'f2': 3}); donation gives each team a landing pad in every other octave, restoring the doubling orbits S_A broke + portable crown pairs one octave up",
+   "flagsA": {
+    "CROWN": [
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     1024,
+     4096,
+     65536
+    ],
+    "ORBIT": [
+     4096,
+     65536
+    ]
+   },
+   "flagsB": {
+    "ORBIT": [
+     4096,
+     65536
+    ],
+    "CROWN": [
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     65536
+    ]
+   }
+  },
+  {
+   "name": "dyadic_top8",
+   "verdict": "DEAD",
+   "mechanism": "top donation leaves own block bottoms intact: full S_A crown/sliver pattern on both teams, plus donated top slivers reflect into the next octave top (2(2^t - i) - f = 2^{t+1} - 2i - f in-team)",
+   "flagsA": {
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWN": [
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     1024,
+     4096,
+     65536
+    ]
+   },
+   "flagsB": {
+    "CROWN": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ]
+   }
+  },
+  {
+   "name": "dyadic_top12",
+   "verdict": "DEAD",
+   "mechanism": "top donation leaves own block bottoms intact: full S_A crown/sliver pattern on both teams, plus donated top slivers reflect into the next octave top (2(2^t - i) - f = 2^{t+1} - 2i - f in-team)",
+   "flagsA": {
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWN": [
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     1024,
+     4096,
+     65536
+    ]
+   },
+   "flagsB": {
+    "CROWN": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ]
+   }
+  },
+  {
+   "name": "dyadic_top16",
+   "verdict": "DEAD",
+   "mechanism": "top donation leaves own block bottoms intact: full S_A crown/sliver pattern on both teams, plus donated top slivers reflect into the next octave top (2(2^t - i) - f = 2^{t+1} - 2i - f in-team)",
+   "flagsA": {
+    "CROWN": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     1024,
+     4096,
+     65536
+    ]
+   },
+   "flagsB": {
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWN": [
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     4096,
+     65536
+    ]
+   }
+  },
+  {
+   "name": "quad_none",
+   "verdict": "DEAD",
+   "mechanism": "ratio-4 blocks trap reflections in-block (2y - x <= 4^k for y in the lower half), so every small in-team x attacks every own block regardless of sliver donation: CROWN(+P)+SLIVER on both teams",
+   "flagsA": {
+    "CROWN": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     4096,
+     65536
+    ]
+   },
+   "flagsB": {
+    "CROWN": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ]
+   }
+  },
+  {
+   "name": "quad_bottom8",
+   "verdict": "DEAD",
+   "mechanism": "ratio-4 blocks trap reflections in-block (2y - x <= 4^k for y in the lower half), so every small in-team x attacks every own block regardless of sliver donation: CROWN(+P)+SLIVER on both teams",
+   "flagsA": {
+    "CROWN": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ]
+   },
+   "flagsB": {
+    "CROWN": [
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     1024,
+     4096,
+     65536
+    ],
+    "SLIVER": [
+     1024,
+     4096,
+     65536
+    ]
+   }
+  },
+  {
+   "name": "quad_bottom12",
+   "verdict": "DEAD",
+   "mechanism": "ratio-4 blocks trap reflections in-block (2y - x <= 4^k for y in the lower half), so every small in-team x attacks every own block regardless of sliver donation: CROWN(+P)+SLIVER on both teams",
+   "flagsA": {
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWN": [
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     4096,
+     65536
+    ]
+   },
+   "flagsB": {
+    "CROWN": [
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     1024,
+     4096,
+     65536
+    ],
+    "SLIVER": [
+     1024,
+     4096,
+     65536
+    ]
+   }
+  },
+  {
+   "name": "quad_bottom16",
+   "verdict": "DEAD",
+   "mechanism": "ratio-4 blocks trap reflections in-block (2y - x <= 4^k for y in the lower half), so every small in-team x attacks every own block regardless of sliver donation: CROWN(+P)+SLIVER on both teams",
+   "flagsA": {
+    "CROWN": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ]
+   },
+   "flagsB": {
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWN": [
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     1024,
+     4096,
+     65536
+    ]
+   }
+  },
+  {
+   "name": "quad_top8",
+   "verdict": "DEAD",
+   "mechanism": "ratio-4 blocks trap reflections in-block (2y - x <= 4^k for y in the lower half), so every small in-team x attacks every own block regardless of sliver donation: CROWN(+P)+SLIVER on both teams",
+   "flagsA": {
+    "CROWNP": [
+     512,
+     4096,
+     65536
+    ],
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWN": [
+     4096,
+     65536
+    ]
+   },
+   "flagsB": {
+    "CROWN": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     512,
+     1024
+    ],
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ]
+   }
+  },
+  {
+   "name": "quad_top12",
+   "verdict": "DEAD",
+   "mechanism": "ratio-4 blocks trap reflections in-block (2y - x <= 4^k for y in the lower half), so every small in-team x attacks every own block regardless of sliver donation: CROWN(+P)+SLIVER on both teams",
+   "flagsA": {
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWN": [
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     4096,
+     65536
+    ]
+   },
+   "flagsB": {
+    "CROWN": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     512,
+     1024
+    ],
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ]
+   }
+  },
+  {
+   "name": "quad_top16",
+   "verdict": "DEAD",
+   "mechanism": "ratio-4 blocks trap reflections in-block (2y - x <= 4^k for y in the lower half), so every small in-team x attacks every own block regardless of sliver donation: CROWN(+P)+SLIVER on both teams",
+   "flagsA": {
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWN": [
+     4096,
+     65536
+    ],
+    "CROWNP": [
+     4096,
+     65536
+    ]
+   },
+   "flagsB": {
+    "CROWNP": [
+     512,
+     1024
+    ],
+    "SLIVER": [
+     512,
+     1024,
+     4096,
+     65536
+    ],
+    "CROWN": [
+     1024,
+     4096,
+     65536
+    ]
+   }
+  }
+ ],
+ "survivors": [],
+ "deaths": [
+  "dyadic_none",
+  "dyadic_bottom8",
+  "dyadic_bottom12",
+  "dyadic_bottom16",
+  "dyadic_top8",
+  "dyadic_top12",
+  "dyadic_top16",
+  "quad_none",
+  "quad_bottom8",
+  "quad_bottom12",
+  "quad_bottom16",
+  "quad_top8",
+  "quad_top12",
+  "quad_top16"
+ ]
+}

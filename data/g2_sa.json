@@ -10,7 +10,7 @@
    1024,
    4096
   ],
-  "solver": false,
+  "solver": true,
   "orbit_fmax": 16,
   "attacker_max": 64,
   "sliver_width": 8,
@@ -22,17 +22,17 @@
    "H": 256,
    "n": 170,
    "result": "SAT",
-   "method": "abj-witness",
+   "method": "cadical-lazy-trans",
    "witness_verified": true,
-   "time": 0.0
+   "time": 0.03
   },
   {
    "H": 1024,
    "n": 682,
    "result": "SAT",
-   "method": "abj-witness",
+   "method": "cadical-lazy-trans",
    "witness_verified": true,
-   "time": 0.14
+   "time": 0.41
   },
   {
    "H": 4096,
@@ -40,7 +40,8 @@
    "result": "SAT",
    "method": "abj-witness",
    "witness_verified": true,
-   "time": 2.48
+   "solver": "skipped (n=2730 > 1500)",
+   "time": 0.5
   }
  ],
  "orbit": {
