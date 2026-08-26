@@ -1,0 +1,56 @@
+{
+ "sharp": {
+  "lemma": "T-SHARP: permutable set with infinite orbit, distinct slowly growing reflectors (finite certificates)",
+  "sizes": [
+   {
+    "K": 20,
+    "u0": 101,
+    "f_first": 3,
+    "f_last": 88,
+    "u_last_bits": 27,
+    "aps_in_S": 20,
+    "only_orbit_aps": true,
+    "order_monotone_ap": null,
+    "order_valid": true,
+    "step_sign_rule_holds": true,
+    "max_f_over_u": 0.0297029702970297,
+    "reflectors_distinct": true,
+    "time": 0.0,
+    "pass": true
+   },
+   {
+    "K": 40,
+    "u0": 101,
+    "f_first": 3,
+    "f_last": 265,
+    "u_last_bits": 47,
+    "aps_in_S": 40,
+    "only_orbit_aps": true,
+    "order_monotone_ap": null,
+    "order_valid": true,
+    "step_sign_rule_holds": true,
+    "max_f_over_u": 0.0297029702970297,
+    "reflectors_distinct": true,
+    "time": 0.57,
+    "pass": true
+   },
+   {
+    "K": 60,
+    "u0": 101,
+    "f_first": 3,
+    "f_last": 581,
+    "u_last_bits": 67,
+    "aps_in_S": 60,
+    "only_orbit_aps": true,
+    "order_monotone_ap": null,
+    "order_valid": true,
+    "step_sign_rule_holds": true,
+    "max_f_over_u": 0.0297029702970297,
+    "reflectors_distinct": true,
+    "time": 2.34,
+    "pass": true
+   }
+  ],
+  "pass": true
+ }
+}

@@ -1,0 +1,12 @@
+== CHECK 4: SG rungs ==
+  SG frac/B t=9 s=56 cs=(15, 16) x=[127, 128] in-team=[True, True]: UNSAT [5.3s, n=200]
+  SG frac/B t=9 s=56 cs=(15,) x=[127] in-team=[True]: SAT [0.7s, n=200]
+  SG frac/B t=9 s=56 cs=(16,) x=[128] in-team=[True]: SAT [1.2s, n=200]
+  SG frac/B t=9 s=56 cs=(17,) x=[129] in-team=[True]: SAT [0.5s, n=200]
+  SG frac/B t=9 s=56 cs=(18,) x=[130] in-team=[True]: SAT [0.9s, n=200]
+  SG frac/A t=10 s=102 cs=(15, 16) x=[219, 220] in-team=[True, True]: UNSAT [73.4s, n=410]
+  SG frac/A t=10 s=102 cs=(15,) x=[219] in-team=[True]: SAT [4.4s, n=410]
+  SG frac/A t=10 s=102 cs=(16,) x=[220] in-team=[True]: SAT [49.1s, n=410]
+  SG frac/A t=10 s=102 cs=(17,) x=[221] in-team=[True]: SAT [3.0s, n=410]
+  SG frac/A t=10 s=102 cs=(18,) x=[222] in-team=[True]: SAT [4.9s, n=410]
+  SG frac/B t=11 s=186 cs=(15, 16) x=[387, 388] in-team=[True, True]: UNSAT [191.3s, n=838]

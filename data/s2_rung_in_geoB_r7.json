@@ -1,0 +1,22 @@
+[
+ {
+  "n": 72,
+  "aps": 1260,
+  "units": 21,
+  "result": "UNSAT",
+  "rounds": 19,
+  "time": 0.2,
+  "kind": "rung_in_interval",
+  "sched": "geo",
+  "team": "B",
+  "r": 7,
+  "interval": [
+   73,
+   144
+  ],
+  "attackers": [
+   21,
+   22
+  ]
+ }
+]

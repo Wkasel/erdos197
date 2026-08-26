@@ -1,0 +1,473 @@
+{
+ "orbit": {
+  "lemma": "SLIVER-ORBIT: slow route exists iff s_{t+2} <= 2 s_{t+1} - 2 at owner parity (+ in-team reflector availability)",
+  "results": [
+   {
+    "schedule": "lin",
+    "team": "A",
+    "condition_violations_t<=200": 0,
+    "violations_t>=10": [],
+    "last_violation": null,
+    "predicted": "EXISTS",
+    "walk_blocks": 400,
+    "walk_top_octave": 412,
+    "walk_verified": true,
+    "max_reflector": 695,
+    "max_s_along_walk": 412,
+    "chain_head": [
+     [
+      12,
+      13,
+      "kept"
+     ],
+     [
+      13,
+      10,
+      "recv"
+     ],
+     [
+      14,
+      15,
+      "kept"
+     ],
+     [
+      15,
+      15,
+      "recv"
+     ],
+     [
+      16,
+      17,
+      "kept"
+     ],
+     [
+      17,
+      17,
+      "recv"
+     ],
+     [
+      18,
+      19,
+      "kept"
+     ],
+     [
+      19,
+      19,
+      "recv"
+     ]
+    ],
+    "reflectors_head": [
+     16,
+     5,
+     15,
+     13,
+     17,
+     15,
+     19,
+     17
+    ],
+    "reflectors_distinct": 116,
+    "outcome": "EXISTS (certified walk, exact ints)",
+    "prediction_confirmed": true
+   },
+   {
+    "schedule": "lin",
+    "team": "B",
+    "condition_violations_t<=200": 0,
+    "violations_t>=10": [],
+    "last_violation": null,
+    "predicted": "EXISTS",
+    "walk_blocks": 400,
+    "walk_top_octave": 413,
+    "walk_verified": true,
+    "max_reflector": 522,
+    "max_s_along_walk": 413,
+    "chain_head": [
+     [
+      13,
+      16,
+      "kept"
+     ],
+     [
+      14,
+      10,
+      "recv"
+     ],
+     [
+      15,
+      16,
+      "kept"
+     ],
+     [
+      16,
+      10,
+      "recv"
+     ],
+     [
+      17,
+      19,
+      "kept"
+     ],
+     [
+      18,
+      16,
+      "recv"
+     ],
+     [
+      19,
+      20,
+      "kept"
+     ],
+     [
+      20,
+      18,
+      "recv"
+     ]
+    ],
+    "reflectors_head": [
+     22,
+     4,
+     22,
+     1,
+     22,
+     12,
+     22,
+     12
+    ],
+    "reflectors_distinct": 142,
+    "outcome": "EXISTS (certified walk, exact ints)",
+    "prediction_confirmed": true
+   },
+   {
+    "schedule": "geo",
+    "team": "A",
+    "condition_violations_t<=200": 98,
+    "violations_t>=10": [
+     10,
+     12,
+     14,
+     16,
+     18,
+     20,
+     22,
+     24,
+     26,
+     28,
+     30,
+     32
+    ],
+    "last_violation": 198,
+    "predicted": "BLOCKED",
+    "blockage": [
+     {
+      "t": 10,
+      "s_t1": 32,
+      "s_t2": 64,
+      "certificate": "inequality s_{t+2} > 2 s_{t+1} - 2 (independent of reflectors)",
+      "blocked": true
+     },
+     {
+      "t": 12,
+      "s_t1": 64,
+      "s_t2": 128,
+      "certificate": "inequality s_{t+2} > 2 s_{t+1} - 2 (independent of reflectors)",
+      "blocked": true
+     },
+     {
+      "t": 14,
+      "s_t1": 128,
+      "s_t2": 256,
+      "certificate": "inequality s_{t+2} > 2 s_{t+1} - 2 (independent of reflectors)",
+      "blocked": true
+     }
+    ],
+    "outcome": "BLOCKED (exhaustive at 3 scales)",
+    "prediction_confirmed": true
+   },
+   {
+    "schedule": "geo",
+    "team": "B",
+    "condition_violations_t<=200": 0,
+    "violations_t>=10": [],
+    "last_violation": null,
+    "predicted": "EXISTS",
+    "walk_blocks": 400,
+    "walk_top_octave": 413,
+    "walk_verified": true,
+    "max_reflector": 51422017416287688817342786954927344485512321636261344355287040,
+    "max_s_along_walk": 102844034832575377634685573909834406561420991602098741459288064,
+    "chain_head": [
+     [
+      13,
+      65,
+      "kept"
+     ],
+     [
+      14,
+      127,
+      "recv"
+     ],
+     [
+      15,
+      129,
+      "kept"
+     ],
+     [
+      16,
+      255,
+      "recv"
+     ],
+     [
+      17,
+      366,
+      "kept"
+     ],
+     [
+      18,
+      459,
+      "recv"
+     ],
+     [
+      19,
+      513,
+      "kept"
+     ],
+     [
+      20,
+      1023,
+      "recv"
+     ]
+    ],
+    "reflectors_head": [
+     3,
+     125,
+     3,
+     144,
+     273,
+     405,
+     3,
+     544
+    ],
+    "reflectors_distinct": 300,
+    "outcome": "EXISTS (certified walk, exact ints)",
+    "prediction_confirmed": true
+   },
+   {
+    "schedule": "frac",
+    "team": "A",
+    "condition_violations_t<=200": 0,
+    "violations_t>=10": [],
+    "last_violation": null,
+    "predicted": "EXISTS",
+    "walk_blocks": 400,
+    "walk_top_octave": 412,
+    "walk_verified": true,
+    "max_reflector": 40551946265842670494200945857800463374560648724414625577285275496306847545122070975789921093837607558546422439603669100,
+    "max_s_along_walk": 25672076457873731998132633321661011255472026522884707545034904670850710339274227022337445065620011062042377166020324594340,
+    "chain_head": [
+     [
+      12,
+      342,
+      "kept"
+     ],
+     [
+      13,
+      630,
+      "recv"
+     ],
+     [
+      14,
+      1178,
+      "kept"
+     ],
+     [
+      15,
+      2184,
+      "recv"
+     ],
+     [
+      16,
+      4097,
+      "kept"
+     ],
+     [
+      17,
+      7579,
+      "recv"
+     ],
+     [
+      18,
+      14846,
+      "kept"
+     ],
+     [
+      19,
+      27302,
+      "recv"
+     ]
+    ],
+    "reflectors_head": [
+     54,
+     82,
+     172,
+     271,
+     615,
+     312,
+     2390,
+     1210
+    ],
+    "reflectors_distinct": 386,
+    "outcome": "EXISTS (certified walk, exact ints)",
+    "prediction_confirmed": true
+   },
+   {
+    "schedule": "frac",
+    "team": "B",
+    "condition_violations_t<=200": 0,
+    "violations_t>=10": [],
+    "last_violation": null,
+    "predicted": "EXISTS",
+    "walk_blocks": 400,
+    "walk_top_octave": 413,
+    "walk_verified": true,
+    "max_reflector": 162203668349602727845200212473111104826440902288863378718424603787739043007669967987598944577892788844918980733174787447,
+    "max_s_along_walk": 51219832932900617836468014181715915918907868897958835392515160892932167843975697497351222116394404637101498268282681515099,
+    "chain_head": [
+     [
+      13,
+      631,
+      "kept"
+     ],
+     [
+      14,
+      1170,
+      "recv"
+     ],
+     [
+      15,
+      2185,
+      "kept"
+     ],
+     [
+      16,
+      4057,
+      "recv"
+     ],
+     [
+      17,
+      7711,
+      "kept"
+     ],
+     [
+      18,
+      14211,
+      "recv"
+     ],
+     [
+      19,
+      27808,
+      "kept"
+     ],
+     [
+      20,
+      50889,
+      "recv"
+     ]
+    ],
+    "reflectors_head": [
+     92,
+     155,
+     313,
+     403,
+     1211,
+     614,
+     4727,
+     1913
+    ],
+    "reflectors_distinct": 386,
+    "outcome": "EXISTS (certified walk, exact ints)",
+    "prediction_confirmed": true
+   },
+   {
+    "schedule": "gm",
+    "team": "A",
+    "condition_violations_t<=200": 8,
+    "violations_t>=10": [
+     14,
+     34,
+     62,
+     98,
+     142,
+     194
+    ],
+    "last_violation": 194,
+    "predicted": "BLOCKED",
+    "blockage": [
+     {
+      "t": 14,
+      "s_t1": 32,
+      "s_t2": 4096,
+      "certificate": "inequality s_{t+2} > 2 s_{t+1} - 2 (independent of reflectors)",
+      "blocked": true
+     },
+     {
+      "t": 34,
+      "s_t1": 2097152,
+      "s_t2": 4294967296,
+      "certificate": "inequality s_{t+2} > 2 s_{t+1} - 2 (independent of reflectors)",
+      "blocked": true
+     },
+     {
+      "t": 62,
+      "s_t1": 35184372088832,
+      "s_t2": 1152921504606846976,
+      "certificate": "inequality s_{t+2} > 2 s_{t+1} - 2 (independent of reflectors)",
+      "blocked": true
+     }
+    ],
+    "outcome": "BLOCKED (exhaustive at 3 scales)",
+    "prediction_confirmed": true
+   },
+   {
+    "schedule": "gm",
+    "team": "B",
+    "condition_violations_t<=200": 7,
+    "violations_t>=10": [
+     23,
+     47,
+     79,
+     119,
+     167
+    ],
+    "last_violation": 167,
+    "predicted": "BLOCKED",
+    "blockage": [
+     {
+      "t": 23,
+      "s_t1": 4096,
+      "s_t2": 2097152,
+      "certificate": "inequality s_{t+2} > 2 s_{t+1} - 2 (independent of reflectors)",
+      "blocked": true
+     },
+     {
+      "t": 47,
+      "s_t1": 4294967296,
+      "s_t2": 35184372088832,
+      "certificate": "inequality s_{t+2} > 2 s_{t+1} - 2 (independent of reflectors)",
+      "blocked": true
+     },
+     {
+      "t": 79,
+      "s_t1": 1152921504606846976,
+      "s_t2": 151115727451828646838272,
+      "certificate": "inequality s_{t+2} > 2 s_{t+1} - 2 (independent of reflectors)",
+      "blocked": true
+     }
+    ],
+    "outcome": "BLOCKED (exhaustive at 3 scales)",
+    "prediction_confirmed": true
+   }
+  ],
+  "pass": true
+ }
+}

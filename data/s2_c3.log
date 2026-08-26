@@ -1,0 +1,5 @@
+== CHECK 4b: C3-shifted cores ==
+  C3 control s=0 t=10: UNSAT [66.7s]
+  C3-shifted lin t=9 s=9: SAT [1.5s, n=247]
+  C3-shifted lin t=10 s=10: SAT [163.6s, n=502]
+  C3-shifted lin t=11 s=11: SAT [37.6s, n=1013]

@@ -1,0 +1,80 @@
+{
+ "shadow": {
+  "lemma": "L-STEP/L-DESC shadow: reflectors-early forces pos(u_L) < ... < pos(u_0) on S1 orbit prefixes",
+  "cases": [
+   {
+    "spec": [
+     "lin",
+     "A",
+     12,
+     3
+    ],
+    "chain_len": 7,
+    "u0": 2061,
+    "uL": 131091,
+    "reflectors": [
+     16,
+     5,
+     15,
+     13,
+     17,
+     15
+    ],
+    "early+u0_before_uL": "UNSAT",
+    "early+uL_before_u0": "SAT",
+    "pass": true
+   },
+   {
+    "spec": [
+     "lin",
+     "A",
+     14,
+     4
+    ],
+    "chain_len": 9,
+    "u0": 8207,
+    "uL": 2097175,
+    "reflectors": [
+     15,
+     13,
+     17,
+     15,
+     19,
+     17,
+     21,
+     19
+    ],
+    "early+u0_before_uL": "UNSAT",
+    "early+uL_before_u0": "SAT",
+    "pass": true
+   },
+   {
+    "spec": [
+     "lin",
+     "B",
+     13,
+     5
+    ],
+    "chain_len": 11,
+    "u0": 4112,
+    "uL": 4194336,
+    "reflectors": [
+     22,
+     4,
+     22,
+     1,
+     22,
+     12,
+     22,
+     12,
+     26,
+     12
+    ],
+    "early+u0_before_uL": "UNSAT",
+    "early+uL_before_u0": "SAT",
+    "pass": true
+   }
+  ],
+  "pass": true
+ }
+}
