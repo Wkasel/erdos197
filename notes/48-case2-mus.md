@@ -57,6 +57,48 @@ still running from the previous session, data/e125_m64.log.)
    if no, the schema needs midband-proportional anchors (like C3's
    flood centres at 3M/2).
 
+## Result 0 (pre-MUS, e126c): the schema CANNOT be pure sumset — and
+## what it must be instead
+
+Diagnostic experiments/e126c_pure_sumset.py: 2-color the support with
+per-block bounds forbidding monochromatic CROSS triples only (no order
+variables).  **PURE-SUMSET is SAT at both targets** ((3,3,3)@M=32,
+1280 cross triples; (2,2,2)@M=48, 2880 cross triples;
+data/e126c_pure_M{32,48}.log) — necessarily so, because the
+cross-triple hypergraph has degree-0 zones:
+
+- max z = 2·(4M) − (M+1) = 7M − 1, so B2's top eighth (7M, 8M] is
+  UNREACHABLE by cross triples (33 values at M=32);
+- y ≤ (4M + M)/2 + O(1): B1's bottom values undershoot B2 entirely
+  (z = 2y − u ≤ 4M), a degree-0 bottom zone in B1 (16 values at M=32).
+
+So "a small minority cannot keep 2Y − U off itself" is FALSE at the
+pure level at every scale: park the B2 quota above 7M and/or the B1
+quota in the bottom zone (the machine's range-hide dodge, exactly as
+notes/45 recorded).  **The order theory is load-bearing, and the pure
+witness shows precisely where**: the decoded M=32 dodge gives minority
+B = {62,63,64} ∪ {93,94,95} ∪ [129,223] — i.e. the dodging team is
+forced to hold a ~95-value CONSECUTIVE interval in B2 while its B1
+values {93,94,95} sit seam-forced EARLY below it.  That is verbatim
+the generic-pair chain-rung geometry (notes/42 §4b: a pair {x, x+1}
+placed early below a long consecutive run kills it — N2's single-block
+collapse).  The correct hand-schema shape is therefore a DICHOTOMY,
+not a sumset lemma:
+
+> **Schema target (revised).**  Under double non-procrastination with
+> per-block bounds, every coloring either (a) contains a monochromatic
+> cross triple (dies by the seam forcing), or (b) range/lattice-hides —
+> and every hide RECREATES a generic-pair rung one seam up (the hidden
+> team's low-block members become fixed early attackers on its own
+> consecutive B2 material).  Case (b) is N2-schema territory: the
+> coupled core is the N2 generic-pair core WRAPPED in one layer of
+> sumset forcing.
+
+If the MUS supports confirm this (retained B2 support = a long run
+below 7M + its B1 attackers + B0 seam anchors), Case 2's crux
+literally REDUCES to the Case-1 crux (N2's C3(p) family + off-diagonal
+lanes) plus the seam hypothesis — one schema, both cases.
+
 ## Results
 
 (pending — filled in as the runs land; supports snapshotted in
