@@ -99,6 +99,24 @@ below 7M + its B1 attackers + B0 seam anchors), Case 2's crux
 literally REDUCES to the Case-1 crux (N2's C3(p) family + off-diagonal
 lanes) plus the seam hypothesis — one schema, both cases.
 
+Second probe (data/e126c_pure_reachable.log): excluding the degree-0
+zones (support = cross-reachable values only, n = 175/263) the pure
+level is STILL SAT — the PARITY/LATTICE dodge takes over (z = 2y − u
+preserves u's parity, so "minority odd in B0, even in B2" kills every
+mono cross triple arithmetically; decoded witnesses at both scales are
+exactly this).  So BOTH known escape families are pure-level-immune,
+each for its own arithmetic reason, and the order theory is what kills
+each: the range-hide hands the dodger consecutive runs attacked by
+gap-1 pairs (chain rung verbatim), the lattice-hide hands it gap-2
+pairs + long mod-2/mod-4 lattice runs — the SAME rung after halving
+(dividing a gap-2 lattice by 2 maps it to the gap-1 consecutive
+geometry).  Prediction for the MUS anatomies: the retained support is
+a UNION of (i) seam-anchor values in B0/B1 realizing the cross-triple
+forcing, and (ii) enough of B2's midband (below 7M) in BOTH parities
+to make every lattice/range hide recreate a rung — and the M=32 vs
+M=48 agreement should be in BOTTOM-offset coordinates for (i) and
+proportional (midband) coordinates for (ii).
+
 ## Results
 
 (pending — filled in as the runs land; supports snapshotted in
