@@ -274,6 +274,52 @@ units (u, y, 2y−u) with u late land in the NEXT block up, outside the
 instance).  The L-EXPOSE question is therefore not settled by these
 escapes; it needs the 4-block overlapping-window gadget (§5).
 
+## 4b. The regime map: where DNP is actually NEEDED
+
+Split Case 2 by the minority's per-block count P(t) (both teams' counts
+diverge; look at windows where team m is the block-minority):
+
+- **Sub-linear minorities (P(t) = o(M), e.g. the "Behrend blocker"
+  dodger: a 3-AP-free minority whose order theory is EMPTY — it can
+  stay seam-clean for free and dodge every in-team order gadget):
+  DNP IS NOT NEEDED.**  The majority's per-block density → 1, and
+  N5's two-block density rung (notes/45 Part E: fixed pair {15, 16},
+  window (M, 4M], UNSAT for EVERY in-team subset of per-block density
+  ≥ 13/16 at M = 32, T-PIN-clean) fires on the majority alone: the
+  adversarial-subset quantifier already includes the minority's best
+  placement, the pair is early at cofinitely many disjoint windows by
+  T-PIN (hand), and P(t) = o(M) puts the majority's density above any
+  fixed threshold eventually.  CAVEAT (honest): the two-block rung
+  needs the SAME team dense in two consecutive blocks infinitely
+  often.  Shapes whose block-majority ALTERNATES every octave (i.e.
+  octave-alternation with growing dust) starve it structurally — the
+  AP middle y of a B(m) → B(m+2) attack always lands in the skipped
+  block B(m+1), where the attacking team is sparse — so that sub-case
+  stays with the legacy alternation machinery (NECK/d_t, currently
+  proven only at bounded dust) or with the coupled core.  With that
+  caveat: sub-linear-minority, non-alternating Case 2 is dead modulo
+  the N5 ρ*-rung schema (a rung family in the N2 mold — no order
+  hypothesis on anybody).  This disposes of the sharpest free-team
+  dodger from §1 in its natural form: making the minority order-free
+  (3-AP-free) makes the majority nearly-full, which is exactly what
+  the density rungs eat.
+- **Linear minorities (both teams Θ(M) per block): the only regime
+  where the coupled cores and DNP carry the load.**  Here BOTH teams
+  have rich in-window AP theories, the ε-balance version of the e127
+  instance applies (bounds (εM, 2εM, 4εM)), and T-FORCE charges both
+  teams' orders.  The balanced v* (§4) is the relevant price; its
+  growth in M is the pump the N6 ledger needs.
+- **Crossover (minority density between o(1)·M and the ρ* threshold
+  ~3M/16..M/2): the dial laws** — N5's ρ*(x) ≈ 1 − x/(4M) with larger
+  attacker pairs, chain pairs at 7/8 — cover part; locking their
+  scale-stability (STATUS next-experiment 3) now serves G2 directly,
+  not just N5.
+
+So the honest reformulation of THE gap: **G2 = "two Θ(M)-dense teams
+cannot both afford their forced inversions at every anchor forever."**
+Everything below linear density is (modulo rung schemas already in the
+N-program) not a seam question at all.
+
 ## 5. G2 route map after this note
 
 1. **DNP as stated is unprovable single-team and unprovable by
