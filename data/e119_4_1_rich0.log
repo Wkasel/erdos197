@@ -1,0 +1,2 @@
+m=4 N=256 CAP=1 DMAX=8 mode=rich0 cap=crown: n=255 vars=67051 clauses=1096425 force=1029976 triples=16129
+RUNG2C e119_4_1_8_rich0_crown: UNSAT (23s, 9 rounds) => every rich0-coloring needs crown displacement > 1 at N=256

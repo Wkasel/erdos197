@@ -1,0 +1,2 @@
+m=4 N=256 CAP=1 DMAX=8 mode=dyadicAonly cap=crown: n=255 vars=67051 clauses=549272 force=514988 triples=16129
+RUNG2C e119_4_1_8_dyadicAonly_crown: UNSAT (11s, 9 rounds) => every dyadicAonly-coloring needs crown displacement > 1 at N=256

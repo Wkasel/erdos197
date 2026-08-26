@@ -1,0 +1,10 @@
+M=128 mode=nosliver: n=128 triples=4032 attacks=15 clauses=16168
+  budget 0: UNSAT (3s)
+  budget 1: UNSAT (18s)
+  budget 2: UNSAT (85s)
+M=128 nosliver: min budget = 3 (109s)
+  3 optimal sets; touching sliver: 0, touching top: 3
+    [245, 249, 253] TTT
+    [249, 251, 253] TTT
+    [245, 249, 251] TTT
+wrote data/e118_128_nosliver.json total 268s

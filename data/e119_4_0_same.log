@@ -1,0 +1,10 @@
+m=4 N=256 CAP=0 DMAX=8 mode=same cap=crown: n=255 vars=67049 clauses=1096209 force=1029920 triples=16129
+  round 25 (45s)
+  round 50 (88s)
+  round 75 (94s)
+  round 100 (98s)
+RUNG2C e119_4_0_8_same_crown: SAT (101s, 116 rounds)
+  crown: 15->A d=0  16->A d=0
+  low values (v<=16): {2: ('B', 8), 3: ('B', 8), 4: ('B', 8), 5: ('B', 7), 6: ('A', 7), 7: ('B', 7), 8: ('B', 7), 9: ('A', 7), 10: ('A', 7), 11: ('B', 7), 12: ('B', 7), 13: ('B', 7), 14: ('A', 7), 15: ('A', 0), 16: ('A', 0)}
+  block (nA,nB): {1: (0, 1), 2: (0, 2), 3: (1, 3), 4: (5, 3), 5: (2, 14), 6: (11, 21), 7: (11, 53), 8: (34, 94)}
+  sliver values off-majority per block: {5: [21, 22], 6: [33], 7: [65, 69], 8: [130]}

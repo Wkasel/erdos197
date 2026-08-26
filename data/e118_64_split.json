@@ -1,0 +1,11 @@
+{
+ "M": 64,
+ "mode": "split",
+ "min_budget": 0,
+ "optimal_sets": [
+  []
+ ],
+ "value_frequency": {},
+ "sets_touching_sliver": 0,
+ "sets_touching_top": 0
+}

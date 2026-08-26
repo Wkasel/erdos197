@@ -1,0 +1,30 @@
+{
+ "M": 64,
+ "mode": "nosliver",
+ "min_budget": 3,
+ "optimal_sets": [
+  [
+   117,
+   121,
+   125
+  ],
+  [
+   121,
+   123,
+   125
+  ],
+  [
+   117,
+   121,
+   123
+  ]
+ ],
+ "value_frequency": {
+  "117": 2,
+  "121": 3,
+  "123": 2,
+  "125": 2
+ },
+ "sets_touching_sliver": 0,
+ "sets_touching_top": 3
+}
