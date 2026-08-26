@@ -1,0 +1,5 @@
+{"tag": "bal_M16", "M": 16, "bounds": null, "v": 0, "verdict": "UNSAT", "time": 2.0}
+{"tag": "bal_M16", "M": 16, "bounds": null, "v": 1, "verdict": "UNSAT", "time": 24.0}
+{"tag": "bal_M16", "M": 16, "bounds": null, "v": 2, "verdict": "UNSAT", "time": 243.6}
+{"tag": "const3_6_12_M24", "M": 24, "bounds": [3, 6, 12], "v": 0, "verdict": "UNSAT", "time": 7.7}
+{"tag": "const3_6_12_M24", "M": 24, "bounds": [3, 6, 12], "v": 1, "verdict": "UNSAT", "time": 189.5}
