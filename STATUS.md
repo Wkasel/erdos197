@@ -425,6 +425,29 @@ e123* (N2).
   family miner e124_family_miner.py (mines e122's catalogue for
   uniform-in-x core families + the dyadic sub-catalogue) is committed
   but was NOT yet run.
+- **UPDATE (N2-OFF session, this date, notes/49): e124 run and the
+  off-diagonal program largely EXECUTED.**  (1) THE LANE LAWS: every
+  off-diagonal core lane's residue law slides mod 8, affine in the
+  pair index x (direct solver probes, all residues, M = 16..160):
+  A4b/c/d-lanes fire at M ≡ x+5, B2 at x+7, B6 at x+3 (the three even
+  classes ≠ x+1), C at x+2 (odd) — data/e124b_lane_probe.*.  (2) TWO
+  NEW HAND SCHEMAS, both verified end-to-end e113-style (Lemma-D
+  polarity case analysis + solver-free zigzag closure per branch,
+  independent Cadical cross-checks, sharpness controls, 20 scales each
+  + adversarial 256..2048): the {11,12} DYADIC size-4 core (M ≡ 0 mod
+  8 — the T-PIN class; 2+2 phase clash on t1 = 2M−1 vs m0: attacker
+  12's units {t0≺b6,t2≺b5} force m0≺t1, attacker 11's {t1≺b5,t3≺b4}
+  force t1≺m0; each half = Lemma D on 2 ladders, 4 branches) and the
+  first ≡ 2 mod 4 flip cell (B2(11) = {t2≺b5,t5≺b3,t7≺b2} at
+  M ≡ 2 mod 8, parity dual: even t2 vs ODD m0, overlapping halves
+  sharing t5≺b3) — e124i/e124l, zero failures.  (3) All three
+  hand-verified instances (C3, K4, B2) share ONE two-ladder template;
+  e124m tests it mechanically across the even-class cells of all six
+  pairs (incl. alternative dyadic cores for {13,14}/{17,18}/{19,20}/
+  {21,22}).  Remaining N2 gaps: the four ODD residue classes per pair
+  (no integer m0 — needs a new phase center; lane C's laws are exact
+  machine statements awaiting it), and pairs x ≡ 7 mod 8 off the
+  diagonal (x = 23, 31, ... — outside the e122 catalogue).
 
 ### N5 — resolved as posed: density 1/2 + ε FAILS for single blocks;
 ### the robust channel needs Θ(M) attack surface (notes/45)
@@ -506,7 +529,7 @@ e123* (N2).
 | # | Lemma | Pre-merge | Now |
 |---|-------|-----------|-----|
 | N1 | pigeonholes (T-PIN / -STAGE / -BLOCKS) | HAND | HAND (unchanged) |
-| N2 | generic-pair core schema | RUNG — THE crux | **infinite hand family on the diagonal lane** C3(p), p odd ≥ 5, 5 pairs machine-verified, 0 failures; all-residue UNSAT M = 16..135, catalogues periodic mod 8; off-diagonal schemas open (e124 unrun) |
+| N2 | generic-pair core schema | RUNG — THE crux | **infinite hand family on the diagonal lane** C3(p) + **off-diagonal lane laws all slide mod 8** (e124b) + **two new hand schemas verified**: {11,12} dyadic size-4 (K4, 2+2 phase clash) and {11,12} ≡ 2 mod 8 (B2, parity dual) — notes/49; remaining: odd residue classes (no integer m0), x ≡ 7 mod 8 pairs off-diagonal |
 | N3 | bounded-dust robustness | RUNG | RUNG + **exact constants**: single-block tolerance d* = 2 ({11,12}) / 3 ({15,16}), scale-stable |
 | N4 | dichotomy frame | HAND-trivial | restated **anchor-free** (ratio-2 windows, any anchor — e121 salting lesson); **C = 1 suffices** from M = 48 |
 | N5 | dense-subset cores | OPEN | **resolved as posed: FALSE** for single blocks (ρ* → 1); robust variants: chain pair 7/8, two-block fixed pair 0.781 (T-PIN-clean); superseded by C3 constants |
@@ -524,16 +547,22 @@ compose freely at scales M·8^k (everything outside a window is
 unconstrained), so the pigeonhole side is trivial.  Exactly TWO gaps
 remain:
 
-1. **Scale-stability of the constant-bound coupled schema**: (2,2,2)
-   at M = 64 (n = 448, complete encoding) died with the session —
-   rerun (RunPod-sized).  (3,6,12) is already stable over a 2× range.
+1. **Scale-stability of the constant-bound coupled schema**: CLOSED at
+   M = 64 (e125 rerun, 2026-08-26): (2,2,2) UNSAT [304 s] and (3,6,12)
+   UNSAT [629 s], data/e125_m64.log — stable over 16..64, a 2.7×
+   range beyond the discovery scale for the critical constant.  What
+   remains on this side is the hand schema (MUS front, notes/48), not
+   compute.
 2. **The double non-procrastination hypothesis** — both teams
    block-ordered at two consecutive seams, infinitely often.  The seam
    controls prove this hypothesis cannot be thinned; converting it
    into a theorem (or killing its negation: a team fails it only by
    re-descending below a previous block infinitely often — L-DESC
    well-founded-descent territory, notes/39) is now THE gap of the
-   entire NO program.
+   entire NO program.  **Second-wave verdict (e127 + notes/47, below):
+   NOT a theorem — false single-team at every anchor, irreducibly
+   two-sided, and correctly read FORWARD as forced procrastination
+   (T-FORCE); the budget dial v*(M) is the new quantitative front.**
 
 ### Unresolved runs at merge (all processes now stopped)
 
@@ -550,12 +579,85 @@ M=64 28/32; Part D 48/64; e124 miner never started.
    family) — with the cheap prerequisite of rerunning (2,2,2)/(3,6,12)
    at M = 64 (RunPod) and finishing the balanced-core MUS at M = 32 →
    hand schema for the sumset/range lemma.
-2. **N2**: run e124 on the e122 catalogue and hand-verify ONE
-   off-diagonal lane (the {11,12} size-4 lane, or a ≡ 2 mod 4 flip
-   class) — per-residue schemas close Case 1 outright.
+2. **N2**: ~~run e124 + hand-verify ONE off-diagonal lane~~ DONE ×2
+   (notes/49: {11,12} dyadic K4 AND ≡ 2 mod 4 B2 both verified
+   end-to-end; lane laws uniform).  NEXT: the odd-class phase center
+   ((3M±1)/2 pair for odd m0·2 — lane C at M ≡ x+2 mod 8 is the
+   target), and extend e122 to x = 23..29 to close the x ≡ 7 mod 8
+   off-diagonal pairs.
 3. **N5**: lock scale-stability of the Θ(M)-surface law ρ* = 1 − x/4M
    (chain M = 96/128, two-block M = 64) — the density dial the C3
    bridge quotes when P(t) diverges slowly.
+
+### FRONT G2 second wave (2026-08-26, e127 + notes/47): the seam
+### hypothesis dissected — false single-team, irreducibly two-sided,
+### and priced
+
+Full write-up notes/47-seam-hypothesis.md; machine
+experiments/e127_seam_budget.py (+ e127b_cover_check.py), records
+data/e127_*.json/.log + e127_seam_budget.jsonl.
+
+- **Formalization (§0)**: seam-clean at the anchor-free window
+  W(N) = (N, 8N]; violation = adjacent-seam inversion pair (u, w),
+  w placed before u; skip inversions cost ≥ |B1 ∩ T| adjacent ones
+  (transitivity trichotomy).  Exact anchor-covering law: an inversion
+  pair poisons ≤ 2 anchor intervals inside [u/4, u) (formulas
+  machine-audited, e127b, 500 random pairs + exhaustive anchors).
+  ¬DNP ⇔ the two teams' inversion pairs jointly cover cofinitely many
+  anchors — inversions must recur in every octave.
+- **Normalization verdict (§1)**: lem:normal TRANSPORTS — N-GEN: every
+  permutable team admits running-max chunking with finite fibers,
+  s(v) ≥ blk(v), (A)∧(B); the proof is team-blind — so "block-monotone
+  up to finite fibers with δ ≥ 0" is WLOG for every team.  But DNP
+  does NOT follow, and is FALSE single-team: X-INTERLEAVE (pairwise-
+  swapped powers of two — an AP-free SET, so every arrangement is
+  valid) re-descends at EVERY anchor (coverage machine-checked) with
+  depth-1 descents, no infinite descending position chain, all
+  displacements ≤ 1.  **The attack-plan question "does infinite
+  re-descent force infinite position descent, or can positions
+  interleave?" is answered: positions interleave.**  X-INTERLEAVE-v
+  (greedy Behrend octave-interleave) pushes the violation budget to
+  N^{1−o(1)} at every anchor — no DNP(v) weakening is single-team
+  true either (Roth caps this free-team family at o(N²)).
+- **The supply barrier (§2)**: disjoint windows have fresh inversion
+  supply — no per-window budget hypothesis can be closed by counting/
+  well-foundedness across scales.  What fresh supply cannot buy is
+  exemption from the window's own AP theory (a late value's attack
+  units are live on the material after it): the affordability of
+  forced inversions for a DENSE team is the entire open content.
+- **The budget schema (e127)**: seam units replaced by per-team
+  inversion budgets ≤ v (indicators + cardinality; complete
+  encodings; SAT witnesses independently audited incl. the §3
+  edge-audit).  v = 0 reproduces the e120 cores.  Verdicts so far
+  (near-critical UNSAT times explode; jsonl is the running record):
+  balanced M = 16 UNSAT at v = 0/1/2 [2 s/24 s/244 s], SAT at
+  v = 160/320/480 — v* ∈ (2, 160]; (3,6,12) M = 24 UNSAT at v = 0/1
+  [8 s/190 s]; (3,6,12) M = 32 UNSAT at v = 0 [43 s]; scans for the
+  first SAT points and (2,2,2) M = 48 in flight.  **Procrastination
+  is not free: the cores tolerate genuine violation budgets.**
+- **Irreducibly two-sided (the decisive structural find)**: BOTH
+  one-sided weakenings are SAT already at v = 0 — asym (one team
+  budget-free): free majority reverses its low blocks wholesale (2090
+  inversions, 520 broken H-triples) while the pinned minority stays
+  clean; majb (budget on the MAJORITY, minority free): SAT again,
+  clean mono-free majority by range-hiding + free minority.  So no
+  "only the dense team behaves" hypothesis has a finite core; the
+  hypothesis DNP is two-sided or nothing.  Caveat that keeps this
+  honest at ω: these are FINITE-only escapes — a 3-block window
+  cannot charge the free team's prefix cohort or attacks from below
+  the window; extending downward reaches notes/36's SAT-everywhere
+  theory, so the ω-accounting is exactly N6, not a bigger finite core.
+- **The reframing that replaces G2 (T-FORCE, notes/47 §2b)**: read
+  the schema forward — its UNSAT at budget v proves every valid
+  Case-2 pair is FORCED to exceed v inversions at EVERY large anchor
+  (validity restricted to a window must sit in the SAT region).  The
+  gap is no longer "prove DNP" (unprovable) but "prove a dense team
+  cannot afford v*(N) forced inversions at every anchor forever" —
+  with the covering law pinning inversions to every octave and the μ
+  lower bound (each broken cross-triple needs its own inversion edge;
+  μ can be 0 at balance via the parity dodge, so the cores tax the
+  mixed in-block theory too).  This is an N6-ledger statement with a
+  measured finite pump, no longer a bare order hypothesis.
 
 ### Honest assessment (updated 2026-08-26, post-merge)
 
@@ -608,3 +710,10 @@ gap is a genuinely new statement, not an instance count).
   e124_family_miner.py (unrun); data/e121_n2_mus.json,
   e122_n2_residue_partial.json (M ≤ 135), e123_diagonal_schema.json,
   e123b_diagonal_xval.json.
+- notes/49-offdiagonal.md — N2-OFF: catalogue reconstruction, the
+  sliding lane laws, and the two new verified hand schemas ({11,12}
+  dyadic K4 + ≡ 2 mod 8 B2), plus the two-ladder template; tools
+  experiments/e124_prep_catalogue.py, e124_family_miner.py (fixed +
+  run), e124b_lane_probe.py, e124c..e124h (anatomy/discovery chain),
+  e124i_k4_schema_verify.py + e124l_b2_schema_verify.py (the
+  end-to-end verifiers), e124m_template.py; data/e124*.

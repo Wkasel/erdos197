@@ -1,1 +1,3 @@
   bal_M16 v=480: SAT [4.4s] {"A": {"sizes": [8, 16, 32], "n_inv": 258, "n_inv_seam1": 67, "n_inv_seam2": 191, "n_mono": 25}, "B": {"sizes": [8, 16, 32], "n_inv": 39, "n_inv_seam1": 39, "n_inv_seam2": 0, "n_mono": 0}}
+  bal_M16 v=320: SAT [4.3s] {"A": {"sizes": [8, 16, 32], "n_inv": 259, "n_inv_seam1": 92, "n_inv_seam2": 167, "n_mono": 69}, "B": {"sizes": [8, 16, 32], "n_inv": 155, "n_inv_seam1": 115, "n_inv_seam2": 40, "n_mono": 46}}
+  bal_M16 v=160: SAT [2.5s] {"A": {"sizes": [8, 16, 32], "n_inv": 85, "n_inv_seam1": 85, "n_inv_seam2": 0, "n_mono": 41}, "B": {"sizes": [8, 16, 32], "n_inv": 105, "n_inv_seam1": 105, "n_inv_seam2": 0, "n_mono": 35}}
