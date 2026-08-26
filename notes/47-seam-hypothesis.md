@@ -53,6 +53,9 @@ exactly for
     N ∈ [max(u/4, w/8), min(u/2, w/4))     (u ∈ B1, w ∈ B2),
 both empty unless w < 4u, both contained in [u/4, u): **each inversion
 pair covers at most two anchor intervals inside a fixed 2-octave range.**
+(Machine: e127b_cover_check.py — formulas exact on 500 random pairs
+against exhaustive anchor enumeration; the §1 X-INTERLEAVE pairs cover
+every anchor below 4^6.  Both PASS.)
 Consequently ¬DNP for a pair (A, B) says: the anchor sets covered by the
 two teams' inversion pairs jointly contain all large N — inversions must
 recur in EVERY octave.  "T re-descends at scale t infinitely often" is
@@ -158,6 +161,45 @@ e127 budget instances measure.  So the honest division of labor:
   permutation, where consecutive windows DO share the inversion pairs'
   anchor intervals) and the N6 ledger (violations at scale k forcing
   prices at scale k+1).
+
+## 2b. The forced-inversion reading (the right direction of the schema)
+
+The budget schema should not be read as "assume DNP(v), conclude
+death"; it should be read FORWARD:
+
+> **T-FORCE (per-anchor forced procrastination; immediate from
+> UNSAT).**  If the budget instance at bounds (c0, c1, c2) and budgets
+> (vA, vB) is UNSAT at window size M, then in ANY valid partition, at
+> EVERY anchor N (window (N, 8N] scaled to the instance's M... i.e. at
+> every anchor where the teams meet the bounds), NOT both teams have
+> ≤ vA / ≤ vB adjacent-seam inversions: some team procrastinates
+> MORE.  Validity restricted to a window is a genuine coloring + two
+> AP-free orders, so it must sit in the SAT region.
+
+With the Case-2 floor (intruder counts → ∞) the bounds hold at all
+large anchors, so a valid Case-2 pair must clear the v* hurdle at
+EVERY large anchor simultaneously — infinitely much procrastination,
+somewhere, forever, with the covering structure of §0 (each inversion
+pair serves ≤ 2 octaves of anchors, so inversions recur in every
+octave for at least one team).  The open mathematics of G2 is
+exclusively: **can a valid pair AFFORD the forced inversions?**  §1
+says sparse free teams can afford anything; §2 says disjoint-window
+counting cannot refuse them; what is NOT settled is whether a Case-2
+DENSE team can afford v*(N) → ∞ (if v* grows) inversions per window in
+the presence of its own AP theory — the inversions of window k live
+among values that are also the attack material of windows k−1, k, k+1
+(anchor overlap), which no experiment so far charges.
+
+One more honesty point about the one-sided SAT escapes (§4): they are
+FINITE-ONLY escapes.  At the infinite level the "free" team is not
+free: the first k values of its permutation form a fixed cohort placed
+before cofinitely all window material (positions are finite), and every
+value b below a window attacks it with Θ(M) units (completions
+2y − b of y ∈ (N, 2N] never leave (N, 8N] for b ≤ N) — constraints the
+3-block instance does not see.  The finite theory extended downward is
+notes/36's full 2-colored theory — SAT everywhere — so this cannot be
+repaired by a bigger finite core; it is exactly the N6 infinite-
+accounting frontier.
 
 ## 3. The exact combinatorial meaning of the budget (why v* is a
 ## sumset quantity)
