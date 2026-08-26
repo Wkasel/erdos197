@@ -1,0 +1,20 @@
+mids: 65 .. 82
+  keep mids (65,66) only: SAT
+  keep mids (66,67) only: SAT
+  keep mids (67,68) only: SAT
+  keep mids (68,69) only: SAT
+  keep mids (69,70) only: SAT
+  keep mids (70,71) only: SAT
+  keep mids (71,72) only: SAT
+  keep mids (72,73) only: SAT
+  keep mids (73,74) only: SAT
+  keep mids (74,75) only: SAT
+  keep mids (75,76) only: SAT
+  keep mids (76,77) only: SAT
+  keep mids (77,78) only: SAT
+  keep mids (78,79) only: SAT
+  keep mids (79,80) only: SAT
+  keep mids (80,81) only: SAT
+  keep mid 65 alone: SAT
+  keep mid 71 alone: SAT
+  keep mid 79 alone: SAT

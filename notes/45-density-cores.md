@@ -125,6 +125,33 @@ everywhere" surviving even under the strongest two-scale coupling +
 double block-order hypothesis: a single seam cannot kill; any N6
 ledger must couple >= 3 scales or add cross-seam conservation.
 
+## Part E — fixed pair, STG TWO-block window, per-block density dial
+
+The channel that changes everything for N5: over the two-block window
+(M, 4M], a FIXED low pair x attacks with y in block1's upper part and
+z = 2y - x in block2 — Theta(M) units from a fixed attacker, so
+density-robustness no longer requires attackers scaling with the
+window (no varying-attacker/procrastination caveat: T-PIN applies
+verbatim to infinitely many disjoint two-block windows).
+Per-block cardinalities k1 >= rho M, k2 >= rho 2M.  Results stream
+into data/e120_E.{log,json}.
+
+## Mechanism notes (chain escape anatomy, M = 64)
+
+- The minimal chain escape (drop even midpoints) leaves 17 units in
+  which consecutive receiver pairs are spaced 4 apart instead of
+  overlapping — the coupling between consecutive attack triples is
+  what the adversary must destroy, and destroying it costs every
+  other midpoint = x/4 = M/8 values.  The escape is CONSTRUCTIVE at
+  every scale tested: parity-thinned instances are SAT at
+  M = 96/128/192/256 (k ~ 0.87 M, data/e120_B3_thinned.log).
+- The naive hand schema "two consecutive kept midpoints + full rest
+  of the block => fire" is FALSE: keeping any single consecutive
+  midpoint pair (all other midpoints dropped) is SAT at M = 64, for
+  every pair position (data/e120_B4_schema.log).  The core needs a
+  LONGER midpoint zigzag; its exact anatomy is the natural next MUS
+  target (e88/e90 path applied to the k = k_crit + 1 instances).
+
 ## Caveats
 
 - Parts B/D treat the lower-scale attackers as placed before the

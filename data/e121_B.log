@@ -1,3 +1,4 @@
 [B] M=64 low k=1: p=3 (0.6s) support={'bot': [], 'top': [117, 121, 125], 'interior': []}
 [B] M=64 low k=2: p=7 (63.4s) support={'bot': [66, 68, 70, 72, 74, 76, 78], 'top': [], 'interior': []}
 [B] M=64 low k=3: p=7 (47.0s) support={'bot': [], 'top': [113, 117, 121, 125], 'interior': [101, 105, 109]}
+[B] M=64 low k=4: p=11 (200.7s) support={'bot': [66, 68, 72, 74, 80], 'top': [117, 121, 125], 'interior': [93, 105, 109]}

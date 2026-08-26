@@ -189,6 +189,13 @@ ledger must therefore COUPLE scales (L2) rather than quote any fixed-C
 robustness.  This is the cleanest formulation yet of why N6 is needed
 at all.
 
+**(d') Cross-table for L1**: everywhere-split-and-diffuse (rnd1/rnd2:
+max ratio-2 window density 0.516..0.525, C8-clean windows only at tiny
+anchors) is orbit-SUPERCRITICAL; orbit-free (gc3 family) is
+window-CONCENTRATED (maxdens 0.98..1.00, ~2400 C8 windows surviving
+salting).  The YES-corner "diffuse + doubling-subcritical" has no
+inhabitant among all colorings measured.
+
 **(d) The coupling channel exists and is placement-sensitive.**
 Endpoint-planted donations (gc3e) form live attacker pairs (gap ≤ 2)
 bearing on the partner-dense next block: at t = 12, gc3e's 6 planted
@@ -203,3 +210,29 @@ no support.  What is forced is majority-side: every dense team has
 live pairs at t=10, 971/1119 at t=12, with ~10^5..10^6 surviving
 units), i.e. the attack SURFACE against a team's own next-scale
 material is always saturated for whichever team is locally dense.
+
+### 4B. Price curves p(k) (data/e121_B.json/.log; complete transitivity)
+
+M = 64, "low" pairs {15,16} +{31,32} +{23,24} +{47,48} (+{55,56}):
+
+    k      1    2    3    4
+    p(k)   3    7    7    11        (min donations, e118-faithful gadget)
+
+- p(2) = 7 RESOLVES e118's unfinished mindon4 ("budget 5+"): the
+  two-crown price at M = 64 is 7.
+- **The price curve GROWS with the number of forced in-team pairs** —
+  3 → 7 → 7 → 11 — despite full endpoint sharing (all pairs attack the
+  same bottom sliver).  This is the finite pump L2 needs: per-block
+  price scales with attacker-pair count, and the supply lemma makes
+  Θ(M) pairs unavoidable for locally dense teams.
+- Optimal-support anatomy: k=1 pure-top 2M−{11,7,3}; k=2 the even
+  bottoms M+{2,4,..,14} (note: full of gap-2 adjacencies — cheap bulk
+  repairs hand the PARTNER attacker pairs, the coupling made visible in
+  the witness itself); k=3 an interior+top AP {101,105,...,125} of
+  difference 4 — the first interior repairs ever observed (the
+  notes/36 "repairs live on endpoints" law breaks at k ≥ 3: sources
+  z = 2M+2j−x of large-x pairs reach deep into the block); k=4 mixed
+  bot/top/interior, still gap ≥ 2-sparse... — donation sets stay
+  pair-SPARSE where they can, confirming the dodge pressure.
+- Chain-pair curves (pairs inside (M/2, M], Θ(M)-wide attack systems)
+  and M = 128 runs stream to data/e121_B.log.
