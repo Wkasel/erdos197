@@ -117,8 +117,10 @@ and spread through every sub-interval (x, 1.1x]: build greedily per
 octave, placing m_k = ε·2^{k/2} values in octave k, one per equal
 multiplicative cell; a new value is forbidden only if it completes an AP
 with a pair of previously chosen values — at most 3·(Σ_{j≤k} m_j)² ≈
-3·(3.4ε)²·2^k < 2^k/2 forbidden positions for ε ≤ 1/6 (cells minus
-forbidden stay nonempty).  Every arrangement of S is AP-free.  Order S
+3·(3.4ε)²·2^k ≈ 35ε²·2^k < 2^k/2 forbidden positions for ε ≤ 1/9
+(cells minus forbidden stay nonempty on average; discard the ≤ half of
+cells that are over-forbidden and keep m_k/2 values — the counting
+only loses constants).  Every arrangement of S is AP-free.  Order S
 octave by octave but interleave each consecutive pair of octaves (top
 half of octave k's cells placed after the bottom half of octave k+1's).
 Every pair (u, w), u ∈ octave k, w ∈ octave k+1 has w/u < 4, so all
