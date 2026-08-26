@@ -1,0 +1,4 @@
+== e120 PART C: coupled complementary coloring ==
+  C M=32 kb=16: SAT [0.6s] A owns 16/32 of B0/B1
+  C M=64 kb=32: SAT [60.6s] A owns 32/64 of B0/B1
+TOTAL 64.0s

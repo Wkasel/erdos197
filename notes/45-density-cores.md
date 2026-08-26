@@ -65,17 +65,65 @@ attack surface inside the surviving window.  With attackers FIXED,
 must be chosen inside / adapted to the dense subset — which is what
 Parts B and D test.
 
-## Part B — chain-geometry pair (x ~ M/2): d* grows with M
+## Part B — chain-geometry pair (x ~ M/2): d* = Theta(M), rho* = 7/8
 
-(results pending — see data/e120_B.log)
+Pair F = {M/2+1, M/2+2} (the "pair inside the previous block" of the
+chain rungs), window (M, 2M]: Theta(M) attack units.  Singles x and
+x+1 alone stay SAT (chain singles behave like low singles).
+
+| M | F | k_crit | d* | rho* | minimal escape |
+|---|---|--------|----|------|----------------|
+| 64 | {33,34} | 56 | 8 | 0.875 | drop even midpoints {66,68,...,80} |
+
+**d* = x/4 = M/8 GROWS with scale**: the chain-geometry rung is
+density-robust with critical density rho* = 7/8 (the escape needs a
+positive FRACTION of the block — every other midpoint — not a bounded
+dust).  First rung in the campaign whose subset-tolerance is Theta(M).
+(M = 96/128 in flight to confirm 7/8 is exact and scale-stable.)
+
+## Part B2 — pushing the attacker to the window edge: rho* ~ 0.78
+
+Law test rho* = 1 - x/(4M) with the pair just below the window,
+F = {M-2, M-1}:
+
+| M | F | k_crit | d* | rho* | law prediction |
+|---|---|--------|----|------|----------------|
+| 64 | {62,63} | 50 | 14 | 0.781 | 0.766 |
+
+Close to the law but slightly above (the minimal escape is no longer
+pure midpoint-parity — it mixes low midpoints with scattered high
+receivers).  Higher x buys a lower critical density; extrapolated
+floor of the single-pair mechanism ~ 3/4.
 
 ## Part D — existential-attacker two-scale gadget
 
-(results pending — see data/e120_D.log)
+The faithful N5 form: adversary keeps S0 (>= rho |B0|) of
+B0 = (M/2, M] AND S1 (>= rho |B1|) of B1 = (M, 2M]; ALL kept B0
+values precede all kept B1 values (non-procrastination); guarded APs
+everywhere (cross-block APs = chain attacks from EVERY kept low
+value).  Intact (rho = 1): UNSAT.  rho = 1/2: SAT escape at M = 64.
+Binary search on the 1/64 grid in flight.
 
-## Part C — coupled complementary coloring (N6 probe)
+## Part C — coupled complementary coloring (N6 probe): SAT at balance
 
-(results pending)
+B0 = (M, 2M], B1 = (2M, 4M]; every value colored A or B; each team
+must own >= kb/M fraction of EACH block (everywhere-split), each team
+carries its own order with ITS block-order hypothesis (both teams
+non-procrastinating at the seam).
+
+- M = 32, exact balance (kb = 16): **SAT** [0.6 s].
+- M = 64, exact balance (kb = 32): **SAT** [61 s].
+
+Neither side inherits a firing core from ONE seam: the finite coupled
+theory is SAT at exact balance.  Escape structure at M = 64: exactly
+32/64 per block per team, hybrid coloring — complementary interval
+RUNS in the lower parts (both teams hold many adjacent pairs — the
+pairs do not fire because each team denies the partner the matching
+receiver cohort upstairs) and a clean odd/even PARITY split near the
+top of B1 (225..243 odd -> A, even -> B).  This is notes/36's "SAT
+everywhere" surviving even under the strongest two-scale coupling +
+double block-order hypothesis: a single seam cannot kill; any N6
+ledger must couple >= 3 scales or add cross-seam conservation.
 
 ## Caveats
 
