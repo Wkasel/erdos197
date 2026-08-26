@@ -95,6 +95,51 @@ pure midpoint-parity — it mixes low midpoints with scattered high
 receivers).  Higher x buys a lower critical density; extrapolated
 floor of the single-pair mechanism ~ 3/4.
 
+## Part C3 — THE HEADLINE: the two-seam coupled core (N6 fires)
+
+Extend Part C to THREE blocks B0 = (M, 2M], B1 = (2M, 4M],
+B2 = (4M, 8M] and TWO seams: coloring c_v in {A, B}; each team its own
+order; guarded APs; block-order units at BOTH seams for BOTH teams
+(double non-procrastination); balance: each team >= ceil(frac |blk|)
+of EACH block.  (solve_coupled3 in e120_density_cores.py; data/e120_C3.*)
+
+**Exact balance (frac = 1/2) is UNSAT at every scale tested:**
+
+| M | window | verdict | time |
+|---|--------|---------|------|
+| 16 | (16, 128], n = 112 | UNSAT | 1.2 s |
+| 24 | (24, 192], n = 168 | UNSAT | 3.8 s |
+| 32 | (32, 256], n = 224 | UNSAT | 8.2 s |
+
+while ONE seam never kills (controls at M = 16 balanced, all SAT:
+seams=none 0.4 s, seams=low-only 2.2 s, seams=high-only 0.8 s; plus
+Part C's 2-block M = 16/32/64 SAT).  **The two seams are jointly
+load-bearing: this is the first firing N6 ledger core.**  One scale
+coupling cannot kill; two can.
+
+**The balance dial — the UNSAT region WIDENS with scale, in both
+fractional and ABSOLUTE terms:**
+
+| M | UNSAT down to frac (bounds) | SAT at frac (bounds) | escape A-sizes |
+|---|------------------------------|----------------------|----------------|
+| 16 | 5/16 (5, 10, 20) | 1/4 (4, 8, 16) | [5, 24, 31] |
+| 24 | 1/8 (3, 6, 12) | 1/16 (2, 3, 6) | [22, 3, 54] |
+
+The M = 24 SAT escape at frac 1/16 nearly VACATES the middle block
+(A owns 22/24, 3/48, 54/96) — i.e. the only escapes left at low
+balance are block-granular / Case-1-like shapes, which N1+N2 already
+handle.  The M = 16 frac-1/4 escape is the same shape one scale up
+(minority 5 in the LOW block).
+
+**Why this is the Case-2 bridge**: everywhere-split partitions have
+per-block minority counts -> infinity; a fixed ABSOLUTE bound triple
+(c0, c1, c2) that stays UNSAT at all large M would be a rung schema
+killing every everywhere-split partition (modulo the double
+non-procrastination hypothesis at two consecutive seams — the same
+L-DESC/T-REGRESS caveat as Parts B/D, now needed at two seams).  The
+absolute floor DROPPED from (5,10,20)-ish at M = 16 to (3,6,12) at
+M = 24; constant-bound probes at M = 32+ are the decisive next test.
+
 ## Part D — existential-attacker two-scale gadget
 
 The faithful N5 form: adversary keeps S0 (>= rho |B0|) of

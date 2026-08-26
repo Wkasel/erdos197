@@ -115,3 +115,8 @@
 {"tag": "C3 M=16 balance=1/2 seams=none", "M": 16, "balance": "1/2", "seams": "none", "verdict": "SAT", "time": 0.4, "A_sizes": [8, 16, 32]}
 {"tag": "C3 M=16 balance=1/2 seams=low", "M": 16, "balance": "1/2", "seams": "low", "verdict": "SAT", "time": 2.2, "A_sizes": [8, 16, 32]}
 {"tag": "C3 M=16 balance=1/2 seams=high", "M": 16, "balance": "1/2", "seams": "high", "verdict": "SAT", "time": 0.8, "A_sizes": [8, 16, 32]}
+{"tag": "C3 M=24 balance=3/16", "M": 24, "balance": "3/16", "verdict": "UNSAT", "time": 9.5, "bounds": {"B0": 5, "B1": 9, "B2": 18}}
+{"tag": "C3 M=24 balance=1/8", "M": 24, "balance": "1/8", "verdict": "UNSAT", "time": 5.5, "bounds": {"B0": 3, "B1": 6, "B2": 12}}
+{"tag": "C3 M=24 balance=1/16", "M": 24, "balance": "1/16", "verdict": "SAT", "time": 2.8, "bounds": {"B0": 2, "B1": 3, "B2": 6}, "A_sizes": [22, 3, 54], "colorA": [25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 41, 42, 43, 44, 45, 46, 47, 52, 56, 60, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 150, 152, 154, 160]}
+{"tag": "C3 M=32 balance=3/8", "M": 32, "balance": "3/8", "verdict": "UNSAT", "time": 10.3, "bounds": {"B0": 12, "B1": 24, "B2": 48}}
+{"tag": "C3 M=32 balance=5/16", "M": 32, "balance": "5/16", "verdict": "UNSAT", "time": 20.1, "bounds": {"B0": 10, "B1": 20, "B2": 40}}
