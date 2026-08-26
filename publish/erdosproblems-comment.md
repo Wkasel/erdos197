@@ -31,8 +31,9 @@ cases. Independent verification is invited: `reproduce.sh` re-runs the
 complete verification stack from a pinned environment in about 17
 minutes on a laptop.
 
-- Paper: [arXiv link once live]
-- Code, certificates, reproduce.sh: https://github.com/Wkasel/erdos197
+- Paper (PDF) + code + certificates + reproduce.sh:
+  https://github.com/Wkasel/erdos197 (tagged release v1.0)
+- arXiv submission in progress (endorsement pending); ID will follow in a reply.
 
 **This does not resolve #197**, which remains open: any partition
 witnessing a YES answer must differ from the dyadic one. Notably, the
