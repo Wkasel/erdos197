@@ -1,0 +1,17 @@
+{
+ "ok": false,
+ "rows": [
+  {
+   "tag": "RUNG-X gm/B t=9 (rebuilt, cadical)",
+   "n": 1280,
+   "units": 137,
+   "mode": "lazy",
+   "solver": "Glucose42",
+   "verdict": "TIMEOUT",
+   "expect": "UNSAT",
+   "match": false,
+   "time": 7223.4,
+   "rounds": 540
+  }
+ ]
+}

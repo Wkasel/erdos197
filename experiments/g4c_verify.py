@@ -526,7 +526,8 @@ def run_row(rows, tag, V, units, mode, expect, budget=3600.0):
     verdict, secs, extra = fn(V, units, budget=budget, tag=tag)
     match = (verdict == expect)
     rows.append({'tag': tag, 'n': len(V), 'units': len(units),
-                 'mode': mode, 'solver': 'Glucose42',
+                 'mode': mode,
+                 'solver': 'Glucose42' if mode == 'complete' else LAZY_SOLVER,
                  'verdict': verdict, 'expect': expect, 'match': match,
                  'time': secs, **{k: v for k, v in extra.items()
                                   if k != 'werr'}})
