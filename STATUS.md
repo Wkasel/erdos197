@@ -1,4 +1,4 @@
-# Erdős #197 campaign — STATUS (2026-08-26, post-G4)
+# Erdős #197 campaign — STATUS (2026-08-26, post-N2/N5/N6 front merge)
 
 ## Bottom line
 
@@ -381,45 +381,204 @@ its own residue class and core), and killing the block-poor escape at
 i.e. a robust version of the crown ladder for dense-but-not-full
 blocks — currently the ladder is only proven for intact blocks).
 
-### Decisive next experiments (post-G4 ordering, by leverage)
+## FRONT MERGE (2026-08-26, e120–e124): N2 diagonal schema, N5 density
+## verdict, N6 first firing Case-2 core
 
-1. **N2 schema hunt (THE crux)**: MUS anatomy of the generic-pair core
-   across {11,12}..{21,22} × M = 64..1024 (the e88/e90 path that found
-   C3) — a scale-stable hand schema converts ALL of Case 1 into a
-   two-lemma theorem and retires every per-shape argument at once.
-2. **NO route in Case 2 (e120, now THE experimental front)**:
-   dense-subset / coupled two-scale split-block gadgets — does a pair
-   rung fire on an in-team subset of density ≥ 1/2 + ε of a block (N5)?
-   Plus the coupled donation-price ledger at adjacent scales (N6);
-   finish mindon4 (budget 5+) and the m=5 same-mode CAP=0 run.
-3. **RunPod bulk**: generic-pair rungs at M = 2048/4096 + systematic
-   pair-threshold maps at several scales (is the {11,12} threshold
-   scale-stable?) — cheap now that the complete encoding is known to
-   decide these instances in seconds-to-minutes.
+Three parallel fronts ran to completion (N2's final message was lost
+in transit; its results are reconstructed here from commits cdc2d8f /
+0996051 and the committed data — there is no notes/44, the artifacts
+ARE the record).  Full write-ups: notes/45-density-cores.md (N5 + the
+C3 coupled gadget), notes/46-ledger.md (N6), data/e12{1,2,3}_n2* /
+e123* (N2).
 
-### Honest assessment (updated 2026-08-26, post-G4c)
+### N2 — the crux moved: C3 is now an INFINITE hand-schema family
 
-Every named partition shape is now dead: the canonical partition at
-full theorem level; octave-alternating (any donation schedule) by the
-d_t law / NECK + machine-true rungs; stage-alternating by the seam law
-+ T-PIN-STAGE + STG rungs; and all block-granular geometry at once by
-T-PIN-BLOCKS modulo the generic-pair rung schema — whose instances
-have never once failed (three independent solver engines, M = 64 to
-1024, ~90 UNSAT certificates, adversarially re-verified with complete
-encodings and a fresh oracle in G4c).  The YES-space has been squeezed
-into a single regime with a clean definition — everywhere-split
-partitions, both teams' per-block presence unbounded — which no
-concrete candidate has ever inhabited successfully, but which no
-current mechanism refutes (its finite theory is SAT at every horizon;
-only lem:orbit patrols it).  Against NO: the everywhere-split regime
-is large, structurally unlike anything killed so far, its death needs
-genuinely new mathematics (N5–N7: dense-subset cores, coupled-scale
-accounting, density ceilings — all OPEN), and the campaign's history
-of "SAT everywhere" for the finite 2-colored theory is a real warning
-that finite certificates may simply not exist there.  Current
-estimate: **NO ≈ 85 %, YES ≈ 15 %** (up from 75–80 pre-G4: the last
-proposed shape died and the death mechanism went generic; capped
-because Case 2 is untouched and needs new ideas, not new compute).
+- **Step 1, MUS anatomy** (e121_n2_mus_sweep, data/e121_n2_mus.json):
+  complete size-≤3 core catalogues over the attack units for pairs
+  {11,12}..{21,22} at M = 48..128 (≡ 0 mod 16): counts 0 / 3 / 7 / 9 /
+  11–13 / 17–22 respectively (the hand C3 sits inside {15,16}'s 7);
+  {11,12} alone has NO size-3 core there (deletion-MUS size 4).
+  Catalogues are scale-stable — the same triples verbatim across M.
+- **Step 2, all-residue coverage** (e122, data/e122_n2_residue.*): the
+  single-block rung is UNSAT for ALL six pairs at EVERY scale
+  M = 16..135 — no residue class escapes — with the minimal-core
+  catalogue enumerated at each M; from M ≈ 100 the per-pair core
+  counts are EXACTLY periodic mod 8 (e.g. M = 106/114/122/130
+  identical), so per-residue schemas plausibly exist everywhere.
+- **Step 3, THE N2 HEADLINE — the diagonal schema** (e123 + e123b):
+  the C3 hand proof (Z / D / E / P toolkit of notes/33) generalizes
+  VERBATIM to the core family
+      C3(p) = {t_p ≺ b_p,  t_{p−2} ≺ b_{p+1},  t_{p+5} ≺ b_{p−2}}
+  for pair {3p, 3p+1}, every odd p ≥ 5, with flip (UNSAT) class
+  M/2 ≡ p+3 mod 4 — i.e. M ≡ 0 mod 8 for p ≡ 1 mod 4 and M ≡ 4 mod 8
+  for p ≡ 3 mod 4.  Machine-verified for p = 5, 7, 9, 11, 13
+  ({15,16}..{39,40}): 104 L1-scales + 52 flip scales + 52 sharpness
+  controls each, ZERO failures (data/e123_diagonal_schema.json);
+  independent solver cross-validation (e123b, fresh encoder): C3(p)
+  UNSAT exactly on the flip class, SAT on the complement class, full
+  rung UNSAT on both, at every probe incl. M = 256/260 — 0 mismatches.
+  **The mod-8 arithmetic of thm:c3core was never {15,16}-specific: it
+  slides along the diagonal lane exactly as the hand proof predicts.**
+- Remaining for N2: hand schemas OFF the diagonal (other pair lanes,
+  other residue classes — the ≡ 2 mod 4 and odd-M classes have machine
+  cores but no schema; {11,12} needs a size-4 analysis).  The affine
+  family miner e124_family_miner.py (mines e122's catalogue for
+  uniform-in-x core families + the dyadic sub-catalogue) is committed
+  but was NOT yet run.
+
+### N5 — resolved as posed: density 1/2 + ε FAILS for single blocks;
+### the robust channel needs Θ(M) attack surface (notes/45)
+
+- **Fixed low pairs are not density-robust**: adversarial-subset SAT
+  gadget (selection vars, guarded APs/attacks, cardinality, complete
+  transitivity; 153 streamed verdicts, every SAT witness independently
+  re-verified, 0 failures).  Single block (M, 2M]: {15,16} has
+  k_crit = M−3 at M = 64/96/128, {11,12} k_crit = M−2 — i.e. the exact
+  adversarial puncture tolerance is 3 resp. 2 (the sharp single-block
+  N3 constants), minimal escape ALWAYS the bottom midpoints
+  {M+2, M+4(, M+5)}, and ρ* = 1 − O(1)/M → 1.
+- **Density-robustness requires Θ(M) attack surface**: chain-geometry
+  pair {M/2+1, M/2+2} has ρ* = 7/8 EXACTLY at M = 64 (d* = M/8 grows;
+  escape = every other midpoint), bracketed [7/8, 15/16) at M = 96
+  (near-critical k = 87 query unresolved); window-edge pair ρ* = 0.781;
+  law ρ* ≈ 1 − x/(4M).
+- **The T-PIN-compatible headline**: on the two-block STG window
+  (M, 4M] with FIXED pair {15,16} (Θ(M) units from a fixed attacker —
+  T-PIN applies verbatim, no varying-attacker caveat), the per-block
+  density dial at M = 32 resolves to ρ* = 25/32 = 0.781: the rung
+  fires on EVERY in-team subset of per-block density ≥ 13/16 [critical
+  UNSAT 862 s].  Baselines 29/32 and 61/64 for the blocks alone — the
+  two-block coupling buys the drop from ~0.95 to 0.78.  (M = 64
+  bracketed SAT@3/4 / UNSAT@1, 28/32 unresolved; Part D existential
+  two-scale form SAT at ρ = 1/2, 48/64 unresolved.)
+- So N5 as posed is FALSE, the coupled forms reach 0.78 — and the C3
+  discovery (below) SUPERSEDES the question: constant ABSOLUTE counts,
+  not densities, suffice once two seams couple.
+
+### N6 — the "SAT everywhere" barrier BROKE: first firing Case-2 core
+### (notes/45 Part C3 + notes/46)
+
+- **The two-seam coupled core**: B0, B1, B2 = (M,2M], (2M,4M], (4M,8M],
+  every value colored A/B, each team its own order, block-order at BOTH
+  seams for both teams (double non-procrastination), exact balance:
+  UNSAT at M = 16 [1.2 s], 24, 32 [8.2 s], Glucose42-confirmed.  Seam
+  controls at M = 16: none / low-only / high-only / outer-only ALL SAT
+  — every proper subset of the seam chain escapes; the two-seam
+  coupling itself is load-bearing.  ONE seam never kills (2-block
+  balanced SAT at M = 16/32/64).  This is the first finite UNSAT ever
+  produced in the everywhere-split regime's 2-colored theory.
+- **The constant-bound schema (the Case-2 bridge)**: with ABSOLUTE
+  per-team-per-block lower bounds, (3,6,12) is UNSAT at every
+  M = 24..48; the floor TIGHTENS with scale ((3,3,3) SAT at 16/24,
+  UNSAT from 32; (2,4,8) SAT at 32/40, UNSAT at 48); at M = 48 the
+  critical constant is EXACTLY 2 — (2,2,2) UNSAT [135 s, +Glucose],
+  (1,1,1) SAT — and the surviving (1,1,1)/(0,0,0) escapes leave a
+  1-CLEAN block (A-sizes (47,1,100) / (0,95,90)), which is precisely
+  Case-1 (N1+N2) territory.  **The dichotomy closes at C = 1.**
+- **Escape anatomy (hand-readable)**: the forced structure is the
+  cross-triple hypergraph {(u, y, 2y−u)}; every machine escape is a
+  sumset dodge — minority pinned at the bound on a mod-4 lattice, or
+  range-hidden in B1's bottom quarter; bounds ≥ (3,6,12) kill every
+  dodge.  The hand-schema target: "a 3-element minority cannot keep
+  2Y − U off itself at two seams".
+- **The ledger (e121)**: L1 as drafted REFUTED (iid balanced controls
+  are everywhere-split + window-diffuse — but orbit-supercritical, so
+  not YES-candidates); repaired L1' (both teams doubling-subcritical ⇒
+  some team keeps near-clean ratio-2 windows) consistent with every
+  coloring measured — no diffuse+subcritical example exists.  L2
+  strong form REFUTED (donation→donation flux ≡ 0, coupling is
+  placement-sensitive); per-pair price form SUPPORTED: p(k) = 3, 7, 7,
+  11 for k = 1..4 forced pairs at M = 64 (resolves e118's mindon4:
+  p(2) = 7), first interior repairs at k = 3 — the notes/36 endpoint
+  law breaks for large-x pairs.  Supply lemma: #AA + #BB + #switches
+  = M−1, so away from orbit-dead alternation some team has Θ(M) live
+  pairs at every scale (measured saturated).  Surviving route: supply
+  + (p(k) → ∞, needs an N2-style schema) + T-PIN ⇒ dense teams pay
+  unbounded prices ⇒ densities pinned near 1/2 ⇒ contradict L1'.
+- **Dodger shape pinned** (the YES-material, notes/46 §5): a survivor
+  must be (i) doubling-subcritical in BOTH teams, (ii) window-diffuse
+  at every ratio-2 anchor, (iii) donation material pair-sparse
+  (gaps ≥ 3), (iv) P(t) → ∞ arbitrarily slowly.  (i) and (ii) pull in
+  opposite directions; no coloring with both is known.
+
+### N-program table (notes/43 §3 numbering, post-merge status)
+
+| # | Lemma | Pre-merge | Now |
+|---|-------|-----------|-----|
+| N1 | pigeonholes (T-PIN / -STAGE / -BLOCKS) | HAND | HAND (unchanged) |
+| N2 | generic-pair core schema | RUNG — THE crux | **infinite hand family on the diagonal lane** C3(p), p odd ≥ 5, 5 pairs machine-verified, 0 failures; all-residue UNSAT M = 16..135, catalogues periodic mod 8; off-diagonal schemas open (e124 unrun) |
+| N3 | bounded-dust robustness | RUNG | RUNG + **exact constants**: single-block tolerance d* = 2 ({11,12}) / 3 ({15,16}), scale-stable |
+| N4 | dichotomy frame | HAND-trivial | restated **anchor-free** (ratio-2 windows, any anchor — e121 salting lesson); **C = 1 suffices** from M = 48 |
+| N5 | dense-subset cores | OPEN | **resolved as posed: FALSE** for single blocks (ρ* → 1); robust variants: chain pair 7/8, two-block fixed pair 0.781 (T-PIN-clean); superseded by C3 constants |
+| N6 | coupled-scale accounting | OPEN, no statement | **FIRING**: first finite Case-2 core (2-seam balance, 3 scales) + constant-bound schema (crit. constant = 2 at M = 48) + surviving ledger statements L1', p(k) → ∞ |
+| N7 | density ceiling | OPEN, maybe dispensable | **likely dispensable**: the C3 bridge routes around it |
+
+### The closing geometry (Case-2 outlook: CHANGED, materially)
+
+Any partition either (a) gives some team infinitely many 1-clean
+blocks — Case 1, dead modulo N2, which is no longer a bare rung but an
+infinite hand-schema family with all-residue machine coverage — or
+(b) eventually has ≥ 2 per team per block, hence ≥ (2,2,2) in every
+window triple (M, 8M], dead modulo the C3 coupled schema.  The windows
+compose freely at scales M·8^k (everything outside a window is
+unconstrained), so the pigeonhole side is trivial.  Exactly TWO gaps
+remain:
+
+1. **Scale-stability of the constant-bound coupled schema**: (2,2,2)
+   at M = 64 (n = 448, complete encoding) died with the session —
+   rerun (RunPod-sized).  (3,6,12) is already stable over a 2× range.
+2. **The double non-procrastination hypothesis** — both teams
+   block-ordered at two consecutive seams, infinitely often.  The seam
+   controls prove this hypothesis cannot be thinned; converting it
+   into a theorem (or killing its negation: a team fails it only by
+   re-descending below a previous block infinitely often — L-DESC
+   well-founded-descent territory, notes/39) is now THE gap of the
+   entire NO program.
+
+### Unresolved runs at merge (all processes now stopped)
+
+(2,2,2)@M=64; C3-balanced MUS at M=32 (reached n=118 of 224, still
+dropping); e121 chain-pair price curves + M=128 + counterfactual
+probes (Part C log empty); e120 chain M=96 near-critical k=87; Part E
+M=64 28/32; Part D 48/64; e124 miner never started.
+
+### Decisive next experiments (post-merge ordering, one per front)
+
+1. **N6 (now the program's critical path)**: attack the double
+   non-procrastination hypothesis — formalize L-DESC at two seams
+   (re-descent = the procrastinator's own exposure; give it a rung
+   family) — with the cheap prerequisite of rerunning (2,2,2)/(3,6,12)
+   at M = 64 (RunPod) and finishing the balanced-core MUS at M = 32 →
+   hand schema for the sumset/range lemma.
+2. **N2**: run e124 on the e122 catalogue and hand-verify ONE
+   off-diagonal lane (the {11,12} size-4 lane, or a ≡ 2 mod 4 flip
+   class) — per-residue schemas close Case 1 outright.
+3. **N5**: lock scale-stability of the Θ(M)-surface law ρ* = 1 − x/4M
+   (chain M = 96/128, two-block M = 64) — the density dial the C3
+   bridge quotes when P(t) diverges slowly.
+
+### Honest assessment (updated 2026-08-26, post-merge)
+
+Pre-merge the estimate was NO ≈ 85 % with the cap justified by "Case 2
+is untouched and needs new ideas": the finite 2-colored theory had
+been SAT at every horizon ever tested, and no candidate infinite
+statement existed.  Both halves of that cap broke this session.
+Case 2's finite theory now has a firing core whose UNSAT region
+WIDENS with scale (critical constant 2 at M = 48, escapes forced into
+Case-1 shapes), plus two candidate ledger statements (L1', p(k) → ∞)
+that survived adversarial measurement; and the Case-1 crux upgraded
+from "machine rung that never fails" to "infinite hand-schema family
+with the residue arithmetic predicted and verified".  The whole NO
+now hangs on two named, well-shaped gaps (constant-schema scale
+stability — compute; the two-seam order hypothesis — mathematics)
+rather than on an unexplored regime.  Against: the seam hypothesis
+quantifies over arbitrary partitions' order behavior — exactly the
+kind of statement that has resisted every compactness-style attempt
+this campaign — and a YES could still live in the dodger corner
+(subcritical + diffuse), though no such coloring is known to exist.
+Current estimate: **NO ≈ 90 %, YES ≈ 10 %** (up from 85: Case 2 went
+from untouched to two-gaps-remaining; capped because the remaining
+gap is a genuinely new statement, not an instance count).
 
 ## Key files
 
@@ -437,3 +596,15 @@ because Case 2 is untouched and needs new ideas, not new compute).
   re-verification (fresh oracle, complete encodings, Glucose42),
   scale escalation to M = 1024, the Case-1/Case-2 dichotomy and the
   numbered NO program N1–N7; data/g4c_verify_*.
+- notes/45-density-cores.md + experiments/e120_density_cores.py,
+  e120c3_mus.py — N5 density dials, the C3 two-seam coupled core and
+  constant-bound schema; data/e120_*.
+- notes/46-ledger.md + experiments/e121_ledger.py — N6 ledger
+  statements L1'/L2, price curves p(k), dodger shape; data/e121_A.json,
+  e121_B.log.
+- N2 (no notes file — reconstructed in the FRONT MERGE section above):
+  experiments/e121_n2_mus_sweep.py, e122_n2_residue.py,
+  e123_diagonal_schema.py, e123b_diagonal_solver_xval.py,
+  e124_family_miner.py (unrun); data/e121_n2_mus.json,
+  e122_n2_residue_partial.json (M ≤ 135), e123_diagonal_schema.json,
+  e123b_diagonal_xval.json.
