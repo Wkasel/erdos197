@@ -1,0 +1,39 @@
+{"tag": "A F=(15, 16) M=64", "M": 64, "F": [15, 16], "k": 64, "verdict": "UNSAT", "time": 0.0, "units": 15, "dropped": null, "S_size": null}
+{"tag": "A F=(15, 16) M=64", "M": 64, "F": [15, 16], "k": 52, "verdict": "SAT", "time": 0.0, "units": 15, "dropped": [117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128], "S_size": 52}
+{"tag": "A F=(15, 16) M=64", "M": 64, "F": [15, 16], "k": 58, "verdict": "SAT", "time": 0.0, "units": 15, "dropped": [65, 66, 67, 69, 70, 71], "S_size": 58}
+{"tag": "A F=(15, 16) M=64", "M": 64, "F": [15, 16], "k": 61, "verdict": "SAT", "time": 0.0, "units": 15, "dropped": [66, 68, 69], "S_size": 61}
+{"tag": "A F=(15, 16) M=64", "M": 64, "F": [15, 16], "k": 62, "verdict": "UNSAT", "time": 0.3, "units": 15, "dropped": null, "S_size": null}
+{"tag": "A F=(15, 16) M=64 SUMMARY", "F": [15, 16], "M": 64, "k_crit": 61, "d_star": 3, "rho_star": 0.9531, "escape_dropped": [66, 68, 69]}
+{"tag": "A F=(15, 16) M=96", "M": 96, "F": [15, 16], "k": 96, "verdict": "UNSAT", "time": 0.1, "units": 15, "dropped": null, "S_size": null}
+{"tag": "A F=(15, 16) M=96", "M": 96, "F": [15, 16], "k": 84, "verdict": "SAT", "time": 0.1, "units": 15, "dropped": [181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192], "S_size": 84}
+{"tag": "A F=(15, 16) M=96", "M": 96, "F": [15, 16], "k": 90, "verdict": "SAT", "time": 0.1, "units": 15, "dropped": [97, 98, 99, 101, 102, 103], "S_size": 90}
+{"tag": "A F=(15, 16) M=96", "M": 96, "F": [15, 16], "k": 93, "verdict": "SAT", "time": 0.1, "units": 15, "dropped": [98, 100, 101], "S_size": 93}
+{"tag": "A F=(15, 16) M=96", "M": 96, "F": [15, 16], "k": 94, "verdict": "UNSAT", "time": 1.4, "units": 15, "dropped": null, "S_size": null}
+{"tag": "A F=(15, 16) M=96 SUMMARY", "F": [15, 16], "M": 96, "k_crit": 93, "d_star": 3, "rho_star": 0.9688, "escape_dropped": [98, 100, 101]}
+{"tag": "A F=(15, 16) M=128", "M": 128, "F": [15, 16], "k": 128, "verdict": "UNSAT", "time": 0.3, "units": 15, "dropped": null, "S_size": null}
+{"tag": "A F=(15, 16) M=128", "M": 128, "F": [15, 16], "k": 116, "verdict": "SAT", "time": 0.2, "units": 15, "dropped": [245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256], "S_size": 116}
+{"tag": "A F=(15, 16) M=128", "M": 128, "F": [15, 16], "k": 122, "verdict": "SAT", "time": 0.2, "units": 15, "dropped": [129, 130, 131, 133, 134, 135], "S_size": 122}
+{"tag": "A F=(15, 16) M=128", "M": 128, "F": [15, 16], "k": 125, "verdict": "SAT", "time": 0.4, "units": 15, "dropped": [130, 132, 133], "S_size": 125}
+{"tag": "A F=(15, 16) M=128", "M": 128, "F": [15, 16], "k": 126, "verdict": "UNSAT", "time": 4.7, "units": 15, "dropped": null, "S_size": null}
+{"tag": "A F=(15, 16) M=128 SUMMARY", "F": [15, 16], "M": 128, "k_crit": 125, "d_star": 3, "rho_star": 0.9766, "escape_dropped": [130, 132, 133]}
+{"tag": "A F=(11, 12) M=64", "M": 64, "F": [11, 12], "k": 64, "verdict": "UNSAT", "time": 0.0, "units": 11, "dropped": null, "S_size": null}
+{"tag": "A F=(11, 12) M=64", "M": 64, "F": [11, 12], "k": 52, "verdict": "SAT", "time": 0.0, "units": 11, "dropped": [117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128], "S_size": 52}
+{"tag": "A F=(11, 12) M=64", "M": 64, "F": [11, 12], "k": 58, "verdict": "SAT", "time": 0.0, "units": 11, "dropped": [65, 66, 67, 69, 70, 71], "S_size": 58}
+{"tag": "A F=(11, 12) M=64", "M": 64, "F": [11, 12], "k": 61, "verdict": "SAT", "time": 0.0, "units": 11, "dropped": [65, 66, 69], "S_size": 61}
+{"tag": "A F=(11, 12) M=64", "M": 64, "F": [11, 12], "k": 62, "verdict": "SAT", "time": 0.0, "units": 11, "dropped": [66, 68], "S_size": 62}
+{"tag": "A F=(11, 12) M=64", "M": 64, "F": [11, 12], "k": 63, "verdict": "UNSAT", "time": 0.1, "units": 11, "dropped": null, "S_size": null}
+{"tag": "A F=(11, 12) M=64 SUMMARY", "F": [11, 12], "M": 64, "k_crit": 62, "d_star": 2, "rho_star": 0.9688, "escape_dropped": [66, 68]}
+{"tag": "A F=(11, 12) M=96", "M": 96, "F": [11, 12], "k": 96, "verdict": "UNSAT", "time": 0.1, "units": 11, "dropped": null, "S_size": null}
+{"tag": "A F=(11, 12) M=96", "M": 96, "F": [11, 12], "k": 84, "verdict": "SAT", "time": 0.1, "units": 11, "dropped": [181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192], "S_size": 84}
+{"tag": "A F=(11, 12) M=96", "M": 96, "F": [11, 12], "k": 90, "verdict": "SAT", "time": 0.1, "units": 11, "dropped": [97, 98, 99, 101, 102, 103], "S_size": 90}
+{"tag": "A F=(11, 12) M=96", "M": 96, "F": [11, 12], "k": 93, "verdict": "SAT", "time": 0.2, "units": 11, "dropped": [98, 99, 100], "S_size": 93}
+{"tag": "A F=(11, 12) M=96", "M": 96, "F": [11, 12], "k": 94, "verdict": "SAT", "time": 0.1, "units": 11, "dropped": [97, 100], "S_size": 94}
+{"tag": "A F=(11, 12) M=96", "M": 96, "F": [11, 12], "k": 95, "verdict": "UNSAT", "time": 0.3, "units": 11, "dropped": null, "S_size": null}
+{"tag": "A F=(11, 12) M=96 SUMMARY", "F": [11, 12], "M": 96, "k_crit": 94, "d_star": 2, "rho_star": 0.9792, "escape_dropped": [97, 100]}
+{"tag": "A F=(11, 12) M=128", "M": 128, "F": [11, 12], "k": 128, "verdict": "UNSAT", "time": 0.2, "units": 11, "dropped": null, "S_size": null}
+{"tag": "A F=(11, 12) M=128", "M": 128, "F": [11, 12], "k": 116, "verdict": "SAT", "time": 0.2, "units": 11, "dropped": [245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256], "S_size": 116}
+{"tag": "A F=(11, 12) M=128", "M": 128, "F": [11, 12], "k": 122, "verdict": "SAT", "time": 0.2, "units": 11, "dropped": [129, 130, 131, 133, 134, 135], "S_size": 122}
+{"tag": "A F=(11, 12) M=128", "M": 128, "F": [11, 12], "k": 125, "verdict": "SAT", "time": 0.2, "units": 11, "dropped": [129, 130, 133], "S_size": 125}
+{"tag": "A F=(11, 12) M=128", "M": 128, "F": [11, 12], "k": 126, "verdict": "SAT", "time": 0.3, "units": 11, "dropped": [130, 132], "S_size": 126}
+{"tag": "A F=(11, 12) M=128", "M": 128, "F": [11, 12], "k": 127, "verdict": "UNSAT", "time": 0.7, "units": 11, "dropped": null, "S_size": null}
+{"tag": "A F=(11, 12) M=128 SUMMARY", "F": [11, 12], "M": 128, "k_crit": 126, "d_star": 2, "rho_star": 0.9844, "escape_dropped": [130, 132]}
