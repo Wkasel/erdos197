@@ -1,0 +1,13 @@
+Geneson witness W cap [1,4096] (defaults lam=4 ratio=4 J(k)=k)
+  stage k=1 j=0: [5, 8] (4 elts, sliver width 1)
+  stage k=1 j=1: [17, 32] (16 elts, sliver width 1)
+  stage k=2 j=0: [160, 256] (97 elts, sliver width 32)
+  stage k=2 j=1: [544, 1024] (481 elts, sliver width 32)
+  stage k=2 j=2: [2080, 4096] (2017 elts, sliver width 32)
+|W| = 2615, density at N: 0.6384 (paper bound at k=2: 0.6328)
+|B_1| formula (3.7): predicted 20, generated 20, OK
+|B_2| formula (3.7): predicted 2595, generated 2595, OK
+ABJ order: bitrev key == paper definition on 2000 random pairs OK
+cross-stage 3-APs inside W: 0 (OK — Lemma 3.1 confirmed) [7s]
+monotone 3-AP in explicit permutation: NONE — witness order verified [4s]
+pure-complete-4096 on W: n=2615 vars=3417805 clauses=5054692 -> SAT (witness assignment accepted by Cadical) [163s]
