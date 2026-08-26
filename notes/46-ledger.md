@@ -150,4 +150,56 @@ measurements test their finite shadows.
 
 ## 4. Results
 
-(measurements running — filled in below as data lands)
+### 4A. Counting (data/e121_A.json, horizon 2^14)
+
+**(a) The salted gc3 variants are still window-Case-1.**  Dyadic-anchored
+salting (f(t) = max(3, t−6) per-team presence per dyadic block) kills
+dyadic cleanness but leaves ~2400 anchors a with |(a, 2a] \ B| ≤ 8
+(team B = complement side) — the C-clean structure just slides off the
+dyadic grid.  Lesson for the dichotomy frame (N4): Case 1 should be
+stated ANCHOR-FREE (ratio-2 windows (a, 2a], any a); the interval-form
+rungs (e89 interval mode) never used dyadic anchoring.  A genuine Case-2
+partition must place diverging minority material in EVERY ratio-2
+window.  (Ratio ρ < 2 windows do NOT support the attack geometry —
+completions z = 2y − x of bottom values exit the window — which is
+exactly why Geneson's ratio-2-minus-growing-sliver octaves are the
+sharp YES-shape: the growing sliver defeats every fixed-C window
+statement.  N3's fixed-C is the exact boundary.)
+
+**(b) Random balanced colorings are orbit-supercritical.**  Doubling
+closure from seeds T ∩ [512, 1024) with reflectors T ∩ [1, 64]: both
+teams of rnd1/rnd2 reach the top half of the horizon in bulk (~4000
+censored chains each) — the doubling process at density 1/2 with ~32
+reflectors is a supercritical branching process, so an iid balanced
+partition a.s. contains infinite orbits in both teams and dies by
+lem:orbit.  Structural consequence for the YES-space: everywhere-split
+partitions must ALSO be doubling-subcritical in both teams — a strong
+anti-random correlation constraint (the complement side of gc3 is
+subcritical by the λ=3 misalignment, h1; its W side closes at 65
+values).  "Everywhere-split" cannot mean "generic": the regime's
+inhabitants are correlation-engineered.
+
+**(c) The price P(t) can diverge arbitrarily slowly, and N3 eats the
+slow scales.**  gc3e/gc3i have P(t) = f(t) → ∞ but P(12) = 6 ≤ 8: at
+every scale where P(t) ≤ 8 the near-clean team's block sits inside the
+machine-proven puncture robustness of the rungs (N3), so IF such traces
+recurred at infinitely many scales the partition would die by T-PIN.
+Slow divergence escapes each fixed-C statement scale-by-scale — the
+ledger must therefore COUPLE scales (L2) rather than quote any fixed-C
+robustness.  This is the cleanest formulation yet of why N6 is needed
+at all.
+
+**(d) The coupling channel exists and is placement-sensitive.**
+Endpoint-planted donations (gc3e) form live attacker pairs (gap ≤ 2)
+bearing on the partner-dense next block: at t = 12, gc3e's 6 planted
+A-values yield 2 live A-pairs with 3584 surviving attack units into
+B(13) where A holds 4609/8192.  Interior-spread plants (gc3i) yield 0
+live pairs and 0 units.  Donation→donation flux (minority-sourced
+completions landing on minority material) is 0 on every coloring
+measured: nothing in the geometry FORCES donations to complete onto
+donations — the strong "forced donation recurrence" reading of L2 has
+no support.  What is forced is majority-side: every dense team has
+Θ(M) live gap-1 pairs at every scale (supply lemma; rnd1: 256/263
+live pairs at t=10, 971/1119 at t=12, with ~10^5..10^6 surviving
+units), i.e. the attack SURFACE against a team's own next-scale
+material is always saturated for whichever team is locally dense.
