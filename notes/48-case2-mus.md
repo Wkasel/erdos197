@@ -119,5 +119,38 @@ proportional (midband) coordinates for (ii).
 
 ## Results
 
-(pending — filled in as the runs land; supports snapshotted in
-data/e126_mus_*.resume.json, finals in data/e126_mus_M{32,48}*.json)
+(supports snapshotted in data/e126_mus_*.resume.json, finals in
+data/e126_mus_M{32,48}*.json)
+
+### M=32 (3,3,3): FINAL (recorded by the synthesis session, 2026-08-26)
+
+n = 116 of 224, Glucose42 re-verified UNSAT [2.8 s], criticality
+certificate: **116 necessary / 0 redundant / 0 cardinality-locked** —
+fully minimal, every value load-bearing.  253 solves, 917 s.
+Support (data/e126_mus_M32_b333.json):
+
+- B0 (32,64], 15 values: {33,34, 41,42, 45, 47,48, 57..64} — bottom
+  pairs at offsets 1-2 / 9-10 / 15-16 (+45,47) and the intact top run
+  57..64.  Bottom-midpoint anchor family, offset coordinates.
+- B1 (64,128], 47 values: [81,119] ∪ [121,128] — the top 3/4 of the
+  sandwiched block, contiguous except the single puncture 120.
+- B2 (128,256], 54 values: [129,168] ∪ [177,188] ∪ {191,192} —
+  entirely within (4M, 6M], the reachable bottom of B2 (7M = 224
+  unreachable-zone boundary far above); all four mod-4 classes present
+  in every block.
+
+Verdict on the §"Questions" list: (1) B0 keeps bottom-midpoint anchors
+AND B1 becomes the dominant anchor block (top-3/4 run); (2) yes — all
+mod-4 classes retained everywhere, no lattice escape; (3) yes-inverted
+as predicted: B2 support is BOTTOM/midband (reachable), top eighth
+gone; (4) pending M=48.  This is prediction (i)+(ii) of Result 0
+verbatim: seam-anchor material + a both-parity B2 midband run that
+turns every range/lattice hide into a generic-pair rung.  The
+reduction (Case-2 crux = N2 rung geometry + one sumset layer) is
+CONFIRMED at machine level at this scale.
+
+### M=48 (2,2,2): in flight
+
+Descending, n = 155 of 336 at last check (from 336 UNSAT [95 s]);
+crash-safe, resume snapshot data/e126_mus_M48_b222.resume.json.  Then:
+.venv/bin/python experiments/e126b_anatomy_compare.py 32 333 48 222

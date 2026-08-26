@@ -1,0 +1,7 @@
+K11_r4 (x=11, r=4): v*=t1; hi<={t0b6+t6b3} [O+Q2], lo<={t0b6+t3b4} [O+Q2]; verified 8 scales 68..124: ALL OK; controls [(72, 6), (80, 6), (88, 6), (96, 6)] (5s)
+B6(11)_r6 (x=11, r=6): v*=t2; hi<={t3b4+t5b3} [E+Q1], lo<={t5b3+t10b1} [E+Q1]; verified 8 scales 22..78: ALL OK; controls [(26, 3), (34, 3), (42, 5), (50, 4)] (6s)
+B2(13)_r4 (x=13, r=4): v*=t1; hi<={t4b5+t7b3} [O+Q3], lo<={t7b3+t9b2} [O+Q1]; verified 8 scales 28..84: ALL OK; controls [(32, 2), (40, 4), (48, 2), (56, 4)] (9s)
+B6(13)_r0 (x=13, r=0): v*=t1; hi<={t7b3+t12b1} [O+Q3], lo<={t5b4+t7b3} [O+E+Q1]; verified 8 scales 32..88: ALL OK; controls [(28, 3), (36, 2), (44, 6), (52, 3)] (14s)
+B6(15)_r2 (x=15, r=2): v*=t2; hi<={t7b4+t9b3} [E+Q1], lo<={t9b3+t14b1} [E+Q1]; verified 8 scales 26..82: ALL OK; controls [(30, 3), (38, 2), (46, 5), (54, 3)] (16s)
+B2(17)_r0 (x=17, r=0): v*=t1; hi<={t8b5+t11b3} [O+Q3], lo<={t11b3+t13b2} [O+Q1]; verified 8 scales 24..80: ALL OK; controls [(28, 1), (36, 2), (44, 3), (52, 2)] (19s)
+B2(19)_r2 (x=19, r=2): v*=t2; hi<={t13b3+t15b2} [E+Q1], lo<={t10b5+t13b3} [E+Q1]; verified 8 scales 34..90: ALL OK; controls [(38, 2), (46, 2), (54, 3), (62, 3)] (22s)

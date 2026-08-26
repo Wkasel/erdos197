@@ -127,7 +127,9 @@ def main():
     for name, x, K, r, M0 in CELLS:
         if only and name not in only:
             continue
-        scan_M = in_class_scales(M0, K, 1, start_at=M0 + 32)[0]
+        # phase kills are scale-stable and cheap to find at small M
+        # (e124d/e124n evidence); big-M scans hit hard SAT probes.
+        scan_M = in_class_scales(M0, K, 1, start_at=M0 + 8)[0]
         kills = phase_kills(scan_M, K, list(range(0, max(i for i, _ in K)
                                                   + 3)))
         # double-killed phase values, smallest total premise size

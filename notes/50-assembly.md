@@ -60,15 +60,25 @@ restatement: notes/46 §4A).
 - Price ledger: supply lemma + p(k) → ∞ [GAP-p(k): needs N2-style schema;
   possibly dispensable if Case 2 closes via the seam core alone].
 
-## Current gap inventory (2026-08-26)
+## Current gap inventory (updated 2026-08-26 late, synthesis session)
 | Tag | Statement | Type | Status |
 |-----|-----------|------|--------|
-| GAP-N2 | off-diagonal lanes + uniform family proof | hand+machine | e124 front running |
-| GAP-N3 | dust-robust C3 | hand (short) | flagged one-paragraph |
+| GAP-N2 | off-diagonal lanes + uniform family proof | hand+machine | largely EXECUTED (notes/49: {11,12} all 8 residues, lane laws, template cells 13..19); remains: PARAMETRIC-in-x lane proof, cells A4d(19)/B6(21), pairs x ≡ 7 mod 8 |
+| GAP-N3 | dust-robust C3 | hand (short) | flagged one-paragraph, unwritten |
 | GAP-BRIDGE1 | pair-ownership/split dichotomy in Case 1 | hand | unwritten |
-| GAP-N6a | all-M coupled schema | hand (from MUS) | notes/48 front running |
-| GAP-G2 | double non-procrastination | hand (THE gap) | notes/47 front running |
-| GAP-L1' | concentration lemma | hand | measured-true |
+| GAP-N6a | all-M coupled schema | hand (from MUS) | compute-true M=16..80 (e125+e126_deep, (2,2,2) critical from 48); M=32 MUS FINAL (n=116, ALL necessary, anatomy = seam anchors + both-parity B2 midband run — the reduction-to-N2 shape CONFIRMED, notes/48); M=48 support in flight |
+| GAP-G2 | ~~double non-procrastination~~ REFRAMED: T-FORCE affordability — two Θ(M)-dense teams cannot both afford forced > v*(M) inversions at every anchor forever | hand (THE gap, ledger-type) | DNP as stated is FALSE (single-team, all budgets to N^{1−o(1)}, irreducibly two-sided — notes/47); no proof route survives yet; pump measured only at v*(bal,16) ∈ (2,160]; sub-linear minorities routed to N5 ρ*-rungs EXCEPT the alternating-majority sub-case (own sub-gap) |
+| GAP-L1' | concentration lemma | hand | measured-true, unproven |
+
+Note the STRUCTURAL simplification bought by the MUS landing: if the
+M=48 support confirms the anchor-coordinate match, GAP-N6a's schema is
+the N2 schema family (GAP-N2) applied one seam up plus one layer of
+sumset forcing — the program then has ONE schema engine (Z/D/E/P
+ladders + rung geometry) and ONE genuinely new statement (GAP-G2's
+ledger) left, with everything else short hand write-ups.
 
 When every tag clears: Erdős #197 = NO. Any tag that BREAKS instead
-(especially G2) re-opens a YES-shape with exact specifications.
+re-opens a YES-shape with exact specifications.  One tag DID break
+this session — GAP-G2's original DNP form (X-INTERLEAVE refutes it) —
+and the re-opened specification is exactly the notes/46 dodger corner;
+the reframed tag above is what must now clear instead.

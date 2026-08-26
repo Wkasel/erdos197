@@ -558,10 +558,11 @@ remain:
 
 1. **Scale-stability of the constant-bound coupled schema**: CLOSED at
    M = 64 (e125 rerun, 2026-08-26): (2,2,2) UNSAT [304 s] and (3,6,12)
-   UNSAT [629 s], data/e125_m64.log — stable over 16..64, a 2.7×
-   range beyond the discovery scale for the critical constant.  What
-   remains on this side is the hand schema (MUS front, notes/48), not
-   compute.
+   UNSAT [629 s], data/e125_m64.log — and EXTENDED to M = 80
+   (e126_deep_stability: (2,2,2) UNSAT [1414 s], data/e126_deep.log;
+   M = 96 in flight) — stable over 48..80 for the critical constant,
+   a 5× range beyond the balanced discovery scale.  What remains on
+   this side is the hand schema (MUS front, notes/48), not compute.
 2. **The double non-procrastination hypothesis** — both teams
    block-ordered at two consecutive seams, infinitely often.  The seam
    controls prove this hypothesis cannot be thinned; converting it
@@ -573,21 +574,30 @@ remain:
    two-sided, and correctly read FORWARD as forced procrastination
    (T-FORCE); the budget dial v*(M) is the new quantitative front.**
 
-### Unresolved runs at merge (all processes now stopped)
+### Unresolved runs at merge — superseded (2026-08-26 late)
 
-(2,2,2)@M=64; C3-balanced MUS at M=32 (reached n=118 of 224, still
-dropping); e121 chain-pair price curves + M=128 + counterfactual
-probes (Part C log empty); e120 chain M=96 near-critical k=87; Part E
-M=64 28/32; Part D 48/64; e124 miner never started.
+All merge-time stragglers either landed or were relaunched crash-safe:
+(2,2,2)@M=64 LANDED (UNSAT, e125); the balanced MUS was rewritten
+resumable (e126) and the M=32 target is DONE (see the MUS landing
+section below), M=48 still descending (n = 155 of 336 at last check,
+snapshot data/e126_mus_M48_b222.resume.json); e124 miner run (notes/49).
+Still in flight: e126_deep (2,2,2)@M=96; e126 M=48 MUS; e124m searches
+A4d(19)/B6(21)/A4d(13); e127 near-critical v* queries ((3,6,12)@24
+v ≥ 2, bal@16 SAT-side bisection, (2,2,2)@48 scans — memory-heavy,
+RunPod-sized).  Older N5/N6 stragglers (e121 price curves M=128, e120
+chain M=96 k=87, Part E M=64 28/32, Part D 48/64) remain unrun.
 
 ### Decisive next experiments (post-merge ordering, one per front)
 
-1. **N6 (now the program's critical path)**: attack the double
-   non-procrastination hypothesis — formalize L-DESC at two seams
-   (re-descent = the procrastinator's own exposure; give it a rung
-   family) — with the cheap prerequisite of rerunning (2,2,2)/(3,6,12)
-   at M = 64 (RunPod) and finishing the balanced-core MUS at M = 32 →
-   hand schema for the sumset/range lemma.
+1. **N6 (now the program's critical path)**: ~~attack the double
+   non-procrastination hypothesis~~ SUPERSEDED by the second wave
+   (notes/47: DNP false as stated; the live target is T-FORCE
+   affordability + v*(M) growth) — the prerequisites landed: M = 64
+   AND M = 80 UNSAT (e125/e126_deep), M=32 MUS final (n = 116, all
+   necessary).  NEXT: finish the M=48 support, run the
+   anchor-coordinate comparison, write the dichotomy schema
+   (notes/48), and measure the v*(M) trend (bal@16 exact, bal@24,
+   (3,6,12)@24 — RunPod-sized).
 2. **N2**: ~~run e124 + hand-verify ONE off-diagonal lane~~ DONE ×2
    (notes/49: {11,12} dyadic K4 AND ≡ 2 mod 4 B2 both verified
    end-to-end; lane laws uniform).  NEXT: the odd-class phase center
@@ -668,6 +678,112 @@ data/e127_*.json/.log + e127_seam_budget.jsonl.
   mixed in-block theory too).  This is an N6-ledger statement with a
   measured finite pump, no longer a bare order hypothesis.
 
+### FRONT MUS landing (2026-08-26, later the same day): the M=32
+### coupled-core support is FINAL — and it confirms the reduction
+
+Background: notes/48 (Result 0, e126c) had already shown the Case-2
+coupled core is NOT a pure sumset statement — the cross-triple
+hypergraph alone is 2-colorable at both targets via exactly the two
+known dodges (range-hide past the 7M−1 reachability cap /
+parity-lattice-hide), and each dodge visibly recreates generic-pair
+rung geometry one seam up.  Predicted support shape: seam anchors in
+B0/B1 (bottom-offset coordinates) + a both-parity midband B2 run below
+7M (proportional coordinates).
+
+**The (3,3,3)@M=32 deletion-minimal support is now FINAL**
+(data/e126_mus_M32_b333.json, log e126_mus_M32.log): n = 116 of 224,
+Glucose42 re-verified UNSAT [2.8 s], criticality certificate **116
+necessary / 0 redundant / 0 cardinality-locked** — a fully minimal
+support, every value load-bearing.  Anatomy (block sizes 15/47/54):
+
+- B0 = (32,64]: 15 values {33,34, 41,42, 45, 47,48, 57..64} — bottom
+  pairs at offsets 1-2/9-10/15-16 (the C3-style bottom-midpoint anchor
+  family) + the intact top run 57..64;
+- B1 = (64,128]: the 47-value near-run [81,119] ∪ [121,128] — the top
+  three-quarters of the sandwiched block, contiguous but for the
+  single puncture 120;
+- B2 = (128,256]: 54 values [129,168] ∪ [177,188] ∪ {191,192} —
+  ENTIRELY within (4M, 6M], i.e. the reachable bottom of B2, far below
+  the unreachable top eighth (> 7M = 224); every mod-4 class present
+  in every block (no lattice escape hatch left).
+
+This is the notes/48 prediction verbatim: (i) B0/B1 seam-anchor
+material in bottom-offset coordinates, (ii) a long both-parity B2
+midband run positioned so that every range/lattice hide recreates a
+generic-pair rung.  **At machine level and at this scale, the Case-2
+crux is confirmed to be the N2 rung geometry wrapped in one layer of
+sumset forcing — one schema family for both cases.**  Pending to make
+this scale-stable: the (2,2,2)@M=48 support (still descending,
+crash-safe) and the formal anchor-coordinate comparison
+(e126b_anatomy_compare.py 32 333 48 222).  Side landing, same session:
+G1's compute range extended to M = 80 (above).
+
+### What remains for a complete NO proof (the honest ledger,
+### end of 2026-08-26)
+
+The dependency graph lives in notes/50-assembly.md.  If every tag
+below clears, Erdős #197 = NO.  None has cleared yet; every one is an
+unproven link, listed with its current shape:
+
+1. **GAP-G2 (THE gap, now reframed — notes/47).**  The double
+   non-procrastination hypothesis is NOT a theorem and cannot be one:
+   FALSE single-team (X-INTERLEAVE re-descends at every anchor;
+   positions interleave), false for every budget weakening DNP(v) up
+   to v = N^{1−o(1)}, irreducibly two-sided (both one-sided budget
+   variants SAT at v = 0), and immune to counting across scales
+   (fresh supply in disjoint windows).  The surviving statement is
+   T-FORCE/affordability: *two Θ(M)-dense teams cannot both afford
+   their forced > v*(M) inversions at every anchor forever* — an
+   N6-ledger statement with a measured finite pump (v*(bal,16) ∈
+   (2,160], v*((3,6,12),24) ≥ 2, one-sided escapes priced at ~2000
+   inversions).  Sub-linear minorities are NOT a seam problem
+   (majority density → 1; N5 ρ*-rungs + T-PIN), EXCEPT the
+   alternating-majority sub-case (block-majority alternating every
+   octave with growing dust), which needs a NECK/d_t extension to
+   unbounded dust or the coupled core — that caveat is its own
+   sub-gap.  Nothing here is proven at ω.
+2. **GAP-N6a (coupled-schema hand proof).**  The constant-bound core
+   is compute-true over M = 16..80 ((2,2,2) critical from 48) but has
+   no all-M hand schema.  The M=32 MUS landing above pins the target
+   anatomy and the reduction-to-N2 shape; needs the M=48 support +
+   anchor-coordinate stability + the actual schema write-up (the
+   dichotomy of notes/48: mono cross triple, or hide ⇒ rescaled
+   generic-pair rung).
+3. **GAP-N2 endgame (Case 1).**  Closed per-cell far beyond the
+   original crux ({11,12} at ALL 8 residues by verified hand schemas;
+   lane laws slide mod 8; template cells across pairs 13..19; C3(p)
+   diagonal family p = 5..13), but a complete Case-1 kill needs:
+   (a) PARAMETRIC-in-x lane verification (infinitely many pairs at
+   once — currently every closed cell is a finite verification),
+   (b) the last dyadic cells A4d(19), B6(21) (searches running),
+   (c) pairs x ≡ 7 mod 8 (x = 23, 31, ... — outside the e122
+   catalogue).
+4. **GAP-BRIDGE1 (Case-1 assembly bridge).**  The pair-ownership
+   argument — every Case-1 team owns some adjacent pair over its clean
+   blocks, else the split/planted-half landing-pad structure fires —
+   is sketched (notes/42-43, G3) but unwritten as a single hand proof.
+5. **GAP-N3 (dust robustness).**  Exact machine constants (d* = 2/3,
+   scale-stable, C = 1 suffices from M = 48) but the one-paragraph
+   hand extension of C3 to punctured blocks is unwritten.
+6. **GAP-L1' (concentration lemma).**  "Both teams doubling-subcritical
+   ⇒ some team keeps near-clean ratio-2 windows" — measured true
+   everywhere, no proof; it patrols the dodger corner (subcritical +
+   diffuse), the only YES-shape not excluded by known machinery.
+7. **Rung finiteness caveat (global).**  Every machine-true rung
+   family in the program (STG, chain, seam, coupled) is verified at
+   finitely many scales; each use at ω rides on its (b)-style schema
+   or on T-PIN with a FIXED finite core — the parametric/hand forms in
+   2-3 are what discharge this, and nothing else does.
+
+What broke toward YES this session: nothing new — but the DEATH of
+DNP-as-stated (link 1) removed the simplest closing route and is the
+honest reason the estimate stays capped: the load-bearing open
+statement is now a genuinely new ledger-type claim, not an instance
+count.  The only known YES-shape remains the notes/46 dodger
+(subcritical + diffuse + pair-sparse + slow P(t)); its requirements
+(i)/(ii) pull against each other and no instance is known to exist,
+but it is not excluded.
+
 ### Honest assessment (updated 2026-08-26, post-merge)
 
 Pre-merge the estimate was NO ≈ 85 % with the cap justified by "Case 2
@@ -690,6 +806,25 @@ this campaign — and a YES could still live in the dodger corner
 Current estimate: **NO ≈ 90 %, YES ≈ 10 %** (up from 85: Case 2 went
 from untouched to two-gaps-remaining; capped because the remaining
 gap is a genuinely new statement, not an instance count).
+
+**Post-second-wave addendum (2026-08-26, late — synthesis session).**
+Held at **NO ≈ 90 %**, but the composition changed materially in both
+directions.  FOR: G1 is compute-closed and extended (M ≤ 80, critical
+constant stable over a 5× range); the M=32 MUS landed fully-minimal
+and CONFIRMED the one-schema reduction (Case 2's crux = N2's rung
+geometry + one sumset layer), so the program now has ONE schema family
+to prove rather than two unrelated cruxes; Case 1 gained its first
+all-residue pair.  AGAINST (and why not > 90): the seam hypothesis —
+one of the two named gaps — turned out to be FALSE as stated, not
+merely unproven; what replaced it (T-FORCE affordability, link 1 of
+the ledger above) is better shaped, quantitative, and machine-priced,
+but no proof strategy for it has survived contact yet (single-team,
+counting, and well-foundedness attacks are all dead ends by
+construction), and v*(M)'s growth — the pump the ledger needs — is
+measured only as v*(bal,16) ∈ (2,160].  A YES would now have to live
+in the dodger corner AND evade the coupled cores at every scale; a NO
+still needs every link 1-7 above.  Neither side moved enough to shift
+the number.
 
 ## Key files
 
