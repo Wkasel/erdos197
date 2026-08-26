@@ -1,0 +1,1089 @@
+{
+ "name": "geneson_c",
+ "N": 4096,
+ "size": 1481,
+ "min": 1,
+ "max": 2079,
+ "params": {
+  "sat_horizons": [
+   256,
+   1024,
+   4096
+  ],
+  "solver": true,
+  "orbit_fmax": 16,
+  "attacker_max": 64,
+  "sliver_width": 8,
+  "occ_thresh": 0.25
+ },
+ "note": "pure-complete windows are always SAT (ABJ order); (i) is a consistency check, death signals are (ii)-(iv) + UNSAT only under extra structure",
+ "sat": [
+  {
+   "H": 256,
+   "n": 139,
+   "result": "SAT",
+   "method": "cadical-lazy-trans",
+   "witness_verified": true,
+   "time": 0.04
+  },
+  {
+   "H": 1024,
+   "n": 426,
+   "result": "SAT",
+   "method": "cadical-lazy-trans",
+   "witness_verified": true,
+   "time": 0.41
+  },
+  {
+   "H": 4096,
+   "n": 1481,
+   "result": "SAT",
+   "method": "cadical-lazy-trans",
+   "witness_verified": true,
+   "time": 4.18
+  }
+ ],
+ "orbit": {
+  "fmax": 16,
+  "F_size": 12,
+  "full_F": {
+   "len": 7,
+   "F": [
+    1,
+    2,
+    3,
+    4,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+   ],
+   "span_octaves": 0,
+   "start": 10,
+   "end": 16,
+   "censored": false,
+   "chain": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+   ],
+   "reflectors": [
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+   ]
+  },
+  "top_single": [
+   {
+    "len": 7,
+    "F": [
+     1
+    ],
+    "span_octaves": 6,
+    "start": 33,
+    "end": 2049,
+    "censored": true,
+    "chain": [
+     33,
+     65,
+     129,
+     257,
+     513,
+     1025,
+     2049
+    ],
+    "reflectors": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ]
+   },
+   {
+    "len": 7,
+    "F": [
+     2
+    ],
+    "span_octaves": 6,
+    "start": 34,
+    "end": 2050,
+    "censored": true,
+    "chain": [
+     34,
+     66,
+     130,
+     258,
+     514,
+     1026,
+     2050
+    ],
+    "reflectors": [
+     2,
+     2,
+     2,
+     2,
+     2,
+     2
+    ]
+   },
+   {
+    "len": 7,
+    "F": [
+     3
+    ],
+    "span_octaves": 6,
+    "start": 35,
+    "end": 2051,
+    "censored": true,
+    "chain": [
+     35,
+     67,
+     131,
+     259,
+     515,
+     1027,
+     2051
+    ],
+    "reflectors": [
+     3,
+     3,
+     3,
+     3,
+     3,
+     3
+    ]
+   },
+   {
+    "len": 7,
+    "F": [
+     4
+    ],
+    "span_octaves": 6,
+    "start": 36,
+    "end": 2052,
+    "censored": true,
+    "chain": [
+     36,
+     68,
+     132,
+     260,
+     516,
+     1028,
+     2052
+    ],
+    "reflectors": [
+     4,
+     4,
+     4,
+     4,
+     4,
+     4
+    ]
+   },
+   {
+    "len": 7,
+    "F": [
+     9
+    ],
+    "span_octaves": 6,
+    "start": 41,
+    "end": 2057,
+    "censored": true,
+    "chain": [
+     41,
+     73,
+     137,
+     265,
+     521,
+     1033,
+     2057
+    ],
+    "reflectors": [
+     9,
+     9,
+     9,
+     9,
+     9,
+     9
+    ]
+   }
+  ],
+  "top_pair": [
+   {
+    "len": 7,
+    "F": [
+     1,
+     2
+    ],
+    "span_octaves": 6,
+    "start": 33,
+    "end": 2049,
+    "censored": true,
+    "chain": [
+     33,
+     65,
+     129,
+     257,
+     513,
+     1025,
+     2049
+    ],
+    "reflectors": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ]
+   },
+   {
+    "len": 7,
+    "F": [
+     1,
+     3
+    ],
+    "span_octaves": 6,
+    "start": 33,
+    "end": 2049,
+    "censored": true,
+    "chain": [
+     33,
+     65,
+     129,
+     257,
+     513,
+     1025,
+     2049
+    ],
+    "reflectors": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ]
+   },
+   {
+    "len": 7,
+    "F": [
+     1,
+     4
+    ],
+    "span_octaves": 6,
+    "start": 33,
+    "end": 2049,
+    "censored": true,
+    "chain": [
+     33,
+     65,
+     129,
+     257,
+     513,
+     1025,
+     2049
+    ],
+    "reflectors": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ]
+   },
+   {
+    "len": 7,
+    "F": [
+     1,
+     9
+    ],
+    "span_octaves": 6,
+    "start": 33,
+    "end": 2049,
+    "censored": true,
+    "chain": [
+     33,
+     65,
+     129,
+     257,
+     513,
+     1025,
+     2049
+    ],
+    "reflectors": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ]
+   },
+   {
+    "len": 7,
+    "F": [
+     1,
+     10
+    ],
+    "span_octaves": 6,
+    "start": 33,
+    "end": 2049,
+    "censored": true,
+    "chain": [
+     33,
+     65,
+     129,
+     257,
+     513,
+     1025,
+     2049
+    ],
+    "reflectors": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ]
+   }
+  ],
+  "flag": true,
+  "flag_reason": "censored chain of span 6 octaves (len 7, F=[1, 2]) still alive at horizon \u2014 candidate infinite orbit (lem:orbit death if it persists)"
+ },
+ "crowns": {
+  "attacker_max": 64,
+  "crown_pair_rows": [
+   {
+    "x": 63,
+    "octaves_above": 3,
+    "octaves_attacked": 3,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     47,
+     47,
+     47
+    ],
+    "mean_attacks": 47.0,
+    "attacked_offsets": [
+     [
+      7,
+      1,
+      47
+     ],
+     [
+      9,
+      1,
+      47
+     ],
+     [
+      11,
+      1,
+      47
+     ]
+    ]
+   },
+   {
+    "x": 64,
+    "octaves_above": 3,
+    "octaves_attacked": 3,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     47,
+     47,
+     47
+    ],
+    "mean_attacks": 47.0,
+    "attacked_offsets": [
+     [
+      7,
+      1,
+      47
+     ],
+     [
+      9,
+      1,
+      47
+     ],
+     [
+      11,
+      1,
+      47
+     ]
+    ]
+   },
+   {
+    "x": 15,
+    "octaves_above": 4,
+    "octaves_attacked": 4,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     32,
+     23,
+     23,
+     23
+    ],
+    "mean_attacks": 25.25,
+    "attacked_offsets": [
+     [
+      6,
+      1,
+      32
+     ],
+     [
+      7,
+      1,
+      23
+     ],
+     [
+      9,
+      1,
+      23
+     ],
+     [
+      11,
+      1,
+      23
+     ]
+    ]
+   },
+   {
+    "x": 16,
+    "octaves_above": 4,
+    "octaves_attacked": 4,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     32,
+     23,
+     23,
+     23
+    ],
+    "mean_attacks": 25.25,
+    "attacked_offsets": [
+     [
+      6,
+      1,
+      32
+     ],
+     [
+      7,
+      1,
+      23
+     ],
+     [
+      9,
+      1,
+      23
+     ],
+     [
+      11,
+      1,
+      23
+     ]
+    ]
+   },
+   {
+    "x": 4,
+    "octaves_above": 5,
+    "octaves_attacked": 5,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     2,
+     32,
+     17,
+     17,
+     17
+    ],
+    "mean_attacks": 17.0,
+    "attacked_offsets": [
+     [
+      4,
+      1,
+      2
+     ],
+     [
+      6,
+      1,
+      32
+     ],
+     [
+      7,
+      1,
+      17
+     ],
+     [
+      9,
+      1,
+      17
+     ],
+     [
+      11,
+      1,
+      17
+     ]
+    ]
+   },
+   {
+    "x": 3,
+    "octaves_above": 5,
+    "octaves_attacked": 5,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     1,
+     32,
+     17,
+     17,
+     17
+    ],
+    "mean_attacks": 16.8,
+    "attacked_offsets": [
+     [
+      4,
+      1,
+      1
+     ],
+     [
+      6,
+      1,
+      32
+     ],
+     [
+      7,
+      1,
+      17
+     ],
+     [
+      9,
+      1,
+      17
+     ],
+     [
+      11,
+      1,
+      17
+     ]
+    ]
+   }
+  ],
+  "occupied_octaves": [
+   1,
+   2,
+   4,
+   6,
+   7,
+   9,
+   11
+  ],
+  "attackers_tested": 44,
+  "top": [
+   {
+    "x": 63,
+    "octaves_above": 3,
+    "octaves_attacked": 3,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     47,
+     47,
+     47
+    ],
+    "mean_attacks": 47.0,
+    "attacked_offsets": [
+     [
+      7,
+      1,
+      47
+     ],
+     [
+      9,
+      1,
+      47
+     ],
+     [
+      11,
+      1,
+      47
+     ]
+    ]
+   },
+   {
+    "x": 64,
+    "octaves_above": 3,
+    "octaves_attacked": 3,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     47,
+     47,
+     47
+    ],
+    "mean_attacks": 47.0,
+    "attacked_offsets": [
+     [
+      7,
+      1,
+      47
+     ],
+     [
+      9,
+      1,
+      47
+     ],
+     [
+      11,
+      1,
+      47
+     ]
+    ]
+   },
+   {
+    "x": 61,
+    "octaves_above": 3,
+    "octaves_attacked": 3,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     46,
+     46,
+     46
+    ],
+    "mean_attacks": 46.0,
+    "attacked_offsets": [
+     [
+      7,
+      1,
+      46
+     ],
+     [
+      9,
+      1,
+      46
+     ],
+     [
+      11,
+      1,
+      46
+     ]
+    ]
+   },
+   {
+    "x": 62,
+    "octaves_above": 3,
+    "octaves_attacked": 3,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     46,
+     46,
+     46
+    ],
+    "mean_attacks": 46.0,
+    "attacked_offsets": [
+     [
+      7,
+      1,
+      46
+     ],
+     [
+      9,
+      1,
+      46
+     ],
+     [
+      11,
+      1,
+      46
+     ]
+    ]
+   },
+   {
+    "x": 59,
+    "octaves_above": 3,
+    "octaves_attacked": 3,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     45,
+     45,
+     45
+    ],
+    "mean_attacks": 45.0,
+    "attacked_offsets": [
+     [
+      7,
+      1,
+      45
+     ],
+     [
+      9,
+      1,
+      45
+     ],
+     [
+      11,
+      1,
+      45
+     ]
+    ]
+   },
+   {
+    "x": 60,
+    "octaves_above": 3,
+    "octaves_attacked": 3,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     45,
+     45,
+     45
+    ],
+    "mean_attacks": 45.0,
+    "attacked_offsets": [
+     [
+      7,
+      1,
+      45
+     ],
+     [
+      9,
+      1,
+      45
+     ],
+     [
+      11,
+      1,
+      45
+     ]
+    ]
+   },
+   {
+    "x": 57,
+    "octaves_above": 3,
+    "octaves_attacked": 3,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     44,
+     44,
+     44
+    ],
+    "mean_attacks": 44.0,
+    "attacked_offsets": [
+     [
+      7,
+      1,
+      44
+     ],
+     [
+      9,
+      1,
+      44
+     ],
+     [
+      11,
+      1,
+      44
+     ]
+    ]
+   },
+   {
+    "x": 58,
+    "octaves_above": 3,
+    "octaves_attacked": 3,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     44,
+     44,
+     44
+    ],
+    "mean_attacks": 44.0,
+    "attacked_offsets": [
+     [
+      7,
+      1,
+      44
+     ],
+     [
+      9,
+      1,
+      44
+     ],
+     [
+      11,
+      1,
+      44
+     ]
+    ]
+   },
+   {
+    "x": 55,
+    "octaves_above": 3,
+    "octaves_attacked": 3,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     43,
+     43,
+     43
+    ],
+    "mean_attacks": 43.0,
+    "attacked_offsets": [
+     [
+      7,
+      1,
+      43
+     ],
+     [
+      9,
+      1,
+      43
+     ],
+     [
+      11,
+      1,
+      43
+     ]
+    ]
+   },
+   {
+    "x": 56,
+    "octaves_above": 3,
+    "octaves_attacked": 3,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     43,
+     43,
+     43
+    ],
+    "mean_attacks": 43.0,
+    "attacked_offsets": [
+     [
+      7,
+      1,
+      43
+     ],
+     [
+      9,
+      1,
+      43
+     ],
+     [
+      11,
+      1,
+      43
+     ]
+    ]
+   },
+   {
+    "x": 53,
+    "octaves_above": 3,
+    "octaves_attacked": 3,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     42,
+     42,
+     42
+    ],
+    "mean_attacks": 42.0,
+    "attacked_offsets": [
+     [
+      7,
+      1,
+      42
+     ],
+     [
+      9,
+      1,
+      42
+     ],
+     [
+      11,
+      1,
+      42
+     ]
+    ]
+   },
+   {
+    "x": 54,
+    "octaves_above": 3,
+    "octaves_attacked": 3,
+    "recurrence_ratio": 1.0,
+    "attacks_per_octave": [
+     42,
+     42,
+     42
+    ],
+    "mean_attacks": 42.0,
+    "attacked_offsets": [
+     [
+      7,
+      1,
+      42
+     ],
+     [
+      9,
+      1,
+      42
+     ],
+     [
+      11,
+      1,
+      42
+     ]
+    ]
+   }
+  ],
+  "recurring_attackers": [
+   63,
+   64,
+   61,
+   62,
+   59,
+   60,
+   57,
+   58,
+   55,
+   56,
+   53,
+   54,
+   51,
+   52,
+   49,
+   50,
+   47,
+   48,
+   45,
+   46,
+   43,
+   44,
+   41,
+   42,
+   39,
+   40,
+   37,
+   38,
+   35,
+   36,
+   33,
+   34,
+   15,
+   16,
+   13,
+   14,
+   11,
+   12,
+   9,
+   10,
+   4,
+   3,
+   2
+  ],
+  "crown_pairs": [
+   [
+    3,
+    4
+   ],
+   [
+    15,
+    16
+   ],
+   [
+    63,
+    64
+   ]
+  ],
+  "flag": true,
+  "flag_reason": "attackers [63, 64, 61, 62, 59, 60, 57, 58, 55, 56, 53, 54] attack >= 90% of occupied octaves above them (15/16-analogues: crown pairs [[3, 4], [15, 16], [63, 64]])"
+ },
+ "sliver": {
+  "width": 8,
+  "per_octave": [
+   {
+    "t": 1,
+    "block": [
+     2,
+     2
+    ],
+    "density": 1.0,
+    "sliver_width": 1,
+    "sliver_load": 1.0
+   },
+   {
+    "t": 2,
+    "block": [
+     3,
+     4
+    ],
+    "density": 1.0,
+    "sliver_width": 2,
+    "sliver_load": 1.0
+   },
+   {
+    "t": 4,
+    "block": [
+     9,
+     16
+    ],
+    "density": 1.0,
+    "sliver_width": 8,
+    "sliver_load": 1.0
+   },
+   {
+    "t": 6,
+    "block": [
+     33,
+     64
+    ],
+    "density": 1.0,
+    "sliver_width": 8,
+    "sliver_load": 1.0
+   },
+   {
+    "t": 7,
+    "block": [
+     65,
+     128
+    ],
+    "density": 1.0,
+    "sliver_width": 8,
+    "sliver_load": 1.0
+   },
+   {
+    "t": 9,
+    "block": [
+     257,
+     512
+    ],
+    "density": 1.0,
+    "sliver_width": 8,
+    "sliver_load": 1.0
+   },
+   {
+    "t": 11,
+    "block": [
+     1025,
+     2048
+    ],
+    "density": 1.0,
+    "sliver_width": 8,
+    "sliver_load": 1.0
+   }
+  ],
+  "large_scale_mean_load": 1.0,
+  "flag": true,
+  "flag_reason": "mean bottom-sliver load 1.00 over the largest 4 occupied octaves (S_A death pattern: load 1.0)"
+ },
+ "flags": [
+  "ORBIT",
+  "CROWN",
+  "SLIVER"
+ ],
+ "verdict": "FLAGGED [ORBIT, CROWN, SLIVER] \u2014 S_A-style death pattern"
+}

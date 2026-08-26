@@ -1,0 +1,655 @@
+{
+ "experiment": "h1_complement",
+ "question": "is any Geneson-complement plausibly permutable?",
+ "kill": {
+  "orbit": "u_s = 2^s + 3, s >= 5; u_(s+1) = 2 u_s - 3",
+  "reflector_in_C": true,
+  "checked_up_to": "2^200",
+  "ray_in_C_from": 5,
+  "all_in_C_from_s0": true,
+  "sample": [
+   {
+    "s": 2,
+    "u": "2^2+3",
+    "in_C": false,
+    "pow2_is": "octave-bottom k=1"
+   },
+   {
+    "s": 3,
+    "u": "2^3+3",
+    "in_C": true,
+    "pow2_is": "octave-top k=1"
+   },
+   {
+    "s": 4,
+    "u": "2^4+3",
+    "in_C": false,
+    "pow2_is": "octave-bottom k=1"
+   },
+   {
+    "s": 5,
+    "u": "2^5+3",
+    "in_C": true,
+    "pow2_is": "octave-top k=1"
+   },
+   {
+    "s": 6,
+    "u": "2^6+3",
+    "in_C": true,
+    "pow2_is": "chasm"
+   },
+   {
+    "s": 7,
+    "u": "2^7+3",
+    "in_C": true,
+    "pow2_is": "octave-bottom k=2"
+   },
+   {
+    "s": 8,
+    "u": "2^8+3",
+    "in_C": true,
+    "pow2_is": "octave-top k=2"
+   },
+   {
+    "s": 9,
+    "u": "2^9+3",
+    "in_C": true,
+    "pow2_is": "octave-bottom k=2"
+   },
+   {
+    "s": 10,
+    "u": "2^10+3",
+    "in_C": true,
+    "pow2_is": "octave-top k=2"
+   },
+   {
+    "s": 11,
+    "u": "2^11+3",
+    "in_C": true,
+    "pow2_is": "octave-bottom k=2"
+   },
+   {
+    "s": 12,
+    "u": "2^12+3",
+    "in_C": true,
+    "pow2_is": "octave-top k=2"
+   },
+   {
+    "s": 13,
+    "u": "2^13+3",
+    "in_C": true,
+    "pow2_is": "chasm"
+   },
+   {
+    "s": 198,
+    "u": "2^198+3",
+    "in_C": true,
+    "pow2_is": "octave-bottom k=13"
+   },
+   {
+    "s": 199,
+    "u": "2^199+3",
+    "in_C": true,
+    "pow2_is": "octave-top k=13"
+   },
+   {
+    "s": 200,
+    "u": "2^200+3",
+    "in_C": true,
+    "pow2_is": "octave-bottom k=13"
+   }
+  ]
+ },
+ "law": [
+  {
+   "lam": 4,
+   "r": 4,
+   "predicted_infinite_orbit": true,
+   "ray_2^s+3": {
+    "works": true,
+    "from_s": 5
+   },
+   "found_infinite_orbit": true,
+   "certificate": "u_s = 2^s+3 in C for all 5 <= s <= 120, f == 3 in C (lem:orbit kill)",
+   "match": true
+  },
+  {
+   "lam": 3,
+   "r": 4,
+   "predicted_infinite_orbit": false,
+   "ray_2^s+3": {
+    "works": false,
+    "from_s": null
+   },
+   "found_infinite_orbit": false,
+   "closure": {
+    "F": [
+     1,
+     2,
+     3,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ],
+    "reached": 35712,
+    "max_reached_scale": 22,
+    "last_dead_ends": [
+     7077880,
+     7077881,
+     7077882,
+     7077883,
+     7077884,
+     7077885
+    ],
+    "certificate": "every chain from C cap [2^13, 2^14) with reflectors in C cap [1,16] dies by scale 2^23 (exhaustive closure, 35712 values)"
+   },
+   "match": true
+  },
+  {
+   "lam": 5,
+   "r": 4,
+   "predicted_infinite_orbit": false,
+   "ray_2^s+3": {
+    "works": false,
+    "from_s": null
+   },
+   "found_infinite_orbit": false,
+   "closure": {
+    "F": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16
+    ],
+    "reached": 177476,
+    "max_reached_scale": 23,
+    "last_dead_ends": [
+     16435180,
+     16435181,
+     16435182,
+     16435183,
+     16435184,
+     16435185
+    ],
+    "certificate": "every chain from C cap [2^13, 2^14) with reflectors in C cap [1,16] dies by scale 2^24 (exhaustive closure, 177476 values)"
+   },
+   "match": true
+  },
+  {
+   "lam": 6,
+   "r": 4,
+   "predicted_infinite_orbit": false,
+   "ray_2^s+3": {
+    "works": false,
+    "from_s": null
+   },
+   "found_infinite_orbit": false,
+   "closure": {
+    "F": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     13,
+     14,
+     15,
+     16
+    ],
+    "reached": 261243,
+    "max_reached_scale": 24,
+    "last_dead_ends": [
+     28385260,
+     28385261,
+     28385262,
+     28385263,
+     28385264,
+     28385265
+    ],
+    "certificate": "every chain from C cap [2^13, 2^14) with reflectors in C cap [1,16] dies by scale 2^25 (exhaustive closure, 261243 values)"
+   },
+   "match": true
+  },
+  {
+   "lam": 8,
+   "r": 4,
+   "predicted_infinite_orbit": true,
+   "ray_2^s+3": {
+    "works": true,
+    "from_s": 6
+   },
+   "found_infinite_orbit": true,
+   "certificate": "u_s = 2^s+3 in C for all 6 <= s <= 120, f == 3 in C (lem:orbit kill)",
+   "match": true
+  },
+  {
+   "lam": 4,
+   "r": 8,
+   "predicted_infinite_orbit": true,
+   "ray_2^s+3": {
+    "works": true,
+    "from_s": 6
+   },
+   "found_infinite_orbit": true,
+   "certificate": "u_s = 2^s+3 in C for all 6 <= s <= 120, f == 3 in C (lem:orbit kill)",
+   "match": true
+  },
+  {
+   "lam": 3,
+   "r": 8,
+   "predicted_infinite_orbit": false,
+   "ray_2^s+3": {
+    "works": false,
+    "from_s": null
+   },
+   "found_infinite_orbit": false,
+   "closure": {
+    "F": [
+     1,
+     2,
+     3,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16
+    ],
+    "reached": 1729,
+    "max_reached_scale": 18,
+    "last_dead_ends": [
+     294900,
+     294901,
+     294902,
+     294903,
+     294904,
+     294905
+    ],
+    "certificate": "every chain from C cap [2^13, 2^14) with reflectors in C cap [1,16] dies by scale 2^19 (exhaustive closure, 1729 values)"
+   },
+   "match": true
+  },
+  {
+   "lam": 4,
+   "r": 5,
+   "predicted_infinite_orbit": false,
+   "ray_2^s+3": {
+    "works": false,
+    "from_s": null
+   },
+   "found_infinite_orbit": false,
+   "closure": {
+    "F": [
+     1,
+     2,
+     3,
+     4,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16
+    ],
+    "reached": 79813,
+    "max_reached_scale": 17,
+    "last_dead_ends": [
+     159988,
+     159989,
+     159990,
+     159991,
+     159992,
+     159993
+    ],
+    "certificate": "every chain from C cap [2^13, 2^14) with reflectors in C cap [1,16] dies by scale 2^18 (exhaustive closure, 79813 values)"
+   },
+   "match": true
+  },
+  {
+   "lam": 16,
+   "r": 4,
+   "predicted_infinite_orbit": true,
+   "ray_2^s+3": {
+    "works": true,
+    "from_s": 7
+   },
+   "found_infinite_orbit": true,
+   "certificate": "u_s = 2^s+3 in C for all 7 <= s <= 120, f == 3 in C (lem:orbit kill)",
+   "match": true
+  },
+  {
+   "lam": 12,
+   "r": 4,
+   "predicted_infinite_orbit": false,
+   "ray_2^s+3": {
+    "works": false,
+    "from_s": null
+   },
+   "found_infinite_orbit": false,
+   "closure": {
+    "F": [
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ],
+    "reached": 10218,
+    "max_reached_scale": 18,
+    "last_dead_ends": [
+     296412,
+     296413,
+     296414,
+     296415,
+     296416,
+     296417
+    ],
+    "certificate": "every chain from C cap [2^13, 2^14) with reflectors in C cap [1,16] dies by scale 2^19 (exhaustive closure, 10218 values)"
+   },
+   "match": true
+  }
+ ],
+ "law_all_match": true,
+ "law_fmax64": [
+  {
+   "lam": 4,
+   "r": 4,
+   "predicted_infinite_orbit": true,
+   "ray_2^s+3": {
+    "works": true,
+    "from_s": 5
+   },
+   "found_infinite_orbit": true,
+   "certificate": "u_s = 2^s+3 in C for all 5 <= s <= 120, f == 3 in C (lem:orbit kill)",
+   "match": true
+  },
+  {
+   "lam": 3,
+   "r": 4,
+   "predicted_infinite_orbit": false,
+   "ray_2^s+3": {
+    "works": false,
+    "from_s": null
+   },
+   "found_infinite_orbit": false,
+   "closure": {
+    "F": [
+     1,
+     2,
+     3,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64
+    ],
+    "reached": 36440,
+    "max_reached_scale": 22,
+    "last_dead_ends": [
+     7077880,
+     7077881,
+     7077882,
+     7077883,
+     7077884,
+     7077885
+    ],
+    "certificate": "every chain from C cap [2^13, 2^14) with reflectors in C cap [1,64] dies by scale 2^23 (exhaustive closure, 36440 values)"
+   },
+   "match": true
+  }
+ ],
+ "death_anatomy_lam3": {
+  "lam": 3,
+  "r": 4,
+  "F": [
+   1,
+   2,
+   3,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "max_reached_scale": 22,
+  "death_points": [
+   {
+    "end": 7077880,
+    "end_over_M_k": 8.0,
+    "blocked_children_sample": [
+     14155759,
+     14155758,
+     14155757
+    ]
+   },
+   {
+    "end": 7077881,
+    "end_over_M_k": 8.0,
+    "blocked_children_sample": [
+     14155761,
+     14155760,
+     14155759
+    ]
+   },
+   {
+    "end": 7077882,
+    "end_over_M_k": 8.0,
+    "blocked_children_sample": [
+     14155763,
+     14155762,
+     14155761
+    ]
+   },
+   {
+    "end": 7077883,
+    "end_over_M_k": 8.0,
+    "blocked_children_sample": [
+     14155765,
+     14155764,
+     14155763
+    ]
+   },
+   {
+    "end": 7077884,
+    "end_over_M_k": 8.0,
+    "blocked_children_sample": [
+     14155767,
+     14155766,
+     14155765
+    ]
+   },
+   {
+    "end": 7077885,
+    "end_over_M_k": 8.0,
+    "blocked_children_sample": [
+     14155769,
+     14155768,
+     14155767
+    ]
+   }
+  ],
+  "prediction": "largest dead ends sit at c * M_k with c a dyadic multiple blocked by the next octave"
+ },
+ "interval_chains": [
+  {
+   "run": [
+    9,
+    16
+   ],
+   "ratio": 1.778,
+   "longest_chain_inside": 1,
+   "log2_ratio_plus_1": 1.83
+  },
+  {
+   "run": [
+    33,
+    159
+   ],
+   "ratio": 4.818,
+   "longest_chain_inside": 3,
+   "log2_ratio_plus_1": 3.27
+  },
+  {
+   "run": [
+    257,
+    543
+   ],
+   "ratio": 2.113,
+   "longest_chain_inside": 2,
+   "log2_ratio_plus_1": 2.08
+  },
+  {
+   "run": [
+    1025,
+    2079
+   ],
+   "ratio": 2.028,
+   "longest_chain_inside": 2,
+   "log2_ratio_plus_1": 2.02
+  },
+  {
+   "run": [
+    4097,
+    20479
+   ],
+   "ratio": 4.999,
+   "longest_chain_inside": 3,
+   "log2_ratio_plus_1": 3.32
+  },
+  {
+   "run": [
+    32769,
+    69631
+   ],
+   "ratio": 2.125,
+   "longest_chain_inside": 2,
+   "log2_ratio_plus_1": 2.09
+  },
+  {
+   "run": [
+    131073,
+    266239
+   ],
+   "ratio": 2.031,
+   "longest_chain_inside": 2,
+   "log2_ratio_plus_1": 2.02
+  },
+  {
+   "run": [
+    524289,
+    1048576
+   ],
+   "ratio": 2.0,
+   "longest_chain_inside": 1,
+   "log2_ratio_plus_1": 2.0
+  }
+ ],
+ "lemma_r": {
+  "count": 306,
+  "runs": [
+   [
+    52,
+    53
+   ],
+   [
+    2049,
+    2079
+   ],
+   [
+    6554,
+    6826
+   ]
+  ],
+  "note": "every stage contributes a run m in (~1.6 M_k, 5M_k/3) (paper params): m,2m chasm, 3m sliver, 5m silent"
+ },
+ "witness_lam3": {
+  "N": 8192,
+  "lam": 3,
+  "r": 4,
+  "size": 1458,
+  "monotone_3AP_in_perm": null,
+  "cross_stage_3APs": 0,
+  "ok": true
+ },
+ "complement_upper_density": [
+  {
+   "lam": 3,
+   "upper_density_C": "1 - 2/(3*4) = 0.8333"
+  },
+  {
+   "lam": 4,
+   "upper_density_C": "1 - 2/(3*5) = 0.8667"
+  },
+  {
+   "lam": 8,
+   "upper_density_C": "1 - 2/(3*9) = 0.9259"
+  }
+ ],
+ "runtime_s": 9.9
+}
