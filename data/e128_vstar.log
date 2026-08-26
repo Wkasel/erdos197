@@ -1,0 +1,1 @@
+RUN .venv/bin/python experiments/e127_seam_budget.py bal --M 16 --vs 8 --budget 14400 --tag e128_bal16_v8
