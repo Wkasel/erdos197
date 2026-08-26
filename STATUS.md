@@ -440,14 +440,23 @@ e123* (N2).
   force t1≺m0; each half = Lemma D on 2 ladders, 4 branches) and the
   first ≡ 2 mod 4 flip cell (B2(11) = {t2≺b5,t5≺b3,t7≺b2} at
   M ≡ 2 mod 8, parity dual: even t2 vs ODD m0, overlapping halves
-  sharing t5≺b3) — e124i/e124l, zero failures.  (3) All three
-  hand-verified instances (C3, K4, B2) share ONE two-ladder template;
-  e124m tests it mechanically across the even-class cells of all six
-  pairs (incl. alternative dyadic cores for {13,14}/{17,18}/{19,20}/
-  {21,22}).  Remaining N2 gaps: the four ODD residue classes per pair
-  (no integer m0 — needs a new phase center; lane C's laws are exact
-  machine statements awaiting it), and pairs x ≡ 7 mod 8 off the
-  diagonal (x = 23, 31, ... — outside the e122 catalogue).
+  sharing t5≺b3) — e124i/e124l, zero failures.  (3) THE ODD CLASSES
+  FELL TOO (e124n/o/p): for odd M the battleground moves to the
+  half-integer center's neighbour c− = (3M−1)/2 — C(11) verified at
+  19 scales (M ≡ 5 mod 8) with controls at all three other odd
+  classes.  (4) THE TEMPLATE SWEEP (e124m): the same mechanism run
+  mechanically per cell — **pair {11,12} is CLOSED AT ALL EIGHT
+  RESIDUES mod 8** (first pair with complete per-residue hand-schema
+  coverage; no residue escape for Case 1 on {11,12} at any M ≥ 68,
+  small M machine-covered by e122), plus verified cells across pairs
+  {13,14} (r0/r2/r4), {15,16} (r2), {17,18} (r0), {19,20} (r2) —
+  every one a 2-unit half-pair phase clash at v* ∈ {t1,t2,t3} with
+  two-to-three-ladder Lemma-D closure.  notes/49 §6 table.
+  Remaining N2 gaps: finish the last per-pair cells (A4d(19)/B6(21)
+  dyadic searches slow), pairs x ≡ 7 mod 8 off the diagonal (x = 23,
+  31, ... — outside the e122 catalogue; extend e122), and the true
+  endgame: PARAMETRIC (affine-in-x) verification along each lane,
+  e123-style, to cover infinitely many pairs at once.
 
 ### N5 — resolved as posed: density 1/2 + ε FAILS for single blocks;
 ### the robust channel needs Θ(M) attack surface (notes/45)
@@ -529,7 +538,7 @@ e123* (N2).
 | # | Lemma | Pre-merge | Now |
 |---|-------|-----------|-----|
 | N1 | pigeonholes (T-PIN / -STAGE / -BLOCKS) | HAND | HAND (unchanged) |
-| N2 | generic-pair core schema | RUNG — THE crux | **infinite hand family on the diagonal lane** C3(p) + **off-diagonal lane laws all slide mod 8** (e124b) + **two new hand schemas verified**: {11,12} dyadic size-4 (K4, 2+2 phase clash) and {11,12} ≡ 2 mod 8 (B2, parity dual) — notes/49; remaining: odd residue classes (no integer m0), x ≡ 7 mod 8 pairs off-diagonal |
+| N2 | generic-pair core schema | RUNG — THE crux | **infinite hand family on the diagonal** C3(p) + **off-diagonal lane laws slide mod 8** (e124b) + **{11,12} closed at ALL 8 residues by verified schemas** (K4/B2/C(11)/K11_r1-r7/B6 — incl. the odd classes via half-integer center c−) + template-verified cells across pairs 13..19 — notes/49; remaining: last dyadic cells (A4d(19)/B6(21)), x ≡ 7 mod 8 pairs, parametric-in-x lane verification |
 | N3 | bounded-dust robustness | RUNG | RUNG + **exact constants**: single-block tolerance d* = 2 ({11,12}) / 3 ({15,16}), scale-stable |
 | N4 | dichotomy frame | HAND-trivial | restated **anchor-free** (ratio-2 windows, any anchor — e121 salting lesson); **C = 1 suffices** from M = 48 |
 | N5 | dense-subset cores | OPEN | **resolved as posed: FALSE** for single blocks (ρ* → 1); robust variants: chain pair 7/8, two-block fixed pair 0.781 (T-PIN-clean); superseded by C3 constants |
