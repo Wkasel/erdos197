@@ -1,0 +1,197 @@
+{
+ "NMAX": 262144,
+ "horizons": [
+  4096,
+  32768,
+  262144
+ ],
+ "attacker_max": 64,
+ "orbit_fmax": 64,
+ "ray_cap": "4*s_t + 64",
+ "candidates": [
+  {
+   "name": "lin_nat",
+   "verdict": "DEAD-SIGNATURE",
+   "deathA": [
+    "CROWN",
+    "CROWNP",
+    "ORBIT"
+   ],
+   "signalsA": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "deathB": [
+    "CROWN",
+    "CROWNP",
+    "ORBIT"
+   ],
+   "signalsB": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "sat_all_ok": true
+  },
+  {
+   "name": "lin_alt",
+   "verdict": "DEAD-SIGNATURE",
+   "deathA": [
+    "CROWN",
+    "CROWNP",
+    "ORBIT"
+   ],
+   "signalsA": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "deathB": [
+    "CROWN",
+    "CROWNP",
+    "ORBIT"
+   ],
+   "signalsB": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "sat_all_ok": true
+  },
+  {
+   "name": "geo_nat",
+   "verdict": "DEAD-SIGNATURE",
+   "deathA": [],
+   "signalsA": [
+    "ADAPT-kept-bottom"
+   ],
+   "deathB": [
+    "CROWN",
+    "CROWNP"
+   ],
+   "signalsB": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "sat_all_ok": true
+  },
+  {
+   "name": "geo_alt",
+   "verdict": "DEAD-SIGNATURE",
+   "deathA": [
+    "CROWNP"
+   ],
+   "signalsA": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top"
+   ],
+   "deathB": [
+    "CROWN",
+    "CROWNP"
+   ],
+   "signalsB": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "sat_all_ok": true
+  },
+  {
+   "name": "nearfull_nat",
+   "verdict": "DEAD-SIGNATURE",
+   "deathA": [
+    "CROWNP"
+   ],
+   "signalsA": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "deathB": [
+    "CROWNP"
+   ],
+   "signalsB": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "sat_all_ok": true
+  },
+  {
+   "name": "nearfull_alt",
+   "verdict": "DEAD-SIGNATURE",
+   "deathA": [
+    "CROWNP"
+   ],
+   "signalsA": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "deathB": [
+    "CROWN",
+    "CROWNP"
+   ],
+   "signalsB": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "sat_all_ok": true
+  },
+  {
+   "name": "genstage_nat",
+   "verdict": "DEAD-SIGNATURE",
+   "deathA": [
+    "CROWNP"
+   ],
+   "signalsA": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "deathB": [
+    "CROWNP"
+   ],
+   "signalsB": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top"
+   ],
+   "sat_all_ok": true
+  },
+  {
+   "name": "genstage_alt",
+   "verdict": "DEAD-SIGNATURE",
+   "deathA": [
+    "CROWNP"
+   ],
+   "signalsA": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top",
+    "RAY-GROW"
+   ],
+   "deathB": [
+    "CROWN",
+    "CROWNP"
+   ],
+   "signalsB": [
+    "ADAPT-kept-bottom",
+    "ADAPT-recv-top"
+   ],
+   "sat_all_ok": true
+  }
+ ],
+ "survivors": [],
+ "deaths": [
+  "lin_nat",
+  "lin_alt",
+  "geo_nat",
+  "geo_alt",
+  "nearfull_nat",
+  "nearfull_alt",
+  "genstage_nat",
+  "genstage_alt"
+ ]
+}

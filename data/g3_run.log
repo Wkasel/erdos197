@@ -1,0 +1,137 @@
+== G3 calibrations ==
+  s=0 == S_A | S_B: ok
+  s=8 == h2 dyadic_bottom8: ok
+  ray(S_A, cap 64): span 0, no flag: ok
+  ray(Z+, cap 64): span 14 censored, flag: ok
+  ray(bottom8/A, cap 64): span 10 censored flag, witness [23, 44, 71, 140]... reflectors [2, 5, 17]: ok (h2 orbit rediscovered)
+  persistence top_gap=2: sa flagged, geneson clean: ok
+
+== lin_nat: s_t = t, natural crown ownership (pair rides with its block) ==
+   |A|=174753 |B|=87391 densA=0.667
+    [lin_nat/A] H=2^12: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.1s)
+    [lin_nat/A] H=2^15: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.6s)
+    [lin_nat/A] H=2^18: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (17.2s)
+    [lin_nat/A] SAT H=4096: SAT (SAT, model verified, 77.5s)
+    [lin_nat/A] SAT H=32768: SAT (abj, fully verified, 1.7s)
+    [lin_nat/A] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 2.1s)
+    [lin_nat/B] H=2^12: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.0s)
+    [lin_nat/B] H=2^15: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.5s)
+    [lin_nat/B] H=2^18: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (3.8s)
+    [lin_nat/B] SAT H=4096: SAT (SAT, model verified, 2.3s)
+    [lin_nat/B] SAT H=32768: SAT (abj, fully verified, 1.3s)
+    [lin_nat/B] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 2.3s)
+   -> DEAD-SIGNATURE  A death=['CROWN', 'CROWNP', 'ORBIT'] signals=['ADAPT-kept-bottom', 'ADAPT-recv-top', 'RAY-GROW'] | B death=['CROWN', 'CROWNP', 'ORBIT'] signals=['ADAPT-kept-bottom', 'ADAPT-recv-top', 'RAY-GROW'] (110.0s)
+
+== lin_alt: s_t = t, forced-alternating crowns: 2^j-1 moved opposite team(2^j) ==
+   |A|=174753 |B|=87391 densA=0.667
+    [lin_alt/A] H=2^12: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.1s)
+    [lin_alt/A] H=2^15: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (1.1s)
+    [lin_alt/A] H=2^18: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (11.2s)
+    [lin_alt/A] SAT H=4096: SAT (SAT, model verified, 10.0s)
+    [lin_alt/A] SAT H=32768: SAT (abj, fully verified, 1.3s)
+    [lin_alt/A] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 2.1s)
+    [lin_alt/B] H=2^12: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.1s)
+    [lin_alt/B] H=2^15: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.6s)
+    [lin_alt/B] H=2^18: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (4.2s)
+    [lin_alt/B] SAT H=4096: SAT (SAT, model verified, 3.7s)
+    [lin_alt/B] SAT H=32768: SAT (abj, fully verified, 4.4s)
+    [lin_alt/B] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 1.8s)
+   -> DEAD-SIGNATURE  A death=['CROWN', 'CROWNP', 'ORBIT'] signals=['ADAPT-kept-bottom', 'ADAPT-recv-top', 'RAY-GROW'] | B death=['CROWN', 'CROWNP', 'ORBIT'] signals=['ADAPT-kept-bottom', 'ADAPT-recv-top', 'RAY-GROW'] (40.7s)
+
+== geo_nat: s_t = 2^{floor(t/2)}, natural crown ownership (pair rides with its block) ==
+   |A|=174251 |B|=87893 densA=0.665
+    [geo_nat/A] H=2^12: ['ADAPT-kept-bottom'] (0.1s)
+    [geo_nat/A] H=2^15: ['ADAPT-kept-bottom'] (0.2s)
+    [geo_nat/A] H=2^18: ['ADAPT-kept-bottom'] (4.8s)
+    [geo_nat/A] SAT H=4096: SAT (SAT, model verified, 12.0s)
+    [geo_nat/A] SAT H=32768: SAT (abj, fully verified, 1.4s)
+    [geo_nat/A] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 2.3s)
+    [geo_nat/B] H=2^12: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.0s)
+    [geo_nat/B] H=2^15: ['ORBIT', 'RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.6s)
+    [geo_nat/B] H=2^18: ['RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (3.6s)
+    [geo_nat/B] SAT H=4096: SAT (SAT, model verified, 2.3s)
+    [geo_nat/B] SAT H=32768: SAT (abj, fully verified, 1.3s)
+    [geo_nat/B] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 1.7s)
+   -> DEAD-SIGNATURE  A death=- signals=['ADAPT-kept-bottom'] | B death=['CROWN', 'CROWNP'] signals=['ADAPT-kept-bottom', 'ADAPT-recv-top', 'RAY-GROW'] (30.5s)
+
+== geo_alt: s_t = 2^{floor(t/2)}, forced-alternating crowns: 2^j-1 moved opposite team(2^j) ==
+   |A|=174252 |B|=87892 densA=0.665
+    [geo_alt/A] H=2^12: ['CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.1s)
+    [geo_alt/A] H=2^15: ['CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.2s)
+    [geo_alt/A] H=2^18: ['CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (3.6s)
+    [geo_alt/A] SAT H=4096: SAT (SAT, model verified, 9.2s)
+    [geo_alt/A] SAT H=32768: SAT (abj, fully verified, 1.2s)
+    [geo_alt/A] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 1.9s)
+    [geo_alt/B] H=2^12: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.0s)
+    [geo_alt/B] H=2^15: ['ORBIT', 'RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.7s)
+    [geo_alt/B] H=2^18: ['RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (3.4s)
+    [geo_alt/B] SAT H=4096: SAT (SAT, model verified, 2.5s)
+    [geo_alt/B] SAT H=32768: SAT (abj, fully verified, 1.3s)
+    [geo_alt/B] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 1.7s)
+   -> DEAD-SIGNATURE  A death=['CROWNP'] signals=['ADAPT-kept-bottom', 'ADAPT-recv-top'] | B death=['CROWN', 'CROWNP'] signals=['ADAPT-kept-bottom', 'ADAPT-recv-top', 'RAY-GROW'] (26.0s)
+
+== nearfull_nat: s_t = floor(2^t/t), natural crown ownership (pair rides with its block) ==
+   |A|=165235 |B|=96909 densA=0.630
+    [nearfull_nat/A] H=2^12: ['ORBIT', 'RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.1s)
+    [nearfull_nat/A] H=2^15: ['RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.3s)
+    [nearfull_nat/A] H=2^18: ['RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (4.8s)
+    [nearfull_nat/A] SAT H=4096: SAT (SAT, model verified, 6.7s)
+    [nearfull_nat/A] SAT H=32768: SAT (abj, fully verified, 2.1s)
+    [nearfull_nat/A] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 2.3s)
+    [nearfull_nat/B] H=2^12: ['ORBIT', 'RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.1s)
+    [nearfull_nat/B] H=2^15: ['RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.5s)
+    [nearfull_nat/B] H=2^18: ['RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (3.0s)
+    [nearfull_nat/B] SAT H=4096: SAT (SAT, model verified, 3.3s)
+    [nearfull_nat/B] SAT H=32768: SAT (abj, fully verified, 1.4s)
+    [nearfull_nat/B] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 1.7s)
+   -> DEAD-SIGNATURE  A death=['CROWNP'] signals=['ADAPT-kept-bottom', 'ADAPT-recv-top', 'RAY-GROW'] | B death=['CROWNP'] signals=['ADAPT-kept-bottom', 'ADAPT-recv-top', 'RAY-GROW'] (26.4s)
+
+== nearfull_alt: s_t = floor(2^t/t), forced-alternating crowns: 2^j-1 moved opposite team(2^j) ==
+   |A|=165236 |B|=96908 densA=0.630
+    [nearfull_alt/A] H=2^12: ['ORBIT', 'RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.1s)
+    [nearfull_alt/A] H=2^15: ['RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.5s)
+    [nearfull_alt/A] H=2^18: ['RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (6.5s)
+    [nearfull_alt/A] SAT H=4096: SAT (SAT, model verified, 7.2s)
+    [nearfull_alt/A] SAT H=32768: SAT (abj, fully verified, 1.3s)
+    [nearfull_alt/A] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 2.4s)
+    [nearfull_alt/B] H=2^12: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.1s)
+    [nearfull_alt/B] H=2^15: ['RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.7s)
+    [nearfull_alt/B] H=2^18: ['RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (4.2s)
+    [nearfull_alt/B] SAT H=4096: SAT (SAT, model verified, 3.9s)
+    [nearfull_alt/B] SAT H=32768: SAT (abj, fully verified, 1.5s)
+    [nearfull_alt/B] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 2.0s)
+   -> DEAD-SIGNATURE  A death=['CROWNP'] signals=['ADAPT-kept-bottom', 'ADAPT-recv-top', 'RAY-GROW'] | B death=['CROWN', 'CROWNP'] signals=['ADAPT-kept-bottom', 'ADAPT-recv-top', 'RAY-GROW'] (30.5s)
+
+== genstage_nat: s_t = M_{k-1} (Geneson stages), natural crown ownership (pair rides with its block) ==
+   |A|=174731 |B|=87413 densA=0.667
+    [genstage_nat/A] H=2^12: ['CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.1s)
+    [genstage_nat/A] H=2^15: ['RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.3s)
+    [genstage_nat/A] H=2^18: ['RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (2.8s)
+    [genstage_nat/A] SAT H=4096: SAT (SAT, model verified, 10.5s)
+    [genstage_nat/A] SAT H=32768: SAT (abj, fully verified, 2.1s)
+    [genstage_nat/A] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 2.6s)
+    [genstage_nat/B] H=2^12: ['ORBIT', 'RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.1s)
+    [genstage_nat/B] H=2^15: ['CROWNP'] (0.7s)
+    [genstage_nat/B] H=2^18: ['CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (4.0s)
+    [genstage_nat/B] SAT H=4096: SAT (SAT, model verified, 2.6s)
+    [genstage_nat/B] SAT H=32768: SAT (abj, fully verified, 3.7s)
+    [genstage_nat/B] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 4.7s)
+   -> DEAD-SIGNATURE  A death=['CROWNP'] signals=['ADAPT-kept-bottom', 'ADAPT-recv-top', 'RAY-GROW'] | B death=['CROWNP'] signals=['ADAPT-kept-bottom', 'ADAPT-recv-top'] (34.4s)
+
+== genstage_alt: s_t = M_{k-1} (Geneson stages), forced-alternating crowns: 2^j-1 moved opposite team(2^j) ==
+   |A|=174731 |B|=87413 densA=0.667
+    [genstage_alt/A] H=2^12: ['ORBIT', 'RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.0s)
+    [genstage_alt/A] H=2^15: ['RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.3s)
+    [genstage_alt/A] H=2^18: ['RAY-GROW', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (4.9s)
+    [genstage_alt/A] SAT H=4096: SAT (SAT, model verified, 18.2s)
+    [genstage_alt/A] SAT H=32768: SAT (abj, fully verified, 1.9s)
+    [genstage_alt/A] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 3.1s)
+    [genstage_alt/B] H=2^12: ['ORBIT', 'RAY-GROW', 'CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (0.2s)
+    [genstage_alt/B] H=2^15: ['CROWNP', 'ADAPT-recv-top'] (0.9s)
+    [genstage_alt/B] H=2^18: ['CROWN', 'CROWNP', 'ADAPT-kept-bottom', 'ADAPT-recv-top'] (4.4s)
+    [genstage_alt/B] SAT H=4096: SAT (SAT, model verified, 3.3s)
+    [genstage_alt/B] SAT H=32768: SAT (abj, fully verified, 1.5s)
+    [genstage_alt/B] SAT H=262144: SAT (abj, verified on 2046 sampled gaps, 2.0s)
+   -> DEAD-SIGNATURE  A death=['CROWNP'] signals=['ADAPT-kept-bottom', 'ADAPT-recv-top', 'RAY-GROW'] | B death=['CROWN', 'CROWNP'] signals=['ADAPT-kept-bottom', 'ADAPT-recv-top'] (41.0s)
+
+survivors: NONE

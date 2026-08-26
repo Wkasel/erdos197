@@ -139,7 +139,34 @@ survives untested; one NO-program has a machine-verified first rung.**
   strictly more per block.  (M=256 single-crown min donation ≥ 2,
   budgets 0–1 UNSAT, run interrupted.)
 
-### Best surviving YES-candidate
+### Growing-sliver swap: DEAD (G3, notes/38, 2026-08-25)
+
+The candidate below was built and screened (experiments/
+g3_growing_sliver.py; schedules s_t ∈ {t, 2^{floor(t/2)}, floor(2^t/t),
+Geneson-stage-matched} × {natural, split-alternating crowns}, both teams,
+horizons 2^12/2^15/2^18): **no survivors — 8/8 candidates carry the
+portable-crown death signature on at least one team, and the d_t law
+(notes/38) shows this is forced for EVERY donation schedule in this
+geometry.**  With d_t := 2 s_t − s_{t+1}: a fixed attacker x hits the
+block owner's kept bottom iff x ≥ d_t + 2 and the receiver's sliver top
+iff x ≤ d_t − 1, so on each octave-parity class "owner safe" needs
+d_t → ∞ while "receiver safe" needs d_t eventually ≤ its smallest
+attacker — never both.  Growth is a zero-sum dial; the attack surface is
+conserved, only re-aimed.  Crown splitting (escape (1)) never helps and
+is actively harmful: the planted half 2^j−1 atop the partner's block is
+a portable landing pad — it alone kills the otherwise-clean geo/A via
+(x, 2^j−1, 2^{j+1}−2−x), machine examples (2,31,60), (2,127,252).  Two
+by-products: (i) **geo_nat/A** (s_t = 2^{t/2}, team A) is the
+first fully clean partition team of the campaign (no fixed attacker, no
+ray, density 2/3 at peaks) — but its partner is doubly dead and the law
+says no partner inside this geometry can be clean; (ii) the RAY-GROW
+instrument (censored ratio-2 rays with reflectors ≤ 4 s_t + 64, verified
+witnesses) shows all dead teams also sit exactly in lem:orbit's
+finite-F gap — a **lem:orbit-grow** (f_m ≤ C s_t) would kill the family
+a second, unconditional way.  Remaining YES-shapes must break octave
+alternation itself (stage-alternating ownership à la Geneson).
+
+### Best surviving YES-candidate (pre-G3 text, kept for the record)
 
 **Growing-sliver swap with alternating crown ownership**: ratio-2 block
 partition in which each team donates the bottom s_t values of its
