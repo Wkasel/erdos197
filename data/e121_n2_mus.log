@@ -1,0 +1,61 @@
+pair {11,12} M=48: UNSAT; minimal cores <=3: {} (231 probes, 0.1s); del-MUS size 4
+    
+pair {11,12} M=64: UNSAT; minimal cores <=3: {} (231 probes, 0.1s); del-MUS size 4
+    
+pair {11,12} M=80: UNSAT; minimal cores <=3: {} (231 probes, 0.3s); del-MUS size 4
+    
+pair {11,12} M=96: UNSAT; minimal cores <=3: {} (231 probes, 0.6s); del-MUS size 4
+    
+pair {11,12} M=128: UNSAT; minimal cores <=3: {} (231 probes, 1.7s); del-MUS size 4
+    
+pair {13,14} M=48: UNSAT; minimal cores <=3: {3: 3} (377 probes, 0.1s); del-MUS size 3
+    {t6<b4,t9<b2,t12<b1} | {t4<b5,t6<b4,t9<b2} | {t5<b4,t7<b3,t12<b1}
+pair {13,14} M=64: UNSAT; minimal cores <=3: {3: 3} (377 probes, 0.2s); del-MUS size 4
+    {t6<b4,t9<b2,t12<b1} | {t4<b5,t6<b4,t9<b2} | {t5<b4,t7<b3,t12<b1}
+pair {13,14} M=80: UNSAT; minimal cores <=3: {3: 3} (377 probes, 0.5s); del-MUS size 4
+    {t6<b4,t9<b2,t12<b1} | {t4<b5,t6<b4,t9<b2} | {t5<b4,t7<b3,t12<b1}
+pair {13,14} M=96: UNSAT; minimal cores <=3: {3: 3} (377 probes, 0.8s); del-MUS size 3
+    {t6<b4,t9<b2,t12<b1} | {t4<b5,t6<b4,t9<b2} | {t5<b4,t7<b3,t12<b1}
+pair {13,14} M=128: UNSAT; minimal cores <=3: {3: 3} (377 probes, 2.2s); del-MUS size 4
+    {t6<b4,t9<b2,t12<b1} | {t4<b5,t6<b4,t9<b2} | {t5<b4,t7<b3,t12<b1}
+pair {15,16} M=48: UNSAT; minimal cores <=3: {3: 7} (575 probes, 0.1s); del-MUS size 4
+    {t7<b4,t10<b3,t13<b1} | {t5<b5,t10<b3,t11<b2} | {t7<b4,t12<b2,t14<b1} | {t6<b5,t7<b4,t12<b2} | {t4<b6,t7<b4,t10<b3} | {t2<b7,t4<b6,t7<b4} | {t3<b6,t5<b5,t10<b3}
+pair {15,16} M=64: UNSAT; minimal cores <=3: {3: 6} (575 probes, 0.3s); del-MUS size 4
+    {t7<b4,t10<b3,t13<b1} | {t5<b5,t10<b3,t11<b2} | {t7<b4,t12<b2,t14<b1} | {t6<b5,t7<b4,t12<b2} | {t2<b7,t4<b6,t7<b4} | {t3<b6,t5<b5,t10<b3}
+pair {15,16} M=80: UNSAT; minimal cores <=3: {3: 7} (575 probes, 0.5s); del-MUS size 4
+    {t7<b4,t10<b3,t13<b1} | {t5<b5,t10<b3,t11<b2} | {t7<b4,t12<b2,t14<b1} | {t6<b5,t7<b4,t12<b2} | {t4<b6,t7<b4,t10<b3} | {t2<b7,t4<b6,t7<b4} | {t3<b6,t5<b5,t10<b3}
+pair {15,16} M=96: UNSAT; minimal cores <=3: {3: 7} (575 probes, 1.1s); del-MUS size 4
+    {t7<b4,t10<b3,t13<b1} | {t5<b5,t10<b3,t11<b2} | {t7<b4,t12<b2,t14<b1} | {t6<b5,t7<b4,t12<b2} | {t4<b6,t7<b4,t10<b3} | {t2<b7,t4<b6,t7<b4} | {t3<b6,t5<b5,t10<b3}
+pair {15,16} M=128: UNSAT; minimal cores <=3: {3: 7} (575 probes, 2.9s); del-MUS size 4
+    {t7<b4,t10<b3,t13<b1} | {t5<b5,t10<b3,t11<b2} | {t7<b4,t12<b2,t14<b1} | {t6<b5,t7<b4,t12<b2} | {t4<b6,t7<b4,t10<b3} | {t2<b7,t4<b6,t7<b4} | {t3<b6,t5<b5,t10<b3}
+pair {17,18} M=48: UNSAT; minimal cores <=3: {3: 9} (833 probes, 0.2s); del-MUS size 4
+    {t8<b5,t11<b3,t13<b2} | {t5<b6,t8<b5,t11<b3} | {t3<b7,t8<b5,t9<b4} | {t2<b8,t5<b6,t16<b1} | {t5<b6,t10<b4,t12<b3} | {t4<b7,t5<b6,t10<b4} | {t2<b8,t5<b6,t8<b5} | {t0<b9,t2<b8,t5<b6} | {t1<b8,t3<b7,t8<b5}
+pair {17,18} M=64: UNSAT; minimal cores <=3: {3: 9} (833 probes, 0.4s); del-MUS size 4
+    {t8<b5,t11<b3,t13<b2} | {t5<b6,t8<b5,t11<b3} | {t3<b7,t8<b5,t9<b4} | {t2<b8,t5<b6,t16<b1} | {t5<b6,t10<b4,t12<b3} | {t4<b7,t5<b6,t10<b4} | {t2<b8,t5<b6,t8<b5} | {t0<b9,t2<b8,t5<b6} | {t1<b8,t3<b7,t8<b5}
+pair {17,18} M=80: UNSAT; minimal cores <=3: {3: 9} (833 probes, 0.8s); del-MUS size 3
+    {t8<b5,t11<b3,t13<b2} | {t5<b6,t8<b5,t11<b3} | {t3<b7,t8<b5,t9<b4} | {t2<b8,t5<b6,t16<b1} | {t5<b6,t10<b4,t12<b3} | {t4<b7,t5<b6,t10<b4} | {t2<b8,t5<b6,t8<b5} | {t0<b9,t2<b8,t5<b6} | {t1<b8,t3<b7,t8<b5}
+pair {17,18} M=96: UNSAT; minimal cores <=3: {3: 9} (833 probes, 1.4s); del-MUS size 3
+    {t8<b5,t11<b3,t13<b2} | {t5<b6,t8<b5,t11<b3} | {t3<b7,t8<b5,t9<b4} | {t2<b8,t5<b6,t16<b1} | {t5<b6,t10<b4,t12<b3} | {t4<b7,t5<b6,t10<b4} | {t2<b8,t5<b6,t8<b5} | {t0<b9,t2<b8,t5<b6} | {t1<b8,t3<b7,t8<b5}
+pair {17,18} M=128: UNSAT; minimal cores <=3: {3: 9} (833 probes, 4.3s); del-MUS size 4
+    {t8<b5,t11<b3,t13<b2} | {t5<b6,t8<b5,t11<b3} | {t3<b7,t8<b5,t9<b4} | {t2<b8,t5<b6,t16<b1} | {t5<b6,t10<b4,t12<b3} | {t4<b7,t5<b6,t10<b4} | {t2<b8,t5<b6,t8<b5} | {t0<b9,t2<b8,t5<b6} | {t1<b8,t3<b7,t8<b5}
+pair {19,20} M=48: UNSAT; minimal cores <=3: {3: 11} (1159 probes, 0.2s); del-MUS size 4
+    {t6<b7,t15<b2,t17<b1} | {t6<b7,t7<b6,t17<b1} | {t6<b7,t9<b5,t11<b4} | {t3<b8,t6<b7,t9<b5} | {t1<b9,t6<b7,t7<b6} | {t3<b8,t8<b6,t18<b1} | {t3<b8,t14<b3,t16<b2} | {t3<b8,t6<b7,t16<b2} | {t3<b8,t8<b6,t10<b5} | {t2<b9,t3<b8,t8<b6} | {t0<b10,t3<b8,t6<b7}
+pair {19,20} M=64: UNSAT; minimal cores <=3: {3: 11} (1159 probes, 0.5s); del-MUS size 3
+    {t6<b7,t15<b2,t17<b1} | {t6<b7,t7<b6,t17<b1} | {t6<b7,t9<b5,t11<b4} | {t3<b8,t6<b7,t9<b5} | {t1<b9,t6<b7,t7<b6} | {t3<b8,t8<b6,t18<b1} | {t3<b8,t14<b3,t16<b2} | {t3<b8,t6<b7,t16<b2} | {t3<b8,t8<b6,t10<b5} | {t2<b9,t3<b8,t8<b6} | {t0<b10,t3<b8,t6<b7}
+pair {19,20} M=80: UNSAT; minimal cores <=3: {3: 13} (1159 probes, 1.1s); del-MUS size 3
+    {t6<b7,t15<b2,t17<b1} | {t6<b7,t7<b6,t17<b1} | {t1<b9,t6<b7,t15<b2} | {t6<b7,t9<b5,t11<b4} | {t3<b8,t6<b7,t9<b5} | {t1<b9,t6<b7,t7<b6} | {t3<b8,t8<b6,t18<b1} | {t3<b8,t14<b3,t16<b2} | {t3<b8,t6<b7,t16<b2} | {t0<b10,t3<b8,t14<b3} | {t3<b8,t8<b6,t10<b5} | {t2<b9,t3<b8,t8<b6} ...
+pair {19,20} M=96: UNSAT; minimal cores <=3: {3: 13} (1159 probes, 2.0s); del-MUS size 3
+    {t6<b7,t15<b2,t17<b1} | {t6<b7,t7<b6,t17<b1} | {t1<b9,t6<b7,t15<b2} | {t6<b7,t9<b5,t11<b4} | {t3<b8,t6<b7,t9<b5} | {t1<b9,t6<b7,t7<b6} | {t3<b8,t8<b6,t18<b1} | {t3<b8,t14<b3,t16<b2} | {t3<b8,t6<b7,t16<b2} | {t0<b10,t3<b8,t14<b3} | {t3<b8,t8<b6,t10<b5} | {t2<b9,t3<b8,t8<b6} ...
+pair {19,20} M=128: UNSAT; minimal cores <=3: {3: 13} (1159 probes, 5.4s); del-MUS size 3
+    {t6<b7,t15<b2,t17<b1} | {t6<b7,t7<b6,t17<b1} | {t1<b9,t6<b7,t15<b2} | {t6<b7,t9<b5,t11<b4} | {t3<b8,t6<b7,t9<b5} | {t1<b9,t6<b7,t7<b6} | {t3<b8,t8<b6,t18<b1} | {t3<b8,t14<b3,t16<b2} | {t3<b8,t6<b7,t16<b2} | {t0<b10,t3<b8,t14<b3} | {t3<b8,t8<b6,t10<b5} | {t2<b9,t3<b8,t8<b6} ...
+pair {21,22} M=48: UNSAT; minimal cores <=3: {3: 17} (1561 probes, 0.3s); del-MUS size 4
+    {t7<b7,t17<b2,t20<b1} | {t4<b9,t7<b7,t17<b2} | {t14<b4,t17<b2,t20<b1} | {t6<b8,t16<b3,t17<b2} | {t12<b5,t14<b4,t17<b2} | {t4<b9,t14<b4,t17<b2} | {t6<b8,t8<b7,t17<b2} | {t0<b11,t6<b8,t17<b2} | {t13<b4,t15<b3,t20<b1} | {t5<b8,t15<b3,t20<b1} | {t7<b7,t9<b6,t20<b1} | {t4<b9,t7<b7,t9<b6} ...
+pair {21,22} M=64: UNSAT; minimal cores <=3: {3: 17} (1561 probes, 0.8s); del-MUS size 4
+    {t7<b7,t17<b2,t20<b1} | {t4<b9,t7<b7,t17<b2} | {t14<b4,t17<b2,t20<b1} | {t6<b8,t16<b3,t17<b2} | {t12<b5,t14<b4,t17<b2} | {t4<b9,t14<b4,t17<b2} | {t6<b8,t8<b7,t17<b2} | {t0<b11,t6<b8,t17<b2} | {t13<b4,t15<b3,t20<b1} | {t5<b8,t15<b3,t20<b1} | {t7<b7,t9<b6,t20<b1} | {t4<b9,t7<b7,t9<b6} ...
+pair {21,22} M=80: UNSAT; minimal cores <=3: {3: 22} (1561 probes, 1.5s); del-MUS size 4
+    {t7<b7,t17<b2,t20<b1} | {t4<b9,t7<b7,t17<b2} | {t14<b4,t17<b2,t20<b1} | {t6<b8,t16<b3,t17<b2} | {t12<b5,t14<b4,t17<b2} | {t4<b9,t14<b4,t17<b2} | {t6<b8,t8<b7,t17<b2} | {t0<b11,t6<b8,t17<b2} | {t13<b4,t15<b3,t20<b1} | {t4<b9,t13<b4,t15<b3} | {t5<b8,t15<b3,t20<b1} | {t4<b9,t5<b8,t15<b3} ...
+pair {21,22} M=96: UNSAT; minimal cores <=3: {3: 22} (1561 probes, 2.7s); del-MUS size 3
+    {t7<b7,t17<b2,t20<b1} | {t4<b9,t7<b7,t17<b2} | {t14<b4,t17<b2,t20<b1} | {t6<b8,t16<b3,t17<b2} | {t12<b5,t14<b4,t17<b2} | {t4<b9,t14<b4,t17<b2} | {t6<b8,t8<b7,t17<b2} | {t0<b11,t6<b8,t17<b2} | {t13<b4,t15<b3,t20<b1} | {t4<b9,t13<b4,t15<b3} | {t5<b8,t15<b3,t20<b1} | {t4<b9,t5<b8,t15<b3} ...
+pair {21,22} M=128: UNSAT; minimal cores <=3: {3: 22} (1561 probes, 7.6s); del-MUS size 3
+    {t7<b7,t17<b2,t20<b1} | {t4<b9,t7<b7,t17<b2} | {t14<b4,t17<b2,t20<b1} | {t6<b8,t16<b3,t17<b2} | {t12<b5,t14<b4,t17<b2} | {t4<b9,t14<b4,t17<b2} | {t6<b8,t8<b7,t17<b2} | {t0<b11,t6<b8,t17<b2} | {t13<b4,t15<b3,t20<b1} | {t4<b9,t13<b4,t15<b3} | {t5<b8,t15<b3,t20<b1} | {t4<b9,t5<b8,t15<b3} ...
+-> /Users/will/Dev/personal/tasks/math/erdos197/data/e121_n2_mus.json
