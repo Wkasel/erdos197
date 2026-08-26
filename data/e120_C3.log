@@ -8,3 +8,13 @@ C3 M=16 balance=7/16 bounds={'B0': 7, 'B1': 14, 'B2': 28}: UNSAT [1.3s]
 C3 M=16 balance=3/8 bounds={'B0': 6, 'B1': 12, 'B2': 24}: UNSAT [1.5s] 
 C3 M=16 balance=5/16 bounds={'B0': 5, 'B1': 10, 'B2': 20}: UNSAT [1.4s] 
 C3 M=16 balance=1/4 bounds={'B0': 4, 'B1': 8, 'B2': 16}: SAT [1.1s] [5, 24, 31]
+== e120 PART C3: 3-block / 2-seam coupled coloring ==
+  C3 M=32 balance=1/2: UNSAT [8.2s]
+TOTAL 12.2s
+C3 M=24 balance=3/8 bounds={'B0': 9, 'B1': 18, 'B2': 36}: UNSAT [4.5s] 
+C3 M=24 balance=5/16 bounds={'B0': 8, 'B1': 15, 'B2': 30}: UNSAT [5.0s] 
+C3 M=24 balance=9/32 bounds={'B0': 7, 'B1': 14, 'B2': 27}: UNSAT [4.7s] 
+C3 M=24 balance=1/4 bounds={'B0': 6, 'B1': 12, 'B2': 24}: UNSAT [5.2s] 
+C3 M=16 balanced seams=none: SAT [0.4s] [8, 16, 32]
+C3 M=16 balanced seams=low: SAT [2.2s] [8, 16, 32]
+C3 M=16 balanced seams=high: SAT [0.8s] [8, 16, 32]

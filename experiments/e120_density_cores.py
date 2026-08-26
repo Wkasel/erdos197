@@ -603,13 +603,16 @@ def partC(only=None):
 # Part C3: coupled complementary coloring over THREE consecutive blocks
 # ----------------------------------------------------------------------
 
-def solve_coupled3(M, kb_frac_num, kb_frac_den, budget=3600.0):
+def solve_coupled3(M, kb_frac_num, kb_frac_den, budget=3600.0,
+                   seams='both'):
     """B0 = (M, 2M], B1 = (2M, 4M], B2 = (4M, 8M].  Same as Part C but
     with THREE blocks and TWO seams: coloring c_v in {A, B}; each team
     its own order; guarded APs (all three in team); block-order units
     at BOTH seams (B0 < B1 < B2 within each team — double
     non-procrastination); balance: each team owns >= (num/den) of EACH
-    block.  SAT <=> a coloring + two orders escape the 2-seam coupling."""
+    block.  SAT <=> a coloring + two orders escape the 2-seam coupling.
+    seams: 'both' | 'low' (only B0<B1) | 'high' (only B1<B2) |
+    'none' (no block-order units — pure 3-octave window control)."""
     V = sorted(range(M + 1, 8 * M + 1))
     n = len(V)
     idx = {v: i for i, v in enumerate(V)}
@@ -641,7 +644,11 @@ def solve_coupled3(M, kb_frac_num, kb_frac_den, budget=3600.0):
                     gg = [g(a), g(b), g(c)]
                     cls.append(gg + [-lit(a, b), -lit(b, c)])
                     cls.append(gg + [lit(a, b), lit(b, c)])
-        for lowblk, highblk in ((B0, B1), (B1, B2), (B0, B2)):
+        seam_pairs = {'both': ((B0, B1), (B1, B2), (B0, B2)),
+                      'low': ((B0, B1),),
+                      'high': ((B1, B2),),
+                      'none': ()}[seams]
+        for lowblk, highblk in seam_pairs:
             for u in lowblk:
                 for w in highblk:
                     cls.append([g(u), g(w), lit(u, w)])
@@ -687,14 +694,14 @@ def solve_coupled3(M, kb_frac_num, kb_frac_den, budget=3600.0):
                 else:
                     wins[w] += 1
         order = sorted(col, key=lambda v: -wins[v])
-        err = check_coupled3_team(order, col, M, bounds)
+        err = check_coupled3_team(order, col, M, bounds, seams)
         if err:
             return 'WITNESS-FAIL', el, {'team': team, 'werr': err}
         info[f'order{team}'] = order
     return 'SAT', el, info
 
 
-def check_coupled3_team(order, col, M, bounds):
+def check_coupled3_team(order, col, M, bounds, seams='both'):
     b0 = [v for v in col if v <= 2 * M]
     b1 = [v for v in col if 2 * M < v <= 4 * M]
     b2 = [v for v in col if v > 4 * M]
@@ -703,7 +710,11 @@ def check_coupled3_team(order, col, M, bounds):
         return (f'balance violated ({len(b0)}, {len(b1)}, {len(b2)})'
                 f' < {bounds}')
     p = {v: i for i, v in enumerate(order)}
-    for low, high in ((b0, b1), (b1, b2), (b0, b2)):
+    seam_pairs = {'both': ((b0, b1), (b1, b2), (b0, b2)),
+                  'low': ((b0, b1),),
+                  'high': ((b1, b2),),
+                  'none': ()}[seams]
+    for low, high in seam_pairs:
         for u in low:
             for w in high:
                 if p[u] > p[w]:

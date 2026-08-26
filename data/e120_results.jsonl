@@ -106,3 +106,12 @@
 {"tag": "C3 M=16 balance=3/8", "M": 16, "balance": "3/8", "verdict": "UNSAT", "time": 1.5, "bounds": {"B0": 6, "B1": 12, "B2": 24}}
 {"tag": "C3 M=16 balance=5/16", "M": 16, "balance": "5/16", "verdict": "UNSAT", "time": 1.4, "bounds": {"B0": 5, "B1": 10, "B2": 20}}
 {"tag": "C3 M=16 balance=1/4", "M": 16, "balance": "1/4", "verdict": "SAT", "time": 1.1, "bounds": {"B0": 4, "B1": 8, "B2": 16}, "A_sizes": [5, 24, 31], "colorA": [24, 26, 28, 30, 32, 35, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 69, 93, 95, 97, 99, 101, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128]}
+{"tag": "C3 M=32", "M": 32, "balance": "1/2", "verdict": "UNSAT", "time": 8.2, "bounds": {"B0": 16, "B1": 32, "B2": 64}}
+{"tag": "C3 M=24 balance=3/8", "M": 24, "balance": "3/8", "verdict": "UNSAT", "time": 4.5, "bounds": {"B0": 9, "B1": 18, "B2": 36}}
+{"tag": "E M=64 F=(15, 16)", "M": 64, "F": [15, 16], "rho": "24/32", "k1": 48, "k2": 96, "verdict": "SAT", "time": 111.9, "drop1": [69, 73, 77, 79, 83, 91, 93, 97, 101, 107, 114, 115, 118, 123, 125, 126], "drop2": [131, 134, 135, 146, 151, 154, 155, 158, 159, 162, 167, 174, 182, 183, 190, 194, 199, 201, 202, 206, 210, 211, 218, 219, 222, 226, 227, 235, 238, 242, 243, 250]}
+{"tag": "C3 M=24 balance=5/16", "M": 24, "balance": "5/16", "verdict": "UNSAT", "time": 5.0, "bounds": {"B0": 8, "B1": 15, "B2": 30}}
+{"tag": "C3 M=24 balance=9/32", "M": 24, "balance": "9/32", "verdict": "UNSAT", "time": 4.7, "bounds": {"B0": 7, "B1": 14, "B2": 27}}
+{"tag": "C3 M=24 balance=1/4", "M": 24, "balance": "1/4", "verdict": "UNSAT", "time": 5.2, "bounds": {"B0": 6, "B1": 12, "B2": 24}}
+{"tag": "C3 M=16 balance=1/2 seams=none", "M": 16, "balance": "1/2", "seams": "none", "verdict": "SAT", "time": 0.4, "A_sizes": [8, 16, 32]}
+{"tag": "C3 M=16 balance=1/2 seams=low", "M": 16, "balance": "1/2", "seams": "low", "verdict": "SAT", "time": 2.2, "A_sizes": [8, 16, 32]}
+{"tag": "C3 M=16 balance=1/2 seams=high", "M": 16, "balance": "1/2", "seams": "high", "verdict": "SAT", "time": 0.8, "A_sizes": [8, 16, 32]}
