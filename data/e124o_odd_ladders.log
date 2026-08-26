@@ -1,0 +1,8 @@
+M=29 (5 mod 8) HALF-hi: closing ladder sets: [('D1', 'D2'), ('D1', 'Q1'), ('D1', 'Q3'), ('D1', 'Q4')]
+M=29 (5 mod 8) HALF-lo: closing ladder sets: [('D1', 'Q1'), ('D1', 'Q3')]
+M=37 (5 mod 8) HALF-hi: closing ladder sets: [('D1', 'D2'), ('D1', 'Q1'), ('D1', 'Q3'), ('D1', 'Q4')]
+M=37 (5 mod 8) HALF-lo: closing ladder sets: [('D1', 'Q1'), ('D1', 'Q3')]
+M=45 (5 mod 8) HALF-hi: closing ladder sets: [('D1', 'Q1')]
+M=45 (5 mod 8) HALF-lo: closing ladder sets: [('D1', 'D2', 'Q1'), ('D1', 'D2', 'Q3'), ('D1', 'Q1', 'Q2'), ('D1', 'Q1', 'Q3'), ('D1', 'Q2', 'Q3'), ('D1', 'Q3', 'Q4')]
+M=53 (5 mod 8) HALF-hi: closing ladder sets: [('D1', 'Q1')]
+M=53 (5 mod 8) HALF-lo: closing ladder sets: [('D1', 'Q3')]

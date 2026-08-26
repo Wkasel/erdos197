@@ -246,6 +246,42 @@ two-ladder template — a plausible UNIFORM off-diagonal metatheorem:
 "every lane law of §3 is witnessed by a two-half phase clash at v*
 with two-ladder Lemma-D closure."
 
+## 7. THIRD HAND SCHEMA: the ODD class falls (lane C at x = 11)
+
+The presumed-hard case — odd M, where no integer m0 = 3M/2 exists —
+fell to the SAME template within one probe cycle (e124n/o/p).
+
+### 7.1 Statement (pair {11,12}, M ≡ 5 mod 8, M ≥ 21)
+
+Core C(11) = {t0≺b6, t2≺b5, t5≺b3} (lane C law: M ≡ x+2 mod 8).
+The phase battleground is t2 = 2M−2 against the half-integer center's
+left neighbour c− = (3M−1)/2:
+
+    HALF-hi: AP + {t2≺b5, t5≺b3}  forces  c− ≺ t2
+    HALF-lo: AP + {t0≺b6, t2≺b5}  forces  t2 ≺ c−
+
+t2 ≠ c− (M ≠ 3) ⇒ AP + C(11) UNSAT on the whole class.  Overlapping
+halves share t2≺b5 (as in B2).  The anatomy scan (e124n, M = 21, 29,
+37 — identical tables) shows the same double-kill structure at BOTH
+half-integer neighbours c± with the roles of the t-parities swapped —
+c− owns the even t's (t2, t4, t6), c+ the odd t's (t1, t3, t5, t7).
+
+### 7.2 Derivation + verification (e124o, e124p)
+
+HALF-hi: Lemma D on D1 = (M+1, M+3, ..., 2M) [d=2] + Q1 = (M+1, ...,
+2M) [d=4], 4 branches.  HALF-lo: D1 + Q1 + Q3, 8 branches (the pair
+choice oscillates between (D1,Q1)/(D1,Q3) with scale — the triple is
+the uniform closing set; closure is monotone so supersets stay
+closed).  e124p verification: 19/19 scales M = 21, 29, ..., 165 all
+branches close; Cadical UNSAT cross-checks at M ≤ 96; controls at
+ALL THREE other odd classes (7, 1, 3 mod 8 — 18 scales): survivors +
+Cadical SAT.  Zero failures.  data/e124p_odd_schema.*.
+
+With §4 + §5 + §7: pair {11,12} has verified end-to-end hand schemas
+on THREE classes (0, 2, 5 mod 8) spanning ALL parity regimes (even
+m0, odd m0, half-integer center).  Nothing about the remaining five
+{11,12} classes looks different in kind.
+
 ### 4.5 → 6. What remains open on this front
 
   - The other seven residue cells per pair as HAND schemas: the lane
