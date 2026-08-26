@@ -1,0 +1,21 @@
+== (1) explicit infinite orbit in C (paper params) ==
+  u_s = 2^s+3 in C for all 5 <= s <= 200: True  (reflector 3 in C: True)
+== (2) orbit law over parameter space ==
+  lam=4 r=4: infinite orbit (ray certified); predicted orbit -> MATCH
+  lam=3 r=4: orbit-free (closure dies at scale 22); predicted orbit-free -> MATCH
+  lam=5 r=4: orbit-free (closure dies at scale 23); predicted orbit-free -> MATCH
+  lam=6 r=4: orbit-free (closure dies at scale 24); predicted orbit-free -> MATCH
+  lam=8 r=4: infinite orbit (ray certified); predicted orbit -> MATCH
+  lam=4 r=8: infinite orbit (ray certified); predicted orbit -> MATCH
+  lam=3 r=8: orbit-free (closure dies at scale 18); predicted orbit-free -> MATCH
+  lam=4 r=5: orbit-free (closure dies at scale 17); predicted orbit-free -> MATCH
+  lam=16 r=4: infinite orbit (ray certified); predicted orbit -> MATCH
+  lam=12 r=4: orbit-free (closure dies at scale 18); predicted orbit-free -> MATCH
+  lam=4 r=4: infinite orbit (ray certified); predicted orbit -> MATCH
+  lam=3 r=4: orbit-free (closure dies at scale 22); predicted orbit-free -> MATCH
+  law matches at fmax=16: True; fmax=64 spot: True
+== (3) quantification: intervals, Lemma R ==
+  Lemma-R quadruples in C(paper) up to 2^18: 306 (runs [[52, 53], [2049, 2079], [6554, 6826]])
+== (4) lam=3 witness sanity + complement densities ==
+  W(lam=3) at N=8192: perm clean=True
+wrote /Users/will/Dev/personal/tasks/math/erdos197/data/h1_complement.json (9.9s)

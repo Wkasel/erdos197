@@ -1,1 +1,2 @@
 m=4 N=256 CAP=1 DMAX=8 mode=rich3 cap=crown: n=255 vars=67523 clauses=1097359 force=1029976 triples=16129
+  round 25 (348s)

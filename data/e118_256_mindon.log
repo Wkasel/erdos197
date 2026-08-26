@@ -1,2 +1,3 @@
 M=256 mode=mindon: n=256 triples=16256 attacks=15 clauses=65056
   budget 0: UNSAT (14s)
+  budget 1: UNSAT (458s)

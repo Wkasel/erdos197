@@ -59,18 +59,21 @@ universally infeasible, as expected. First witnesses found by the solver:
 | 128 | 3 | 26 | {129,130,132,133,134} ∪ {243,245,249,251,253} |
 | 256 | (see data/e118_256_mindon.json) | | |
 
-In block coordinates the support is IDENTICAL across scales and residues:
-bottom-sliver b-values M+{1,2,4,5,6} and top t-values 2M−{3,5,7,11,13} —
-precisely the attack endpoints (b_j = attacked bottoms, t_i = attack
-sources z = 2M+2j−x). Nothing outside the two slivers ever appears in an
-optimal repair. Min donation 3 is stable in M (64→128, and 68 shows it is
-not a mod-8 artifact: the full attack system, not just the C3 core, drives
-the price).
+In block coordinates the support is essentially IDENTICAL across scales
+and residues: bottom-sliver b-values M+{1,2,4,5,6} and top t-values
+2M−{3,5,7,11,13} — precisely the attack endpoints (b_j = attacked bottoms,
+t_i = attack sources z = 2M+2j−x). The only exception: at M=64 (shortest
+block) 2 of 28 sets use one interior value, 94 ({68,69,94}, {69,94,121});
+at M=68, 128 no interior value appears. The busiest repair values are M+4
+and 2M−7 at every scale (freq 13/12/12 of ≤28 sets). Min donation 3 is
+stable in M (64→128, and 68 shows it is not a mod-8 artifact: the full
+attack system, not just the C3 core, drives the price).
 
 **Sliver donation is NOT forced.** With the bottom sliver pinned to A
 (nosliver), min donation is still 3, with exactly 3 pure-top optimal sets
 at both M=64 and M=128: {2M−11, 2M−7, 2M−5, 2M−3} minus one element, every
-set containing 2M−7. And minsliver = 0: a coloring can donate 0 sliver
+set containing 2M−7 (2M−7 = t₇ is the unique value in ALL pure-top
+repairs; donating it kills the 15-attack on b₄). And minsliver = 0: a coloring can donate 0 sliver
 values. So the gadget's minimum repairs form exactly TWO families:
 bottom-sliver swaps (the Geneson/H2 shape) and TOP-sliver swaps (its mirror
 at the attack sources). H2-unification is thus partial-but-sharp: Geneson's
@@ -130,8 +133,12 @@ This is the finite shadow of the portable crown theorem, now
 machine-checked over the whole class rather than one partition.
 
 **Donation-displacement tradeoff (richD: ≤ D donations per even block ≥ 6):**
-D=3 at CAP=1, m=4: see data/e119_4_1_rich3 — compares the coupled price
-with the order-only price 3 from (a).
+at m=3, CAP=0: D=1, 2 UNSAT; D=3 SAT — the coupled donation price equals
+the order-gadget price 3 from (a) EXACTLY, and the D=3 witness donates
+{50, 54, 62} = 2M−{14, 10, 2} in block 6 (M=32) — all 16-attack sources:
+top-zone repairs again. So at m=3 the block-rich crown team chooses between
+(D=0, crown displacement 1) and (D=3 per even block, displacement 0).
+m=4 at CAP=1 with D=3: data/e119_4_1_rich3 (slow solve; see log).
 
 ## Shape of the feasible region (the emerging trichotomy)
 

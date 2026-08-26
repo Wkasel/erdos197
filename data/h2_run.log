@@ -1,0 +1,42 @@
+== calibrating crown persistence scan (N=2^16) ==
+  sa         flag=True (expected True) attackers=[3, 4, 9, 10, 11, 12, 13, 14]
+  geneson    flag=False (expected False) attackers=[]
+  geneson_c  flag=True (expected True) attackers=[1, 2, 3, 4, 9, 10, 11, 12]
+== verifying infinite-orbit certificates (to 2^60) ==
+  s=8/A: [46, 72, 142, 264]... reflectors {20, 2} verified 55 steps
+  s=8/B: [76, 136, 268, 520]... reflectors {16, 4} verified 54 steps
+  s=12/A: [51, 76, 147, 268]... reflectors {26, 5} verified 55 steps
+  s=12/B: [77, 139, 269, 523]... reflectors {15, 9} verified 54 steps
+  s=16/A: [56, 80, 152, 272]... reflectors {32, 8} verified 55 steps
+  s=16/B: [87, 141, 279, 525]... reflectors {33, 3} verified 54 steps
+== dyadic_none: |A|=43690 |B|=21846 ==
+   A: ['CROWN', 'CROWNP', 'SLIVER']   B: ['CROWN', 'CROWNP', 'SLIVER']   -> DEAD  (3.3s)
+== dyadic_bottom8: |A|=43685 |B|=21851 ==
+   A: ['CROWN', 'CROWNP', 'ORBIT']   B: ['CROWN', 'CROWNP', 'ORBIT']   -> DEAD  (3.8s)
+== dyadic_bottom12: |A|=43685 |B|=21851 ==
+   A: ['CROWN', 'CROWNP', 'ORBIT']   B: ['CROWN', 'CROWNP', 'ORBIT']   -> DEAD  (3.3s)
+== dyadic_bottom16: |A|=43685 |B|=21851 ==
+   A: ['CROWN', 'CROWNP', 'ORBIT']   B: ['CROWN', 'CROWNP', 'ORBIT']   -> DEAD  (3.2s)
+== dyadic_top8: |A|=43685 |B|=21851 ==
+   A: ['CROWN', 'CROWNP', 'SLIVER']   B: ['CROWN', 'CROWNP', 'SLIVER']   -> DEAD  (3.6s)
+== dyadic_top12: |A|=43685 |B|=21851 ==
+   A: ['CROWN', 'CROWNP', 'SLIVER']   B: ['CROWN', 'CROWNP', 'SLIVER']   -> DEAD  (3.9s)
+== dyadic_top16: |A|=43685 |B|=21851 ==
+   A: ['CROWN', 'CROWNP', 'SLIVER']   B: ['CROWN', 'CROWNP', 'SLIVER']   -> DEAD  (3.9s)
+== quad_none: |A|=52428 |B|=13108 ==
+   A: ['CROWN', 'CROWNP', 'SLIVER']   B: ['CROWN', 'CROWNP', 'SLIVER']   -> DEAD  (4.6s)
+== quad_bottom8: |A|=52423 |B|=13113 ==
+   A: ['CROWN', 'CROWNP', 'SLIVER']   B: ['CROWN', 'CROWNP', 'SLIVER']   -> DEAD  (4.7s)
+== quad_bottom12: |A|=52419 |B|=13117 ==
+   A: ['CROWN', 'CROWNP', 'SLIVER']   B: ['CROWN', 'CROWNP', 'SLIVER']   -> DEAD  (4.4s)
+== quad_bottom16: |A|=52419 |B|=13117 ==
+   A: ['CROWN', 'CROWNP', 'SLIVER']   B: ['CROWN', 'CROWNP', 'SLIVER']   -> DEAD  (4.2s)
+== quad_top8: |A|=52423 |B|=13113 ==
+   A: ['CROWN', 'CROWNP', 'SLIVER']   B: ['CROWN', 'CROWNP', 'SLIVER']   -> DEAD  (4.3s)
+== quad_top12: |A|=52419 |B|=13117 ==
+   A: ['CROWN', 'CROWNP', 'SLIVER']   B: ['CROWN', 'CROWNP', 'SLIVER']   -> DEAD  (4.4s)
+== quad_top16: |A|=52419 |B|=13117 ==
+   A: ['CROWN', 'CROWNP', 'SLIVER']   B: ['CROWN', 'CROWNP', 'SLIVER']   -> DEAD  (3.9s)
+
+survivors: NONE
+saved /Users/will/Dev/personal/tasks/math/erdos197/data/h2_summary.json
