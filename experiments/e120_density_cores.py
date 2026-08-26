@@ -599,6 +599,144 @@ def partC(only=None):
     return out
 
 
+# ----------------------------------------------------------------------
+# Part E: fixed pair, TWO-block STG window, per-block density dial
+# ----------------------------------------------------------------------
+
+def solve_stg_subset(M, F, k1, k2, budget=3600.0):
+    """Window (M, 4M] = block1 (M, 2M] u block2 (2M, 4M]; FIXED
+    attacker pair F (low, placed early); adversary keeps >= k1 of
+    block1 and >= k2 of block2.  Attack units = attacks_into over the
+    kept union (x-attacks into block1, into block2, AND the dense
+    channel: y in block1, z = 2y - x in block2); guarded APs on the
+    union; full transitivity."""
+    V = sorted(range(M + 1, 4 * M + 1))
+    n = len(V)
+    idx = {v: i for i, v in enumerate(V)}
+    off, top = _mk_vars(n, start=1)
+    sel = {}
+    for v in V:
+        top += 1
+        sel[v] = top
+
+    def lit(u, w):
+        i, j = idx[u], idx[w]
+        return off[(i, j)] if i < j else -off[(j, i)]
+
+    Vs = set(V)
+    cls = []
+    for b in V:
+        for d in range(1, min(b - V[0], V[-1] - b) + 1):
+            a, c = b - d, b + d
+            if a in Vs and c in Vs:
+                g = [-sel[a], -sel[b], -sel[c]]
+                cls.append(g + [-lit(a, b), -lit(b, c)])
+                cls.append(g + [lit(a, b), lit(b, c)])
+    for (z, y) in attacks_into(V, F):
+        cls.append([-sel[y], -sel[z], lit(z, y)])
+    for i in range(n):
+        for j in range(i + 1, n):
+            xij = off[(i, j)]
+            for kk in range(j + 1, n):
+                cls.append([-xij, -off[(j, kk)], off[(i, kk)]])
+                cls.append([xij, off[(j, kk)], -off[(i, kk)]])
+    B1 = [v for v in V if v <= 2 * M]
+    B2 = [v for v in V if v > 2 * M]
+    cards = []
+    tid = top
+    for blk, bnd in ((B1, k1), (B2, k2)):
+        enc = CardEnc.atleast(lits=[sel[v] for v in blk], bound=bnd,
+                              top_id=tid, encoding=EncType.seqcounter)
+        tid = max(tid, enc.nv)
+        cards += enc.clauses
+    t0 = time.time()
+    with Cadical195(bootstrap_with=cls) as s:
+        for c in cards:
+            s.add_clause(c)
+        ok = s.solve()
+        el = round(time.time() - t0, 1)
+        if not ok:
+            return 'UNSAT', el, {}
+        model = set(l for l in s.get_model() if l > 0)
+    S = [v for v in V if sel[v] in model]
+    posneg = lambda l: (l in model) if l > 0 else (abs(l) not in model)
+    wins = {v: 0 for v in S}
+    for i, u in enumerate(S):
+        for w in S[i + 1:]:
+            if posneg(lit(u, w)):
+                wins[u] += 1
+            else:
+                wins[w] += 1
+    order = sorted(S, key=lambda v: -wins[v])
+    err = check_escape(order, S, F, 0)
+    s1 = [v for v in S if v <= 2 * M]
+    s2 = [v for v in S if v > 2 * M]
+    if err is None and (len(s1) < k1 or len(s2) < k2):
+        err = f'block sizes ({len(s1)}, {len(s2)}) < ({k1}, {k2})'
+    return ('SAT' if err is None else 'WITNESS-FAIL'), el, \
+        {'drop1': sorted(set(B1) - set(s1)),
+         'drop2': sorted(set(B2) - set(s2)), 'werr': err}
+
+
+def partE(only=None):
+    """Per-block density dial rho on the 1/32 grid for the STG
+    two-block window with FIXED pair (no varying-attacker caveat)."""
+    print('== e120 PART E: fixed pair, STG two-block density dial ==',
+          flush=True)
+    import math
+    out = {'part': 'E', 'rows': [], 'summary': []}
+    for M, F in ((32, (15, 16)), (64, (15, 16)), (64, (21, 22))):
+        tag = f'E M={M} F={F}'
+        if only and only not in tag:
+            continue
+
+        def q(num, den=32):
+            k1 = math.ceil(num * M / den)
+            k2 = math.ceil(num * 2 * M / den)
+            v, el, info = solve_stg_subset(M, F, k1, k2)
+            row = {'tag': tag, 'M': M, 'F': list(F), 'rho': f'{num}/{den}',
+                   'k1': k1, 'k2': k2, 'verdict': v, 'time': el,
+                   'drop1': info.get('drop1'), 'drop2': info.get('drop2')}
+            out['rows'].append(row)
+            stream(row)
+            print(f'  {tag} rho={num}/{den} (k1={k1}, k2={k2}): {v} '
+                  f'[{el}s]' + (f" drop1={info.get('drop1')} "
+                                f"drop2={info.get('drop2')}"
+                                if v == 'SAT' else ''), flush=True)
+            if v == 'WITNESS-FAIL':
+                raise RuntimeError(f'{tag}: {info.get("werr")}')
+            return v
+
+        if q(32) != 'UNSAT':
+            print(f'  {tag}: intact SAT — rung absent at this scale',
+                  flush=True)
+            continue
+        lo, hi = 16, 32
+        if q(lo) != 'SAT':
+            print(f'  {tag}: UNSAT already at rho=1/2 !!', flush=True)
+            out['summary'].append({'M': M, 'F': list(F),
+                                   'rho_star': '<=1/2'})
+            stream({'tag': tag + ' SUMMARY', 'M': M, 'rho_star': '<=1/2'})
+            with open(os.path.join(DATA, 'e120_E.json'), 'w') as f:
+                json.dump(out, f, indent=1)
+            continue
+        while hi - lo > 1:
+            mid = (lo + hi) // 2
+            if q(mid) == 'SAT':
+                lo = mid
+            else:
+                hi = mid
+        s = {'M': M, 'F': list(F), 'rho_last_escape': f'{lo}/32',
+             'rho_star': round(lo / 32, 4), 'first_unsat': f'{hi}/32'}
+        out['summary'].append(s)
+        stream({'tag': tag + ' SUMMARY', **s})
+        print(f'  >> {tag}: last escape rho={lo}/32={lo / 32:.3f}, '
+              f'UNSAT-for-all from {hi}/32', flush=True)
+        with open(os.path.join(DATA, 'e120_E.json'), 'w') as f:
+            json.dump(out, f, indent=1)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--part', required=True)
@@ -613,6 +751,8 @@ def main():
         partC(args.only)
     elif args.part == 'D':
         partD(args.only)
+    elif args.part == 'E':
+        partE(args.only)
     else:
         sys.exit('unknown part')
     print(f'TOTAL {round(time.time() - t0, 1)}s', flush=True)

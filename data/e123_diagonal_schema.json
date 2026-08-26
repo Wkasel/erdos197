@@ -1,0 +1,120 @@
+{
+ "runs": [
+  {
+   "p": 5,
+   "x": 15,
+   "pair": [
+    15,
+    16
+   ],
+   "flip_class_mod8": 0,
+   "layer1_ok": 104,
+   "layer1_total": 104,
+   "flip_ok": 52,
+   "flip_total": 52,
+   "sharp_ok": 52,
+   "sharp_total": 52,
+   "l1_first": 20,
+   "fl_scales_sample": [
+    24,
+    32,
+    40,
+    48,
+    56
+   ]
+  },
+  {
+   "p": 7,
+   "x": 21,
+   "pair": [
+    21,
+    22
+   ],
+   "flip_class_mod8": 4,
+   "layer1_ok": 104,
+   "layer1_total": 104,
+   "flip_ok": 52,
+   "flip_total": 52,
+   "sharp_ok": 52,
+   "sharp_total": 52,
+   "l1_first": 28,
+   "fl_scales_sample": [
+    28,
+    36,
+    44,
+    52,
+    60
+   ]
+  },
+  {
+   "p": 9,
+   "x": 27,
+   "pair": [
+    27,
+    28
+   ],
+   "flip_class_mod8": 0,
+   "layer1_ok": 104,
+   "layer1_total": 104,
+   "flip_ok": 52,
+   "flip_total": 52,
+   "sharp_ok": 52,
+   "sharp_total": 52,
+   "l1_first": 36,
+   "fl_scales_sample": [
+    40,
+    48,
+    56,
+    64,
+    72
+   ]
+  },
+  {
+   "p": 11,
+   "x": 33,
+   "pair": [
+    33,
+    34
+   ],
+   "flip_class_mod8": 4,
+   "layer1_ok": 104,
+   "layer1_total": 104,
+   "flip_ok": 52,
+   "flip_total": 52,
+   "sharp_ok": 52,
+   "sharp_total": 52,
+   "l1_first": 44,
+   "fl_scales_sample": [
+    44,
+    52,
+    60,
+    68,
+    76
+   ]
+  },
+  {
+   "p": 13,
+   "x": 39,
+   "pair": [
+    39,
+    40
+   ],
+   "flip_class_mod8": 0,
+   "layer1_ok": 104,
+   "layer1_total": 104,
+   "flip_ok": 52,
+   "flip_total": 52,
+   "sharp_ok": 52,
+   "sharp_total": 52,
+   "l1_first": 52,
+   "fl_scales_sample": [
+    56,
+    64,
+    72,
+    80,
+    88
+   ]
+  }
+ ],
+ "fail": []
+}

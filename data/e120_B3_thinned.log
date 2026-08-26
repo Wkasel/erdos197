@@ -1,0 +1,4 @@
+M=96 F=(49,50) drop 13 even midpoints -> SAT [0.1s]  k=83 = 0.8646 M
+M=128 F=(65,66) drop 17 even midpoints -> SAT [0.3s]  k=111 = 0.8672 M
+M=192 F=(97,98) drop 25 even midpoints -> SAT [0.8s]  k=167 = 0.8698 M
+M=256 F=(129,130) drop 33 even midpoints -> SAT [1.8s]  k=223 = 0.8711 M
