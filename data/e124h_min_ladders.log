@@ -1,0 +1,8 @@
+M=32 HALF-A: minimal closing ladder sets: [('O', 'Q2'), ('O', 'Q4')]
+M=32 HALF-B: minimal closing ladder sets: [('O', 'Q1'), ('O', 'Q3')]
+M=40 HALF-A: minimal closing ladder sets: [('O', 'Q2'), ('O', 'Q4')]
+M=40 HALF-B: minimal closing ladder sets: [('O', 'Q3')]
+M=48 HALF-A: minimal closing ladder sets: [('O', 'Q2'), ('O', 'Q4')]
+M=48 HALF-B: minimal closing ladder sets: [('O', 'Q3')]
+M=56 HALF-A: minimal closing ladder sets: [('O', 'Q2'), ('O', 'Q4')]
+M=56 HALF-B: minimal closing ladder sets: [('O', 'Q3')]

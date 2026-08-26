@@ -1,0 +1,18 @@
+M=24 (0 mod 8) HALF-A [odd+even]: 4/4 branches closed  == ALL CLOSED ==
+M=24 (0 mod 8) HALF-B [odd+even]: 4/4 branches closed  == ALL CLOSED ==
+M=32 (0 mod 8) HALF-A [odd+even]: 1/4 branches closed, surviving [(True, True), (False, True), (False, False)]
+M=32 (0 mod 8) HALF-A [odd+even+g4]: 64/64 branches closed  == ALL CLOSED ==
+M=32 (0 mod 8) HALF-B [odd+even]: 1/4 branches closed, surviving [(True, True), (True, False), (False, True)]
+M=32 (0 mod 8) HALF-B [odd+even+g4]: 64/64 branches closed  == ALL CLOSED ==
+M=40 (0 mod 8) HALF-A [odd+even]: 1/4 branches closed, surviving [(True, True), (False, True), (False, False)]
+M=40 (0 mod 8) HALF-A [odd+even+g4]: 64/64 branches closed  == ALL CLOSED ==
+M=40 (0 mod 8) HALF-B [odd+even]: 1/4 branches closed, surviving [(True, True), (True, False), (False, True)]
+M=40 (0 mod 8) HALF-B [odd+even+g4]: 64/64 branches closed  == ALL CLOSED ==
+M=28 (4 mod 8) HALF-A [odd+even]: 3/4 branches closed, surviving [(False, True)]
+M=28 (4 mod 8) HALF-A [odd+even+g4]: 60/64 branches closed, surviving [(False, True, True, True, True, True), (False, True, True, False, True, True), (False, True, False, True, True, True), (False, True, False, False, True, True)]
+M=28 (4 mod 8) HALF-B [odd+even]: 3/4 branches closed, surviving [(True, True)]
+M=28 (4 mod 8) HALF-B [odd+even+g4]: 62/64 branches closed, surviving [(True, True, True, True, True, False), (True, True, True, True, False, False)]
+M=36 (4 mod 8) HALF-A [odd+even]: 3/4 branches closed, surviving [(False, True)]
+M=36 (4 mod 8) HALF-A [odd+even+g4]: 56/64 branches closed, surviving [(False, True, True, True, True, True), (False, True, True, True, True, False), (False, True, True, False, True, True), (False, True, True, False, True, False)]
+M=36 (4 mod 8) HALF-B [odd+even]: 3/4 branches closed, surviving [(True, True)]
+M=36 (4 mod 8) HALF-B [odd+even+g4]: 56/64 branches closed, surviving [(True, True, True, True, True, True), (True, True, True, True, True, False), (True, True, True, True, False, True), (True, True, True, True, False, False)]

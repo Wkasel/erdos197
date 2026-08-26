@@ -79,9 +79,128 @@ toolkit (odd/even ladders, centers m₀ ± 1, G4 floods) applies —
 only the core anatomy is new (expected 2+2: two units force an
 L1-type order, two close the flip).
 
-## 3. Direct lane probes (e124b_lane_probe) — RUNNING
+## 3. Direct lane probes (e124b_lane_probe) — DONE, the lane laws
 
-Sweep M = 16..160, all lanes at all x, exact firing sets.
-[results to be filled in]
+Sweep M = 16..160, every lane instance probed directly (AP + units,
+complete encoding, exact firing set — no minimality confound).
+data/e124b_lane_probe.{json,log}.  THE RESULT — every off-diagonal
+lane's law is a SLIDING mod-8 class, affine in x (thresholds finite
+and small, a few sporadic sub-threshold hits):
 
-## 4. Hand schema for the {11,12} dyadic lane (e124c) — [in progress]
+    lane      units (pair {x, x+1}, odd x >= 11)                law
+    ----      ------------------------------------------       --------------------
+    A4a(x)  {t_{x-11}<b6, t_{x-10}<b5, t_{x-9}<b5, t_{x-8}<b4}  M ≡ x+5 AND M ≡ x+2 (mod 8)
+    A4b(x)  {t_{x-11}<b6, t_{x-9}<b5, t_{x-8}<b4, t_{x-4}<b2}   M ≡ x+5 (mod 8)
+    A4c(x)  {t_{x-11}<b6, t_{x-9}<b5, t_{x-4}<b2, t_{x-2}<b1}   M ≡ x+5 (mod 8)
+    A4d(x)  {t_{x-10}<b5, t_{x-9}<b5, t_{x-8}<b4, t_{x-5}<b3}   M ≡ x+5 (mod 8)
+    B2(x)   {t_{x-9}<b5, t_{x-6}<b3, t_{x-4}<b2}                M ≡ x+7 (mod 8)
+    B6(x)   {t_{x-8}<b4, t_{x-6}<b3, t_{x-1}<b1}                M ≡ x+3 (mod 8)
+    C(x)    {t_{x-11}<b6, t_{x-9}<b5, t_{x-6}<b3}               M ≡ x+2 (mod 8)  [odd class]
+
+(x odd: x+3, x+5, x+7 are the three even residues ≠ x+1; x+2 is odd.)
+So the off-diagonal lanes cover, per pair, three of four even classes
++ one odd class as uniform parametric statements; the diagonal D3
+covers M ≡ 2(x/3)+6 on its own x = 3p lane.  Dyadic (0 mod 8) row of
+the catalogue's six pairs: x=11, 19 (≡3 mod 8) by A4b/c/d; x=17
+(≡1) by B2; x=13, 21 (≡5) by B6; x=15 (≡7) by D3 = C3(5).  Every
+catalogued pair has a dyadic lane.  (x ≡ 7 mod 8 pairs OFF the
+diagonal — 23, 31, ... — are outside this catalogue; first open cell.)
+
+## 4. THE HAND SCHEMA: the {11,12} dyadic lane, verified end-to-end
+
+### 4.1 Anatomy (e124c, e124d)
+
+At every M ≡ 0 mod 8 tested (24..48) the size-4 core
+A4a = {t0≺b6, t1≺b5, t2≺b5, t3≺b4} splits 2+2 BY ATTACKER:
+
+    U12 = {t0≺b6, t2≺b5}   (attacker 12's units, j = 6, 5)
+    U11 = {t1≺b5, t3≺b4}   (attacker 11's units, j = 5, 4)
+
+and the two 2-unit sets fight over the PHASE of t1 = 2M−1 relative to
+m0 = 3M/2 (equivalently of t3 — both are double-killed):
+
+    HALF-A:  AP + U12 + (t1 ≺ m0)  is UNSAT   [so U12 forces m0 ≺ t1]
+    HALF-B:  AP + U11 + (m0 ≺ t1)  is UNSAT   [so U11 forces t1 ≺ m0]
+
+t1 ≠ m0, so A4a ⊇ U11 ∪ U12 is UNSAT.  At M ≡ 4 mod 8 the kills
+disappear (t1's lo phase survives even the full core) — the lock is
+exactly mod 8.  Scale-stable at every probe.  This is a genuinely new
+core SHAPE: C3(p) is 2+1 (two units force an order lemma, one closes
+the flip); the {11,12} core is 2+2, a two-attacker phase clash, with
+no order-transfer lemma at all.
+
+### 4.2 The derivation (e124e/g/h): Lemma D + zigzag propagation
+
+Pure rule-closure from the 3 seeds alone does nothing (4-6 facts,
+e124e) — as with C3, case analysis is essential.  The right case
+frame (e124g, e124h): Lemma D (each d-ladder's leader/trailer pattern
+strictly alternates — exactly two polarity phases) on TWO ladders per
+half, then closure under the four AP rules + transitivity kills every
+branch:
+
+    HALF-A: ladders O = (M+1, M+3, ..., 2M−1)  [odd values, d=2]
+            and Q2 = (M+2, M+6, ..., 2M−2)     [t2's mod-4 class, d=4]
+    HALF-B: ladders O and Q3 = (M+3, M+7, ..., 2M−1) [t1's mod-4 class]
+
+4 polarity branches per half, every branch closes by propagation —
+minimal ladder sets, uniform across scales (e124h: {O,Q2} or {O,Q4}
+for A, {O,Q3} for B, at every M tested).  The quarter-ladder matches
+the value class of the half's own top unit (t2 ≡ 2, t1 ≡ 3 mod 4) —
+the schema "knows" which class carries the pinch.
+
+### 4.3 The verified statement (e124i_k4_schema_verify)
+
+THEOREM SCHEMA (K4 dyadic lane).  For every M ≡ 0 mod 8, M ≥ 24: an
+AP-free placement of (M, 2M] admits no assignment satisfying U11 ∪ U12
+— the four listed unit demands of a block-ordered attacker pair
+{11, 12}.  Hence the {11,12} rung fires on the whole dyadic class.
+Proof: HALF-A + HALF-B (each: Lemma D on two ladders, 4 branches,
+zigzag propagation) + the t1-phase dichotomy.
+
+Machine verification, e113-style (the derivation NEVER consults a
+solver; the Lemma-D discharge is e113's fiat_zig in closure form):
+  - 20/20 dyadic scales M = 24, 32, ..., 176: all 4+4 branches close
+    in both halves;
+  - independent complete-encoding Cadical195 cross-check at each
+    M ≤ 96: AP + A4a UNSAT (and e124b already has it UNSAT at every
+    M ≡ 0 mod 8 ≤ 160);
+  - adversarial scales M = 256, 512, 1024, 2048: all branches close
+    (1 s / 9 s / 71 s / 539 s);
+  - sharpness controls, 20 scales M = 28, ..., 180 (≡ 4 mod 8):
+    surviving branches exist in BOTH halves (stable fingerprint:
+    HALF-A survives only odd-ladder polarity False branches, HALF-B
+    only True — the mod-8 lock is visible in WHICH branch survives),
+    and Cadical confirms AP + A4a SAT at each control ≤ 96.
+data/e124i_k4_schema.{json,log}; zero failures.
+
+### 4.4 Why this matters for Case 1
+
+The dyadic class 0 mod 8 is the class of every scale T-PIN hands the
+Case-1 argument (dyadic block scales 2^{2t-1}).  {11,12} was the ONE
+catalogued pair with no size-3 core there — the last pair whose
+dyadic cell had no hand-schema candidate.  It now has a full schema
+with a new (2+2 phase-clash) anatomy, and the anatomy is SIMPLER than
+C3's (no L1 analogue, no order transfer — two independent 2-unit
+half-flips).  Combined with the diagonal family and the sliding lane
+laws of §3, every (pair, dyadic) cell of the catalogue has either a
+verified schema ({11,12}, {15,16}=C3(5), and by translation
+candidates for the rest) or a uniform lane statement awaiting the
+same treatment.
+
+### 4.5 What remains open on this front
+
+  - The other seven residue cells per pair as HAND schemas: the lane
+    laws of §3 are exact machine statements (uniform, thresholded);
+    each wants its own half/flood anatomy.  The B2/B6/C lanes at
+    x = 11 are natural next targets (≡ 2 mod 4 classes, odd class).
+  - The ≡ 2 mod 4 flip classes: m0 = 3M/2 is ODD there; the entire
+    notes/33 toolkit (even center m0, odd ladder about it) needs its
+    parity-dual.  Nothing conceptually new expected, but it is real
+    work (the B2(11) anatomy is the right first probe: same e124d
+    minimal-halves scan at M ≡ 2 mod 8).
+  - Odd M (lane C): no integer m0 at all — the phase battleground
+    must be a different value (probably m0 ± 1/2's neighbours, i.e.
+    the pair (3M±1)/2).  Farthest from current technology.
+  - Pairs x ≡ 7 mod 8 off the diagonal (x = 23, 31, ...): outside
+    the e122 catalogue; extend e122 to x = 23..29 and check the lane
+    laws extrapolate (they should: catalogues are mod-8 periodic).
