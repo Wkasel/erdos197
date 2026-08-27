@@ -40,9 +40,10 @@ with no monotone 3-AP, and asked whether two sets suffice; Erd\H{o}s and Graham
 (1979, p.~338) repeated this as ``a very annoying question'' (problem \#197 of
 the Erd\H{o}s problem collection). We prove several structural results constraining any solution.
 (i) A permutable set admits no infinite doubling orbit $u_{k+1}=2u_k-f_k$ with
-$f_k$ drawn from a fixed finite subset. (ii) In any 3-AP-free arrangement, every
-newly placed value must be balanced: the number of already-placed values in
-$[1,v)$ and in $(v,2v)$ agree up to the codensity of the set above $v$.
+$f_k$ drawn from a fixed finite subset. (ii) In any 3-AP-free arrangement, every newly placed value must be
+balanced: the counts of already-placed values in $[1,v)$ and in $(v,2v)$
+control each other up to the codensity of the set in $(v,2v)$ and in
+$(0,v)$ respectively.
 (iii) No 3-AP-free arrangement of $\{k,2k,3k,5k\}\subseteq S$ places all
 ratio-$\ge 2$ pairs in increasing order. (iv) For the canonical dyadic partition,
 no solution can play any cofinite family of dyadic blocks as contiguous runs: a
@@ -249,15 +250,26 @@ Taking $S = \Z^+$, $F = \{1,2\}$ recovers the theorem of Davis--Entringer--Graha
 \begin{lemma}[Balanced placement]\label{lem:balance}
 Let $S$ be permutable via $\pi$, and consider the moment a value $v$ is placed.
 Let $L$ (resp.\ $H$) be the number of already-placed values in $[1,v)$ (resp.\
-$(v,2v)$). Then $|H - L| \le |S^c \cap (v, 2v)| + O(1)$.
+$(v,2v)$). Then
+\[
+L - H \;\le\; |S^c \cap (v, 2v)|
+\qquad\text{and}\qquad
+H - L \;\le\; |S^c \cap (0, v)| + O(1).
+\]
+(The two directions are bounded by the codensities of $S$ in \emph{different}
+ranges; no symmetric single-range bound holds in general.\footnote{We thank
+Jesse Geneson for correcting an earlier symmetric misstatement of this
+lemma.})
 \end{lemma}
 
 \begin{proof}
 Each placed $x < v$ forms an increasingly placed pair $(x,v)$ with completion
 $2v - x \in (v, 2v)$, distinct for distinct $x$; each completion lying in $S$
-must already be placed. This gives $H \ge L - |S^c \cap (v,2v)|$. Symmetrically,
-each placed $u \in (v, 2v)$ forms a decreasingly placed pair $(u,v)$ with
-completion $2v - u \in (0, v)$, whence $L \ge H - |S^c \cap (v,2v)| - O(1)$.
+must already be placed. This gives $H \ge L - |S^c \cap (v,2v)|$. In the other
+direction, each placed $u \in (v, 2v)$ forms a decreasingly placed pair
+$(u,v)$ with completion $2v - u \in (0, v)$, distinct for distinct $u$, and
+each such completion lying in $S$ must already be placed, whence
+$L \ge H - |S^c \cap (0,v)| - O(1)$.
 \end{proof}
 
 \begin{corollary}[Records]\label{cor:records}
@@ -437,14 +449,19 @@ single residue class serves as the deferred suffix, while generic sets of the
 same size do not.
 
 \begin{proposition}[Class-sink algebra]
-Fix a modulus $m$ and a target class $r$. The attacker map
-$\varphi_r(b) = 2b - r$ on $\Z/m\Z$ generates a tree rooted at $r$; hence in a
-class-phase arrangement a single class can be scheduled last (all its
-attacker-demands point inward), whereas a fully placed zone imposes root
-demands at every class simultaneously, which close into cycles. For odd $r$
-the shifted map has genuine cycles, so an odd class cannot be scheduled last
-within the pure class calculus; deferred classes must be even, and the
-$2\cdot\mathrm{odd}$ phase requires range truncation.
+Fix a modulus $m = 2^k$ and a target class $r$. The attacker map
+$\varphi_r(b) = 2b - r$ on $\Z/m\Z$ is conjugate to doubling (via
+$b \mapsto b - r$), so for $m$ a power of two every orbit is eventually
+absorbed at the unique fixed point $r$: the functional graph is a tree onto
+$r$. Hence in a class-phase arrangement a single class can be scheduled last
+(all its attacker-demands point inward), whereas a fully placed zone imposes
+root demands at every class simultaneously, which cannot all be satisfied.
+For general $m$ (odd part $> 1$) the conjugacy shows the cycle structure of
+$\varphi_r$ is independent of $r$, and the tree picture fails; the
+observed special role of $2\cdot\mathrm{odd}$ phases in the experiments is a
+range-truncation phenomenon, not a cycle-structure one.\footnote{We thank
+Jesse Geneson for correcting the general-$m$ form of this proposition; an
+earlier version asserted an $r$-dependent cycle structure.}
 \end{proposition}
 
 \section{The chunk reduction}\label{sec:chunk}
