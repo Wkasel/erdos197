@@ -65,3 +65,16 @@ enough). Action: extract the true M=64 MUS (e126 extractor, launched) and
 re-fit the schema on three points before any hand-proof attempt. The
 stable families S1/S2/S3 and the seam-coupling observation stand (they
 are present in both existing MUSes); the scaling laws are what's wrong.
+
+## THREE-POINT RE-FIT (M=32/48/64 finals) — the schema is ABSOLUTE-anchored
+The scaling families are not fractions of M; they are absolute offsets, and
+the offset constant is 15/16 — the crown numbers — again:
+- **B1 support = (3M−15, 4M]** exactly at all three scales (bot_off starts
+  M−15: 17 at 32, 33 at 48, 49 at 64). The last M+15 values of B1.
+- **B2 support = [4M+1, ~6M−c] ∪ (6M, 6M+15]**: the full bottom-to-flood
+  band plus a width-15 band above the centre — and (6M, 6M+15] is the
+  doubling image 2·(4M) − (2M−15): the seam-2 reflection of B1's top
+  against B0's top-15 region. The S3 = 2×S2 coupling in refined form.
+- B0: top-8..10 run + scattered witness-midpoints (derivable; small).
+My earlier fraction-based CORE(64) missed B1's top quarter (209..256 minus
+the top-8) — exactly why it went SAT. Corrected sufficiency check: e134.
