@@ -1,1 +1,2 @@
 M=64 |support|=287
+SCHEMA-CHECK2 M=64: UNSAT [67s]

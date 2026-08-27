@@ -78,3 +78,11 @@ the offset constant is 15/16 — the crown numbers — again:
 - B0: top-8..10 run + scattered witness-midpoints (derivable; small).
 My earlier fraction-based CORE(64) missed B1's top quarter (209..256 minus
 the top-8) — exactly why it went SAT. Corrected sufficiency check: e134.
+
+## SUFFICIENCY CONFIRMED (e134): CORE'(64) UNSAT in 67s (|support| = 287).
+The absolute-anchored schema is machine-sufficient at M=64; the M=32/48 MUS
+supports are subsets of the same bands (B1 = (3M−15, 4M] exactly). Lock runs
+at M = 32, 48, 80, 96 in flight (e135). GAP-N6a status: schema LOCKED
+(machine); remaining = the Z/D/E/P hand proof over the anchored bands —
+ladders on B1's (3M−15, 4M] band, transfer across seam 2 via the doubling
+image, flood at 6M with the width-15 boundary rung.
