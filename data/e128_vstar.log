@@ -1,1 +1,26 @@
 RUN .venv/bin/python experiments/e127_seam_budget.py bal --M 16 --vs 8 --budget 14400 --tag e128_bal16_v8
+  e128_bal16_v8 v=8: TIMEOUT [17024.4s] 
+== e128_bal16_v8: v* = > -1 (UNSAT side only)
+
+(17025s)
+RUN .venv/bin/python experiments/e127_seam_budget.py bal --M 16 --vs 32 --budget 14400 --tag e128_bal16_v32
+  e128_bal16_v32 v=32: TIMEOUT [14400.1s] 
+== e128_bal16_v32: v* = > -1 (UNSAT side only)
+
+(14400s)
+RUN .venv/bin/python experiments/e127_seam_budget.py bal --M 16 --vs 80 --budget 14400 --tag e128_bal16_v80
+  e128_bal16_v80 v=80: SAT [466.3s] {"A": {"sizes": [8, 16, 32], "n_inv": 78, "n_inv_seam1": 1, "n_inv_seam2": 77, "n_mono": 16}, "B": {"sizes": [8, 16, 32], "n_inv": 77, "n_inv_seam1": 42, "n_inv_seam2": 35, "n_mono": 13}}
+== e128_bal16_v80: v* = in (-1, 80]
+
+(467s)
+RUN .venv/bin/python experiments/e127_seam_budget.py bal --M 24 --vs 0 --budget 14400 --tag e128_bal24_v0
+  e128_bal24_v0 v=0: UNSAT [3.3s] 
+== e128_bal24_v0: v* = > 0 (UNSAT side only)
+
+(5s)
+RUN .venv/bin/python experiments/e127_seam_budget.py bal --M 24 --vs 1 --budget 14400 --tag e128_bal24_v1
+  e128_bal24_v1 v=1: UNSAT [54.1s] 
+== e128_bal24_v1: v* = > 1 (UNSAT side only)
+
+(56s)
+E128 COMPLETE

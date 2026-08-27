@@ -1,0 +1,3 @@
+M=64 bounds=(2, 2, 2) Z0=(4M/3,2M] Z1=(8M/3,4M] Z2=(4M,20M/3] |Z0|=43 |Z1|=86 |Z2|=170 n=299
+verdict: UNSAT [83.3s]
+total 92.3s

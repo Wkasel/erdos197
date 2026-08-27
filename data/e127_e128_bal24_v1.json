@@ -1,0 +1,16 @@
+{
+ "tag": "e128_bal24_v1",
+ "M": 24,
+ "bounds": null,
+ "rows": [
+  {
+   "tag": "e128_bal24_v1",
+   "M": 24,
+   "bounds": null,
+   "v": 1,
+   "verdict": "UNSAT",
+   "time": 54.1
+  }
+ ],
+ "vstar": "> 1 (UNSAT side only)"
+}

@@ -1,0 +1,16 @@
+{
+ "tag": "e128_bal16_v32",
+ "M": 16,
+ "bounds": null,
+ "rows": [
+  {
+   "tag": "e128_bal16_v32",
+   "M": 16,
+   "bounds": null,
+   "v": 32,
+   "verdict": "TIMEOUT",
+   "time": 14400.1
+  }
+ ],
+ "vstar": "> -1 (UNSAT side only)"
+}

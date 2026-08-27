@@ -1,0 +1,40 @@
+{
+ "check1": {
+  "n_pairs": 10,
+  "anchors_audited": 16384,
+  "uncovered": 0,
+  "exposure_charge": 0,
+  "verdict": "LEGAL"
+ },
+ "check2": {
+  "trials": 43,
+  "verdict": "PASS"
+ },
+ "check3": {
+  "A": {
+   "n_inv": 85,
+   "n_D": 8,
+   "n_Adv": 11,
+   "expo_in": 6,
+   "expo_below": 15,
+   "cascade_range": 0,
+   "in_window_APs": 464
+  },
+  "B": {
+   "n_inv": 105,
+   "n_D": 8,
+   "n_Adv": 14,
+   "expo_in": 3,
+   "expo_below": 17,
+   "cascade_range": 0,
+   "in_window_APs": 338
+  }
+ },
+ "check4": {
+  "verdict": "PASS"
+ },
+ "check5": {
+  "orders": 30,
+  "verdict": "PASS"
+ }
+}

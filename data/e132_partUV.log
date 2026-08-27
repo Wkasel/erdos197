@@ -1,0 +1,7 @@
+[U1] ROT4 phase maxima match hand values 4/7,1/2,4/5,5/6 (cycle m mod 4): True; max_a 6|A∩(a,2a]|-5a = 0
+[U2] ROT4 team A: adversarial f in [1,64], seeds (2^10,2^11], horizon 2^22: all chains die, max depth 1
+[U2] ROT4 team B: adversarial f in [1,64], seeds (2^10,2^11], horizon 2^22: all chains die, max depth 1
+[U3] ROT2 sup window density = 1 at a=48
+[U3] ROT8 sup window density = 3/4 at a=192
+[V] ROT4 gap-1 pair supply per octave: {6: (31, 31), 7: (62, 63), 8: (127, 127), 9: (255, 254), 10: (511, 511), 11: (1022, 1023), 12: (2047, 2047), 13: (4095, 4094), 14: (8191, 8191)}
+total 1s -> /Users/will/Dev/personal/tasks/math/erdos197/data/e132_spotchecks.json

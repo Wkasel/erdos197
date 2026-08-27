@@ -1,0 +1,10 @@
+[x11_budget1] M=88: 17/17 subsets closed by catalogue; failures=NONE; usage={'A4a': 10, 'H4': 2, 'H5': 2, 'A4d': 2, 'H1': 1} (0.2s)
+[x11_budget1] M=120: 17/17 subsets closed by catalogue; failures=NONE; usage={'A4a': 10, 'H4': 2, 'H5': 2, 'A4d': 2, 'H1': 1} (0.9s)
+[x11_budget1] M=152: 17/17 subsets closed by catalogue; failures=NONE; usage={'A4a': 10, 'H4': 2, 'H5': 2, 'A4d': 2, 'H1': 1} (2.2s)
+[x15_budget1] M=88: 23/23 subsets closed by catalogue; failures=NONE; usage={'C3': 17, 'F3': 5, 'G6': 1} (0.3s)
+[x15_budget1] M=120: 23/23 subsets closed by catalogue; failures=NONE; usage={'C3': 17, 'F3': 5, 'G6': 1} (0.9s)
+[x15_budget1] M=152: 23/23 subsets closed by catalogue; failures=NONE; usage={'C3': 17, 'F3': 5, 'G6': 1} (1.7s)
+[x15_budget2] M=88: 251/253 subsets closed by catalogue; failures=[{'P': [5, 6], 'full_rung': 'UNSAT'}, {'P': [5, 84], 'full_rung': 'UNSAT'}]; usage={'C3': 136, 'F3': 70, 'G6': 20, 'W1': 3, 'Q4': 4, 'W2': 4, 'W3': 4, 'F3s': 6, 'W6': 2, 'W7': 2} (0.8s)
+[x15_budget2] M=120: 251/253 subsets closed by catalogue; failures=[{'P': [5, 6], 'full_rung': 'UNSAT'}, {'P': [5, 116], 'full_rung': 'UNSAT'}]; usage={'C3': 136, 'F3': 70, 'G6': 20, 'W1': 3, 'Q4': 4, 'W2': 4, 'W3': 4, 'F3s': 6, 'W6': 2, 'W7': 2} (2.1s)
+[x15_budget2] M=152: 251/253 subsets closed by catalogue; failures=[{'P': [5, 6], 'full_rung': 'UNSAT'}, {'P': [5, 148], 'full_rung': 'UNSAT'}]; usage={'C3': 136, 'F3': 70, 'G6': 20, 'W1': 3, 'Q4': 4, 'W2': 4, 'W3': 4, 'F3s': 6, 'W6': 2, 'W7': 2} (5.7s)
+total 15s

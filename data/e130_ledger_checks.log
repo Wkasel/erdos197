@@ -1,0 +1,17 @@
+== check 1: X-INTERLEAVE survival ==
+  set 3-AP-free: yes; arrangement monotone-AP-free: yes
+  inversion pairs: 10 = family (4^k, 2*4^k); anchors 1..16384 all covered
+  delta==1 on displaced values: yes; ledger exposure charge: 0
+  VERDICT: X-INTERLEAVE survives the accounting (charge 0). PASS
+== check 2: D3 octave-recurrence count (>= v/4) ==
+  43 trials, bound cnt >= v/4 held in all. PASS
+== check 3: exposure mass on bal@16 v=160 witness ==
+  team A: inv=85 |D|=8 |Adv|=11 expo_in=6 expo_below=15 cascade=0 APs=464
+  team B: inv=105 |D|=8 |Adv|=14 expo_in=3 expo_below=17 cascade=0 APs=338
+  dense-team exposure is nonzero at Theta(M)*|D| scale; finite instance saw none of expo_below. PASS
+== check 4: P5 descent pressure on the witness ==
+  team A: 464 in-window APs, all carry a descent; 368 distinct descent pairs (>= APs/2)
+  team B: 338 in-window APs, all carry a descent; 252 distinct descent pairs (>= APs/2)
+== check 5: L-COMP composition audit on random AP-free orders ==
+  30 AP-free random orders audited (288 sampled): no composed descent 2-path along any AP; 2-path <=> decreasing monotone AP confirmed. PASS
+E130 ALL CHECKS PASS

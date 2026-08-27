@@ -1,0 +1,188 @@
+{
+ "x11_budget1": {
+  "88": {
+   "n_support_vals": 17,
+   "n_subsets": 17,
+   "closed": 17,
+   "failures": [],
+   "core_usage": {
+    "A4a": 10,
+    "H4": 2,
+    "H5": 2,
+    "A4d": 2,
+    "H1": 1
+   },
+   "secs": 0.2
+  },
+  "120": {
+   "n_support_vals": 17,
+   "n_subsets": 17,
+   "closed": 17,
+   "failures": [],
+   "core_usage": {
+    "A4a": 10,
+    "H4": 2,
+    "H5": 2,
+    "A4d": 2,
+    "H1": 1
+   },
+   "secs": 0.9
+  },
+  "152": {
+   "n_support_vals": 17,
+   "n_subsets": 17,
+   "closed": 17,
+   "failures": [],
+   "core_usage": {
+    "A4a": 10,
+    "H4": 2,
+    "H5": 2,
+    "A4d": 2,
+    "H1": 1
+   },
+   "secs": 2.2
+  }
+ },
+ "x15_budget1": {
+  "88": {
+   "n_support_vals": 23,
+   "n_subsets": 23,
+   "closed": 23,
+   "failures": [],
+   "core_usage": {
+    "C3": 17,
+    "F3": 5,
+    "G6": 1
+   },
+   "secs": 0.3
+  },
+  "120": {
+   "n_support_vals": 23,
+   "n_subsets": 23,
+   "closed": 23,
+   "failures": [],
+   "core_usage": {
+    "C3": 17,
+    "F3": 5,
+    "G6": 1
+   },
+   "secs": 0.9
+  },
+  "152": {
+   "n_support_vals": 23,
+   "n_subsets": 23,
+   "closed": 23,
+   "failures": [],
+   "core_usage": {
+    "C3": 17,
+    "F3": 5,
+    "G6": 1
+   },
+   "secs": 1.7
+  }
+ },
+ "x15_budget2": {
+  "88": {
+   "n_support_vals": 23,
+   "n_subsets": 253,
+   "closed": 251,
+   "failures": [
+    {
+     "P": [
+      5,
+      6
+     ],
+     "full_rung": "UNSAT"
+    },
+    {
+     "P": [
+      5,
+      84
+     ],
+     "full_rung": "UNSAT"
+    }
+   ],
+   "core_usage": {
+    "C3": 136,
+    "F3": 70,
+    "G6": 20,
+    "W1": 3,
+    "Q4": 4,
+    "W2": 4,
+    "W3": 4,
+    "F3s": 6,
+    "W6": 2,
+    "W7": 2
+   },
+   "secs": 0.8
+  },
+  "120": {
+   "n_support_vals": 23,
+   "n_subsets": 253,
+   "closed": 251,
+   "failures": [
+    {
+     "P": [
+      5,
+      6
+     ],
+     "full_rung": "UNSAT"
+    },
+    {
+     "P": [
+      5,
+      116
+     ],
+     "full_rung": "UNSAT"
+    }
+   ],
+   "core_usage": {
+    "C3": 136,
+    "F3": 70,
+    "G6": 20,
+    "W1": 3,
+    "Q4": 4,
+    "W2": 4,
+    "W3": 4,
+    "F3s": 6,
+    "W6": 2,
+    "W7": 2
+   },
+   "secs": 2.1
+  },
+  "152": {
+   "n_support_vals": 23,
+   "n_subsets": 253,
+   "closed": 251,
+   "failures": [
+    {
+     "P": [
+      5,
+      6
+     ],
+     "full_rung": "UNSAT"
+    },
+    {
+     "P": [
+      5,
+      148
+     ],
+     "full_rung": "UNSAT"
+    }
+   ],
+   "core_usage": {
+    "C3": 136,
+    "F3": 70,
+    "G6": 20,
+    "W1": 3,
+    "Q4": 4,
+    "W2": 4,
+    "W3": 4,
+    "F3s": 6,
+    "W6": 2,
+    "W7": 2
+   },
+   "secs": 5.7
+  }
+ }
+}
