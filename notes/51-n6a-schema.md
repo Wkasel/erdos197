@@ -1,0 +1,57 @@
+# GAP-N6a: the all-M schema of the Case-2 coupled core (session 12, inline)
+
+Data: e126 MUS finals — M=32 (3,3,3), n=116, all-necessary, Glucose-verified;
+M=48 (2,2,2), n=153, Glucose-verified. Anchor coordinates below.
+
+## Scale-STABLE anchor families (identical at both M)
+- **S1 (B0 top-run):** top_off 0..7 — the top 8 values of B0. Exact at both.
+- **S2 (B1 top-run):** top_off 0..7 — the top 8 values of B1. Exact at both.
+- **S3 (B2 bottom-run):** bot_off 1..16 — the bottom 16 values of B2. Exact
+  at both. NOTE 16 = 2×8: S3 is the seam-2 doubling image of S2 —
+  completions 2y − u with y in S2 (y ≈ 4M) and u ∈ B1 land exactly on
+  (4M, 4M+16]-type material; the coupling is the sumset layer.
+
+## SCALING families
+- **S5 (B1 central band):** a contiguous run centred near 3M (bot_off
+  ~M/3..~M−ε at both scales, width Θ(M)).
+- **S6 (B2 midband/flood run):** contiguous band ending at/just past 6M —
+  6M is B2's own centre, the analogue of the C3 proof's flood centre m₀ =
+  3M/2 for a block (M, 2M] (centre-of-block law: the flood zone sits at the
+  arithmetic centre of the top block). Width Θ(M); at M=48 it crosses 6M by
+  +16 (= |S3|), at M=32 it ends at 6M exactly — the crossing amount tracks
+  the S3 run, another seam-coupling signature.
+- **S4 (B0 scattered anchors):** the only non-uniform family
+  (M=32: {1,2},{9,10},{13,15,16}; M=48: {17,18,19},{29,30}) — differs
+  between the (3,3,3) and (2,2,2) bounds regimes. Working hypothesis:
+  these are witness midpoints of S1×S5 and S1×S6 pairs (the (u+z)/2
+  geometry), hence derived, not primitive; the parametric schema should
+  generate them from the primitive families.
+
+## mod-4 structure
+Near-uniform across all classes in every block at both scales — the schema
+is INTERVAL-RUN based, not residue-class based. Residues should enter only
+through the flood-centre condition (as in C3, where the single mod-8 appeal
+is the class of m₀±1) — here the candidate condition is the class of 6M±ε
+relative to the S3 run, i.e. a condition on M mod small powers of 2 that is
+VACUOUS for the balanced core (which fires at every M ≥ 32 tested, all
+residues) — consistent with the machine's no-residue-law finding for the
+coupled core.
+
+## Candidate all-M schema (primitive families)
+CORE(M) := S1(8) ∪ S2(8) ∪ S3(16) ∪ S5(central band of B1, width cM) ∪
+S6(flood band of B2 ending at 6M + |S3|, width c'M) ∪ S4(derived
+midpoints). Conjecture: the (2,2,2)-bounded two-seam instance restricted
+to CORE(M) is UNSAT for every M ≥ 48 (and the (3,3,3) variant for M ≥ 32).
+
+## What a Z/D/E/P hand proof needs (assessment)
+- Ladders: the S5→S6 cross-seam ladders (difference families 2M±small) play
+  the role of C3's d=2 odd ladders; S2→S3 doubling coupling replaces the
+  transfer lock (E) — the lock now transfers orientation ACROSS the seam.
+- Flood: mirror-flood at centre 6M over the S6 band (phase-blind per
+  Lemma P's template), with S3 as the anchored boundary rung.
+- The bounds (2,2,2) enter as the supply of "against-type" values that the
+  flood cannot route around — the quantitative hook where the ledger's
+  minority profile plugs in.
+
+Sufficiency check queued: e133 (restricted-support UNSAT at M=64 with
+generous margins) — running.
