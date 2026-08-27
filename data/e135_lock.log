@@ -1,0 +1,4 @@
+SCHEMA-LOCK M=32 (3, 3, 3): UNSAT [5s] |core|=159
+SCHEMA-LOCK M=48 (2, 2, 2): UNSAT [29s] |core|=223
+SCHEMA-LOCK M=80 (2, 2, 2): UNSAT [127s] |core|=351
+SCHEMA-LOCK M=96 (2, 2, 2): UNSAT [402s] |core|=415
