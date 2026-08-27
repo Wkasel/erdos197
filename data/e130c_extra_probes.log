@@ -1,0 +1,39 @@
+e130c follow-up probes (run inline, session 2026-08-26; commands recorded in
+notes/53-n3-l1.md SSA.5): 6-ladder pool = [O(d2 odd), E(d2 even), Q1..Q4(d4)],
+per-maximal-run Lemma-D polarities, closure = R1-R4 + transitivity fixpoint
+(e130c_punctured_schema.closure), core + battleground split as seeds.
+
+Probe 1: full pool on the part2 failing cases (K4=A4a core, split t1 vs c):
+M=48 even_mid puncture m0+2:  c=+0: surviving 12/512 (runs 8)
+M=48 b1 puncture:             c=+0: surviving 0/128 (runs 6)   <- closes
+M=48 m0 punctured:            c=-2: 2/512, c=+2: 2/512, c=-4: 2/512, c=+4: 2/512
+M=80 even_mid puncture m0+2:  c=+0: surviving 24/512 (runs 8)
+M=80 b1 puncture:             c=+0: surviving 0/128 (runs 6)   <- closes
+M=80 m0 punctured:            c=-2: 0/512, c=+2: 0/512, c=-4: 0/512, c=+4: 0/512  <- closes (all four shifted battlegrounds)
+
+Probe 2: two-split refinement (t1 vs c1) x (t2 vs c2) on punct m0+2, A4a core:
+M=48: 12/1024 at all four (c1,c2) combos tried; M=80: 24/1024 at all four.
+=> extra splits do NOT close the even-interior case for the A4a core.
+
+Probe 3: MUS of the m0+2-punctured full rung at M=80:
+  {11,12}: [[t6,b3],[t3,b4],[t2,b5],[t1,b5]]  = A4d exactly
+  {15,16}: [[t6,b5],[t5,b5],[t3,b6],[t2,b7]]  (Q4-variant with t6 for t4)
+
+Probe 4: A4d core + full pool on punct m0+2 ({11,12}):
+M=48  split t1-m0: 0/512, split t2-m0: 0/512   <- closes
+M=80  split t1-m0: 0/512, split t2-m0: 0/512   <- closes
+M=112 split t1-m0: 0/512, split t2-m0: 0/512   <- closes
+
+CONCLUSION (derivation level, {11,12} dyadic class, single punctures):
+every tested puncture class has a (core, battleground, per-run Lemma-D)
+combination whose branch closure refutes the punctured instance:
+  odd interior      -> A4a, t1 vs m0, severed O/Q3 runs      0/128 @ 48/80/112
+  even interior     -> A4d, t1-or-t2 vs m0                   0/512 @ 48/80/112
+  ladder end b1     -> A4a, t1 vs m0, full pool              0/128 @ 48/80
+  center m0         -> A4a, t1 vs m0+-2 or m0+-4             0/512 @ 80 (2/512 @ 48)
+  top region t5     -> A4a, t1 vs m0                         0/64  @ 48/80/112
+  anchors           -> fallback catalogue A4d/H1/H4/H5 (semantic lane-true
+                       cofinitely from M=80, e130c part1; derivations =
+                       same template, e124m-style, pending per-cell)
+Controls at M == 4 mod 8 (52, 84): 4/32 branches survive (schema correctly
+inapplicable off-class).

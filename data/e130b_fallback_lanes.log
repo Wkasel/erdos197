@@ -1,0 +1,16 @@
+...M=24 (0s)
+...M=48 (5s)
+...M=72 (26s)
+...M=96 (75s)
+...M=120 (149s)
+...M=144 (220s)
+...M=168 (257s)
+A4a(x=11): {0: 'all M == 0 mod 8 from 16', 5: 'all M == 5 mod 8 from 37'}
+H1(x=11): {0: 'all M == 0 mod 8 from 16'}
+H4(x=11): {0: 'all M == 0 mod 8 from 16'}
+H5(x=11): {0: 'partial: [16, 32, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168]', 4: 'all M == 4 mod 8 from 20'}
+C3(x=15): {0: 'all M == 0 mod 8 from 16'}
+F3(x=15): {0: 'all M == 0 mod 8 from 16'}
+G6(x=15): {0: 'partial: [16, 24, 32, 48, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168]', 2: 'partial: [18]', 4: 'partial: [20]', 6: 'partial: [22]'}
+Q4(x=15): {0: 'all M == 0 mod 8 from 16', 3: 'all M == 3 mod 8 from 19'}
+-> /Users/will/Dev/personal/tasks/math/erdos197/data/e130b_fallback_lanes.json (257s)

@@ -1,0 +1,166 @@
+{
+ "part2": {
+  "48": {
+   "none": {
+    "surviving": 0,
+    "branches": 32,
+    "runs": 4,
+    "secs": 0.0
+   },
+   "odd_mid_hi": {
+    "surviving": 0,
+    "branches": 128,
+    "runs": 6,
+    "secs": 0.1
+   },
+   "odd_mid_lo": {
+    "surviving": 0,
+    "branches": 128,
+    "runs": 6,
+    "secs": 0.1
+   },
+   "even_mid": {
+    "surviving": 12,
+    "branches": 64,
+    "runs": 5,
+    "secs": 0.1
+   },
+   "b1": {
+    "surviving": 2,
+    "branches": 32,
+    "runs": 4,
+    "secs": 0.0
+   },
+   "t5": {
+    "surviving": 0,
+    "branches": 64,
+    "runs": 5,
+    "secs": 0.1
+   },
+   "m0_c+2": {
+    "surviving": 4,
+    "branches": 64,
+    "runs": 5,
+    "secs": 0.1
+   },
+   "m0_c-2": {
+    "surviving": 8,
+    "branches": 64,
+    "runs": 5,
+    "secs": 0.1
+   }
+  },
+  "80": {
+   "none": {
+    "surviving": 0,
+    "branches": 32,
+    "runs": 4,
+    "secs": 0.2
+   },
+   "odd_mid_hi": {
+    "surviving": 0,
+    "branches": 128,
+    "runs": 6,
+    "secs": 0.5
+   },
+   "odd_mid_lo": {
+    "surviving": 0,
+    "branches": 128,
+    "runs": 6,
+    "secs": 0.5
+   },
+   "even_mid": {
+    "surviving": 12,
+    "branches": 64,
+    "runs": 5,
+    "secs": 0.4
+   },
+   "b1": {
+    "surviving": 2,
+    "branches": 32,
+    "runs": 4,
+    "secs": 0.2
+   },
+   "t5": {
+    "surviving": 0,
+    "branches": 64,
+    "runs": 5,
+    "secs": 0.3
+   },
+   "m0_c+2": {
+    "surviving": 8,
+    "branches": 64,
+    "runs": 5,
+    "secs": 0.3
+   },
+   "m0_c-2": {
+    "surviving": 10,
+    "branches": 64,
+    "runs": 5,
+    "secs": 0.3
+   }
+  },
+  "112": {
+   "none": {
+    "surviving": 0,
+    "branches": 32,
+    "runs": 4,
+    "secs": 0.3
+   },
+   "odd_mid_hi": {
+    "surviving": 0,
+    "branches": 128,
+    "runs": 6,
+    "secs": 1.0
+   },
+   "odd_mid_lo": {
+    "surviving": 0,
+    "branches": 128,
+    "runs": 6,
+    "secs": 1.0
+   },
+   "even_mid": {
+    "surviving": 12,
+    "branches": 64,
+    "runs": 5,
+    "secs": 0.8
+   },
+   "b1": {
+    "surviving": 2,
+    "branches": 32,
+    "runs": 4,
+    "secs": 0.3
+   },
+   "t5": {
+    "surviving": 0,
+    "branches": 64,
+    "runs": 5,
+    "secs": 0.5
+   },
+   "m0_c+2": {
+    "surviving": 8,
+    "branches": 64,
+    "runs": 5,
+    "secs": 0.7
+   },
+   "m0_c-2": {
+    "surviving": 10,
+    "branches": 64,
+    "runs": 5,
+    "secs": 0.6
+   }
+  },
+  "52": {
+   "control_intact": {
+    "surviving": 4,
+    "branches": 32
+   }
+  },
+  "84": {
+   "control_intact": {
+    "surviving": 4,
+    "branches": 32
+   }
+  }
+ }
+}

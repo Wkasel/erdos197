@@ -1,0 +1,27 @@
+[2] M=48 none: {'surviving': 0, 'branches': 32, 'runs': 4, 'secs': 0.0}
+[2] M=48 odd_mid_hi: {'surviving': 0, 'branches': 128, 'runs': 6, 'secs': 0.1}
+[2] M=48 odd_mid_lo: {'surviving': 0, 'branches': 128, 'runs': 6, 'secs': 0.1}
+[2] M=48 even_mid: {'surviving': 12, 'branches': 64, 'runs': 5, 'secs': 0.1}
+[2] M=48 b1: {'surviving': 2, 'branches': 32, 'runs': 4, 'secs': 0.0}
+[2] M=48 t5: {'surviving': 0, 'branches': 64, 'runs': 5, 'secs': 0.1}
+[2] M=48 m0_c+2: {'surviving': 4, 'branches': 64, 'runs': 5, 'secs': 0.1}
+[2] M=48 m0_c-2: {'surviving': 8, 'branches': 64, 'runs': 5, 'secs': 0.1}
+[2] M=80 none: {'surviving': 0, 'branches': 32, 'runs': 4, 'secs': 0.2}
+[2] M=80 odd_mid_hi: {'surviving': 0, 'branches': 128, 'runs': 6, 'secs': 0.5}
+[2] M=80 odd_mid_lo: {'surviving': 0, 'branches': 128, 'runs': 6, 'secs': 0.5}
+[2] M=80 even_mid: {'surviving': 12, 'branches': 64, 'runs': 5, 'secs': 0.4}
+[2] M=80 b1: {'surviving': 2, 'branches': 32, 'runs': 4, 'secs': 0.2}
+[2] M=80 t5: {'surviving': 0, 'branches': 64, 'runs': 5, 'secs': 0.3}
+[2] M=80 m0_c+2: {'surviving': 8, 'branches': 64, 'runs': 5, 'secs': 0.3}
+[2] M=80 m0_c-2: {'surviving': 10, 'branches': 64, 'runs': 5, 'secs': 0.3}
+[2] M=112 none: {'surviving': 0, 'branches': 32, 'runs': 4, 'secs': 0.3}
+[2] M=112 odd_mid_hi: {'surviving': 0, 'branches': 128, 'runs': 6, 'secs': 1.0}
+[2] M=112 odd_mid_lo: {'surviving': 0, 'branches': 128, 'runs': 6, 'secs': 1.0}
+[2] M=112 even_mid: {'surviving': 12, 'branches': 64, 'runs': 5, 'secs': 0.8}
+[2] M=112 b1: {'surviving': 2, 'branches': 32, 'runs': 4, 'secs': 0.3}
+[2] M=112 t5: {'surviving': 0, 'branches': 64, 'runs': 5, 'secs': 0.5}
+[2] M=112 m0_c+2: {'surviving': 8, 'branches': 64, 'runs': 5, 'secs': 0.7}
+[2] M=112 m0_c-2: {'surviving': 10, 'branches': 64, 'runs': 5, 'secs': 0.6}
+[2] control M=52: surviving 4/32
+[2] control M=84: surviving 4/32
+-> /Users/will/Dev/personal/tasks/math/erdos197/data/e130c_punctured.json
