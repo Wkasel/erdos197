@@ -1,0 +1,40 @@
+{
+ "coupled": {
+  "16": {
+   "M": 16,
+   "verdicts": {
+    "A": "SAT",
+    "B": "UNSAT"
+   },
+   "sizes": {
+    "A": 56,
+    "B": 56
+   },
+   "secs": 0.1
+  },
+  "32": {
+   "M": 32,
+   "verdicts": {
+    "A": "UNSAT",
+    "B": "UNSAT"
+   },
+   "sizes": {
+    "A": 112,
+    "B": 112
+   },
+   "secs": 0.7
+  },
+  "64": {
+   "M": 64,
+   "verdicts": {
+    "A": "UNSAT",
+    "B": "SAT"
+   },
+   "sizes": {
+    "A": 224,
+    "B": 224
+   },
+   "secs": 7.1
+  }
+ }
+}

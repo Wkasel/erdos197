@@ -1,0 +1,4 @@
+coupled M=16: {'A': 'SAT', 'B': 'UNSAT'} (0.1s)
+coupled M=32: {'A': 'UNSAT', 'B': 'UNSAT'} (0.7s)
+coupled M=64: {'A': 'UNSAT', 'B': 'SAT'} (7.1s)
+-> /Users/will/Dev/personal/tasks/math/erdos197/data/e131_rot4.json

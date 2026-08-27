@@ -1,0 +1,24 @@
+split: {4: {'nA': 8, 'nB': 8}, 10: {'nA': 512, 'nB': 512}, 20: {'nA': 524288, 'nB': 524288}}
+diffuse (max ratio-2 window density by anchor octave):
+   5 {'maxdensA': 0.5, 'argA': 32, 'maxdensB': 0.8333, 'argB': 48}
+   6 {'maxdensA': 0.8, 'argA': 80, 'maxdensB': 0.5714, 'argB': 112}
+   7 {'maxdensA': 0.8333, 'argA': 192, 'maxdensB': 0.5, 'argB': 128}
+   8 {'maxdensA': 0.5714, 'argA': 448, 'maxdensB': 0.8, 'argB': 320}
+   9 {'maxdensA': 0.5, 'argA': 512, 'maxdensB': 0.8333, 'argB': 768}
+   10 {'maxdensA': 0.8, 'argA': 1280, 'maxdensB': 0.5714, 'argB': 1792}
+   11 {'maxdensA': 0.8333, 'argA': 3072, 'maxdensB': 0.5, 'argB': 2048}
+   12 {'maxdensA': 0.5714, 'argA': 7168, 'maxdensB': 0.8, 'argB': 5120}
+   13 {'maxdensA': 0.5, 'argA': 8192, 'maxdensB': 0.8333, 'argB': 12288}
+   14 {'maxdensA': 0.8, 'argA': 20480, 'maxdensB': 0.5714, 'argB': 28672}
+   15 {'maxdensA': 0.8333, 'argA': 49152, 'maxdensB': 0.5, 'argB': 32768}
+   16 {'maxdensA': 0.5714, 'argA': 114688, 'maxdensB': 0.8, 'argB': 81920}
+   17 {'maxdensA': 0.5, 'argA': 131072, 'maxdensB': 0.5, 'argB': 131072}
+subcrit rot4_A: {'nodes': 1020, 'top': 4093, 'verdict': 'DIES', 'top_octave': 11}
+subcrit rot4_B: {'nodes': 1021, 'top': 3069, 'verdict': 'DIES', 'top_octave': 11}
+subcrit iid_A: {'nodes': 130900, 'top': 262139, 'verdict': 'EXPLODES', 'top_octave': 17}
+subcrit gate_majorityA: {'nodes': 156635, 'top': 262144, 'verdict': 'EXPLODES', 'top_octave': 17}
+subcrit gate_sparseB: {'nodes': 104486, 'top': 262142, 'verdict': 'EXPLODES', 'top_octave': 17}
+  (14s)
+bands: rot4 total vacations 281/576 slots; iid 0 (expect 0)
+columns: max monochrome run over 200 y x 3 shifts = 2
+-> /Users/will/Dev/personal/tasks/math/erdos197/data/e131_rot4.json
