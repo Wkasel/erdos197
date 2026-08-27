@@ -1,1 +1,2 @@
 M=64 |support|=212
+SCHEMA-CHECK M=64: SAT [11s]

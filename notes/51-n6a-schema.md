@@ -55,3 +55,13 @@ to CORE(M) is UNSAT for every M ≥ 48 (and the (3,3,3) variant for M ≥ 32).
 
 Sufficiency check queued: e133 (restricted-support UNSAT at M=64 with
 generous margins) — running.
+
+## Sufficiency check verdict (e133, M=64): **SAT (11s) — schema as
+parameterized is NOT sufficient.** The generous-margin CORE(64) guess
+(|support| = 212) admits a satisfying restricted instance: the true core
+uses values outside the guessed bands — the S4/S5/S6 scaling between
+M=32→48 does not extrapolate linearly to 64 (two data points were not
+enough). Action: extract the true M=64 MUS (e126 extractor, launched) and
+re-fit the schema on three points before any hand-proof attempt. The
+stable families S1/S2/S3 and the seam-coupling observation stand (they
+are present in both existing MUSes); the scaling laws are what's wrong.
