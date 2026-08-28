@@ -277,3 +277,155 @@ teams can share the burden.  That the campaign's proven layer already
 contains this is a consistency check on the whole chain: any
 formalization under which B1.2 failed would have been wrong.)
 
+
+---
+
+## 4. The dichotomy form, the split quantification, and why there is
+## no descent
+
+Theorem B1 makes the task's dichotomy unnecessary; this section
+records the dichotomy anyway — partly because the ledger asked for it
+in that shape, mostly because the analysis of the FAILED branch is
+load-bearing knowledge: it proves the previously-planned proof
+strategy could not have worked, which future sessions should not
+rediscover.
+
+### 4.1 The dichotomy, stated as tasked  [PROVED modulo (H1)]
+
+**Proposition B2.**  Let T be a Case-1 team with clean-scale set 𝕄
+and dust bound C₀, and let T′ be its partner.  Then exactly one of:
+
+  (a) some diagonal usable pair is entirely contained in T — and then
+      T is not 3-permutable (Lemma PIN + (H1), Steps 2–3 of B1);
+  (b) every diagonal usable pair meets T′.
+
+And (b) is VACUOUS: it contradicts Case-1 membership outright (§4.2).
+Hence (a) holds for every Case-1 team.  ∎ (given §4.2)
+
+### 4.2 The split quantification, and the one-shot contradiction
+[PROVED]
+
+**Lemma SPLIT-QUANT.**  Suppose every diagonal usable pair meets T′.
+Then for every m,
+
+    |B(m) ∩ T′|  ≥  N(m)  ≥  (2^m − 13)/12,
+
+and in particular T′ contains at least one value of every crown pair
+{2^j − 1, 2^j} with j even ≥ 4 (Lemma CROWN-2ADIC) — the task brief's
+"one value of each pair {2^j−1, 2^j}, an infinite set with exact
+2-adic structure".
+
+*Proof.*  The N(m) diagonal pairs inside B(m) are pairwise disjoint
+and each contributes at least one T′-element of B(m).  ∎
+
+**Corollary B2-VAC (branch (b) is impossible for a Case-1 team).**
+If T has even ONE C₀-clean block at a scale with 2^m ≥ 12·C₀ + 26,
+branch (b) fails: it would force |B(m) ∖ T| = |B(m) ∩ T′| ≥
+(2^m − 13)/12 > C₀.  ∎
+
+Note what happened to the task's expected structure: the partner's
+inherited set is real (SPLIT-QUANT), but it is not used to build a
+kill against T′ — it is used against the HYPOTHESIS.  The inheritance
+is so dense that it is incompatible with T's cleanliness, and the
+whole second branch evaporates before any order theory is needed.
+The partner needs no windows, no landing pads, no unsplit pair of its
+own; nothing about T′'s permutability is ever invoked.
+
+### 4.3 Why the planned descent could never have worked  [PROVED
+(the obstruction); recorded to prevent re-attempts]
+
+The task brief (and notes/50 item 4) envisaged, for the split branch:
+"the partner inherits a usable configuration — the G3 landing-pad
+family (x, 2^j−1, 2^{j+1}−2−x), or its own unsplit pair", closed by
+"a well-ordering argument on pair assignments".  This subsection
+shows that in the only regime where the split branch is non-vacuous —
+namely when the usable family is restricted to a FINITE list (e.g.
+today's unconditional layer: the verified cells of notes/49 §6 plus
+p ≤ 13) — no such descent exists, for structural reasons.
+
+First the landing-pad geometry itself, made exact (all elementary):
+
+**Lemma LP (landing-pad arithmetic).**  Fix j ≥ 3.
+  (α) For every 1 ≤ x ≤ 2^j − 3, (x, 2^j − 1, 2^{j+1} − 2 − x) is a
+      3-AP whose completion lies in B(j); as x varies the completions
+      sweep (2^j, 2^{j+1} − 3] downward from the top.  Likewise
+      through the hi half: (x, 2^j, 2^{j+1} − x) for 1 ≤ x ≤ 2^j − 1.
+      (The G3 kill instances (2, 31, 60), (2, 127, 252),
+      (2, 511, 1020) of notes/38 are (α) at x = 2, j = 5, 7, 9.)
+  (β) (1, 2^j, 2^{j+1} − 1) is a 3-AP linking the hi half at level j
+      to the lo half at level j+1.
+  (γ) Within the crown-half set 𝒞 = {2^j − 1, 2^j : j ≥ 3}, the ONLY
+      3-APs with all members in 𝒞 ∪ {1} are the (β) family and the
+      degenerate in-level triple (2^j − 2, 2^j − 1, 2^j) (whose low
+      endpoint is not in 𝒞): for an AP (u, v, w) with v, w ∈ 𝒞 at
+      levels k ≤ l, w ≤ 2v − 1 forces l ∈ {k, k+1}, and the four
+      cross-level combinations give u = 1 (hi_k, lo_{k+1}),
+      u = 0, −1, −2 (impossible) respectively.
+
+*Proof.*  Substitution throughout; (γ): if v ∈ {2^k−1, 2^k} and
+w ∈ {2^l−1, 2^l}, l ≥ k+2 gives w ≥ 2^{k+2}−1 > 2v ≥ u + w, absurd;
+the l = k and l = k+1 cases enumerate as displayed.  ∎
+
+Now the obstruction.  Suppose the usable family is a fixed finite
+list 𝒫₀ (pairs and their attacker cohorts), and consider the SPLITTER
+ADVERSARY: the coloring that (i) splits every pair of 𝒫₀ and every
+crown pair (T′ gets the lo halves 2^j − 1, say, T gets the hi), and
+(ii) assigns to T every other value — in particular every completion
+2^{j+1} − 2 − x, x ∈ A′, of every fan (α) through a T′-owned lo half,
+for every finite attacker cohort A′ ⊆ T′ the argument might try to
+fix.  Then:
+
+* T is Case-1 (dust per block ≤ 1 + |𝒫₀|-material at low blocks:
+  eventually exactly one dust value per block, the planted lo half);
+* T′ owns one value of each pair of 𝒫₀ and each crown pair — the
+  full SPLIT-QUANT inheritance restricted to this sparse family;
+* yet NO fixed finite attacker cohort of either team ever fires an
+  unsatisfiable per-window system: T never owns a full 𝒫₀-pair; T′'s
+  landing-pad fans are starved (every completion is in T), and by
+  Lemma LP(γ) the crown halves alone support only the (β) chain
+  units lo_{j+1} ≺ hi_j — one unit per level on FRESH values, which
+  any order satisfies (e.g. place each level's material in
+  decreasing numeric order); and T′ has no clean windows, so Lemma
+  PIN never applies to T′ at all.
+
+So with a finite usable family the split branch has a genuine FIXED
+POINT — a coloring the entire mechanism never contradicts.  It
+follows that:
+
+1. **Any BRIDGE1 argument MUST use an infinite usable family whose
+   per-block pair count is unbounded** (else the splitter adversary
+   above, applied to the finite list of pairs the argument actually
+   cites below any given scale... more precisely: a family with
+   bounded per-block counts b can be split while keeping T
+   (b + 1)-clean, dodging both branches forever).  Density is not a
+   convenience of §3 — it is necessary.
+2. **The descent had no well-ordering to run on.**  The imagined
+   inheritance step hands the partner a configuration at a STRICTLY
+   HIGHER level j (the landing pad lives above the split pair that
+   created it), so any potential decreasing along the inheritance
+   chain would have to decrease along a strictly-increasing-scale
+   sequence of fresh configurations — and the fixed point shows no
+   bottom is ever reached.  There is nothing to found the induction
+   on.  The correct replacement is the SIMULTANEOUS counting of
+   SPLIT-QUANT: quantify over all pairs at once, and the split
+   branch self-destructs against the cleanliness hypothesis in one
+   step, with no ordering at all.
+
+This is the honest discharge of the task's "write the well-ordering
+argument with full care": written with full care, the well-ordering
+does not exist, and the argument that replaces it needs none.
+
+### 4.4 What remains true of the landing pads
+
+The landing-pad family is not dead weight: Lemma LP(α) is the
+mechanism by which SPLITTING IS COSTLY IN EXACT PARTITIONS (notes/38:
+it killed geo_alt/A, whose planted halves had in-team attackers AND
+in-team completions).  In the present frame that observation becomes:
+the splitter adversary of §4.3 is FORCED to hand T every fan
+completion — i.e. forced to make T cleaner and more uniform, pushing
+T deeper into Case 1 and into the teeth of Theorem B1's density
+argument.  The pads lose their role as a kill mechanism and reappear
+as the reason the adversary cannot decorate its dodge: every dodge of
+the fan geometry is a donation to the clean team.  No step of §3
+depends on this remark.
+
