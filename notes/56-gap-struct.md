@@ -234,3 +234,80 @@ scale.
 [MACHINE-CHECK: data/e147_cegar_M48.json/.log,
 data/e148_essential_M48.json/.log.]
 
+---
+
+## 3. The potential and the dichotomy
+
+### 3.1 The potential  [definition + PROVED structure lemma]
+
+For a 2-coloring χ define
+
+    Φ(χ)  :=  Σ_T  #{ (u, z) ∈ U_T × Z_T : u ≡ z (mod 2) }
+
+— the *same-parity P0×P2 exposure mass*.  Φ is a pure coloring
+quantity (no order, no arithmetic beyond parity); Lemma W(d)'s
+parity hatch is exactly Φ = 0.  On the 169 CEGAR witnesses at
+M = 48 the potential separates the two clusters PERFECTLY:
+
+    balanced cluster (38 witnesses):   Φ = 0        (all of them)
+    lopsided cluster (131 witnesses):  Φ ≥ 288      (all of them)
+
+— no witness in (0, 288), and no witness with min|Y| in (18, 28).
+
+**Lemma PH (parity-hatch structure).**  Let χ be a 2-coloring of
+CORE′(M) with |U_T| ≥ 1 for both teams.  Then Φ(χ) = 0 if and only
+if, up to team swap,
+
+    U_A = odds of P0,  U_B = evens of P0,
+    Z_A = evens of P2,  Z_B = odds of P2,
+
+i.e. χ restricted to P0 ∪ P2 is EXACTLY the complementary parity
+family of Lemma PAR (band unconstrained).
+
+*Proof.*  (⇐) A same-parity pair (u, z) in one team would pair an
+odd with an odd or an even with an even inside a team; by
+construction every team's U and Z have opposite parities.  (⇒) Fix a
+parity c.  P2 ∩ c ≠ ∅ (it has ≥ M values).  If u, u′ ∈ P0 ∩ c lay
+in different teams, any z ∈ P2 ∩ c would share a team with one of
+them — a same-parity in-team pair, so Φ ≥ 1.  Hence P0 ∩ c is
+monochromatic, say ⊆ T_c; and any z ∈ P2 ∩ c in T_c would give
+Φ ≥ 1 (P0 ∩ c ≠ ∅), so P2 ∩ c ⊆ T_c′.  If T_odd = T_even, the other
+team's U would be empty, against the bounds; so T_odd ≠ T_even,
+which is the displayed structure up to swap.  ∎  [PROVED]
+
+### 3.2 The dichotomy, stated
+
+**Proposition DICH(M) (machine form; the CLAIM-B bridge).**  Let χ
+be straddle-free, meet the (2,2,2) bounds, and contain no
+monochromatic block-2 (fan) pattern of 𝔇(M) ["fan-clean"].  Then
+
+    min_T |Y_T|  ≥  K*(M)   ⟹   Φ(χ) = 0,
+
+for a threshold K*(M); by Lemma PH the conclusion says χ|_{P0∪P2}
+is the PAR alignment.  Equivalently: ADV_fan(M) ∧ (min|Y| ≥ K*) ∧
+(Φ ≥ 1) is UNSAT.  [experiments/e149_dichotomy.py sweeps K and
+certifies the threshold; results in §3.3.]
+
+With DICH, the covering theorem COV(M) organizes into the case
+analysis the notes/55 §6.2 bridge asked for:
+
+* **Case F (fan regime = R1).**  Some team monochromatizes a fan
+  pattern: dead by the FG-high gadget / closure certificates.
+* **Case L (lopsided regime).**  Fan-clean and min|Y| ≤ K*(M) − 1:
+  one team's band holds ≥ |P1| − K* + 1 values; dead by the
+  lopsided-band Th1 patterns (α/β species on the band-major team).
+* **Case P (parity regime = R2).**  Fan-clean and min|Y| ≥ K*(M):
+  Φ = 0 by DICH, so χ|_{P0∪P2} is the PAR alignment with a mixed
+  band; dead by the class-local Th1/Th0 patterns (α-lattice, β/J,
+  crown — the H1 species), which contain Lemma PAR + Theorem H as
+  the fully-aligned special case.
+
+The task-prompt's "potential low → fan kill / potential high →
+lattice forced" is realized with Φ inverted: Φ > 0 (exposure) can
+only be sustained by fan-vulnerable or lopsided colorings; at band
+balance the fan catalogue plus straddle-freeness EXTINGUISH the
+exposure entirely, collapsing the coloring onto the lattice arm.
+
+Status: Lemma PH [PROVED]; DICH(M) [MACHINE-CHECKED at the scales
+of §3.3]; the uniform hand proof of DICH is part of GAP-COV (§5).
+

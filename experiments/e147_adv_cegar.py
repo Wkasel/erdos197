@@ -239,6 +239,17 @@ def main():
     cat_path = os.path.join(HERE, '..', 'data', f'e146_catalogue_M{M}.json')
     with open(cat_path) as f:
         seed = json.load(f)
+    # resume: reload a previous run's discoveries (kept in `found` so
+    # the output JSON stays cumulative)
+    prev_found = []
+    prev_path = os.path.join(HERE, '..', 'data', f'e147_cegar_M{M}.json')
+    if os.path.exists(prev_path):
+        with open(prev_path) as f:
+            prev = json.load(f)
+        prev_found = [{k: p[k] for k in ('blk', 'S', 'src')}
+                      for p in prev.get('discovered', [])]
+        print(f'resume: +{len(prev_found)} patterns from previous run',
+              flush=True)
 
     slv = Cadical195()
     # straddles
@@ -269,13 +280,15 @@ def main():
 
     for e in seed:
         add_pattern(e['S'])
+    for e in prev_found:
+        add_pattern(e['S'])
     # symmetry: WLOG M+1 is team A
     slv.add_clause([ai[M + 1]])
 
     print(f'ADV({M}) bounds={bounds}: straddle={n_str} '
-          f'seed patterns={len(seed)}', flush=True)
+          f'seed patterns={len(seed)}+{len(prev_found)}', flush=True)
 
-    found = []
+    found = list(prev_found)
     witnesses = []
     t_start = time.time()
     verdict = 'MAXITER'
