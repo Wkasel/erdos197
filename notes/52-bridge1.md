@@ -476,3 +476,44 @@ dichotomy (e.g. the notes/54 IIa windows) wants Case-1 kills at
 arbitrary anchors; notes/54 §"IIa" should cite BRIDGE1-AF, not
 BRIDGE1, for that.
 
+
+---
+
+## 6. Machine checks (e152)  [MACHINE-CHECKED — all pass]
+
+experiments/e152_bridge1_check.py, as the task brief mandates: each
+branch on 3 constructed colorings at 2 scales.  Complete encodings
+(all transitivity triples — UNSAT needs no soundness argument),
+Cadical195, one query at a time.  data/e152_bridge1.{json,log}.
+
+* **χ1 (branch (a), the direct kill).**  Case-1 team, C₀ = 3, dust
+  placed adversarially ON the C3(9) minimal-core values of each
+  window (b₉, b₁₀, t₉ punctured — the known 3-unit core is destroyed
+  on purpose).  Step-1 extraction finds exactly p = 9 ({27, 28}) in
+  B(4) ∖ dust; R(27, 28; 128, {137,138,247}) UNSAT (n = 125, 643 163
+  clauses, 0.3 s); R(27, 28; 256, {265,266,503}) UNSAT (n = 253,
+  5 365 979 clauses, 3.2 s).  The kill reroutes through the full
+  fired-unit family — a live instance of the N3 robustness (C = 3)
+  that (H1) packages.  Controls at M = 128: AP-only SAT and
+  single-attacker-27 SAT (encoding polarity + "singles SAT"
+  reconfirmed).
+* **χ2 (branch (b), the splitter).**  T′ = {3p : p ≡ 1 (mod 4)}:
+  exact counts |B(7) ∩ T′| = 11 ≥ 9.58 = (2⁷−13)/12 and
+  |B(8) ∩ T′| = 21 ≥ 20.25; all 11 resp. 21 diagonal pairs inside
+  each block meet T′; BOTH teams' per-block dust exceeds 8 —
+  the split branch forces Case-2 shape, Cor B2-VAC verified
+  numerically at two scales.
+* **χ3 (the §4.3 fixed point, and its limits).**  Catalogue pairs
+  x = 11..21 and all crown pairs split 1-1 (T′ = lo halves); T is
+  Case-1 with dust exactly 1 per block from m = 5; the landing-pad
+  facts LP(α) (completions donated to T at j = 5, 7, 9), LP(β), and
+  LP(γ) (brute AP classification over the crown set ∪ {1} up to 512:
+  the β family is ALL of it — 6 APs) verified by enumeration.  The
+  finite-family dodge stalls exactly as §4.3 says — and then the
+  diagonal supply kills anyway: {27, 28} ⊆ T survives the split, and
+  R(27, 28; M, {2M−1}) is UNSAT at M = 128 and 256 (the window dust
+  being χ3's actual crown-half dust).
+
+Total: 6 solver verdicts (4 UNSAT kills, 2 SAT controls) + the
+arithmetic assertions, 7 s.
+
