@@ -181,3 +181,14 @@ M=48 K=26 D=[49] EB=[]: UNSAT [0.0s]
     straddle u=M+5 y=4M-45 z=4M+49
     straddle u=M+13 y=4M-41 z=4M+49
     fan fg(41,45): offs=[-45, -41, 3, 7, 11, 27, 31, 35, 47, 51, 55, 59, 67, 75, 87, 99, 103]
+M=48 K=26 D=[1] EB=[96]: UNSAT [0.0s]
+  first core 3 of 4395
+  minimized 3 ({'straddle': 2, 'fan': 1}) [0s]
+    straddle u=M+33 y=4M-55 z=4M+1
+    straddle u=M+45 y=4M-49 z=4M+1
+    fan fg(49,55): offs=[-55, -49, 3, 7, 15, 19, 21, 23, 25, 27, 29, 31, 41, 43, 51, 55, 61, 79, 81, 93, 95, 99, 103, 107]
+M=48 K=26 D=[1] EB=[2]: UNSAT [0.0s]
+  first core 2 of 4395
+  minimized 2 ({'straddle': 2}) [0s]
+    straddle u=M+16 y=4M-63 z=4M+2
+    straddle u=M+17 y=4M-63 z=4M+1

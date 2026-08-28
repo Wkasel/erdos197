@@ -242,3 +242,122 @@ frontier-law asymmetry from notes/55 §5.2: the (·,0,·) escapes have
 hypothesis being genuinely necessary.
 
 [Status: Lemma AO, Lemma D3 PROVED; arms GAP-LLOP-α/β scoped.]
+
+---
+
+## 3. P-ARM: the classwise halving proof (conditional on two named
+## finite schemas)
+
+Throughout: the hatch is orientation 1 (U_A = odds of P0,
+U_B = evens, Z_A = evens of P2, Z_B = odds; Lemma PH + team swap
+give WLOG), m := M/2, and the band split is arbitrary.  Write
+
+    A_e := Y_A ∩ 2ℤ,  A_o := Y_A ∖ 2ℤ,  B_e, B_o likewise,
+
+so A_e ⊔ B_e = evens of P1, A_o ⊔ B_o = odds of P1.
+
+### 3.1 Lemma PARM-HALVE (guard bookkeeping + halving)  [PROVED]
+
+Under the hatch:
+
+(a) Straddles are vacuous (a straddle has u ≡ z (mod 2), hence u, z
+    in opposite teams).  [notes/55 §5.4 verbatim.]
+(b) **Th2(A)** = the even-halved fan theory: its (0,2,2) units are
+    empty (completion parity = attacker parity = odd ∉ Z_A); its
+    (1,2,2) units need y, z ∈ Z_A (even) and then x = 2y − z is
+    even, so exactly the attackers x ∈ A_e fire, with NO other
+    guard; its in-block APs on Z_A = evens halve under v ↦ v/2.
+    Image: AP-freeness on W2e := [4m+1, 6m+7] plus the FULL double
+    fans of the attacker set h(A_e) ⊆ W1 := [3m−7, 4m]
+    (h = halving).  Consequently: if h(A_e) contains ANY attacker
+    set with an R1–R4+transitivity refutation of its fans in W2e,
+    Th2(A) is inconsistent outright — under the hatch the entire
+    refutation support is automatically in Z_A (all even), so there
+    is no support-monochromaticity caveat.  Same for **Th2(B)** with
+    h = v ↦ (v+1)/2, window W2o := [4m+1, 6m+8], attackers h(B_o).
+(c) **Th0(A)** = ThW0(m) with guarded crown: order theory on
+    h(U_A) = [m+1, 2m]; in-block APs halve; the (0,0,1) units have
+    completions c = 2b − a odd, c ∈ E1 ∩ P1's bottom [3M−15, 3M−1]
+    (Lemma A1), and fire iff c ∈ A_o.  Halved: the notes/55 §5.4c
+    crown-unit system {b′ ≺ a′ : 2b′ − a′ = c′} with completion
+    window c′ ∈ CW := [3m−7, 3m] (8 values), unit group of c′
+    firing iff the corresponding c ∈ A_o.  **Th0(B)** halves (via
+    v ↦ v/2 on evens) to the IDENTICAL guarded theory with guards
+    "c ∈ B_e" — both parities produce the same halved crown core
+    ThW0(m), completion window CW, 8 guard values.
+(d) **Th1(T)** contains its class restrictions (a restriction of a
+    consistent theory is consistent, as in Lemma DP): Th1(A)[A_o] =
+    the α-theory image on h(A_o) (α-units z ≺ y fire for A whenever
+    y, z ∈ A_o with 2y − z ∈ [2M−30, 2M] — the attacker is odd,
+    hence in U_A for free), and Th1(A)[A_e] = the β-theory image on
+    h(A_e) (completions of even high pairs are even, hence in Z_A
+    for free).  Mirror statements for B.  [Not needed for the §3.3
+    kill; recorded because they make the aligned special cases
+    literal sub-instances: A_o = all odds reproduces H1's ThW1′,
+    A_e = all evens reproduces H(m)'s W1-side.]
+
+*Proof.*  Parity bookkeeping identical to Lemma PAR's (notes/55
+§5.4), classwise instead of globally; halving preserves/reflects
+APs (notes/33 Lemma H).  The one new observation is (b)'s "no
+support caveat": every value the closure refutation touches lies in
+the attacker's parity class of P2, which the hatch assigns wholly
+to the attacking team.  ∎
+
+### 3.2 The two finite schema hypotheses
+
+**(H-FG8)(m)**  In the fan theory on W2e (resp. W2o) with attacker
+window W1: every attacker pair at distance ≤ 8 is refuted by plain
+R1–R4 + transitivity closure of its double fan.
+[Machine-true at all audited full scales for the analogous window
+(notes/55 §5.3b: every escape pair has gap ≥ 16); to be re-audited
+tonight on the HALVED windows W2e/W2o at m = 24..80 (e155) since
+their upper ends 6m+7/6m+8 differ from the full-scale 6M+15.
+Uniformization = GAP-FG-schema, already on the ledger.]
+
+**(H-RW0)(m)**  ThW0(m) remains UNSAT after deleting the unit group
+of any ONE completion value c′ ∈ CW.  (8 variants + the full
+theory.)  [Finite per scale, solver-trivial; to be checked tonight
+at m = 24, 28, 32, 40, 48, 56, 64, 80 (e155).  Uniformization =
+GAP-H1's species, now in punctured form: GAP-RW0 ⊆ GAP-H1 ∪ {8
+finite variants}.]
+
+### 3.3 Theorem P-ARM′ (conditional)  [PROVED modulo H-FG8, H-RW0]
+
+**Theorem.**  Assume (H-FG8)(m) and (H-RW0)(m).  Then P-ARM(M)
+holds at M = 2m: under the hatch, for EVERY band split, some block
+theory of some team is inconsistent.
+
+*Proof.*  Case F: h(A_e) or h(B_o) contains an attacker pair at
+distance ≤ 8.  By (H-FG8) and Lemma PARM-HALVE(b), the owning
+team's Th2 is inconsistent.  Done.
+
+Case S (separated): both h(A_e) and h(B_o) are 9-separated subsets
+of W1.  The crown completion window CW has width 8, so
+|h(B_o) ∩ CW| ≤ 1: at most ONE of the 8 odd crown completions of A
+lies in B_o; the other ≥ 7 lie in A_o (band partition), so ≥ 7 of
+the 8 guard groups of Th0(A)'s crown fire.  By (H-RW0), Th0(A) is
+inconsistent.  ∎
+
+(The kill is doubly redundant: |h(A_e) ∩ CW| ≤ 1 likewise fires
+Th0(B) through the identical halved crown.  Neither the band bounds
+nor Th1 are needed in the argument — matching the e150 machine fact
+that blocks {0, 1} alone are SAT while adding block 2 kills: the
+fan layer's role is exactly to force the separation that makes the
+crown guards immune to defusal.)
+
+### 3.4 The residue condition, made exact
+
+The only residue-sensitive ingredient is (H-RW0): ThW0(m) is the
+notes/55 §5.4c halved crown core, machine-dead on the line
+m ≡ 0 (mod 8) — that is M ≡ 0 (mod 16) — with a SAT sharpness point
+at m = 14 (M = 28) and scattered off-line UNSAT (m = 10, 12, 20).
+So the task-brief expectation is realized precisely: **the mod-16
+line inside GAP-H1 becomes P-ARM's residue condition through
+(H-RW0)**; everything else in §3 is residue-free (H-FG8 needs
+nothing; PARM-HALVE needs M even).  Off the target class
+(M ≡ 8 (mod 16), i.e. m ≡ 4 (mod 8)) the theorem stands or falls
+with ThW0's punctured variants at that m — probed tonight at M = 56
+(m = 28) both wholesale (e150 part A) and at the ThW0 level (e155).
+
+[Status: PARM-HALVE, PARM-COUNT/Theorem P-ARM′ PROVED conditional
+on the two named finite schemas; machine checks in flight.]
