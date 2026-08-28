@@ -264,3 +264,30 @@ N6a coupled core, one block deeper; (iii) the honest remaining
 content of L-AFFORD is isolated: an upper bound on how often a
 Θ(M)-dense team can overpay, which must be charged in donations
 (single-use colored values), not in inversion counts.
+
+## 5. The cascade calculus: why the frontier CURVE (not the cell) is
+## the quantitative target
+
+Define forced(x)(M) := min lower-anchor payment compatible with
+upper payment ≤ x (the staircase boundary), and
+v_min(0)(M) := least x with (x, 0) SAT — the price of a FREE lower
+anchor.  Measured brackets at M = 16: forced(6) ≥ 1 (≥ 8 for the
+parity-family colorings by the H_dn floor; exact value pending),
+forced(≈442) = 0 (C2), so forced is a decreasing curve from ~6× 
+amplification at the floor (pay 6 → forced 38 in the C1 witness's
+channel) to zero at v_min(0) ≤ ~442.
+
+**Why this kills the naive multiplicative cascade** (checked before
+anyone tries it): if forced(x) ≥ λx for ALL x up to cap scale with
+λ > 4, descending anchors N → N/2 → … would multiply payment by λ
+while the absolute cap 10N² divides by 4, overflowing the fixed
+bottom till at N₁ — L-AFFORD would follow.  But forced is
+DECREASING (C2): a payer can always go lavish at one anchor and be
+free below it.  The cascade route therefore reduces to the growth
+of v_min(0)(M): **if v_min(0)(M) grows near cap scale Θ(M²), the
+lavish dodge itself costs cap-scale payment at every second anchor
+and the dodge space pinches**; if v_min(0)(M) stays near v*(M), the
+pump is a bounded surcharge and the 4-block instrument has said all
+it can.  v_min(0) growth (16 vs 24) is the decisive measurement
+this instrument can still make; the (6,0)-MUS is the schema
+material for the cell family.
