@@ -50,14 +50,27 @@ def main():
         enc = CardEnc.atmost(lits=[ai[v] for v in P1], bound=K - 1,
                              top_id=vp.top + 100000,
                              encoding=EncType.seqcounter)
+        anat = ''
         with Cadical195(bootstrap_with=base) as s:
             for c in enc.clauses:
                 s.add_clause(c)
             ok = s.solve()
+            if ok:
+                model = set(l for l in s.get_model() if l > 0)
+                YA = sorted(4 * M - v for v in P1 if ai[v] in model)
+                UBa = sorted(2 * M - u for u in range(2 * M - 30, 2 * M + 1)
+                             if ai[u] not in model)
+                ZBC = sorted(z - 4 * M for z in range(4 * M + 1, 5 * M + 16)
+                             if ai[z] not in model)
+                anat = (f'\n    Y_A depths(4M-y): {YA}'
+                        f'\n    U_B alpha-window depths(2M-u): {UBa}'
+                        f'\n    Z_B cap-zone offsets(z-4M): '
+                        f'{ZBC[:40]}{"..." if len(ZBC) > 40 else ""} '
+                        f'(n={len(ZBC)})')
         el = time.time() - t0
         v = 'SAT' if ok else 'UNSAT'
         log(f'  L-LOP({M}) K={K} (min|Y| <= {K-1}, band-major >= '
-            f'{M+17-K}): {v} [{el:.1f}s]')
+            f'{M+17-K}): {v} [{el:.1f}s]{anat}')
         res[f'M{M}_K{K}'] = v
         with open(OUT, 'w') as f:
             json.dump(res, f, indent=0)

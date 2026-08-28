@@ -1,0 +1,53 @@
+===== M=48 (m=24) =====
+A : Lemma FI formulas OK (anchor iff s<=M-31; n_c=8 only at bottom singletons)
+A2: f_c(D) >= 9 for every 2-element D, both classes
+B : 1851 fan patterns, all with exactly 2 band values; same-parity pairs: 863, of which pure-support: 863
+C : alpha_E = 2  witness offs [-46, -14]
+C : alpha_O = 2  witness offs [-47, -15]
+D : bottom singleton {+1} (O) FAILS at pair offs (-55,-49), pure supp offs [3, 7, 15, 19, 21, 23, 25, 27]  => f_O = 9
+D2: self-serving O-singletons (offsets): NONE
+D : bottom singleton {+2} (E) FAILS at pair offs (-54,-48), pure supp offs [4, 8, 16, 20, 22, 24, 26, 28]  => f_E = 9
+D2: self-serving E-singletons (offsets): NONE
+E : K* formula 26 vs e149 26  [OK]  (alpha_E=2, alpha_O=2, f_O=9, f_E=9)
+F : witness defectors (O) [1, 3]: forced 17 values inside opposite band, self-serving OK
+F : witness K=25 phi=48 re-validated
+===== M=64 (m=32) =====
+A : Lemma FI formulas OK (anchor iff s<=M-31; n_c=8 only at bottom singletons)
+A2: f_c(D) >= 9 for every 2-element D, both classes
+B : 2982 fan patterns, all with exactly 2 band values; same-parity pairs: 1428, of which pure-support: 1428
+C : alpha_E = 3  witness offs [-48, -32, 0]
+C : alpha_O = 2  witness offs [-47, -15]
+D : bottom singleton {+1} (O) FAILS at pair offs (-79,-65), pure supp offs [3, 5, 17, 23, 25, 27, 29, 33]  => f_O = 9
+D2: self-serving O-singletons (offsets): NONE
+D : bottom singleton {+2} (E) SELF-SERVES  => f_E = 8
+D2: self-serving E-singletons (offsets): [2]
+E : K* formula 35 vs e149 35  [OK]  (alpha_E=3, alpha_O=2, f_O=9, f_E=8)
+F : witness defectors (O) [1, 3]: forced 17 values inside opposite band, self-serving OK
+F : witness K=34 phi=64 re-validated
+===== M=80 (m=40) =====
+A : Lemma FI formulas OK (anchor iff s<=M-31; n_c=8 only at bottom singletons)
+A2: f_c(D) >= 9 for every 2-element D, both classes
+B : 4345 fan patterns, all with exactly 2 band values; same-parity pairs: 2095, of which pure-support: 2095
+C : alpha_E = 2  witness offs [-78, -46]
+C : alpha_O = 2  witness offs [-79, -47]
+D : bottom singleton {+1} (O) FAILS at pair offs (-95,-81), pure supp offs [3, 17, 31, 45, 59, 73, 87, 101]  => f_O = 9
+D2: self-serving O-singletons (offsets): NONE
+D : bottom singleton {+2} (E) FAILS at pair offs (-94,-80), pure supp offs [4, 18, 32, 46, 60, 74, 88, 102]  => f_E = 9
+D2: self-serving E-singletons (offsets): NONE
+E : K* formula 42 vs e149 42  [OK]  (alpha_E=2, alpha_O=2, f_O=9, f_E=9)
+F : witness defectors (E) [2, 4, 6]: forced 19 values inside opposite band, self-serving OK
+F : witness K=41 phi=120 re-validated
+===== M=96 (m=48) =====
+A : Lemma FI formulas OK (anchor iff s<=M-31; n_c=8 only at bottom singletons)
+A2: f_c(D) >= 9 for every 2-element D, both classes
+B : 5986 fan patterns, all with exactly 2 band values; same-parity pairs: 2907, of which pure-support: 2907
+C : alpha_E = 2  witness offs [-94, -30]
+C : alpha_O = 2  witness offs [-95, -31]
+D : bottom singleton {+1} (O) SELF-SERVES  => f_O = 8
+D2: self-serving O-singletons (offsets): [1]
+D : bottom singleton {+2} (E) SELF-SERVES  => f_E = 8
+D2: self-serving E-singletons (offsets): [2]
+E : K* formula 51 vs e149 51  [OK]  (alpha_E=2, alpha_O=2, f_O=8, f_E=8)
+F : witness defectors (O) [1]: forced 16 values inside opposite band, self-serving OK
+F : witness K=50 phi=48 re-validated
+e153: DONE

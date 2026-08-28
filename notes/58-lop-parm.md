@@ -90,22 +90,55 @@ K*(M) − (M+16)/2:
     −6, −5, −6, −5, −4    at M = 48, 64, 80, 96, 112,
 
 so the notes/56 §3.3 reading (−6 on M ≡ 16, −5 on M ≡ 0 (mod 32))
-breaks at the fifth scale; the offset is DRIFTING UP ≈ +1 per 64,
-i.e. K*(M) ≈ (M+16)/2 − 6 + ⌊(M−48)/64⌋ on present data (5 points).
-Overlap width cap − K* + 1: 4 / 2 / 3 / 1 / 0.  At M = 112 the two
-arms are EXACTLY ADJACENT (L kills min|Y| ≤ 59, P kills ≥ 60 — still
-exhaustive with zero slack), and both offset trends point the wrong
-way: the GAP-ASM′ hole is expected to open at M = 128 already
-(predicted cap 66; K* ≥ 67 would leave {66.. } uncovered... precisely:
-hole iff K* > cap + 1 = 68).  M = 128 measurement in flight; the
-robust P-ARM fix (§4) is now clearly load-bearing, not prophylactic.
+breaks at the fifth scale.  Overlap width cap − K* + 1:
+4 / 2 / 3 / 1 / 0.  At M = 112 the two arms are EXACTLY ADJACENT
+(L kills min|Y| ≤ 59, P kills ≥ 60 — still exhaustive, zero slack).
 
 Frontier anatomy at 112 (all three SAT probes): Φ = M/2 — a SINGLE
 Z-defector against parity-pure U's, confirming the §4 design point
 that the boundary zone is a small-defect regime.
 
+### 1.1 M = 128: both O(1)-drift laws stop drifting; exact adjacency
+### again  [MACHINE-CHECKED]
+
+    L-LOP(128): K = 66, 67, 68 UNSAT; K = 69, 70 SAT
+                → cap(128) = 67 (NOT the ⌊M/32⌋-law's 66 — that law
+                dies at its first out-of-sample test).
+    DICH(128):  K = 65, 66, 67 SAT (Φ = 192/64/64 = (M/2)·{3,1,1});
+                K = 68, 69, 70 UNSAT → K*(128) = 68.
+
+Combined table (min|Y| forms; offsets from balance (M+16)/2):
+
+    M          48   64   80   96   112  128
+    cap        29   36   44   51   59   67     offs −3 −4 −4 −5 −5 −5
+    K*         26   35   42   51   60   68     offs −6 −5 −6 −5 −4 −4
+    width       4    2    3    1    0    0
+
+Both offset sequences have gone FLAT at −5 (cap) and −4 (K*) over
+M = 96..128 resp. 112..128, and K* = cap + 1 EXACTLY at 112 and 128:
+the two arms are complementary with zero slack — no hole at 128
+(the notes/56 §4b projection of a hole "near M = 128" is falsified
+in the good direction).  Candidate asymptotic law: cap = (M+16)/2 − 5
+and K* = (M+16)/2 − 4 for M ≥ 96/112 — under which the assembly
+stays exhaustive at ALL scales and GAP-ASM′ reduces to proving the
+two flat offsets.  The M = 160 endgame (§6) tests this directly;
+the robust P-ARM (§4) is the insurance either way.
+
+**L-LOP frontier anatomy at 128 (K = 69 witness)** — the escape is a
+PARITY-LATTICE coloring: Y_A = the full even band class + 4 odd
+E1-region values (depths 133/137/139/141 = y ∈ {3M−13, 3M−11, 3M−9,
+3M−5}); U_B ⊇ the odd α-window, Z_B ⊇ the even completion zone.
+I.e. the coloring is (up to swap) a HATCH coloring with band split
+by parity and 4 odd-E1 defectors to A — Th1(B)'s α system on the
+punctured odd class escapes precisely because half its 8 odd
+E1-midpoints are gone.  Read: at the cap the L arm hands off exactly
+the P-arm family (compare notes/56 §2.3's balanced cluster), and the
+L-LOP cap is set by how many E1-midpoint defectors the α/crown
+system tolerates — the quantitative bridge between GAP-LLOP-α and
+(H-RW0).
+
 [MACHINE-CHECK: data/e152_llop_probes.log, data/e153_dich_probes.log,
-data/e146_catalogue.log (M=112 block).]
+data/e146_catalogue.log (M=112/128 blocks).]
 
 ---
 
@@ -201,6 +234,14 @@ u ∈ P0 ∖ A_α — guaranteed by defuse-α: U_B ⊆ [M+1, 2M−31].  The
 lemma's two hypotheses feed precisely the two straddle applications:
 defuse-α powers the punch (Step 3), defuse-β powers the position
 constraint (Step 1).
+
+[MACHINE-CHECK of Lemma D3: e156 — the pure coloring instance
+(straddles + (2,2,2) + both defuses, no order theory) is UNSAT at
+M = 48, 64, 96 in < 0.1 s, and all three controls behave as the
+lemma predicts: defuse-α alone SAT, defuse-β alone SAT (each arm
+individually defusable — the dichotomy is genuinely two-armed), and
+dropping the |U_B| ≥ 1 hypothesis restores SAT (the hypothesis is
+necessary).  data/e156_d3_check.log.]
 
 ### 2.3 The armed dichotomy and the two remaining arms
 
@@ -447,3 +488,20 @@ machine instances below are the authority.]
 
 [Status: Lemma PH+ PROVED; COV-W′ composition PROVED given the
 per-scale machine inputs; instances in flight.]
+
+---
+
+## 5. Machine queue (running log; sequential, one solver at a time)
+
+1. e146 catalogue M=128 [running] → e152 L-LOP(128) K=66/67/68
+   (predict UNSAT/UNSAT/SAT; cap 66) + witness anatomy at the SAT
+   frontier;
+2. e153 phi1(128) K=67, 68, ... → K*(128); hole iff K* > 68;
+3. e156 D3 cross-checks (M=48, 64): lemma UNSAT + 3 controls;
+4. e155 H-RW0 + H-FG6 at m = 24, 28, 32, 40, 48, 56, 64, 80;
+5. e150 part A at M=56: the P-ARM residue probe (m = 28);
+6. e153 upure/zdef(128, 67, d₀) → minimal d₀; e154 RP-ARM(48, 2)
+   audit, then RP-ARM(128, d₀);
+7. M=160 endgame: e146(160), e152(160) K=81/82/83, e153
+   upure/zdef(160, K_P, d₀), e154 RP-ARM(160, d₀) — the possibly-
+   hours queries; fallback = overlap-width law + conditional fix.

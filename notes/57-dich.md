@@ -155,20 +155,22 @@ Writing ℓ(z) := |I(z)| and n_c(z) := |I(z) ∩ (class c of P1)|:
   (ii)  MIDDLE (M−31 < s ≤ 2M):  I(z) = full image, ℓ(z) = m,
         min I(z) = (u_min^c+z)/2 > 3M−15;  n_c(z) ≥ ⌊m/2⌋ ≥ 12.
   (iii) HIGH TAIL (2M < s ≤ 2M+15):  top-truncated at 4M;
-        ℓ(z) ≥ m−8 ≥ 16;  n_c(z) ≥ 8.
+        ℓ(z) ≥ m−8 ≥ 16;  n_c(z) ≥ 8, with equality ONLY at the top
+        odd singleton s = 2M+15 (interval [4M−16, 4M], top-anchored).
 
 Moreover for a defector SET D ⊆ Z_T ∩ c the forced set
 F(D) := ⋃_{z∈D} I(z) ⊆ Y_{T′} satisfies
 
   (iv)  f_c(D) := |F(D) ∩ (class c of P1)| ≥ 8, and ≥ 9 UNLESS D is
-        exactly the bottom singleton: any second defector strictly
+        exactly the bottom singleton ({4M+1} / {4M+2}) or the
+        top-odd singleton {6M+15}: any second defector strictly
         extends the union (distinct z give intervals with distinct
         endpoints; a low second defector extends the bottom-anchored
         interval upward by ≥ 1 value, reaching n_c ≥ 9; a
         middle/high second defector contributes an interval of
         n_c ≥ 8 with at most partial overlap — e153 verifies the
-        exact count for every pair at all four scales, and the
-        singleton values are (i)–(iii)).
+        exact count for every singleton AND every pair at all four
+        scales; the singleton values are (i)–(iii)).
 
 *Proof.*  Interval arithmetic: (u+z)/2 ∈ P1 ⟺ u ∈ [6M−30−z, 8M−z];
 intersect with [M+1, 2M] ∩ c and count; the anchor in (i) is
