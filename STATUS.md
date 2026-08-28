@@ -938,3 +938,57 @@ experiments/e152_bridge1_check.py + data/e152_bridge1.{json,log}.
   e152_bridge1_check.py; a parallel notes/58 session independently
   used e152_dich_probe for an unrelated N6a probe — filenames are
   distinct, only the ordinal collides.
+
+### FRONT LLOP+PARM (2026-08-27, night shift, notes/58): cap/K* laws
+### corrected at 112/128, Lemma D3, P-ARM anatomy, robust chain
+### verified at 128
+
+Machine (e146/e152/e153/e154/e155/e156, notes/58 §§1, 3.5–3.6, 4.4):
+
+- **Threshold laws at 112/128**: cap(112) = 59, cap(128) = 67 (both
+  L-LOP sharp); K*(112) = 60, K*(128) = 68.  BOTH prior laws die:
+  the mod-32 K* offsets (notes/56 §3.3) break at 112, the
+  ⌊M/32⌋-cap fit breaks at 128.  What replaces them on present
+  data: both offsets FLAT ((C−1) − balance = −5, K* − balance = −4
+  over 96–128) and K* = cap + 1 EXACTLY at 112 and 128 — the L and
+  P arms stay complementary with zero slack; NO GAP-ASM′ hole
+  opened at 128 (falsifying the notes/56 §4b projection, in the
+  good direction).
+- **Lemma D3 (punch-descent, notes/58 §2) [PROVED + machine-audited
+  e156]**: straddle-freeness + bounds alone forbid jointly defusing
+  the band-major team's α-window AND completion zone — an infinite-
+  descent coloring lemma, uniform in all even M ≥ 32.  Th1's kill
+  supply is therefore forced; the L-LOP remainder is scoped as
+  GAP-LLOP-α/β (H1/J species).
+- **P-ARM anatomy (notes/58 §3, e155/e155b/e155c pending)**: under
+  the hatch everything reduces classwise at half scale m = M/2:
+  Th2 = halved fan theories with NO support caveat; Th0 = one
+  ThW0(m) per team with a 7-value guard window CW = [3m−7, 3m−1].
+  e155 falsified both first-draft hypotheses and found the real
+  structure: (i) the half-scale fan-escape law is a LATTICE law
+  (every SAT-alive attacker pair has gap ≡ 0 mod 8 at m = 28–40 —
+  fan-safe shares lie in ONE mod-8 class), (ii) ThW0 minus one
+  guard group stays UNSAT EXCEPT at completions {4, 6} — exactly
+  the values the L-LOP frontier witness defects, (iii) fan-safe
+  shares of size ≥ 2 are cliques of the SAT-alive graph: max size
+  3–4, explicit families.  P-ARM″ = three-layer conditional proof
+  (fan pair / crown / punctured-ThW1′-on-clique-punctures) with
+  the single scoped residue GAP-PARM-CORNER; P-ARM machine-holds
+  OFF the mod-16 line too (M = 56 UNSAT probe).
+- **Robust P-ARM implemented and VERIFIED at 128 (the notes/56 §4b
+  designated fix)**: Lemma PH+ [PROVED] (Φ < M+7 forces the pure-U
+  alignment and Φ = (M/2)·#defectors exactly); machine chain at
+  K_P = 68, d₀ = 4: DICH-U UNSAT (0.9 s), DICH-Z UNSAT (0.2 s),
+  RP-ARM(128, 4) UNSAT (10 s, 15.4M clauses; straddles + (0,2,2)
+  units live for defectors).  RP-ARM(48, d₀ ≤ 8) all UNSAT.
+  ⟹ **Theorem COV-W′(128)**: N6a at 128 through the structured
+  bridge WITHOUT the adjacency accident.  M = 160 endgame running
+  (catalogue + L-LOP/K* brackets + robust chain).
+
+Ledger deltas: GAP-ASM′ risk DOWN (no hole at 112/128 + verified
+robust fix at 128 + notes/59 §D's (OV-∀) reduction); GAP-PARM
+reduced to lattice-law + finite punctured-family checks +
+GAP-PARM-CORNER; GAP-LLOP gains Lemma D3 (proved base case) and the
+frontier witness anatomy tying its α-arm to the same corner as
+P-ARM's.  New machine-true finite laws to uniformize: H-LAT (mod-8
+lattice law), the {4,6}-droppable-crown table, the ≤ 4 clique bound.
