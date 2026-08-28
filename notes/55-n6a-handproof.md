@@ -306,3 +306,138 @@ M = 48, 64, 80, plus the corollary inequalities (A3 wall 5M+15 <
 zone; A8 widths; A9 emptiness claims).  data/e137_arith.log.]
 
 ---
+
+## 3. Ladders in the band and the seam-2 transfer
+
+### 3.1 Ported order lemmas and the mono-run caveat  [PROVED]
+
+The C3 toolkit lemmas are order-theoretic and block-agnostic; they
+port verbatim with one proviso.
+
+**Seesaw (midpoint lock).**  For an in-team AP (p, q, r):
+p ≺ q ⟺ r ≺ q (both ⟺ "q trails both"), and q ≺ p ⟺ q ≺ r.
+Orientations of the two adjacent pairs around a midpoint are locked
+anti-symmetrically: (p,q) ascending ⟺ (q,r) descending.  [PROVED —
+restatement of R1–R4.]
+
+**Lemma Z′ (mono zigzag).**  Let w₀, …, w_r be consecutive rungs of
+a d-ladder inside one block, ALL IN one team T.  If some adjacent
+pair is oriented, then every second rung leads both its neighbours
+(the zigzag).  **Lemma D′ (phase dichotomy).**  Every such mono run
+is globally in one of its two zigzag phases.  [PROVED — the notes/33
+§2 proofs verbatim; they use only Seesaw on consecutive rung
+triples, which are in-block APs of V, and totality.]
+
+**The mono-run caveat.**  Unlike C3, the rungs here must be
+*certified same-team*: the coloring adversary can cut every ladder.
+Every zigzag/flood application below therefore carries an explicit
+mono-run hypothesis, and discharging those hypotheses (via the
+bounds and the coloring constraints) is exactly the assembly problem
+of §5–6.  This is the single structural difference from notes/33,
+and it is where the remaining gaps live.
+
+### 3.2 The seam-2 transfer lock: donation and clash  [PROVED]
+
+**Lemma E2 (donation).**  For a team T and a high pair a < b ⊆ Y
+(2b − a ≥ 4M+1):  if a ≺_T b then 2b − a ∈ Z′ (the OTHER team's P2
+set).  *Proof.*  2b − a ∈ P2 by A3; if it were in Z, the β-unit of
+Th1(T) fires b ≺ a, contradicting a ≺ b.  ∎
+
+This is the analogue of C3's transfer Lemma E, with a twist: the C3
+lock tied order to order inside one block; E2 ties BAND ORDER to
+P2 COLORING across seam 2.  An ascending high pair *donates* its
+completion to the other team.
+
+**Lemma C (clash).**  Every z ∈ [4M+1, 5M+15] lies in exactly one
+team; consequently, for every z, at least one team has ALL its mono
+parent pairs (Lemma A4) of z descending: z ∈ T forces every mono-T
+parent of z descending (β-units), while mono-T′ parents of z are
+unconstrained by z — and vice versa.  In particular no z may be the
+completion of ascending mono pairs of both teams.  [PROVED — Lemma
+E2 for both teams.]
+
+### 3.3 Unit-seeded phases  [PROVED]
+
+Every A4 parent pair (4M−s−2t, 4M−t) of z = 4M+s is the TOPMOST
+adjacent pair of its gap-(s+t) ladder in the band (the next rung up,
+4M−t+(s+t) = 4M+s, exits P1); conversely each d-ladder of the band
+has exactly one high adjacent pair, its topmost.  [PROVED; machine:
+e138 part A at every M ≡ 0 (16) in 48..400.]  Hence:
+
+* (membership ⟹ phase)  If z = 4M+s ∈ Z and a parent pair
+  (a, b) = (4M−s−2t, 4M−t) ⊆ Y, the fired unit b ≺ a seeds, along
+  the maximal mono run of the (s+t)-ladder containing it, the zigzag
+  phase in which b's side descends; by Seesaw the next rung down
+  ascends: a−(s+t) ≺ a whenever a−(s+t) ∈ Y, and so on down the run
+  (Lemma Z′).
+* (phase ⟹ membership)  If the topmost adjacent pair of a d-ladder
+  mono run of T is ascending — e.g. forced by a zigzag phase seeded
+  anywhere in the run — then its completion 4M + (d − (4M − top))
+  belongs to T′ (Lemma E2).
+
+Each gap-d ladder of T's band that reaches the top run thus ties its
+phase bit to the team-membership of one bottom-of-P2 value; the
+values 4M+1 … 4M+15 collectively interrogate the phases of the
+d = 1 … 15 ladders (and, through the t-shifts, deeper ladders too).
+
+### 3.4 Lemma J (top-run lock — finite, M-independent)
+[MACHINE-CHECKED]
+
+Offset coordinates: w_i := 4M−15+i (i = 0..15), so R = {w₀…w₁₅}.
+For J ⊆ [1, 15] let T(J) be the order theory on 16 points:
+AP-freeness of the integer 16-interval (56 APs) + the units
+
+    w_{15−t} ≺ w_{15−j−2t}    for j ∈ J, t ≥ 0, j + 2t ≤ 15
+
+(the Th1 β-units fired by S3-memberships {4M+j : j ∈ J} ⊆ Z when
+R ⊆ Y).  Call J *admissible* iff T(J) is consistent.
+
+**Lemma J.**  Admissibility is a downset; its minimal forbidden sets
+are exactly 30 PAIRS and 6 TRIPLES:
+
+    pairs   j ↔ j′:  1:{2,3,4,6,8}  2:{3,4,5,7,9,11}  3:{4,5,6,8,10,12}
+                     4:{5,6,7,9,11}  5:{6,8}  6:{7,9,11}  7:{8}
+                     8:{9,11}
+    triples (1,10,12) (4,13,15) (5,10,12) (7,10,12) (9,10,12) (10,11,12)
+
+and the maximum admissible size is 9 (e.g. {1,5,7,9,11,12,13,14,15}).
+[MACHINE-CHECKED: e138 part B — exhaustive over all 2¹⁵ sets with
+downset pruning, 1148 CaDiCaL solves on the 16-point theory;
+data/e138_transfer.json.  The check is FINITE and M-independent: the
+16-interval AP structure and the unit schema contain no M.]
+
+**Corollary J1.**  If a team T contains the whole top run R, then
+J_T = {j ∈ [1,15] : 4M+j ∈ Z} is admissible; hence
+(a) |Z ∩ [4M+1, 4M+15]| ≤ 9;
+(b) no two consecutive j ≤ 9 are both in J_T, so T′ owns at least 4
+    of the nine values 4M+1 … 4M+9 (hitting set of the path 1–…–9);
+(c) all the analogous run-truncated locks (e138 part C: max
+    admissible size 5 already for a top run of length 9).
+
+*Status of the finite check as "hand" material.*  Lemma J is a
+finite statement verified exhaustively; each minimal forbidden set
+is a 16-point UNSAT gadget that a reader can in principle refute by
+the Seesaw/zigzag calculus (the units of j seed conflicting phases
+of the shared-rung ladders).  Producing the 36 pencil derivations is
+bounded, mechanical work; we tag it [MACHINE-CHECKED — pencil
+derivations pending] rather than [PROVED].  No step of §5–6 depends
+on more than (a)–(c).
+
+### 3.5 The band-edge α-units as glue  [PROVED, descriptive]
+
+The A2 α-units z ≺ y (z in the band top-31, y ∈ E1, attacker
+x ∈ U ∩ [2M−30, 2M]) place band-TOP values before band-BOTTOM
+values.  They are not ladder material (their gaps M±15 exceed half
+the band width, so no third rung exists in P1): their role is
+transitive glue — an α-unit z ≺ y plus a chain of §3.3 in-band facts
+from y back up to z closes a cycle.  The same holds for the crown
+units of Th0 (A1) and the boundary-rung units of Th2 (A5), which
+connect F to G within P2.  These three finite families are the
+candidate cycle-closers of the assembly, playing the role that A2/A3
+(the C3 axioms) played in notes/33's 3-cycles.
+
+[MACHINE-CHECK for §3: experiments/e138_seam2_transfer.py — part A
+(ladder side conditions, 23 scales), parts B/C (Lemma J and its
+run-truncations).  data/e138_transfer.log, data/e138_transfer.json.]
+
+---
