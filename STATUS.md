@@ -1,4 +1,4 @@
-# Erdős #197 campaign — STATUS (2026-08-26, post-N2/N5/N6 front merge)
+# Erdős #197 campaign — STATUS (2026-08-28, post-audit of the night-shift fronts; see the final section for the current state)
 
 ## Bottom line
 
@@ -992,3 +992,63 @@ GAP-PARM-CORNER; GAP-LLOP gains Lemma D3 (proved base case) and the
 frontier witness anatomy tying its α-arm to the same corner as
 P-ARM's.  New machine-true finite laws to uniformize: H-LAT (mod-8
 lattice law), the {4,6}-droppable-crown table, the ≤ 4 clique bound.
+
+### FRONT AUDIT (2026-08-28, three referee passes: notes/60, notes/60-audit-1, notes/61-audit-2) — ALL FOUR NIGHT-SHIFT FRONTS SOUND
+
+Adversarial referee audits of notes/52 (BRIDGE1), 57 (DICH), 58
+(LLOP/PARM), 59 (lowgaps): hand reconstructions of every proof,
+independent reimplementations (closure engine for the J-pencil;
+alpha/f scanner; fresh DICH probe instrument anchored at M = 96),
+fresh adversarial colorings for BRIDGE1, and blind measurements at
+scales no session ever touched.  **Verdict: SOUND across the board;
+zero broken theorems; two wording fixes (52-G1/52-G2, applied);
+one dead extrapolation (notes/58's flat K* law).**  Key movements:
+
+- **The mechanistic K* law won its discriminating test.**  Blind
+  protocol at M = 144 and 160: predictions committed before any
+  probe; at 160 the notes/57 catalogue law (alpha drops to 2 ⟹
+  K* = 83) DISAGREED with both flat-law pre-registrations (84).
+  Measured: K*(144) = 76, K*(160) = 83 — the mechanistic law is
+  exact at all 8 scales 48..160 with 4 blind hits; the flat-offset
+  and mod-32 K* laws are dead.  (Correction to notes/57 prose:
+  alpha is NOT monotone in M.)
+- **The cap law stayed flat and the feared ASM′ hole never
+  materialized** (61-audit-2): cap(144) = 75, cap(160) = 83 (both
+  = (M+16)/2 − 5, first out-of-sample wins for the flat cap law);
+  adjacency K* = cap+1 is dead as a law (W = 1 at 160) but the
+  overlap condition (OV) K* ≤ C now holds at ALL EIGHT measured
+  scales — at 160, the predicted hole scale, with margin.
+- **Robust chain COV-W′ verified at 160** (on top of the reproduced
+  128 chain): L-LOP(160) K = 84 UNSAT + DICH-upure(160,84) +
+  DICH-zdef(160,84,4) + RP-ARM(160,4) all UNSAT (29M clauses, 25 s,
+  SAT controls passed).  Full bridge chains now at SIX scales
+  (48/64/80/96 exact + 128/160 robust); N6a's per-scale machine
+  layer is closed everywhere it has been asked.
+- **BRIDGE1 cleared**: line-by-line + fresh adversarial batteries
+  (greedy-puncture coloring pushing extraction to fresh p = 21 —
+  kills at both dyadic scales + dust-on-core robustness = new (H1)
+  evidence outside the verified p-layer; hi-half splitter mirror).
+  The §4.3 descent post-mortem is honest (fixed point confirmed);
+  its two overbroad sentences fixed in place.
+- **Lemma J's PROVED status independently re-established** (fresh
+  closure engine reproduces all 36 pencil derivations); JP/JP′/Γ
+  algebra re-solved by hand (two presentational nits recorded in
+  61-audit-2 §5).
+- Still-unrun carryovers: e155c (ThW1′ puncture tolerance = the
+  cap-law mechanism), FG-deep cross-scale at 64 (alive grid cached),
+  e156 D3 at 80/112/128, P-arm instances at 112/144.
+
+**Honest assessment (updated 2026-08-28): NO ≈ 92 %, YES ≈ 8 %**
+(up from 90).  Movement FOR: an adversarial audit cycle attacked
+every load-bearing night-shift claim and broke nothing structural;
+the N6a bridge survived its predicted failure point (160) twice
+over; the threshold laws are now mechanistic rather than curve-fit;
+Case 1's (H1) gained fresh-p evidence.  Held below higher: the two
+genuinely new statements are untouched by all of this — GAP-G2's
+T-FORCE ledger (v* brackets still uselessly wide: (4,65] at bal24,
+(2,368] at bal32) and the parametric uniformizations (GAP-N2-DIAG,
+GAP-DICH/LLOP/PARM species) remain finite-scale records, and the
+notes/46 dodger corner is still not excluded.  The audit shrank
+risk in the verified layer; it did not shorten the list of unproven
+links (still: N2-DIAG, N3, N6a-uniformization pool, G2-ledger,
+L1', rung-finiteness).

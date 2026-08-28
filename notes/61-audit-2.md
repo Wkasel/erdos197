@@ -140,8 +140,10 @@ verified WITHOUT the adjacency accident, and it is exactly the scale
 where notes/56 §4b predicted the hole ({min|Y| = 82} was the feared
 gap value; in fact 82 is L-dead and 84 is P-dead with W = 1 slack,
 covered twice over).  The notes/58 §4 designated fix is confirmed
-working at the scale it was designed for.  N6a's per-scale record
-extends to SEVEN scales (48..160).
+working at the scale it was designed for.  Full bridge chains are
+now verified at SIX scales (48/64/80/96 exact COV-W + 128/160
+robust COV-W′); 112 and 144 have both thresholds measured but no
+P-arm instance run — cheap to close if wanted, not load-bearing.
 
 Composition logic re-checked while at it (COV-W′ and ASM′ share it):
 the three machine instances quantify over supersets of the
