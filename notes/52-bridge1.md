@@ -373,15 +373,28 @@ crown pair (T′ gets the lo halves 2^j − 1, say, T gets the hi), and
 (ii) assigns to T every other value — in particular every completion
 2^{j+1} − 2 − x, x ∈ A′, of every fan (α) through a T′-owned lo half,
 for every finite attacker cohort A′ ⊆ T′ the argument might try to
-fix.  Then:
+fix.  (Corner case, per audit 60-audit-1 (52-G2): a completion that
+is ITSELF a planted lo half of (i) stays in T′ — exemplar at j = 4,
+x = 11, the fan (11, 15, 19) with {11,12}, {15,16}, {19,20} all
+split lo-to-T′ has completion 19 ∈ T′.  T′ then carries a few sparse
+3-APs ((11,13,15), (11,15,19), …) whose order constraints are
+trivially satisfiable; nothing below needs T′ to be AP-free, so the
+dodge is unaffected — but "every fan completion is donated to T" is
+false verbatim and is not claimed.)  Then:
 
 * T is Case-1 (dust per block ≤ 1 + |𝒫₀|-material at low blocks:
   eventually exactly one dust value per block, the planted lo half);
 * T′ owns one value of each pair of 𝒫₀ and each crown pair — the
   full SPLIT-QUANT inheritance restricted to this sparse family;
-* yet NO fixed finite attacker cohort of either team ever fires an
-  unsatisfiable per-window system: T never owns a full 𝒫₀-pair; T′'s
-  landing-pad fans are starved (every completion is in T), and by
+* yet NO fixed finite attacker cohort DRAWN FROM THE USABLE FAMILY
+  𝒫₀ of either team ever fires an unsatisfiable per-window system
+  (scoping per audit 60-audit-1 (52-G1): cohorts OUTSIDE 𝒫₀ can
+  still fire — χ3's own §6 check kills R(27,28; M, {2M−1}) with
+  {27,28} ⊆ T — but an argument restricted to the finite usable
+  list 𝒫₀ cannot cite them): T never owns a full 𝒫₀-pair; T′'s
+  landing-pad fans are starved (every completion is in T, up to the
+  (ii) corner case above, which adds only trivially-satisfiable
+  constraints), and by
   Lemma LP(γ) the crown halves alone support only the (β) chain
   units lo_{j+1} ≺ hi_j — one unit per level on FRESH values, which
   any order satisfies (e.g. place each level's material in
