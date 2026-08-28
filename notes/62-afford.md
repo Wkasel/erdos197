@@ -389,19 +389,18 @@ crossover with arm (a)'s robustness radius.
 **Lemma K (prefix-chain kill) [PROVED — two exhaustive finite bases
 + two monotonicity steps].**  Consider the integer interval [1, n]
 with the constraint that the k smallest values are all placed
-before the n−k largest.  For k ≥ 3 and n ≥ k + 6 there is NO
-monotone-3-AP-free order.
-*Proof.*  Bases (9, 3) and (10, 4): exhaustive machine search
-(k!·(n−k)! orders; no AP-free order exists; also (8,2), (10,3),
-(11,4), (12,2..5) checked UNSAT, while (6,2) and (12,1) are SAT —
-the constants are sharp-ish: k ≥ 2 needed, and one forced-first
-value is always dodgeable).  Step 1 (monotone in n): deleting the
-largest value preserves AP-freedom and the prefix property, so
+before the n−k largest.  For k ≥ 2 and n ≥ k + 5 there is NO
+monotone-3-AP-free order.  Sharp at k = 2, 3, 4: (6,2), (7,3),
+(8,4) are SAT; k = 1 never kills ((12,1) SAT).
+*Proof.*  Bases (7, 2) and (8, 3): exhaustive machine search
+(k!·(n−k)! orders; no AP-free order exists; (9,4), (10,5), (9,5),
+(8,2)..(12,5) likewise UNSAT).  Step 1 (monotone in n): deleting
+the largest value preserves AP-freedom and the prefix property, so
 UNSAT(n, k) ⟹ UNSAT(n+1, k).  Step 2 (diagonal): deleting the
-values 1, 2 (both in the prefix) and shifting gives
+values 1, 2 (both in the prefix, k ≥ 2) and shifting gives
 SAT(N, K) ⟹ SAT(N−2, K−2), i.e. UNSAT(n, k) ⟹ UNSAT(n+2, k+2).
-From (9,3): all (n, k) with k odd ≥ 3, n ≥ k+6; from (10,4): all
-k even ≥ 4, n ≥ k+6.  ∎
+From (7,2): all even k ≥ 2, n ≥ k+5; from (8,3): all odd k ≥ 3,
+n ≥ k+5.  ∎
 
 **Theorem SCHED-DEAD [PROVED].**  For every M ≥ 12 (M ≡ 0 mod 4)
 and EVERY budget vup, the 4-block instance with coloring (1,1,0,0)
