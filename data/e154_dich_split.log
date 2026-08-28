@@ -1,0 +1,19 @@
+M=48 K=26 split-O: UNSAT [0.0s, 1851 fans]
+M=48 K=26 split-E: UNSAT [0.0s, 1851 fans]
+M=48: SPLIT branch closed (both classes)
+M=64 K=35 split-O: UNSAT [0.0s, 2982 fans]
+M=64 K=35 split-E: UNSAT [0.0s, 2982 fans]
+M=64: SPLIT branch closed (both classes)
+M=80 K=42 split-O: UNSAT [0.0s, 4345 fans]
+M=80 K=42 split-E: UNSAT [0.0s, 4345 fans]
+M=80: SPLIT branch closed (both classes)
+M=96 K=51 split-O: UNSAT [0.2s, 5986 fans]
+M=96 K=51 split-E: UNSAT [0.2s, 5986 fans]
+M=96: SPLIT branch closed (both classes)
+M=112 K=60 split-O: UNSAT [0.5s, 7836 fans]
+M=112 K=60 split-E: UNSAT [0.1s, 7836 fans]
+M=112: SPLIT branch closed (both classes)
+M=128 K=68 split-O: UNSAT [0.3s, 9977 fans]
+M=128 K=68 split-E: UNSAT [0.1s, 9977 fans]
+M=128: SPLIT branch closed (both classes)
+e154: DONE
