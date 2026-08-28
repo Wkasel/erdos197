@@ -52,7 +52,9 @@ def solve_R(M, D, attackers, ap_free=True, units=True):
         for j in range(i + 1, n):
             c += 1
             var[(i, j)] = c            # True <=> S[i] placed before S[j]
-    cl = []
+    t0 = time.time()
+    s = Cadical195()
+    ncl = 0
     if ap_free:
         # in-block APs (u, y, z) within S: y leads both or trails both
         for yi in range(n):
@@ -61,12 +63,12 @@ def solve_R(M, D, attackers, ap_free=True, units=True):
             while y - d > M and y + d <= 2 * M:
                 u, z = y - d, y + d
                 if u in idx and z in idx:
-                    a = var[(idx[u], yi)] if idx[u] < yi else None
                     assert idx[u] < yi < idx[z]
                     ouy = var[(idx[u], yi)]
                     oyz = var[(yi, idx[z])]
-                    cl.append([-ouy, -oyz])
-                    cl.append([ouy, oyz])
+                    s.add_clause([-ouy, -oyz])
+                    s.add_clause([ouy, oyz])
+                    ncl += 2
                 d += 1
     if units:
         for a in attackers:
@@ -74,23 +76,24 @@ def solve_R(M, D, attackers, ap_free=True, units=True):
                 if y <= a:
                     continue
                 z = 2 * y - a
-                if z in idx and (y - a) % 1 == 0:
+                if z in idx:
                     # unit: z before y, i.e. NOT (y before z)
-                    cl.append([-var[(idx[y], idx[z])]])
-    # complete transitivity
+                    s.add_clause([-var[(idx[y], idx[z])]])
+                    ncl += 1
+    # complete transitivity, streamed straight into the solver
     for i in range(n):
         for j in range(i + 1, n):
             vij = var[(i, j)]
             for k in range(j + 1, n):
                 vjk = var[(j, k)]
                 vik = var[(i, k)]
-                cl.append([-vij, -vjk, vik])
-                cl.append([vij, vjk, -vik])
-    t0 = time.time()
-    with Cadical195(bootstrap_with=cl) as s:
-        sat = s.solve()
+                s.add_clause([-vij, -vjk, vik])
+                s.add_clause([vij, vjk, -vik])
+                ncl += 2
+    sat = s.solve()
+    s.delete()
     dt = time.time() - t0
-    return ("SAT" if sat else "UNSAT"), n, len(cl), dt
+    return ("SAT" if sat else "UNSAT"), n, ncl, dt
 
 
 def diag_pairs_in_block(m, team):

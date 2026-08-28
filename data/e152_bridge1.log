@@ -1,0 +1,20 @@
+== chi1: Case-1 team, C0 = 3, adversarial core-targeted dust ==
+chi1 extraction in B(4): fully-T diagonal pairs p = [9]
+chi1 DIAG-DENSE bound at m=4: N >= 0.25; found 1  OK
+chi1 control AP-only  M=128 (n=125, 643140 cl): SAT  [0.2s]
+chi1 control single-27 M=128 (n=125, 643151 cl): SAT  [0.3s]
+chi1 R(27,28; 128, core-dust [137, 138, 247]) (n=125, 643163 cl): UNSAT  [0.3s]
+chi1 R(27,28; 256, core-dust [265, 266, 503]) (n=253, 5365979 cl): UNSAT  [3.2s]
+== chi2: the splitter adversary (T' = {3p : p = 1 mod 4}) ==
+chi2 m=7: |B ^ T'| = 11 >= 9.58 (SPLIT-QUANT); dust_T = 11 > 8, dust_T' = 117 > 8
+chi2 m=7: all 11 diagonal pairs in B(m) meet T'  OK
+chi2 m=8: |B ^ T'| = 21 >= 20.25 (SPLIT-QUANT); dust_T = 21 > 8, dust_T' = 235 > 8
+chi2 m=8: all 21 diagonal pairs in B(m) meet T'  OK
+== chi3: fixed-pair + crown splitter (SS4.3 fixed point) ==
+chi3: every catalogue pair and crown pair split 1-1  OK
+chi3 dust per block m=3..8: [3, 4, 1, 1, 1, 1]
+chi3 LP(gamma): APs within crown-set u {1} = beta family only (6 APs)  OK
+chi3 extraction in B(4): fully-T diagonal pairs p = [9]
+chi3 R(27,28; 128, [255]) (n=127, 674712 cl): UNSAT  [0.3s]
+chi3 R(27,28; 256, [511]) (n=255, 5494552 cl): UNSAT  [2.9s]
+ALL CHECKS PASS  [7s total]

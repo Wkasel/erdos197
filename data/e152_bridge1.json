@@ -1,0 +1,21 @@
+{
+ "chi1_extraction": [
+  9
+ ],
+ "ctl_ap_only_128": "SAT",
+ "ctl_single_128": "SAT",
+ "chi1_R_128": "UNSAT",
+ "chi1_R_256": "UNSAT",
+ "chi2_m7": {
+  "count": 11,
+  "bound": 9.583333333333334,
+  "pairs": 11
+ },
+ "chi2_m8": {
+  "count": 21,
+  "bound": 20.25,
+  "pairs": 21
+ },
+ "chi3_R_128": "UNSAT",
+ "chi3_R_256": "UNSAT"
+}
