@@ -94,7 +94,25 @@ Baselines measured this session:
   joint frontier is far from the componentwise prices.  By
   T-FORCE-4: every valid balanced pair has, at anchor 16 vs 8, some
   team with Inv(16) > 6 or Inv(8) > 0.
-- C1 attribution cell (vup=6, vdn=none) in flight.
+- **C1 (vup=6, vdn=none) @ M=16: SAT [364 s]** [MACHINE-CHECKED,
+  data/e158_c1_M16_up6.log; witness audit-passed].  THE ATTRIBUTION
+  IS CLEAN — this is the PURE PUMP, not a floor raise: vup = 6
+  remains payable with the dense block below (so v*_up in the
+  4-block geometry stays = v*_3(16) ≤ 6 at this cell), but the
+  witness pays n_dn = 38 at the lower anchor (n_s0 = 32, n_s1 = 6,
+  n_s2 = 0 — BOTH teams with identical anatomy).  Mechanism on
+  display, exactly the predicted donation coupling: to pay only 6
+  upward the coloring VOIDS the entire upper H-family (n_H_up = 0
+  for both teams — the donation dodge of e130 check 3), and the
+  donation pattern that voids H_up seeds 8 monochromatic H-triples
+  in the LOWER window (n_H_dn = 8 each), whose forced breaking is
+  lower-anchor payment (n_dn = 38 ≥ 8 = the μ_dn floor of this
+  witness's coloring).  **Donations received in the window have
+  their own attack surfaces exposed one block down — measured.**
+- Verdict triangle at M = 16, cell (6, ·):
+  (none,0) SAT / (6,none) SAT / (6,0) UNSAT — the joint frontier is
+  strictly above both componentwise floors; pump bracket
+  w_min(6) ∈ [1, 38], bisection in flight.
 
 ## 4. What the pump can and cannot give at ω (worked out before C1
 ## landed; C1 only picks the channel)
