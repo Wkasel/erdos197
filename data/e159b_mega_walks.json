@@ -1,0 +1,33 @@
+{
+ "batteries": [
+  {
+   "schedule": "tri",
+   "kmax": 450,
+   "a_kmax": 101477,
+   "seam_exp": 100130,
+   "seam_decimal_digits": 30143,
+   "walk_ok": true,
+   "fan_ok": true,
+   "walk_s": 0.0,
+   "fan_s": 0.0008
+  },
+  {
+   "schedule": "quad",
+   "kmax": 320,
+   "a_kmax": 102402,
+   "seam_exp": 100491,
+   "seam_decimal_digits": 30251,
+   "walk_ok": true,
+   "fan_ok": true,
+   "walk_s": 0.0,
+   "fan_s": 0.0008
+  }
+ ],
+ "fail": [],
+ "monster": {
+  "monster_exp": 1000003,
+  "decimal_digits": 301031,
+  "ok": true,
+  "s": 0.01
+ }
+}
