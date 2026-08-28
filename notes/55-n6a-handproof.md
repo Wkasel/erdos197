@@ -636,21 +636,81 @@ For x ∈ P1 the *fan* of x is the unit family of Th2:
   patterns in P2's lower middle (bisection stopped inside the
   bracket; exact k_crit not load-bearing).
 
-**Lemma FG (target; GAP-N6a-FG).**  For all M ≥ 48 and any two
-distinct x₁, x₂ ∈ P1: AP-freeness on P2-core plus the two full fans
-is inconsistent.  This is a single-order, unguarded, two-parameter
-schema — the same species as the C3 core, and the natural next
-machine-to-hand extraction (MUS + e109-style trace at three
-scales).
+### 5.3b The double-fan landscape, corrected (e141–e143)
 
-Role in the assembly: under T2's hypothesis both teams hold band
-pairs, so both Th2's carry double fans restricted to their own P2
-material; Lemma FG kills any team whose P2 share is fan-complete.
-The (0,2,0) SAT witness shows the fans ALONE do not close T2 (a
-P0-empty team can park 62 band values and escape on 40 punctured P2
-values): the B0-side straddle pressure (Lemma W) is co-load-bearing
-— matching the frontier law exactly ((0,2,0) SAT vs (1,2,0) UNSAT:
-ONE P0 value per team flips it).
+The naive target "any two fans kill" is **FALSE**; the truth has
+three regimes, mapped by MUS extraction (e141), a provenance-
+tracking R1–R4+transitivity closure engine (e142, e142b), and SAT
+tests (e142c–i).  Write the attackers as x₁ = 4M−p, x₂ = 4M−q,
+0 ≤ q < p ≤ M+15.
+
+**Lemma FG-high  [PROVED + MACHINE-CHECKED].**  If p ≥ 2q+1 (i.e.
+the attacker pair is itself a HIGH pair: 2x₂ − x₁ ≥ 4M+1) and
+5p − 6q ≤ 2M+15, the two fans are inconsistent with AP-freeness on
+P2-core.  *Proof* (discovered from the e141 MUS, which is the FOUR
+values {4M+s, 4M+2p−3q, 4M+3p−4q, 4M+5p−6q}, s := p−2q,
+scale-invariant): the fan units
+
+    A(s):  4M+2p−3q ≺ 4M+s        (fan of x₂ at midpoint 4M+s)
+    B(s):  4M+3p−4q ≺ 4M+s        (fan of x₁ at midpoint 4M+s)
+    B(s′): 4M+5p−6q ≺ 4M+2p−3q    (fan of x₁, s′ := 2p−3q)
+
+with R4 on the in-window APs (s, 2p−3q, 3p−4q) and
+(s, 3p−4q, 5p−6q) (offsets from 4M) give
+
+    2p−3q ≺ 3p−4q ≺ 5p−6q ≺ 2p−3q      — a 3-cycle.  ∎
+
+[MACHINE-CHECK: e143 — the e139 ICtx executes the gadget with full
+audit at every admissible (q, p) at every M ≡ 0 (16) in 48..400:
+149 169 instances.  data/e143_fg_gadget.log.]
+
+**Closure kills (non-resonant pairs)  [MACHINE-CHECKED derivations,
+uniform schema pending].**  Plain R1–R4 + transitivity closure from
+the fan units alone (NO case splits) refutes 1851 of the 2016
+(q, p) pairs at M = 48 — including every pair whose gap
+g := p − q = x₂ − x₁ is NOT divisible by 16 — and the same at
+M = 64, 80, 96 for the top-anchored line q = 0.  Each closure run
+is a finite pencil derivation (the engine prints the DAG; for
+FG-high it reproduces the 6-fact proof above verbatim).  The deep
+cluster (p, q both near M+15, e.g. adjacent band-bottom pairs) also
+dies, but needs Lemma-D phase splits on top of closure (8-branch
+d=1 × d=2 splits kill the deep-adjacent pair at M = 64; 123 of the
+165 stalled pairs at M = 48 are still unresolved at 8 branches —
+they are the resonant SAT region below plus deep pairs needing
+richer splits; every SAT-tested deep pair IS UNSAT).
+
+**The resonant escapes  [machine; FALSIFIES the naive lemma].**
+Pairs with 16 | g can genuinely ESCAPE the pure double fan.
+Top-anchored (q = 0) SAT gaps:
+
+    M = 48: g ∈ {16, 32, 48}      M = 80: g ∈ {64, 80}
+    M = 64: g ∈ {32, 48, 64}      M = 96: g ∈ {64, 96}
+
+(exactly the closure-stall set at each scale; everything else is
+UNSAT).  The region is depth-dependent — at M = 96 the top-anchored
+gap-32 pair dies but the deeper (4M−96, 4M−64) escapes (inside a
+SAT triple) — and admits no simple closed form in (q, p, M) on the
+present ten data points; but every observed escape has
+16 | g, and TRIPLE fans can also co-escape at every scale
+((192,160,144) at 48; (256,224,192) at 64; (384,320,288) at 96 —
+while (192,176,144) at 48 is UNSAT: triple escape is not governed
+by pairwise resonance).  data/e142*_*.log.
+
+**Consequences for the assembly.**  (a) The 15/16 constants of the
+schema resurface as the resonance modulus: the width-15 truncations
+carve exactly the 16-lattice escape structure — the first genuinely
+mod-16 phenomenon of the whole N6a story, matching the target
+residue M ≡ 0 (mod 16) and the tower's ν₂ ≥ 4 line.  (b) Fan
+pressure alone cannot carry T2 at ANY band-bound level: a team may
+park 2–3 band values on a resonant 16-aligned configuration.  Such
+teams must be killed by the other constraints (straddle pressure,
+B0 units, Lemma J, floods) — i.e. the resonant-aligned regime joins
+the lattice arm of GAP-STRUCT, reinforcing that the halving/lattice
+recursion is unavoidable, now with the explicit modulus 16 = 2⁴.
+(c) The (0,2,0) SAT witness already showed fans alone do not close
+T2 even off-resonance (a P0-empty team escapes on punctured P2):
+Lemma W's B0-side pressure is co-load-bearing, matching the
+frontier law ((0,2,0) SAT vs (1,2,0) UNSAT).
 
 ### 5.4 The lattice regime: halving reduction  [PROVED] and the
 halved cores  [MACHINE-CHECKED UNSAT]
@@ -725,13 +785,20 @@ material) the §4 floods.  Regime split:
 
 * **R1 (fan-complete).**  Some team's Z is rich enough that its two
   fans + AP-freeness restricted to Z are already inconsistent —
-  dead modulo GAP-FG (the uniform double-fan lemma).  The machine
-  robustness data says R1 covers every Z missing at most d* values
-  (§5.3), for every placement of the band pair.
+  dead by Lemma FG-high (PROVED) when it holds a high band pair
+  with room, and by the closure schemas (machine-verified
+  derivations, uniform extraction pending) for every non-resonant
+  pair; the robustness data (§5.3) covers Z missing up to ~15–28
+  values for the top pair.  NOT covered: 16-resonant band
+  configurations (§5.3b) — those are rerouted to R2.
 * **R2 (lattice-aligned).**  The complementary parity family — dead
   modulo GAP-H (uniform H(m)/H1(m)), by Lemma PAR.  [The mod-4 and
   higher lattice alignments halve once more into quarter-scale
-  images; same species.]
+  images; same species.]  NOW ALSO INCLUDES the 16-resonant band
+  configurations of §5.3b: teams whose band values sit on a
+  16-aligned resonant pattern escape the fans and must die here —
+  the modulus 16 = 2⁴ says the recursion depth is (at least) four
+  halvings, consistent with the tower's ν₂ ≥ 4 line.
 * **R3 (the interpolation).**  Z and Z′ both fan-escaping (each
   must be lattice-patterned in its own fan geometry — the machine's
   escape punctures are mod-2/mod-4 patterns), yet jointly they
@@ -763,21 +830,17 @@ finite/schematic extraction (GAP-FG, GAP-H, GAP-J-pencil below).
 
 ### 6.3 Concrete next machine-to-hand steps
 
-1. **GAP-FG**: e141 extracts the minimal value-support of the
-   double-fan refutation at three scales; fit the uniform schema
-   (expected shape: fans force F early — every fan's unit family
-   hits F, A6 — against the 6M mirror window and the S3/Lemma-J
-   geometry at the bottom; a two-parameter analogue of the C3
-   layer-1 3-cycles).  NOTE the species identification: a fan is
-   exactly an N2 attack rung (attacker below a window, full unit
-   family), so Lemma FG = "the generic PAIR rung fires on the
-   window [4M+1, 6M+15]" — notes/48 Result 0's prediction verbatim
-   ("Case-2 crux = the Case-1 crux wrapped in one sumset layer").
-   The proof pattern already exists in-repo: the K4 dyadic-lane
-   schema (notes/49 §4.2–4.3, e124i: Lemma D on two ladders per
-   half + zigzag closure, verified to M = 2048) killed a FOUR-unit
-   subset of a pair rung; FG has the full Θ(M)-unit rung, so
-   strictly more material.  Risk accordingly low.
+1. **GAP-FG (updated after e141–e143; §5.3b)**: FG-high is now
+   PROVED (the 4-point gadget); what remains is (i) the uniform
+   schema extraction for the closure-refutable non-resonant pairs
+   (each instance already has a machine derivation DAG using only
+   R1–R4 + transitivity — bounded work, K4-style: notes/49
+   §4.2–4.3), and (ii) the deep-pair splits schema.  Species
+   identification: a fan is exactly an N2 attack rung, so this is
+   notes/48 Result 0's prediction verbatim ("Case-2 crux = the
+   Case-1 crux wrapped in one sumset layer") — with the honest
+   correction that the pair rung does NOT fire on 16-resonant
+   pairs, which belong to the lattice arm.
 2. **GAP-H**: hand-prove H(m)/H1(m) with the ported toolkit — a
    single-team two-block core, so Z′/D′/P′ apply UNGUARDED; this is
    the notes/42 chain-rung geometry in its cleanest form.
@@ -802,6 +865,7 @@ finite/schematic extraction (GAP-FG, GAP-H, GAP-J-pencil below).
 | F ↔ S3 | mirror coupling through P2-core's centre 5M+8 | §4.3 |
 | Lemma W | quantitative straddle pressure; hot zone | §5.1 |
 | Lemma PAR | parity family ⟹ halved cores H(m)/H1(m) | §5.4 |
+| Lemma FG-high | 4-point double-fan kill for high attacker pairs | §5.3b |
 
 Residue ledger: everything above needs at most M ≡ 0 (mod 4) (the
 G4 centres at 5M+7/5M+9) and M ≥ 48; no mod-8/mod-16 obstruction
@@ -824,15 +888,19 @@ note distinguishes them from other M ≡ 0 (mod 4).
 * Flood mechanics, 6 instances × 4 branches × 3 scales (e139).
 * The §5.2 frontier map and law (e140/e140b/e140c, M=48).
 * H(m)/H1(m) UNSAT at m = 16..40; FG kills and robustness (e140x).
+* The fan landscape (e141 MUS; e142/e142b closure grid, 2016 pairs;
+  e142c–i resonance maps at 48/64/80/96; e143 gadget audit,
+  149 169 instances × 23 scales).
 
 ### Open gaps (the honest count: 5)
 
 | gap | statement | species | risk |
 |-----|-----------|---------|------|
-| GAP-FG | uniform double-fan lemma (all M, all pairs) | single-order schema, C3-species | low: 13/13 placements + 3 scales machine-dead; MUS in hand |
+| GAP-FG-schema | uniform pencil schema for the closure-refutable (non-resonant, non-deep) fan pairs; FG-high itself is PROVED (§5.3b) | derivation-DAG extraction, K4-style | low: machine DAGs in hand at every instance |
+| GAP-FG-deep | deep-pair (band-bottom) fan schema (needs phase splits) | Lemma-D branch schema | medium-low |
 | GAP-H | uniform H(m)/H1(m) kill | single-team two-block core | low-medium: tiny UNSATs, toolkit applies unguarded |
 | GAP-J-pencil | 36 finite 16-point derivations | mechanical | negligible |
-| GAP-STRUCT | R3 → R1∪R2 bridge (structure theorem / potential) | genuinely open | HIGH — the crux |
+| GAP-STRUCT | R3 → R1∪R2 bridge, now incl. the 16-resonant band configurations (structure theorem / potential) | genuinely open | HIGH — the crux |
 | GAP-ASM | assemble T1-or-T2 from the above into Theorem N6a | bookkeeping over the case split | low once STRUCT falls |
 
 Bottom line: the C3-style toolkit ports cleanly and every
@@ -843,5 +911,10 @@ team (straddle pressure supply, Lemma W) + two band values per team
 (double-fan supply) — the P2 bound is dead weight.  The remaining
 mathematical content of GAP-N6a is concentrated in GAP-STRUCT: why
 complementary fan-escapes cannot coexist without collapsing into
-the (dead) lattice alignment.
+the (dead) lattice alignment — where "lattice" now provably
+includes the 16-resonant band configurations whose modulus is the
+schema's own crown constant (§5.3b): the strongest evidence yet
+that the crown 15/16, the S3/F widths, AND the escape structure are
+one mod-2⁴ phenomenon, and that the final argument is an induction
+on halving depth with the H-cores as its base.
 

@@ -1,0 +1,4 @@
+  M=48: 308 admissible (q,p) pairs verified
+  M=80: 766 admissible (q,p) pairs verified
+  M=400: 16606 admissible (q,p) pairs verified
+e143: ALL CHECKS PASSED (149169 gadget instances, 23 scales)

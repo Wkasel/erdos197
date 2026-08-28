@@ -1,0 +1,19 @@
+M=48 X=(192, 191): CLOSURE REFUTES (facts=299)
+M=48 X=(192, 190): CLOSURE REFUTES (facts=299)
+M=48 X=(191, 189): CLOSURE REFUTES (facts=291)
+M=48 X=(129, 130): closure stalls at 48 facts (needs case split)
+M=48 X=(129, 192): CLOSURE REFUTES (facts=1469)
+M=48 X=(140, 170): CLOSURE REFUTES (facts=292)
+M=48 X=(129, 160): CLOSURE REFUTES (facts=329)
+M=64 X=(256, 255): CLOSURE REFUTES (facts=384)
+M=80 X=(320, 319): CLOSURE REFUTES (facts=469)
+
+--- derivation (6 distinct facts) M=48 X=(192,191) ---
+2-CYCLE on (5, 3) — offsets from 4M:
+  [5 < 3] trans via 2
+    [5 < 2] unit: attacker 191 at midpoint 2
+    [2 < 3] R4 on AP (1,2,3)
+      [2 < 1] unit: attacker 192 at midpoint 1
+  [3 < 5] R4 on AP (1,3,5)
+    [3 < 1] unit: attacker 191 at midpoint 1
+e142: DONE

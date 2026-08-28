@@ -1,0 +1,3 @@
+M=80 top-anchored stall gaps: [64, 80]
+  gap=64: SAT [0.5s]
+  gap=80: SAT [0.5s]
