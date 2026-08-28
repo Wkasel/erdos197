@@ -206,6 +206,32 @@ measured staircase — the joint demand curve, strictly above the
 componentwise floors (v*(16), v*(8)) = (5..6, 0) at the measured
 point, since (6, 0) is forbidden.
 
+### 4b. GAP-COMP resolved as posed: the threshold count does not
+### exist (parity orientation) [PROVED at gadget level]
+
+GAP-COMP asked (notes/54 §4.3): how many compliant cross-block
+forced descents force an AP-composable 2-path?  Answer: **no
+sub-vacuous threshold exists.**  L-COMP says a valid order carries
+NO AP 2-path ever (2-path ⟺ decreasing mono AP, e130 check 5), so
+the question is extremal: how many compliant descents can a valid
+order carry?  A parity-ORIENTED descent digraph (all descents from
+odd values to even values, say) contains no AP 2-path structurally:
+a 2-path c→b→a needs b even (as head of c→b) and b odd (as tail of
+b→a) simultaneously.  Density is unrestricted — Θ(N²) descents are
+compatible with parity orientation.  And this is not hypothetical:
+the C1 witness REALIZES it — per team it carries 419/435 in-window
+APs and 334/352 forced-descent edges with ZERO AP 2-paths
+(recomputed directly), and its 8 AP-forced s0 descents all point
+odd→even for A ((17..31) → {10,12,14,16}), even→odd for B — parity
+orientation exactly.  So the L-COMP composition trap binds STRUCTURE
+(which descents may coexist), never COUNTS; any counting-form
+supply ceiling is dodged by parity orientation, exactly as μ is
+dodged by parity coloring.  The surviving quantitative content of
+GAP-COMP is absorbed into the joint 2-scale schema: the parity
+dodge is free at ONE window and priced at the window below (§3b) —
+composition pressure reappears as the DOWNWARD clash, not as an
+in-window count.
+
 **Consequence for the program.**  GAP-JOINT's machine question is
 answered YES (the downward coupling IS real and priced), but the
 correct reading is: the 4-block gadget is a DEMAND instrument, and
