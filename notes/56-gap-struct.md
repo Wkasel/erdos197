@@ -11,6 +11,17 @@ Lemma J.
 verification pointer and a status tag [PROVED] / [MACHINE-CHECKED] /
 [GAP].**
 
+**Overall status: `bridge machine-solved at 48/64/80 — GAP-STRUCT
+reduced to three scoped uniformization gaps`.**  The notes/55 §6.2
+crux ("every straddle-free coloring lands in the fan or lattice
+regime") is now a three-case theorem (fan / lopsided / parity) with
+per-scale machine certificates: the potential Φ (same-parity P0×P2
+exposure) vanishes exactly on the PAR-alignment family (Lemma PH,
+proved), fan-cleanness at band balance forces Φ = 0 (DICH, thresholds
+K* = 26/35/42), band imbalance kills through the band-major team's
+Th1 alone (L-LOP), and the Φ = 0 family with arbitrary mixed band is
+dead wholesale (P-ARM).  See §5 for the updated gap ledger.
+
 ---
 
 ## 0. The reframing: death patterns and the covering statement
@@ -470,5 +481,98 @@ i.e. GAP-STRUCT's bridge exists and is machine-certified at
 
 [MACHINE-CHECK: experiments/e150_wholesale.py →
 data/e150_wholesale_M{48,64,80}.json/.log; experiments/
-e149_dichotomy.py → data/e149_dichotomy_M{48,64,80}.json/.log.]
+e149_dichotomy.py → data/e149_dichotomy_M{48,64,80}.json/.log.
+Independent cross-checks: a real M = 64 lopsided CEGAR witness's
+band-major Th1 re-verified UNSAT through the e147 theory evaluator
+(different encoding path than e150); random hatch-band colorings die
+in multiple block theories at once through the same evaluator.]
+
+---
+
+## 5. Status, the new gap decomposition, and what remains
+
+### 5.1 What this note establishes
+
+1. **Lemma DP** [PROVED]: monochromatic death patterns are forbidden
+   for feasible-state colorings (restriction of Lemma U).
+2. **COV(48), COV(64)** [MACHINE-CHECKED, pattern form]: the CEGAR
+   loop terminates UNSAT; essential catalogues E(48) = 191,
+   E(64) = 219 patterns in five schematic families (fan, J, α, β,
+   crown), near-totally parity-pure, with the SAME three J patterns
+   and the SAME mod-4 quartet structure at both scales.
+3. **Lemma PH** [PROVED]: Φ = 0 ⟺ χ|_{P0∪P2} is the PAR alignment.
+4. **DICH(M)** [MACHINE-CHECKED at 48/64/80]: fan-clean ∧
+   min|Y| ≥ K*(M) ⟹ Φ = 0; K* = 26/35/42 ≈ (M+16)/2 − 6, sharp.
+5. **L-LOP(M)** [MACHINE-CHECKED at 48/64/80]: fan-clean ∧
+   min|Y| ≤ 29/36/44 ⟹ the band-major team's Th1 alone is
+   inconsistent; sharp one step above.
+6. **P-ARM(M)** [MACHINE-CHECKED at 48/64/80]: the parity hatch with
+   FREE band is dead through the six guarded block theories — the
+   notes/55 "mixed ⟹ at least as dead" statement.
+7. **Theorem COV-W(M)** [MACHINE-CHECKED at 48/64/80]: 4 + 5 + 6 +
+   the fan certificates cover every straddle-free (2,2,2)-bounded
+   coloring, with overlap margins 3/1/2 between the L and P arms.
+   Via Lemma U this re-proves Theorem N6a at each scale THROUGH THE
+   STRUCTURED BRIDGE — the e135 monolithic lock is no longer the
+   only route.
+
+### 5.2 GAP-STRUCT: the replacement ledger
+
+The notes/55 §7 row
+
+    GAP-STRUCT | R3 → R1∪R2 bridge ... | genuinely open | HIGH
+
+is replaced by the scoped decomposition (jointly: **GAP-COV**):
+
+| gap | statement to uniformize (machine-true at 48/64/80) | species | risk |
+|-----|-----------------------------------------------------|---------|------|
+| GAP-DICH | fan-clean ∧ min\|Y\| ≥ K*(M) ⟹ Φ = 0, with K*(M) ≤ (M+16)/2 − 5 | counting: Lemma-W windows + fan geometry vs exposure mass; the frontier witnesses' Φ decays linearly to 0 | medium |
+| GAP-LLOP | band-major (≥ (M+16) − K* + 1 band values) ⟹ Th1 inconsistent | α/β/J order geometry on a co-bounded band subset; H1-ThW1′ + Lemma-J species with phase machinery | medium |
+| GAP-PARM | parity hatch + any band mixing ⟹ some block theory inconsistent | halving recursion with a mixed band; CONTAINS GAP-H1 (alignment (ii) is its band-aligned special case) | medium (≥ GAP-H1) |
+| GAP-ASM′ | the three thresholds overlap for all M ≡ 0 (16), M ≥ 48 | arithmetic of K*(M) and the L-LOP cap (both track (M+16)/2 with O(1) offsets on the data) | low |
+
+Honest accounting: GAP-PARM subsumes GAP-H1, so the total gap count
+of the program does not decrease by this note alone — but the crux
+changes character completely.  Before: "we do not know WHY general
+colorings fall into the regimes" (no statement to prove).  After:
+three concrete, scoped, machine-true-at-three-scales statements with
+sharp thresholds and named species, each with exact finite
+certificates to mine (the e149/e150 instances are small; their MUSes
+are the natural seeds for the uniform schemas).  The pattern-level
+COV runs additionally supply the exhaustive kill catalogue (E(M))
+whose family structure the uniform proof must reproduce.
+
+### 5.3 Next steps (ranked)
+
+1. **GAP-ASM′ data**: run e149/e150 at M = 96 (and 112 if cheap) to
+   pin K*(M) and the L-LOP cap as exact affine laws — the overlap
+   margin at 64 is only 1, so the law matters.
+2. **GAP-DICH schema**: MUS-mine the e149 UNSAT at K* (which fan
+   patterns + straddle windows are load-bearing?); candidate hand
+   shape: each unit of exposure (a same-parity in-team (u, z) pair)
+   forces, through straddle-freeness at balance, a band puncture
+   pattern that completes a fan gadget — a Lemma-W + FG-high
+   counting argument.
+3. **GAP-PARM schema**: the band-mixing recursion — notes/33 Lemma H
+   halving applied classwise with the band split as the new
+   coloring; its aligned boundary cases are Theorem H (proved) and
+   GAP-H1 (open); the machine says the interpolation is dead at
+   three scales.
+4. **GAP-LLOP schema**: robust Lemma-J/α-family argument on
+   co-bounded band subsets (the co-boundedness K* − 1 ≈ M/2 − 5 is
+   large, so this is a genuinely robust version of the J/ThW1′
+   kills).
+5. The M = 80 exhaustive pattern run (background) and E(80) — the
+   catalogue record only; COV(80) already holds via §4b.
+
+### 5.4 Relation to the notes/54 ledger style
+
+The task brief suggested a notes/54-style potential/ledger argument;
+Φ is exactly such a ledger quantity, but the discovered structure is
+a THRESHOLD dichotomy, not a descent: no pass-the-parcel decreasing
+sequence was needed, because at balance the exposure doesn't shrink
+step by step — it is EXTINGUISHED outright by fan-cleanness
+(K* sharp, frontier Φ linear in the last few K).  The notes/54
+"strictly-decreasing potential step toward R2" is thus realized in
+degenerate form: one step, from Φ ≥ 1 to Φ = 0.
 

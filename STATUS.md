@@ -749,6 +749,16 @@ unproven link, listed with its current shape:
    anchor-coordinate stability + the actual schema write-up (the
    dichotomy of notes/48: mono cross triple, or hide ⇒ rescaled
    generic-pair rung).
+   UPDATE (notes/55 + notes/56): the schema is locked
+   (CORE′(M), five-scale UNSAT), the skeleton is proved (Lemma U,
+   A1–A9, E2/C, P′, W, PAR, FG-high, Theorem H), and the former
+   crux GAP-STRUCT — why every straddle-free coloring falls into a
+   killable regime — is now a machine-certified three-case theorem
+   at M = 48/64/80 (fan / lopsided / parity, via the exposure
+   potential Φ and the wholesale lemmas DICH, L-LOP, P-ARM;
+   notes/56 §4b).  Remaining: uniformization gaps GAP-DICH,
+   GAP-LLOP, GAP-PARM (⊇ GAP-H1), GAP-ASM′, plus the pre-existing
+   GAP-FG-schema and GAP-J-pencil (notes/56 §5.2).
 3. **GAP-N2 endgame (Case 1).**  Closed per-cell far beyond the
    original crux ({11,12} at ALL 8 residues by verified hand schemas;
    lane laws slide mod 8; template cells across pairs 13..19; C3(p)

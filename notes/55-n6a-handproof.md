@@ -994,7 +994,7 @@ not from any lemma here.
 | GAP-FG-deep | deep-pair (band-bottom) fan schema (needs phase splits) | Lemma-D branch schema | medium-low |
 | GAP-H1 | uniformize ONE of H1(m)'s two dead block theories on m ≡ 0 (8) (H(m) itself now PROVED, §5.4b); resists C3-L1-profile branch closure (e144) | deeper than L1-profile; L0/CRT or DRAT-mining | MEDIUM (upgraded after e144) |
 | GAP-J-pencil | 36 finite 16-point derivations | mechanical | negligible |
-| GAP-STRUCT | R3 → R1∪R2 bridge, now incl. the 16-resonant band configurations (structure theorem / potential) | genuinely open | HIGH — the crux |
+| GAP-STRUCT | R3 → R1∪R2 bridge, now incl. the 16-resonant band configurations (structure theorem / potential) | **SOLVED AT 48/64/80 — see notes/56**: three-case theorem (fan / lopsided / parity) via the exposure potential Φ; replaced by the scoped gaps GAP-DICH, GAP-LLOP, GAP-PARM, GAP-ASM′ (notes/56 §5.2) | downgraded: medium (uniformization only; GAP-PARM ⊇ GAP-H1) |
 | GAP-ASM | assemble T1-or-T2 from the above into Theorem N6a | bookkeeping over the case split | low once STRUCT falls |
 
 Bottom line: the C3-style toolkit ports cleanly and every
