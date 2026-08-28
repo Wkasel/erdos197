@@ -149,3 +149,88 @@ engine is only a generator, never trusted.
 [MACHINE-CHECK: experiments/e146_dp_catalogue.py →
 data/e146_catalogue_M48.json, data/e146_catalogue.log; 32 s.]
 
+---
+
+## 2. COV(48) HOLDS  [MACHINE-CHECKED] — and the third regime is now
+## characterized
+
+### 2.1 The CEGAR run
+
+experiments/e147_adv_cegar.py: ADV(48) with the seed catalogue,
+(2,2,2) bounds, WLOG χ(M+1) = A.  Loop: solve; on SAT evaluate all
+six block theories of the witness (Lemma U form; assumption-selector
+encoding), extract a deletion-minimized core from every UNSAT theory,
+validate its value support against the §0.2 restricted-theory
+definition (independent SAT check — asserted every time), add it as a
+new pattern.
+
+**Result: UNSAT after 170 iterations, 198 discovered patterns, 10 s
+total.**  COV(48) holds with |𝔇(48)| = 2085.  Per-iteration
+invariant confirmed 169/169 times: every straddle-free bounded
+coloring the adversary produced had an UNSAT block theory (the e135
+lock seen through Lemma U — the loop's assertion never fired).
+
+Kill-block histogram over the 169 witnesses: block 1: 176, block 2:
+14, block 0: 8.  The bridge's live content is overwhelmingly
+**Th1 — the band theory** (α + β unit systems), not the fan theory:
+the seed already saturates the fan regime, and the adversary's
+escapes are band-placement games.
+
+### 2.2 The essential catalogue E(48)
+
+experiments/e148_essential.py: soften every pattern (one selector per
+pattern guarding both monochromaticity clauses; straddle + bounds +
+symmetry hard), assumption-core + deletion-minimization over the
+2085 patterns.
+
+**Result: E(48) has 191 patterns** (first core 802; minimized in
+2 s / 384 solves):
+
+| block | # | sources | anatomy |
+|-------|---|---------|---------|
+| 2 (fan) | 160 | all fg | 22 six-value FG-high gadgets + small closures ≤ 16; heavily parity-pure (fans surviving on one parity class) |
+| 1 (band) | 28 | 3 J + 25 cegar | see below |
+| 0 (crown) | 3 | cegar | ≈ one full parity class of P0 + 2–4 same-parity E1 values: the halved crown core ThW0 (H1-species) in situ |
+
+Of Lemma J's 36 minimal forbidden sets only THREE are load-bearing:
+J({1,2}), J({1,3}), J({2,4}).  The 25 cegar band patterns split into
+two species:
+
+* **α-lattice species**: {2–5 values of P0's top run} ∪ {a mod-2 or
+  mod-4 class of the band} — pure α-unit kills, exactly the ThW1′
+  (A2 α-geometry) family of notes/55 §5.4c, including MOD-4 class
+  versions (offsets ≡ 0 mod 4: the quarter-scale recursion
+  predicted by Lemma PAR's "higher lattice alignments halve once
+  more");
+* **αβ-mixed species**: {E1/band-bottom values, single parity} ∪
+  {a few S3 values} — Lemma-J-flavoured β conflicts glued to α
+  units, killing the band-heavy teams.
+
+### 2.3 The third regime, seen in the witness stream
+
+The 169 witnesses cluster by min-team band size:
+
+* **Lopsided cluster** (min|Y| ≤ 18: 131 witnesses, incl. 57 at the
+  (2, 62) extreme): one team band-dominant, the other band-starved
+  but P0/P2-rich.  Killed by Th1 of the band-dominant team.
+* **Balanced cluster** (min|Y| ≥ 28: 38 witnesses): **exactly the
+  parity family of Lemma PAR with a mixed band** — U(A) = all odds
+  of P0, U(B) = all evens, Z(A) = evens of P2, Z(B) = odds
+  (pointwise, every single witness inspected), band split near
+  parity with 1–4 defectors per team.  Killed by Th1 α+β patterns
+  (and twice by Th0 crown patterns).
+
+So the R3 interpolation of notes/55 §6.2 is EMPTY at the coloring
+level at M = 48 in a precise sense: straddle pressure (Lemma W both
+teams simultaneously) plus the fan catalogue leave only (i) lopsided
+band splits and (ii) the P0/P2-parity-aligned family with band
+mixing — and both die by finite Th1/Th0 patterns of the α/β/crown
+species, i.e. by the SAME mechanism families that kill the exact
+lattice alignments (the H1 block theories of notes/55 §5.4c).  The
+"mixed ⟹ at least as dead" step that notes/55 §5.4 flagged as
+missing is exactly what the 25 cegar band patterns certify at this
+scale.
+
+[MACHINE-CHECK: data/e147_cegar_M48.json/.log,
+data/e148_essential_M48.json/.log.]
+
