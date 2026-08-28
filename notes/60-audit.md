@@ -250,3 +250,34 @@ solver-bound near v ≈ 5–8 (double-digit-hour solves).  The ledger
 consequence is only: the pump lower bound moves 3 → 4 at pin16,
 and the balanced instances stay two-sided-open.  No change to any
 N6a-side gap.  [RECORDED — no verdict claimed beyond the logs.]
+
+### 5.1 M = 144: the catalogue quantities, computed blind
+### [MACHINE-CHECKED — independent implementation]
+
+The e146(144) catalogue landed (12 470 patterns: 12 434 fan + 36 J).
+Per the §5.0 protocol, BEFORE any 144 probe: alpha/f computed by a
+fresh implementation written from the notes/57 §0.2/§3 definitions
+alone (audit/a7_night2/a7_alpha_f.py — no code shared with
+e153_dich_lemmas.py; exact branch-and-bound clique, pure-support
+scan).  Cross-validation first: on all SIX known scales the
+independent implementation reproduces the published tables EXACTLY —
+alpha_E = 2/3/2/2/3/3, alpha_O = 2/2/2/2/3/3, f_O = 9/9/9/8/8/8,
+f_E = 9/8/9/8/8/8, K* = 26/35/42/51/60/68, including the F1 witness
+{−48,−32,0} at 64, the mod-32-spaced triples {−110,−78,−14} at 112,
+and the F2 failure exemplars ((−55,−49) pure support ∌ +1 at 48;
+(−95,−81) at 80).  [The notes/57 catalogue layer is hereby
+re-established end-to-end by independent code.]
+
+Blind M = 144 values (computed BEFORE any solver probe at 144):
+
+    alpha_E(144) = 3  (witness offsets {−142, −78, −14})
+    alpha_O(144) = 3  (witness offsets {−143, −79, −15})
+    f_O(144) = f_E(144) = 8  (both bottom singletons self-serve)
+
+    ⟹  K*(144) = 72 + 9 + (3 − 8) = **76**
+
+— agreeing with the §5.0 trend expectation AND the flat-offset law
+(76), disagreeing with the dead mod-32 law (74).  The discriminating
+probe is K = 75: mechanistic/flat law says SAT, mod-32 law says
+UNSAT.  Probes queued behind the e146(160) build (single solver
+slot).
