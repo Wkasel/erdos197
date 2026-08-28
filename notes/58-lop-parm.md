@@ -483,6 +483,26 @@ than GAP-PARM (it fixes the coloring up to a mod-8 lattice family
 with 2 marked values), and its species is shared with GAP-LLOP-α's
 frontier (§1.1) — one corner, two arms.
 
+**(d) Clique refinement — fan-safe shares have ≤ 4 members.**  A
+fan-safe attacker share of size ≥ 2 must be a CLIQUE in the
+SAT-alive pair graph (every pair inside it must escape).  Computed
+max cliques of the e155b graphs:
+
+    m=24: {65,69,77,93} (both windows)      m=28: {77,85,93,109}
+    m=32: {96,104,112,128} (W2e) / {89,105,121} (W2o)
+    m=40: {113,121,153} (both)
+
+— size ≤ 4 at every tested (m, window), each an explicit mod-8
+(mod-4 at 24) aligned family, with ≤ 1 member in the CW zone at
+m ≥ 28.  So in Case S: |A_e|, |B_o| ≤ 4 (or ≤ 1), hence A_o resp.
+B_e miss at most FOUR values of their class — the punctured-H1
+robustness the corner needs is ≤ 4 spread punctures, not Θ(m/8),
+and the corner colorings form an explicitly-listable finite family
+per scale.  (Pairwise-clique is necessary, not sufficient — joint
+triple fans can still kill inside a clique, which only shrinks the
+corner further.  Compare notes/57 §0.2's α_c(M), the shallow-zone
+version of the same quantity.)
+
 [MACHINE-CHECK: data/e155_parm_hyp.log/.json (e155 + e155b);
 crown-window arithmetic scripts in transcript.]
 
