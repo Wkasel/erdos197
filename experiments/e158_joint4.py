@@ -81,7 +81,7 @@ def blocks_of(M):
 
 
 def solve_joint(M, abs_bounds, vup, vdn, budget=3600.0,
-                solver=Cadical195, support=None):
+                solver=Cadical195, support=None, fixed_colorA=None):
     """abs_bounds = (c_m1, c0, c1, c2) lower bounds per team per block,
     or None => exact balance (ceil(|blk|/2) both teams; block sizes are
     even for M % 4 == 0).  vup / vdn: int or None (anchor unpriced).
@@ -105,6 +105,11 @@ def solve_joint(M, abs_bounds, vup, vdn, budget=3600.0,
     for v in V:
         top += 1
         ai[v] = top
+    fixed_cls = []
+    if fixed_colorA is not None:
+        fset = set(fixed_colorA)
+        for v in V:
+            fixed_cls.append([ai[v]] if v in fset else [-ai[v]])
 
     def litT(off):
         def lit(u, w):
@@ -182,6 +187,8 @@ def solve_joint(M, abs_bounds, vup, vdn, budget=3600.0,
                 cards += enc.clauses
     t0 = time.time()
     with solver(bootstrap_with=cls) as s:
+        for c in fixed_cls:
+            s.add_clause(c)
         for c in cards:
             s.add_clause(c)
         ok = s.solve()
