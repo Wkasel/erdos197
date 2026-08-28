@@ -1,0 +1,4 @@
+M=64 bounds (1, 2, 0): UNSAT [9.8s]
+M=64 bounds (2, 1, 0): UNSAT [11.0s]
+M=80 bounds (1, 2, 0): UNSAT [25.7s]
+M=80 bounds (2, 1, 0): UNSAT [20.8s]

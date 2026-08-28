@@ -10,6 +10,22 @@ vocabulary).  Machine lock: data/e135_lock.log + data/e134_schema2.log
 verification pointer and a status tag [PROVED] / [MACHINE-CHECKED] /
 [GAP].  The gap ledger is §7.**
 
+**Overall status: `partial — skeleton proved, six tagged gaps`.**
+Proved by hand (uniform in M): the decomposition (Lemma U), the
+complete attack-geometry catalogue (A1–A9), the ported order
+toolkit (Seesaw/Z′/D′), the seam-2 transfer lock (E2/C), the
+interval floods incl. the clipped 6M flood (P′), quantitative
+straddle pressure (W), the parity-family halving reduction (PAR),
+the double-fan gadget for high pairs (FG-high), and Theorem H (the
+even/odd halved cores die — killing the aligned parity family
+outright, Cor. PAR-i).  Machine-locked besides the five-scale UNSAT
+itself: the finite top-run lock (Lemma J), the bound-frontier law
+with the two minimal targets T1 = (2,1,0) and T2 = (1,2,0) (UNSAT
+at M = 48, 64, 80), the fan-resonance landscape, and H1's double
+death.  Open: six tagged gaps (§7), of which GAP-STRUCT — the
+bridge from general straddle-free colorings to the structured
+regimes — is the crux.
+
 ---
 
 ## 0. The target instance and the theorem to prove
@@ -603,6 +619,10 @@ the (2,2,2) lock by bound monotonicity):
     T1:  min|U| ≥ 2 ∧ min|Y| ≥ 1  ⟹  infeasible      [= (2,1,0)]
     T2:  min|U| ≥ 1 ∧ min|Y| ≥ 2  ⟹  infeasible      [= (1,2,0)]
 
+SCALE-STABLE: both (1,2,0) and (2,1,0) re-verified UNSAT at M = 64
+(9.8 s / 11.0 s) AND M = 80 (25.7 s / 20.8 s), decomposed
+encoding; data/e145_frontier64.log.
+
 **Anatomy of the surviving escapes.**  Every SAT witness realizes
 one of two dodges:
   E∅  a P0-empty or band-empty team (the (0,·,·)/(·,0,·) rows);
@@ -615,7 +635,8 @@ one of two dodges:
       value 2M is even, its sub-6M P2 values all odd — Lemma W(d)).
 
 ### 5.3 The double-fan core: what the second band value buys
-[MACHINE-CHECKED; uniform proof = GAP-FG]
+[status refined in §5.3b: FG-high PROVED; closure region =
+certificates in hand; resonant escapes exist]
 
 For x ∈ P1 the *fan* of x is the unit family of Th2:
 {z ≺ y : y, z = 2y − x ∈ P2-core} (Θ(M) units, A6).  Machine facts
@@ -936,13 +957,15 @@ finite/schematic extraction (GAP-FG, GAP-H, GAP-J-pencil below).
 | Theorem H | H(m) infeasible for all m ≥ 6 (via FG-high (0,1)) | §5.4b |
 | Cor. PAR-i | parity alignment (i) dead at every even M ≥ 12 | §5.4b |
 
-Residue ledger: everything above needs at most M ≡ 0 (mod 4) (the
-G4 centres at 5M+7/5M+9) and M ≥ 48; no mod-8/mod-16 obstruction
-appeared anywhere.  The M ≡ 0 (mod 16) restriction in the Theorem
-N6a statement is inherited from the tower program's scales, not
-from any lemma here; the machine lock includes M = 48 ≡ 0 (mod
-16)… all five locked scales are ≡ 0 (mod 16), and nothing in this
-note distinguishes them from other M ≡ 0 (mod 4).
+Residue ledger: everything PROVED above needs at most M ≡ 0 (mod
+4) (the G4 centres at 5M+7/5M+9) and M ≥ 48 (Theorem H: any m ≥ 6).
+The one place the target residue M ≡ 0 (mod 16) genuinely surfaces
+so far is GAP-H1: the halved crown core ThW0 lives at m = M/2 and
+is machine-dead on the line m ≡ 0 (mod 8) ⟺ M ≡ 0 (mod 16), with
+a SAT sharpness point at m = 14 (M = 28) — off the target class the
+kill would have to route through ThW1′ instead.  Otherwise the
+mod-16 restriction is inherited from the tower program's scales,
+not from any lemma here.
 
 ### Machine-checked (finite, M-independent)
 
