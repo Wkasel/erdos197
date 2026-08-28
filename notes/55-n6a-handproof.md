@@ -441,3 +441,105 @@ candidate cycle-closers of the assembly, playing the role that A2/A3
 run-truncations).  data/e138_transfer.log, data/e138_transfer.json.]
 
 ---
+
+## 4. Floods inside P2: centre 6M and the core centre 5M+8
+[PROVED as conditional lemmas; mechanics MACHINE-CHECKED]
+
+### 4.1 Lemma P′ (interval flood)  [PROVED]
+
+Let I be an integer interval, T a team, c ∈ T ∩ I a centre, g ∈
+{2, 4}, and C the class {v : v ≡ c + g/2 (mod g)}.  Assume the
+*mono hypothesis*: every C-value of I within the flood's reach
+below (call the reach set W = {w ∈ C ∩ I : 2c − w ∈ I}, plus one
+g-step beyond on each side where it exists inside I) belongs to T,
+and the d = g ladder on those rungs is in a definite zigzag phase
+(Lemma D′ branch).  If a seed relation between c and one member of a
+mirror pair holds, then
+
+  (outward: c ≺ v₀)  c ≺ w for every w ∈ W;
+  (inward:  v₀ ≺ c)  w ≺ c for every w ∈ W;
+
+and the conclusion holds in BOTH zigzag phases (phase-blindness).
+
+*Proof.*  Verbatim notes/33 §3 (Lemma P): the block (M, 2M] enters
+that proof only through "mirror inside the block" and "rung inside
+the block" checks, which become "inside I"; every induction step
+(seed mirroring, outward-up, outward-down, inward-up, inward-down)
+uses only R1–R4 on APs of I, transitivity, and zigzag edges of the
+given phase, all of which are available for in-team APs by §1.1 and
+Z′/D′.  The admissible-e range is the interval of the class
+{g/2 mod g} cut by "c ± e ∈ I"; both inductions from e₀ cover it.  ∎
+
+### 4.2 The instances  [MACHINE-CHECKED at 48/64/80, 4 branches each]
+
+With I = P2-core = [4M+1, 6M+15], mirror widths from A8:
+
+| name    | centre | g | class          | window            | residue need |
+|---------|--------|---|----------------|-------------------|--------------|
+| F6-g2   | 6M     | 2 | odds           | e ≤ 15 (CLIPPED)  | —            |
+| F6-g4   | 6M     | 4 | ≡ 6M+2 (mod 4) | e ∈ {2,6,10,14}   | M even       |
+| MIDg2−  | 5M+7   | 2 | evens          | e ≤ M+5 (FULL)    | M even       |
+| MIDg2+  | 5M+9   | 2 | evens          | e ≤ M+5 (FULL)    | M even       |
+| MIDg4−  | 5M+7   | 4 | ≡ 1 (mod 4)    | e ≤ M+6 (FULL)    | M ≡ 0 (4)    |
+| MIDg4+  | 5M+9   | 4 | ≡ 3 (mod 4)    | e ≤ M+6 (FULL)    | M ≡ 0 (4)    |
+
+The flood at 6M is width-15 CLIPPED — its covered set is exactly
+the class values of [6M−15, 6M+15], i.e. F together with its lower
+mirror (6M−15, 6M): this is the "width-15 boundary rung" of the
+schema.  The wide floods live at P2-core's own arithmetic centre
+(4M+1+6M+15)/2 = 5M+8: its odd neighbours 5M+7 ≡ 3, 5M+9 ≡ 1
+(mod 4) (at M ≡ 0 mod 4) reproduce the C3 pattern of centres m₀∓1 —
+but here only M ≡ 0 (mod 4) is needed, not mod 8, because 5M+8's
+residue is pinned by the +8 offset rather than by M alone.  Note
+6M ∈ P2-core is itself a value (unlike C3's m₀ which was mid-block):
+the seeds of the MID floods can be taken on the interleave pair
+(5M+7, 6M) — the mirror of 6M through 5M+7 is 4M+14, through 5M+9
+is 4M+18, both in P2-core.
+
+[MACHINE-CHECK: experiments/e139_flood6M.py — the e113 schema engine
+generalized to intervals (same audit discipline: every AP, rule
+pattern, leader/trailer claim, mirror bound asserted; hypothesis log
+must equal the declared fiat set), executing all six instances in
+all 4 (phase × direction) branches at M = 48, 64, 80, plus the
+residue sweep at every M ≡ 0 (16) in 48..400.  data/e139_flood.log.]
+
+### 4.3 The F ↔ S3 mirror coupling  [PROVED]
+
+Through the near-centre odd centres, the flood band mirrors onto
+P2's bottom run:
+
+    2(5M+7) − (6M+j) = 4M + 14 − j     (j = 1..13 ↦ S3-values)
+    2(5M+9) − (6M+j) = 4M + 18 − j     (j = 3..15 ↦ S3-values)
+
+So every mirror AP that a MID flood uses to reach an F-value has its
+other endpoint in S3 ∪ [4M+17, 4M+18) — the two seam-coupled bands
+(F = the seam-1×2 doubling image, S3 = the seam-2 doubling image)
+are MIRROR IMAGES of each other through P2-core's centre.  Combined
+with the A5 boundary-rung units (F before G) and Lemma J (S3
+memberships lock band phases), this is the geometric closure the
+schema was fitted to: everything the two seams inject into P2 meets
+at the centre 5M+8.
+
+### 4.4 What the floods need (the honest accounting)
+
+Each instance above is CONDITIONAL on its mono hypothesis: Θ(M)
+same-team rungs (the MID floods) or 16 same-team rungs around 6M
+(the F6 floods).  In the C3 proof the block was unicolored and the
+hypotheses were free; here they are the crux.  Two regimes discharge
+them naturally:
+
+* LOPSIDED colorings (one team near the (2,2,2) floor): the
+  majority team's P2 material is P2 minus O(1) values; all six
+  floods survive puncturing if their rungs avoid the minority's
+  ≤ |Z′| values — and the MID centres can be MOVED (any centre in
+  the midband has width ≥ M−O(1), A8), giving the robustness
+  freedom the assembly will use.
+* LATTICE colorings (each team a union of residue classes): a team
+  owning a full parity class of P2 owns entire d = 2 ladders — the
+  mono hypotheses hold verbatim.  §5 reduces this family by halving
+  to an UNGUARDED single-team core.
+
+The general interpolation between the regimes is the open part
+(§6).
+
+---

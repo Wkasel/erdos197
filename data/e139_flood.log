@@ -1,0 +1,20 @@
+  M=48 F6-g2 : centre 288 g=2 rungs=16 targets=16 — 4 branches OK
+  M=48 F6-g4 : centre 288 g=4 rungs=8 targets=8 — 4 branches OK
+  M=48 MIDg2-: centre 247 g=2 rungs=54 targets=54 — 4 branches OK
+  M=48 MIDg2+: centre 249 g=2 rungs=54 targets=54 — 4 branches OK
+  M=48 MIDg4-: centre 247 g=4 rungs=28 targets=28 — 4 branches OK
+  M=48 MIDg4+: centre 249 g=4 rungs=28 targets=28 — 4 branches OK
+  M=64 F6-g2 : centre 384 g=2 rungs=16 targets=16 — 4 branches OK
+  M=64 F6-g4 : centre 384 g=4 rungs=8 targets=8 — 4 branches OK
+  M=64 MIDg2-: centre 327 g=2 rungs=70 targets=70 — 4 branches OK
+  M=64 MIDg2+: centre 329 g=2 rungs=70 targets=70 — 4 branches OK
+  M=64 MIDg4-: centre 327 g=4 rungs=36 targets=36 — 4 branches OK
+  M=64 MIDg4+: centre 329 g=4 rungs=36 targets=36 — 4 branches OK
+  M=80 F6-g2 : centre 480 g=2 rungs=16 targets=16 — 4 branches OK
+  M=80 F6-g4 : centre 480 g=4 rungs=8 targets=8 — 4 branches OK
+  M=80 MIDg2-: centre 407 g=2 rungs=86 targets=86 — 4 branches OK
+  M=80 MIDg2+: centre 409 g=2 rungs=86 targets=86 — 4 branches OK
+  M=80 MIDg4-: centre 407 g=4 rungs=44 targets=44 — 4 branches OK
+  M=80 MIDg4+: centre 409 g=4 rungs=44 targets=44 — 4 branches OK
+  residue sweep M=48..400 step 16: OK
+e139: ALL CHECKS PASSED
