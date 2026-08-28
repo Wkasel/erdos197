@@ -120,3 +120,32 @@ GAP-STRUCT.
 Status of this section: Lemma DP [PROVED]; COV(M) [GAP — the rest of
 this note].
 
+---
+
+## 1. The seed catalogue 𝔇₀(48)  [MACHINE-CHECKED]
+
+experiments/e146_dp_catalogue.py builds and validates the two known
+families at M = 48:
+
+* **FG patterns** — the full (q, p) grid 0 ≤ q < p ≤ M+15 (2016
+  pairs): 1851 closure-dead (exactly the e142o count), 165 alive
+  (the resonance region).  For each dead pair the derivation-DAG
+  value support is extracted, independently re-validated by a direct
+  SAT solve of Th₂[S] (order vars on S ∩ P2 + APs inside S + fan
+  units of the in-S attackers), then greedily deletion-minimized —
+  every deletion step re-validated.  Result: 1851 distinct minimized
+  patterns, sizes 6–40 (median ≈ 12; 308 pairs reduce to exactly the
+  six-value FG-high gadget {4M−p, 4M−q} ∪ 4M+{s, 2p−3q, 3p−4q,
+  5p−6q}).
+* **J patterns** — S = R ∪ {4M+j : j ∈ F} for the 36 minimal
+  forbidden sets of Lemma J (e138 partB), each re-validated against
+  Th₁[S] (APs inside R + β-units with completion in S): 36 patterns
+  of sizes 18–19.
+
+𝔇₀(48): 1887 validated death patterns.  Every validation is a
+from-scratch SAT check of the notes/56 §0.2 definition — the closure
+engine is only a generator, never trusted.
+
+[MACHINE-CHECK: experiments/e146_dp_catalogue.py →
+data/e146_catalogue_M48.json, data/e146_catalogue.log; 32 s.]
+
