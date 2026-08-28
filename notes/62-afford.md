@@ -123,7 +123,16 @@ Baselines measured this session:
   both teams clean at the lower anchor (n_s0 = n_s1 = 0), s2 dump
   n_s2 = 894/913, n_H_dn = 0 (L-PREFIX part (i) again exact).
   Baseline lower price 0 at scale 24.
-- Headline C3@24 (65, 0) in flight.
+- **HEADLINE C3@24 (65, 0): UNSAT [46 s]** [MACHINE-CHECKED,
+  data/e158_c3_M24_up65_dn0.log].  Scale-stability: with the pod's
+  known 3-block SAT point v = 65 at anchor 24 (fleet_2026-08-28
+  pod1, CP-SAT feasible) and the free standalone half-anchor
+  (v*(bal,12) = 0), the joint (65, 0) cell is INFEASIBLE.
+  Certified independently of the pod witness's auditability:
+  **v_min(0)(24) > 65** while v_min(0)(16) > 6 — the
+  free-lower-anchor price exceeds the entire measured 3-block
+  bracket at 24 (v*₃(24) ∈ (4, 65]).  The 2-scale UNSAT family
+  [GAP-J-schema] is machine-true at M = 16 AND 24.
 
 ### 3b. C1 witness anatomy (hand-readable — the schema mechanism)
 

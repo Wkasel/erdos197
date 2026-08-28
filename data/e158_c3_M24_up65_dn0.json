@@ -1,0 +1,10 @@
+{
+ "tag": "c3_M24_up65_dn0",
+ "M": 24,
+ "mode": "bal",
+ "bounds": null,
+ "vup": 65,
+ "vdn": 0,
+ "verdict": "UNSAT",
+ "time": 46.0
+}
