@@ -759,6 +759,14 @@ unproven link, listed with its current shape:
    notes/56 §4b).  Remaining: uniformization gaps GAP-DICH,
    GAP-LLOP, GAP-PARM (⊇ GAP-H1), GAP-ASM′, plus the pre-existing
    GAP-FG-schema and GAP-J-pencil (notes/56 §5.2).
+   UPDATE (notes/57, night 2026-08-27): GAP-DICH is now a proved
+   case tree (forced-interval calculus: Lemmas T/FI/ANCHOR/COLL/MID
+   + Theorem H-DICH + Lemma SP) over five finite fan-catalogue
+   facts, with the corrected mechanistic threshold law K* = M/2 + 9
+   + max(α − f) — exact at six scales including BLIND predictions
+   at 112/128 that matched notes/58's direct measurements.  What
+   remains of GAP-DICH are catalogue-schema sub-gaps of the same
+   species as GAP-FG (notes/57 §7).
 3. **GAP-N2 endgame (Case 1).**  Closed per-cell far beyond the
    original crux ({11,12} at ALL 8 residues by verified hand schemas;
    lane laws slide mod 8; template cells across pairs 13..19; C3(p)
