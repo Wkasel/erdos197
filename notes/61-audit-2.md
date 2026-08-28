@@ -215,18 +215,45 @@ Line-level re-derivations, independent of the notes/60 §3 pass:
   assembly-load-bearing sets (J({1,2}), J({1,3}), J({2,4})) are in
   the hand-checkable JP family.
 
-### 5.3 §C FG-deep  [SOUND as tagged; still 48-only]
+### 5.3 §C FG-deep  [SOUND as tagged at 48; cross-scale audit RUN —
+### resonance law confirmed, E1×E1 characterization NOT scale-stable]
 
 The exact maps R(48)/D(48), the resonance law (8 | gap necessary),
 the E1×E1 deep characterization, and the 55/75 branch certificates
 are honest machine facts with the right speciation (the 20-pair
 parity-locked core correctly merged into GAP-PARM).  The §C.1
 "close-pair law" correction to notes/55 §5.3b (E1 exclusion needed)
-is real.  Caveat the note itself carries: everything is at M = 48;
-the cross-scale audit (planned at 64 with the precomputed alive grid
-data/e157_audit_alive_M64.json) has not run — GAP-FG-deep's risk
-rating (medium for the halving core) is appropriate, and the
-resonance law should not be cited as multi-scale until that runs.
+is real.  The note correctly tagged everything [MACHINE-CHECKED at
+48; cross-scale verification pending]; this audit RAN the pending
+check (a7_deep_crossscale.py at M = 64, using audit-1's precomputed
+178-pair alive grid; SAT classification 2 s;
+data/e157_audit_deep_M64.{json,log}):
+
+* **Resonance law CONFIRMED at 64**: all 68 escapes have gap ≡ 0
+  (mod 8) (gaps realized: 16/32/48/64) — the assembly-relevant half
+  (it feeds α's uniformization and the fan-safe mod-8-class step)
+  is now two-scale-true, consistent with the notes/55 escape lists.
+* **Close-pair situation STRONGER at 64**: zero escapes at distance
+  ≤ 15 (at 48 the gap-8 E1×E1 escapes existed; at 64 all gap-8
+  alive pairs are stalls) — the corrected close-pair kill law holds
+  at 64 without even needing the E1 exclusion.
+* **The E1×E1/non-resonant characterization of D FAILS at 64**
+  (audit-1's §5.0 pre-registered descriptive prediction is REFUTED
+  in this half): D(64) has 110 members; 98 are the expected E1×E1
+  block (q ≥ M, gaps 1..14, mirroring 48), but 12 stalls spill one
+  shoulder BELOW E1 (q ∈ [M−16, M−1]) and include RESONANT gaps —
+  the gap-8 diagonal run (56,64)..(63,71), (60,68)/(60,70)/(60,72)/
+  (56,76), and (48,72) at gap 24.  So "D = exactly the non-resonant
+  E1×E1 corner" is a 48-accident; the deep-stall zone widens with M
+  and contains 8-divisible gaps (resonance is necessary for escape,
+  never sufficient — no contradiction, but the uniformization
+  target for GAP-FG-deep must NOT bake in the 48 shape).
+* Ledger consequence: GAP-FG-deep's medium risk rating is
+  vindicated; the E1-shoulder stalls are new species material for
+  the L1/L2/L3 write-ups (their gaps {8, 10, 12, 20, 24} suggest
+  the halving recursion reaches one level deeper at 64, as the §C.2
+  halving heuristic itself predicts).  Nothing in notes/59's tagged
+  claims breaks — the note never asserted scale-stability.
 
 ### 5.4 §D ASM′  [SOUND; composition assessed]
 
@@ -267,9 +294,13 @@ anticipated.
 **notes/59 (lowgaps): SOUND** — §A/§B algebra re-derived at line
 level with two presentational nits (FW rule-(i) guard bookkeeping;
 "16 residue sign patterns" should be 8); Lemma J's PROVED upgrade
-defended; §C honest and correctly scoped (cross-scale audit still
-outstanding); Theorem ASM′ sound with the two §5.4 remarks.  No
-overclaim found.
+defended; §C honest and correctly scoped — and its pending
+cross-scale check now RUN at 64: resonance law CONFIRMED
+two-scale, E1×E1 deep characterization shown 48-specific (§5.3;
+new E1-shoulder + resonant-gap stall species for GAP-FG-deep);
+Theorem ASM′ sound with the two §5.4 remarks.  No overclaim found
+in the note; one pre-registered audit-1 prediction (the descriptive
+half of the deep law) refuted by the measurement.
 
 Ledger deltas applied to notes/50 + STATUS.md this session:
 BRIDGE1 CLEARED (audit-1; 52-G1/52-G2 wording fixes applied to

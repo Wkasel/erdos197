@@ -1,0 +1,10 @@
+base built [0s]
+closure-alive grid loaded from cache data/e157_audit_alive_M64.json
+closure-alive pairs: 178 [0s]
+M=64: alive 178 -> SAT 68 / UNSAT 110
+  resonance law (8 | gap on ALL escapes): OK
+  deep law (D = non-resonant E1xE1, q >= M): VIOLATED  (D subset: False, converse: False)
+  close-pair law (dist<=15 escapes = gap-8 E1xE1): OK  (0 close escapes)
+  R gaps: [16, 32, 48, 64]
+  D q-range: [48, 78]  D gaps: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 20, 24]
+total 2s

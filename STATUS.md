@@ -1034,9 +1034,15 @@ one dead extrapolation (notes/58's flat K* law).**  Key movements:
   closure engine reproduces all 36 pencil derivations); JP/JP′/Γ
   algebra re-solved by hand (two presentational nits recorded in
   61-audit-2 §5).
+- FG-deep cross-scale at 64 RUN (61-audit-2 §5.3): the resonance
+  law (8 | gap necessary for escape) CONFIRMED at the second scale —
+  but the E1×E1/non-resonant characterization of the deep stalls is
+  48-specific (at 64, twelve stalls spill one shoulder below E1 and
+  include resonant gaps 8/24); GAP-FG-deep's uniformization target
+  restated accordingly.
 - Still-unrun carryovers: e155c (ThW1′ puncture tolerance = the
-  cap-law mechanism), FG-deep cross-scale at 64 (alive grid cached),
-  e156 D3 at 80/112/128, P-arm instances at 112/144.
+  cap-law mechanism), e156 D3 at 80/112/128, P-arm instances at
+  112/144.
 
 **Honest assessment (updated 2026-08-28): NO ≈ 92 %, YES ≈ 8 %**
 (up from 90).  Movement FOR: an adversarial audit cycle attacked

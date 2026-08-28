@@ -39,8 +39,16 @@ def main():
                 cls.append([-o(a, b), -o(b, c)])
                 cls.append([o(a, b), o(b, c)])
     print(f'base built [{time.time()-t0:.0f}s]', flush=True)
-    alive = [(q, p) for q in range(0, M + 15) for p in range(q + 1, M + 16)
-             if not closure_verdict(M, p, q)[0]]
+    import os
+    cache = f'data/e157_audit_alive_M{M}.json'
+    if os.path.exists(cache):
+        with open(cache) as f:
+            alive = [tuple(x) for x in json.load(f)]
+        print(f'closure-alive grid loaded from cache {cache}', flush=True)
+    else:
+        alive = [(q, p) for q in range(0, M + 15)
+                 for p in range(q + 1, M + 16)
+                 if not closure_verdict(M, p, q)[0]]
     print(f'closure-alive pairs: {len(alive)} [{time.time()-t0:.0f}s]',
           flush=True)
     sat_set, unsat_set = [], []

@@ -90,7 +90,13 @@ predictions.  The drift toward balance ((M+16)/2 − K* = 6, 5, 6, 5,
 2→3, with mod-32-spaced alive triples {−110,−78,−14} at 112) and
 the deep supports lengthen until the bottom singleton self-serves
 (f: 9→8) — both monotone-in-M trends, quantifying the GAP-ASM′
-narrowing (notes/56 §4b, notes/58 §1.1).
+narrowing (notes/56 §4b, notes/58 §1.1).  [CORRECTION (2026-08-28
+audits, notes/60-audit-1 + 61-audit-2): α is NOT monotone — the
+independent scan at M = 160 gives α_E = α_O = 2 (the gap-64 triples
+alive at 144 die at 160), and the blind probe confirmed
+K*(160) = 83 = m + 9 + (2 − 8).  The formula is exact at all eight
+scales 48..160; only this trend sentence was wrong, and the
+narrowing it feared reversed at 160 (overlap width W = 1 there).]
 
 ### 0.3 The frontier anatomy (all four scales, e149 witnesses)
 
