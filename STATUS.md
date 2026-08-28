@@ -1058,3 +1058,71 @@ notes/46 dodger corner is still not excluded.  The audit shrank
 risk in the verified layer; it did not shorten the list of unproven
 links (still: N2-DIAG, N3, N6a-uniformization pool, G2-ledger,
 L1', rung-finiteness).
+
+### FRONT GAP-AFFORD (2026-08-28 afternoon, e158 + notes/62): the
+### 4-block downward gadget — GAP-JOINT measured YES at two scales;
+### GAP-COMP refuted as counting; first proved arm of the (·,0) schema
+
+Full write-up notes/62-afford.md; machine experiments/e158_joint4.py
+(+ e158b MUS, e158c fixed-coloring prober, queue scripts), records
+data/e158*.
+
+- **The instrument**: values (M/2, 8M], blocks Bm1/B0/B1/B2, TWO
+  overlapping 3-block windows sharing seam s1; per-team budgets vup
+  (anchor M: s1+s2) and vdn (anchor M/2: s0+s1).  T-FORCE-4
+  (restriction) and L-PROJ (projection to the 3-block instances)
+  proved — every UNSAT cell is a joint demand statement for valid
+  pairs.
+- **GAP-JOINT answered YES — the pump is real, at 2 scales.**
+  Baselines: v*(bal,8) = v*(bal,12) = 0 (standalone half-anchors are
+  FREE, seam-clean witnesses).  M = 16 triangle: (none,0) SAT [0.8s]
+  (clean below by dumping ~400 inversions on s2), (6,none) SAT
+  [364s, audited], **(6,0) UNSAT [2.1s]**.  M = 24: (none,0) SAT
+  [20.6s], **(65,0) UNSAT [46s]** with 65 = the pod's 3-block SAT
+  point.  So paying the upper anchor at 3-block-legal prices forces
+  payment at the half-anchor where the standalone price is ZERO —
+  the joint demand curve is strictly above the componentwise floors
+  [GAP-J-schema, machine-true at 16 and 24].  Attribution clean:
+  material alone forces nothing (C2), the upper BUDGET does (C3).
+- **Mechanism measured** (C1 witness anatomy): to pay 6 up, the
+  coloring voids the entire upper H-family by donation (n_H_up = 0,
+  82/78 z-defections) — and the donation pattern seeds 8 mono
+  H-triples in the LOWER window, broken by wholesale s0 reversal
+  (32 inversions) — donations received in the window have their own
+  attack surfaces one block down, exactly the e130/notes/54
+  prediction.  Payment: 38 below when below is free.
+- **Negative results that shape L-AFFORD** (notes/62 §4): NG4 — no
+  family of finite budget cells (forbidden rectangles) can prove
+  L-AFFORD (overpay-everywhere dodge); budget gadgets are DEMAND
+  instruments only.  GAP-COMP refuted as posed: no sub-vacuous
+  compliant-descent threshold exists (parity-oriented descent
+  digraphs have zero AP 2-paths at any density; the C1 witness
+  realizes it, 334/352 edges, 0 two-paths).  The supply side of the
+  ledger must be denominated in DONATIONS (single-use colored
+  values), not inversions [GAP-AFFORD′].
+- **The (·,0) family by hand** (notes/62 §4c-d): L-PREFIX proved
+  (under vdn = 0 the prefix cohort Bm1 taxes the window: μ_dn = 0
+  forced; n_s2 ≥ μ_up + μ_skip, edge-disjoint charging; the SKIP
+  family (Bm1×B1×B2) is new — no 3-block window ever charged it;
+  the H-voiding schedule carries exactly 13M²/64 + M/8 skip mass).
+  **Lemma K proved** (an integer interval with its bottom k ≥ 3
+  values forced first has no monotone-AP-free order once n ≥ k+6;
+  two exhaustive bases + two monotone steps) — giving **Theorem
+  SCHED-DEAD**: the unique zero-sumset parity coloring (1,1,0,0) is
+  dead under vdn = 0 at EVERY budget and EVERY M ≥ 12 (its low
+  parity chain is Lemma K's pattern; machine-confirmed at
+  M = 16/24/32 through vup = 512, seconds per query).  First fully
+  proved arm of the three-arm (·,0) schema (flood / sumset-mass /
+  robustness).
+- **MUS**: (16; 6,0) deletion-minimal support n = 50 of 120, 50/50
+  necessary; Bm1 and B0 enter COMPLETE, B1 as lower two-thirds
+  (3 punctures), B2 collapses to the six-value stub (4M, 4M+6]
+  (balance bound 0) — blind prediction (notes/62 §3c) 4/4, with the
+  B2 collapse much sharper than predicted.  The (·,0) core is a
+  lower-window object with a thin upper boundary family — a small
+  hand target.
+- **Frontier state**: v_min(0)(16) ∈ (6, 442] (bisection running:
+  96/192/384), v_min(0)(24) > 65; forced(x) is DECREASING (C2 kills
+  naive multiplicative cascades — notes/62 §5); the growth of
+  v_min(0)(M) is the decisive remaining measurement, and
+  GAP-AFFORD′ (overpayment ledger) the decisive remaining statement.
