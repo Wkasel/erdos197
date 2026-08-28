@@ -118,6 +118,13 @@ Baselines measured this session:
   strictly above both componentwise floors; pump bracket
   w_min(6) ∈ [1, 38], bisection in flight.
 
+- **C2@24 (none, 0): SAT [20.6 s]** [MACHINE-CHECKED,
+  data/e158_c2_M24_dn0.log].  Scale-2 replica of the M = 16 shape:
+  both teams clean at the lower anchor (n_s0 = n_s1 = 0), s2 dump
+  n_s2 = 894/913, n_H_dn = 0 (L-PREFIX part (i) again exact).
+  Baseline lower price 0 at scale 24.
+- Headline C3@24 (65, 0) in flight.
+
 ### 3b. C1 witness anatomy (hand-readable — the schema mechanism)
 
 The (6, none) witness is the PARITY dodge of notes/47 §3 wearing its
