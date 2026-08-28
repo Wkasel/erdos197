@@ -234,3 +234,204 @@ fans forbid the escape patterns — is exactly the e151 MUS anatomy
 Status of §2: [PROVED; machine pointers above.]
 
 ---
+
+## 3. The fan-side finite facts F1–F4  [MACHINE-CHECKED at
+## 48/64/80/96 — e153; uniformization ⊆ GAP-FG-schema]
+
+All facts are properties of the block-2 catalogue 𝔇(M) alone
+(plus interval arithmetic); they are the ONLY per-scale inputs of the
+§4 theorem.  Verifier: experiments/e153_dich_lemmas.py →
+data/e153_dich_lemmas.log.
+
+**F0 (purity — total).**  Every same-parity attacker pair's pattern
+has its entire support in the attackers' parity class: 863/863
+(M=48), 1428/1428 (64), 2095/2095 (80), 2907/2907 (96).
+Consequence: the service constraints of class-c patterns are
+class-local — a class-c pattern monochromatic in team T is dodged
+iff some support member lies in T′ ∩ P2 ∩ c.  (This is the machine
+form of "the closure of a class-c fan pair lives in the class"; a
+hand proof should follow from Lemma PAR-style parity bookkeeping on
+the R1–R4 closure — part of GAP-FG-schema.)
+
+**F1 (shallow alive-clique numbers).**  α_c(M) := max subset of
+{class-c band values with offset ≥ −(M−1)} with no dead-pure pair:
+
+    M      48   64   80   96
+    α_E     2    3    2    2      (E-triple at 64: {−48, −32, 0})
+    α_O     2    2    2    2
+
+All witnesses are resonance configurations (gaps 16/32/48/64 —
+cf. notes/55 §5.3b; per notes/58's e155 lattice law, alive gaps are
+≡ 0 mod 8/16, so α's uniformization is a resonance-lattice count).
+
+**F2 (bottom-singleton self-service law).**  The bottom singleton
+D = {4M+1} (odd) resp. {4M+2} (even) is *self-serving* — every
+dead-pure same-class pair inside its forced interval has the bottom
+value in its support — exactly:
+
+    M        48     64     80     96
+    {4M+1}   NO     NO     NO     YES     (f_O = 9, 9, 9, 8)
+    {4M+2}   NO     YES    NO     YES     (f_E = 9, 8, 9, 8)
+
+Failure exemplars (the e152 cores): at 48, pair (−55,−49) has pure
+support {+3,+7,+15,…} ∌ +1; at 80, pair (−95,−81) support
+{+3,+17,+31,…} ∌ +1.  NO other singleton self-serves at any scale
+(D2 scan) — but non-bottom singletons have n_c ≥ 9 anyway (FI), so
+only the bottom ones matter for f.
+
+**F3 (admissible-minimum windows).**  Exact SAT scan (D5) over
+defector sets D of one class with prescribed minimum offset s₀,
+against pure self-service alone: admissible minima are exactly
+LOW ∪ a bounded window just above:
+
+    M=48: O ≤ 41, E ≤ 42;   M=64: O ≤ 55, E ≤ 56;
+    M=80: O ≤ 67, E ≤ 68;   M=96: O ≤ 79, E ≤ 80.
+
+In particular EVERY admissible minimum is ≤ M−1, so every admissible
+defector set's forced interval meets the bottom window
+[3M−15, 3M−15+(m−1)] — this is what makes the two-sided collision
+argument (§4, case H2) close.  (The windows are ≈ (M−31) + m/2‑ish;
+their uniform law is the service-reach of the deep supports —
+GAP-FG-schema material.)
+
+**F4 (one-sided branch closure).**  The ABSTRACT branch instance —
+defector class c with minimum s₀, one-sided (no opposite-class
+defectors), constraints ONLY: forced-set definitions (Lemma FI),
+pure self-service of class-c pairs inside F(D), "class-c dead pair
+in Y_T needs a support member outside D", "class-c′ dead-pure pair
+in Y_T forbidden", |Y_T| ≥ K* — is UNSAT for EVERY minimum s₀, both
+classes, all four scales (D6), and at K*−1 it is SAT exactly at the
+bottom minima (D6s) — the abstraction is faithful: it reproduces
+the sharp threshold.  This instance is a WEAKENING of the full
+DICH instance (it drops Y_{T′}-side and mixed-pair constraints), so
+its UNSAT is the stronger statement.
+
+Interpretation of F4's anatomy: for minima in the low zone the kill
+is the §4 counting (f + α); for minima in the deep end of the F3
+window the kill is the CASCADE — admissibility forces the defector
+set to grow (a D5 witness at (48, O, s₀ = 41) has 21 defectors and
+forced mass f_O = 22) until the counting closes.  At 64/80/96 the
+single-interval counting (n_c = m/2, ᾱ from C3) already closes
+every surviving minimum; at 48 four minima (O:41; E:38,40,42) need
+the cascade (E2 line of e153).
+
+---
+
+## 4. The hatch theorem: DICH in the HATCH case  [PROVED given
+## F0–F4]
+
+**Theorem H-DICH(M).**  Let χ be straddle-free, (2,2,2)-bounded,
+fan-clean, with hatched U (U_A = O, U_B = E up to swap) and
+Φ(χ) ≥ 1.  Then min(|Y_A|, |Y_B|) ≤ K*(M) − 1, where
+K*(M) = m + 9 + max(α_E − f_O, α_O − f_E) with the F1/F2 constants.
+
+*Proof.*  By Lemma T, D_A = Z_A ∩ odd or D_B = Z_B ∩ even is
+nonempty.  Write s₀(D) for the minimum offset of a nonempty
+defector set.
+
+Case H0 (an inadmissible defector set).  If D_A ≠ ∅ violates pure
+self-service — some dead-pure odd pair inside F(D_A) ⊆ Y_B (Lemma
+FI) has a pattern with support ∩ D_A = ∅ — then that pattern is
+monochromatic in B (attackers forced into Y_B; support all-odd by
+F0, inside Z_B = odds ∖ D_A), contradicting fan-cleanness.  By F3
+this disposes of every D_A with s₀ above the admissible window, in
+particular every s₀ > M−1; mirror for D_B.  So from here on every
+nonempty defector set is admissible with s₀ ≤ M−1.
+
+Case H1 (two-sided: D_A ≠ ∅ and D_B ≠ ∅).  Both minima are ≤ M−1
+(H0/F3).  If both are LOW (≤ M−31): Lemma COLL — 3M−15 forced both
+ways, contradiction.  If say s₀(D_A) ∈ (M−31, M−1] (surviving-mid):
+I(z₀) is an interval of length m with bottom 3M−15+δ_A,
+δ_A = ⌈(s₀−(M−31))/2⌉ ≤ 15, hence I(z₀) ⊇ [3M−15+δ_A, 3M−15+m−1]
+⊇ [3M, 3M+m−16] …; concretely: F(D_A) and F(D_B) both meet the
+bottom window [3M−15, 3M+15]: a low opposite minimum's interval
+covers [3M−15, 3M] and a mid minimum's interval covers
+[3M−15+δ, 3M−15+δ+m−1] ⊇ [3M, 3M+δ−1+…] — since δ ≤ 15 ≤ m−1 the
+two intervals intersect (their spans [3M−15, 3M] and
+[3M−15+δ, …+m−1] overlap whenever δ ≤ 15).  If BOTH minima are mid:
+both intervals have length m and bottoms within [3M−14, 3M],
+distance |δ_A − δ_B| ≤ 14 < m: they intersect.  In every two-sided
+sub-case some band value is forced into both Y_A and Y_B —
+contradiction.  [PROVED: interval arithmetic + F3's s₀ ≤ M−1.]
+
+Case H2 (one-sided; WLOG D_A ≠ ∅, D_B = ∅).  Since Z_B ∩ even = ∅:
+every dead-pure even pair {x, x′} ⊆ Y_A would have its (all-even,
+F0) support inside Z_A, making the pattern monochromatic in A — so
+Y_A ∩ E is an alive-clique.  Sub-case by s₀ := s₀(D_A):
+
+  H2a (LOW, s₀ ≤ M−31):  F(D_A) ⊇ I(z₀) ⊇ [3M−15, 3M] (FI(i)), so
+  Y_A ∩ E lives in the shallow zone (offsets ≥ −(M−1) up to the
+  even shift): |Y_A ∩ E| ≤ α_E.  And |Y_A ∩ O| ≤ (m+8) − f_O(D_A)
+  with f_O(D_A) ≥ 9 unless D_A = {4M+1} exactly (FI(iv)); if
+  D_A = {4M+1}, admissibility (H0) requires the F2 law, giving
+  f_O = 8 exactly at the scales where {4M+1} self-serves.  Hence
+  |Y_A| ≤ m + 8 − f_O + α_E ≤ K* − 1 by the definition of K*.
+
+  H2b (surviving-mid, M−31 < s₀ ≤ M−1):  the D6 branch instance is
+  UNSAT (F4): |Y_A| ≥ K* is impossible.  [For most minima this is
+  the transparent counting |Y_A| ≤ (m+8 − m/2) + ᾱ(s₀) ≤ K*−1 with
+  ᾱ from e153-C3; the deep-window minima at M = 48 additionally
+  need the cascade — both inside F4.]
+
+Mirror the sub-cases for D_B (constants α_O, f_E).  In every branch
+min|Y| ≤ |Y_defector-side team| ≤ K* − 1.  ∎
+
+**Sharpness.**  At K* − 1 the e149 frontier witnesses realize the
+bound at every scale, with the §0.3 anatomy: bottom-cluster
+defectors ({+1,+3} / {+1,+3} / {+2,+4,+6} / {+1}), forced interval
+of same-class mass exactly f, minority band = the α alive-clique.
+The D6s sharpness runs confirm the abstract branch is SAT at K*−1
+exactly at the bottom minima.  [MACHINE-CHECKED.]
+
+Status of §4: theorem PROVED given F0–F4 (each machine-checked at
+the four scales; uniformization of F0–F4 is scoped in §6).
+
+---
+
+## 5. The SPLIT case  [reduction PROVED; finish MACHINE-CHECKED
+## per scale — e154]
+
+Let some parity class c of P0 be split.  Index the class-c values:
+u = M + 2i − ε (i ∈ [1, m]), z = 4M + 2j − ε (j ∈ [1, n],
+n = m+8 for c = O, m+7 for c = E); the midpoint of (u, z) sits at
+band position determined by i + j (an integer interval [w₁, w₂] of
+the sums corresponds to the band window; sums below ≈ m−15 fall
+under the band, sums above 3m never exceed it for m ≥ 24).  Let
+I_A ⊔ I_B = [1, m] and J_A ⊔ J_B = [1, n] be the induced index
+bipartitions of P0 ∩ c and P2 ∩ c.
+
+**Lemma SP (structure).**  (i) F_B ⊇ σ(I_A + J_A) ∩ W and
+F_A ⊇ σ(I_B + J_B) ∩ W, where σ is the affine index-to-band map and
+W the band window — the straddle forcing is a SUMSET on indices.
+(ii) [MID] (I_A + J_A) and (I_B + J_B) are disjoint inside W.
+(iii) |A + B| ≥ |A| + |B| − 1 (Cauchy–Davenport on ℤ) gives: total
+visible forced mass |F_A| + |F_B| ≥ m + n − w_hidden, and when one
+side hides its entire sumset below the window (the extremal
+contiguous "staircase" split: I_A, J_A bottom segments with
+max I_A + max J_A < w₁), the other side's forced set has
+|F| ≥ |I_B| + |J_B| − 1 ≥ (m − |I_A|) + (n − |J_A|) − 1
+≥ m + n − 1 − (w₁ − 2) ≥ m + 22, exceeding the allowance m + 14:
+DEAD.  In general the staircase with cut a + b =: t ∈ [w₁, 2m+…]
+yields two complementary near-intervals F_B ≈ σ([w₁, t]),
+F_A ≈ σ([t+2, m+n−1]) with |F_A| + |F_B| ≈ m + 22, individually
+≤ m+14 only for t in a middle range — the split survives straddle
+counting alone, and the finish is the fan layer: the two forced
+near-intervals sit at the band bottom and top respectively; the
+top-interval team's class-c pairs must be served by its OWN class-c
+P2 part (= the top segment J of the staircase, by F0-purity), which
+reproduces the D4/D5 service-reach question; the bottom-interval
+team symmetric.  [Sumset structure and the m+22 bound: PROVED; the
+service finish: per-scale machine, below.]
+
+**Machine closure (e154).**  The full DICH instance (straddles +
+fan patterns + bounds + min|Y| ≥ K*) with the pin "class O is
+split" (both teams meet O) — and separately "class E is split" — is
+UNSAT at all four scales.  Together with Lemma T this covers the
+SPLIT case entirely.  [experiments/e154_dich_split.py →
+data/e154_dich_split.log.]
+
+Status of §5: reduction and the extremal-staircase kill [PROVED];
+the middle-staircase fan finish [MACHINE-CHECKED per scale;
+GAP-DICH-SPLIT, low risk — same service species as F3/F4].
+
+---

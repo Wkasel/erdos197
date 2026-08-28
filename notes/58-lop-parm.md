@@ -630,15 +630,22 @@ per-scale machine inputs; instances in flight.]
 
 ## 5. Machine queue (running log; sequential, one solver at a time)
 
-1. e146 catalogue M=128 [running] → e152 L-LOP(128) K=66/67/68
-   (predict UNSAT/UNSAT/SAT; cap 66) + witness anatomy at the SAT
-   frontier;
-2. e153 phi1(128) K=67, 68, ... → K*(128); hole iff K* > 68;
-3. e156 D3 cross-checks (M=48, 64): lemma UNSAT + 3 controls;
-4. e155 H-RW0 + H-FG6 at m = 24, 28, 32, 40, 48, 56, 64, 80;
-5. e150 part A at M=56: the P-ARM residue probe (m = 28);
-6. e153 upure/zdef(128, 67, d₀) → minimal d₀; e154 RP-ARM(48, 2)
-   audit, then RP-ARM(128, d₀);
-7. M=160 endgame: e146(160), e152(160) K=81/82/83, e153
-   upure/zdef(160, K_P, d₀), e154 RP-ARM(160, d₀) — the possibly-
-   hours queries; fallback = overlap-width law + conditional fix.
+1. e146 catalogue M=128 [DONE] → e152 L-LOP(128) [DONE: cap 67];
+2. e153 phi1(128) [DONE: K* = 68 = cap+1, no hole];
+3. e156 D3 cross-checks [DONE: all OK at 48/64/96];
+4. e155+e155b at m = 24, 28, 32, 40 [DONE: lattice law; {4,6}
+   droppable; cliques ≤ 4]; m = 48, 56 deferred behind the 160 runs;
+5. e150 part A at M=56 [DONE: UNSAT — P-ARM holds off-line];
+6. e153 upure/zdef(128, 68, 4) + e154 RP-ARM(128, 4) [DONE: all
+   UNSAT — robust chain verified at 128];
+7. M=160 endgame [in flight]: e146(160) → §6.
+
+---
+
+## 6. The M = 160 endgame  [results below as they land]
+
+Corrected predictions under the flat-offset law (§1.1):
+C(160) = kmax_unsat = 84 (cap 83), K*(160) = 84 (adjacency), no
+hole; the robust chain (K_P = C(160), d₀ = 4) covers regardless.
+Plan: e152 probes bracketing C(160); e153 phi1 probes bracketing
+K*(160); e153 upure/zdef(160, K_P, 4); e154 RP-ARM(160, 4).
