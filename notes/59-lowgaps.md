@@ -296,3 +296,92 @@ notes/56 §4.2) are all in the 6-fact JP family.
 [MACHINE-CHECK: experiments/e153_j_pencil.py →
 data/e153_j_pencil.log; split search exhaustive over single and
 double totality splits, 7/7 closed, none open.]
+
+---
+
+## C. GAP-FG-deep: the exact map, the certificates, the halving core
+
+### C.1 Complete classification of the closure-alive pairs at M = 48
+[MACHINE-CHECKED]
+
+e154 SAT-classifies all 165 closure-alive (q,p) pairs (one
+incremental CaDiCaL instance: full order + AP theory on [1,111],
+fans as assumptions; 165 sequential solves, 26 s):
+
+    R(48) — genuine escapes (SAT):     90 pairs
+    D(48) — deep stalls (UNSAT):       75 pairs
+
+**The resonance law at 48.**  EVERY pair of R(48) has p − q ≡ 0
+(mod 8) (gaps realized: 8, 16, 24, 32, 40, 48, 56).  The mod-8
+divisibility is NECESSARY for escape (not sufficient — most mod-8
+pairs are closure-dead; cf. notes/55's g = M+8 failure at 64, and
+72 ≡ 0 mod 8).  This refines and partly CORRECTS notes/55 §5.3b:
+"every escape has gap ≥ 16" is FALSE at full depth — gap-8 escapes
+exist, and all of them have BOTH attackers in the band edge E1
+(q ≥ 48, i.e. x₂ ≤ 3M).
+
+**The deep law at 48.**  D(48) is EXACTLY the set of UNSAT stalls
+with both attackers in E1 = [3M−15, 3M] (q ranges over [48, 62]),
+with 8 ∤ (p−q) (the mod-8 members of E1×E1 are in R).  The deep
+cluster is the E1×E1 corner — the α-unit midpoint zone attacking
+itself.
+
+**Assembly consequence (clean close-pair law at 48).**  For band
+values at distance ≤ 15: the only distance-≤15 escapes are the
+gap-8 pairs inside E1×E1.  Hence: *a team owning two band values at
+distance ≤ 15, at least one of them above 3M, has a dead double fan
+at M = 48* — the corrected form of the notes/55 §5.3b close-pair
+kill hypothesis (previously stated without the E1 exclusion).
+[MACHINE-CHECKED at 48; cross-scale verification pending.]
+
+### C.2 Split certificates for D(48)  [MACHINE-CHECKED]
+
+e154b searches branch certificates (each branch dying by T/RL/RT
+closure) for all 75 deep pairs:
+
+    L1  (d=1 zigzag phase dichotomy, 2 branches):        7 pairs
+    L2  (d=1 × d=2 × d=2′ phase fiats, 8 branches):     35 pairs
+    L3  (single adaptive totality split, 2 branches):   13 pairs
+    OPEN (none of the above):                           20 pairs
+
+The L3 splits are low-window pairs ((4,12), (3,11), (2,10), (1,9),
+(2,6), (1,5) — offset pairs at gap 8 resp. 4 near the bottom).  The
+L1/L2 kills are Lemma-D′ species (phase dichotomies + closure), i.e.
+the same flood/zigzag machinery already proved in notes/55 §3–4; a
+uniform write-up per family is bounded work of the e142b shape.
+
+**The OPEN core.**  All 20 open pairs have EVEN gap ∈ {2, 4, 6} and
+q ≥ 52: the parity-locked corner of E1×E1.  Structural explanation
+(heuristic, precise statement below): for r = p, q of equal parity,
+the fan-unit sub-theory restricted to one parity class HALVES —
+e.g. for p, q both even, sources 2a+r are even and the even-class
+units with a even map under v ↦ v/2 to the fan units of the pair
+(q/2, p/2) on the half window; for p, q both odd, the odd class
+maps under v ↦ (v+1)/2 onto the pair ((q−1)/2, (p−1)/2).  The open
+core is thus (a guarded superset of) the halving image of the
+deep-adjacent family at half scale — the same recursion that
+produced H(m)/H1(m) and the mod-4 quartet.  Its uniformization
+belongs with GAP-PARM/GAP-H1, not with the affine fan taxonomy.
+
+### C.3 Assessment: what is provable, what remains
+
+* PROVABLE NOW (bounded work, species already proved): uniform
+  schemas for the L1/L2 phase-split kills (Lemma D′ + closure —
+  notes/55 §3.1/§4 machinery; 42 of 75 pairs) and for the L3
+  totality splits (13 pairs, 6 distinct split anchors).
+* MACHINE-TRUE, uniformization = GAP-PARM species: the 20-pair
+  parity-locked core (even gaps, deepest E1 corner).
+* The resonance law (8 | gap necessary) and the E1×E1
+  characterization of the deep cluster are exact at 48 and cheap to
+  audit at 64/80/96 (the e154 instrument is scale-generic);
+  notes/55's escape lists at 64/80/96 (all gaps ≡ 0 mod 8) are
+  consistent with the law.
+
+GAP-FG-deep status: mapped exactly at 48; 55/75 with finite branch
+certificates [MACHINE-CHECKED, replayable]; risk re-rated
+medium-low → medium ONLY for the 20-pair halving core, which merges
+into GAP-PARM; the rest is e142b-shaped bounded write-up.
+
+[MACHINE-CHECK: experiments/e154_deep_classify.py,
+e154b_deep_splits.py → data/e154_deep_classify.json/.log,
+e154b_deep_splits.json/.log.]
