@@ -170,3 +170,38 @@ blind scale (144).
   the machine-verified layer, as intended (they exercise (H1)'s
   robustness form, not the open parametric form).
 
+---
+
+## 5. New-scale machine tests
+
+### 5.0 Pre-registered predictions (written BEFORE any 144/160 solver
+### run; the e146 catalogue build for 144+160 is in flight)
+
+Protocol for the blind K* test at M = 144 (and 160): first compute the
+catalogue quantities α_c, f_c from the freshly built 𝔇(M) (linear
+scans, e153_dich_lemmas), form the mechanistic prediction
+K* = m + 9 + max(α_E − f_O, α_O − f_E), and only THEN run the e149-style
+DICH probes and the L-LOP probes.  Predictions on record now:
+
+* Flat-offset law (notes/58 §1.1): cap(144) = 75 (probe K = 75, 76
+  UNSAT; 77 SAT), K*(144) = 76; cap(160) = 83 (probe K = 83, 84
+  UNSAT; 85 SAT), K*(160) = 84.  Adjacency K* = cap + 1 and overlap
+  W = 0 at both scales.
+* The DEAD mod-32 law would predict K*(144) = 74 (144 ≡ 16 mod 32 →
+  offset −6): M = 144 is the first scale where the dead law and the
+  flat law disagree by 2 — a clean discriminating test.
+* Trend expectation for the catalogue quantities (recorded, NOT
+  load-bearing — the formula's own inputs are computed first):
+  α_E = α_O = 3 and f_O = f_E = 8 at both 144 and 160, giving
+  K*(144) = 76, K*(160) = 84 — agreeing with the flat law.
+* notes/58 §6's own pre-registration for 160 (C = 84, K* = 84)
+  stands as written.
+* e155c (pre-registered in notes/58 §5.1): ThW1′ single-drop and
+  small-clique-drop variants stay UNSAT at m = 24..40 (unlike ThW0's
+  {4,6} fragility).
+* e156 D3 at the unaudited scales 80, 112, 128: UNSAT + all three
+  controls behave (α-only SAT, β-only SAT, no-U_B SAT).
+* Deep-classify at M = 64 (author ran only 48): every SAT-escape pair
+  has 8 | p−q, and the UNSAT-stall set is exactly the non-resonant
+  E1×E1 corner (q ≥ M−16 zone, i.e. both attackers ≤ 3M).
+
