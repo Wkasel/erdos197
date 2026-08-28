@@ -161,3 +161,119 @@ because Case 1 supplies infinitely many clean blocks above every
 threshold.  No linear "M ≥ 4x" bound is load-bearing.
 
 [Commit checkpoint — §0–1.]
+
+---
+
+## 2. The supply lemmas: usable pairs are dense in every block
+
+### 2.1 Lemma DIAG-DENSE  [PROVED]
+
+Call {3p, 3p+1} with p ≡ 1 (mod 4), p ≥ 5 a *diagonal usable pair*
+(usable at every dyadic scale ≥ its (H1) threshold, by §1.4).  Let
+N(m) := #{p ≡ 1 (mod 4) : {3p, 3p+1} ⊆ B(m)}.
+
+**Lemma DIAG-DENSE.**  N(m) ≥ (2^m − 13)/12 for every m ≥ 0.
+
+*Proof.*  {3p, 3p+1} ⊆ B(m) ⟺ 2^m < 3p and 3p + 1 ≤ 2^{m+1} ⟺ p
+lies in the real interval I = (2^m/3, (2^{m+1} − 1)/3], of length
+(2^m − 1)/3.  Any real interval of length ℓ contains at least
+⌊ℓ/4⌋ ≥ ℓ/4 − 1 integers ≡ 1 (mod 4).  So N(m) ≥ (2^m − 1)/12 − 1 =
+(2^m − 13)/12.  ∎
+
+The pairs are pairwise disjoint (consecutive-integer pairs at
+distinct 3p), which is what the counting below uses.
+
+### 2.2 Lemma CROWN-2ADIC (the crown pairs sit on the diagonal)
+[PROVED]
+
+**Lemma CROWN-2ADIC.**  For every EVEN j ≥ 4, the crown pair
+{2^j − 1, 2^j} is a diagonal usable pair: 2^j − 1 = 3p_j with
+
+    p_j = (2^j − 1)/3 = 1 + 4 + 4² + … + 4^{j/2 − 1} ≡ 5 (mod 8).
+
+For every ODD j ≥ 3, 2^j − 1 ≡ 7 (mod 8) and 3 ∤ 2^j − 1: the
+odd-index crown pairs are exactly instances of the open
+x ≡ 7 (mod 8) off-diagonal cells of notes/49 §8 (outside the e122
+catalogue) and are NOT currently usable.
+
+*Proof.*  j even: 4^k ≡ 1 (mod 3) gives 3 | 2^j − 1 and the geometric
+sum; mod 8 the terms are 1, 4, 0, 0, …, so p_j ≡ 5 (mod 8) once
+j/2 ≥ 2, hence p_j ≡ 1 (mod 4) and p_j ≥ 5.  j odd: 2^j ≡ 2 (mod 3)
+so 3 ∤ 2^j − 1; and 2^j − 1 ≡ 7 (mod 8) for j ≥ 3.  ∎
+
+This is the "exact 2-adic structure" the task brief predicted for the
+split branch: the even-index crowns are the p ≡ 5 (mod 8) members of
+the diagonal family.  The bridge does not need them specifically —
+DIAG-DENSE supplies twelve-fold denser material — but the crowns are
+the members the landing-pad geometry of §4.3 talks about, and the
+odd-index crowns mark precisely where the catalogue is still open.
+
+---
+
+## 3. The theorem: Case-1 teams die outright
+
+### 3.1 Theorem B1  [PROVED modulo (H1)]
+
+**Theorem B1.**  Assume (H1).  Let T ⊆ ℤ⁺ have infinitely many
+C₀-clean dyadic blocks, for any constant C₀.  Then T is not
+3-permutable.
+
+*Proof.*  Suppose π is an arrangement of T with no monotone 3-AP.
+Let 𝕄 be the infinite set of C₀-clean scales.
+
+STEP 1 (pair extraction — the ownership branch always fires).
+Choose m₀ ∈ 𝕄 with 2^{m₀} ≥ 12·C₀ + 25.  By Lemma DIAG-DENSE,
+B(m₀) contains N(m₀) ≥ (2^{m₀} − 13)/12 ≥ C₀ + 1 pairwise-disjoint
+diagonal usable pairs.  The dust D_{m₀} = B(m₀) ∖ T has ≤ C₀
+elements, and each element punctures at most one of the disjoint
+pairs; so some diagonal pair {3p, 3p+1} ⊆ B(m₀) ∩ T ⊆ T, with
+p ≡ 1 (mod 4) and p > 2^{m₀}/3 ≥ 8, hence p ≥ 9 ≥ 5.
+
+STEP 2 (windows).  Let 𝕄′ := {m ∈ 𝕄 : m ≥ m*(p, C₀) and
+2^m > 3p + 1}, still infinite (only finitely many scales removed;
+m*(p, C₀) is the (H1) threshold).
+
+STEP 3 (pigeonhole + rung).  Apply Lemma PIN with a₁ = 3p,
+a₂ = 3p + 1 (both in T by Step 1, both < 2^m for m ∈ 𝕄′), C = C₀,
+scale family 𝕄′: for some (indeed cofinitely many) m ∈ 𝕄′ the theory
+R(3p, 3p+1; 2^m, D_m) is consistent.  But every m ∈ 𝕄′ has
+m ≥ m*(p, C₀) and |D_m| ≤ C₀, so (H1) makes that theory
+inconsistent.  Contradiction.  ∎
+
+Remarks on the proof's economy:
+
+* No hypothesis on the partner T′ is used anywhere — the "dichotomy"
+  of the task brief has collapsed: the ownership branch holds
+  unconditionally because the usable supply is denser (linear in the
+  block) than any bounded dust.
+* The (2,…) bounds of the Case-2 machinery, punctures hitting the
+  minimal core, residues, thresholds — all are absorbed into (H1)'s
+  quantifiers; the assembly layer is pure pigeonhole and counting.
+* The pair produced in Step 1 has p growing with m₀ (p > 2^{m₀}/3).
+  This is exactly why the PARAMETRIC diagonal schema (GAP-N2-DIAG) is
+  load-bearing and cannot be replaced by the p ≤ 13 machine layer:
+  with C₀ dust the adversary can puncture any FIXED finite pair
+  list, but cannot puncture linearly many disjoint pairs.
+
+### 3.2 Corollaries  [PROVED modulo (H1), except B1.2 unconditional]
+
+**Corollary B1.1 (Case 1 is fatal).**  Assume (H1).  In any partition
+ℤ⁺ = A ⊔ B, if some team is in Case 1 of the N4 dichotomy
+(infinitely many C-clean dyadic blocks for some C), that team is not
+3-permutable — so no Case-1 partition is a YES-instance, and every
+YES-partition must be everywhere-split (Case 2).  *Proof.*  Theorem
+B1 applied to the Case-1 team.  ∎
+
+**Corollary B1.2 (sanity anchor, unconditional).**  ℤ⁺ itself is not
+3-permutable.  *Proof.*  Every block is 0-clean and {15, 16} ⊆ ℤ⁺;
+run Steps 2–3 with the fixed pair {15, 16} = {3·5, 3·5+1} and C₀ = 0,
+where (H1) is the PROVED instance thm:c3core (p = 5, C = 0, §1.4).
+No open tag is touched.  ∎
+
+(B1.2 recovers, through this program's machinery, the classical fact
+that motivates Erdős #197 — the full integers cannot be permuted
+3-AP-monotone-free, so the content of the problem is whether TWO
+teams can share the burden.  That the campaign's proven layer already
+contains this is a consistency check on the whole chain: any
+formalization under which B1.2 failed would have been wrong.)
+
