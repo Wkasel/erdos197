@@ -1,0 +1,2 @@
+m=32: mod-8 fiat (8 ladders, 256 branches): fails at (True, True, True, True, True, True, False, False) after 4
+m=40: mod-8 fiat (8 ladders, 256 branches): fails at (True, True, True, True, True, True, True, True) after 1

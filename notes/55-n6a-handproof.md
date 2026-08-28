@@ -667,17 +667,21 @@ audit at every admissible (q, p) at every M ≡ 0 (16) in 48..400:
 **Closure kills (non-resonant pairs)  [MACHINE-CHECKED derivations,
 uniform schema pending].**  Plain R1–R4 + transitivity closure from
 the fan units alone (NO case splits) refutes 1851 of the 2016
-(q, p) pairs at M = 48 — including every pair whose gap
-g := p − q = x₂ − x₁ is NOT divisible by 16 — and the same at
-M = 64, 80, 96 for the top-anchored line q = 0.  Each closure run
-is a finite pencil derivation (the engine prints the DAG; for
-FG-high it reproduces the 6-fact proof above verbatim).  The deep
-cluster (p, q both near M+15, e.g. adjacent band-bottom pairs) also
-dies, but needs Lemma-D phase splits on top of closure (8-branch
-d=1 × d=2 splits kill the deep-adjacent pair at M = 64; 123 of the
-165 stalled pairs at M = 48 are still unresolved at 8 branches —
-they are the resonant SAT region below plus deep pairs needing
-richer splits; every SAT-tested deep pair IS UNSAT).
+(q, p) pairs at M = 48, and the whole q = 0 line at M = 64, 80, 96
+except the resonant escapes below.  EVERY such refutation is a
+small pencil certificate: the full M = 48 survey (e142o) gives
+derivation-DAG sizes 6..125 facts, median ≈ 14; 418 pairs need
+exactly the 6-fact FG-high proof; every DAG ≥ 80 facts is a deep
+pair (q ≥ 42).  A second affine gadget family is already
+extracted: at q = 0, 5 | p, s := p/5, the units 2s≺s, 4s≺2s
+(halving tree of x₂ = 4M) and 7s≺s, 13s≺4s (fan of x₁) close the
+3-cycle 4s ≺ 7s ≺ 13s ≺ 4s via R4 on (s, 4s, 7s) and (s, 7s, 13s)
+— offsets from 4M (e142n).  GAP-FG-schema = classify these affine
+cycle families over (q, p) — mechanical, certificates in hand.
+The deep cluster (p, q near M+15) dies too but needs Lemma-D phase
+splits on top of closure (8-branch d=1 × d=2 kills the
+deep-adjacent pair at M = 64; every SAT-tested deep pair IS
+UNSAT).
 
 **The resonant escapes  [machine; FALSIFIES the naive lemma].**
 Certain pairs genuinely ESCAPE the pure double fan.  Top-anchored
@@ -814,11 +818,19 @@ unsatisfiable at m = 16, 24, 32, 40 (e142k):
   α-geometry).
 
 Plain closure stalls on both (m ≥ 24): the kills need Lemma-D
-phase machinery, exactly like notes/33's Lemma L0 (ladder + seam +
-tail gadget).  GAP-H1 := uniformize EITHER kill on m ≡ 0 (mod 8);
-this replaces the former GAP-H, with Theorem H closing the H(m)
-half outright.  (data/e142k_h1_blocks.log,
-data/e142l_h1_closure.log, data/e142m_thw0_threshold.log.)
+phase machinery.  NEGATIVE schema-search results (e144, e144b/c),
+recorded so the next session does not repeat them: ThW0 is NOT
+refuted branchwise by the C3-L1 profile — O/E/A4/B4 zigzag fiats
+(16 branches) fail from m = 32, adding an (m₀, x) interleave split
+(x ∈ {t1, b1, t0, b2}; 32 branches) still fails, and pure mod-8
+phase fiats (8 ladders, 256 branches) fail; ThW1′ similarly resists
+O/E and d=1 phase fiats.  So H1's kill mechanism is deeper than
+C3-L1's (candidates: mixed-depth splits, L0-style CRT ladder pairs,
+or DRAT-mining the SAT refutation).  GAP-H1 := uniformize EITHER
+kill on m ≡ 0 (mod 8); this replaces the former GAP-H, with
+Theorem H closing the H(m) half outright.
+(data/e142k_h1_blocks.log, data/e142l_h1_closure.log,
+data/e142m_thw0_threshold.log, data/e144*.log.)
 
 Mixed band splits inside the parity family fire STRICT SUPERSETS of
 one alignment's unit families plus cross-parity in-band APs; they
@@ -955,9 +967,9 @@ note distinguishes them from other M ≡ 0 (mod 4).
 
 | gap | statement | species | risk |
 |-----|-----------|---------|------|
-| GAP-FG-schema | uniform pencil schema for the closure-refutable (non-resonant, non-deep) fan pairs; FG-high itself is PROVED (§5.3b) | derivation-DAG extraction, K4-style | low: machine DAGs in hand at every instance |
+| GAP-FG-schema | classify the affine cycle certificates over (q, p) (two families already extracted; all DAGs ≤ 125 facts, median 14) | mechanical taxonomy | low |
 | GAP-FG-deep | deep-pair (band-bottom) fan schema (needs phase splits) | Lemma-D branch schema | medium-low |
-| GAP-H1 | uniformize ONE of H1(m)'s two dead block theories on m ≡ 0 (8) (H(m) itself now PROVED, §5.4b) | L0-species ladder schema, 16-unit crown or 64-unit α family | low-medium |
+| GAP-H1 | uniformize ONE of H1(m)'s two dead block theories on m ≡ 0 (8) (H(m) itself now PROVED, §5.4b); resists C3-L1-profile branch closure (e144) | deeper than L1-profile; L0/CRT or DRAT-mining | MEDIUM (upgraded after e144) |
 | GAP-J-pencil | 36 finite 16-point derivations | mechanical | negligible |
 | GAP-STRUCT | R3 → R1∪R2 bridge, now incl. the 16-resonant band configurations (structure theorem / potential) | genuinely open | HIGH — the crux |
 | GAP-ASM | assemble T1-or-T2 from the above into Theorem N6a | bookkeeping over the case split | low once STRUCT falls |

@@ -1,0 +1,8 @@
+  m=16: ALL branches close at level ('O', 'E') (4 branches)
+  m=24: ALL branches close at level ('O', 'E', 'A4', 'B4') (16 branches)
+  m=32: STILL OPEN after all 32-branch splits (last fail ((False, False, True, False), True))
+  m=40: STILL OPEN after all 32-branch splits (last fail ((False, False, True, False), True))
+  m=48: STILL OPEN after all 32-branch splits (last fail ((False, True, True, True), True))
+  m=56: STILL OPEN after all 32-branch splits (last fail ((False, True, True, True), True))
+  m=64: STILL OPEN after all 32-branch splits (last fail ((False, True, True, True), True))
+e144: DONE
