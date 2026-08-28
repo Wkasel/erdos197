@@ -1,0 +1,32 @@
+{
+ "tag": "pod3_bal24",
+ "M": 24,
+ "bounds": null,
+ "rows": [
+  {
+   "tag": "pod3_bal24",
+   "M": 24,
+   "bounds": null,
+   "v": 2,
+   "verdict": "UNSAT",
+   "time": 433.5
+  },
+  {
+   "tag": "pod3_bal24",
+   "M": 24,
+   "bounds": null,
+   "v": 4,
+   "verdict": "UNSAT",
+   "time": 21253.4
+  },
+  {
+   "tag": "pod3_bal24",
+   "M": 24,
+   "bounds": null,
+   "v": 8,
+   "verdict": "TIMEOUT",
+   "time": 40000.2
+  }
+ ],
+ "vstar": "> 4 (UNSAT side only)"
+}

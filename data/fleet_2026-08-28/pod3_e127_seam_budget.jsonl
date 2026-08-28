@@ -1,0 +1,9 @@
+{"tag": "pod3_bal24", "M": 24, "bounds": null, "v": 2, "verdict": "UNSAT", "time": 433.5}
+{"tag": "pod3_bal24", "M": 24, "bounds": null, "v": 4, "verdict": "UNSAT", "time": 21253.4}
+{"tag": "pod3_pin16", "M": 16, "bounds": null, "v": 5, "verdict": "TIMEOUT", "time": 40000.2}
+{"tag": "pod3_pin16", "M": 16, "bounds": null, "v": 4, "verdict": "UNSAT", "time": 5534.9}
+{"tag": "pod3_pin16", "M": 16, "bounds": null, "v": 3, "verdict": "UNSAT", "time": 754.0}
+{"tag": "pod3_bal24", "M": 24, "bounds": null, "v": 8, "verdict": "TIMEOUT", "time": 40000.2}
+{"tag": "pod3_pin16", "M": 16, "bounds": null, "v": 5, "verdict": "TIMEOUT", "time": 40000.1}
+{"tag": "pod3_pin16", "M": 16, "bounds": null, "v": 4, "verdict": "UNSAT", "time": 5352.3}
+{"tag": "pod3_pin16", "M": 16, "bounds": null, "v": 3, "verdict": "UNSAT", "time": 735.7}

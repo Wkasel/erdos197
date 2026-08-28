@@ -222,3 +222,31 @@ run (commit 9dd0cab) and remain binding.  Solver discipline: the
 e146 build is the single active solver job; all remaining probes run
 sequentially after it.
 
+### 5.0c Fleet verdicts collected (pod logs, pulled 09:32 local —
+### data/fleet_2026-08-28/)  [RECORDED]
+
+Third session of the shift: a7_hand_checks.py re-run once more from
+the committed file — 13/13 OK again (0.5 s; §§1–4 verdicts now
+triple-confirmed across sessions).  The pod pull that the second
+session started landed in data/fleet_2026-08-28/ (untracked at
+session loss; committed with this entry).  Contents are G2-front
+v*-budget data (the notes/54 demand side; nothing here touches the
+N6a/BRIDGE1 audit):
+
+* pod1: VSTAR bal M=24 — FEASIBLE at v = 65 after a 24 h search
+  (upper bound v*(bal,24) ≤ 65; certified lower bound only 2 from
+  that instrument).
+* pod2: VSTAR bal M=32 — FEASIBLE at v = 368 (upper bound
+  v*(bal,32) ≤ 368; lower bound 2).
+* pod3 (seam-budget UNSAT scans): bal24 v=2 UNSAT (434 s), v=4
+  UNSAT (21 254 s), v=8 TIMEOUT (40 000 s) ⟹ v*(bal,24) > 4;
+  pin16 v=3 UNSAT (736 s), v=4 UNSAT (5 352 s), v=5 TIMEOUT
+  ⟹ v*(pin,16) > 4.
+
+Honest reading: the brackets v*(bal,24) ∈ (4, 65] and
+v*(bal,32) ∈ (2, 368] are far too wide to confirm OR refute the
+GAP-V*-growth hypothesis (notes/54); the UNSAT side is
+solver-bound near v ≈ 5–8 (double-digit-hour solves).  The ledger
+consequence is only: the pump lower bound moves 3 → 4 at pin16,
+and the balanced instances stay two-sided-open.  No change to any
+N6a-side gap.  [RECORDED — no verdict claimed beyond the logs.]

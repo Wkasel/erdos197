@@ -1,0 +1,4 @@
+  pod3_bal24 v=2: UNSAT [433.5s] 
+  pod3_bal24 v=4: UNSAT [21253.4s] 
+  pod3_bal24 v=8: TIMEOUT [40000.2s] 
+== pod3_bal24: v* = > 4 (UNSAT side only)

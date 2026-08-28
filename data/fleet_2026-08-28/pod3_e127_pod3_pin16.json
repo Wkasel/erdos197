@@ -1,0 +1,32 @@
+{
+ "tag": "pod3_pin16",
+ "M": 16,
+ "bounds": null,
+ "rows": [
+  {
+   "tag": "pod3_pin16",
+   "M": 16,
+   "bounds": null,
+   "v": 5,
+   "verdict": "TIMEOUT",
+   "time": 40000.1
+  },
+  {
+   "tag": "pod3_pin16",
+   "M": 16,
+   "bounds": null,
+   "v": 4,
+   "verdict": "UNSAT",
+   "time": 5352.3
+  },
+  {
+   "tag": "pod3_pin16",
+   "M": 16,
+   "bounds": null,
+   "v": 3,
+   "verdict": "UNSAT",
+   "time": 735.7
+  }
+ ],
+ "vstar": "> 4 (UNSAT side only)"
+}
