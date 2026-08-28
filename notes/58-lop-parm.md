@@ -399,7 +399,7 @@ m ≡ 0 (mod 8) — that is M ≡ 0 (mod 16) — with a SAT sharpness point
 at m = 14 (M = 28) and scattered off-line UNSAT (m = 10, 12, 20).
 So the task-brief expectation is realized precisely: **the mod-16
 line inside GAP-H1 becomes P-ARM's residue condition through
-(H-RW0)**; everything else in §3 is residue-free (H-FG8 needs
+(H-RW0)**; everything else in §3 is residue-free (H-FG6 needs
 nothing; PARM-HALVE needs M even).  Off the target class
 (M ≡ 8 (mod 16), i.e. m ≡ 4 (mod 8)) the theorem stands or falls
 with ThW0's punctured variants at that m — probed tonight at M = 56
@@ -522,31 +522,6 @@ line is reduced by this probe.
 
 ---
 
-## 4.4 The robust chain verified at M = 128  [MACHINE-CHECKED]
-
-With K_P = 68 = cap(128) + 1 and d₀ = 4:
-
-    L-LOP(128):        min|Y| ≤ 67 dead                  (§1.1)
-    DICH-U(128, 68):   UNSAT  0.9 s   (U forced pure)
-    DICH-Z(128, 68, 4): UNSAT 0.2 s   (≤ 4 defectors forced)
-    RP-ARM(128, 4):    UNSAT 10.0 s   (15.4M clauses; hatch + ≤ 4
-                       free Z-defectors + free band + six theories)
-    RP-ARM(48, d₀):    UNSAT for d₀ = 0, 2, 4, 8 (0.4–1.5 s);
-                       d₀ = 0 audit reproduces e150 exactly
-                       (blocks {0,1} SAT / full UNSAT).
-
-So **Theorem COV-W′(128) holds**: every straddle-free (2,2,2)-
-bounded coloring of CORE′(128) dies through fan / L-LOP / robust-P
-— the first scale where the bridge is verified WITHOUT relying on
-the exact-adjacency accident (K* = cap + 1), and the direct
-confirmation that the notes/56 §4b designated fix works as designed.
-The robust arm has real margin: 4 defectors at 128, ≥ 8 at 48.
-
-[MACHINE-CHECK: data/e154_rparm.log/.json, data/e153_dich_probes.log,
-data/e150_wholesale_M56.log.]
-
----
-
 ## 4. The robust parity arm: Lemma PH+ and the RP-ARM assembly
 
 ### 4.1 Lemma PH+ (quantitative parity hatch)  [PROVED]
@@ -625,6 +600,29 @@ machine instances below are the authority.]
 
 [Status: Lemma PH+ PROVED; COV-W′ composition PROVED given the
 per-scale machine inputs; instances in flight.]
+
+### 4.4 The robust chain verified at M = 128  [MACHINE-CHECKED]
+
+With K_P = 68 = cap(128) + 1 and d₀ = 4:
+
+    L-LOP(128):        min|Y| ≤ 67 dead                  (§1.1)
+    DICH-U(128, 68):   UNSAT  0.9 s   (U forced pure)
+    DICH-Z(128, 68, 4): UNSAT 0.2 s   (≤ 4 defectors forced)
+    RP-ARM(128, 4):    UNSAT 10.0 s   (15.4M clauses; hatch + ≤ 4
+                       free Z-defectors + free band + six theories)
+    RP-ARM(48, d₀):    UNSAT for d₀ = 0, 2, 4, 8 (0.4–1.5 s);
+                       d₀ = 0 audit reproduces e150 exactly
+                       (blocks {0,1} SAT / full UNSAT).
+
+So **Theorem COV-W′(128) holds**: every straddle-free (2,2,2)-
+bounded coloring of CORE′(128) dies through fan / L-LOP / robust-P
+— the first scale where the bridge is verified WITHOUT relying on
+the exact-adjacency accident (K* = cap + 1), and the direct
+confirmation that the notes/56 §4b designated fix works as designed.
+The robust arm has real margin: 4 defectors at 128, ≥ 8 at 48.
+
+[MACHINE-CHECK: data/e154_rparm.log/.json, data/e153_dich_probes.log,
+data/e150_wholesale_M56.log.]
 
 ---
 
