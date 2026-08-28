@@ -429,3 +429,50 @@ as the reason the adversary cannot decorate its dodge: every dodge of
 the fan geometry is a donation to the clean team.  No step of §3
 depends on this remark.
 
+
+---
+
+## 5. Residue bookkeeping: dyadic vs anchor-free  [PROVED / GAP map]
+
+Theorem B1 is stated for DYADIC blocks, matching the notes/50 Case-1
+frame.  There every window scale is M = 2^m ≡ 0 (mod 8) (m ≥ 3), and
+the diagonal family at p ≡ 1 (mod 4) fires on exactly that class
+(flip law M ≡ 2p + 6 (mod 8): p ≡ 1 (mod 4) ⟹ 0, p ≡ 3 (mod 4) ⟹ 4).
+This is the only residue fact the proof uses, and it is why the
+p ≡ 1 (mod 4) sub-family — not the full diagonal — is the usable set.
+
+The ANCHOR-FREE Case-1 form (e121 / notes/50: ratio-2 clean windows
+(N, 2N] at arbitrary anchors N) needs more, recorded so the residue
+arithmetic is not re-derived wrong later:
+
+* Pigeonhole the infinite clean-window family onto a single residue
+  r = N mod 8.
+* r = 0: the dyadic argument verbatim (p ≡ 1 mod 4).
+* r = 4: diagonal again, now the p ≡ 3 (mod 4) sub-family (flip
+  class 4) — same density 1/12, same (H1) shape at class-4 scales.
+* r = 2, 6: the diagonal cannot fire (2p + 6 ≡ 2p + 6 with p odd
+  covers only {0, 4}).  Needed: the parametric B2(x) lane (law
+  M ≡ x + 7 (mod 8), so x ≡ r + 1 (mod 8), odd ⟺ r even ✓) or
+  B6(x) (law M ≡ x + 3, x ≡ r + 5).  For r = 2: B2 with
+  x ≡ 3 (mod 8); for r = 6: B2 with x ≡ 7 (mod 8) — the OPEN
+  catalogue class — so use B6 with x ≡ 3 (mod 8) instead.  Both
+  lanes are verified per-cell (x ≤ 21) only: the parametric forms
+  are GAP-N2(a) proper.
+* r odd: only the C(x) lane has odd laws (M ≡ x + 2 (mod 8),
+  x ≡ r − 2 odd ✓); verified at x = 11 only (notes/49 §7).
+* In every case the supply count matches: pairs {x, x+1} with x in a
+  fixed odd residue class mod 8 have one representative per 16
+  consecutive integers, so a clean window (N, 2N] contains ≥
+  (N − c)/16 disjoint such pairs — DIAG-DENSE's counting ports
+  verbatim, and Steps 1–3 of B1 go through once the lane's (H1)
+  analogue is granted.
+
+**Tag: BRIDGE1-AF** (anchor-free version) = the above, blocked on the
+parametric off-diagonal lanes (B2/B6 for r ≡ 2, 6; C for r odd) —
+strictly harder input than the dyadic version's GAP-N2-DIAG, and NOT
+needed for the notes/50 assembly, whose Case 1 is dyadic.  The
+anchor-free strengthening only matters if a future reframing of the
+dichotomy (e.g. the notes/54 IIa windows) wants Case-1 kills at
+arbitrary anchors; notes/54 §"IIa" should cite BRIDGE1-AF, not
+BRIDGE1, for that.
+
