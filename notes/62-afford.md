@@ -517,3 +517,37 @@ sharpened by today's instruments:
 | GAP-J-schema | all-M staircase family S(M) ∋ (v*₃(M)+a, v*₃(M/2)+b) | machine-true at M=16; M=24 cell queued; schema target = (v,0)-family via L-PREFIX + mixed ladder on (1,1,0,0) |
 | GAP-VMIN0 | growth law of v_min(0)(M) (free-lower-anchor price) | bracket (6, ≤442] at 16; sched(1100) curve = upper-bound instrument (e158c) |
 | GAP-AFFORD′ | overpayment-capacity ledger (donation currency) | open — THE residual; NG4 delimits it |
+
+## 7. NEXT STEPS (queue2 = experiments/e158_queue2.sh, running
+## nohup'd; verdicts stream to data/e158_f_M16_up{96,192,384}_dn0.log,
+## e158c_s1100_M{16,24,32}_none.log, e158_c1_M24_up65.log,
+## e158_c3_M32_up368_dn6.log; queue2 chains all cells automatically)
+
+- (96,0)@16 UNSAT ⟹ v_min(0)(16) > 96 = 16·v*₃: the free-lower
+  price is an order of magnitude above the floor already at 16 —
+  record, and let the (192,0)/(384,0) cells (auto-queued) close the
+  bracket toward 442; the growth comparison vs v_min(0)(24) > 65
+  then needs the (·,0) scan at 24 (pod-sized: queue (128,0)@24,
+  (256,0)@24, (512,0)@24 next session or RunPod).
+- (96,0)@16 SAT ⟹ v_min(0)(16) ∈ (6, 96]: bisect (24,0)/(48,0)
+  next session; audit the witness's coloring against the three-arm
+  architecture (§4c–4d): its sumset mass μ_up + μ_skip is a direct
+  L-PREFIX check and calibrates arm (b)'s extremal function.
+- (96,0)@16 TIMEOUT ⟹ the frontier sits near 96 (hardness itself
+  is the signal); jump to (192,0)/(384,0) verdicts (auto-queued)
+  and bracket from above; rerun 96 on RunPod with 12 h budget.
+- Either way afterwards: sched-none certifications (Q9) should all
+  be UNSAT (SCHED-DEAD predicts them — a failed prediction would
+  falsify the Lemma-K reduction and demands immediate audit);
+  (65,none)@24 (Q10) SAT expected (attribution at 24; its witness
+  anatomy = the scale-24 donation-dodge exhibit); (368,6)@32 (Q11)
+  is the third-scale pump cell with NONZERO lower price — UNSAT
+  extends GAP-J-schema to 3 scales including a v* > 0 half-anchor.
+- Hand fronts, priority order: (i) arm (b) — extremal lower bound
+  on μ_up + μ_skip over non-parity μ_dn = 0 colorings (pure
+  counting, no orders; would give v_min(0) growth via L-PREFIX);
+  (ii) arm (c) — dilution-robust Lemma K (mod-3 escapes are the
+  N3-species obstacle); (iii) the 50-value MUS → hand schema for
+  the (·,0) cell family (GAP-J-schema); (iv) GAP-AFFORD′ stays the
+  program's terminal statement — nothing in this session's
+  instrument class can close it (NG4).
