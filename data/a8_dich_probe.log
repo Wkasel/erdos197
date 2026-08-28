@@ -1,0 +1,31 @@
+M=144 K=2 phi1: SAT  [0.0s]  phi=3895 |U_A|=73 (parity mixed) |Y|=(31,129) |Z|=(203,100)
+    Z_A-odd offs (defectors if A=O-side): [7, 11, 35, 43, 45, 51, 55, 59, 61, 65, 67, 69]
+    Z_B-even offs: []
+    expected SAT (sanity); got SAT
+M=160 K=2 phi1: SAT  [0.1s]  phi=21320 |U_A|=25 (parity O) |Y|=(174,2) |Z|=(16,319)
+    Z_A-odd offs (defectors if A=O-side): []
+    Z_B-even offs: [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26]
+    expected SAT (sanity); got SAT
+M=144 K=75 phi1: SAT  [3.1s]  phi=72 |U_A|=72 (parity O) |Y|=(75,85) |Z|=(152,151)
+    Z_A-odd offs (defectors if A=O-side): [1]
+    Z_B-even offs: []
+    expected SAT; got SAT
+M=144 K=76 phi1: UNSAT  [2.8s, 12434 fans]
+    expected UNSAT; got UNSAT
+M=144 K=76 splitO: UNSAT  [0.2s, 12434 fans]
+    expected UNSAT; got UNSAT
+M=144 K=76 splitE: UNSAT  [1.5s, 12434 fans]
+    expected UNSAT; got UNSAT
+M=160 K=83 phi1: UNSAT  [4.4s, 15067 fans]
+    expected DISCRIMINATOR; got UNSAT
+M=160 K=82 phi1: SAT  [3.8s]  phi=80 |U_A|=80 (parity O) |Y|=(94,82) |Z|=(166,169)
+    Z_A-odd offs (defectors if A=O-side): []
+    Z_B-even offs: [2]
+    expected SAT; got SAT
+a8_dich_probe: DONE
+M=96 K=50 phi1: SAT  [0.3s]  phi=48 |U_A|=48 (parity O) |Y|=(50,62) |Z|=(104,103)
+    Z_A-odd offs (defectors if A=O-side): [1]
+    Z_B-even offs: []
+   anchor M=96 K=50: expected SAT got SAT
+M=96 K=51 phi1: UNSAT  [1.1s, 5986 fans]
+   anchor M=96 K=51: expected UNSAT got UNSAT

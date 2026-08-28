@@ -200,13 +200,52 @@ the §0.2/§3 definitions):
   own encoding) — every admissible defector minimum ≤ M−1.  [runs
   logged in data/a8_dich_indep.log]
 
-### 2.5 The M = 144 measurement (blind-protocol completion)  [§3]
+### 2.5 The M = 144 and M = 160 measurements (blind protocol
+### completed at TWO fresh scales)  [MACHINE — a8_dich_probe]
+
+Instrument: audit/a8_referee1/a8_dich_probe.py, written fresh from
+the notes/56 §3 definitions (no code shared with e149/e153_dich_
+probe).  First run produced spurious UNSATs from an aux-variable
+collision between the two team-side cardinality encodings — exactly
+the historical bug class notes/56 §3.3 warns about; fixed, and the
+protocol hardened with K = 2 SAT sanities, on-model |Y| ≥ K
+asserts, and an ANCHOR at the published scale M = 96 (reproduces
+SAT@50 / UNSAT@51 = K*(96) = 51 exactly).  Results
+(data/a8_dich_probe.log):
+
+    M=144: K=75 SAT (3.1 s), K=76 UNSAT (2.8 s)  ⟹  K*(144) = 76
+    M=160: K=82 SAT (3.8 s), K=83 UNSAT (4.4 s)  ⟹  K*(160) = 83
+    M=144 split-O / split-E pins at K=76: both UNSAT (SPLIT branch
+    closed at the fresh scale, extending e154's six-scale record)
+
+* **K*(144) = 76 = the mechanistic prediction.**  Third blind hit
+  for the notes/57 law; the dead mod-32 law (74) is again refuted.
+  Frontier witness anatomy at K = 75 exactly as §0.3 predicts:
+  hatched (U_A = O, 72 values), defector = the bottom singleton
+  {+1} (the scale where F2 says {4M+1} self-serves), Φ = 72 = m.
+* **K*(160) = 83 = the mechanistic prediction — and a
+  DISCRIMINATING win.**  At 160 the mechanistic law (α = 2, f = 8 ⟹
+  83) DISAGREED with the notes/58 flat-offset pre-registration (84)
+  and the notes/60 §5.0 trend guess (84).  Measurement: 83.  The
+  flat-offset law is FALSIFIED at 160; the catalogue-quantity law
+  survives its hardest test (fourth blind scale, first adversarial
+  disagreement).  Witness at K = 82: hatched, defector {+2}
+  (bottom even singleton), Φ = 80 = m.  Ledger consequence for the
+  OTHER front (notes/58 §6): the pre-registered C(160) = 84,
+  K* = 84 adjacency needs re-examination — not this audit's scope,
+  but the K* half of that pre-registration is now dead.
+
+Note on shared infrastructure: all DICH instances (mine, e149,
+e153, e154) take the e146 catalogue as ground truth for "fan
+pattern"; the catalogue builder itself (SAT-validated minimized
+patterns) was not re-audited here.  My shape scan (§2.4) checks
+form, not refutation-validity, of each pattern.
 
 ---
 
 ## 3. Machine verdicts (filled as runs land)
 
-(placeholder — solver batteries run sequentially, one at a time)
+(placeholder — bridge battery next, sequentially)
 
 ---
 
