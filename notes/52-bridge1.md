@@ -517,3 +517,48 @@ Cadical195, one query at a time.  data/e152_bridge1.{json,log}.
 Total: 6 solver verdicts (4 UNSAT kills, 2 SAT controls) + the
 arithmetic assertions, 7 s.
 
+
+---
+
+## 7. Status summary and ledger impact
+
+### Proved in this note
+
+| item | statement | where |
+|------|-----------|-------|
+| Lemma PIN | T-PIN pigeonhole, full restatement + proof | §1.3 |
+| DIAG-DENSE | ≥ (2^m − 13)/12 disjoint diagonal usable pairs per block | §2.1 |
+| CROWN-2ADIC | even-j crowns = p ≡ 5 (mod 8) diagonal members; odd-j crowns = the open x ≡ 7 (mod 8) cells | §2.2 |
+| **Theorem B1** | Case-1 teams are not 3-permutable [modulo (H1)] | §3.1 |
+| Cor B1.1 | Case 1 fatal ⟹ every YES-partition is everywhere-split | §3.2 |
+| Cor B1.2 | ℤ⁺ not 3-permutable — UNCONDITIONAL (p = 5 instance) | §3.2 |
+| Prop B2 + SPLIT-QUANT + B2-VAC | the tasked dichotomy; split branch quantified and proved vacuous | §4.1–4.2 |
+| Lemma LP + the descent obstruction | landing-pad arithmetic; finite usable families have a splitter fixed point; no well-ordering exists; density is necessary | §4.3 |
+
+### Machine-checked
+
+e152 (§6): 3 colorings × 2 scales, 4 UNSAT kills (incl. core-targeted
+C = 3 punctures), 2 SAT controls, all arithmetic lemma instances.
+
+### Ledger impact (for notes/50 and STATUS.md)
+
+**GAP-BRIDGE1 is DISCHARGED as an assembly gap.**  The notes/50 Case-1
+chain item 4 ("Needs: the pair-ownership argument — TAG:
+GAP-BRIDGE1") is replaced by Theorem B1, whose only inputs are:
+
+| dependency | = existing tag | exact form needed here |
+|------------|----------------|------------------------|
+| (H1), uniform p | GAP-N2-DIAG ⊂ GAP-N2(a) | parametric write-up of the e123 diagonal schema, p ≡ 1 (mod 4) only, dyadic scales only |
+| (H1), uniform C | GAP-N3 | punctured-rung robustness for the diagonal family at fixed C |
+
+No NEW gap is created; the Case-1 kill chain is now
+N1 [HAND] + B1 [HAND, this note] + (GAP-N2-DIAG, GAP-N3).  The
+off-diagonal lanes, the x ≡ 7 (mod 8) cells, and the last dyadic
+template cells (A4d(19), B6(21)) are NOT on the Case-1 critical path
+any more — they matter only for BRIDGE1-AF (anchor-free windows, §5)
+and for per-pair completeness of the N2 catalogue.  Conversely
+GAP-N2-DIAG is now upgraded from "one of several lane write-ups" to
+THE load-bearing rung schema of Case 1 — the parametric diagonal
+write-up should be the next N2-front target, ahead of the remaining
+off-diagonal cells.
+
