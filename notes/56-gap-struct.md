@@ -549,10 +549,22 @@ whose family structure the uniform proof must reproduce.
    margin at 64 is only 1, so the law matters.
 2. **GAP-DICH schema**: MUS-mine the e149 UNSAT at K* (which fan
    patterns + straddle windows are load-bearing?); candidate hand
-   shape: each unit of exposure (a same-parity in-team (u, z) pair)
-   forces, through straddle-freeness at balance, a band puncture
-   pattern that completes a fan gadget — a Lemma-W + FG-high
-   counting argument.
+   shape — the FORCED-INTERVAL mechanism.  The frontier witnesses
+   are already U-hatched (both U's parity-pure); the last exposure
+   is a Z-defector z ∈ Z_T of U_T's parity.  Straddle-freeness then
+   forces the midpoint set Mid(U_T, z) = {(u+z)/2 : u ∈ U_T} into
+   Y_T′, and because U_T is a full parity class (an arithmetic
+   progression of step 2), Mid(U_T, z) ∩ P1 is an arithmetic
+   progression of STEP 1 — an interval.  For a high defector
+   (z ≥ 5M−31) the interval has length |U_T| = M/2: the other team
+   is forced to own a length-M/2 CONTIGUOUS band interval, which
+   saturates the close-pair fan geometry (every pair at distance
+   ≤ 15 is closure-dead, notes/55 §5.3b) and collides with
+   |Y_T| ≥ K* — a Lemma-W + FG-high counting argument whose
+   threshold arithmetic should reproduce K*(M) ≈ (M+16)/2 − 6.
+   Low defectors (z < 5M−31) force shorter intervals but sit inside
+   the FG-gadget support zone of T's own fans; U-defectors are the
+   mirror case.
 3. **GAP-PARM schema**: the band-mixing recursion — notes/33 Lemma H
    halving applied classwise with the band split as the new
    coloring; its aligned boundary cases are Theorem H (proved) and
