@@ -1,0 +1,2 @@
+  e158_bal12_base v=0: SAT [0.3s] {"A": {"sizes": [6, 12, 24], "n_inv": 0, "n_inv_seam1": 0, "n_inv_seam2": 0, "n_mono": 0}, "B": {"sizes": [6, 12, 24], "n_inv": 0, "n_inv_seam1": 0, "n_inv_seam2": 0, "n_mono": 0}}
+== e158_bal12_base: v* = 0

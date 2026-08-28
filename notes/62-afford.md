@@ -71,6 +71,10 @@ Baselines measured this session:
 - **C0 (M=16) SAT [0.3 s]**, audit clean; unpriced witness pays
   n_up = 528/358, n_dn = 44/92 (A/B) — lavish procrastination when
   free, exactly the §4 e127 asym phenomenology.
+- **v*(bal,12) = 0** [MACHINE-CHECKED, data/e158_bal12_base.log]:
+  the standalone half-anchor of M = 24 is free too (seam-clean
+  balanced escape, audit-passed) — the M = 24 pump cells have the
+  same clean shape as M = 16 (any forced vdn > 0 is pure coupling).
 
 ## 3. Verdicts (updated as cells land)
 
