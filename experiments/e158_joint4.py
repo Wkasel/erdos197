@@ -81,12 +81,22 @@ def blocks_of(M):
 
 
 def solve_joint(M, abs_bounds, vup, vdn, budget=3600.0,
-                solver=Cadical195):
+                solver=Cadical195, support=None):
     """abs_bounds = (c_m1, c0, c1, c2) lower bounds per team per block,
     or None => exact balance (ceil(|blk|/2) both teams; block sizes are
     even for M % 4 == 0).  vup / vdn: int or None (anchor unpriced).
-    Returns (verdict, secs, info)."""
+    support: optional subset of (M/2, 8M] — only these values exist
+    (deletion-MUS use; pass abs_bounds computed by the driver, e.g.
+    frozen-full-balance minus deletions, for restriction-monotone
+    semantics).  Returns (verdict, secs, info)."""
     V, (Bm1, B0, B1, B2) = blocks_of(M)
+    if support is not None:
+        sset = set(support)
+        V = [v for v in V if v in sset]
+        Bm1 = [v for v in Bm1 if v in sset]
+        B0 = [v for v in B0 if v in sset]
+        B1 = [v for v in B1 if v in sset]
+        B2 = [v for v in B2 if v in sset]
     n = len(V)
     idx = {v: i for i, v in enumerate(V)}
     offA, top = _mk_vars(n, start=1)
