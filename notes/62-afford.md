@@ -424,8 +424,13 @@ M = 16/24/32 (§ above), and it is the first COMPLETE arm of the
 (·,0) schema: the zero-sumset class dies by pure order theory at
 every scale.  What remains for the schema are arms (b) — sumset
 mass of non-parity colorings, paid via L-PREFIX — and (c) — the
-near-parity robustness radius (Lemma K survives o(1)-dilution of
-the chain?  N3-species question).
+near-parity robustness radius.  First (c) data (exhaustive, this
+session): (12,4) with ONE puncture stays UNSAT at 9 of 12 hole
+positions; the three escapes are exactly the mod-3 lattice holes
+{3, 6, 9} — sharp finite tolerance with lattice escapes, precisely
+the N3 species (single-block d* with midpoint escapes).  The
+dilution version (color swaps = puncture + cross-parity APs) is the
+real arm-(c) target.
 
 Empirical confirmation of L-PREFIX on the C2 witness (recomputed):
 its coloring has μ_dn = (0, 0) EXACTLY (part (i) forced it), and
