@@ -640,6 +640,22 @@ data/e150_wholesale_M56.log.]
 
 ---
 
+## 5.1 Pre-registered prediction for e155c (written before the run)
+
+From the §1.1 L-LOP witness anatomy at 128: Y_A = (even class minus
+its 8 E1-region values) ∪ {3M−5, 3M−9, 3M−11, 3M−13}, so Th1(B)
+degenerates to the odd-class α system (ThW1′ image) minus exactly
+those FOUR midpoints, and the instance is SAT there but UNSAT at
+min|Y| ≤ 67.  Prediction: e155c will find ThW1′'s single-drop and
+small-clique-drop variants UNSAT (unlike ThW0's {4, 6} fragility),
+with SAT appearing only at specific ≥ 3–4-puncture sets containing
+the witness pattern {3m−2, 3m−4, 3m−5, 3m−6}-ish (halved images of
+3M−5/−9/−11/−13 under h_O: (c+1)/2 = 3m−2, 3m−4, 3m−5, 3m−6).  If
+so, the L-LOP cap law's "+4" IS the ThW1′ puncture tolerance, and
+GAP-LLOP-α's quantitative content = that tolerance law.
+
+---
+
 ## 6. The M = 160 endgame  [results below as they land]
 
 Corrected predictions under the flat-offset law (§1.1):
