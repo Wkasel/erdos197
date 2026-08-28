@@ -25,7 +25,8 @@ restatement: notes/46 §4A).
    scale-stable; GAP-N3: one-paragraph hand extension of C3-PUNCT].
 3. **T-PIN pigeonhole** [N1, proven]: fixed attacker pair at finite
    positions + infinitely many disjoint UNSAT windows ⟹ not permutable.
-4. Assembly: **DONE (notes/52, Theorem B1).**  The diagonal usable
+4. Assembly: **DONE (notes/52, Theorem B1) — AUDIT-CLEARED (60-audit
+   §4, 60-audit-1 §1/§3; wording fixes 52-G1/52-G2 applied).**  The diagonal usable
    pairs {3p, 3p+1}, p ≡ 1 mod 4, fire on exactly the dyadic class and
    appear with density 1/12 in every block, so a C₀-clean block above
    scale 12C₀+25 always contains a fully-owned pair — the ownership
@@ -64,16 +65,16 @@ restatement: notes/46 §4A).
 - Price ledger: supply lemma + p(k) → ∞ [GAP-p(k): needs N2-style schema;
   possibly dispensable if Case 2 closes via the seam core alone].
 
-## Current gap inventory (updated 2026-08-27, night shift: notes/59
-## low-gap closures folded into the N6a row; BRIDGE1 discharge from
-## notes/52 retained)
+## Current gap inventory (updated 2026-08-28, post-audit: notes/60
+## night-2 referee + notes/60-audit-1 blind tests + notes/61-audit-2
+## measurements folded in)
 | Tag | Statement | Type | Status |
 |-----|-----------|------|--------|
-| GAP-N2 | off-diagonal lanes + uniform family proof | hand+machine | largely EXECUTED (notes/49: {11,12} all 8 residues, lane laws, template cells 13..19); remains: PARAMETRIC-in-x lane proof, cells A4d(19)/B6(21), pairs x ≡ 7 mod 8.  PRIORITY UPDATE (notes/52): the Case-1 critical path needs ONLY the diagonal parametric sub-piece **GAP-N2-DIAG** (C3(p) write-up, p ≡ 1 mod 4, dyadic scales — e123's verbatim-schema claim); off-diagonal parametrics matter only for BRIDGE1-AF |
+| GAP-N2 | off-diagonal lanes + uniform family proof | hand+machine | largely EXECUTED (notes/49: {11,12} all 8 residues, lane laws, template cells 13..19); remains: PARAMETRIC-in-x lane proof, cells A4d(19)/B6(21), pairs x ≡ 7 mod 8.  PRIORITY UPDATE (notes/52): the Case-1 critical path needs ONLY the diagonal parametric sub-piece **GAP-N2-DIAG** (C3(p) write-up, p ≡ 1 mod 4, dyadic scales — e123's verbatim-schema claim; fresh-p machine evidence now at p = 21 both dyadic scales + robustness, 60-audit-1 §3); off-diagonal parametrics matter only for BRIDGE1-AF |
 | GAP-N3 | dust-robust C3 | hand (short) | flagged one-paragraph, unwritten |
-| GAP-BRIDGE1 | ~~pair-ownership/split dichotomy in Case 1~~ **DISCHARGED** (notes/52 Theorem B1: ownership always holds via diagonal density; split branch vacuous; e152_bridge1 checks pass) — residual dependencies are GAP-N2-DIAG (parametric diagonal, p ≡ 1 mod 4, dyadic only) + GAP-N3; anchor-free variant BRIDGE1-AF still open (needs off-diagonal parametrics) | hand | CLOSED modulo N2-DIAG/N3 |
-| GAP-N6a | all-M coupled schema | hand (from MUS) | DECOMPOSED (notes/55 proof skeleton + notes/56 bridge + notes/59 low-gap closures).  Proved layer: Lemma U, A1–A9, Seesaw/Z′/D′, E2/C, P′, W, PAR, FG-high, Theorem H, Cor. PAR-i, **Lemma J (now PROVED — notes/59 §B pencil catalogue)**, fan-walk calculus + affine families (notes/59 §A), Theorem ASM′ (notes/59 §D).  Machine-true at 48/64/80/96: the three-case bridge (DICH/L-LOP/P-ARM, COV-W).  Sub-gaps remaining: GAP-DICH, GAP-LLOP, GAP-PARM (⊇ GAP-H1 ⊇ the FG-deep 20-pair halving core, notes/59 §C), GAP-ASM′ = (OV-∀) only, GAP-FG-schema (RT-glue extension + deep block), GAP-FG-deep (L1/L2/L3 write-ups; exact maps R(48)/D(48) done) |
-| GAP-G2 | ~~double non-procrastination~~ REFRAMED: T-FORCE affordability — two Θ(M)-dense teams cannot both afford forced > v*(M) inversions at every anchor forever | hand (THE gap, ledger-type) | DNP as stated is FALSE (single-team, all budgets to N^{1−o(1)}, irreducibly two-sided — notes/47); FORMAL LEDGER THEOREM now drafted (notes/54: Theorem LT — demand side PROVEN modulo GAP-V*-schema/growth; supply side split into GAP-AFFORD with proven mechanism lemmas L-ORIENT/L-COMP/L-CASCADE + sub-tags GAP-COMP/GAP-JOINT; regime trichotomy formal with GAP-RHO/GAP-ALT; X-INTERLEAVE machine-verified to survive the accounting — e130 all-pass); pump measured only at v*(bal,16) ∈ [3,160], e128 bisecting |
+| GAP-BRIDGE1 | ~~pair-ownership/split dichotomy in Case 1~~ **DISCHARGED + AUDIT-CLEARED** (notes/52 Theorem B1; refereed SOUND by 60-audit §4 and 60-audit-1 §1/§3 — line-by-line re-derivation + fresh adversarial colorings χA/χA′/χB incl. H1 robustness at fresh p = 21; the two §4.3 wording fixes 52-G1/52-G2 APPLIED to notes/52) — residual dependencies unchanged: GAP-N2-DIAG + GAP-N3; BRIDGE1-AF still open | hand | CLOSED modulo N2-DIAG/N3; audited |
+| GAP-N6a | all-M coupled schema | hand (from MUS) | DECOMPOSED (notes/55 skeleton + notes/56 bridge + notes/59 low-gap closures; notes/57 DICH + notes/58 LLOP/PARM both refereed SOUND — 60-audit, 60-audit-1, 61-audit-2).  Proved layer: Lemma U, A1–A9, Seesaw/Z′/D′, E2/C, P′, W, PAR, FG-high, Theorem H, Cor. PAR-i, Lemma J (PROVED, independently re-established), fan-walk calculus + affine families, Lemma AO/D3, Lemma PH+, Theorem ASM′ + COV-W′ compositions, DICH case tree (H-DICH over F0–F4).  **Machine record now SEVEN scales 48..160**: DICH/L-LOP thresholds exact everywhere; mechanistic K* law exact at 8 scales incl. 4 blind hits (K*(144) = 76, K*(160) = 83); flat cap law C(M) = (M+16)/2 − 4 exact at 96..160 (caps 51/59/67/75/83); (OV) W(M) = C − K* ≥ 0 at ALL EIGHT scales (W = 1 at 160 — the feared hole never materialized); **robust chain COV-W′ verified at 128 AND 160** (61-audit-2 §4).  Sub-gaps remaining (unchanged in kind, shrunk in load): GAP-DICH (5 catalogue-schema rows, notes/57 §7), GAP-LLOP-α/β, GAP-PARM (⊇ GAP-PARM-CORNER ⊇ FG-deep 20-pair halving core), GAP-ASM′ = (OV-∀) only — now 8-scale-true with robust-chain insurance, GAP-FG-schema (RT-glue + deep block; cross-scale FG-deep audit at 64 still unrun), GAP-FG-deep (L1/L2/L3 write-ups) |
+| GAP-G2 | ~~double non-procrastination~~ REFRAMED: T-FORCE affordability — two Θ(M)-dense teams cannot both afford forced > v*(M) inversions at every anchor forever | hand (THE gap, ledger-type) | DNP as stated is FALSE (single-team, all budgets to N^{1−o(1)}, irreducibly two-sided — notes/47); FORMAL LEDGER THEOREM drafted (notes/54: demand side PROVEN modulo GAP-V*-schema/growth; supply side = GAP-AFFORD with proven mechanism lemmas; X-INTERLEAVE survives the accounting — e130 all-pass); pump brackets still wide: v*(bal,16) ∈ [3,6] (CP-SAT witness at 6), v*(bal,24) ∈ (4,65], v*(bal,32) ∈ (2,368], v*(pin,16) > 4 (fleet verdicts, 60-audit §5.0c) — too wide to confirm or refute growth |
 | GAP-L1' | concentration lemma | hand | measured-true, unproven |
 
 Note the STRUCTURAL simplification bought by the MUS landing: if the
@@ -104,3 +105,36 @@ single inequality (OV-∀): K*(M) ≤ C(M) by Theorem ASM′ (notes/59 §D
 — the F/L/P composition-soundness theorem, PROVED).  Corrected en
 route: the notes/55 close-pair fan-kill hypothesis (distance ≤ 15)
 needs the E1 exclusion — gap-8 escapes exist inside E1×E1.
+
+### Audit delta (2026-08-28, notes/60 + notes/60-audit-1 + notes/61-audit-2)
+
+Three referee passes over the four night-shift fronts (52/57/58/59);
+**all four SOUND, zero broken theorems**.  Specifics folded into the
+inventory above:
+
+* BRIDGE1 (notes/52): cleared — line-by-line + fresh adversarial
+  machine battery (greedy-puncture χA pushing extraction onto fresh
+  p = 21 with kills at both dyadic scales + dust-on-core robustness;
+  hi-half splitter χB); two §4.3 wording fixes (52-G1 cohort scoping,
+  52-G2 fan-completion corner case) found and APPLIED.
+* DICH (notes/57): cleared — the mechanistic K* law
+  K* = m + 9 + max(α_E−f_O, α_O−f_E) is now exact at EIGHT scales
+  with FOUR blind hits; the blind test at 160 was adversarial (law
+  predicted 83 AGAINST both flat-law pre-registrations of 84) and the
+  measurement sided with the mechanism.  The flat-offset K* law and
+  the mod-32 law are both dead.  One prose correction: α is NOT
+  monotone in M (α(160) = 2 < α(144) = 3).
+* LLOP/PARM (notes/58): cleared minus its extrapolation prose — all
+  measurements reproduce; caps measured at the two fresh scales
+  (cap(144) = 75, cap(160) = 83, both = (M+16)/2 − 5, flat law's
+  first out-of-sample wins); adjacency K* = cap+1 is dead as a law
+  (W = 1 at 160) but (OV) holds at all 8 scales; robust chain
+  REPRODUCED at 128 and EXTENDED to 160 — **Theorem COV-W′(160)**,
+  the scale where the hole was predicted, now closed twice over.
+* LOWGAPS (notes/59): cleared — J-pencil catalogue independently
+  re-established (fresh closure engine); JP/JP′/Γ algebra re-solved
+  by hand (two nits: FW rule-(i) guard bookkeeping; "16 residue
+  patterns" should read 8); ASM′ composition sound.
+* Still-unrun items carried forward: e155c (ThW1′ puncture
+  tolerance — the cap-law mechanism probe), FG-deep cross-scale
+  audit at 64 (alive grid precomputed), e156 D3 at 80/112/128.
