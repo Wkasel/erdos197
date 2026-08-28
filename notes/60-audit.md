@@ -205,3 +205,20 @@ DICH probes and the L-LOP probes.  Predictions on record now:
   has 8 | p−q, and the UNSAT-stall set is exactly the non-resonant
   E1×E1 corner (q ≥ M−16 zone, i.e. both attackers ≤ 3M).
 
+### 5.0b Session-loss recovery (same shift, later)
+
+The shift's first session was lost mid-§5: the e146(144, 160) build
+it launched died with it (data/e157_audit_catalogue_144_160.log was
+0 bytes, no process).  Recovery actions: (1) the build RELAUNCHED
+(same command, same log target); (2) audit/a7_night2/a7_hand_checks.py
+re-run from the committed file — ALL 13 checks pass again (A FI at
+112/144; B D3 ranges at 48/144; C PH+ counts; D K* formula at 6
+scales; E1–E5 J-pencil closure/splits/JP/JP′; F Γ₁/Γ₂′ identities;
+G BRIDGE1 arithmetic) — §§1–4 verdicts stand; (3) the uncommitted
+a7_deep_crossscale.py (the M-generic e154 reimplementation for the
+§5.0 deep-law check) committed with this entry.  The §5.0
+pre-registered predictions were committed BEFORE any 144/160 solver
+run (commit 9dd0cab) and remain binding.  Solver discipline: the
+e146 build is the single active solver job; all remaining probes run
+sequentially after it.
+
