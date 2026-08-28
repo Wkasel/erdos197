@@ -26,7 +26,22 @@
 },
 "M128_d4_b012": {
 "verdict": "UNSAT",
-"secs": 10.0,
+"secs": 9.0,
 "clauses": 15393317
+},
+"M128_d4_b01_audit": {
+"verdict": "SAT",
+"secs": 1.5,
+"clauses": 2169885
+},
+"M160_d4_b01_audit": {
+"verdict": "SAT",
+"secs": 2.6,
+"clauses": 3981421
+},
+"M160_d4_b012": {
+"verdict": "UNSAT",
+"secs": 25.0,
+"clauses": 28976085
 }
 }

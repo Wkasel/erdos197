@@ -12,5 +12,7 @@
 "M128_phi1_K66": "SAT",
 "M128_phi1_K65": "SAT",
 "M128_upure_K68": "UNSAT",
-"M128_zdef_K68_d4": "UNSAT"
+"M128_zdef_K68_d4": "UNSAT",
+"M160_upure_K84": "UNSAT",
+"M160_zdef_K84_d4": "UNSAT"
 }
