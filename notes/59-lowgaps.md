@@ -214,3 +214,85 @@ work, precisely scoped:
 
 Status: schema layer [PROVED]; coverage map [MACHINE-CHECKED at 48];
 cross-scale stability of the boundary [GAP — cheap compute].
+
+---
+
+## B. GAP-J-pencil: the 36 derivations, closed
+
+### B.0 Setting
+
+Offsets from the TOP of the run: k = 0..15, v_k := w_{15−k} (the
+value 4M−k).  T(J) = AP-freeness on the 16 consecutive values + the
+units v_t ≺ v_{j+2t} (j ∈ J, t ≥ 0, j+2t ≤ 15).  The 16 points are
+consecutive integers, so integer APs of [0,15] are exactly the value
+APs, and **Lemma CC applies verbatim with window [0, 15]** — the
+same T/RL/RT calculus as §A, now with unit family t ↦ j+2t.  A
+derivation of a 2-cycle refutes T(J); by Lemma DP the corresponding
+J-pattern R ∪ {4M+j : j ∈ J} is a death pattern.
+
+### B.1 The 6-fact schema S6 and its two residue patterns  [PROVED]
+
+Every 6-fact derivation in the catalogue below is an instance of ONE
+shape.  **Schema S6.**  Three units A: t_A ≺ a, B: t_B ≺ b,
+C: t_C ≺ c (each of the form t ≺ j*+2t, j* ∈ {j, j′}), subject to
+
+    b = 2a − t_A,     t_C = a,     c = 2b − t_B .
+
+Then RT(A): b ≺ a; RT(B): c ≺ b; T(b ≺ a, a ≺ c): b ≺ c — a
+2-cycle on (b, c).  Solving the constraints with residues
+(j_A, j_B, j_C) ∈ {j, j′}³ forces t_A = 2j_C − 2j_A − j_B, and
+exactly TWO residue patterns give t_A ≥ 0:
+
+**Lemma JP (pattern (j, j′, j′) — the doubling pair).**  For
+j′ ≥ 2j with 5j′−6j ≤ 15, set t := j′−2j.  Then t_A = t_B = t,
+a = j+2t, b = j′+2t = 2a−t, c = j′+2a = 5j′−6j, and S6 refutes
+T({j, j′}).  Window: 5j′−6j ≤ 15.  Instances: (1,2), (1,3), (1,4),
+(2,4), (2,5), (3,6).  ∎
+
+**Lemma JP′ (pattern (j, j, j′) — the mirror pair).**  For
+2j′ ≥ 3j with 9j′−10j ≤ 15, set t_A = 2j′−3j, t_B = 3j′−4j
+(= (j+3t_A)/2, automatically an integer since j+3t_A = 6j′−8j is
+even), a = 4j′−5j, b = 6j′−7j = 2a−t_A, c = 9j′−10j = 2b−t_B, and
+S6 refutes T({j, j′}).  Instances: (2,3), (3,5), (4,6) (and (1,2)
+again).  ∎
+
+Note JP's region {j′ ≥ 2j, 5j′−6j ≤ 15} is EXACTLY the FG-high
+family Γ₁ (§A.4) read at run scale, with (q, p) = (j, j′) and window
+15 — Lemma J's pair conflicts are the same affine species as the
+double-fan gadget, confirming once more the notes/48 "one schema
+family" reduction; JP′ is its one-step RT-mirror, its window
+9j′−10j being the next term of the same doubling-reflection orbit
+(both c-values are 2b − t with b one reflection deeper).
+
+### B.2 The complete pencil catalogue  [PROVED — machine-generated,
+hand-checkable]
+
+experiments/e153_j_pencil.py runs the provenance-tracked T/RL/RT
+closure on each of the 36 minimal forbidden sets of Lemma J
+(data/e138_transfer.json) and prints a complete pencil derivation for
+each; every step is an application of a Lemma-CC rule, so validity is
+by construction (proof by reflection), and each printout is short
+enough to re-check by hand.  Results:
+
+* **29/36 die by pure closure**, derivation sizes 6–33 facts:
+  all pairs except (7,8), (8,9), (8,11) — sizes: 6 facts × 9 pairs
+  (EXACTLY the JP ∪ JP′ instances), 8–16 facts × 13, 20–27 facts
+  × 5 — and the triples (1,10,12), (4,13,15) at 33 facts each.
+* **7/36 need totality splits** (a case split u ≺ v vs v ≺ u is a
+  legitimate pencil step): (7,8) splits on (v₀,v₁); (5,10,12) and
+  (7,10,12) split on (v₀,v₂) — both branches then die by closure
+  (17–50 facts per branch); (8,9), (9,10,12) double-split on
+  (v₀,v₁)×(v₀,v₂); (8,11) on (v₀,v₁)×(v₀,v₆); (10,11,12) on
+  (v₀,v₁)×(v₁,v₃) — all four branches die by closure in each case.
+
+Complete derivations: data/e153_j_pencil.log.  This closes
+GAP-J-pencil: Lemma J's status upgrades from [MACHINE-CHECKED —
+pencil derivations pending] to [PROVED — finite catalogue with
+per-item pencil derivations in the sound calculus of Lemma CC].
+The load-bearing subsets for the assembly (J({1,2}), J({1,3}),
+J({2,4}) — the only three in the essential catalogues E(48)/E(64),
+notes/56 §4.2) are all in the 6-fact JP family.
+
+[MACHINE-CHECK: experiments/e153_j_pencil.py →
+data/e153_j_pencil.log; split search exhaustive over single and
+double totality splits, 7/7 closed, none open.]
