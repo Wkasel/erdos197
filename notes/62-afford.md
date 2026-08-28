@@ -340,6 +340,25 @@ s2 inversions at M = 16, vs budget 6).  The (1,1,0,0) schedule is
 (0, 0, 0) for both teams at every scale tested — the unique
 pure-parity zero-sumset class, whose price is purely mixed-theory.
 
+**MEASURED (e158c, this session): the zero-sumset class is DEAD at
+every budget.**  With coloring FIXED to (1,1,0,0) and vdn = 0, the
+instance is UNSAT at M = 16, 24, 32 for EVERY vup scanned up to 512
+(seconds per query; at M = 16, 512 is within 128 of the vacuous
+budget 640).  So the unique parity class that avoids all sumset
+floors cannot buy a clean half-anchor AT ANY PRICE — the mixed
+flood geometry (same-parity dense adjacent blocks under wholesale
+block order) kills it outright.  Consequence, with L-PREFIX: every
+(·,0)-escape must be sumset-massive, and its μ_up + μ_skip is paid
+unit-for-unit in s2.  **The (·,0) schema architecture is therefore
+three-armed, mirroring notes/56's GAP-STRUCT trichotomy one level
+up:** (a) parity/zero-sumset colorings — killed wholesale by a
+C3-style flood ladder [hand target; machine-true at 3 scales, any
+budget]; (b) colorings far from the parity class — carry sumset
+mass ≥ f(distance), paid in s2 by L-PREFIX [extremal counting, no
+orders]; (c) the near-parity interpolation — robustness layer (N3
+species).  v_min(0)(M) growth = arm (b)'s extremal function at the
+crossover with arm (a)'s robustness radius.
+
 Empirical confirmation of L-PREFIX on the C2 witness (recomputed):
 its coloring has μ_dn = (0, 0) EXACTLY (part (i) forced it), and
 μ_up + μ_skip = 87/54 (A/B) ≤ n_s2 = 392/442 ✓ (parts (ii)+(iii)).
