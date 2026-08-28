@@ -78,6 +78,20 @@ is a finite fan-catalogue quantity, not a residue law; any
 extrapolation beyond the verified scales must recompute α and f
 (cheap catalogue scans), not trust M mod 32.
 
+**Out-of-sample validation (112/128).**  e153 run on the sibling
+front's catalogues BEFORE seeing their thresholds
+(data/e153_dich_lemmas_112_128.log): α_E = α_O = 3 and f_O = f_E = 8
+at both scales (both mechanisms simultaneously active), predicting
+K*(112) = 56+4 = 60 and K*(128) = 64+4 = 68 — matching the notes/58
+direct measurements (K*(112) = 60, K*(128) = 68) EXACTLY.  The
+formula is now exact at six scales, the last two as blind
+predictions.  The drift toward balance ((M+16)/2 − K* = 6, 5, 6, 5,
+4, 4 at 48..128) is explained: the resonance lattice widens (α:
+2→3, with mod-32-spaced alive triples {−110,−78,−14} at 112) and
+the deep supports lengthen until the bottom singleton self-serves
+(f: 9→8) — both monotone-in-M trends, quantifying the GAP-ASM′
+narrowing (notes/56 §4b, notes/58 §1.1).
+
 ### 0.3 The frontier anatomy (all four scales, e149 witnesses)
 
 | M | K*−1 witness | defectors | forced interval | f | minority cap α |
@@ -256,9 +270,9 @@ the R1–R4 closure — part of GAP-FG-schema.)
 **F1 (shallow alive-clique numbers).**  α_c(M) := max subset of
 {class-c band values with offset ≥ −(M−1)} with no dead-pure pair:
 
-    M      48   64   80   96
-    α_E     2    3    2    2      (E-triple at 64: {−48, −32, 0})
-    α_O     2    2    2    2
+    M      48   64   80   96   112  128
+    α_E     2    3    2    2    3    3    (E-triple at 64: {−48, −32, 0})
+    α_O     2    2    2    2    3    3
 
 All witnesses are resonance configurations (gaps 16/32/48/64 —
 cf. notes/55 §5.3b; per notes/58's e155 lattice law, alive gaps are
@@ -269,9 +283,9 @@ D = {4M+1} (odd) resp. {4M+2} (even) is *self-serving* — every
 dead-pure same-class pair inside its forced interval has the bottom
 value in its support — exactly:
 
-    M        48     64     80     96
-    {4M+1}   NO     NO     NO     YES     (f_O = 9, 9, 9, 8)
-    {4M+2}   NO     YES    NO     YES     (f_E = 9, 8, 9, 8)
+    M        48     64     80     96    112    128
+    {4M+1}   NO     NO     NO     YES   YES    YES   (f_O = 9,9,9,8,8,8)
+    {4M+2}   NO     YES    NO     YES   YES    YES   (f_E = 9,8,9,8,8,8)
 
 Failure exemplars (the e152 cores): at 48, pair (−55,−49) has pure
 support {+3,+7,+15,…} ∌ +1; at 80, pair (−95,−81) support
