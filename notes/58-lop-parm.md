@@ -59,3 +59,186 @@ M = 48/64/80/96; DICH frontier Φ quantizes as (M/2)·(1..4) near K*
 (e149 logs), e.g. Φ = 48·{1,3,4} at M = 96.
 
 [Status: plan — commits follow per section.]
+
+---
+
+## 1. The cap and threshold laws at M = 112  [MACHINE-CHECKED]
+
+New scale M = 112 (e146 catalogue: 7836 fan patterns, 36 J; e152/e153
+single-K probes, CaDiCaL 0.3–4.2 s each):
+
+    L-LOP(112):  K = 59, 60 UNSAT;  K = 61, 62 SAT
+                 → cap(112) = 59 (min|Y| form; kmax_unsat = 60).
+    DICH(112):   K = 57, 58, 59 SAT (each frontier witness with
+                 Φ = 56 = M/2 exactly — ONE hatch defector);
+                 K = 60, 61, 62 UNSAT → K*(112) = 60.
+
+**The cap law (5/5 scales).**  In min|Y| form,
+
+    cap(M) = (M+16)/2 − ⌊M/32⌋ − 2
+           = 29 / 36 / 44 / 51 / 59   at M = 48 / 64 / 80 / 96 / 112,
+
+increments alternating +7/+8 by M mod 32.  (Equivalently: the least
+killing band-major size is S(M) = (M+16)/2 + ⌊M/32⌋ + 3.)  The
+task-brief guess "(M+16)/2 + {5,4}" matches the band-major form's
+complement: M+16−S(M)... the clean statement is the display above.
+[MACHINE-CHECKED at 5 scales; sharp at all 5.]
+
+**The K* law is NOT mod-32-periodic — falsified at 112.**  Offsets
+K*(M) − (M+16)/2:
+
+    −6, −5, −6, −5, −4    at M = 48, 64, 80, 96, 112,
+
+so the notes/56 §3.3 reading (−6 on M ≡ 16, −5 on M ≡ 0 (mod 32))
+breaks at the fifth scale; the offset is DRIFTING UP ≈ +1 per 64,
+i.e. K*(M) ≈ (M+16)/2 − 6 + ⌊(M−48)/64⌋ on present data (5 points).
+Overlap width cap − K* + 1: 4 / 2 / 3 / 1 / 0.  At M = 112 the two
+arms are EXACTLY ADJACENT (L kills min|Y| ≤ 59, P kills ≥ 60 — still
+exhaustive with zero slack), and both offset trends point the wrong
+way: the GAP-ASM′ hole is expected to open at M = 128 already
+(predicted cap 66; K* ≥ 67 would leave {66.. } uncovered... precisely:
+hole iff K* > cap + 1 = 68).  M = 128 measurement in flight; the
+robust P-ARM fix (§4) is now clearly load-bearing, not prophylactic.
+
+Frontier anatomy at 112 (all three SAT probes): Φ = M/2 — a SINGLE
+Z-defector against parity-pure U's, confirming the §4 design point
+that the boundary zone is a small-defect regime.
+
+[MACHINE-CHECK: data/e152_llop_probes.log, data/e153_dich_probes.log,
+data/e146_catalogue.log (M=112 block).]
+
+---
+
+## 2. L-LOP anatomy I: the defuse dichotomy and the punch-descent
+## lemma  [PROVED core + scoped remainder]
+
+Fix M ≡ 0 (mod 16), M ≥ 48 (all inequalities below need only M ≥ 32
+and M even; noted where finer).  Notation (notes/55 §2):
+
+    A_α := [2M−30, 2M]        the α attacker window (B0's top-31; A2)
+    C   := [4M+1, 5M+15]      the completion zone (A3: every in-band
+                              high-pair completion lands here)
+    C′  := [5M+16, 6M+15]     the upper zone (M values; band
+                              completions never reach it)
+    y₀  := (7M+16)/2          the punch threshold (integer, M even)
+    MID := [3M−14, (7M+14)/2] the middle band zone (M/2 + 22 values)
+
+### 2.1 Why Th1(B) alone cannot kill: the AP-free order lemma
+
+**Lemma AO.**  Every finite S ⊆ ℤ admits a linear order with no
+monotone 3-AP.  *Proof.*  Order the evens of S (recursively, via
+x ↦ x/2, which preserves APs) before the odds of S (recursively, via
+x ↦ (x−1)/2).  A mono AP (a, b, c) has a ≡ c (mod 2); if a, c are
+even and b odd then b follows both in the order, so the AP is not
+monotone unless it lies in one parity class; recurse.  Induction on
+diameter terminates.  ∎  [PROVED — classical argument.]
+
+**Consequence.**  Th1(B) restricted to its in-band AP constraints
+alone is ALWAYS consistent.  An L-LOP kill therefore requires fired
+α-units (attacker in U_B ∩ A_α, by A2) or fired β-units (completion
+in Z_B ∩ C, by A3).  Call the team *defused* if
+
+    (defuse-α)  U_B ∩ A_α = ∅       and
+    (defuse-β)  Z_B ∩ C  = ∅.
+
+If B can be defused, Th1(B) is consistent and L-LOP(M) would be SAT
+at every K ≥ 3.  The machine caps say it is not.  §2.2 is the reason.
+
+### 2.2 Lemma D3 (defuse incompatibility — the punch-descent)
+### [PROVED]
+
+**Lemma D3.**  Let χ be a 2-coloring of CORE′(M) that is
+straddle-free for both teams and has |Y_A| ≥ 2, |U_B| ≥ 1.  Then
+
+    U_B ∩ A_α ≠ ∅    or    Z_B ∩ C ≠ ∅.
+
+(Equivalently: a team with ≥ 2 opposing band values and ≥ 1 own
+P0 value cannot be defused.  Note the hypothesis uses only the
+bounds; no fan-cleanness, no band-major assumption, and Th1 itself
+never appears — this is a pure coloring lemma.)
+
+*Proof.*  Suppose both intersections are empty, so A_α ⊆ U_A and
+C ⊆ Z_A.
+
+**Step 1 (position: Y_A avoids MID).**  For y ∈ Y_A the *punch
+window* PW(y) := 2y − A_α = [2y−2M, 2y−2M+30] consists of 31
+consecutive integers.  For every u ∈ A_α ⊆ U_A, straddle-freeness of
+A forbids (u, y, 2y−u) mono, i.e. 2y−u ∉ Z_A whenever
+2y−u ∈ P2.  Since C ⊆ Z_A this gives PW(y) ∩ C = ∅.  But
+PW(y) ∩ C ≠ ∅ exactly for y ∈ MID = [3M−14, (7M+14)/2].  Hence
+
+    Y_A ⊆ {3M−15} ∪ [y₀, 4M].
+
+**Step 2 (a high value exists).**  |Y_A| ≥ 2 and only one band value
+lies at 3M−15, so Y_A ∩ [y₀, 4M] ≠ ∅.  Let ŷ := min(Y_A ∩ [y₀, 4M]).
+
+**Step 3 (punch).**  Every z ∈ PW(ŷ) ∩ P2 satisfies z = 2ŷ − u with
+u ∈ A_α ⊆ U_A, so z ∉ Z_A (straddle-freeness of A), i.e.
+PW(ŷ) ∩ P2 ⊆ Z_B.  Moreover PW(ŷ) ⊆ C′ ∪ (6M+15, ∞): its bottom is
+2ŷ−2M ≥ 5M+16 and 2ŷ−2M ≤ 6M (ŷ ≤ 4M), so in particular
+z₀ := 2ŷ−2M + j ∈ Z_B ∩ C′ for j ∈ {0, 1} of either parity choice.
+
+**Step 4 (exclusion and descent).**  Pick any u ∈ U_B and the
+j ∈ {0, 1} with z₀ := 2ŷ−2M+j ≡ u (mod 2).  Then
+y′ := (u+z₀)/2 is an integer with
+
+    3M+8 ≤ ŷ − M + (u+j)/2 = y′ ≤ ŷ − 15         (u ≤ 2M−31),
+
+so y′ ∈ P1, and (u, y′, z₀) is an AP with u ∈ U_B, z₀ ∈ Z_B.
+Straddle-freeness of B forces y′ ∉ Y_B, i.e. y′ ∈ Y_A.  But
+3M−15 < 3M+8 ≤ y′ < ŷ, so y′ contradicts Step 1 (if y′ < y₀) or the
+minimality of ŷ (if y′ ≥ y₀).  ∎
+
+(All range inequalities were symbol-checked and brute-verified at
+M = 48: the MID characterization and the descent-step ranges have
+zero exceptions over all (ŷ, u) — see the §2 audit block in the
+session transcript; they are linear in M and need only M ≥ 32, M
+even for y₀ ∈ ℤ.  For u ∈ [M+1, 2M−31] both endpoints of the
+descent inequality are tight at u = 2M−31.)
+
+**Remark (the u-range).**  Step 4 needs u ≤ 2M−31, which is exactly
+u ∈ P0 ∖ A_α — guaranteed by defuse-α: U_B ⊆ [M+1, 2M−31].  The
+lemma's two hypotheses feed precisely the two straddle applications:
+defuse-α powers the punch (Step 3), defuse-β powers the position
+constraint (Step 1).
+
+### 2.3 The armed dichotomy and the two remaining arms
+
+By Lemma D3 applied to each team (bounds give |Y_T| ≥ 2, |U_T| ≥ 1
+for both), every straddle-free bounded coloring has BOTH teams
+armed.  For the band-major team B of L-LOP this gives the case
+split of the uniform proof:
+
+* **Arm α (α-supply)**: U_B ∩ A_α ≠ ∅.  Fired units are the A2
+  family: z ≺ y with y ∈ E1 ∩ Y_B, z ∈ top-31 ∩ Y_B, guarded by an
+  attacker x ∈ U_B ∩ A_α with x = 2y − z.  The kill species is the
+  ThW1′/α-lattice family (notes/56 §2.2, §4.2): a band-major Y_B
+  contains most of one arithmetic class, and the α-units on that
+  class halve (classwise Lemma H) to the H1-ThW1′ core.  [GAP-LLOP-α
+  — the robust/punctured uniformization of the ThW1′ kill; the
+  species of GAP-H1.]
+* **Arm β (β-supply)**: Z_B ∩ C ≠ ∅.  Fired units are the A3/A4
+  family: b ≺ a for high pairs a < b ⊆ Y_B with 2b − a ∈ Z_B ∩ C;
+  when Y_B ⊇ most of the top run R, Lemma J turns S3-memberships
+  into the 30+6 forbidden systems, and deeper completion-zone
+  memberships give the generalized-J β patterns of E(M).
+  [GAP-LLOP-β — the robust Lemma-J argument on co-bounded band
+  subsets.]
+
+The adversary can be armed in only one arm, so the uniform L-LOP
+proof must kill each arm separately under band-majority.  Both arms
+are QUANTITATIVE (one attacker or one completion is not enough —
+the machine cap is sharp at min|Y| = cap+1); the cap law of §1 is
+the arms' supply-demand balance point.  Status of the arms:
+[GAP — scoped; species named; not attempted tonight beyond the MUS
+anatomy below.]
+
+**What Lemma D3 already buys the assembly.**  The notes/56 §4b
+composition needs L-LOP as a wholesale machine lemma; D3 is its
+first uniform (all even M ≥ 32) hand component, and it is exactly
+the piece that makes the arms exhaustive.  It also explains a
+frontier-law asymmetry from notes/55 §5.2: the (·,0,·) escapes have
+|Y_T| ≤ 1 and dodge Step 2 — consistent with D3's |Y_A| ≥ 2
+hypothesis being genuinely necessary.
+
+[Status: Lemma AO, Lemma D3 PROVED; arms GAP-LLOP-α/β scoped.]
