@@ -263,9 +263,18 @@ has its entire support in the attackers' parity class: 863/863
 Consequence: the service constraints of class-c patterns are
 class-local — a class-c pattern monochromatic in team T is dodged
 iff some support member lies in T′ ∩ P2 ∩ c.  (This is the machine
-form of "the closure of a class-c fan pair lives in the class"; a
-hand proof should follow from Lemma PAR-style parity bookkeeping on
-the R1–R4 closure — part of GAP-FG-schema.)
+form of "the closure of a class-c fan pair lives in the class".
+Proof path: the fan unit of attacker x at midpoint y is z ≺ y with
+z = 2y − x ≡ x (mod 2), so the SUBSYSTEM of units with class-c
+midpoints is class-closed, and the notes/33 Lemma-H halving carries
+it isomorphically onto the fan system of the halved window with
+attackers (x̂, x̂+g) at gap g = (p−q)/2 — the same recursion as
+Lemma PAR.  F0 then reads: whenever the full-scale pair is
+closure-dead, its HALF-SCALE image is closure-dead too, and the
+pulled-back refutation is the pure certificate.  This is exactly
+the notes/58 e155 lattice law's recursion (alive gaps ≡ 0 mod
+8/16 = the fixed points of gap-halving), so F0's uniformization and
+GAP-DICH-ALPHA's are the same statement — part of GAP-FG-schema.)
 
 **F1 (shallow alive-clique numbers).**  α_c(M) := max subset of
 {class-c band values with offset ≥ −(M−1)} with no dead-pure pair:
