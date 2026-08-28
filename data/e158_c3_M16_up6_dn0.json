@@ -1,0 +1,10 @@
+{
+ "tag": "c3_M16_up6_dn0",
+ "M": 16,
+ "mode": "bal",
+ "bounds": null,
+ "vup": 6,
+ "vdn": 0,
+ "verdict": "UNSAT",
+ "time": 2.1
+}
