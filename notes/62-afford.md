@@ -310,6 +310,15 @@ this schedule is measurable directly by FIXING the coloring and
 scanning vup (a tiny orders-only instance) — the next instrument
 (e158c), and the natural entry point for a C3-style hand ladder.
 
+Exact sumset masses of the two canonical schedules (computed, both
+teams, M = 16..64): the both-H-voiding schedule (1,0,0,1) of §3b's
+caveat has (μ_dn, μ_up, μ_skip) = (0, 0, 54|50) at M = 16 growing
+to (0, 0, 840|824) at M = 64 — **Θ(M²) ≈ M²/5 skip mass: under
+vdn = 0 the H-dodge is slaughtered by L-PREFIX** (≥ 54 forced s2
+inversions at M = 16, vs budget 6).  The (1,1,0,0) schedule is
+(0, 0, 0) for both teams at every scale tested — the unique
+pure-parity zero-sumset class, whose price is purely mixed-theory.
+
 Empirical confirmation of L-PREFIX on the C2 witness (recomputed):
 its coloring has μ_dn = (0, 0) EXACTLY (part (i) forced it), and
 μ_up + μ_skip = 87/54 (A/B) ≤ n_s2 = 392/442 ✓ (parts (ii)+(iii)).
