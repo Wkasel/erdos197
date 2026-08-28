@@ -281,3 +281,12 @@ Blind M = 144 values (computed BEFORE any solver probe at 144):
 probe is K = 75: mechanistic/flat law says SAT, mod-32 law says
 UNSAT.  Probes queued behind the e146(160) build (single solver
 slot).
+
+Supplementary pure scans while the 160 build runs: (i) F0 purity is
+TOTAL at 144 (6115/6115 same-parity attacker pairs pure-support) —
+the seventh scale of F0's perfect record; (ii) the M = 144 catalogue
+part1 record: 12 434 closure-dead pairs, 286 alive, 1506 s; (iii) the
+M = 64 closure grid for the §5.0 deep-law audit precomputed (178
+closure-alive of 3160 pairs, pure-Python closure only, cached in
+data/e157_audit_alive_M64.json; SAT classification queued behind the
+build).
