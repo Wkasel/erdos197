@@ -310,6 +310,14 @@ this schedule is measurable directly by FIXING the coloring and
 scanning vup (a tiny orders-only instance) — the next instrument
 (e158c), and the natural entry point for a C3-style hand ladder.
 
+Empirical confirmation of L-PREFIX on the C2 witness (recomputed):
+its coloring has μ_dn = (0, 0) EXACTLY (part (i) forced it), and
+μ_up + μ_skip = 87/54 (A/B) ≤ n_s2 = 392/442 ✓ (parts (ii)+(iii)).
+Notably the unbudgeted-above solver did NOT choose a zero-sumset
+coloring — it paid sumset floors 87/54 plus ~300 mixed overhead;
+the μ_skip family (45/24 here) is live, structured mass that no
+3-block instrument ever charged.
+
 ## 5. The cascade calculus: why the frontier CURVE (not the cell) is
 ## the quantitative target
 
