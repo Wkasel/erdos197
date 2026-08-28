@@ -1,0 +1,64 @@
+A : M=144: FI formulas + A2 pair mass OK (0 exceptions)
+A : M=176: FI formulas + A2 pair mass OK (0 exceptions)
+C : M=48: H1 intersection exhaustive over 24x23 minima pairs (s<=M-1): min overlap 1
+C : M=64: H1 intersection exhaustive over 32x31 minima pairs (s<=M-1): min overlap 1
+C : M=80: H1 intersection exhaustive over 40x39 minima pairs (s<=M-1): min overlap 1
+C : M=96: H1 intersection exhaustive over 48x47 minima pairs (s<=M-1): min overlap 1
+C : M=112: H1 intersection exhaustive over 56x55 minima pairs (s<=M-1): min overlap 1
+C : M=128: H1 intersection exhaustive over 64x63 minima pairs (s<=M-1): min overlap 1
+C : M=144: H1 intersection exhaustive over 72x71 minima pairs (s<=M-1): min overlap 1
+C : M=160: H1 intersection exhaustive over 80x79 minima pairs (s<=M-1): min overlap 1
+C : M=176: H1 intersection exhaustive over 88x87 minima pairs (s<=M-1): min overlap 1
+B : M=48: 1851 blk-2 patterns, shape OK; same-parity 863, pure 863 (F0 TOTAL)
+D : M=48: alpha_E = 2  witness offs [-46, -14]
+D : M=48: alpha_O = 2  witness offs [-47, -15]
+D : M=48: bottom O singleton fails at pair offs (-55,-49) pure supp offs [3, 7, 15, 19, 21, 23] => f_O = 9
+D : M=48: bottom E singleton fails at pair offs (-54,-48) pure supp offs [4, 8, 16, 20, 22, 24] => f_E = 9
+D : M=48: K* formula = 26 vs published 26  [MATCH]
+B : M=64: 2982 blk-2 patterns, shape OK; same-parity 1428, pure 1428 (F0 TOTAL)
+D : M=64: alpha_E = 3  witness offs [-48, -32, 0]
+D : M=64: alpha_O = 2  witness offs [-47, -15]
+D : M=64: bottom O singleton fails at pair offs (-79,-65) pure supp offs [3, 5, 17, 23, 25, 27] => f_O = 9
+D : M=64: bottom E singleton SELF-SERVES => f_E = 8
+D : M=64: K* formula = 35 vs published 35  [MATCH]
+B : M=80: 4345 blk-2 patterns, shape OK; same-parity 2095, pure 2095 (F0 TOTAL)
+D : M=80: alpha_E = 2  witness offs [-78, -46]
+D : M=80: alpha_O = 2  witness offs [-79, -47]
+D : M=80: bottom O singleton fails at pair offs (-95,-81) pure supp offs [3, 17, 31, 45, 59, 73] => f_O = 9
+D : M=80: bottom E singleton fails at pair offs (-94,-80) pure supp offs [4, 18, 32, 46, 60, 74] => f_E = 9
+D : M=80: K* formula = 42 vs published 42  [MATCH]
+B : M=96: 5986 blk-2 patterns, shape OK; same-parity 2907, pure 2907 (F0 TOTAL)
+D : M=96: alpha_E = 2  witness offs [-94, -30]
+D : M=96: alpha_O = 2  witness offs [-95, -31]
+D : M=96: bottom O singleton SELF-SERVES => f_O = 8
+D : M=96: bottom E singleton SELF-SERVES => f_E = 8
+D : M=96: K* formula = 51 vs published 51  [MATCH]
+B : M=112: 7836 blk-2 patterns, shape OK; same-parity 3801, pure 3801 (F0 TOTAL)
+D : M=112: alpha_E = 3  witness offs [-110, -78, -14]
+D : M=112: alpha_O = 3  witness offs [-111, -79, -15]
+D : M=112: bottom O singleton SELF-SERVES => f_O = 8
+D : M=112: bottom E singleton SELF-SERVES => f_E = 8
+D : M=112: K* formula = 60 vs published 60  [MATCH]
+B : M=128: 9977 blk-2 patterns, shape OK; same-parity 4866, pure 4866 (F0 TOTAL)
+D : M=128: alpha_E = 3  witness offs [-112, -80, -16]
+D : M=128: alpha_O = 3  witness offs [-111, -79, -15]
+D : M=128: bottom O singleton SELF-SERVES => f_O = 8
+D : M=128: bottom E singleton SELF-SERVES => f_E = 8
+D : M=128: K* formula = 68 vs published 68  [MATCH]
+B : M=144: 12434 blk-2 patterns, shape OK; same-parity 6115, pure 6115 (F0 TOTAL)
+D : M=144: alpha_E = 3  witness offs [-142, -78, -14]
+D : M=144: alpha_O = 3  witness offs [-143, -79, -15]
+D : M=144: bottom O singleton SELF-SERVES => f_O = 8
+D : M=144: bottom E singleton SELF-SERVES => f_E = 8
+D : M=144: *** PREDICTION K*(144) = 76 ***  (alpha_E=3, alpha_O=3, f_O=8, f_E=8)
+B : M=160: 15067 blk-2 patterns, shape OK; same-parity 7408, pure 7408 (F0 TOTAL)
+D : M=160: alpha_E = 2  witness offs [-158, -94]
+D : M=160: alpha_O = 2  witness offs [-159, -95]
+D : M=160: bottom O singleton SELF-SERVES => f_O = 8
+D : M=160: bottom E singleton SELF-SERVES => f_E = 8
+D : M=160: *** PREDICTION K*(160) = 83 ***  (alpha_E=2, alpha_O=2, f_O=8, f_E=8)
+E : M=144: O: no admissible minimum > M-1 (80 candidates scanned)  OK
+E : M=144: E: no admissible minimum > M-1 (80 candidates scanned)  OK
+E : M=160: O: no admissible minimum > M-1 (88 candidates scanned)  OK
+E : M=160: E: no admissible minimum > M-1 (88 candidates scanned)  OK
+a8_dich_indep: ALL PARTS DONE
