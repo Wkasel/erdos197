@@ -413,10 +413,11 @@ middle (a+c)/2 ≤ 2M − 1 < 2M + 2 = min of A's even part; an
 part) and the even chain.  vdn = 0 block-orders the odd chain:
 its Bm1-part (M/4 values) precedes its B0-part (M/2 values).  As
 an AP-structure the odd chain is the interval [1, 3M/4] with
-prefix k = M/4; k ≥ 3 and n − k = M/2 ≥ k + ... n ≥ k + 6 hold for
-M ≥ 12.  Lemma K kills the chain — no budget is consumed (vup
-prices only s2, which the chain never touches).  Team B is the
-mirror image.  ∎
+prefix k = M/4; k ≥ 3 and n = k + M/2 ≥ k + 5 hold for M ≥ 12
+(at M = 8 the chain is (6, 2) — exactly Lemma K's SAT cell,
+consistent with v*(bal,8) = 0).  Lemma K kills the chain — no
+budget is consumed (vup prices only s2, which the chain never
+touches).  Team B is the mirror image.  ∎
 
 This exactly explains the measured any-budget deaths at
 M = 16/24/32 (§ above), and it is the first COMPLETE arm of the
