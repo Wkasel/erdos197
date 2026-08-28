@@ -11,6 +11,13 @@ bookkeeping.  Notes are written incrementally; every section carries
 its verification pointer and a status tag [PROVED] / [MACHINE-CHECKED]
 / [GAP].
 
+Experiment-number disambiguation: this shift's scripts are
+e152_mc_schema / e152b_residual_dags / e152c_affine_families /
+e152d_fanwalk / e153_j_pencil / e154_deep_classify / e154b_deep_splits
+— distinct from the CONCURRENT e152_bridge1 (notes/52),
+e152_llop_probe and e153_dich_* (notes/57–58) series; always cite by
+full filename.
+
 ---
 
 ## A. GAP-FG-schema: the fan-walk calculus and its affine families
