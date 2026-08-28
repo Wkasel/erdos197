@@ -243,12 +243,88 @@ form, not refutation-validity, of each pattern.
 
 ---
 
-## 3. Machine verdicts (filled as runs land)
+## 3. BRIDGE1 machine battery (a8_bridge1_fresh.py — fresh
+## encoding, fresh colorings)  [ALL PASS — data/a8_bridge1_fresh.log]
 
-(placeholder — bridge battery next, sequentially)
+Encoding written independently of e152 (order vars, full
+transitivity, complete AP + unit clauses); polarity validated by
+the AP-only and single-attacker SAT controls at every kill scale.
+
+* **χA (branch (a), greedy-low-puncture, C₀ = 2)** — the adversary
+  the author never tried: dust = the two LOWEST diagonal pairs' lo
+  halves in every block, so Step-1 extraction is pushed onto FRESH
+  p's outside the machine-verified p ≤ 13 layer: survivors
+  p = 21, 33, 53, 97, 181 at m₀ = 5..9.  All blocks 2-clean;
+  extraction counting verified.  Kill at the survivor pair {63,64}
+  (p = 21, also the j = 6 crown): R(63,64; 256, {267,279}) UNSAT
+  (2.9 s; the dust is χA's actual B(8) dust).  Threshold probe:
+  R(63,64; 128, {135,147}) ALSO UNSAT — consistent with the e123
+  first-firing law l1_first = 4p (84 ≤ 128), worth recording:
+  the diagonal rung at p fires from scale ≈ 4p, not 4·(3p).
+* **χA′ (H1 ∀D robustness at fresh p)**: dust placed ON the C3(21)
+  minimal-core values at M = 256 ({b21,b22} = {277,278} and
+  {b21,t21} = {277,491}): both UNSAT — the kill reroutes around
+  the destroyed core, exactly what (H1)'s quantifier over D
+  demands, now exhibited OUTSIDE the verified p-layer.
+* **χB (branch (b), hi-half splitter T′ = {3p+1})** — mirror of the
+  author's lo-half χ2, at fresh scales m = 9..12: SPLIT-QUANT
+  counts (43/85/171/341 ≥ bound), every diagonal pair split, both
+  teams' dust > 8 (B2-VAC shape), and the crown-hi inheritance
+  2^j ∈ T′ for even j ≤ 20.
+* LP(γ) brute to 4096 (author: 512): β family only.  DIAG-DENSE
+  m ≤ 22, CROWN-2ADIC j ≤ 30: exact.
+* 52-G2 exemplar machine-confirmed: χ3's T′ contains 10 3-APs,
+  incl. the landing-pad fan (11, 15, 19) whose completion is a
+  planted lo half — the §4.3 "every completion is donated to T"
+  sentence is false as stated (harmless to the dodge, see §1.5).
+
+Fresh-p significance, stated carefully: these UNSATs are new
+EVIDENCE for (H1)/GAP-N2-DIAG at p = 21 (both dyadic scales, three
+dust placements), not a proof of the parametric schema; the tag
+stands as the note ledgers it.  Nothing in the battery contradicts
+any notes/52 claim except the two §1.5 wording items.
 
 ---
 
 ## 4. Verdicts
 
-(pending §3)
+**notes/52 (BRIDGE1): SOUND** — as tagged (Theorem B1 [PROVED
+modulo (H1) = GAP-N2-DIAG + GAP-N3, both pre-existing]; B1.2
+unconditional; dichotomy §4.1–4.2 proved; ledger impact statement
+accurate).  Every proof re-derived line by line; counting, residue,
+and threshold arithmetic brute-verified; both branches
+machine-exercised on two fresh adversarial colorings incl. H1
+robustness at a fresh p.  The historically fatal well-ordering
+question is resolved HONESTLY: the note proves the planned descent
+cannot exist (fixed point) and replaces it with one-shot counting
+that needs no ordering — the right call, and my reconstruction
+confirms the fixed point.  Two required corrections, both confined
+to the non-load-bearing §4.3: (52-G1) scope "no finite attacker
+cohort fires" to cohorts drawn from 𝒫₀ (literally false otherwise,
+by the note's own χ3 kill); (52-G2) the "every completion donated
+to T" sentence has corner-case counterexamples (fan (11,15,19));
+neither touches Theorem B1.
+
+**notes/57 (DICH): SOUND** — the [PROVED] layer defended
+(Lemma T logic; FI brute-exact at the untouched scales 144 AND 176;
+the H1 two-sided-collision step, the draft's least rigorous
+paragraph, now closed by EXHAUSTIVE intersection sweeps at 9
+scales; H-DICH case tree valid as pure logic over F0–F4 with the
+subtle f-constant reasoning correct; SPLIT extremal bound m+23
+re-derived).  The mechanistic K* law independently reimplemented
+(exact match at all six published scales incl. witnesses), then
+blind-tested at TWO scales no session ever measured:
+**K*(144) = 76 predicted = measured; K*(160) = 83 predicted =
+measured**, the latter a discriminating win where the law
+DISAGREED with the notes/58 flat-offset pre-registration (84).
+The law is now exact at eight scales with four blind hits.  SPLIT
+branch UNSAT confirmed at 144 (both classes).  Status tags honest;
+the five sub-gaps of §7 are real, correctly speciated, and remain
+open exactly as declared.  Caveat carried, not created, by the
+draft: all of this is relative to the e146 catalogue as ground
+truth for "fan pattern" (not re-audited here).
+
+Side finding for the notes/58 front (out of scope, recorded):
+K*(160) = 83 kills the flat-offset K* extrapolation and the §6
+pre-registered K*(160) = 84; the C(160) = 84 half and the
+adjacency claim need re-measurement against this.

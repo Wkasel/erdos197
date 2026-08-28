@@ -1,0 +1,22 @@
+P1: DIAG-DENSE brute m=4..22: count >= (2^m-13)/12, pairs disjoint  OK
+P2: CROWN-2ADIC j<=30: even j => p_j = 5 mod 8; odd j => 7 mod 8, 3 does not divide  OK
+== chiA: greedy-low-puncture adversary, C0 = 2 ==
+P3: chiA blocks 2-clean; extraction survivors [(5, 21), (6, 33), (7, 53), (8, 97), (9, 181)]
+P3: chiA survivor at m0=5 is p=21 -> pair {63,64} (fresh p, = crown j=6)
+P3: chiA window dust: B(7) [135, 147], B(8) [267, 279]
+P3: control AP-only     M=256 (n=254, 5429952 cl): SAT [2.6s]
+P3: control single-63   M=256 (n=254, 5429981 cl): SAT [2.8s]
+P3: KILL R(63,64; 256, [267, 279]): UNSAT [2.9s]  (H1 at FRESH p=21, C=2)
+P3: threshold probe R(63,64; 128, [135, 147]): UNSAT [0.3s]  (ratio 2 — record only)
+== chiA': dust ON the C3(21) minimal core at M=256 ==
+P4: R(63,64; 256, [277, 278]): UNSAT [2.8s]
+P4: R(63,64; 256, [277, 491]): UNSAT [2.9s]
+== chiB: hi-half splitter T' = {3p+1 : p=1 mod 4} ==
+P5: m=9: |B^T'| = 43 >= 41.6; all 43 diagonal pairs split; both dusts > 8  OK
+P5: m=10: |B^T'| = 85 >= 84.2; all 85 diagonal pairs split; both dusts > 8  OK
+P5: m=11: |B^T'| = 171 >= 169.6; all 171 diagonal pairs split; both dusts > 8  OK
+P5: m=12: |B^T'| = 341 >= 340.2; all 341 diagonal pairs split; both dusts > 8  OK
+P5: crown hi halves 2^j (even j <= 20) all in T' (SPLIT-QUANT crown inheritance, hi side)  OK
+P6: LP(gamma) brute to 4096: APs in crown-set u {1} = beta family only (9)  OK
+P7: 52-G2 exemplar: fan (11,15,19) lies ENTIRELY in chi3's T' (completion 19 is a planted lo half, NOT donated to T); T' contains 10 3-APs: [(7, 11, 15), (7, 13, 19), (7, 19, 31), (11, 13, 15), (11, 15, 19), (11, 21, 31), (13, 15, 17), (13, 17, 21), (15, 17, 19), (17, 19, 21)]
+a8_bridge1_fresh: DONE (kill at 256 = UNSAT)
