@@ -95,3 +95,73 @@ Baselines measured this session:
   T-FORCE-4: every valid balanced pair has, at anchor 16 vs 8, some
   team with Inv(16) > 6 or Inv(8) > 0.
 - C1 attribution cell (vup=6, vdn=none) in flight.
+
+## 4. What the pump can and cannot give at ω (worked out before C1
+## landed; C1 only picks the channel)
+
+Write I(N) = max_T Inv_T(N), f(N) = v*(N) (the 3-block floor).  Each
+UNSAT cell (v, w) at scale M is, by T-FORCE-4, a forbidden rectangle
+for the realized payment pair: ¬(I(M) ≤ v ∧ I(M/2) ≤ w).  Three
+structural facts follow, one negative and two positive.
+
+**NG4 [PROVED — inspection].  No family of forbidden RECTANGLES
+(finite budgets at both anchors) can prove L-AFFORD by itself.**
+Rectangles are bounded down-closed regions; the payment sequence
+x_j = I(N₁·2^j) dodges every rectangle family by paying above it
+(x_j = the rectangle's vup + 1 at every j — "overpay everywhere").
+A contradiction at ω needs an UPPER bound on payments somewhere, and
+budget cells only ever produce lower bounds.  The instrument's
+ω-value is therefore demand REFINEMENT: joint floors strictly above
+the per-anchor floors.  (This is the same lesson as NG1–NG3 one
+level up: the ledger's closing argument must be denominated in the
+joint currency — colored values / donations — not in any count of
+inversions.  The C0 witness sharpens this: it pays n_up = 528 of a
+possible ~640 pairs — a raw-count supply ceiling at window level is
+near-VACUOUS; only priced-below inversions are expensive.  The
+L-COMP/GAP-COMP raw-count route dies here as a window-level
+statement: the composition trap must bind the priced structure, not
+the count.)
+
+**Floor bootstrapping (the C1 channel).**  A cell with vdn = none
+(equivalently w ≥ the absolute pair cap ~10(M/2)² — the budget is
+vacuous) is NOT a rectangle: UNSAT there forces I(M) > vup
+unconditionally (within the 4-block bounds), i.e. it RAISES the
+per-anchor floor beyond the 3-block v*.  Chains do the same one
+step removed: if the forced lower payment w of a rectangle exceeds
+the absolute cap at the half anchor, the rectangle degenerates to an
+unconditional floor.  Deeper gadgets (5-block, 6-block …) can
+bootstrap floors further.  Floors never reach the in-window cap (the
+fully-unpriced instance is the notes/36 SAT theory), so bootstrapping
+alone cannot close L-AFFORD either (NG4 again) — but a GROWING
+sequence of true floors f₄(N) ≫ f₃(N) squeezes the eventual
+donation-ledger argument from below and is measurable now.
+
+**The pure-pump channel (the C3 − C2 difference).**  C2 SAT at
+(none, 0) + C3 UNSAT at (6, 0) means: it is exactly the CHEAPNESS of
+the upper payment that forces the lower payment.  Mechanism visible
+in the seam anatomy: the shared seam s1 is doubly-priced currency —
+every 3-block near-critical escape measured spends heavily on s1
+(the v=160 witness pays 85/105 ENTIRELY on s1), and vdn = 0 outlaws
+s1 spending, while cheap vup outlaws the s2 dump (the C2 escape used
+n_s2 ≈ 400).  At ω: a valid pair CLEAN at anchor N/2 must overpay at
+anchor N; a pair paying its bare floor at N must pay > 0 at N/2 even
+where the standalone price is 0.  Payment obligations propagate DOWN
+the anchor chain and cannot be everywhere-minimal.  Formally, for
+every consecutive anchor pair, (I(N), I(N/2)) must clear the
+measured staircase — the joint demand curve, strictly above the
+componentwise floors (v*(16), v*(8)) = (5..6, 0) at the measured
+point, since (6, 0) is forbidden.
+
+**Consequence for the program.**  GAP-JOINT's machine question is
+answered YES (the downward coupling IS real and priced), but the
+correct reading is: the 4-block gadget is a DEMAND instrument, and
+L-AFFORD cannot be closed by demand instruments (NG4).  What the
+verdict buys: (i) the joint floors — every valid pair overpays
+somewhere in every consecutive anchor pair — the quantitative
+version of "the same value cannot serve two windows" (L-CASCADE) at
+the level of budgets; (ii) the schema target is now a 2-scale UNSAT
+family (the C3 cell at general M) of exactly the same species as the
+N6a coupled core, one block deeper; (iii) the honest remaining
+content of L-AFFORD is isolated: an upper bound on how often a
+Θ(M)-dense team can overpay, which must be charged in donations
+(single-use colored values), not in inversion counts.
