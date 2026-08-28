@@ -543,3 +543,305 @@ The general interpolation between the regimes is the open part
 (§6).
 
 ---
+
+## 5. Where (2,2,2) enters: the frontier map and the reduction cores
+
+### 5.1 Lemma W (quantitative straddle pressure)  [PROVED]
+
+For a straddle-free team T and u ∈ U, let
+Mid(u, Z) := {(u+z)/2 : z ∈ Z, z ≡ u (mod 2)} ∩ P1.
+
+(a) Mid(u, Z) ∩ Y = ∅ for every u ∈ U; hence Mid(U, Z) ⊆ Y′ ∩ P1
+    and the two teams' forbidden-midpoint sets are DISJOINT subsets
+    of the band.
+(b) HOT ZONE.  For u ∈ H0 := [2M−31, 2M−15] (17 values), the window
+    {z : (u+z)/2 ∈ P1} ⊇ P2 entirely; hence u ∈ U ∩ H0 forces
+        |Z ∩ (u + 2ℤ)| = |Mid(u, Z)| ≤ |P1| − |Y| = M + 16 − |Y|.
+(c) If T owns hot values of both parities, |Z| ≤ 2(M + 16 − |Y|):
+    a team cannot be band-heavy and P2-heavy while touching the hot
+    zone in both parities — the trade-off curve behind every escape.
+(d) The parity hatch: (b) caps only SAME-PARITY material; a team
+    with Z entirely opposite in parity to U feels no pressure.  This
+    is exactly the machine's lattice dodge, and it is why the
+    lattice regime (§5.4) needs its own kill.
+
+*Proof.*  (a) is the definition of straddle-freeness ((u, mid, z)
+would be a mono (0,1,2) triple); (b): (u+z)/2 ∈ P1 ⟺ z ∈
+[6M−30−u, 8M−u] ⊇ [4M+1, 6M+15] ⟺ u ∈ [2M−31, 2M−15]; (c) sum (b)
+over one u of each parity.  ∎
+
+### 5.2 The machine frontier: which bounds are load-bearing
+[MACHINE-CHECKED at M = 48]
+
+All on CORE′(48), decomposed encoding (e136), bounds = per-team
+per-block lower bounds:
+
+    (1,1,1) SAT     (2,1,1) UNSAT    (2,2,1) UNSAT   (0,2,0) SAT
+    (1,1,2) SAT     (1,2,1) UNSAT    (2,1,2) UNSAT   (0,2,1) SAT
+                    (1,2,0) UNSAT    (1,2,2) UNSAT   (2,0,0) SAT
+                    (2,1,0) UNSAT                    (0,0,2) SAT
+                    (2,0,1) SAT                      (2,2,2) UNSAT
+
+((2,1,0) UNSAT and (2,0,1) SAT were PREDICTED by the law below
+before the run — the law's first genuine test.  e140c.)
+
+**Frontier law (machine, M = 48).**  An escape exists iff
+
+    min|U| = 0   ∨   min|Y| = 0   ∨   (min|U| = 1 ∧ min|Y| = 1),
+
+where min is over the two teams.  Equivalently: the coloring is dead
+as soon as both teams touch P0, both touch the band, and at least
+one of the two seams is doubly supplied (min|U| ≥ 2 or min|Y| ≥ 2).
+The P2 bound is IRRELEVANT — every UNSAT row above stays UNSAT with
+third bound 0, and every SAT row has both teams with ≥ 1 P2 value
+anyway.  This corrects the working hypothesis of notes/51 §"bounds":
+the (2,2,2) minority supply enters ONLY through B0 and the band.
+
+Two clean sufficient targets for Theorem N6a follow (each implies
+the (2,2,2) lock by bound monotonicity):
+
+    T1:  min|U| ≥ 2 ∧ min|Y| ≥ 1  ⟹  infeasible      [= (2,1,0)]
+    T2:  min|U| ≥ 1 ∧ min|Y| ≥ 2  ⟹  infeasible      [= (1,2,0)]
+
+**Anatomy of the surviving escapes.**  Every SAT witness realizes
+one of two dodges:
+  E∅  a P0-empty or band-empty team (the (0,·,·)/(·,0,·) rows);
+  E1  the singleton dodge: one team's P0 part is the single value
+      {2M}, the other team's band part is the single value {4M}
+      (the (1,1,·) rows) — team A = {2M} ∪ (band ∖ {4M}) ∪
+      (F ∪ odd-lattice), team B = (P0 ∖ {2M}) ∪ {4M} ∪ (rest of
+      P2).  B escapes straddles by ceding ALL of F (= 2·4M −
+      [2M−15, 2M−1], A7b) to A; A escapes by parity (its only P0
+      value 2M is even, its sub-6M P2 values all odd — Lemma W(d)).
+
+### 5.3 The double-fan core: what the second band value buys
+[MACHINE-CHECKED; uniform proof = GAP-FG]
+
+For x ∈ P1 the *fan* of x is the unit family of Th2:
+{z ≺ y : y, z = 2y − x ∈ P2-core} (Θ(M) units, A6).  Machine facts
+(e140/e140b, M = 48; FG := AP-freeness on [4M+1, 6M+15] + fans):
+
+* ONE fan is satisfiable (X = {4M}: SAT — realized by the E1
+  escape, where team B holds one band value and 70 P2 values).
+* TWO fans are UNSAT for EVERY tested placement — 13 pairs at
+  M = 48 including adjacent, same-parity, band-bottom (129, 130),
+  and spread (129, 160), (140, 170) pairs; scale-stable at M = 64
+  (top pair AND band-bottom pair UNSAT, single fan still SAT —
+  e140c).
+* Robustness: the adversarial-subset version (fan units and APs
+  guarded by membership; |S| ≥ k) for X = (4M, 4M−1): UNSAT at
+  k = 97, SAT at k = 83, so k_crit ∈ [83, 96] of 111 values — a
+  double fan survives any ≤ 14 deletions and some escape exists
+  with ≤ 28; the machine's escape punctures are mod-2/mod-4 lattice
+  patterns in P2's lower middle (bisection stopped inside the
+  bracket; exact k_crit not load-bearing).
+
+**Lemma FG (target; GAP-N6a-FG).**  For all M ≥ 48 and any two
+distinct x₁, x₂ ∈ P1: AP-freeness on P2-core plus the two full fans
+is inconsistent.  This is a single-order, unguarded, two-parameter
+schema — the same species as the C3 core, and the natural next
+machine-to-hand extraction (MUS + e109-style trace at three
+scales).
+
+Role in the assembly: under T2's hypothesis both teams hold band
+pairs, so both Th2's carry double fans restricted to their own P2
+material; Lemma FG kills any team whose P2 share is fan-complete.
+The (0,2,0) SAT witness shows the fans ALONE do not close T2 (a
+P0-empty team can park 62 band values and escape on 40 punctured P2
+values): the B0-side straddle pressure (Lemma W) is co-load-bearing
+— matching the frontier law exactly ((0,2,0) SAT vs (1,2,0) UNSAT:
+ONE P0 value per team flips it).
+
+### 5.4 The lattice regime: halving reduction  [PROVED] and the
+halved cores  [MACHINE-CHECKED UNSAT]
+
+**Lemma PAR (parity reduction).**  Let M be even, m = M/2.
+Consider the complementary parity colorings: U = odds of P0,
+Z = evens of P2 (team T), U′/Z′ their complements, band split by
+parity in either alignment.
+
+(i)  Alignment Y = evens: T = (odd, even, even).  Then T's α, crown
+     and A5 families are arithmetically EMPTY (their completions
+     have the wrong parity), T's β and A6 units ALL fire, and T's
+     feasibility is equivalent (via Lemma H of notes/33 A.1, the
+     halving bijections) to the consistency of
+
+         H(m):  a single AP-free order of W1 ∪ W2,
+                W1 = [3m−7, 4m], W2 = [4m+1, 6m+7],
+                with all of W1 before all of W2,
+
+     (the even halved image; T′ = (even, odd, odd) gives the odd
+     image with W2 = [4m+1, 6m+8]).
+(ii) Alignment Y = odds: T = (odd, odd, even).  Then β/A6/A5 are
+     empty, α and crown ALL fire, Th2 is unconstrained, and T is
+     equivalent to
+
+         H1(m): a single AP-free order of W0 ∪ W1,
+                W0 = [m+1, 2m], W1 = [3m−7, 4m],
+                with all of W0 before all of W1
+
+     (and T′ = (even, even, odd) to the even image of the same).
+
+*Proof.*  Parity bookkeeping on each family of §2 (a completion
+2b − a has the parity of a; a straddle needs u ≡ z (mod 2), which
+the parity coloring makes cross-team, so NO straddle constraints
+exist for either team); halving (h_E(v) = v/2, h_O(v) = (v+1)/2)
+preserves and reflects APs (notes/33 Lemma H) and maps the
+surviving in-team AP system onto exactly the stated two-block
+systems; Th0 (alignment i) resp. Th2 (alignment ii) is an
+unconstrained AP-free order of an interval image, which exists by
+the classical odd-even recursive construction.  ∎
+
+**Machine verdicts.**  H_even(m) and H_odd(m) UNSAT at
+m = 16, 24, 32, 40 (0.0–0.2 s each); H1(m) UNSAT at the same four
+scales (predicted by the reduction before the run).  So the
+fully-aligned lattice colorings are dead at all tested scales, as
+the e135 lock requires; the UNIFORM kill of H(m)/H1(m) is
+GAP-N6a-H — a single-team, unguarded, two-block core of exactly the
+notes/42–43 "two-scale gadget" species, and the natural second
+machine-to-hand extraction.  Note the self-similarity: H(m) is
+CORE′(m) minus its P0 block and flood band — the halving recursion
+the tower program (notes/31) predicted.
+
+Mixed band splits inside the parity family fire STRICT SUPERSETS of
+one alignment's unit families plus cross-parity in-band APs; they
+do not reduce cleanly, but every fired system contains one of the
+aligned systems' images.  [Formalizing "mixed ⟹ at least as dead"
+is part of GAP-STRUCT below; it is NOT automatic, because the
+mixed team's Y is smaller than the aligned team's.]
+
+---
+
+## 6. Assembly attempt and the obstruction map  [PARTIAL]
+
+### 6.1 The skeleton for target T2
+
+Fix a coloring with min|U| ≥ 1, min|Y| ≥ 2 (the T2 hypothesis;
+implied by the (2,2,2) bounds).  Both teams are straddle-free
+(Lemma U) and each team carries: a restricted double fan on its own
+Z (§5.3), Lemma-W windows from each of its P0 values, the Lemma-J /
+E2 / C locks at the band top, and (wherever it owns the mono
+material) the §4 floods.  Regime split:
+
+* **R1 (fan-complete).**  Some team's Z is rich enough that its two
+  fans + AP-freeness restricted to Z are already inconsistent —
+  dead modulo GAP-FG (the uniform double-fan lemma).  The machine
+  robustness data says R1 covers every Z missing at most d* values
+  (§5.3), for every placement of the band pair.
+* **R2 (lattice-aligned).**  The complementary parity family — dead
+  modulo GAP-H (uniform H(m)/H1(m)), by Lemma PAR.  [The mod-4 and
+  higher lattice alignments halve once more into quarter-scale
+  images; same species.]
+* **R3 (the interpolation).**  Z and Z′ both fan-escaping (each
+  must be lattice-patterned in its own fan geometry — the machine's
+  escape punctures are mod-2/mod-4 patterns), yet jointly they
+  PARTITION P2-core, and Lemma W forces their band-midpoint shadows
+  into disjoint parts of the band.  No proof; see the obstruction
+  statement below.
+
+### 6.2 The obstruction, precisely stated
+
+What is missing is a bridge from R3 to R2: a demonstration that two
+COMPLEMENTARY fan-escaping sets under straddle pressure must
+converge to a lattice alignment (which R2 kills).  Concretely, the
+adversary in R3 plays: puncture team T's fan lattice using exactly
+the values donated to T′, and vice versa; each puncture obeys the
+OTHER team's Lemma-W windows and Lemma-J locks.  The C3 experience
+suggests the right tool is a POTENTIAL (a ledger quantity that
+every pass-the-parcel step strictly decreases, bottoming out at the
+aligned colorings); the notes/54 exposure-cascade candidate is the
+natural template, with the cascade now running over fan punctures
+instead of seam inversions.  We did NOT find the potential in this
+session.  This — not any single order-theoretic step — is the
+honest crux left in GAP-N6a:
+
+    GAP-STRUCT: every T2-coloring is in R1 ∪ R2, OR admits a
+    strictly-decreasing potential step toward R2.
+
+Everything else in the chain is either proved here or is a bounded
+finite/schematic extraction (GAP-FG, GAP-H, GAP-J-pencil below).
+
+### 6.3 Concrete next machine-to-hand steps
+
+1. **GAP-FG**: e141 extracts the minimal value-support of the
+   double-fan refutation at three scales; fit the uniform schema
+   (expected shape: fans force F early — every fan's unit family
+   hits F, A6 — against the 6M mirror window and the S3/Lemma-J
+   geometry at the bottom; a two-parameter analogue of the C3
+   layer-1 3-cycles).  NOTE the species identification: a fan is
+   exactly an N2 attack rung (attacker below a window, full unit
+   family), so Lemma FG = "the generic PAIR rung fires on the
+   window [4M+1, 6M+15]" — notes/48 Result 0's prediction verbatim
+   ("Case-2 crux = the Case-1 crux wrapped in one sumset layer").
+   The proof pattern already exists in-repo: the K4 dyadic-lane
+   schema (notes/49 §4.2–4.3, e124i: Lemma D on two ladders per
+   half + zigzag closure, verified to M = 2048) killed a FOUR-unit
+   subset of a pair rung; FG has the full Θ(M)-unit rung, so
+   strictly more material.  Risk accordingly low.
+2. **GAP-H**: hand-prove H(m)/H1(m) with the ported toolkit — a
+   single-team two-block core, so Z′/D′/P′ apply UNGUARDED; this is
+   the notes/42 chain-rung geometry in its cleanest form.
+3. Frontier law at M = 64/80 (cheap decomposed runs) to certify T2
+   as scale-stable before investing in GAP-STRUCT.
+4. GAP-J-pencil: 36 sixteen-point derivations (mechanical).
+
+---
+
+## 7. Status summary, residue ledger, gap count
+
+### Proved by hand in this note (uniform in M, thresholds noted)
+
+| item | statement | where |
+|------|-----------|-------|
+| Lemma U | decomposition into 6 block theories + straddle exclusion | §1 |
+| A1–A9 | complete attack-geometry catalogue; finite families 64/256/56 | §2 |
+| Seesaw, Z′, D′ | order toolkit ported with mono-run caveat | §3.1 |
+| Lemma E2, C | seam-2 donation/clash transfer lock | §3.2 |
+| §3.3 | unit-seeded phases; parents = topmost ladder pairs | §3.3 |
+| Lemma P′ | interval flood; 6 instances incl. clipped 6M flood | §4 |
+| F ↔ S3 | mirror coupling through P2-core's centre 5M+8 | §4.3 |
+| Lemma W | quantitative straddle pressure; hot zone | §5.1 |
+| Lemma PAR | parity family ⟹ halved cores H(m)/H1(m) | §5.4 |
+
+Residue ledger: everything above needs at most M ≡ 0 (mod 4) (the
+G4 centres at 5M+7/5M+9) and M ≥ 48; no mod-8/mod-16 obstruction
+appeared anywhere.  The M ≡ 0 (mod 16) restriction in the Theorem
+N6a statement is inherited from the tower program's scales, not
+from any lemma here; the machine lock includes M = 48 ≡ 0 (mod
+16)… all five locked scales are ≡ 0 (mod 16), and nothing in this
+note distinguishes them from other M ≡ 0 (mod 4).
+
+### Machine-checked (finite, M-independent)
+
+* Lemma J: the 30-pair + 6-triple conflict system on S3-memberships
+  under a mono top run; max admissible 9/15 (e138).
+
+### Machine-checked (per-scale)
+
+* The lock itself: (2,2,2)/(3,3,3) UNSAT at 32/48/64/80/96 (e134/5).
+* Encoding equivalence for Lemma U (e136, M=48 both SAT and UNSAT
+  sides).  Catalogue exactness (e137, three scales + sweep).
+* Flood mechanics, 6 instances × 4 branches × 3 scales (e139).
+* The §5.2 frontier map and law (e140/e140b/e140c, M=48).
+* H(m)/H1(m) UNSAT at m = 16..40; FG kills and robustness (e140x).
+
+### Open gaps (the honest count: 5)
+
+| gap | statement | species | risk |
+|-----|-----------|---------|------|
+| GAP-FG | uniform double-fan lemma (all M, all pairs) | single-order schema, C3-species | low: 13/13 placements + 3 scales machine-dead; MUS in hand |
+| GAP-H | uniform H(m)/H1(m) kill | single-team two-block core | low-medium: tiny UNSATs, toolkit applies unguarded |
+| GAP-J-pencil | 36 finite 16-point derivations | mechanical | negligible |
+| GAP-STRUCT | R3 → R1∪R2 bridge (structure theorem / potential) | genuinely open | HIGH — the crux |
+| GAP-ASM | assemble T1-or-T2 from the above into Theorem N6a | bookkeeping over the case split | low once STRUCT falls |
+
+Bottom line: the C3-style toolkit ports cleanly and every
+mechanism the schema was fitted around (crown, band ladders, seam-2
+transfer, 6M flood + width-15 rung, F↔S3 mirror) is now proved or
+machine-finite.  The (2,2,2) bounds enter ONLY as: one P0 value per
+team (straddle pressure supply, Lemma W) + two band values per team
+(double-fan supply) — the P2 bound is dead weight.  The remaining
+mathematical content of GAP-N6a is concentrated in GAP-STRUCT: why
+complementary fan-escapes cannot coexist without collapsing into
+the (dead) lattice alignment.
+

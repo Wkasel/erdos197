@@ -164,6 +164,8 @@ def solve_decomposed(M, bounds, budget=None):
     cards = []
     tid = top
     for bi, B in enumerate(blocks):
+        if bounds[bi] <= 0:
+            continue
         for sign in (1, -1):
             enc = CardEnc.atleast(lits=[sign * ai[v] for v in B],
                                   bound=bounds[bi], top_id=tid,

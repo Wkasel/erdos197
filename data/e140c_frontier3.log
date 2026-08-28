@@ -1,0 +1,13 @@
+== corners ==
+  bounds (2, 1, 0): UNSAT [4.2s]
+  bounds (2, 0, 1): SAT [0.6s] A[31,0,84] B[17,64,27]
+== H1(m): seam-1 halved core ==
+  H1(16) |W0|=16 |W1|=24: UNSAT [0.0s]
+  H1(24) |W0|=24 |W1|=32: UNSAT [0.0s]
+  H1(32) |W0|=32 |W1|=40: UNSAT [0.0s]
+  H1(40) |W0|=40 |W1|=48: UNSAT [0.1s]
+== FG at M=64 ==
+  FG(64; X=(256, 255)) units=142: UNSAT [0.2s]
+  FG(64; X=(177, 178)) units=64: UNSAT [0.3s]
+  FG(64; X=(256,)) units=71: SAT [0.3s]
+e140c: DONE

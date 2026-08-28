@@ -1,0 +1,22 @@
+== part H: halved parity core H(m) ==
+  H_even(16) |W1|=24 |W2|=39: UNSAT [0.0s]
+  H_odd(16) |W1|=24 |W2|=40: UNSAT [0.0s]
+  H_even(24) |W1|=32 |W2|=55: UNSAT [0.0s]
+  H_odd(24) |W1|=32 |W2|=56: UNSAT [0.0s]
+  H_even(32) |W1|=40 |W2|=71: UNSAT [0.1s]
+  H_odd(32) |W1|=40 |W2|=72: UNSAT [0.1s]
+  H_even(40) |W1|=48 |W2|=87: UNSAT [0.2s]
+  H_odd(40) |W1|=48 |W2|=88: UNSAT [0.2s]
+== part B: bound-profile frontier on CORE'(48) ==
+  bounds (2, 1, 1): UNSAT [3.5s]
+  bounds (1, 2, 1): UNSAT [3.6s]
+  bounds (1, 1, 2): SAT [0.7s]  profiles A[1, 63, 41] B[47, 1, 70]  minority A: [96, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187]
+  bounds (2, 2, 1): UNSAT [3.3s]
+  bounds (2, 1, 2): UNSAT [3.6s]
+  bounds (1, 2, 2): UNSAT [3.7s]
+== part F: double-fan gadget on P2-core, M=48 ==
+  FG(48; X=(192,)) units=55: SAT [0.2s]
+  FG(48; X=(192, 191)) units=110: UNSAT [0.1s]
+  FG(48; X=(192, 190)) units=109: UNSAT [0.1s]
+  FG(48; X=(191, 189)) units=109: UNSAT [0.1s]
+e140: DONE

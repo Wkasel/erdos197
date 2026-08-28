@@ -1,0 +1,23 @@
+== part B2: single-block-pair hypotheses, M=48 ==
+  bounds (0, 2, 0): SAT [1.7s]  profiles A[48, 2, 71] B[0, 62, 40]
+  bounds (1, 2, 0): UNSAT [14.1s]
+  bounds (0, 2, 1): SAT [1.9s]  profiles A[48, 2, 53] B[0, 62, 58]
+  bounds (2, 0, 0): SAT [3.9s]  profiles A[34, 0, 81] B[14, 64, 30]
+  bounds (0, 0, 2): SAT [1.5s]  profiles A[48, 0, 96] B[0, 64, 15]
+== part F2: fan placement scan, M=48 ==
+  FG(48; X=(129, 130)) units=48: UNSAT [0.4s]
+  FG(48; X=(129, 131)) units=49: UNSAT [0.4s]
+  FG(48; X=(129, 192)) units=79: UNSAT [0.3s]
+  FG(48; X=(150, 151)) units=69: UNSAT [0.4s]
+  FG(48; X=(168, 169)) units=87: UNSAT [0.3s]
+  FG(48; X=(168, 170)) units=87: UNSAT [0.3s]
+  FG(48; X=(168, 172)) units=88: UNSAT [0.4s]
+  FG(48; X=(180, 181)) units=99: UNSAT [0.4s]
+  FG(48; X=(129, 160)) units=63: UNSAT [0.3s]
+  FG(48; X=(140, 170)) units=73: UNSAT [0.3s]
+== part F3: double-fan subset robustness, M=48 ==
+  X=(192, 191) k=111: UNSAT [0.6s]
+  X=(192, 191) k=1: SAT [0.6s]
+  X=(192, 191) k=56: SAT [0.8s] dropped(33)=[193, 197, 201, 202, 204, 205, 207, 209, 220, 221, 222, 223, 224, 225, 226, 228, 229, 230, 231, 232]
+  X=(192, 191) k=83: SAT [27.9s] dropped(27)=[194, 196, 200, 202, 204, 205, 208, 210, 212, 216, 218, 220, 221, 222, 224, 226, 228, 230, 232, 234]
+  X=(192, 191) k=97: UNSAT [30.0s]
