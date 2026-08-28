@@ -448,4 +448,97 @@ Status of §5: reduction and the extremal-staircase kill [PROVED];
 the middle-staircase fan finish [MACHINE-CHECKED per scale;
 GAP-DICH-SPLIT, low risk — same service species as F3/F4].
 
+Machine record: e154 UNSAT at all SIX scales, both classes, ≤ 0.5 s
+each — split colorings die far below threshold; the DICH frontier is
+entirely inside the hatch regime, as the §0.3 witnesses already
+showed.
+
 ---
+
+## 6. DICH assembled, and sharpness
+
+**Theorem DICH(M), structured form (M ∈ {48, 64, 80, 96, 112,
+128}).**  Every straddle-free, (2,2,2)-bounded, fan-clean coloring
+with Φ ≥ 1 has min|Y| ≤ K*(M) − 1, K*(M) = m + 9 +
+max(α_E − f_O, α_O − f_E); equivalently min|Y| ≥ K*(M) ⟹ Φ = 0.
+
+*Proof.*  Lemma T splits into SPLIT and HATCH.  SPLIT: §5 (Lemma SP
+extremal cases proved; residual staircase machine-closed, e154).
+HATCH: Theorem H-DICH (§4), proved from the §2 calculus given the
+F0–F4 catalogue facts.  ∎
+
+**Sharpness.**  e149's frontier witnesses at K*−1 (§0.3) at
+48/64/80/96; notes/58's runs at 112/128 (K = 59/67 SAT); the D6s
+abstract-branch SAT at bottom minima reproduces the threshold
+per-branch.  So K* is exact at all six scales, and the theory
+explains the witness anatomy value-by-value (e153 part F asserts
+it).
+
+**Where this leaves the notes/56 reading.**  (i) The mod-32
+periodic law for K* is DEAD (already falsified at 112 by notes/58;
+here replaced by the mechanistic formula, blind-validated at
+112/128).  (ii) The task-prompt's "the proof lives in one parity
+class at half scale" is confirmed and sharpened: every load-bearing
+object (defector classes, forced intervals, pure supports, alive
+cliques) is class-local; the only cross-class interaction is the
+band-partition counting (both parities share the band) and the
+bottom-anchor collision.  (iii) The e151 MUS anatomy is fully
+explained: the 852 straddles are the FI intervals of bottom-cluster
+defectors (E1 midpoints, low attackers, S3 completions); the 305
+same-parity fans are the α-cap certificates plus the self-service
+certificates.
+
+---
+
+## 7. Status, the GAP-DICH ledger after this note
+
+### Proved uniformly in M (any M ≡ 0 mod 16, M ≥ 48)
+
+| item | statement | where |
+|------|-----------|-------|
+| Lemma T | trichotomy SPLIT / HATCH(+defector) under Φ ≥ 1 | §1 |
+| Lemma FI | forced interval: formulas, anchor iff s ≤ M−31, ℓ ≥ 16, n_c ≥ 8, n_c = 8 only at bottom/top singletons, f ≥ 9 for non-singleton D | §2.1 |
+| Lemma ANCHOR/COLL | low defector pins 3M−15; two-sided low collision | §2.2 |
+| Lemma MID/MONO | same-midpoint exclusion; split-class monotonicity | §2.3 |
+| H-DICH case tree | H0/H1/H2 reduction of the hatch case to F0–F4 | §4 |
+| Lemma SP (partial) | split ⟹ index-sumset staircase; extremal staircase dies (mass ≥ m+22) | §5 |
+
+### The catalogue layer (machine-checked at 48/64/80/96 + 112/128)
+
+F0 purity (total), F1 α-values, F2 bottom-singleton law, F3
+admissible-minimum windows (all ≤ M−1), F4 one-sided branch closure
+(sharp).  Verifier: e153_dich_lemmas.py (NB: distinct from the
+concurrent notes/58 file e153_dich_probes.py — cite by filename).
+
+### GAP-DICH, rescoped (replaces the notes/56 §5.2 row)
+
+| sub-gap | statement to uniformize | species | risk |
+|---------|------------------------|---------|------|
+| GAP-DICH-F0 | same-parity closure supports are class-pure | parity bookkeeping on R1–R4 closure (Lemma-PAR species) | low |
+| GAP-DICH-ALPHA | α_c(M) = the resonance-lattice clique number; observed 2 → 3, mod-32-spaced witnesses | resonance law (= notes/58 e155 lattice law; shared with GAP-FG-schema) | medium |
+| GAP-DICH-F2 | bottom-singleton self-service iff deep gap-2/4/6 supports contain the bottom offset; observed monotone-in-M onset | deep-pair support schema (GAP-FG-deep species) | medium |
+| GAP-DICH-CASC | F3 windows + F4 cascade closure (incl. the 48-deep minima) | service-reach counting; the D5/D6 instances are the exact finite forms | medium-low |
+| GAP-DICH-SPLIT | middle-staircase fan finish | same service species; e154 record | low |
+
+Honest accounting: DICH's uniformization no longer has a
+"structure" gap — every sub-gap is a fan-catalogue schema question,
+i.e. lands in the SAME species pool as GAP-FG-schema/-deep
+(notes/59).  The threshold law itself is now a theorem-shaped
+formula with six-scale exactness including two blind predictions —
+the strongest evidence yet that the catalogue quantities α, f are
+the RIGHT uniformization targets, and the direct bridge from this
+note to GAP-ASM′: the assembly overlap question is exactly "does
+K*(M) = m + 9 + max(α−f) stay ≤ cap_LLOP(M) + 1", with α, f now
+computable per scale by linear scans instead of full e149 sweeps.
+
+### Session artifacts
+
+* experiments/e152_dich_probe.py — pinned-configuration prober
+  (hatch pin, defector pin, core extraction);
+  data/e152_dich_probe.log.
+* experiments/e153_dich_lemmas.py — the F0–F4 verifier + K*
+  formula; data/e153_dich_lemmas.log,
+  data/e153_dich_lemmas_112_128.log.
+* experiments/e154_dich_split.py — SPLIT branch closure at six
+  scales; data/e154_dich_split.log.
+
