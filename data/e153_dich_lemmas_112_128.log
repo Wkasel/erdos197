@@ -1,0 +1,61 @@
+===== M=112 (m=56) =====
+A : Lemma FI formulas OK (anchor iff s<=M-31; n_c=8 only at bottom singletons)
+A2: f_c(D) >= 9 for every 2-element D, both classes
+B : 7836 fan patterns, all with exactly 2 band values; same-parity pairs: 3801, of which pure-support: 3801
+C : alpha_E = 3  witness offs [-110, -78, -14]
+C : alpha_O = 3  witness offs [-111, -79, -15]
+D : bottom singleton {+1} (O) SELF-SERVES  => f_O = 8
+D2: self-serving O-singletons (offsets): [1]
+D : bottom singleton {+2} (E) SELF-SERVES  => f_E = 8
+D2: self-serving E-singletons (offsets): [2]
+D4: O: mid/tail min-offsets NOT eliminated: [83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125, 127, 129, 131, 133, 135, 137, 139, 141, 143, 145]
+D4: E: mid/tail min-offsets NOT eliminated: [82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146]
+D5: O: admissible mid/tail minima SURVIVE: [83, 85, 87, 89, 91]
+D5: E: admissible mid/tail minima SURVIVE: [82, 84, 86, 88, 90, 92]
+D6: O: one-sided branch UNSAT at EVERY minimum s0  [K=60]
+D6s: O: at K*-1 the branch is SAT at bottom minima [1]
+D6: E: one-sided branch UNSAT at EVERY minimum s0  [K=60]
+D6s: E: at K*-1 the branch is SAT at bottom minima [2]
+C2: alpha_full_E = 8  offs [-126, -124, -122, -120, -118, -116, -114, -112]
+C2: alpha_full_O = 7  offs [-127, -125, -123, -121, -119, -117, -113]
+C3: O s0=83: n_c=28 abar=2 => |Y| cap 38
+C3: O s0=85: n_c=28 abar=2 => |Y| cap 38
+C3: O s0=87: n_c=28 abar=2 => |Y| cap 38
+C3: O s0=89: n_c=28 abar=2 => |Y| cap 38
+C3: O s0=91: n_c=28 abar=2 => |Y| cap 38
+C3: E s0=82: n_c=28 abar=2 => |Y| cap 38
+C3: E s0=84: n_c=28 abar=2 => |Y| cap 38
+C3: E s0=86: n_c=28 abar=2 => |Y| cap 38
+C3: E s0=88: n_c=28 abar=2 => |Y| cap 38
+C3: E s0=90: n_c=28 abar=3 => |Y| cap 39
+C3: E s0=92: n_c=28 abar=3 => |Y| cap 39
+E : PREDICTION K*(112) = 60  (alpha_E=3, alpha_O=3, f_O=8, f_E=8; no e149 data)
+===== M=128 (m=64) =====
+A : Lemma FI formulas OK (anchor iff s<=M-31; n_c=8 only at bottom singletons)
+A2: f_c(D) >= 9 for every 2-element D, both classes
+B : 9977 fan patterns, all with exactly 2 band values; same-parity pairs: 4866, of which pure-support: 4866
+C : alpha_E = 3  witness offs [-112, -80, -16]
+C : alpha_O = 3  witness offs [-111, -79, -15]
+D : bottom singleton {+1} (O) SELF-SERVES  => f_O = 8
+D2: self-serving O-singletons (offsets): [1, 5]
+D : bottom singleton {+2} (E) SELF-SERVES  => f_E = 8
+D2: self-serving E-singletons (offsets): [2]
+D4: O: mid/tail min-offsets NOT eliminated: [99, 101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121, 123, 125, 127, 129, 131, 133, 135, 137, 139, 141, 143, 145, 147, 149, 151, 153, 155, 157]
+D4: E: mid/tail min-offsets NOT eliminated: [98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142, 144, 146, 148, 150, 152, 154, 156, 158]
+D5: O: admissible mid/tail minima SURVIVE: [99, 101, 103]
+D5: E: admissible mid/tail minima SURVIVE: [98, 100, 102, 104]
+D6: O: one-sided branch UNSAT at EVERY minimum s0  [K=68]
+D6s: O: at K*-1 the branch is SAT at bottom minima [1]
+D6: E: one-sided branch UNSAT at EVERY minimum s0  [K=68]
+D6s: E: at K*-1 the branch is SAT at bottom minima [2]
+C2: alpha_full_E = 8  offs [-142, -140, -138, -136, -134, -132, -130, -128]
+C2: alpha_full_O = 7  offs [-143, -141, -139, -137, -135, -133, -131]
+C3: O s0=99: n_c=32 abar=2 => |Y| cap 42
+C3: O s0=101: n_c=32 abar=2 => |Y| cap 42
+C3: O s0=103: n_c=32 abar=2 => |Y| cap 42
+C3: E s0=98: n_c=32 abar=2 => |Y| cap 42
+C3: E s0=100: n_c=32 abar=2 => |Y| cap 42
+C3: E s0=102: n_c=32 abar=2 => |Y| cap 42
+C3: E s0=104: n_c=32 abar=2 => |Y| cap 42
+E : PREDICTION K*(128) = 68  (alpha_E=3, alpha_O=3, f_O=8, f_E=8; no e149 data)
+e153: DONE
