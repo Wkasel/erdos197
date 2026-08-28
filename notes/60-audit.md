@@ -157,7 +157,7 @@ blind scale (144).
   m ≤ 20; CROWN-2ADIC residues brute-verified for j ≤ 20 (even j:
   p_j ≡ 5 (mod 8); odd j: 2^j−1 ≡ 7 (mod 8), 3 ∤).
 * **The dependency claim audited**: B1 uses (H1) only through the
-  quantifiers stated; B1.2's unconditional路线 (p = 5, C = 0 =
+  quantifiers stated; B1.2's unconditional route (p = 5, C = 0 =
   thm:c3core) touches no open tag.  The "no new gap" ledger claim is
   correct: GAP-N2-DIAG + GAP-N3 are pre-existing.
 * **§4.3 descent obstruction**: the splitter fixed point is a
