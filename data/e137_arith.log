@@ -1,0 +1,5 @@
+  M=48: A1..A9 exact-set checks OK (|straddle|=2544, |112|=1024, |122|=2528)
+  M=64: A1..A9 exact-set checks OK (|straddle|=4264, |112|=1600, |122|=4120)
+  M=80: A1..A9 exact-set checks OK (|straddle|=6368, |112|=2304, |122|=6096)
+  inequality sweep M=48..400 step 16: OK
+e137: ALL CHECKS PASSED
