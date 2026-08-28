@@ -768,10 +768,22 @@ unproven link, listed with its current shape:
    (b) the last dyadic cells A4d(19), B6(21) (searches running),
    (c) pairs x ≡ 7 mod 8 (x = 23, 31, ... — outside the e122
    catalogue).
-4. **GAP-BRIDGE1 (Case-1 assembly bridge).**  The pair-ownership
-   argument — every Case-1 team owns some adjacent pair over its clean
-   blocks, else the split/planted-half landing-pad structure fires —
-   is sketched (notes/42-43, G3) but unwritten as a single hand proof.
+4. **GAP-BRIDGE1 (Case-1 assembly bridge).**  DISCHARGED
+   (2026-08-27, notes/52): Theorem B1 — Case-1 teams are not
+   permutable, with NO partner hypothesis and NO descent.  The
+   diagonal usable pairs {3p, 3p+1}, p ≡ 1 mod 4, fire on exactly the
+   dyadic class (e123 flip law) with density 1/12 per block, so a
+   clean block above 12C₀+25 always contains a fully-owned pair
+   (ownership branch unconditional); "every pair split" punctures
+   every block linearly, contradicting cleanliness (split branch
+   vacuous); the planned landing-pad well-ordering provably does not
+   exist (notes/52 §4.3: splitter fixed point for any finite usable
+   family — density is necessary).  Machine: e152_bridge1 (3
+   colorings × 2 scales, incl. core-targeted C = 3 punctures, all
+   pass).  Residual dependencies (pre-existing tags, sharpened):
+   GAP-N2-DIAG (parametric diagonal schema — now THE Case-1 rung
+   target) + GAP-N3.  Bonus: Cor B1.2 recovers "ℤ⁺ itself is not
+   3-permutable" unconditionally from thm:c3core.
 5. **GAP-N3 (dust robustness).**  Exact machine constants (d* = 2/3,
    scale-stable, C = 1 suffices from M = 48) but the one-paragraph
    hand extension of C3 to punctured blocks is unwritten.
@@ -871,3 +883,50 @@ the number.
   run), e124b_lane_probe.py, e124c..e124h (anatomy/discovery chain),
   e124i_k4_schema_verify.py + e124l_b2_schema_verify.py (the
   end-to-end verifiers), e124m_template.py; data/e124*.
+
+### FRONT BRIDGE1 (2026-08-27, night shift): the Case-1 assembly
+### bridge is written — notes/52, GAP-BRIDGE1 discharged
+
+Third attempt on this front; no prior partial existed in git.  Full
+write-up notes/52-bridge1.md; machine record
+experiments/e152_bridge1_check.py + data/e152_bridge1.{json,log}.
+
+- **Theorem B1** [PROVED modulo (H1)]: any team with infinitely many
+  C₀-clean dyadic blocks (any constant C₀) is not 3-permutable.  No
+  hypothesis on the partner; no dichotomy case survives to need one.
+  (H1) = RUNG-DIAG-PUNCT: the diagonal rung R(3p, 3p+1; 2^m, D),
+  |D| ≤ C, is UNSAT above a threshold — exactly the union of two
+  pre-existing tags (GAP-N2-DIAG: parametric C3(p) write-up, p ≡ 1
+  mod 4, dyadic scales only; GAP-N3: dust robustness), with hand
+  anchor p = 5, C = 0 (thm:c3core) and machine anchors p = 9, 13 +
+  core-targeted C = 3 punctures (e152, M = 128/256).
+- **Why the expected hard branch vanished**: the usable supply is
+  dense — DIAG-DENSE gives ≥ (2^m−13)/12 disjoint usable pairs per
+  block (spacing 12), so bounded dust can never puncture them all
+  (ownership always holds), and "every usable pair split" implies
+  linear T′-mass in every block, contradicting cleanliness in one
+  step (SPLIT-QUANT + B2-VAC).  The task-predicted partner
+  inheritance (one value of each crown pair {2^j−1, 2^j} — even-j
+  crowns are exactly the p ≡ 5 mod 8 diagonal members, CROWN-2ADIC)
+  is real but is used against the hypothesis, not the partner.
+- **The descent obstruction** (§4.3, recorded so it is never
+  re-attempted): for any FINITE usable family the splitter adversary
+  has a fixed point (split the pairs + crowns, donate every
+  landing-pad completion — machine coloring χ3), and the landing-pad
+  inheritance moves strictly UP in scale — there is no well-ordering
+  to found the planned descent on.  An infinite usable family with
+  unbounded per-block counts is NECESSARY, and the diagonal family is
+  the one with the strongest existing evidence.  Landing pads survive
+  as donation-forcing (every dodge makes the clean team cleaner), not
+  as kills.
+- **Ledger movement**: GAP-BRIDGE1 row CLOSED (notes/50 updated);
+  GAP-N2-DIAG promoted to THE Case-1 rung target, ahead of the
+  off-diagonal cells (those now matter only for the anchor-free
+  variant BRIDGE1-AF, mapped and tagged in notes/52 §5, and for
+  catalogue completeness).  Bonus sanity anchor: Cor B1.2 — ℤ⁺ is
+  not 3-permutable — falls out UNCONDITIONALLY (p = 5 instance),
+  recovering the classical fact through the program's own machinery.
+- Numbering note: this session's experiment file is
+  e152_bridge1_check.py; a parallel notes/58 session independently
+  used e152_dich_probe for an unrelated N6a probe — filenames are
+  distinct, only the ordinal collides.

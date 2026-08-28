@@ -25,12 +25,16 @@ restatement: notes/46 §4A).
    scale-stable; GAP-N3: one-paragraph hand extension of C3-PUNCT].
 3. **T-PIN pigeonhole** [N1, proven]: fixed attacker pair at finite
    positions + infinitely many disjoint UNSAT windows ⟹ not permutable.
-4. Assembly: in Case 1 the clean-block team owns some fixed pair
-   {2^j−1, 2^j} (or a lane analogue) + infinitely many nearly-clean
-   blocks; 1+2+3 ⟹ that team dead. [Needs: the pair-ownership argument —
-   every team owns SOME adjacent pair unless all pairs split; if all
-   split, the planted-half landing-pad structure fires instead (G3 family)
-   — TAG: write this bridge precisely. GAP-BRIDGE1.]
+4. Assembly: **DONE (notes/52, Theorem B1).**  The diagonal usable
+   pairs {3p, 3p+1}, p ≡ 1 mod 4, fire on exactly the dyadic class and
+   appear with density 1/12 in every block, so a C₀-clean block above
+   scale 12C₀+25 always contains a fully-owned pair — the ownership
+   branch holds unconditionally, the split branch is vacuous
+   (SPLIT-QUANT: splitting punctures every block linearly, contradicting
+   cleanliness), and the planned landing-pad descent provably has no
+   well-ordering (notes/52 §4.3 — finite usable families admit a
+   splitter fixed point; density is necessary).  Case-1 chain is now
+   N1 + B1 + (GAP-N2-DIAG, GAP-N3); GAP-BRIDGE1 discharged.
 
 ## Case 2 kill chain
 1. **The coupled 2-seam core** [N6]: balanced 3-block gadget UNSAT at
@@ -63,9 +67,9 @@ restatement: notes/46 §4A).
 ## Current gap inventory (updated 2026-08-26 late, synthesis session)
 | Tag | Statement | Type | Status |
 |-----|-----------|------|--------|
-| GAP-N2 | off-diagonal lanes + uniform family proof | hand+machine | largely EXECUTED (notes/49: {11,12} all 8 residues, lane laws, template cells 13..19); remains: PARAMETRIC-in-x lane proof, cells A4d(19)/B6(21), pairs x ≡ 7 mod 8 |
+| GAP-N2 | off-diagonal lanes + uniform family proof | hand+machine | largely EXECUTED (notes/49: {11,12} all 8 residues, lane laws, template cells 13..19); remains: PARAMETRIC-in-x lane proof, cells A4d(19)/B6(21), pairs x ≡ 7 mod 8.  PRIORITY UPDATE (notes/52): the Case-1 critical path needs ONLY the diagonal parametric sub-piece **GAP-N2-DIAG** (C3(p) write-up, p ≡ 1 mod 4, dyadic scales — e123's verbatim-schema claim); off-diagonal parametrics matter only for BRIDGE1-AF |
 | GAP-N3 | dust-robust C3 | hand (short) | flagged one-paragraph, unwritten |
-| GAP-BRIDGE1 | pair-ownership/split dichotomy in Case 1 | hand | unwritten |
+| GAP-BRIDGE1 | ~~pair-ownership/split dichotomy in Case 1~~ **DISCHARGED** (notes/52 Theorem B1: ownership always holds via diagonal density; split branch vacuous; e152_bridge1 checks pass) — residual dependencies are GAP-N2-DIAG (parametric diagonal, p ≡ 1 mod 4, dyadic only) + GAP-N3; anchor-free variant BRIDGE1-AF still open (needs off-diagonal parametrics) | hand | CLOSED modulo N2-DIAG/N3 |
 | GAP-N6a | all-M coupled schema | hand (from MUS) | compute-true M=16..80 (e125+e126_deep, (2,2,2) critical from 48); M=32 MUS FINAL (n=116, ALL necessary, anatomy = seam anchors + both-parity B2 midband run — the reduction-to-N2 shape CONFIRMED, notes/48); M=48 support in flight |
 | GAP-G2 | ~~double non-procrastination~~ REFRAMED: T-FORCE affordability — two Θ(M)-dense teams cannot both afford forced > v*(M) inversions at every anchor forever | hand (THE gap, ledger-type) | DNP as stated is FALSE (single-team, all budgets to N^{1−o(1)}, irreducibly two-sided — notes/47); FORMAL LEDGER THEOREM now drafted (notes/54: Theorem LT — demand side PROVEN modulo GAP-V*-schema/growth; supply side split into GAP-AFFORD with proven mechanism lemmas L-ORIENT/L-COMP/L-CASCADE + sub-tags GAP-COMP/GAP-JOINT; regime trichotomy formal with GAP-RHO/GAP-ALT; X-INTERLEAVE machine-verified to survive the accounting — e130 all-pass); pump measured only at v*(bal,16) ∈ [3,160], e128 bisecting |
 | GAP-L1' | concentration lemma | hand | measured-true, unproven |
