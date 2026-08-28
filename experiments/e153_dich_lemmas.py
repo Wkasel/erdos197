@@ -198,6 +198,196 @@ def run(M):
         print(f'D2: self-serving {name}-singletons (offsets): '
               f'{serving if serving else "NONE"}', flush=True)
 
+    # ---------- D4: mid/tail min-offset elimination ----------
+    # For every s0 > M-31 (both classes): find a dead-pure pair inside
+    # I(4M+s0) with a pure pattern whose support lies entirely BELOW
+    # s0.  Such a pair cannot be served by any defector set with
+    # minimum s0 (supports are class-pure, so only class defectors
+    # >= s0 could serve).  If every mid/tail s0 is eliminated, every
+    # admissible defector set has a LOW minimum.
+    for c, name in ((1, 'O'), (0, 'E')):
+        bad = []
+        for z in P2:
+            if z % 2 != c or z - 4 * M <= M - 31:
+                continue
+            s0 = z - 4 * M
+            Ic = [v for v in interval(M, z) if v % 2 == c]
+            found = False
+            for pair in combinations(Ic, 2):
+                key = frozenset(pair)
+                if key not in dead_pure[c]:
+                    continue
+                for supp in attackers[tuple(sorted(pair))]:
+                    if all(v % 2 == c for v in supp) and \
+                            all(v - 4 * M < s0 for v in supp):
+                        found = True
+                        break
+                if found:
+                    break
+            if not found:
+                bad.append(s0)
+        if bad:
+            print(f'D4: {name}: mid/tail min-offsets NOT eliminated: '
+                  f'{bad}', flush=True)
+        else:
+            print(f'D4: {name}: every mid/tail min-offset eliminated '
+                  f'(all admissible defector sets have LOW minimum)',
+                  flush=True)
+
+    # ---------- D5: exact admissible-min scan (tiny SAT per s0) ----
+    # For each NOT-eliminated mid/tail s0: does ANY self-serving
+    # defector set D of class c with min offset exactly s0 exist?
+    # Vars: d_z for class offsets in [s0, 2M+15]; d_{z0} forced;
+    # v_y (y in P1 cap c) <-> OR of d_z with y in I(z); for every
+    # dead-pure pair (y1,y2) and every pure pattern S:
+    # v_{y1} & v_{y2} -> OR_{z in S} d_z.  UNSAT => min s0 impossible.
+    from pysat.solvers import Cadical195
+    Ivals = {z: set(interval(M, z)) for z in P2}
+    survivors = {}
+    caps = {}
+    for c, name in ((1, 'O'), (0, 'E')):
+        surviving = []
+        mids = [z for z in P2 if z % 2 == c and z - 4 * M > M - 31]
+        for z0 in mids:
+            s0 = z0 - 4 * M
+            zs = [z for z in P2 if z % 2 == c and z >= z0]
+            dvar = {z: i + 1 for i, z in enumerate(zs)}
+            nv = len(zs)
+            yvals = [y for y in P1 if y % 2 == c]
+            yvar = {}
+            cls = [[dvar[z0]]]
+            for y in yvals:
+                nv += 1
+                yvar[y] = nv
+                owners = [dvar[z] for z in zs if y in Ivals[z]]
+                for o in owners:
+                    cls.append([-o, nv])
+                cls.append([-nv] + owners)
+            for pair in combinations(yvals, 2):
+                if frozenset(pair) not in dead_pure[c]:
+                    continue
+                for supp in attackers[tuple(sorted(pair))]:
+                    if not all(v % 2 == c for v in supp):
+                        continue
+                    servers = [dvar[z] for z in supp if z in dvar]
+                    cls.append([-yvar[pair[0]], -yvar[pair[1]]]
+                               + servers)
+            with Cadical195(bootstrap_with=cls) as s:
+                if s.solve():
+                    surviving.append(s0)
+        if surviving:
+            print(f'D5: {name}: admissible mid/tail minima SURVIVE: '
+                  f'{surviving}', flush=True)
+            assert all(s0 <= M - 1 for s0 in surviving), \
+                (M, c, 'surviving minimum above M-1: collision arg fails')
+        else:
+            print(f'D5: {name}: NO admissible defector set with '
+                  f'mid/tail minimum (exact SAT scan) — every '
+                  f'admissible D has LOW minimum', flush=True)
+        survivors.setdefault(c, surviving)
+
+    # ---------- D6: one-sided branch closure at surviving minima ---
+    # Abstract branch instance (a WEAKENING of e149 — only removes
+    # constraints, so UNSAT here is stronger): defector class c,
+    # one-sided (no opposite-class defectors), min offset s0; vars:
+    # d_z (defectors >= z0, d_{z0} forced), v_y (y in P1 forced into
+    # the opposite band: y in F(D)), u_y (y in Y_A).  Constraints:
+    # v-definitions (both parities); u_y -> not v_y; self-service of
+    # class-c dead-pure pairs inside F; Y_A class-c dead pairs need a
+    # support member OUTSIDE D; Y_A class-c' dead-pure pairs are
+    # outright forbidden (no servers, one-sided); |Y_A| >= K*.
+    # Expect UNSAT for every D5-surviving s0.
+    from pysat.card import CardEnc, EncType
+    kstar_e = None
+    kf = os.path.join(DATA, f'e149_dichotomy_M{M}.json')
+    if os.path.exists(kf):
+        with open(kf) as f:
+            kstar_e = json.load(f)['kstar']
+    Ktest = kstar_e if kstar_e else (m + 9 + max(
+        alpha[0] - (8 if adm[1] else 9), alpha[1] - (8 if adm[0] else 9)))
+    def branch_solve(c, s0, K):
+        z0 = 4 * M + s0
+        zs = [z for z in P2 if z % 2 == c and z >= z0]
+        dvar = {z: i + 1 for i, z in enumerate(zs)}
+        nv = len(zs)
+        vvar, uvar = {}, {}
+        cls = [[dvar[z0]]]
+        for y in P1:
+            nv += 1
+            vvar[y] = nv
+            owners = [dvar[z] for z in zs if y in Ivals[z]]
+            for o in owners:
+                cls.append([-o, nv])
+            cls.append([-nv] + owners)
+        for y in P1:
+            nv += 1
+            uvar[y] = nv
+            cls.append([-nv, -vvar[y]])
+        for cc in (0, 1):
+            ys = [y for y in P1 if y % 2 == cc]
+            for pair in combinations(ys, 2):
+                if frozenset(pair) not in dead_pure[cc]:
+                    continue
+                for supp in attackers[tuple(sorted(pair))]:
+                    if not all(v % 2 == cc for v in supp):
+                        continue
+                    if cc == c:
+                        servers = [dvar[z] for z in supp if z in dvar]
+                        cls.append([-vvar[pair[0]], -vvar[pair[1]]]
+                                   + servers)
+                        if all(z in dvar for z in supp):
+                            cls.append([-uvar[pair[0]], -uvar[pair[1]]]
+                                       + [-dvar[z] for z in supp])
+                    else:
+                        cls.append([-uvar[pair[0]], -uvar[pair[1]]])
+        enc = CardEnc.atleast(lits=[uvar[y] for y in P1], bound=K,
+                              top_id=nv, encoding=EncType.seqcounter)
+        cls += enc.clauses
+        with Cadical195(bootstrap_with=cls) as s:
+            return s.solve()
+
+    for c, name in ((1, 'O'), (0, 'E')):
+        escapes = [s0 for s0 in range(1 if c else 2, 2 * M + 16, 2)
+                   if branch_solve(c, s0, Ktest)]
+        if escapes:
+            print(f'D6: {name}: branch SAT (escape?!) at s0 = '
+                  f'{escapes}  [K={Ktest}]', flush=True)
+        else:
+            print(f'D6: {name}: one-sided branch UNSAT at EVERY '
+                  f'minimum s0  [K={Ktest}]', flush=True)
+        sharp = [s0 for s0 in range(1 if c else 2, 12, 2)
+                 if branch_solve(c, s0, Ktest - 1)]
+        print(f'D6s: {name}: at K*-1 the branch is SAT at bottom '
+              f'minima {sharp if sharp else "NONE"}', flush=True)
+
+    # ---------- C2: alpha_full (whole band, per class) ----------
+    for c in (0, 1):
+        verts = [v for v in P1 if v % 2 == c]
+        a, wit = max_alive_clique(verts, dead_pure[c])
+        print(f'C2: alpha_full_{"E" if c==0 else "O"} = {a}  offs '
+              f'{[v-4*M for v in wit]}', flush=True)
+
+    # ---------- C3: counting closure for surviving mid minima ------
+    # One-sided mid-min defector set of class c, min z0: forced
+    # interval I(z0) caps the same-class band mass (n_c) and the
+    # minority cap is the alive-clique number of the OPPOSITE class
+    # outside I(z0).  Kill needs m+8 - n_c + abar <= K*-1; K* from
+    # part E's formula (asserted against e149 below where available).
+    kstar_th = None  # filled in E; C3 runs before E, so compute here
+    # (bottom-singleton admissibility already known: adm)
+    for c, name in ((1, 'O'), (0, 'E')):
+        for s0 in survivors.get(c, []):
+            z0 = 4 * M + s0
+            I0 = set(interval(M, z0))
+            ncl = sum(1 for v in I0 if v % 2 == c)
+            cop = 1 - c
+            verts = [v for v in P1 if v % 2 == cop and v not in I0]
+            abar, wit = max_alive_clique(verts, dead_pure[cop])
+            cap = m + 8 - ncl + abar
+            print(f'C3: {name} s0={s0}: n_c={ncl} abar={abar} '
+                  f'=> |Y| cap {cap}', flush=True)
+            caps.setdefault(c, []).append((s0, cap))
+
     # ---------- D3/E/F: e149 comparison ----------
     kfile = os.path.join(DATA, f'e149_dichotomy_M{M}.json')
     f_O = 8 if adm[1] else 9
@@ -216,6 +406,16 @@ def run(M):
           f'(alpha_E={alpha[0]}, alpha_O={alpha[1]}, '
           f'f_O={f_O}, f_E={f_E})', flush=True)
     assert kth == kstar, (M, kth, kstar)
+    need_d6 = [(c, s0, cap) for c in caps for (s0, cap) in caps[c]
+               if cap > kstar - 1]
+    if need_d6:
+        print(f'E2: mid-min single-interval counting closes all but '
+              f'{[(c, s0) for c, s0, _ in need_d6]} (cap = K*): those '
+              f'rely on the D6 cascade closure', flush=True)
+    else:
+        print(f'E2: all surviving mid-min caps <= K*-1 = {kstar-1} '
+              f'(mid branch closes by single-interval counting)',
+              flush=True)
 
     # F: frontier witness re-validation
     fw = e149['frontier_witness']

@@ -1,0 +1,13 @@
+  RP-ARM(48, d0=0) blocks=(0, 1) minY=None: vars=5118 clauses=184837 units=2336 [built 0s]
+  RP-ARM(48, d0=0) blocks=(0, 1) minY=None: SAT [0.1s]
+  audit blocks(0,1): SAT (expect SAT — else encoding suspicious)
+  RP-ARM(48, d0=0) blocks=(0, 1, 2) minY=None: vars=17328 clauses=1089309 units=7448 [built 0s]
+  RP-ARM(48, d0=0) blocks=(0, 1, 2) minY=None: UNSAT [0.4s]
+  RP-ARM(48, d0=2) blocks=(0, 1, 2) minY=None: vars=17546 clauses=1089741 units=7448 [built 0s]
+  RP-ARM(48, d0=2) blocks=(0, 1, 2) minY=None: UNSAT [0.5s]
+  RP-ARM(48, d0=4) blocks=(0, 1, 2) minY=None: vars=17756 clauses=1090157 units=7448 [built 0s]
+  RP-ARM(48, d0=4) blocks=(0, 1, 2) minY=None: UNSAT [0.6s]
+  RP-ARM(48, d0=8) blocks=(0, 1, 2) minY=None: vars=18152 clauses=1090941 units=7448 [built 0s]
+  RP-ARM(48, d0=8) blocks=(0, 1, 2) minY=None: UNSAT [1.5s]
+  RP-ARM(128, d0=4) blocks=(0, 1, 2) minY=None: vars=100116 clauses=15393317 units=39368 [built 7s]
+  RP-ARM(128, d0=4) blocks=(0, 1, 2) minY=None: UNSAT [10.0s]

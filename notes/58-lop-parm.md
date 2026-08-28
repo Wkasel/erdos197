@@ -405,8 +405,125 @@ nothing; PARM-HALVE needs M even).  Off the target class
 with ThW0's punctured variants at that m — probed tonight at M = 56
 (m = 28) both wholesale (e150 part A) and at the ThW0 level (e155).
 
-[Status: PARM-HALVE, PARM-COUNT/Theorem P-ARM′ PROVED conditional
-on the two named finite schemas; machine checks in flight.]
+[Status at first writing: conditional on H-FG6 + H-RW0.  BOTH
+falsified as stated by e155 — see §3.5 for the corrected case
+analysis; PARM-HALVE (§3.1) is unaffected and remains the frame.]
+
+### 3.5 Revision after e155/e155b: the lattice law, the droppable
+### completions, and the corrected theorem  [MACHINE-CHECKED inputs]
+
+e155 (m = 24, 28, 32, 40; both halved windows W2e/W2o) + e155b (SAT
+adjudication of every closure-alive pair) corrected both §3.2
+hypotheses:
+
+**(a) H-FG6 is FALSE, and its truth is a LATTICE law.**  Closure
+stalls on the deep cluster (attacker pairs inside/near the CW zone) —
+the known GAP-FG-deep phenomenon — and SAT adjudication shows the
+TRUE escape set is:
+
+    H-LAT(m): every SAT-alive attacker pair has gap ≡ 0 (mod 8)
+              at m = 28, 32, 40   (mod 4 at m = 24),
+
+in BOTH windows.  Contrapositive, the usable kill: any attacker
+pair with gap ∉ 8ℤ is fan-dead, so a fan-safe attacker set is
+contained in a SINGLE residue class mod 8 (mod 4 at m = 24).
+Counts: closure-alive 66/63/77/75/71/61/82/79 → SAT-alive
+46/44/48/48/36/32/48/48 at (m, window) over the grid; closure
+misses only deep pairs, and SAT kills those with gap ∉ 4ℤ resp.
+8ℤ.  This refines the full-scale "escapes have gap ≥ 16" of
+notes/55 §5.3b into an exact congruence at half scale, and is
+consistent with the full-scale escape data (all recorded full-scale
+escape pairs — including the law-breaking g = M+8 = 56 at M = 48 —
+have gap ≡ 0 mod 8 with attackers in one mod-8 class).  NEW input
+for GAP-FG-schema: the object to classify is the mod-8 sublattice
+recursion, not a distance threshold.
+
+**(b) H-RW0 is FALSE exactly at completions {4, 6}.**  ThW0(m) is
+UNSAT, and stays UNSAT after dropping any ONE completion group
+EXCEPT i = 4 or i = 6 (m = 24, 32, 40, i.e. the m ≡ 0 (8) line); at
+m = 28 (off-line) only i = 6 is droppable.  Two-drop SAT pairs
+concentrate on {4, 6} accordingly.  In full-scale terms the fragile
+guards are the odd completions c = 3M−9, 3M−13 (team A) and the
+even c = 3M−8, 3M−12 (team B) — EXACTLY the values the L-LOP
+frontier witness at M = 128 defects (§1.1: depths 133–141 ⊇
+{3M−9, 3M−13}).  The machine's lopsided-arm escapes and the
+crown's non-robust points are the same finite set of values.
+
+**(c) Corrected case analysis for P-ARM.**  Under the hatch, for an
+arbitrary band split:
+
+  * **Case F** — some team's same-parity attacker share (A_e or
+    B_o) contains a fan-dead pair: Th2 of that team dies
+    (PARM-HALVE(b); no support caveat).  By H-LAT this covers every
+    configuration where the share is NOT inside one mod-8 class.
+    [Certificates: closure DAGs off the deep cluster; phase-split /
+    SAT certificates on it (GAP-FG-deep).]
+  * **Case S** — both shares mod-8-aligned (halved).  CW is 7
+    consecutive values, so each share defects ≤ 1 crown completion
+    per team; ≥ 6 of 7 crown guard groups fire in Th0 of BOTH
+    teams.
+      - **S1**: for some team the defected completion is ∉ {4, 6}
+        (or no completion is defected): that team's Th0 dies by the
+        punctured-ThW0 checks.  [machine, 4 half-scales]
+      - **S2 (the corner — the honest residual gap)**: both teams'
+        defected completions land in the droppable set — B_o's CW
+        value ∈ {3M−9, 3M−13}, A_e's ∈ {3M−8, 3M−12} — and both
+        shares are mod-8-aligned.  The crowns escape; the kill must
+        come from the joint block theories.  P-ARM's machine UNSAT
+        at 48/64/80/96 covers this corner per scale; its structure
+        (a mod-8 lattice family with two marked defectors) is the
+        quartet/quarter-scale-recursion species of E(M) (notes/56
+        §4.2).  **GAP-PARM-CORNER** := uniformize this kill.
+
+**Theorem P-ARM″ (corrected conditional form).**  H-LAT(m) +
+(punctured-ThW0 off {4,6}) + a kill for the S2 corner ⟹ P-ARM(M).
+The first two are machine-true at all tested scales with exact
+finite statements; S2 is the scoped remainder, strictly smaller
+than GAP-PARM (it fixes the coloring up to a mod-8 lattice family
+with 2 marked values), and its species is shared with GAP-LLOP-α's
+frontier (§1.1) — one corner, two arms.
+
+[MACHINE-CHECK: data/e155_parm_hyp.log/.json (e155 + e155b);
+crown-window arithmetic scripts in transcript.]
+
+### 3.6 The residue probe at M = 56  [MACHINE-CHECKED]
+
+e150 part A at M = 56 (m = 28 ≡ 4 mod 8, OFF the target line):
+blocks {0,1} SAT, all six blocks **UNSAT** (0.1 s).  So P-ARM's
+machine truth does NOT require M ≡ 0 (mod 16) — at 56 the parity
+arm dies anyway, consistent with e155's finding that ThW0(28) is
+UNSAT with only ONE droppable completion (i = 6, vs {4, 6} on the
+line).  Exact residue statement: the mod-16 condition is a property
+of the UNIFORM ThW0 proof line (m ≡ 0 (8), where the known
+schema-search targets live and where the sharpness point m = 14
+sits below threshold), not of the finite P-ARM verdicts; the
+notes/55 residue ledger stands but the risk that P-ARM FAILS off-
+line is reduced by this probe.
+
+---
+
+## 4.4 The robust chain verified at M = 128  [MACHINE-CHECKED]
+
+With K_P = 68 = cap(128) + 1 and d₀ = 4:
+
+    L-LOP(128):        min|Y| ≤ 67 dead                  (§1.1)
+    DICH-U(128, 68):   UNSAT  0.9 s   (U forced pure)
+    DICH-Z(128, 68, 4): UNSAT 0.2 s   (≤ 4 defectors forced)
+    RP-ARM(128, 4):    UNSAT 10.0 s   (15.4M clauses; hatch + ≤ 4
+                       free Z-defectors + free band + six theories)
+    RP-ARM(48, d₀):    UNSAT for d₀ = 0, 2, 4, 8 (0.4–1.5 s);
+                       d₀ = 0 audit reproduces e150 exactly
+                       (blocks {0,1} SAT / full UNSAT).
+
+So **Theorem COV-W′(128) holds**: every straddle-free (2,2,2)-
+bounded coloring of CORE′(128) dies through fan / L-LOP / robust-P
+— the first scale where the bridge is verified WITHOUT relying on
+the exact-adjacency accident (K* = cap + 1), and the direct
+confirmation that the notes/56 §4b designated fix works as designed.
+The robust arm has real margin: 4 defectors at 128, ≥ 8 at 48.
+
+[MACHINE-CHECK: data/e154_rparm.log/.json, data/e153_dich_probes.log,
+data/e150_wholesale_M56.log.]
 
 ---
 

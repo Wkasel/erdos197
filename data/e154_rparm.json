@@ -1,0 +1,32 @@
+{
+"M48_d0_b01_audit": {
+"verdict": "SAT",
+"secs": 0.1,
+"clauses": 184837
+},
+"M48_d0_b012": {
+"verdict": "UNSAT",
+"secs": 0.4,
+"clauses": 1089309
+},
+"M48_d2_b012": {
+"verdict": "UNSAT",
+"secs": 0.5,
+"clauses": 1089741
+},
+"M48_d4_b012": {
+"verdict": "UNSAT",
+"secs": 0.6,
+"clauses": 1090157
+},
+"M48_d8_b012": {
+"verdict": "UNSAT",
+"secs": 1.5,
+"clauses": 1090941
+},
+"M128_d4_b012": {
+"verdict": "UNSAT",
+"secs": 10.0,
+"clauses": 15393317
+}
+}

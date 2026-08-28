@@ -8,7 +8,43 @@ D : bottom singleton {+1} (O) FAILS at pair offs (-55,-49), pure supp offs [3, 7
 D2: self-serving O-singletons (offsets): NONE
 D : bottom singleton {+2} (E) FAILS at pair offs (-54,-48), pure supp offs [4, 8, 16, 20, 22, 24, 26, 28]  => f_E = 9
 D2: self-serving E-singletons (offsets): NONE
+D4: O: mid/tail min-offsets NOT eliminated: [19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61]
+D4: E: mid/tail min-offsets NOT eliminated: [18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62]
+D5: O: admissible mid/tail minima SURVIVE: [19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41]
+D5: E: admissible mid/tail minima SURVIVE: [18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42]
+D6: O: one-sided branch UNSAT at EVERY minimum s0  [K=26]
+D6s: O: at K*-1 the branch is SAT at bottom minima [1]
+D6: E: one-sided branch UNSAT at EVERY minimum s0  [K=26]
+D6s: E: at K*-1 the branch is SAT at bottom minima [2]
+C2: alpha_full_E = 6  offs [-62, -60, -58, -56, -54, -52]
+C2: alpha_full_O = 6  offs [-63, -61, -59, -57, -55, -53]
+C3: O s0=19: n_c=12 abar=2 => |Y| cap 22
+C3: O s0=21: n_c=12 abar=2 => |Y| cap 22
+C3: O s0=23: n_c=12 abar=2 => |Y| cap 22
+C3: O s0=25: n_c=12 abar=2 => |Y| cap 22
+C3: O s0=27: n_c=12 abar=2 => |Y| cap 22
+C3: O s0=29: n_c=12 abar=3 => |Y| cap 23
+C3: O s0=31: n_c=12 abar=3 => |Y| cap 23
+C3: O s0=33: n_c=12 abar=4 => |Y| cap 24
+C3: O s0=35: n_c=12 abar=4 => |Y| cap 24
+C3: O s0=37: n_c=12 abar=5 => |Y| cap 25
+C3: O s0=39: n_c=12 abar=5 => |Y| cap 25
+C3: O s0=41: n_c=12 abar=6 => |Y| cap 26
+C3: E s0=18: n_c=12 abar=2 => |Y| cap 22
+C3: E s0=20: n_c=12 abar=2 => |Y| cap 22
+C3: E s0=22: n_c=12 abar=2 => |Y| cap 22
+C3: E s0=24: n_c=12 abar=2 => |Y| cap 22
+C3: E s0=26: n_c=12 abar=3 => |Y| cap 23
+C3: E s0=28: n_c=12 abar=3 => |Y| cap 23
+C3: E s0=30: n_c=12 abar=4 => |Y| cap 24
+C3: E s0=32: n_c=12 abar=4 => |Y| cap 24
+C3: E s0=34: n_c=12 abar=5 => |Y| cap 25
+C3: E s0=36: n_c=12 abar=5 => |Y| cap 25
+C3: E s0=38: n_c=12 abar=6 => |Y| cap 26
+C3: E s0=40: n_c=12 abar=6 => |Y| cap 26
+C3: E s0=42: n_c=12 abar=6 => |Y| cap 26
 E : K* formula 26 vs e149 26  [OK]  (alpha_E=2, alpha_O=2, f_O=9, f_E=9)
+E2: mid-min single-interval counting closes all but [(1, 41), (0, 38), (0, 40), (0, 42)] (cap = K*): those rely on the D6 cascade closure
 F : witness defectors (O) [1, 3]: forced 17 values inside opposite band, self-serving OK
 F : witness K=25 phi=48 re-validated
 ===== M=64 (m=32) =====
@@ -21,7 +57,41 @@ D : bottom singleton {+1} (O) FAILS at pair offs (-79,-65), pure supp offs [3, 5
 D2: self-serving O-singletons (offsets): NONE
 D : bottom singleton {+2} (E) SELF-SERVES  => f_E = 8
 D2: self-serving E-singletons (offsets): [2]
+D4: O: mid/tail min-offsets NOT eliminated: [35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85]
+D4: E: mid/tail min-offsets NOT eliminated: [34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86]
+D5: O: admissible mid/tail minima SURVIVE: [35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55]
+D5: E: admissible mid/tail minima SURVIVE: [34, 36, 38, 40, 42, 44, 46, 48, 50, 52, 54, 56]
+D6: O: one-sided branch UNSAT at EVERY minimum s0  [K=35]
+D6s: O: at K*-1 the branch is SAT at bottom minima [1]
+D6: E: one-sided branch UNSAT at EVERY minimum s0  [K=35]
+D6s: E: at K*-1 the branch is SAT at bottom minima [2]
+C2: alpha_full_E = 7  offs [-78, -76, -74, -72, -70, -68, -66]
+C2: alpha_full_O = 6  offs [-79, -77, -75, -73, -71, -69]
+C3: O s0=35: n_c=16 abar=2 => |Y| cap 26
+C3: O s0=37: n_c=16 abar=2 => |Y| cap 26
+C3: O s0=39: n_c=16 abar=2 => |Y| cap 26
+C3: O s0=41: n_c=16 abar=2 => |Y| cap 26
+C3: O s0=43: n_c=16 abar=2 => |Y| cap 26
+C3: O s0=45: n_c=16 abar=3 => |Y| cap 27
+C3: O s0=47: n_c=16 abar=3 => |Y| cap 27
+C3: O s0=49: n_c=16 abar=4 => |Y| cap 28
+C3: O s0=51: n_c=16 abar=4 => |Y| cap 28
+C3: O s0=53: n_c=16 abar=5 => |Y| cap 29
+C3: O s0=55: n_c=16 abar=5 => |Y| cap 29
+C3: E s0=34: n_c=16 abar=2 => |Y| cap 26
+C3: E s0=36: n_c=16 abar=2 => |Y| cap 26
+C3: E s0=38: n_c=16 abar=2 => |Y| cap 26
+C3: E s0=40: n_c=16 abar=2 => |Y| cap 26
+C3: E s0=42: n_c=16 abar=3 => |Y| cap 27
+C3: E s0=44: n_c=16 abar=3 => |Y| cap 27
+C3: E s0=46: n_c=16 abar=4 => |Y| cap 28
+C3: E s0=48: n_c=16 abar=4 => |Y| cap 28
+C3: E s0=50: n_c=16 abar=5 => |Y| cap 29
+C3: E s0=52: n_c=16 abar=5 => |Y| cap 29
+C3: E s0=54: n_c=16 abar=6 => |Y| cap 30
+C3: E s0=56: n_c=16 abar=6 => |Y| cap 30
 E : K* formula 35 vs e149 35  [OK]  (alpha_E=3, alpha_O=2, f_O=9, f_E=8)
+E2: all surviving mid-min caps <= K*-1 = 34 (mid branch closes by single-interval counting)
 F : witness defectors (O) [1, 3]: forced 17 values inside opposite band, self-serving OK
 F : witness K=34 phi=64 re-validated
 ===== M=80 (m=40) =====
@@ -34,7 +104,37 @@ D : bottom singleton {+1} (O) FAILS at pair offs (-95,-81), pure supp offs [3, 1
 D2: self-serving O-singletons (offsets): NONE
 D : bottom singleton {+2} (E) FAILS at pair offs (-94,-80), pure supp offs [4, 18, 32, 46, 60, 74, 88, 102]  => f_E = 9
 D2: self-serving E-singletons (offsets): NONE
+D4: O: mid/tail min-offsets NOT eliminated: [51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101]
+D4: E: mid/tail min-offsets NOT eliminated: [50, 52, 54, 56, 58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102]
+D5: O: admissible mid/tail minima SURVIVE: [51, 53, 55, 57, 59, 61, 63, 65, 67]
+D5: E: admissible mid/tail minima SURVIVE: [50, 52, 54, 56, 58, 60, 62, 64, 66, 68]
+D6: O: one-sided branch UNSAT at EVERY minimum s0  [K=42]
+D6s: O: at K*-1 the branch is SAT at bottom minima [1, 3]
+D6: E: one-sided branch UNSAT at EVERY minimum s0  [K=42]
+D6s: E: at K*-1 the branch is SAT at bottom minima [2, 4]
+C2: alpha_full_E = 7  offs [-94, -92, -90, -88, -86, -84, -82]
+C2: alpha_full_O = 6  offs [-95, -93, -91, -89, -87, -85]
+C3: O s0=51: n_c=20 abar=1 => |Y| cap 29
+C3: O s0=53: n_c=20 abar=2 => |Y| cap 30
+C3: O s0=55: n_c=20 abar=2 => |Y| cap 30
+C3: O s0=57: n_c=20 abar=2 => |Y| cap 30
+C3: O s0=59: n_c=20 abar=2 => |Y| cap 30
+C3: O s0=61: n_c=20 abar=3 => |Y| cap 31
+C3: O s0=63: n_c=20 abar=3 => |Y| cap 31
+C3: O s0=65: n_c=20 abar=4 => |Y| cap 32
+C3: O s0=67: n_c=20 abar=4 => |Y| cap 32
+C3: E s0=50: n_c=20 abar=2 => |Y| cap 30
+C3: E s0=52: n_c=20 abar=2 => |Y| cap 30
+C3: E s0=54: n_c=20 abar=2 => |Y| cap 30
+C3: E s0=56: n_c=20 abar=2 => |Y| cap 30
+C3: E s0=58: n_c=20 abar=3 => |Y| cap 31
+C3: E s0=60: n_c=20 abar=3 => |Y| cap 31
+C3: E s0=62: n_c=20 abar=4 => |Y| cap 32
+C3: E s0=64: n_c=20 abar=4 => |Y| cap 32
+C3: E s0=66: n_c=20 abar=5 => |Y| cap 33
+C3: E s0=68: n_c=20 abar=5 => |Y| cap 33
 E : K* formula 42 vs e149 42  [OK]  (alpha_E=2, alpha_O=2, f_O=9, f_E=9)
+E2: all surviving mid-min caps <= K*-1 = 41 (mid branch closes by single-interval counting)
 F : witness defectors (E) [2, 4, 6]: forced 19 values inside opposite band, self-serving OK
 F : witness K=41 phi=120 re-validated
 ===== M=96 (m=48) =====
@@ -47,7 +147,33 @@ D : bottom singleton {+1} (O) SELF-SERVES  => f_O = 8
 D2: self-serving O-singletons (offsets): [1]
 D : bottom singleton {+2} (E) SELF-SERVES  => f_E = 8
 D2: self-serving E-singletons (offsets): [2]
+D4: O: mid/tail min-offsets NOT eliminated: [67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99, 101, 103, 105, 107, 109, 111, 113, 115, 117, 119, 121]
+D4: E: mid/tail min-offsets NOT eliminated: [66, 68, 70, 72, 74, 76, 78, 80, 82, 84, 86, 88, 90, 92, 94, 96, 98, 100, 102, 104, 106, 108, 110, 112, 114, 116, 118, 120, 122]
+D5: O: admissible mid/tail minima SURVIVE: [67, 69, 71, 73, 75, 77, 79]
+D5: E: admissible mid/tail minima SURVIVE: [66, 68, 70, 72, 74, 76, 78, 80]
+D6: O: one-sided branch UNSAT at EVERY minimum s0  [K=51]
+D6s: O: at K*-1 the branch is SAT at bottom minima [1]
+D6: E: one-sided branch UNSAT at EVERY minimum s0  [K=51]
+D6s: E: at K*-1 the branch is SAT at bottom minima [2]
+C2: alpha_full_E = 8  offs [-110, -108, -106, -104, -102, -100, -98, -96]
+C2: alpha_full_O = 7  offs [-111, -109, -107, -105, -103, -101, -97]
+C3: O s0=67: n_c=24 abar=1 => |Y| cap 33
+C3: O s0=69: n_c=24 abar=2 => |Y| cap 34
+C3: O s0=71: n_c=24 abar=2 => |Y| cap 34
+C3: O s0=73: n_c=24 abar=2 => |Y| cap 34
+C3: O s0=75: n_c=24 abar=2 => |Y| cap 34
+C3: O s0=77: n_c=24 abar=3 => |Y| cap 35
+C3: O s0=79: n_c=24 abar=3 => |Y| cap 35
+C3: E s0=66: n_c=24 abar=2 => |Y| cap 34
+C3: E s0=68: n_c=24 abar=2 => |Y| cap 34
+C3: E s0=70: n_c=24 abar=2 => |Y| cap 34
+C3: E s0=72: n_c=24 abar=2 => |Y| cap 34
+C3: E s0=74: n_c=24 abar=3 => |Y| cap 35
+C3: E s0=76: n_c=24 abar=3 => |Y| cap 35
+C3: E s0=78: n_c=24 abar=4 => |Y| cap 36
+C3: E s0=80: n_c=24 abar=4 => |Y| cap 36
 E : K* formula 51 vs e149 51  [OK]  (alpha_E=2, alpha_O=2, f_O=8, f_E=8)
+E2: all surviving mid-min caps <= K*-1 = 50 (mid branch closes by single-interval counting)
 F : witness defectors (O) [1]: forced 16 values inside opposite band, self-serving OK
 F : witness K=50 phi=48 re-validated
 e153: DONE
