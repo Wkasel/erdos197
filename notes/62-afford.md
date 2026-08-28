@@ -144,11 +144,17 @@ Hence:
     H_dn) AND upper-window order price ≤ v.
 The C2 witness is exactly such a coloring (n_H_dn = 0, upper price
 392); (6,0) UNSAT says **every zero-H_dn balanced coloring of
-(M/2, 8M] has upper price > 6** — the two parity dodges (zero H_dn
-vs zero H_up) clash on the shared blocks B0, B1, and v_min(0)
-measures the price of resolving the clash in the upper window's
-favor.  This is a two-layer coloring/order decomposition of exactly
-the GAP-N6a species, one block deeper.
+(M/2, 8M] has upper price > 6**, and v_min(0) measures that price.
+CAVEAT (important, notes/47 §3's warning applies verbatim): zero
+mono-H at BOTH windows simultaneously is cheap at the coloring
+level — the block-parity schedule (odd, even, even, odd) voids both
+H-families outright, and the standalone bal@8 v=0 witness is
+zero-H with a seam-clean order — so the (6,0) death does NOT ride H
+alone; the mixed in-block shapes under the lower block-order are
+what tax the upper window.  H gives the necessary-condition frame
+(n_dn ≥ #mono-H_dn via edge injectivity), the MUS must expose the
+mixed engine.  Still a two-layer coloring/order decomposition of
+exactly the GAP-N6a species, one block deeper.
 
 ## 4. What the pump can and cannot give at ω (worked out before C1
 ## landed; C1 only picks the channel)
