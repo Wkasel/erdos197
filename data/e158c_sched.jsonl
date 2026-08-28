@@ -48,3 +48,10 @@
 {"exp": "e158c", "M": 32, "sched": "1100", "vup": 24, "vdn": 0, "verdict": "UNSAT", "time": 3.8}
 {"exp": "e158c", "M": 32, "sched": "1100", "vup": 32, "vdn": 0, "verdict": "UNSAT", "time": 4.1}
 {"exp": "e158c", "M": 32, "sched": "1100", "vup": 48, "vdn": 0, "verdict": "UNSAT", "time": 4.0}
+{"exp": "e158c", "M": 32, "sched": "1100", "vup": 64, "vdn": 0, "verdict": "UNSAT", "time": 4.6}
+{"exp": "e158c", "M": 32, "sched": "1100", "vup": 96, "vdn": 0, "verdict": "UNSAT", "time": 4.8}
+{"exp": "e158c", "M": 32, "sched": "1100", "vup": 128, "vdn": 0, "verdict": "UNSAT", "time": 5.2}
+{"exp": "e158c", "M": 32, "sched": "1100", "vup": 192, "vdn": 0, "verdict": "UNSAT", "time": 6.3}
+{"exp": "e158c", "M": 32, "sched": "1100", "vup": 256, "vdn": 0, "verdict": "UNSAT", "time": 7.2}
+{"exp": "e158c", "M": 32, "sched": "1100", "vup": 384, "vdn": 0, "verdict": "UNSAT", "time": 8.9}
+{"exp": "e158c", "M": 32, "sched": "1100", "vup": 512, "vdn": 0, "verdict": "UNSAT", "time": 11.2}

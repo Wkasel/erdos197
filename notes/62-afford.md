@@ -189,6 +189,31 @@ and lower H-tops); (iv) B2 confined to the reachable bottom
 (support ∩ B2 ⊆ (4M, 7M] = (64, 112], the 2y−u image), top eighth
 absent.  Committed before the run.
 
+### 3d. The (16; 6, 0) MUS landed — 50 values, fully critical
+
+e158b (data/e158b_mus_M16_up6_dn0.json): deletion-minimal support
+n = 50 of 120, criticality certificate **50 necessary / 0
+redundant**.  Anatomy vs the §3c blind prediction (4/4 confirmed,
+(iv) much sharper):
+
+- Bm1 = [9..16] COMPLETE (bound 4 — exact balance intact);
+- B0 = [17..32] COMPLETE (bound 8) — the shared currency block is
+  wholly load-bearing, as predicted;
+- B1 = [33..55] minus {36, 40, 52} — the lower two-thirds with
+  three punctures (bound relaxed to 4);
+- B2 = [65..70] — a SIX-value stub at the very bottom of B2
+  (bound 0: B2's balance is irrelevant; the stub is pure attack
+  material).  The upper window's H/AP theory enters ONLY through
+  z-values in (4M, 4M+6]: the upper budget 6 is charged by a thin
+  boundary family, everything else is lower-window structure.
+
+Schema reading: the (·,0) core is a LOWER-window object (complete
+Bm1∪B0 + lower B1) with a six-value upper stub — the hand target is
+correspondingly small.  Certified statement: no coloring of these
+50 values (balance 4-4/8-8/≥4 per team as listed) admits orders
+with ≤ 6 upper and 0 lower inversions; every one of the 50 values
+is individually necessary.
+
 ## 4. What the pump can and cannot give at ω (worked out before C1
 ## landed; C1 only picks the channel)
 
@@ -358,6 +383,49 @@ mass ≥ f(distance), paid in s2 by L-PREFIX [extremal counting, no
 orders]; (c) the near-parity interpolation — robustness layer (N3
 species).  v_min(0)(M) growth = arm (b)'s extremal function at the
 crossover with arm (a)'s robustness radius.
+
+### 4d. Arm (a) PROVED: Lemma K and the schedule-death theorem
+
+**Lemma K (prefix-chain kill) [PROVED — two exhaustive finite bases
++ two monotonicity steps].**  Consider the integer interval [1, n]
+with the constraint that the k smallest values are all placed
+before the n−k largest.  For k ≥ 3 and n ≥ k + 6 there is NO
+monotone-3-AP-free order.
+*Proof.*  Bases (9, 3) and (10, 4): exhaustive machine search
+(k!·(n−k)! orders; no AP-free order exists; also (8,2), (10,3),
+(11,4), (12,2..5) checked UNSAT, while (6,2) and (12,1) are SAT —
+the constants are sharp-ish: k ≥ 2 needed, and one forced-first
+value is always dodgeable).  Step 1 (monotone in n): deleting the
+largest value preserves AP-freedom and the prefix property, so
+UNSAT(n, k) ⟹ UNSAT(n+1, k).  Step 2 (diagonal): deleting the
+values 1, 2 (both in the prefix) and shifting gives
+SAT(N, K) ⟹ SAT(N−2, K−2), i.e. UNSAT(n, k) ⟹ UNSAT(n+2, k+2).
+From (9,3): all (n, k) with k odd ≥ 3, n ≥ k+6; from (10,4): all
+k even ≥ 4, n ≥ k+6.  ∎
+
+**Theorem SCHED-DEAD [PROVED].**  For every M ≥ 12 (M ≡ 0 mod 4)
+and EVERY budget vup, the 4-block instance with coloring (1,1,0,0)
+and vdn = 0 is UNSAT.
+*Proof.*  Team A = odds of (M/2, 2M] ∪ evens of (2M, 8M].  A's
+in-team APs split into two independent systems: the odd chain
+(M/2, 2M] ∩ odd (no AP leaves it: an (odd, even, odd) AP needs
+middle (a+c)/2 ≤ 2M − 1 < 2M + 2 = min of A's even part; an
+(even, odd, even) AP needs middle ≥ 2M + 3 > 2M = max of the odd
+part) and the even chain.  vdn = 0 block-orders the odd chain:
+its Bm1-part (M/4 values) precedes its B0-part (M/2 values).  As
+an AP-structure the odd chain is the interval [1, 3M/4] with
+prefix k = M/4; k ≥ 3 and n − k = M/2 ≥ k + ... n ≥ k + 6 hold for
+M ≥ 12.  Lemma K kills the chain — no budget is consumed (vup
+prices only s2, which the chain never touches).  Team B is the
+mirror image.  ∎
+
+This exactly explains the measured any-budget deaths at
+M = 16/24/32 (§ above), and it is the first COMPLETE arm of the
+(·,0) schema: the zero-sumset class dies by pure order theory at
+every scale.  What remains for the schema are arms (b) — sumset
+mass of non-parity colorings, paid via L-PREFIX — and (c) — the
+near-parity robustness radius (Lemma K survives o(1)-dilution of
+the chain?  N3-species question).
 
 Empirical confirmation of L-PREFIX on the C2 witness (recomputed):
 its coloring has μ_dn = (0, 0) EXACTLY (part (i) forced it), and
