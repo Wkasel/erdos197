@@ -114,6 +114,42 @@ Baselines measured this session:
   strictly above both componentwise floors; pump bracket
   w_min(6) ∈ [1, 38], bisection in flight.
 
+### 3b. C1 witness anatomy (hand-readable — the schema mechanism)
+
+The (6, none) witness is the PARITY dodge of notes/47 §3 wearing its
+cost openly (both teams mirror-identical):
+
+- Coloring: Bm1 single-parity per team (A = {10,12,14,16},
+  B = odds), B0 the OPPOSITE parity (A = odds 17..31), B2
+  parity-matched to B0 so that H_up z-values 2y−u defect: **n_H_up
+  = 0 with 82/78 upper triples broken by donating z** — the μ = 0
+  coloring dodge, upper window voided for free.
+- The clash lands in B1, which serves BOTH windows: it cannot be
+  parity-pure for the upper dodge and the lower dodge at once (A's
+  B1 = {33,36,37,40,41,...} mixed).  Residue: **8 mono H_dn triples
+  per team** (A: (10|14, odd y, 4k) e.g. (10,23,36), (10,29,48)).
+- Breaking them: ALL 8 via edge 1 (y ≺ u) — realized by WHOLESALE
+  s0 reversal: all 32 = 4×8 in-team s0 pairs inverted (entire
+  Bm1∩T placed after B0∩T), the "reverse the low block" escape of
+  the e127 asym rows — lavish because the lower anchor is unpriced.
+- Upper payment: n_s1 = 6 = vup exactly, all six inversions on ONE
+  advanced B1-value (37 resp. 38 pulled before six B0-values).
+
+**The μ-decomposition this suggests for the schema.**  Since a mono
+H_dn triple can only be broken by an s0 or s1 edge, and each edge
+lies in exactly one triple (notes/47 §3 injectivity, which holds
+verbatim for the lower window), n_dn ≥ #mono-H_dn for every model.
+Hence:
+    (v, 0) SAT  ⟹  some balanced coloring has μ_dn = 0 (ZERO mono
+    H_dn) AND upper-window order price ≤ v.
+The C2 witness is exactly such a coloring (n_H_dn = 0, upper price
+392); (6,0) UNSAT says **every zero-H_dn balanced coloring of
+(M/2, 8M] has upper price > 6** — the two parity dodges (zero H_dn
+vs zero H_up) clash on the shared blocks B0, B1, and v_min(0)
+measures the price of resolving the clash in the upper window's
+favor.  This is a two-layer coloring/order decomposition of exactly
+the GAP-N6a species, one block deeper.
+
 ## 4. What the pump can and cannot give at ω (worked out before C1
 ## landed; C1 only picks the channel)
 
