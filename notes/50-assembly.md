@@ -144,3 +144,23 @@ inventory above:
 * Still-unrun items carried forward: e155c (ThW1′ puncture
   tolerance — the cap-law mechanism probe), e156 D3 at 80/112/128,
   P-arm instances at 112/144.
+
+### Law-consistency delta (2026-08-28, notes/64 + e167)
+
+Formula-only stress of every exact law against every other at
+M = 2^k (k ≤ 40) and spots to 2^1000: **mutually consistent, zero
+residue clashes in the M·8^t tiling to t = 1000** (all constraints
+affine, thresholds ≤ 48, preserved by ×8; only t = 0 needs
+M ≡ 0 mod 16, M ≥ 48).  Sharpened (OV-∀): for M ≥ 96 the laws give
+W(M) = 3 − α_max(M) exactly — (OV-∀) ⇔ α_max ≤ 3 forever; W already
+0 at 112/128/144, margin ONE alive value, and the half-scale cousin
+of α already reaches 4 (e155b) — recommended target: α_max ≤ 4 via
+H-LAT (caps the hole at width 1 = the d₀ = 4 robust chain's size),
+α_max ≤ 3 restores (OV-∀).  Skip-mass law re-derived independently
++ extended (fresh scales 192/256; new B-form 13M²/64 − M/8); the v*
+witness curve 6/65/368 fits ≈ 3M^6/2^23 (exponent 5.9–6.0) — NOT
+the skip law's Θ(M²), curves cross at M ≈ 28, and flat lower
+brackets (5/5/3) leave v*-growth undecided [GAP-V*].  Two prose
+fixes: CORE′ P1 is CLOSED [3M−15, 4M] (notes/51's "(3M−15," is
+off-by-one; |CORE′| = 4M+31 arbitrates); notes/57 §0.1 P2 parity
+counts should read M+8/M+7, not m+8/m+7.
