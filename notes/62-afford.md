@@ -353,3 +353,54 @@ pump is a bounded surcharge and the 4-block instrument has said all
 it can.  v_min(0) growth (16 vs 24) is the decisive measurement
 this instrument can still make; the (6,0)-MUS is the schema
 material for the cell family.
+
+## 6. Assembly: what L-AFFORD is after this session (task step 3)
+
+**Proven / machine-checked today.**
+- [PROVED] T-FORCE-4, L-PROJ (§1); L-PREFIX (§4c); NG4 (§4);
+  GAP-COMP-as-threshold refuted by parity orientation (§4b, with
+  machine realization); the (1,1,0,0) zero-sumset schedule identity
+  and the Θ(M²) skip mass of the H-voiding schedule (§4c, exact).
+- [MACHINE-CHECKED] the M = 16 pump triangle: (none,0) SAT /
+  (6,none) SAT (audited witness — which also independently confirms
+  3-block bal@16 SAT at v = 6 via L-PROJ) / (6,0) UNSAT; witness
+  anatomies §3b; μ_dn = 0 exactness on every (·,0) witness.
+
+**THEOREM J (2-scale joint demand — conditional on one tag).**
+[GAP-J-schema]: for all large qualifying anchors N, U4(N; v, w)
+UNSAT on a staircase S(N) ∋ (v*₃(N), v*₃(N/2)) + margins (measured:
+(6, 0) ∈ S(16); scale-2 instance pending at 24).  Then every valid
+Case-2 pair has (I(N), I(N/2)) ∉ S(N): the pair cannot pay the
+3-block demand curve at two consecutive anchors — at least every
+other anchor overpays its per-anchor floor by the margin.  Proof =
+T-FORCE-4 + Lemma M monotonicity, verbatim notes/54 §2.  This
+STRENGTHENS Theorem D's demand side; it does not touch supply (NG4).
+
+**What L-AFFORD now is (the honest isolate).**  Since Theorem D
+(demand ≥ v* everywhere) is proven mod GAP-V*, L-AFFORD (liminf
+ratio < 1) is EQUIVALENT to regime-(I) death — it was always the
+whole remaining content, and notes/54 §4.3's candidate route through
+GAP-COMP + GAP-JOINT is now measured out: GAP-COMP's counting form
+is dead (§4b), GAP-JOINT's downward coupling is real, priced, and
+demand-side only (NG4).  The surviving shape of the supply argument,
+sharpened by today's instruments:
+
+> **[GAP-AFFORD′]** — an upper bound on the OVERPAYMENT capacity of
+> Θ(M)-dense teams in the donation currency: the (·,0)-family
+> shows that a free lower anchor costs v_min(0)(N) ≫ v*(N) paid in
+> s2 (advancement of B2-material past B1 — i.e. procrastination of
+> the WINDOW ABOVE), so "lavish here, free below" pushes the
+> obligation UP the chain, not away; the un-dodgeable residue must
+> be a statement that a pair cannot push obligations upward forever
+> — a colored-value/donation ledger at the top of the growing
+> range, where P1-freshness protects the payer no longer (every
+> value above any bound is eventually inside windows).  Open; NOT
+> closable by budget rectangles (NG4); the v_min(0) growth curve
+> and the (v,0)-MUS anatomy are its finite shadows.
+
+**Sub-gaps introduced, with status:**
+| tag | statement | status |
+|-----|-----------|--------|
+| GAP-J-schema | all-M staircase family S(M) ∋ (v*₃(M)+a, v*₃(M/2)+b) | machine-true at M=16; M=24 cell queued; schema target = (v,0)-family via L-PREFIX + mixed ladder on (1,1,0,0) |
+| GAP-VMIN0 | growth law of v_min(0)(M) (free-lower-anchor price) | bracket (6, ≤442] at 16; sched(1100) curve = upper-bound instrument (e158c) |
+| GAP-AFFORD′ | overpayment-capacity ledger (donation currency) | open — THE residual; NG4 delimits it |
