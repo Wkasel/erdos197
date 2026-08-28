@@ -536,6 +536,10 @@ sharpened by today's instruments:
 - (96,0)@16 TIMEOUT ⟹ the frontier sits near 96 (hardness itself
   is the signal); jump to (192,0)/(384,0) verdicts (auto-queued)
   and bracket from above; rerun 96 on RunPod with 12 h budget.
+  [LANDED: TIMEOUT at 3600 s — the frontier is near 96; this
+  branch is operative.  v_min(0)(16) state: (6, 442], hard near
+  96, vs the 2-second UNSAT at 6 — consistent with a free-lower
+  price far above v*₃(16) ∈ {5,6}.]
 - Either way afterwards: sched-none certifications (Q9) should all
   be UNSAT (SCHED-DEAD predicts them — a failed prediction would
   falsify the Lemma-K reduction and demands immediate audit);
