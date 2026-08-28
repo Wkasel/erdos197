@@ -265,6 +265,51 @@ content of L-AFFORD is isolated: an upper bound on how often a
 Θ(M)-dense team can overpay, which must be charged in donations
 (single-use colored values), not in inversion counts.
 
+### 4c. The (v, 0) family by hand: L-PREFIX and the schedule that
+### voids every sumset floor
+
+Under vdn = 0, both teams are wholesale block-ordered
+[Bm1∩T] ≺ [B0∩T] ≺ [B1∩T], with B2∩T woven in at s2-inversion cost
+(a B2-value advanced past k B1-values costs k; parking B2 material
+before B0/Bm1 costs ≥ |B1∩T| = M — impossible for vup < M).  So the
+(v, 0) instance is the 3-block anchor-M core PLUS a forced balanced
+PREFIX cohort Bm1 — the first instrument that charges the
+below-window prefix attacks of notes/47 §2 (the "free team's fixed
+cohort" that the 3-block escapes exploited).
+
+**Lemma L-PREFIX [PROVED — three-line forcing + edge injectivity].**
+Fix a model of (v, 0) with v < M/2 ≤ |B1∩T|.  Then for each team:
+(i) every mono triple (u, y, 2y−u) ∈ (Bm1×B0×B1)∩T³ is
+IMPOSSIBLE — u ≺ y is forced by s0∪s1 block order, so 2y−u ≺ y is
+forced, an s1 inversion, banned: **μ_dn(col) = 0 exactly**;
+(ii) every mono H_up triple (u, y, z) ∈ (B0×B1×B2)∩T³ forces its
+s2 edge z ≺ y (u ≺ y forced by s1 order; the y ≺ u escape is gone);
+(iii) every mono SKIP triple (u, y, z) ∈ (Bm1×B1×B2)∩T³ (a family
+no 3-block window ever charged: z = 2y−u ∈ B2 for y > 2M + u/2)
+likewise forces its s2 edge z ≺ y.  The forced s2 edges of (ii) and
+(iii) are pairwise DISTINCT across triples and across families
+(edge (y, z) determines u = 2y − z, which lies in exactly one
+block).  Hence  **n_s2 ≥ μ_up(col) + μ_skip(col)**, so
+    v_min(0)(M) ≥ min { μ_up + μ_skip : balanced col, μ_dn = 0 }.
+
+**But the sumset floor is 0 — by exactly one schedule class.**  For
+pure block-parity schedules (p, q, r, s) (T's parity per block):
+μ_dn = 0 ⟺ r ≠ p;  μ_up = 0 ⟺ s ≠ q;  μ_skip = 0 ⟺ s ≠ p.
+Solution: q = p, r = s = 1−p — the schedule **(x, x, 1−x, 1−x)**
+(e.g. T = odds below 2M, evens above 2M; partner = complement,
+which voids its three families symmetrically).  So the pure-sumset
+relaxation of the (v,0) family is again toothless (e126c's lesson
+one block deeper), and the (6,0) UNSAT proves: **the
+(x,x,1−x,1−x)-schedule colorings — and every other zero-sumset
+coloring — fail the MIXED order theory at vup = 6.**  Note what the
+schedule does: it makes Bm1 and B0 SAME-parity in-team — the
+prefix cohort and the window bottom become a dense same-parity
+adjacent-block pair under forced block order, the classic
+Lemma-P/zigzag flood geometry of the C3 world.  The mixed tax of
+this schedule is measurable directly by FIXING the coloring and
+scanning vup (a tiny orders-only instance) — the next instrument
+(e158c), and the natural entry point for a C3-style hand ladder.
+
 ## 5. The cascade calculus: why the frontier CURVE (not the cell) is
 ## the quantitative target
 
