@@ -385,3 +385,124 @@ into GAP-PARM; the rest is e142b-shaped bounded write-up.
 [MACHINE-CHECK: experiments/e154_deep_classify.py,
 e154b_deep_splits.py → data/e154_deep_classify.json/.log,
 e154b_deep_splits.json/.log.]
+
+---
+
+## D. GAP-ASM′: the composition-soundness theorem for the F/L/P bridge
+
+This section states notes/56 §4b as ONE theorem with explicit
+hypotheses and the overlap arithmetic isolated, so that the remaining
+content of GAP-ASM′ is a single displayed inequality.
+
+### D.1 The data at scale M
+
+Fix M ≡ 0 (mod 16), M ≥ 48, the core CORE′(M), and:
+
+* **(H-F)** a *fan catalogue* 𝔉(M): a finite set of block-2 death
+  patterns (each S ∈ 𝔉(M) has Th₂[S] unsatisfiable, per the
+  notes/56 §0.2 definition, with an independent validation).  A
+  coloring χ is *fan-clean* if no team of χ contains any S ∈ 𝔉(M).
+* **(H-D)** DICH(M) at threshold K*(M): the instance [coloring vars;
+  straddle-freeness both teams; (2,2,2) bounds; fan-cleanness w.r.t.
+  the SAME 𝔉(M); min|Y| ≥ K*(M); Φ ≥ 1] is UNSAT, where Φ is the
+  same-parity P0×P2 exposure mass (notes/56 §3.1).
+* **(H-L)** L-LOP(M) at cap C(M): the instance [coloring vars;
+  straddle-freeness; bounds; fan-cleanness w.r.t. 𝔉(M);
+  |Y_A| ≤ C(M) − 1; Th1(B) as a guarded order theory] is UNSAT.
+* **(H-P)** P-ARM(M): the instance [P0/P2 pinned to the Lemma-PH
+  alignment (U_A = odds of P0, U_B = evens, Z_A = evens of P2,
+  Z_B = odds); band coloring free with ≥ 2 per team; the six guarded
+  block theories jointly] is UNSAT.
+
+All four are per-scale machine items; (H-D), (H-L), (H-P) are single
+UNSAT verdicts, (H-F) is a list of small validated certificates.
+
+### D.2 The theorem
+
+**Theorem ASM′(M).**  Assume (H-F), (H-D), (H-L), (H-P) and the
+*overlap condition*
+
+    (OV)      K*(M)  ≤  C(M).
+
+Then CI(M) has no feasible state (Theorem N6a at scale M).
+
+*Proof.*  Suppose (χ, ≺_A, ≺_B) is feasible.  By Lemma U (notes/55
+§1.3), χ is straddle-free for both teams, meets the (2,2,2) bounds,
+and all six block theories Th_i(T) are consistent.  Write
+m := min(|Y_A|, |Y_B|).
+
+**Case F.**  Some team T ⊇ S for an S ∈ 𝔉(M).  By Lemma DP
+(notes/56 §0.2 — pure restriction), Th₂(T) is inconsistent:
+contradiction.  So χ is fan-clean (w.r.t. 𝔉(M) — the same catalogue
+appearing in (H-D), (H-L)).
+
+**Case L: m ≤ K*(M) − 1.**  By (OV), m ≤ C(M) − 1.  After the team
+swap that names the band-minor team A (every constraint family in
+the L-LOP instance — straddles, bounds, fan patterns as
+monochromaticity prohibitions for BOTH teams, and the guarded Th1 of
+the OTHER team — is invariant under the simultaneous swap), χ lies
+in the coloring space of the (H-L) instance.  Its UNSAT says no
+coloring of that space extends to a model of Th1(B); since the
+instance existentially quantifies Th1(B)'s order variables over
+exactly the guarded theory Th1 of χ's band-major team, Th1(band-
+major) is inconsistent: contradiction with Lemma U.
+
+**Case P: m ≥ K*(M).**  χ satisfies all constraints of the (H-D)
+instance except possibly Φ ≥ 1; UNSAT forces Φ(χ) = 0.  Both teams
+have |U_T| ≥ 1 (bounds), so Lemma PH (notes/56 §3.1, PROVED) pins
+χ|_{P0∪P2} to the complementary parity alignment, up to team swap;
+apply the swap so that U_A = odds.  χ's band split is one of the
+band colorings quantified in the (H-P) instance (it has ≥ 2 band
+values per team by the bounds); UNSAT says every such split has some
+guarded block theory inconsistent — and the guarded theories
+evaluated at χ are exactly Th_i(T) of χ (the guards fire precisely
+on χ's member sets).  Contradiction with Lemma U.
+
+Cases L and P are exhaustive over m by (OV) (m ≤ K*−1 or m ≥ K*),
+and Case F is the prior filter.  ∎
+
+The two WLOG steps are discharged by swap-invariance: every
+constraint family used (straddle, bounds, fan-pattern prohibition,
+guarded theories, Φ, the PH pinning pair) maps to itself under the
+simultaneous exchange of teams, and Lemma PH's two pinnings are
+exchanged by it.
+
+### D.3 The overlap bookkeeping
+
+L-arm coverage: m ∈ [2, C(M)−1] (the bounds force m ≥ 2).  P-arm
+coverage: m ∈ [K*(M), ⌊(M+16)/2⌋] (m cannot exceed the balance
+point).  Overlap interval [K*(M), C(M)−1], width
+
+    W(M) := C(M) − K*(M)   ( ≥ 0  ⟺  (OV) ).
+
+Measured values [MACHINE-CHECKED, e149/e150]:
+
+    M      K*(M)   C(M)   W(M)   overlap interval
+    48      26      30      4       26..29
+    64      35      37      2       35..36
+    80      42      45      3       42..44
+    96      51      52      1       {51}
+
+Drift laws relative to balance b(M) = (M+16)/2: K*(M) − b(M) = −6
+on M ≡ 16 (mod 32), −5 on M ≡ 0 (mod 32) (four data points);
+(C(M)−1) − b(M) = −3, −4, −4, −5 at 48/64/80/96 — approximately −1
+per 32 but NOT yet a clean periodic law.  Extrapolation reaches
+W = 0 near M = 128 (still exhaustive) and could cross below zero
+near M = 160.
+
+### D.4 What remains of GAP-ASM′
+
+With Theorem ASM′ proved, GAP-ASM′ reduces to exactly:
+
+    (OV-∀)   K*(M) ≤ C(M)   for every M ≡ 0 (mod 16), M ≥ 48,
+
+plus per-scale supply of the four machine items (which the
+uniformization gaps GAP-DICH / GAP-LLOP / GAP-PARM will replace by
+proofs).  Two routes, per the notes/56 §4b probes (both negative
+levers already measured at 96): (i) sharpen the drift laws with
+M = 112/128 data and prove (OV-∀) directly if the laws stabilize;
+(ii) the designated fix — ROBUST P-ARM: replace Φ = 0 by Φ ≤ φ₀ in
+(H-D)/(H-P), lowering the P-arm's entry threshold K* and restoring
+overlap for large M regardless of the C(M) drift.  Status:
+Theorem ASM′ [PROVED]; (OV) [MACHINE-CHECKED at 48/64/80/96];
+(OV-∀) [GAP — arithmetic of two thresholds, compute-extendable].
