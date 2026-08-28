@@ -13,3 +13,8 @@ e146: DONE
   part2 M=80: 36 J patterns validated
 M=80: catalogue size 4381 -> /Users/will/Dev/personal/tasks/math/erdos197/experiments/../data/e146_catalogue_M80.json
 e146: DONE
+  part1 M=96: 5986 closure-dead pairs, 230 alive; 5986 distinct minimized patterns [242s]
+    size histogram: {6: 1071, 7: 485, 8: 272, 9: 583, 10: 295, 11: 505, 12: 409, 13: 480, 14: 340, 15: 292, 16: 205, 17: 176, 18: 164, 19: 100, 20: 110, 21: 52, 22: 51, 23: 45, 24: 21, 25: 40, 26: 42, 27: 32, 28: 15, 29: 20, 30: 22, 31: 24, 32: 13, 33: 11, 34: 6, 35: 11, 36: 12, 37: 13, 38: 6, 39: 5, 40: 8, 41: 11, 42: 6, 43: 3, 44: 4, 45: 1, 46: 3, 47: 5, 48: 3, 49: 5, 51: 1, 52: 1, 53: 2, 55: 1, 58: 2, 61: 1, 67: 1}
+  part2 M=96: 36 J patterns validated
+M=96: catalogue size 6022 -> /Users/will/Dev/personal/tasks/math/erdos197/experiments/../data/e146_catalogue_M96.json
+e146: DONE

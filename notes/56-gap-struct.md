@@ -11,14 +11,14 @@ Lemma J.
 verification pointer and a status tag [PROVED] / [MACHINE-CHECKED] /
 [GAP].**
 
-**Overall status: `bridge machine-solved at 48/64/80 — GAP-STRUCT
+**Overall status: `bridge machine-solved at 48/64/80/96 — GAP-STRUCT
 reduced to three scoped uniformization gaps`.**  The notes/55 §6.2
 crux ("every straddle-free coloring lands in the fan or lattice
 regime") is now a three-case theorem (fan / lopsided / parity) with
 per-scale machine certificates: the potential Φ (same-parity P0×P2
 exposure) vanishes exactly on the PAR-alignment family (Lemma PH,
 proved), fan-cleanness at band balance forces Φ = 0 (DICH, thresholds
-K* = 26/35/42), band imbalance kills through the band-major team's
+K* = 26/35/42/51), band imbalance kills through the band-major team's
 Th1 alone (L-LOP), and the Φ = 0 family with arbitrary mixed band is
 dead wholesale (P-ARM).  See §5 for the updated gap ledger.
 
@@ -336,12 +336,18 @@ disjunction) over the fan-clean base and sweeps K in min|Y| ≥ K.
              and at the cap 40.   K*(64) = 35.
     M = 80:  SAT at every K ≤ 41 (frontier Φ = 120); UNSAT at 42
              and at the cap 48.   K*(80) = 42.
+    M = 96:  SAT at every K ≤ 50 (frontier Φ = 48); UNSAT at 51
+             and at the cap 56.   K*(96) = 51.
 
-K* tracks the balance point (M+16)/2 at a bounded offset:
-K* − (M+16)/2 = −6, −5, −6 at the three scales.  Below K* the
-frontier witnesses' Φ decays roughly linearly toward the threshold
-(Φ = 48, 32–64, 80–120 near the frontier) — the exposure mass is
-squeezed out continuously, then vanishes.
+K* tracks the balance point (M+16)/2 at a bounded, mod-32-periodic
+offset:
+
+    K*(M) − (M+16)/2 = −6, −5, −6, −5   at M = 48, 64, 80, 96,
+
+i.e. −6 on M ≡ 16 (mod 32) and −5 on M ≡ 0 (mod 32) over the data.
+Below K* the frontier witnesses' Φ decays toward the threshold
+(Φ = 48, 32–64, 80–120, 48 near the frontier) — the exposure mass is
+squeezed out, then vanishes.
 
 Sharpness: the K = 25 frontier witness keeps both U's parity-pure
 (24 odd vs 24 even) and leaks its Φ = 48 through a handful of
@@ -434,9 +440,10 @@ coloring-plus-order instance.
 is UNSAT — the band-major team's band theory alone is inconsistent —
 for every K up to:
 
-    M = 48: K ≤ 30  (band-major size ≥ 35 of 64 kills)   0.2–0.4 s
-    M = 64: K ≤ 37  (band-major size ≥ 44 of 80 kills)   0.4–0.9 s
-    M = 80: K ≤ 45  (band-major size ≥ 52 of 96 kills)   1.0–2.4 s
+    M = 48: K ≤ 30  (band-major size ≥ 35 of 64 kills)    0.2–0.4 s
+    M = 64: K ≤ 37  (band-major size ≥ 44 of 80 kills)    0.4–0.9 s
+    M = 80: K ≤ 45  (band-major size ≥ 52 of 96 kills)    1.0–2.4 s
+    M = 96: K ≤ 52  (band-major size ≥ 61 of 112 kills)   1.7–3.2 s
 
 with SAT one step above each cap (sharp).  By team-swap symmetry the
 lemma reads: min|Y| ≤ K − 1 ⟹ the band-major team's Th1 is
@@ -449,9 +456,10 @@ Z_A = evens of P2, Z_B = odds; WLOG by swap), band coloring FREE
 both teams; straddles are vacuous under the hatch, §5.4 of notes/55)
 are jointly inconsistent:
 
-    M = 48: UNSAT 0.1 s      M = 64: UNSAT ~1 s      M = 80: UNSAT ~2 s
+    M = 48: UNSAT 0.1 s    M = 64: UNSAT ~1 s
+    M = 80: UNSAT ~2 s     M = 96: UNSAT 0.9 s (1.7M clauses)
 
-Moreover blocks {0, 1} alone are SAT at all three scales: the
+Moreover blocks {0, 1} alone are SAT at all four scales: the
 block-2 (fan/A6) layer is genuinely load-bearing in the parity arm —
 matching the anatomy of the aligned special cases (alignment (i)
 dies through Th2's even FG-gadget, alignment (ii) through
@@ -459,7 +467,7 @@ Th0/Th1 = H1's two theories).  P-ARM is exactly the notes/55 §5.4
 "mixed band ⟹ at least as dead" statement, now a single machine
 lemma per scale instead of a conjecture.
 
-**Theorem COV-W(M), M ∈ {48, 64, 80}  [MACHINE-CHECKED].**  Every
+**Theorem COV-W(M), M ∈ {48, 64, 80, 96}  [MACHINE-CHECKED].**  Every
 straddle-free 2-coloring of CORE′(M) meeting the (2,2,2) bounds is
 order-infeasible, by the three-case analysis:
 
@@ -473,8 +481,24 @@ order-infeasible, by the three-case analysis:
                    → the six theories die             [P-ARM(M)].
 
 The case split is exhaustive because K*(M) − 1 ≤ L-LOP's cap at all
-three scales, with margin 3 / 1 / 2 (48 / 64 / 80): 26–29, 35–36,
-42–44 are covered by BOTH arms.  With Lemma U and Lemma DP this is
+four scales, with overlap width 4 / 2 / 3 / 1 (48 / 64 / 80 / 96):
+26–29, 35–36, 42–44, {51} are covered by BOTH arms.
+
+**GAP-ASM′ warning (the honest trend).**  The L-LOP cap drifts
+against balance (−3, −4, −4, −5) while K* holds at −6/−5: the
+overlap narrows by ≈ 1 per 32 in M and would hit width 0 near
+M = 128 (still exhaustive) and could go NEGATIVE near M = 160,
+opening a middle zone covered by neither wholesale arm.  Two levers
+were probed at M = 96 and do NOT move the thresholds: (i) adding the
+36 J patterns to the DICH hypothesis leaves K* = 51 (still SAT at
+K = 50); (ii) adding the band-minor team's Th1 to L-LOP leaves the
+cap at 52 (still SAT at K = 53).  So the boundary-zone kills
+genuinely need the block-0/2 layers, and the natural fix for large
+M is a ROBUST P-ARM: replace Φ = 0 by Φ ≤ φ₀ (a bounded number of
+hatch defectors, quantified in the instance) so the parity arm
+absorbs the boundary zone.  This is the concrete content of
+GAP-ASM′ going forward; at the four verified scales the present
+split suffices.  With Lemma U and Lemma DP this is
 Theorem N6a at each scale, re-proved through the structured bridge —
 i.e. GAP-STRUCT's bridge exists and is machine-certified at
 48/64/80.
@@ -517,17 +541,19 @@ in multiple block theories at once through the same evaluator.]
    crown), near-totally parity-pure, with the SAME three J patterns
    and the SAME mod-4 quartet structure at both scales.
 3. **Lemma PH** [PROVED]: Φ = 0 ⟺ χ|_{P0∪P2} is the PAR alignment.
-4. **DICH(M)** [MACHINE-CHECKED at 48/64/80]: fan-clean ∧
-   min|Y| ≥ K*(M) ⟹ Φ = 0; K* = 26/35/42 ≈ (M+16)/2 − 6, sharp.
-5. **L-LOP(M)** [MACHINE-CHECKED at 48/64/80]: fan-clean ∧
-   min|Y| ≤ 29/36/44 ⟹ the band-major team's Th1 alone is
+4. **DICH(M)** [MACHINE-CHECKED at 48/64/80/96]: fan-clean ∧
+   min|Y| ≥ K*(M) ⟹ Φ = 0; K* = 26/35/42/51 = (M+16)/2 − 6
+   resp. − 5 by M mod 32, sharp.
+5. **L-LOP(M)** [MACHINE-CHECKED at 48/64/80/96]: fan-clean ∧
+   min|Y| ≤ 29/36/44/51 ⟹ the band-major team's Th1 alone is
    inconsistent; sharp one step above.
-6. **P-ARM(M)** [MACHINE-CHECKED at 48/64/80]: the parity hatch with
+6. **P-ARM(M)** [MACHINE-CHECKED at 48/64/80/96]: the parity hatch with
    FREE band is dead through the six guarded block theories — the
    notes/55 "mixed ⟹ at least as dead" statement.
-7. **Theorem COV-W(M)** [MACHINE-CHECKED at 48/64/80]: 4 + 5 + 6 +
-   the fan certificates cover every straddle-free (2,2,2)-bounded
-   coloring, with overlap margins 3/1/2 between the L and P arms.
+7. **Theorem COV-W(M)** [MACHINE-CHECKED at 48/64/80/96]: 4 + 5 +
+   6 + the fan certificates cover every straddle-free (2,2,2)-
+   bounded coloring, with overlap widths 4/2/3/1 between the L and
+   P arms.
    Via Lemma U this re-proves Theorem N6a at each scale THROUGH THE
    STRUCTURED BRIDGE — the e135 monolithic lock is no longer the
    only route.
@@ -540,12 +566,12 @@ The notes/55 §7 row
 
 is replaced by the scoped decomposition (jointly: **GAP-COV**):
 
-| gap | statement to uniformize (machine-true at 48/64/80) | species | risk |
+| gap | statement to uniformize (machine-true at 48/64/80/96) | species | risk |
 |-----|-----------------------------------------------------|---------|------|
-| GAP-DICH | fan-clean ∧ min\|Y\| ≥ K*(M) ⟹ Φ = 0, with K*(M) ≤ (M+16)/2 − 5 | counting: Lemma-W windows + fan geometry vs exposure mass; the frontier witnesses' Φ decays linearly to 0 | medium |
+| GAP-DICH | fan-clean ∧ min\|Y\| ≥ K*(M) ⟹ Φ = 0, with K*(M) = (M+16)/2 − 6/−5 by M mod 32 | counting: Lemma-W windows + fan geometry vs exposure mass; the frontier witnesses' Φ decays linearly to 0 | medium |
 | GAP-LLOP | band-major (≥ (M+16) − K* + 1 band values) ⟹ Th1 inconsistent | α/β/J order geometry on a co-bounded band subset; H1-ThW1′ + Lemma-J species with phase machinery | medium |
 | GAP-PARM | parity hatch + any band mixing ⟹ some block theory inconsistent | halving recursion with a mixed band; CONTAINS GAP-H1 (alignment (ii) is its band-aligned special case) | medium (≥ GAP-H1) |
-| GAP-ASM′ | the three thresholds overlap for all M ≡ 0 (16), M ≥ 48 | arithmetic of K*(M) and the L-LOP cap (both track (M+16)/2 with O(1) offsets on the data) | low |
+| GAP-ASM′ | the three thresholds overlap for all M ≡ 0 (16), M ≥ 48 | arithmetic of K*(M) and the L-LOP cap (both track (M+16)/2 with O(1), mod-32-periodic offsets); the overlap NARROWS ≈ 1 per 32 in M (4/2/3/1 at 48–96) — for large M the robust-P-ARM (Φ ≤ φ₀) strengthening is the designated fix (§4b warning) | medium-low (upgraded from low after the M = 96 trend) |
 
 Honest accounting: GAP-PARM subsumes GAP-H1, so the total gap count
 of the program does not decrease by this note alone — but the crux
@@ -560,9 +586,10 @@ whose family structure the uniform proof must reproduce.
 
 ### 5.3 Next steps (ranked)
 
-1. **GAP-ASM′ data**: run e149/e150 at M = 96 (and 112 if cheap) to
-   pin K*(M) and the L-LOP cap as exact affine laws — the overlap
-   margin at 64 is only 1, so the law matters.
+1. **GAP-ASM′ data**: DONE at M = 96 (K* = 51, cap 52→51, P-ARM
+   UNSAT; overlap width 1).  Next: M = 112/128 to confirm the
+   mod-32 offset laws and the narrowing trend, and prototype the
+   robust P-ARM (Φ ≤ φ₀) that removes the trend's risk.
 2. **GAP-DICH schema**: MUS-mine the e149 UNSAT at K* (which fan
    patterns + straddle windows are load-bearing?); candidate hand
    shape — the FORCED-INTERVAL mechanism.  The frontier witnesses
