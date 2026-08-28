@@ -680,37 +680,44 @@ they are the resonant SAT region below plus deep pairs needing
 richer splits; every SAT-tested deep pair IS UNSAT).
 
 **The resonant escapes  [machine; FALSIFIES the naive lemma].**
-Pairs with 16 | g can genuinely ESCAPE the pure double fan.
-Top-anchored (q = 0) SAT gaps:
+Certain pairs genuinely ESCAPE the pure double fan.  Top-anchored
+(q = 0) SAT gaps (each = exactly the closure-stall set at its
+scale; everything else on the q = 0 line is UNSAT):
 
-    M = 48: g ∈ {16, 32, 48}      M = 80: g ∈ {64, 80}
+    M = 48: g ∈ {32, 48, 56}      M = 80: g ∈ {64, 80}
     M = 64: g ∈ {32, 48, 64}      M = 96: g ∈ {64, 96}
 
-(exactly the closure-stall set at each scale; everything else is
-UNSAT).  The region is depth-dependent — at M = 96 the top-anchored
-gap-32 pair dies but the deeper (4M−96, 4M−64) escapes (inside a
-SAT triple) — and admits no simple closed form in (q, p, M) on the
-present ten data points; but every observed escape has
-16 | g, and TRIPLE fans can also co-escape at every scale
-((192,160,144) at 48; (256,224,192) at 64; (384,320,288) at 96 —
-while (192,176,144) at 48 is UNSAT: triple escape is not governed
-by pairwise resonance).  data/e142*_*.log.
+Verified facts about the escape region: (i) every observed escape
+lies BEYOND the FG-high reach (5g > 2M+15 on the q = 0 line — the
+gadget provably kills everything within reach); (ii) it is
+depth-dependent (at M = 96 the top-anchored gap-32 pair dies while
+the deeper (4M−96, 4M−64) escapes inside a SAT triple; at M = 48
+the non-anchored (q, p) = (16, 32), (1, 33), (15, 47) escape);
+(iii) it is NOT simply "16 | gap" — 56 = 48+8 escapes at M = 48
+(and g = M+8 fails at M = 64), an early 16-divisibility reading of
+the grid was WRONG; (iv) g = M (attacker at 3M exactly) escapes at
+every scale; (v) TRIPLE fans can co-escape at every scale
+((192,160,144)@48, (256,224,192)@64, (384,320,288)@96), and triple
+escape is not governed by pairwise resonance ((192,176,144)@48 is
+UNSAT though all three pairwise gaps are resonant at 48).  No
+closed form fits the present 12 data points; mapping R(M) exactly
+(a cheap closure scan per scale) is prerequisite work for
+GAP-STRUCT.  data/e142*_*.log.
 
-**Consequences for the assembly.**  (a) The 15/16 constants of the
-schema resurface as the resonance modulus: the width-15 truncations
-carve exactly the 16-lattice escape structure — the first genuinely
-mod-16 phenomenon of the whole N6a story, matching the target
-residue M ≡ 0 (mod 16) and the tower's ν₂ ≥ 4 line.  (b) Fan
-pressure alone cannot carry T2 at ANY band-bound level: a team may
-park 2–3 band values on a resonant 16-aligned configuration.  Such
-teams must be killed by the other constraints (straddle pressure,
-B0 units, Lemma J, floods) — i.e. the resonant-aligned regime joins
-the lattice arm of GAP-STRUCT, reinforcing that the halving/lattice
-recursion is unavoidable, now with the explicit modulus 16 = 2⁴.
-(c) The (0,2,0) SAT witness already showed fans alone do not close
-T2 even off-resonance (a P0-empty team escapes on punctured P2):
-Lemma W's B0-side pressure is co-load-bearing, matching the
-frontier law ((0,2,0) SAT vs (1,2,0) UNSAT).
+**Consequences for the assembly.**  (a) Fan pressure alone cannot
+carry T2 at ANY band-bound level: a team may park 2–3 band values
+on a resonant configuration.  Such teams must be killed by the
+other constraints (straddle pressure, B0 units, Lemma J, floods) —
+the resonant regime joins the structured arm of GAP-STRUCT.  On
+all data so far every escape pair has gap ≥ 16 (q = 0 escapes have
+gap ≥ M/2): band pairs at distance ≤ 15 ALWAYS died in our tests —
+if that survives a full-grid audit per scale, "some team has two
+band values within 15" becomes a clean fan-kill hypothesis, and
+GAP-STRUCT only owes the spread-out configurations.  (b) The (0,2,0) SAT witness already
+showed fans alone do not close T2 even off-resonance (a P0-empty
+team escapes on punctured P2): Lemma W's B0-side pressure is
+co-load-bearing, matching the frontier law ((0,2,0) SAT vs (1,2,0)
+UNSAT).
 
 ### 5.4 The lattice regime: halving reduction  [PROVED] and the
 halved cores  [MACHINE-CHECKED UNSAT]
@@ -754,14 +761,64 @@ the classical odd-even recursive construction.  ∎
 
 **Machine verdicts.**  H_even(m) and H_odd(m) UNSAT at
 m = 16, 24, 32, 40 (0.0–0.2 s each); H1(m) UNSAT at the same four
-scales (predicted by the reduction before the run).  So the
-fully-aligned lattice colorings are dead at all tested scales, as
-the e135 lock requires; the UNIFORM kill of H(m)/H1(m) is
-GAP-N6a-H — a single-team, unguarded, two-block core of exactly the
-notes/42–43 "two-scale gadget" species, and the natural second
-machine-to-hand extraction.  Note the self-similarity: H(m) is
-CORE′(m) minus its P0 block and flood band — the halving recursion
-the tower program (notes/31) predicted.
+scales (predicted by the reduction before the run).  Note the
+self-similarity: H(m) is CORE′(m) minus its P0 block and flood
+band — the halving recursion the tower program (notes/31)
+predicted.
+
+### 5.4b THEOREM H: the H(m) cores die by hand  [PROVED]
+
+**Theorem H.**  For every m ≥ 6, H(m) is infeasible — for both
+W2 = [4m+1, 6m+7] (even image) and W2 = [4m+1, 6m+8] (odd image).
+
+*Proof.*  By the two-block version of Lemma U, H(m) is feasible
+only if its W2 block theory (AP-freeness on W2 + the units
+z ≺ y for x ∈ W1, y, z ∈ W2, z = 2y − x) is consistent.  That
+theory contains the FG-high gadget of §5.3b for the attacker pair
+(x₁, x₂) = (4m−1, 4m) ⊆ W1, i.e. (q, p) = (0, 1), s = 1, s′ = 2:
+
+    units  4m+2 ≺ 4m+1  (x₂),  4m+3 ≺ 4m+1  (x₁),  4m+5 ≺ 4m+2 (x₁)
+    R4 on (4m+1, 4m+2, 4m+3):  4m+2 ≺ 4m+3
+    R4 on (4m+1, 4m+3, 4m+5):  4m+3 ≺ 4m+5
+    with the third unit:  4m+2 ≺ 4m+3 ≺ 4m+5 ≺ 4m+2.  ⊥
+
+All six values 4m−1, …, 4m+5 lie in W1 ∪ W2 for m ≥ 6, and both
+W2 variants contain [4m+1, 4m+5].  ∎
+
+[MACHINE-CHECK: the ThW2-only UNSAT verified independently at
+m = 16, 24, 32, 40 with ONLY the top-pair fans retained
+(data/e142j_corrections.log) — and Theorem H's gadget is the e143
+instance (q, p) = (0, 1) of the audited sweep.]
+
+**Corollary PAR-i.**  The alignment-(i) members of the
+complementary parity family (T = (odd P0, even band, even P2) and
+its mirror) are infeasible for every even M ≥ 12, by Lemma PAR(i)
++ Theorem H at m = M/2.  UNCONDITIONALLY PROVED — no machine tag
+needed on this branch any more.
+
+### 5.4c H1(m): doubly dead, one uniformization owed
+[MACHINE-CHECKED; GAP-H1]
+
+For H1(m) (alignment ii) BOTH block theories are INDIVIDUALLY
+unsatisfiable at m = 16, 24, 32, 40 (e142k):
+
+* ThW0 = AP-freeness on [m+1, 2m] + the 16 halved crown units
+  {2m−k ≺ m+j : k ≤ 3, j ≤ 7−2k} — a SCALE-INVARIANT unit family
+  of exactly the C3-core species (t_k ≺ b_j units on a block; the
+  notes/33 toolkit's home ground).  UNSAT also at m = 8, 10, 12,
+  20, 48, 64; SAT at m = 14 (a sharpness point — the kill is
+  residue-sensitive off the needed line).  For Lemma PAR we need
+  only m = M/2 ≡ 0 (mod 8), where every probe is UNSAT.
+* ThW1′ = AP-freeness on [3m−7, 4m] + a scale-invariant 64-unit
+  family (window-top values before window-bottom values, the A2
+  α-geometry).
+
+Plain closure stalls on both (m ≥ 24): the kills need Lemma-D
+phase machinery, exactly like notes/33's Lemma L0 (ladder + seam +
+tail gadget).  GAP-H1 := uniformize EITHER kill on m ≡ 0 (mod 8);
+this replaces the former GAP-H, with Theorem H closing the H(m)
+half outright.  (data/e142k_h1_blocks.log,
+data/e142l_h1_closure.log, data/e142m_thw0_threshold.log.)
 
 Mixed band splits inside the parity family fire STRICT SUPERSETS of
 one alignment's unit families plus cross-parity in-band APs; they
@@ -794,11 +851,9 @@ material) the §4 floods.  Regime split:
 * **R2 (lattice-aligned).**  The complementary parity family — dead
   modulo GAP-H (uniform H(m)/H1(m)), by Lemma PAR.  [The mod-4 and
   higher lattice alignments halve once more into quarter-scale
-  images; same species.]  NOW ALSO INCLUDES the 16-resonant band
+  images; same species.]  NOW ALSO INCLUDES the resonant band
   configurations of §5.3b: teams whose band values sit on a
-  16-aligned resonant pattern escape the fans and must die here —
-  the modulus 16 = 2⁴ says the recursion depth is (at least) four
-  halvings, consistent with the tower's ν₂ ≥ 4 line.
+  fan-resonant pattern escape the fans and must die here.
 * **R3 (the interpolation).**  Z and Z′ both fan-escaping (each
   must be lattice-patterned in its own fan geometry — the machine's
   escape punctures are mod-2/mod-4 patterns), yet jointly they
@@ -866,6 +921,8 @@ finite/schematic extraction (GAP-FG, GAP-H, GAP-J-pencil below).
 | Lemma W | quantitative straddle pressure; hot zone | §5.1 |
 | Lemma PAR | parity family ⟹ halved cores H(m)/H1(m) | §5.4 |
 | Lemma FG-high | 4-point double-fan kill for high attacker pairs | §5.3b |
+| Theorem H | H(m) infeasible for all m ≥ 6 (via FG-high (0,1)) | §5.4b |
+| Cor. PAR-i | parity alignment (i) dead at every even M ≥ 12 | §5.4b |
 
 Residue ledger: everything above needs at most M ≡ 0 (mod 4) (the
 G4 centres at 5M+7/5M+9) and M ≥ 48; no mod-8/mod-16 obstruction
@@ -889,8 +946,10 @@ note distinguishes them from other M ≡ 0 (mod 4).
 * The §5.2 frontier map and law (e140/e140b/e140c, M=48).
 * H(m)/H1(m) UNSAT at m = 16..40; FG kills and robustness (e140x).
 * The fan landscape (e141 MUS; e142/e142b closure grid, 2016 pairs;
-  e142c–i resonance maps at 48/64/80/96; e143 gadget audit,
+  e142c–j resonance maps at 48/64/80/96; e143 gadget audit,
   149 169 instances × 23 scales).
+* H1's double death + thresholds (e142k/l/m: both block theories
+  UNSAT at 4 scales; closure stalls; ThW0 sharpness at m = 14).
 
 ### Open gaps (the honest count: 5)
 
@@ -898,7 +957,7 @@ note distinguishes them from other M ≡ 0 (mod 4).
 |-----|-----------|---------|------|
 | GAP-FG-schema | uniform pencil schema for the closure-refutable (non-resonant, non-deep) fan pairs; FG-high itself is PROVED (§5.3b) | derivation-DAG extraction, K4-style | low: machine DAGs in hand at every instance |
 | GAP-FG-deep | deep-pair (band-bottom) fan schema (needs phase splits) | Lemma-D branch schema | medium-low |
-| GAP-H | uniform H(m)/H1(m) kill | single-team two-block core | low-medium: tiny UNSATs, toolkit applies unguarded |
+| GAP-H1 | uniformize ONE of H1(m)'s two dead block theories on m ≡ 0 (8) (H(m) itself now PROVED, §5.4b) | L0-species ladder schema, 16-unit crown or 64-unit α family | low-medium |
 | GAP-J-pencil | 36 finite 16-point derivations | mechanical | negligible |
 | GAP-STRUCT | R3 → R1∪R2 bridge, now incl. the 16-resonant band configurations (structure theorem / potential) | genuinely open | HIGH — the crux |
 | GAP-ASM | assemble T1-or-T2 from the above into Theorem N6a | bookkeeping over the case split | low once STRUCT falls |
@@ -910,11 +969,12 @@ machine-finite.  The (2,2,2) bounds enter ONLY as: one P0 value per
 team (straddle pressure supply, Lemma W) + two band values per team
 (double-fan supply) — the P2 bound is dead weight.  The remaining
 mathematical content of GAP-N6a is concentrated in GAP-STRUCT: why
-complementary fan-escapes cannot coexist without collapsing into
-the (dead) lattice alignment — where "lattice" now provably
-includes the 16-resonant band configurations whose modulus is the
-schema's own crown constant (§5.3b): the strongest evidence yet
-that the crown 15/16, the S3/F widths, AND the escape structure are
-one mod-2⁴ phenomenon, and that the final argument is an induction
-on halving depth with the H-cores as its base.
+complementary fan-escapes cannot coexist without collapsing into a
+(dead) structured alignment — where "structured" includes both the
+parity/lattice families (killed via halving, §5.4) and the
+fan-resonant spread configurations of §5.3b, whose exact law is
+still unmapped (the once-suspected clean mod-16 story was
+falsified by the g = M+8 escape at M = 48; what survives is that
+every escape needs band values ≥ 16 apart and beyond the FG-high
+reach).
 

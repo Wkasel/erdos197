@@ -1,0 +1,6 @@
+m=16: ThW0 closure stalls (16f) | ThW1p REFUTES (180f)
+m=24: ThW0 closure stalls (16f) | ThW1p stalls (64f)
+m=32: ThW0 closure stalls (16f) | ThW1p stalls (64f)
+m=40: ThW0 closure stalls (16f) | ThW1p stalls (64f)
+m=64: ThW0 closure stalls (16f) | ThW1p stalls (64f)
+m=100: ThW0 closure stalls (16f) | ThW1p stalls (64f)

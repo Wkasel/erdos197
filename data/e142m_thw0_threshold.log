@@ -1,0 +1,8 @@
+m=8: ThW0(16u) UNSAT | control(no units) SAT
+m=10: ThW0(16u) UNSAT | control(no units) SAT
+m=12: ThW0(16u) UNSAT | control(no units) SAT
+m=14: ThW0(16u) SAT | control(no units) SAT
+m=16: ThW0(16u) UNSAT | control(no units) SAT
+m=20: ThW0(16u) UNSAT | control(no units) SAT
+m=48: ThW0(16u) UNSAT | control(no units) SAT
+m=64: ThW0(16u) UNSAT | control(no units) SAT

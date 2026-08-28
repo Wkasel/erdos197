@@ -1,0 +1,8 @@
+M=48 top-anchored (q=0) stall gaps: [32, 48, 56]
+  gap=32: SAT [0.1s]
+  gap=48: SAT [0.1s]
+  gap=56: SAT [0.1s]
+H(m=16) ThW2 with ONLY the top-pair fans: UNSAT [0.0s]
+H(m=24) ThW2 with ONLY the top-pair fans: UNSAT [0.0s]
+H(m=32) ThW2 with ONLY the top-pair fans: UNSAT [0.0s]
+H(m=40) ThW2 with ONLY the top-pair fans: UNSAT [0.1s]
