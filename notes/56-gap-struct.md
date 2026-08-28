@@ -369,7 +369,7 @@ min|Y| = 3 — exposed it.  The witness stream is the regression test.)
 |---|---------|------------------|------------|---------|------|
 | 48 | 1887 (1851 fg + 36 J) | 170 | 198 | **UNSAT** | 191 |
 | 64 | 3018 (2982 fg + 36 J) | 800 + 89 (resumed) | 929 | **UNSAT** | 219 |
-| 80 | 4596 (4560 fg + 36 J) | interrupted ≥ 4046 | 4733+ | (running; superseded by §4b) | — |
+| 80 | 4596 (4560 fg + 36 J) | interrupted (3290 + 756 + 764 over three runs) | 5888 (archived in e147_cegar_M80.json for resume) | interrupted — superseded by §4b (COV-W(80) holds) | — |
 
 Every discovered pattern was validated on the spot against the §0.2
 restricted-theory definition (assertion in the loop, never fired);
@@ -608,6 +608,17 @@ whose family structure the uniform proof must reproduce.
    Low defectors (z < 5M−31) force shorter intervals but sit inside
    the FG-gadget support zone of T's own fans; U-defectors are the
    mirror case.
+   MUS DATA (e151 at M = 48, K = K* = 26; deterministic deletion
+   minimization, 1157 of 4395 soft constraints): the load-bearing
+   fans are 305 pairs, EVERY ONE with a same-parity attacker pair
+   (parities (0,0): 142, (1,1): 163 — all gaps even, decaying from
+   gap 2), i.e. exactly the class-local fans; the load-bearing
+   straddles are 852 triples concentrated on low attackers
+   (u ≤ M+32: 590), band-edge midpoints (y ∈ E1: 392) and
+   bottom-of-P2 completions (z ≤ 4M+32: 510) — the Lemma-A7(d)
+   family.  So the uniform GAP-DICH proof should live INSIDE one
+   parity class at half scale: same-class fans + E1→S3 straddle
+   exclusions vs the exposure mass.  data/e151_dich_mus_M48.log.
 3. **GAP-PARM schema**: the band-mixing recursion — notes/33 Lemma H
    halving applied classwise with the band split as the new
    coloring; its aligned boundary cases are Theorem H (proved) and
@@ -617,7 +628,8 @@ whose family structure the uniform proof must reproduce.
    co-bounded band subsets (the co-boundedness K* − 1 ≈ M/2 − 5 is
    large, so this is a genuinely robust version of the J/ThW1′
    kills).
-5. The M = 80 exhaustive pattern run (background) and E(80) — the
+5. The M = 80 exhaustive pattern run (archived at 5888 patterns;
+   resume optional via e147's resume support) and E(80) — the
    catalogue record only; COV(80) already holds via §4b.
 
 ### 5.4 Relation to the notes/54 ledger style
