@@ -279,12 +279,17 @@ Under the hatch:
     h(U_A) = [m+1, 2m]; in-block APs halve; the (0,0,1) units have
     completions c = 2b − a odd, c ∈ E1 ∩ P1's bottom [3M−15, 3M−1]
     (Lemma A1), and fire iff c ∈ A_o.  Halved: the notes/55 §5.4c
-    crown-unit system {b′ ≺ a′ : 2b′ − a′ = c′} with completion
-    window c′ ∈ CW := [3m−7, 3m] (8 values), unit group of c′
-    firing iff the corresponding c ∈ A_o.  **Th0(B)** halves (via
-    v ↦ v/2 on evens) to the IDENTICAL guarded theory with guards
-    "c ∈ B_e" — both parities produce the same halved crown core
-    ThW0(m), completion window CW, 8 guard values.
+    crown-unit system {2m−k ≺ m+j : k ≤ 3, 1 ≤ j ≤ 7−2k} (16
+    units), whose unit (k, j) has completion c′ = 3m − (2k+j), so
+    the completion window is c′ ∈ CW := [3m−7, 3m−1] — SEVEN
+    values, unit multiplicities (1, 1, 2, 2, 3, 3, 4) for
+    i = 2k+j = 1..7 — each guarded by the corresponding full-scale
+    odd c = 2c′ − 1 ∈ A_o.  (The eighth halved value 3m is
+    unreachable: it would need a′ = m ∉ [m+1, 2m]; arithmetic
+    verified by script, session transcript.)  **Th0(B)** halves
+    (via v ↦ v/2 on evens) to the IDENTICAL guarded theory with
+    guards "c ∈ B_e" — both parities produce the same halved crown
+    core ThW0(m) with completion window CW.
 (d) **Th1(T)** contains its class restrictions (a restriction of a
     consistent theory is consistent, as in Lemma DP): Th1(A)[A_o] =
     the α-theory image on h(A_o) (α-units z ≺ y fire for A whenever
@@ -305,8 +310,8 @@ to the attacking team.  ∎
 
 ### 3.2 The two finite schema hypotheses
 
-**(H-FG8)(m)**  In the fan theory on W2e (resp. W2o) with attacker
-window W1: every attacker pair at distance ≤ 8 is refuted by plain
+**(H-FG6)(m)**  In the fan theory on W2e (resp. W2o) with attacker
+window W1: every attacker pair at distance ≤ 6 is refuted by plain
 R1–R4 + transitivity closure of its double fan.
 [Machine-true at all audited full scales for the analogous window
 (notes/55 §5.3b: every escape pair has gap ≥ 16); to be re-audited
@@ -315,28 +320,28 @@ their upper ends 6m+7/6m+8 differ from the full-scale 6M+15.
 Uniformization = GAP-FG-schema, already on the ledger.]
 
 **(H-RW0)(m)**  ThW0(m) remains UNSAT after deleting the unit group
-of any ONE completion value c′ ∈ CW.  (8 variants + the full
+of any ONE completion value c′ ∈ CW.  (7 variants + the full
 theory.)  [Finite per scale, solver-trivial; to be checked tonight
 at m = 24, 28, 32, 40, 48, 56, 64, 80 (e155).  Uniformization =
-GAP-H1's species, now in punctured form: GAP-RW0 ⊆ GAP-H1 ∪ {8
+GAP-H1's species, now in punctured form: GAP-RW0 ⊆ GAP-H1 ∪ {7
 finite variants}.]
 
-### 3.3 Theorem P-ARM′ (conditional)  [PROVED modulo H-FG8, H-RW0]
+### 3.3 Theorem P-ARM′ (conditional)  [PROVED modulo H-FG6, H-RW0]
 
-**Theorem.**  Assume (H-FG8)(m) and (H-RW0)(m).  Then P-ARM(M)
+**Theorem.**  Assume (H-FG6)(m) and (H-RW0)(m).  Then P-ARM(M)
 holds at M = 2m: under the hatch, for EVERY band split, some block
 theory of some team is inconsistent.
 
 *Proof.*  Case F: h(A_e) or h(B_o) contains an attacker pair at
-distance ≤ 8.  By (H-FG8) and Lemma PARM-HALVE(b), the owning
+distance ≤ 6.  By (H-FG6) and Lemma PARM-HALVE(b), the owning
 team's Th2 is inconsistent.  Done.
 
-Case S (separated): both h(A_e) and h(B_o) are 9-separated subsets
-of W1.  The crown completion window CW has width 8, so
-|h(B_o) ∩ CW| ≤ 1: at most ONE of the 8 odd crown completions of A
-lies in B_o; the other ≥ 7 lie in A_o (band partition), so ≥ 7 of
-the 8 guard groups of Th0(A)'s crown fire.  By (H-RW0), Th0(A) is
-inconsistent.  ∎
+Case S (separated): both h(A_e) and h(B_o) are 7-separated subsets
+of W1.  The crown completion window CW = [3m−7, 3m−1] has width 6,
+so |h(B_o) ∩ CW| ≤ 1: at most ONE of the 7 odd crown completions of
+A lies in B_o; the other ≥ 6 lie in A_o (band partition), so the
+guard groups of ≥ 6 of the 7 completions fire in Th0(A).  By
+(H-RW0), Th0(A) is inconsistent.  ∎
 
 (The kill is doubly redundant: |h(A_e) ∩ CW| ≤ 1 likewise fires
 Th0(B) through the identical halved crown.  Neither the band bounds
@@ -361,3 +366,84 @@ with ThW0's punctured variants at that m — probed tonight at M = 56
 
 [Status: PARM-HALVE, PARM-COUNT/Theorem P-ARM′ PROVED conditional
 on the two named finite schemas; machine checks in flight.]
+
+---
+
+## 4. The robust parity arm: Lemma PH+ and the RP-ARM assembly
+
+### 4.1 Lemma PH+ (quantitative parity hatch)  [PROVED]
+
+For a 2-coloring χ call z ∈ P2 a *defector* (relative to a pure-U
+orientation) if χ(z) equals the team owning z's parity class of P0.
+
+**Lemma PH+.**  Let χ have |U_T| ≥ 1 for both teams and
+Φ(χ) ≤ φ₀ < M + 7.  Then each parity class of P0 is monochromatic
+with the two classes in opposite teams (the pure-U alignment, up to
+swap), and the defector count is exactly D = 2Φ/M ≤ ⌊2φ₀/M⌋.
+
+*Proof.*  (1) If P0 ∩ c meets both teams for a parity c, every
+z ∈ P2 ∩ c shares a team with some u ∈ P0 ∩ c, contributing ≥ 1 to
+Φ; |P2 ∩ even| = M+7, |P2 ∩ odd| = M+8, so Φ ≥ M+7 > φ₀ —
+contradiction.  So each class is monochromatic.  (2) Same team for
+both classes empties the other team's U — excluded.  (3) Under the
+pure alignment, a value z ∈ P2 contributes |U_{χ(z)} ∩ (z mod 2)|
+to Φ, which is M/2 if z defects and 0 otherwise; each P0 class has
+exactly M/2 values.  Hence Φ = (M/2)·D.  ∎
+
+(This is the exact quantization seen in every frontier witness:
+Φ ∈ {48, 64, 120, 48, 56} = (M/2)·{2, 2, 3, 1, 1} at
+M = 48..112.  Lemma PH is the case φ₀ = 0.)
+
+### 4.2 The robust assembly, designed
+
+Replace notes/56 §4b's P arm by the three machine lemmas (each per
+scale, each a single instance; e153/e154):
+
+    DICH-U(M, K):      fan-clean ∧ bounds ∧ straddle-free ∧
+                       min|Y| ≥ K ∧ (U not purely aligned in either
+                       orientation)                        — UNSAT?
+    DICH-Z(M, K, d₀):  same, U pinned to orientation 1,
+                       ≥ d₀ + 1 defectors                  — UNSAT?
+    RP-ARM(M, d₀):     orientation-1 hatch with ≤ d₀ FREE defectors,
+                       band free (≥ 2 each), straddles, all six
+                       guarded block theories               — UNSAT?
+
+**Theorem COV-W′(M) (schema).**  If L-LOP(M) holds at K_P − 1 ≤
+cap(M), and DICH-U(M, K_P), DICH-Z(M, K_P, d₀), RP-ARM(M, d₀) are
+all UNSAT, then every straddle-free (2,2,2)-bounded coloring of
+CORE′(M) is order-infeasible: fan-monochromatic ones die by Lemma
+DP; fan-clean ones with min|Y| ≤ K_P − 1 die by L-LOP; fan-clean
+ones with min|Y| ≥ K_P have pure U (DICH-U; up to swap), ≤ d₀
+defectors (DICH-Z), and then some block theory dies (RP-ARM, whose
+instance space contains every such coloring after the swap
+normalization — swap-invariance of every constraint family as in
+notes/56 §4b).  [PROVED as a composition; the per-scale inputs are
+machine lemmas.]
+
+Against notes/56 §4b this differs ONLY in the P arm: Φ = 0 / exact
+hatch is upgraded to ≤ d₀ defectors, absorbing the boundary zone
+that the narrowing L/P overlap (§1) no longer covers.  RP-ARM keeps
+straddle clauses and the (0,2,2) units — both vacuous at d₀ = 0 but
+live for defectors (a defector's parity matches its team's U).
+
+### 4.3 What the hand proof of RP-ARM will look like (design note)
+
+The §3 proof survives d₀ defectors with two modifications: (i) a
+defector z ∈ Z_A ∖ 2ℤ re-opens straddle constraints through odd
+attackers u ∈ U_A — MORE constraints on the coloring, harmless for
+the kill; (ii) the halved fan/crown theories lose the defected
+values: Th2(A)'s halved window W2e gets ≤ d₀ punctures, and the
+crown guard budget rises from 1 to at most 1 + d₀ compromised
+completions ONLY IF defectors sit on crown-relevant values — but
+crown guards are BAND values, which defectors are not; the actual
+degradation is: (a) the fan closure refutations must survive ≤ d₀
+punctures of W2e/W2o (robust H-FG6; the notes/55 §5.3 robustness
+data: the top double fan survives 14 deletions), and (b) ThW0 is
+untouched (its order block is P0, pinned; its guards are band
+values).  So the conditional theorem of §3 should extend verbatim
+with H-FG6 replaced by its d₀-punctured form — the reason to expect
+RP-ARM to be no harder than P-ARM for small d₀.  [Design note; the
+machine instances below are the authority.]
+
+[Status: Lemma PH+ PROVED; COV-W′ composition PROVED given the
+per-scale machine inputs; instances in flight.]
