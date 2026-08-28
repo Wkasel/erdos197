@@ -156,6 +156,19 @@ what tax the upper window.  H gives the necessary-condition frame
 mixed engine.  Still a two-layer coloring/order decomposition of
 exactly the GAP-N6a species, one block deeper.
 
+### 3c. Pre-registered MUS prediction (BEFORE e158b runs on (6,0))
+
+By analogy with the e126 M=32 support anatomy (notes/48 prediction,
+confirmed) and the §3b mechanism: the (16; 6, 0) deletion-minimal
+value support should show (i) Bm1 present as seam-anchor material
+(the s0 block-order clauses need Bm1×B0 in-team pairs); (ii) B0
+nearly whole — it is the shared currency block (upper window's
+bottom + lower window's middle); (iii) B1 weighted to its LOWER
+half (both windows' active zone; upper H-middles y with 2y−u ≤ 7M
+and lower H-tops); (iv) B2 confined to the reachable bottom
+(support ∩ B2 ⊆ (4M, 7M] = (64, 112], the 2y−u image), top eighth
+absent.  Committed before the run.
+
 ## 4. What the pump can and cannot give at ω (worked out before C1
 ## landed; C1 only picks the channel)
 
