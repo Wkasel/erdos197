@@ -116,10 +116,12 @@ def main():
             for c in qcls:
                 s.add_clause(c)
             s.add_clause(qvars)               # Phi >= 1
+            ctop = top + 10000
             for sign in (1, -1):
                 enc = CardEnc.atleast(lits=[sign * ai[v] for v in P1],
-                                      bound=K, top_id=top + 10000,
+                                      bound=K, top_id=ctop,
                                       encoding=EncType.seqcounter)
+                ctop = max(ctop, enc.nv)
                 for c in enc.clauses:
                     s.add_clause(c)
             ok = s.solve()
@@ -147,10 +149,12 @@ def main():
             for c in qcls:
                 s.add_clause(c)
             s.add_clause(qvars)
+            ctop = top + 10000
             for sign in (1, -1):
                 enc = CardEnc.atleast(lits=[sign * ai[v] for v in P1],
-                                      bound=Kmax, top_id=top + 10000,
+                                      bound=Kmax, top_id=ctop,
                                       encoding=EncType.seqcounter)
+                ctop = max(ctop, enc.nv)
                 for c in enc.clauses:
                     s.add_clause(c)
             assert not s.solve(), 'monotone tail violated?!'

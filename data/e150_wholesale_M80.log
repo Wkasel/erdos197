@@ -1,0 +1,12 @@
+  P-ARM(80) blocks=(0, 1): SAT [0.2s] (vars=11152, clauses=624744, units=2592)
+  P-ARM(80) blocks=(0, 1, 2): UNSAT [0.6s] (vars=18721, clauses=1066736, units=5640)
+  L-LOP(80) base: vars=6291 clauses=316340
+    K=49 (|Y_A| <= 48, |Y_B| >= 48): SAT [0.7s]
+    K=25 (|Y_A| <= 24, |Y_B| >= 72): UNSAT [1.2s]
+    K=37 (|Y_A| <= 36, |Y_B| >= 60): UNSAT [1.9s]
+    K=43 (|Y_A| <= 42, |Y_B| >= 54): UNSAT [1.0s]
+    K=46 (|Y_A| <= 45, |Y_B| >= 51): SAT [2.4s]
+    K=44 (|Y_A| <= 43, |Y_B| >= 53): UNSAT [1.3s]
+    K=45 (|Y_A| <= 44, |Y_B| >= 52): UNSAT [2.2s]
+  L-LOP(80): UNSAT for all K <= 45 (band-major size Ymin* = 52)
+e150: DONE {'M': 80, 'P_ARM_blocks01': 'SAT', 'P_ARM_blocks012': 'UNSAT', 'L_LOP_kmax_unsat': 45}

@@ -311,3 +311,164 @@ exposure entirely, collapsing the coloring onto the lattice arm.
 Status: Lemma PH [PROVED]; DICH(M) [MACHINE-CHECKED at the scales
 of §3.3]; the uniform hand proof of DICH is part of GAP-COV (§5).
 
+### 3.3 The threshold K*(M)  [MACHINE-CHECKED]
+
+experiments/e149_dichotomy.py encodes Φ ≥ 1 (one selector per
+same-parity P0×P2 pair, forced to imply same-team, plus their
+disjunction) over the fan-clean base and sweeps K in min|Y| ≥ K.
+
+    M = 48:  SAT at every K ≤ 25 (frontier witness at K = 25:
+             Φ = 48, sizes A = [24, 25, 57], B = [24, 39, 54]);
+             UNSAT at K = 26 — and at the balance cap K = 32.
+             K*(48) = 26.
+    M = 64:  SAT at every K ≤ 34 (frontier Φ = 64); UNSAT at 35
+             and at the cap 40.   K*(64) = 35.
+    M = 80:  SAT at every K ≤ 41 (frontier Φ = 120); UNSAT at 42
+             and at the cap 48.   K*(80) = 42.
+
+K* tracks the balance point (M+16)/2 at a bounded offset:
+K* − (M+16)/2 = −6, −5, −6 at the three scales.  Below K* the
+frontier witnesses' Φ decays roughly linearly toward the threshold
+(Φ = 48, 32–64, 80–120 near the frontier) — the exposure mass is
+squeezed out continuously, then vanishes.
+
+Sharpness: the K = 25 frontier witness keeps both U's parity-pure
+(24 odd vs 24 even) and leaks its Φ = 48 through a handful of
+same-parity P2 values — the hatch fails only marginally below the
+threshold.  (Bug record, for honesty: a first version of e149 reused
+one `top_id` for the two cardinality encoders, colliding their
+auxiliary variables and yielding a spurious K* = 2; the contradiction
+with the CEGAR witness stream — fan-clean witnesses with Φ ≥ 288 at
+min|Y| = 3 — exposed it.  The witness stream is the regression test.)
+
+---
+
+## 4. Scale stability: COV holds at 48, 64, 80 and the essential
+## catalogue is one fixed family system
+
+### 4.1 The runs
+
+| M | seed 𝔇₀ | CEGAR iterations | discovered | verdict | E(M) |
+|---|---------|------------------|------------|---------|------|
+| 48 | 1887 (1851 fg + 36 J) | 170 | 198 | **UNSAT** | 191 |
+| 64 | 3018 (2982 fg + 36 J) | 800 + 89 (resumed) | 929 | **UNSAT** | 219 |
+| 80 | 4596 (4560 fg + 36 J) | interrupted ≥ 4046 | 4733+ | (running; superseded by §4b) | — |
+
+Every discovered pattern was validated on the spot against the §0.2
+restricted-theory definition (assertion in the loop, never fired);
+the witness-must-die invariant (some block theory UNSAT — the e135
+lock through Lemma U) held at every single iteration at every scale.
+
+At M = 80 the per-pattern loop entered a slow grind inside ONE
+witness family (the lopsided cluster: band split ≈ 8/88, the
+adversary permuting which ≈ 10 band + ≈ 50 P2 values the band-major
+team sheds; thousands of minimal patterns).  That grind is what
+motivated the WHOLESALE reformulation of §4b, which kills each arm
+with a single hybrid instance instead of a pattern stream; the M = 80
+pattern run is kept alive in the background purely as the exhaustive
+record (its verdict is subsumed by §4b).
+
+### 4.2 The essential catalogue's family system (48 vs 64)
+
+E(M) splits into FIVE schematic families, stable across scales:
+
+| family | block | E(48) | E(64) | shape |
+|--------|-------|-------|-------|-------|
+| **F** (fan) | 2 | 160 | 191 | attacker pair + closure support; 159/160 resp. 190/191 parity-pure; 6-value FG-high gadgets + closures ≤ 30 (a handful of deep-pair supports 52–77) |
+| **J** (top-run) | 1 | 3 | 3 | THE SAME three: J({1,2}), J({1,3}), J({2,4}) at both scales |
+| **α** (band lattice) | 1 | 19 | 15 | 2–7 P0-top attackers (values 2M−k, k ≤ 29) + most of one band parity class; ALL parity-pure |
+| — incl. the **mod-4 quartet** | 1 | 4 | 4 | exactly four patterns, one per mod-4 class of the band: 3 P0-top attackers + a mod-4 band class (the quarter-scale crown, see below) |
+| **β** (generalized J) | 1 | 6 | 6 | single-parity band material + 2–8 S3 completions, no P0 guards; ALL parity-pure |
+| **crown** | 0 | 3 | 4 | ≈ one parity class of P0 + 2–7 same-parity E1 values (the ThW0 halved-crown core in situ); ALL parity-pure |
+
+Parity-purity is near-total across the whole of E(M): the essential
+death of the coloring space is CLASS-LOCAL, matching the halving
+recursion of Lemma PAR — each pattern lives on one arithmetic
+lattice, and the covering statement gathers the lattices.
+
+**The mod-4 quartet, halved by hand (example of the species).**  At
+M = 64 the four patterns are, in offsets from 4M,
+{−139,−135,−131} ∪ {−79, −75, …, −3} and its three mod-4 shifts.
+Take the ≡ 0 (mod 4) member; every value is divisible by 4, and the
+quarter-scale map v ↦ v/4 (twice the notes/33 Lemma H halving)
+carries its restricted theory Th₁[S] to: an AP-free order of a
+16-interval + the α-units of three attackers at distance
+{2m′−k} below it — a crown/ThW1′ core at quarter scale, the
+notes/55 §5.4c species on the line m′ = M/4.  The quartet is the
+machine's rediscovery, inside the essential catalogue, of the
+"higher lattice alignments halve once more" prediction of Lemma
+PAR — now with the exact finite instances named.
+
+[MACHINE-CHECK: data/e148_essential_M48.json, _M64.json; every
+pattern's restricted theory independently SAT-validated.]
+
+---
+
+## 4b. The wholesale form: two hybrid lemmas close the two non-fan
+## arms at ALL THREE SCALES  [MACHINE-CHECKED]
+
+The pattern catalogue finitizes the order theory one MUS at a time;
+the better cut (e150) kills each arm with ONE hybrid
+coloring-plus-order instance.
+
+**Lemma L-LOP(M) (lopsided arm).**  The instance
+
+    coloring vars on CORE′(M);  straddle-freeness (both teams);
+    (2,2,2) bounds;  no monochromatic fan pattern;
+    |Y_A| ≤ K − 1        [so |Y_B| ≥ M + 17 − K: B is band-major];
+    Th1(B) as a guarded order theory (order vars on P1;
+        in-band APs, α-units, β-units, each guarded by the
+        B-membership of its member set; transitivity)
+
+is UNSAT — the band-major team's band theory alone is inconsistent —
+for every K up to:
+
+    M = 48: K ≤ 30  (band-major size ≥ 35 of 64 kills)   0.2–0.4 s
+    M = 64: K ≤ 37  (band-major size ≥ 44 of 80 kills)   0.4–0.9 s
+    M = 80: K ≤ 45  (band-major size ≥ 52 of 96 kills)   1.0–2.4 s
+
+with SAT one step above each cap (sharp).  By team-swap symmetry the
+lemma reads: min|Y| ≤ K − 1 ⟹ the band-major team's Th1 is
+inconsistent ⟹ the coloring is infeasible (Lemma U).
+
+**Lemma P-ARM(M) (parity arm).**  Under the parity hatch — P0/P2
+pinned to the Lemma-PH alignment (U_A = odds of P0, U_B = evens,
+Z_A = evens of P2, Z_B = odds; WLOG by swap), band coloring FREE
+(≥ 2 per team) — the six guarded block theories (blocks 0, 1, 2 ×
+both teams; straddles are vacuous under the hatch, §5.4 of notes/55)
+are jointly inconsistent:
+
+    M = 48: UNSAT 0.1 s      M = 64: UNSAT ~1 s      M = 80: UNSAT ~2 s
+
+Moreover blocks {0, 1} alone are SAT at all three scales: the
+block-2 (fan/A6) layer is genuinely load-bearing in the parity arm —
+matching the anatomy of the aligned special cases (alignment (i)
+dies through Th2's even FG-gadget, alignment (ii) through
+Th0/Th1 = H1's two theories).  P-ARM is exactly the notes/55 §5.4
+"mixed band ⟹ at least as dead" statement, now a single machine
+lemma per scale instead of a conjecture.
+
+**Theorem COV-W(M), M ∈ {48, 64, 80}  [MACHINE-CHECKED].**  Every
+straddle-free 2-coloring of CORE′(M) meeting the (2,2,2) bounds is
+order-infeasible, by the three-case analysis:
+
+    F  (fan):      some team monochromatizes a fan pattern
+                   → Th2 dies (FG-high [PROVED] / closure DAGs);
+    L  (lopsided): fan-clean, min|Y| ≤ K*(M) − 1
+                   → Th1(band-major) dies            [L-LOP(M)];
+    P  (parity):   fan-clean, min|Y| ≥ K*(M)
+                   → Φ = 0                            [DICH(M), e149]
+                   → P0/P2 = the PAR alignment        [Lemma PH]
+                   → the six theories die             [P-ARM(M)].
+
+The case split is exhaustive because K*(M) − 1 ≤ L-LOP's cap at all
+three scales, with margin 3 / 1 / 2 (48 / 64 / 80): 26–29, 35–36,
+42–44 are covered by BOTH arms.  With Lemma U and Lemma DP this is
+Theorem N6a at each scale, re-proved through the structured bridge —
+i.e. GAP-STRUCT's bridge exists and is machine-certified at
+48/64/80.
+
+[MACHINE-CHECK: experiments/e150_wholesale.py →
+data/e150_wholesale_M{48,64,80}.json/.log; experiments/
+e149_dichotomy.py → data/e149_dichotomy_M{48,64,80}.json/.log.]
+

@@ -1,0 +1,30 @@
+M=48: fan-clean base with 1851 fan patterns
+  2664 same-parity P0xP2 pairs
+  Phi=0 SAT; witness sizes A=[24, 26, 55] B=[24, 38, 56] U_A mod2={1: 24} Z_A mod2={0: 55}
+  K=2: SAT (phi=1864, sizes A=[10, 62, 10] B=[38, 2, 101]) [0.0s]
+  K=3: SAT (phi=1541, sizes A=[35, 3, 94] B=[13, 61, 17]) [0.0s]
+  K=4: SAT (phi=1264, sizes A=[32, 4, 90] B=[16, 60, 21]) [0.0s]
+  K=5: SAT (phi=336, sizes A=[24, 7, 69] B=[24, 57, 42]) [0.0s]
+  K=6: SAT (phi=408, sizes A=[24, 58, 38] B=[24, 6, 73]) [0.0s]
+  K=7: SAT (phi=312, sizes A=[24, 57, 42] B=[24, 7, 69]) [0.0s]
+  K=8: SAT (phi=512, sizes A=[25, 8, 75] B=[23, 56, 36]) [0.0s]
+  K=9: SAT (phi=408, sizes A=[24, 47, 38] B=[24, 17, 73]) [0.0s]
+  K=10: SAT (phi=336, sizes A=[24, 14, 69] B=[24, 50, 42]) [0.0s]
+  K=11: SAT (phi=528, sizes A=[39, 53, 4] B=[9, 11, 107]) [0.0s]
+  K=12: SAT (phi=312, sizes A=[24, 13, 68] B=[24, 51, 43]) [0.0s]
+  K=13: SAT (phi=216, sizes A=[24, 13, 64] B=[24, 51, 47]) [0.0s]
+  K=14: SAT (phi=168, sizes A=[24, 14, 62] B=[24, 50, 49]) [0.0s]
+  K=15: SAT (phi=168, sizes A=[24, 15, 62] B=[24, 49, 49]) [0.0s]
+  K=16: SAT (phi=240, sizes A=[24, 16, 65] B=[24, 48, 46]) [0.0s]
+  K=17: SAT (phi=192, sizes A=[24, 17, 63] B=[24, 47, 48]) [0.0s]
+  K=18: SAT (phi=144, sizes A=[24, 18, 61] B=[24, 46, 50]) [0.0s]
+  K=19: SAT (phi=192, sizes A=[24, 45, 47] B=[24, 19, 64]) [0.1s]
+  K=20: SAT (phi=144, sizes A=[24, 20, 61] B=[24, 44, 50]) [0.0s]
+  K=21: SAT (phi=144, sizes A=[24, 21, 61] B=[24, 43, 50]) [0.0s]
+  K=22: SAT (phi=48, sizes A=[24, 23, 57] B=[24, 41, 54]) [0.0s]
+  K=23: SAT (phi=96, sizes A=[24, 41, 51] B=[24, 23, 60]) [0.0s]
+  K=24: SAT (phi=48, sizes A=[24, 24, 57] B=[24, 40, 54]) [0.0s]
+  K=25: SAT (phi=48, sizes A=[24, 25, 57] B=[24, 39, 54]) [0.1s]
+  K=26: UNSAT [0.1s]  — K*(48) = 26
+  K=32: UNSAT (tail confirmed)
+e149: DONE M=48 K*=26

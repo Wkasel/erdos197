@@ -129,9 +129,10 @@ def block_theory_constraints(M, i, T, Tset):
     return pts, cons
 
 
-def theory_mus(M, i, T, cap_min=150):
-    """Solve Th_i(T); if UNSAT return (support, constraints) of a
-    minimized core, else None."""
+def theory_mus(M, i, T, cap_min=150, n_mus=4):
+    """Solve Th_i(T); if UNSAT return a list of (support, constraints)
+    pairs — up to n_mus distinct deletion-minimized cores (shuffled
+    orders) — else None."""
     Tset = set(T)
     pts, cons = block_theory_constraints(M, i, T, Tset)
     if len(pts) < 3:
@@ -179,23 +180,51 @@ def theory_mus(M, i, T, cap_min=150):
                 else:
                     u, w = b, a
             cls.append([-s, lit(u, w)])
+    def shrink(slv, start):
+        core = set(start)
+        for s in sorted(core, reverse=True):
+            if s not in core:
+                continue
+            trial = sorted(core - {s})
+            if not slv.solve(assumptions=trial):
+                nc = set(slv.get_core() or trial)
+                core = nc & set(trial)
+        return core
+
+    results = []
+    seen_supports = set()
+
+    def emit(core):
+        used = [sel[s] for s in sorted(core)]
+        supp = set()
+        for (_, a, b, c) in used:
+            supp.update((a, b, c))
+        key = tuple(sorted(supp))
+        if key not in seen_supports:
+            seen_supports.add(key)
+            results.append((sorted(supp), used))
+
     with Cadical195(bootstrap_with=cls) as slv:
         asel = sorted(sel)
         if slv.solve(assumptions=asel):
             return None
-        core = set(slv.get_core() or asel)
-        core &= set(asel)
-        if len(core) <= cap_min:
-            for s in sorted(core, reverse=True):
-                trial = sorted(core - {s})
-                if not slv.solve(assumptions=trial):
-                    nc = set(slv.get_core() or trial)
-                    core = nc & set(trial)
-    used = [sel[s] for s in sorted(core)]
-    supp = set()
-    for (_, a, b, c) in used:
-        supp.update((a, b, c))
-    return sorted(supp), used
+        core0 = set(slv.get_core() or asel) & set(asel)
+        if len(core0) > cap_min:
+            emit(core0)
+            return results
+        mus1 = shrink(slv, core0)
+        emit(mus1)
+        # diversify: ban one constraint of mus1 at a time (CAMUS step)
+        banned_tries = sorted(mus1)[:: max(1, len(mus1) // max(1, n_mus - 1))]
+        for c in banned_tries:
+            if len(results) >= n_mus:
+                break
+            rest = sorted(set(asel) - {c})
+            if not slv.solve(assumptions=rest):
+                core = set(slv.get_core() or rest) & set(rest)
+                if len(core) <= cap_min:
+                    emit(shrink(slv, core))
+    return results
 
 
 # ----------------------------------------------------------------------
@@ -316,13 +345,13 @@ def main():
                     r = theory_mus(M, i, col)
                     if r is None:
                         continue
-                    supp, used = r
-                    assert RESTRICTED[i](M, supp), (it, name, i, supp)
-                    theories.append((name, i, len(supp), len(used)))
-                    it_patterns.append({'blk': i, 'S': supp,
-                                        'src': f'cegar(it={it},'
-                                               f'team={name})',
-                                        'n_cons': len(used)})
+                    for supp, used in r:
+                        assert RESTRICTED[i](M, supp), (it, name, i, supp)
+                        theories.append((name, i, len(supp), len(used)))
+                        it_patterns.append({'blk': i, 'S': supp,
+                                            'src': f'cegar(it={it},'
+                                                   f'team={name})',
+                                            'n_cons': len(used)})
             if it_patterns:
                 break
         assert it_patterns, (it, 'no UNSAT block theory — violates '
