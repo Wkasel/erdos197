@@ -479,6 +479,22 @@ Theorem N6a at each scale, re-proved through the structured bridge —
 i.e. GAP-STRUCT's bridge exists and is machine-certified at
 48/64/80.
 
+*Soundness of the composition.*  (F) A monochromatic fan pattern
+makes Th₂(T) inconsistent by Lemma DP's restriction argument.
+(L) L-LOP's instance existentially quantifies the coloring and the
+band-major team's Th1 order; its UNSAT says no such coloring has
+Th1(band-major) consistent; a fan-clean bounded straddle-free χ with
+min|Y| ≤ K − 1 is (after the WLOG swap) inside the instance space,
+so ITS Th1(band-major) is inconsistent.  (P) DICH's UNSAT says every
+fan-clean bounded straddle-free coloring with min|Y| ≥ K* has
+Φ = 0; Lemma PH pins χ|_{P0∪P2} up to swap; P-ARM's instance
+quantifies over ALL band splits above the pinned P0/P2, so its
+UNSAT covers χ's own split: some block theory of χ is inconsistent.
+In each case Lemma U converts the inconsistent block theory into
+infeasibility of any state over χ.  The two pinnings of Lemma PH
+are exchanged by the team swap, under which every constraint family
+of every instance here is invariant.
+
 [MACHINE-CHECK: experiments/e150_wholesale.py →
 data/e150_wholesale_M{48,64,80}.json/.log; experiments/
 e149_dichotomy.py → data/e149_dichotomy_M{48,64,80}.json/.log.
