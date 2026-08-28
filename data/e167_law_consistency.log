@@ -1,0 +1,92 @@
+========================================================================
+(a) K*/cap/DICH reproduction at the eight certified scales
+[PASS] K*(48) law -> 26 (measured 26)
+[PASS] K*(64) law -> 35 (measured 35)
+[PASS] K*(80) law -> 42 (measured 42)
+[PASS] K*(96) law -> 51 (measured 51)
+[PASS] K*(112) law -> 60 (measured 60)
+[PASS] K*(128) law -> 68 (measured 68)
+[PASS] K*(144) law -> 76 (measured 76)
+[PASS] K*(160) law -> 83 (measured 83)
+[info] flat cap law OUT OF SCOPE at 48: predicts 27, measured 29 (off by 2)
+[info] flat cap law OUT OF SCOPE at 64: predicts 35, measured 36 (off by 1)
+[info] flat cap law OUT OF SCOPE at 80: predicts 43, measured 44 (off by 1)
+[PASS] flat cap law at 96: 51 (measured 51)
+[PASS] flat cap law at 112: 59 (measured 59)
+[PASS] flat cap law at 128: 67 (measured 67)
+[PASS] flat cap law at 144: 75 (measured 75)
+[PASS] flat cap law at 160: 83 (measured 83)
+[PASS] floor(M/32) cap law is dead (fails somewhere) first fail (128, 66, 67)
+[PASS] mod-32 K* law is dead (fails somewhere) fails at [112, 128, 144]
+
+measured W(M) = cap - K* + 1:
+  M=  48  cap= 29  K*= 26  W=4
+  M=  64  cap= 36  K*= 35  W=2
+  M=  80  cap= 44  K*= 42  W=3
+  M=  96  cap= 51  K*= 51  W=1
+  M= 112  cap= 59  K*= 60  W=0
+  M= 128  cap= 67  K*= 68  W=0
+  M= 144  cap= 75  K*= 76  W=0
+  M= 160  cap= 83  K*= 83  W=1
+
+(a) W(2^k) from the laws (flat cap + K* mechanism), scenarios over alpha
+    W = C - K* = (m+4) - (m+9+max(aE-fO,aO-fE)) = min(fO-aE, fE-aO) - 5
+    with F2 regime f=8 (onset M>=96, both parities): W = 3 - alpha_max
+  k=   6 M=2^6  C=36  W(a=2)=1 W(a=3)=0 W(a=4)=-1  [MEASURED: W=2]
+  k=   7 M=2^7  C=68  W(a=2)=1 W(a=3)=0 W(a=4)=-1  [MEASURED: W=0]
+  k=   8 M=2^8  C=132  W(a=2)=1 W(a=3)=0 W(a=4)=-1
+  k=   9 M=2^9  C=260  W(a=2)=1 W(a=3)=0 W(a=4)=-1
+  k=  10 M=2^10  C=516  W(a=2)=1 W(a=3)=0 W(a=4)=-1
+  k=  11 M=2^11  C=1028  W(a=2)=1 W(a=3)=0 W(a=4)=-1
+  k=  12 M=2^12  C=2052  W(a=2)=1 W(a=3)=0 W(a=4)=-1
+  k=  13 M=2^13  C=4100  W(a=2)=1 W(a=3)=0 W(a=4)=-1
+  k=  14 M=2^14  C=8196  W(a=2)=1 W(a=3)=0 W(a=4)=-1
+  k=  15 M=2^15  C=16388  W(a=2)=1 W(a=3)=0 W(a=4)=-1
+  k=  16 M=2^16  C=32772  W(a=2)=1 W(a=3)=0 W(a=4)=-1
+  k=  17 M=2^17  C=65540  W(a=2)=1 W(a=3)=0 W(a=4)=-1
+  ... (W scenario values are k-independent: 1 / 0 / -1 for alpha=2/3/4)
+[PASS] C(2^1000) integer & = m+4 digits=301
+[PASS] K*(2^1000) integer for any (a,f) in envelope 
+
+  verdict inputs: alpha series 48..160 = [2, 3, 2, 2, 3, 3, 3, 2]
+========================================================================
+(b) skip-mass law: independent recount (schedule (1,0,0,1))
+[PASS] mu_skip A/B at M=16: 54/50 law 54/50
+[PASS] mu_skip A/B at M=24: 120/114 law 120/114
+[PASS] mu_skip A/B at M=32: 212/204 law 212/204
+[PASS] mu_skip A/B at M=48: 474/462 law 474/462
+[PASS] mu_skip A/B at M=64: 840/824 law 840/824
+[PASS] mu_skip A/B at M=96: 1884/1860 law 1884/1860
+[PASS] mu_skip A/B at M=128: 3344/3312 law 3344/3312
+[PASS] mu_skip A/B at M=192: 7512/7464 law 7512/7464
+[PASS] mu_skip A/B at M=256: 13344/13280 law 13344/13280
+[PASS] 13M^2/64+M/8 integer at M=2^6 
+[PASS] 13M^2/64+M/8 integer at M=2^10 
+[PASS] 13M^2/64+M/8 integer at M=2^20 
+[PASS] 13M^2/64+M/8 integer at M=2^40 
+[PASS] 13M^2/64+M/8 integer at M=2^100 
+[PASS] 13M^2/64+M/8 integer at M=2^1000 
+
+(b) v* witness curve fit (SAT-point upper bounds 6/65/368 at 16/24/32)
+  local power exponent 16->24: 5.876
+  local power exponent 24->32: 6.026
+  global exponent 16->32: 5.939
+  M=16: v_wit=6   (M/8)^6*3/32 = 6.0   13M^2/64+M/8 = 54   ratio wit/skip = 0.111
+  M=24: v_wit=65   (M/8)^6*3/32 = 68.3   13M^2/64+M/8 = 120   ratio wit/skip = 0.542
+  M=32: v_wit=368   (M/8)^6*3/32 = 384.0   13M^2/64+M/8 = 212   ratio wit/skip = 1.736
+  exponential-fit log-increments per unit M: 0.2978 vs 0.2167  (non-constant -> exponential fit worse than power fit)
+  skip-law growth 16->32 factor: 3.925925925925926  witness growth factor: 61.333333333333336
+  curves cross near M ~= 27.6 (witness below skip-mass before, above after)
+========================================================================
+(c) band composition across M*8^t, t = 0..1000, exact big ints
+[PASS] band composition: 12 bases x t<=1000, all conditions fails: []
+[info] base-scale (t=0) constraint: failing bases ->
+       M=8: ['DICH residue M=0 mod 16', 'P-ARM halved line m=0 mod 8', 'SCHED-DEAD scope M>=12, M=0 mod 4', 'Lemma K n>=k+5 (k=M/4,n=3M/4)', 'P1 inside B1: 3M-15 > 2M', 'halved crown window CW=[3m-7,3m-1] inside halved band']
+       M=24: ['DICH residue M=0 mod 16', 'P-ARM halved line m=0 mod 8']
+       M=40: ['DICH residue M=0 mod 16', 'P-ARM halved line m=0 mod 8']
+       M=56: ['DICH residue M=0 mod 16', 'P-ARM halved line m=0 mod 8']
+[info] base 48 (v2=4): M*8^t = 0 mod 16 from t=0: [True, True, True, True]
+[info] base 24 (v2=3): M*8^t = 0 mod 16 from t=1: [False, True, True, True]
+[info] base 40 (v2=3): M*8^t = 0 mod 16 from t=1: [False, True, True, True]
+========================================================================
+ALL CHECKS PASS
