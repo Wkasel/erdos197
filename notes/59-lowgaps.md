@@ -484,11 +484,14 @@ Measured values [MACHINE-CHECKED, e149/e150]:
     96      51      52      1       {51}
 
 Drift laws relative to balance b(M) = (M+16)/2: K*(M) − b(M) = −6
-on M ≡ 16 (mod 32), −5 on M ≡ 0 (mod 32) (four data points);
-(C(M)−1) − b(M) = −3, −4, −4, −5 at 48/64/80/96 — approximately −1
-per 32 but NOT yet a clean periodic law.  Extrapolation reaches
-W = 0 near M = 128 (still exhaustive) and could cross below zero
-near M = 160.
+on M ≡ 16 (mod 32), −5 on M ≡ 0 (mod 32) (four data points; the
+CONCURRENT notes/57 §0–2 derives the corrected non-residue law for
+K* from the forced-interval calculus — that law supersedes the
+mod-32 reading here, and Theorem ASM′ is agnostic to which law
+holds); (C(M)−1) − b(M) = −3, −4, −4, −5 at 48/64/80/96 —
+approximately −1 per 32 but NOT yet a clean periodic law.
+Extrapolation reaches W = 0 near M = 128 (still exhaustive) and
+could cross below zero near M = 160.
 
 ### D.4 What remains of GAP-ASM′
 
@@ -503,7 +506,10 @@ levers already measured at 96): (i) sharpen the drift laws with
 M = 112/128 data and prove (OV-∀) directly if the laws stabilize;
 (ii) the designated fix — ROBUST P-ARM: replace Φ = 0 by Φ ≤ φ₀ in
 (H-D)/(H-P), lowering the P-arm's entry threshold K* and restoring
-overlap for large M regardless of the C(M) drift.  Status:
+overlap for large M regardless of the C(M) drift; the CONCURRENT
+notes/58 §4 (Lemma PH+, COV-W′, RP-ARM) is exactly this fix in
+progress — its composition slots into Theorem ASM′ by replacing
+(H-D)+(H-P) with the robust pair and the PH step with PH+.  Status:
 Theorem ASM′ [PROVED]; (OV) [MACHINE-CHECKED at 48/64/80/96];
 (OV-∀) [GAP — arithmetic of two thresholds, compute-extendable].
 
