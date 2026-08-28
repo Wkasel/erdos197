@@ -434,10 +434,13 @@ J_T = {j ∈ [1,15] : 4M+j ∈ Z} is admissible; hence
 finite statement verified exhaustively; each minimal forbidden set
 is a 16-point UNSAT gadget that a reader can in principle refute by
 the Seesaw/zigzag calculus (the units of j seed conflicting phases
-of the shared-rung ladders).  Producing the 36 pencil derivations is
-bounded, mechanical work; we tag it [MACHINE-CHECKED — pencil
-derivations pending] rather than [PROVED].  No step of §5–6 depends
-on more than (a)–(c).
+of the shared-rung ladders).  UPDATE (notes/59 §B): the 36 pencil
+derivations are now produced and printed — 29 by pure closure in the
+sound T/RL/RT calculus (6–33 facts each), 7 by totality splits (all
+branches closing); the nine 6-fact pairs form one uniform schema in
+two residue patterns (Lemmas JP/JP′), whose windows are the FG-high
+geometry at run scale.  Lemma J is upgraded to [PROVED].  No step of
+§5–6 depends on more than (a)–(c).
 
 ### 3.5 The band-edge α-units as glue  [PROVED, descriptive]
 
@@ -990,10 +993,10 @@ not from any lemma here.
 
 | gap | statement | species | risk |
 |-----|-----------|---------|------|
-| GAP-FG-schema | classify the affine cycle certificates over (q, p) (two families already extracted; all DAGs ≤ 125 facts, median 14) | mechanical taxonomy | low |
-| GAP-FG-deep | deep-pair (band-bottom) fan schema (needs phase splits) | Lemma-D branch schema | medium-low |
+| GAP-FG-schema | ~~classify the affine cycle certificates~~ REPLACED by notes/59 §A: fan-walk calculus PROVED (Lemma CC + FW + Theorem AFF, families Γ₁/Γ₂′/Γ₃); covers 1467/1851 dead pairs at 48 incl. all shallow close pairs; REMAINS: RT-glue extension for the deep block q ≥ M−12 + cross-scale boundary audit | walk calculus, one more rule family — NOT taxonomy-only (a fixed affine list provably does not cover) | low-medium |
+| GAP-FG-deep | ~~deep-pair fan schema~~ MAPPED EXACTLY at 48 (notes/59 §C): D(48) = non-resonant E1×E1 pairs (75); 55/75 have ≤8-branch or single-split certificates (Lemma-D′ species); REMAINS: 20-pair parity-locked core (even gaps, halves onto half-scale fans → GAP-PARM species) + resonance law (8 \| gap necessary) cross-scale audit | Lemma-D branch schema + PARM recursion for the core | medium (core merges into GAP-PARM) |
 | GAP-H1 | uniformize ONE of H1(m)'s two dead block theories on m ≡ 0 (8) (H(m) itself now PROVED, §5.4b); resists C3-L1-profile branch closure (e144) | deeper than L1-profile; L0/CRT or DRAT-mining | MEDIUM (upgraded after e144) |
-| GAP-J-pencil | 36 finite 16-point derivations | mechanical | negligible |
+| GAP-J-pencil | ~~36 finite 16-point derivations~~ CLOSED (notes/59 §B: full pencil catalogue + uniform schemas JP/JP′; Lemma J now PROVED) | — | closed |
 | GAP-STRUCT | R3 → R1∪R2 bridge, now incl. the 16-resonant band configurations (structure theorem / potential) | **SOLVED AT 48/64/80 — see notes/56**: three-case theorem (fan / lopsided / parity) via the exposure potential Φ; replaced by the scoped gaps GAP-DICH, GAP-LLOP, GAP-PARM, GAP-ASM′ (notes/56 §5.2) | downgraded: medium (uniformization only; GAP-PARM ⊇ GAP-H1) |
 | GAP-ASM | assemble T1-or-T2 from the above into Theorem N6a | bookkeeping over the case split | low once STRUCT falls |
 

@@ -506,3 +506,50 @@ M = 112/128 data and prove (OV-∀) directly if the laws stabilize;
 overlap for large M regardless of the C(M) drift.  Status:
 Theorem ASM′ [PROVED]; (OV) [MACHINE-CHECKED at 48/64/80/96];
 (OV-∀) [GAP — arithmetic of two thresholds, compute-extendable].
+
+---
+
+## E. Shift summary and ledger deltas
+
+Proved this shift (uniform in M unless noted):
+
+| item | statement | where |
+|------|-----------|-------|
+| Lemma CC | T/RL/RT closure calculus sound for ThFG | §A.1 |
+| Lemma FW | fan-walk descent sets + cycles refute ThFG | §A.2 |
+| Theorem AFF | every FW shape is an M-uniform affine schema | §A.3 |
+| Γ₂′ | p = 5a+6q family (subsumes e142n) | §A.4 |
+| Γ₃ | mirror-pair D-unit cycles, 6 residue patterns | §A.4 |
+| Lemmas JP/JP′ | the uniform 6-fact Lemma-J pair schemas | §B.1 |
+| Lemma J | upgraded MACHINE-CHECKED → PROVED (36 pencil derivations) | §B.2 |
+| Theorem ASM′ | F/L/P composition soundness; GAP-ASM′ ⟶ (OV-∀) | §D.2 |
+
+Machine-checked this shift (all with soundness cross-checks):
+
+* e152/e152c/e152d: independent closure grid at 48 (= e142o);
+  MC/Γ₃/FW coverage 343/607/1467 of 1851; 0/165 false positives.
+* e153: full pencil catalogue for Lemma J (29 closure + 7 split).
+* e154: complete SAT classification of the 165 closure-alive pairs —
+  R(48) = 90 (all gaps ≡ 0 mod 8), D(48) = 75 (= non-resonant
+  E1×E1).
+* e154b: branch certificates for 55/75 of D(48); the 20-pair open
+  core is parity-locked (even gaps, q ≥ 52) and halves onto
+  half-scale fan pairs.
+
+Ledger deltas applied: notes/55 §3.4 + §7 (J-pencil closed;
+FG-schema and FG-deep rows rewritten), notes/56 §5.2 (ASM′ row →
+(OV-∀)), notes/50 inventory (N6a row + night-shift delta block).
+
+Honest corrections recorded: (1) notes/55's "every fan escape has
+gap ≥ 16" is false at depth — gap-8 escapes exist, all inside
+E1×E1; the close-pair kill law needs the E1 exclusion.  (2) The
+"mechanical taxonomy, low risk" rating of GAP-FG-schema was wrong:
+a fixed affine list provably cannot cover the dead grid (the walk
+calculus with parametric shapes is needed, and the deep block needs
+one more rule family).
+
+Next steps (ranked): (1) FW + RT-glue extension, re-measure the
+deep block (cheap, likely absorbs the 279); (2) e154 at M = 64/96
+to audit the resonance law and the E1×E1 deep characterization
+cross-scale; (3) fold the 20-pair halving core into the GAP-PARM
+schema work (notes/58); (4) M = 112/128 K*/C data for (OV-∀).

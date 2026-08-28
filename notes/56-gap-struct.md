@@ -571,7 +571,7 @@ is replaced by the scoped decomposition (jointly: **GAP-COV**):
 | GAP-DICH | fan-clean ∧ min\|Y\| ≥ K*(M) ⟹ Φ = 0, with K*(M) = (M+16)/2 − 6/−5 by M mod 32 | counting: Lemma-W windows + fan geometry vs exposure mass; the frontier witnesses' Φ decays linearly to 0 | medium |
 | GAP-LLOP | band-major (≥ (M+16) − K* + 1 band values) ⟹ Th1 inconsistent | α/β/J order geometry on a co-bounded band subset; H1-ThW1′ + Lemma-J species with phase machinery | medium |
 | GAP-PARM | parity hatch + any band mixing ⟹ some block theory inconsistent | halving recursion with a mixed band; CONTAINS GAP-H1 (alignment (ii) is its band-aligned special case) | medium (≥ GAP-H1) |
-| GAP-ASM′ | the three thresholds overlap for all M ≡ 0 (16), M ≥ 48 | arithmetic of K*(M) and the L-LOP cap (both track (M+16)/2 with O(1), mod-32-periodic offsets); the overlap NARROWS ≈ 1 per 32 in M (4/2/3/1 at 48–96) — for large M the robust-P-ARM (Φ ≤ φ₀) strengthening is the designated fix (§4b warning) | medium-low (upgraded from low after the M = 96 trend) |
+| GAP-ASM′ | the three thresholds overlap for all M ≡ 0 (16), M ≥ 48.  UPDATE (notes/59 §D): the composition itself is now Theorem ASM′(M) [PROVED], reducing this gap to exactly the inequality (OV-∀): K*(M) ≤ C(M) for all M | arithmetic of K*(M) and the L-LOP cap (both track (M+16)/2 with O(1), mod-32-periodic offsets); the overlap NARROWS ≈ 1 per 32 in M (4/2/3/1 at 48–96) — for large M the robust-P-ARM (Φ ≤ φ₀) strengthening is the designated fix (§4b warning) | medium-low (upgraded from low after the M = 96 trend) |
 
 Honest accounting: GAP-PARM subsumes GAP-H1, so the total gap count
 of the program does not decrease by this note alone — but the crux

@@ -64,13 +64,15 @@ restatement: notes/46 §4A).
 - Price ledger: supply lemma + p(k) → ∞ [GAP-p(k): needs N2-style schema;
   possibly dispensable if Case 2 closes via the seam core alone].
 
-## Current gap inventory (updated 2026-08-26 late, synthesis session)
+## Current gap inventory (updated 2026-08-27, night shift: notes/59
+## low-gap closures folded into the N6a row; BRIDGE1 discharge from
+## notes/52 retained)
 | Tag | Statement | Type | Status |
 |-----|-----------|------|--------|
 | GAP-N2 | off-diagonal lanes + uniform family proof | hand+machine | largely EXECUTED (notes/49: {11,12} all 8 residues, lane laws, template cells 13..19); remains: PARAMETRIC-in-x lane proof, cells A4d(19)/B6(21), pairs x ≡ 7 mod 8.  PRIORITY UPDATE (notes/52): the Case-1 critical path needs ONLY the diagonal parametric sub-piece **GAP-N2-DIAG** (C3(p) write-up, p ≡ 1 mod 4, dyadic scales — e123's verbatim-schema claim); off-diagonal parametrics matter only for BRIDGE1-AF |
 | GAP-N3 | dust-robust C3 | hand (short) | flagged one-paragraph, unwritten |
 | GAP-BRIDGE1 | ~~pair-ownership/split dichotomy in Case 1~~ **DISCHARGED** (notes/52 Theorem B1: ownership always holds via diagonal density; split branch vacuous; e152_bridge1 checks pass) — residual dependencies are GAP-N2-DIAG (parametric diagonal, p ≡ 1 mod 4, dyadic only) + GAP-N3; anchor-free variant BRIDGE1-AF still open (needs off-diagonal parametrics) | hand | CLOSED modulo N2-DIAG/N3 |
-| GAP-N6a | all-M coupled schema | hand (from MUS) | compute-true M=16..80 (e125+e126_deep, (2,2,2) critical from 48); M=32 MUS FINAL (n=116, ALL necessary, anatomy = seam anchors + both-parity B2 midband run — the reduction-to-N2 shape CONFIRMED, notes/48); M=48 support in flight |
+| GAP-N6a | all-M coupled schema | hand (from MUS) | DECOMPOSED (notes/55 proof skeleton + notes/56 bridge + notes/59 low-gap closures).  Proved layer: Lemma U, A1–A9, Seesaw/Z′/D′, E2/C, P′, W, PAR, FG-high, Theorem H, Cor. PAR-i, **Lemma J (now PROVED — notes/59 §B pencil catalogue)**, fan-walk calculus + affine families (notes/59 §A), Theorem ASM′ (notes/59 §D).  Machine-true at 48/64/80/96: the three-case bridge (DICH/L-LOP/P-ARM, COV-W).  Sub-gaps remaining: GAP-DICH, GAP-LLOP, GAP-PARM (⊇ GAP-H1 ⊇ the FG-deep 20-pair halving core, notes/59 §C), GAP-ASM′ = (OV-∀) only, GAP-FG-schema (RT-glue extension + deep block), GAP-FG-deep (L1/L2/L3 write-ups; exact maps R(48)/D(48) done) |
 | GAP-G2 | ~~double non-procrastination~~ REFRAMED: T-FORCE affordability — two Θ(M)-dense teams cannot both afford forced > v*(M) inversions at every anchor forever | hand (THE gap, ledger-type) | DNP as stated is FALSE (single-team, all budgets to N^{1−o(1)}, irreducibly two-sided — notes/47); FORMAL LEDGER THEOREM now drafted (notes/54: Theorem LT — demand side PROVEN modulo GAP-V*-schema/growth; supply side split into GAP-AFFORD with proven mechanism lemmas L-ORIENT/L-COMP/L-CASCADE + sub-tags GAP-COMP/GAP-JOINT; regime trichotomy formal with GAP-RHO/GAP-ALT; X-INTERLEAVE machine-verified to survive the accounting — e130 all-pass); pump measured only at v*(bal,16) ∈ [3,160], e128 bisecting |
 | GAP-L1' | concentration lemma | hand | measured-true, unproven |
 
@@ -86,3 +88,19 @@ re-opens a YES-shape with exact specifications.  One tag DID break
 this session — GAP-G2's original DNP form (X-INTERLEAVE refutes it) —
 and the re-opened specification is exactly the notes/46 dodger corner;
 the reframed tag above is what must now clear instead.
+
+### Night-shift delta (2026-08-27, notes/59)
+
+Inside GAP-N6a, closed or reshaped this shift: GAP-J-pencil CLOSED
+(Lemma J now fully PROVED — 36 pencil derivations, uniform 6-fact
+schemas JP/JP′ = the FG-high geometry at run scale); GAP-FG-schema
+recast as the PROVED fan-walk calculus (Lemma CC/FW + Theorem AFF;
+new families Γ₂′, Γ₃; 1467/1851 of the dead fan grid covered at 48,
+residual exactly the deep E1×E1 block + 105 mid pairs); GAP-FG-deep
+mapped exactly at 48 (R(48): 90 escapes, resonance law 8 | gap
+necessary; D(48): 75 deep kills, 55 with branch certificates, 20-pair
+parity-locked core merges into GAP-PARM); GAP-ASM′ reduced to the
+single inequality (OV-∀): K*(M) ≤ C(M) by Theorem ASM′ (notes/59 §D
+— the F/L/P composition-soundness theorem, PROVED).  Corrected en
+route: the notes/55 close-pair fan-kill hypothesis (distance ≤ 15)
+needs the E1 exclusion — gap-8 escapes exist inside E1×E1.
