@@ -144,3 +144,59 @@ SAT-alive graph of W2ε(m) = α̂ via Lemma HALVE-PURE.
     exactly zero — the W = 0 club is now {112, 128, 144, 176}.
 
 [remaining scales to follow]
+
+---
+
+## 5. The lattice recursion, formalized — what is proved and what
+## remains for a uniform α bound
+
+**The abstract family.**  F(N, A): order variables on window values
+{L+1, …, L+N}; all in-window 3-term APs with R1–R4 + transitivity;
+attackers at offsets −p, p ∈ [0, A]; the double-fan units
+s_z = 2s_y + p.  Level 0 = the full-scale block-2 system
+(N = 2M+15, A = M+15); by Lemma HALVE-PURE (whose proof uses ONLY
+this shape), the class-ε pure subsystem of F(N, A) is
+F(⌈(N−1)/2⌉ or ⌊N/2⌋, ⌊A/2⌋) — so the recursion applies at every
+level, and level j exists for a pair of gap g iff 2^j | g.
+
+**Level tower for M ≡ 0 (mod 16)** (α's scales): level 1 =
+W2ε(M/2); level 2 ≈ W2 of M/4; level 3 ≈ W2 of M/8.  For
+M = 176/192/224/256 the towers bottom out inside the e155-verified
+range — every level of every new scale is itself scanned or
+scannable.
+
+**What is proved uniformly.**
+* [PROVED] HALVE-PURE at every level (§1).
+* [PROVED] FG-high kills, pure for same-parity pairs (§1(iv)), at
+  every level: pair (q, p), p ≥ 2q+1, 5p−6q ≤ N is dead.
+* [PROVED, notes/55] FG-high verified 48..400 at level 0
+  (e143, 149 169 instances — includes level-0 windows of all four
+  new scales).
+
+**What the machine adds per scale** (e169): the SAT-alive graph of
+each level, its gap law (H-LAT: gaps ≡ 0 mod 8 — HOLDS at every
+scanned m incl. 88), and its shallow clique number = α̂.
+
+**The remaining uniform gap, stated exactly.**  H-LAT(m) = "every
+SAT-alive pair of F(N, A) has gap ≡ 0 mod 8" is THREE levels of the
+single statement
+
+    (ODD-KILL)  every pair with odd gap is SAT-dead in F(N, A)
+                (for the (N, A) shapes of the tower),
+
+because gap g with v₂(g) = j < 3 halves j times to an odd-gap pair.
+ODD-KILL is a CROSS-parity statement (odd gap = attackers of
+opposite parity), so the pure recursion does not reduce it further;
+FG-high proves it for p ≥ 2q+1 within reach, and the
+clustered/low-pair regime is exactly the affine-cycle-family
+species of GAP-FG-schema (notes/55 §5.3b closure kills, med ≈ 14
+facts, certificates in hand).  [GAP — same species as
+GAP-DICH-ALPHA, sharpened: ODD-KILL + a base-window clique
+catalogue would give α_max(M) ≤ max base clique UNIFORMLY.]
+
+**Why the feared 4-cliques do not appear in α.**  The e155b
+4-cliques ({65,69,77,93} at m=24 etc.) are DEEP objects — members
+in/near the CW zone [3m−7, 3m−1], outside the shallow zone
+[3m+1, 4m] that α quantifies over (shallow at scale M halves to
+shallow at m, §1).  At every scanned (m, window) so far the SHALLOW
+clique number is ≤ 3 even where the full-window number is 4.
