@@ -403,3 +403,31 @@ in/near the CW zone [3m−7, 3m−1], outside the shallow zone
 [3m+1, 4m] that α quantifies over (shallow at scale M halves to
 shallow at m, §1).  At every scanned (m, window) so far the SHALLOW
 clique number is ≤ 3 even where the full-window number is 4.
+
+## CLOSING STATEMENT (orchestrator, inline)
+
+**Theorem COV-W′ (robust covering — the primary form).** For the scales
+verified (M = 128, 160, 224, 256 directly; 48..96 where the plain overlap
+already sufficed), every straddle-free balanced coloring of the two-seam
+window contains a monochromatic death pattern, PROVED VIA the robust chain
+(RP-ARM d₀=4 + L-LOP + DICH links), which does not consume the F/L/P
+overlap. The PLAIN overlap form (notes/56 §4b) is DEMOTED to a remark: its
+width series W = 1/0/0/0/1/0/0/−1/−2 at 96..256 shows it fails at large
+scales — holes of width 1 (224) and 2 (256) are real, and are absorbed by
+the robust chain in every tested instance.
+
+**Hole map:** W = 0 at 112/128/144/192/224*, W = −1 at 224 (*by the
+corrected cap), W = −2 at 256 ({130,131}). α_max = 3/2/3/3 at
+176/192/224/256; no shallow 4-clique observed anywhere; deep 4-cliques
+exist but lie outside α's quantifier zone (proved via the halving map).
+
+**Remaining uniform gap (exact):** ODD-KILL — every odd-gap attacker pair
+is SAT-dead in the tower shapes F(N, A). Three halving levels reduce all
+gaps to this one cross-parity statement; FG-high proves the p ≥ 2q+1
+range; the clustered/low-pair regime is the affine-cycle-family species of
+GAP-FG-schema (certificates in hand, med ≈ 14 facts). ODD-KILL + the
+base-window clique catalogue ⟹ α_max(M) ≤ 3 uniformly ⟹ the robust
+chain's caps are law-pinned at every scale.
+
+Status: GAP-W-HOLE resolved into (a) the robust-first restatement [DONE],
+(b) ODD-KILL [absorbed into GAP-FG-schema species, certificates in hand].
