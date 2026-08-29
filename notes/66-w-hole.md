@@ -209,8 +209,18 @@ Contingency (the insurance chain, notes/58 §4.2 / notes/61 §4) at
 K_P = cap + 1 = 115 — exactly the hole value:
 
     DICH-upure(224, 115):  UNSAT  [44.9 s]   ✓ U forced pure
-    DICH-zdef(224, 115, 4): [running]
-    RP-ARM(224, 4) --audit: [running]
+    DICH-zdef(224, 115, 4): UNSAT [22.6 s]   ✓ ≤ 4 defectors forced
+    RP-ARM(224, 4) --audit: blocks (0,1) control SAT [197.5 s] ✓;
+                            full instance [running]
+
+Hole-coloring anatomy (the L-LOP K = 116 escape witness, = the
+Th1-consistent shadow of a min|Y| = 115 hole candidate): Y_A = all
+even depths 0..M−10, plus evens {M−6, M−2}, plus the bottom-window
+cluster at depths {M+5, M+9, M+10, M+11, M+13} (offsets −10, −6,
+−5, −4, −2 from the band bottom 3M−15); U_B = the α-window odds
+1..29; same schema as the 192 escape (shifted by 32).  Hatched,
+tiny bottom defect — exactly the shape the robust P-arm's block
+theories attack, and consistent with upure/zdef UNSAT above.
 
 If both remaining links close, Theorem COV-W′(224) holds and the
 d₀ = 4 robust chain absorbs the hole (it never consumed the
