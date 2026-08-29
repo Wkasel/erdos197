@@ -555,3 +555,16 @@ sharpened by today's instruments:
   the (·,0) cell family (GAP-J-schema); (iv) GAP-AFFORD′ stays the
   program's terminal statement — nothing in this session's
   instrument class can close it (NG4).
+
+## 8. ADDENDUM (2026-08-29, FRONT TELESCOPE — see notes/70)
+
+The v_min(0) frontier moved (pod deep-UNSAT ladder, this date):
+v_min(0)(16) ∈ (6, 384] ((384,0) SAT 17.2 s; 96/192 TIMEOUT);
+v_min(0)(24) > 65; **v_min(0)(32) > 256** ((100,0) UNSAT 62.6 s,
+(256,0) UNSAT 137.2 s); NEW bottom scale **v_min(0)(8) > 6**
+((6,0)@8 UNSAT 2.1 s — both standalone anchors free there).  And the
+**const-bounds pump fires**: (6,0)@24 at bounds (2,3,6,12) UNSAT
+[106 s] — the (v,0) family is not a balance artifact; GAP-J-schema
+should be stated at const bounds.  The ledger consequences (boundary
+currency, T-LEDGER exact 4-adic disjointness, T-TEL′ dichotomy that
+demotes GAP-V*-growth in favor of GAP-VMIN0-growth) are notes/70.
