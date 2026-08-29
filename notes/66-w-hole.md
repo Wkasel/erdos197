@@ -187,12 +187,24 @@ measurements now.  Measured caps 96..192: 51/59/67/75/83/91/98
 (deltas 8,8,8,8,8,7); measured K*: 51/60/68/76/83/92/99.
 W series at 48..192: 4/2/3/1/0/0/0/1/0/0.
 
-### M = 224 — T1 catalogue track  [MACHINE-CHECKED]
+### M = 224 — T1 catalogue track, and THE HOLE  [MACHINE-CHECKED]
 
     catalogue 28195 patterns; α_E = α_O = 3, f_O = f_E = 8;
     K*(224) = 121 + (3−8) = 116 — matches T2's α̂(224) = 3.
-    W(224) = C(224) − 116 with C now requiring MEASUREMENT
-    (flat law would say C = 116, W = 0; probes in flight).
+
+**L-LOP(224) K = 116: SAT [486.9 s]** → kmax_unsat(224) ≤ 115 →
+C(224) ≤ 115 < K*(224): **W(224) ≤ −1.  THE HOLE IS CONFIRMED AT
+M = 224** — the first scale where the two wholesale arms do not
+meet.  min|Y| = 115 colorings are killed by neither arm: L-LOP
+stops at ≤ cap ≤ 114, DICH needs ≥ 116.  Crucially the mechanism is
+NOT the feared α_max = 4 (α(224) = 3, exactly as at 112/128/144/
+176): the CAP side fell.  Contingency executed immediately (the
+insurance chain, notes/58 §4.2 / notes/61 §4): DICH-upure(224, 115),
+DICH-zdef(224, 115, 4), RP-ARM(224, 4) launched; K = 115 probe in
+flight to pin cap(224).  If the robust chain closes at K_P = 115,
+COV-W′(224) holds and the hole is absorbed (the chain never needed
+the overlap); if RP-ARM fails, this is a genuine COV-W gap —
+task (3).
 
 ### M = 224, 256 — T2 (catalogues in flight)
 
