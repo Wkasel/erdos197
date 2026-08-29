@@ -1,0 +1,10 @@
+{
+ "tag": "c3_M32_up368_dn6",
+ "M": 32,
+ "mode": "bal",
+ "bounds": null,
+ "vup": 368,
+ "vdn": 6,
+ "verdict": "TIMEOUT",
+ "time": 10800.5
+}

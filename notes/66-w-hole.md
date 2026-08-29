@@ -306,9 +306,27 @@ bottom window must break).  [GAP: SPAN-4 for all m.]
     TASK-1 VERDICT: α_max(176/192/224/256) = 3/2/3/3 — the feared
     α_max = 4 event occurs at NO measured scale; W = 3 − α_max
     would have said 0/1/0/0.  The TRUE W (with measured caps) is
-    0/0/−1/pending — the α-scenario table was watching the wrong
-    arm.  L-LOP(256) probes K = 131/132/133 and the robust chain
-    at 256 pending.
+    0/0/−1/−2 — the α-scenario table was watching the wrong arm.
+
+**L-LOP(256): K = 129 UNSAT [89 s], K = 130 UNSAT [92.9 s],
+K = 131 SAT [88.6 s]** → kmax_unsat(256) = 130, cap(256) = 129
+= (M+16)/2 − 7 (deficit-from-flat now −2), C = 130.
+**W(256) = −2: a WIDTH-2 hole — min|Y| ∈ {130, 131} covered by
+neither wholesale arm.**  The overlap is collapsing with scale:
+W = 1/0/0/0/1/0/0/−1/−2 at 96..256.  (OV-∀) is dead as a uniform
+statement; the robust chain is now load-bearing, not insurance.
+
+Robust chain at 256, K_P = cap+1 = 130 (bottom of the hole):
+
+    DICH-upure(256, 130):   UNSAT [4.5 s]  ✓  (also at 131: 3.5 s)
+    DICH-zdef(256, 130, 4): UNSAT [0.9 s]  ✓  (also at 131: 2.3 s)
+    RP-ARM(256, 4): audit blocks (0,1) control SAT [15.1 s] ✓;
+       full instance = 112.2M clauses — OOM-killed at the pod's
+       62 GB container cap on first attempt (collaterally killing
+       the running RP-ARM(224) full solve); e170 streaming runner
+       written (clause-pop feed, peak ≈ list alone); RP-ARM(224)
+       STREAM relaunched first, RP-ARM(256) STREAM queued behind
+       it for memory sequencing.
 
 ### The reframed seam (what notes/64 must now say)
 
