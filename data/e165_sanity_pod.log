@@ -1,0 +1,94 @@
+e165 M=24 support=full bounds=(3, 3, 3) n=168 blocks=(24,48,96) orderVars=28056 apPairs=13944 seam=16128 seed=144832 card=1608 build=0s
+  round 1: viol=4128 added=4128 tot=4128 t=0s
+  round 2: viol=3392 added=3392 tot=7520 t=0s
+  round 3: viol=6791 added=6791 tot=14311 t=0s
+  round 4: viol=7650 added=7650 tot=21961 t=0s
+  round 5: viol=5867 added=5867 tot=27828 t=0s
+  round 6: viol=7620 added=7620 tot=35448 t=1s
+  round 7: viol=4489 added=4489 tot=39937 t=1s
+  round 8: viol=2922 added=2922 tot=42859 t=1s
+  round 9: viol=7136 added=7136 tot=49995 t=1s
+  round 10: viol=3225 added=3225 tot=53220 t=1s
+  round 11: viol=2161 added=2161 tot=55381 t=1s
+  round 12: viol=1761 added=1761 tot=57142 t=1s
+  round 13: viol=501 added=501 tot=57643 t=1s
+  round 14: viol=243 added=243 tot=57886 t=1s
+  round 15: viol=167 added=167 tot=58053 t=1s
+  round 16: viol=7045 added=7045 tot=65098 t=1s
+  round 17: viol=7861 added=7861 tot=72959 t=2s
+  round 18: viol=4132 added=4132 tot=77091 t=2s
+  round 19: viol=3768 added=3768 tot=80859 t=2s
+  round 20: viol=5166 added=5166 tot=86025 t=2s
+  round 21: viol=3089 added=3089 tot=89114 t=2s
+  round 22: viol=1507 added=1507 tot=90621 t=2s
+  round 23: viol=312 added=312 tot=90933 t=3s
+VERDICT e165 M=24 full (3, 3, 3): SAT (3s, 24 rounds) witness->data/e165_M24_full_san_witness.json check=OK
+e165 M=32 support=full bounds=(3, 3, 3) n=224 blocks=(32,64,128) orderVars=49952 apPairs=24864 seam=28672 seed=200384 card=2168 build=0s
+  round 1: viol=4956 added=4956 tot=4956 t=0s
+  round 2: viol=9879 added=9879 tot=14835 t=0s
+  round 3: viol=15686 added=15686 tot=30521 t=1s
+  round 4: viol=19066 added=19066 tot=49587 t=1s
+  round 5: viol=18118 added=18118 tot=67705 t=1s
+  round 6: viol=17684 added=17684 tot=85389 t=2s
+  round 7: viol=10862 added=10862 tot=96251 t=3s
+  round 8: viol=12646 added=12646 tot=108897 t=3s
+  round 9: viol=11870 added=11870 tot=120767 t=3s
+  round 10: viol=7699 added=7699 tot=128466 t=3s
+  round 11: viol=12453 added=12453 tot=140919 t=4s
+  round 12: viol=8309 added=8309 tot=149228 t=5s
+  round 13: viol=9772 added=9772 tot=159000 t=5s
+  round 14: viol=10631 added=10631 tot=169631 t=5s
+  round 15: viol=4320 added=4320 tot=173951 t=5s
+  round 16: viol=3990 added=3990 tot=177941 t=5s
+  round 17: viol=8086 added=8086 tot=186027 t=6s
+  round 18: viol=3897 added=3897 tot=189924 t=6s
+  round 19: viol=1978 added=1978 tot=191902 t=6s
+  round 20: viol=3528 added=3528 tot=195430 t=6s
+  round 21: viol=3300 added=3300 tot=198730 t=6s
+VERDICT e165 M=32 full (3, 3, 3): UNSAT (6s, 21 rounds, 198730 lazy clauses)
+e165 M=40 support=full bounds=(2, 2, 2) n=280 blocks=(40,80,160) orderVars=78120 apPairs=38920 seam=44800 seed=255936 card=1656 build=0s
+  round 1: viol=15745 added=15745 tot=15745 t=0s
+  round 2: viol=17995 added=17995 tot=33740 t=0s
+  round 3: viol=15988 added=15988 tot=49728 t=1s
+  round 4: viol=30366 added=30366 tot=80094 t=1s
+  round 5: viol=29829 added=29829 tot=109923 t=1s
+  round 6: viol=24010 added=24010 tot=133933 t=1s
+  round 7: viol=19633 added=19633 tot=153566 t=1s
+  round 8: viol=26192 added=26192 tot=179758 t=3s
+  round 9: viol=20366 added=20366 tot=200124 t=4s
+  round 10: viol=16240 added=16240 tot=216364 t=4s
+  round 11: viol=19645 added=19645 tot=236009 t=5s
+  round 12: viol=22429 added=22429 tot=258438 t=5s
+  round 13: viol=19653 added=19653 tot=278091 t=5s
+  round 14: viol=10228 added=10228 tot=288319 t=5s
+  round 15: viol=4409 added=4409 tot=292728 t=6s
+  round 16: viol=14975 added=14975 tot=307703 t=6s
+  round 17: viol=13570 added=13570 tot=321273 t=6s
+  round 18: viol=8531 added=8531 tot=329804 t=7s
+  round 19: viol=2112 added=2112 tot=331916 t=7s
+  round 20: viol=1799 added=1799 tot=333715 t=7s
+  round 21: viol=7843 added=7843 tot=341558 t=8s
+  round 22: viol=13189 added=13189 tot=354747 t=8s
+  round 23: viol=13291 added=13291 tot=368038 t=9s
+  round 24: viol=4316 added=4316 tot=372354 t=9s
+  round 25: viol=4020 added=4020 tot=376374 t=9s
+  round 26: viol=2679 added=2679 tot=379053 t=9s
+  round 27: viol=306 added=306 tot=379359 t=9s
+  round 28: viol=40 added=40 tot=379399 t=9s
+  round 29: viol=14 added=14 tot=379413 t=9s
+VERDICT e165 M=40 full (2, 2, 2): SAT (9s, 30 rounds) witness->data/e165_M40_full_san_witness.json check=OK
+e165 M=48 support=core bounds=(2, 2, 2) n=222 blocks=(48,63,111) orderVars=49062 apPairs=21796 seam=30690 seed=198400 card=1308 build=0s
+  round 1: viol=14357 added=14357 tot=14357 t=0s
+  round 2: viol=11787 added=11787 tot=26144 t=1s
+  round 3: viol=9863 added=9863 tot=36007 t=1s
+  round 4: viol=7256 added=7256 tot=43263 t=1s
+  round 5: viol=15695 added=15695 tot=58958 t=1s
+  round 6: viol=15255 added=15255 tot=74213 t=2s
+  round 7: viol=13015 added=13015 tot=87228 t=2s
+  round 8: viol=12754 added=12754 tot=99982 t=3s
+  round 9: viol=10261 added=10261 tot=110243 t=4s
+  round 10: viol=5502 added=5502 tot=115745 t=4s
+  round 11: viol=9074 added=9074 tot=124819 t=4s
+  round 12: viol=7331 added=7331 tot=132150 t=5s
+  round 13: viol=2756 added=2756 tot=134906 t=5s
+VERDICT e165 M=48 core (2, 2, 2): UNSAT (7s, 13 rounds, 134906 lazy clauses)
