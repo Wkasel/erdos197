@@ -71,6 +71,16 @@ both directions.  Shallow zone: p ≤ M−1 ⟺ π ≤ m−1.  ∎
      halving applies to ITS same-parity pairs (quarter scale), which
      is the H-LAT mod-8 lattice structure (notes/58 §3.5a): alive
      gaps ≡ 0 mod 8 = three levels of "odd-gap pairs die".
+(iv) Lemma FG-high (notes/55 §5.3b, [PROVED]) is automatically PURE
+     for same-parity pairs: its four gadget values 4M+s, 4M+2p−3q,
+     4M+3p−4q, 4M+5p−6q are all ≡ p (mod 2) when p ≡ q.  So for
+     p ≡ q, p ≥ 2q+1, 5p−6q ≤ (window), the pair is pure-dead — a
+     proved, scale-uniform kill that transfers through the iso to
+     every level of the recursion.  (Not sufficient for a uniform
+     clique bound: pairs with p < 2q+1 — e.g. any two shallow
+     values in the top half of the zone — escape its hypothesis;
+     those kills are the closure/affine-cycle families of
+     GAP-FG-schema.)
 
 ## 2. Machine confirmation of the iso  [MACHINE-CHECKED]
 
@@ -79,12 +89,18 @@ directly-computed full-scale pure closure verdict is compared to
 close_window on the halved image; closure-alive pairs additionally
 get both SAT verdicts (full-scale pure SAT vs fan_sat_unsat halved).
 
-    M = 48: 992 pairs; pure-closure dead 863, alive 129;
-            closure mismatches 0; SAT mismatches 0.       [4 s local]
-    (cross-checks: 863 = notes/57 F0's same-parity pattern count at
-    48; 129 = e155's closure-alive 66 (W2e) + 63 (W2o) at m = 24.)
+    M = 48: 992 pairs;  pure-closure dead 863,  alive 129;  0 / 0
+    M = 64: 1560 pairs; pure-closure dead 1428, alive 132;  0 / 0
+    M = 96: 3080 pairs; pure-closure dead 2907, alive 173;  0 / 0
+            (final two columns: closure / SAT mismatches)
 
-[M = 64, 96 iso runs + pod scans in flight; results below.]
+Cross-checks: 863/1428/2907 = notes/57 F0's same-parity pure-pattern
+counts at 48/64/96 EXACTLY (so at these scales e146's minimized
+pattern for a same-parity pair is pure precisely when the pure
+closure kills — the catalogue's purity bookkeeping is faithful);
+129 = e155's closure-alive 66 (W2e) + 63 (W2o) at m = 24.
+[MACHINE-CHECKED at 48/64/96, zero mismatches at both the closure
+and the SAT level; data/e169_alive_lattice.json.]
 
 ## 3. The scans (e169 part L): SAT-alive structure of W2ε(m)
 
