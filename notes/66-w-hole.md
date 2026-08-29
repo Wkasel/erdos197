@@ -299,6 +299,17 @@ form of GAP-DICH-ALPHA — strictly easier than ODD-KILL (it is a
 statement about the DEEP structure only: cliques avoiding the
 bottom window must break).  [GAP: SPAN-4 for all m.]
 
+### M = 256 — T1 catalogue track  [MACHINE-CHECKED]
+
+    catalogue 36293 patterns; α_E = α_O = 3, f_O = f_E = 8;
+    K*(256) = 137 + (3−8) = 132 — matches T2's α̂(256) = 3.
+    TASK-1 VERDICT: α_max(176/192/224/256) = 3/2/3/3 — the feared
+    α_max = 4 event occurs at NO measured scale; W = 3 − α_max
+    would have said 0/1/0/0.  The TRUE W (with measured caps) is
+    0/0/−1/pending — the α-scenario table was watching the wrong
+    arm.  L-LOP(256) probes K = 131/132/133 and the robust chain
+    at 256 pending.
+
 ### The reframed seam (what notes/64 must now say)
 
 W(M) = C(M) − K*(M) with BOTH sides per-scale catalogue quantities:
