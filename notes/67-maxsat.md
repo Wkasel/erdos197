@@ -126,3 +126,22 @@ the encoding (s* < v* is impossible) — a built-in audit.
   branch → notes/47 §5.4 fallback: attack DNP(v̄−1) as a positional
   covering invariant); if they keep climbing with M, GAP-V*-growth
   gains its first real trajectory.
+- **Sum-LBs are the better SCHEMA target too (GAP-V*-schema).**  The
+  max objective needs cardinality reasoning; the sum objective is
+  ADDITIVE over disjoint certificates: if the window contains
+  value-disjoint sub-structures S_1..S_k such that every coloring
+  meeting the bounds forces ≥ 1 inversion with both members inside
+  S_i (an UNSAT sub-core in the restriction sense), then s* ≥ k by k
+  independent restrictions — no counting network, exactly an N2-style
+  rung family repeated k times.  RC2's early behavior is the machine
+  shadow of this: its pre-relaxation cores are soft-disjoint by
+  construction, so the first phase of every stream IS a disjoint-core
+  certificate.  CAVEAT that shapes the hand target: the sub-cores
+  must inherit their hypotheses from the WINDOW's bounds (arbitrary
+  value subsets inherit color counts, not balance), so the natural
+  candidates are bound-free forcing patterns — e.g. Lemma-K-style
+  prefix chains (notes/62 §4d) and the H-edge-injectivity floor
+  (notes/47 §3), both of which charge inversions without any balance
+  hypothesis on the sub-structure.  A k(M) → ∞ family of these =
+  GAP-V*-growth proved.  The measured core anatomy (core_pairs in the
+  jsonl once cores shrink) is the mining ground.

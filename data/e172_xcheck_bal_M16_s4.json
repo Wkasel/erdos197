@@ -1,0 +1,26 @@
+{
+ "tag": "xcheck_bal_M16_s4",
+ "rows": [
+  {
+   "tag": "xcheck_bal_M16_s4",
+   "event": "xcheck",
+   "M": 16,
+   "bounds": null,
+   "vA": 0,
+   "vB": 3,
+   "verdict": "UNSAT",
+   "time": 31.5
+  },
+  {
+   "tag": "xcheck_bal_M16_s4",
+   "event": "xcheck",
+   "M": 16,
+   "bounds": null,
+   "vA": 1,
+   "vB": 2,
+   "verdict": "UNSAT",
+   "time": 57.2
+  }
+ ],
+ "verdict": "CONFIRMED sum >= 4"
+}

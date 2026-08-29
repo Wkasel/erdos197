@@ -1,2 +1,9 @@
 {"tag": "sanity_bal_M8", "M": 8, "bounds": null, "solver": "g3", "event": "init", "lb_sum": 0, "vstar_lb": 0, "t": 0.0}
 {"tag": "sanity_bal_M8", "M": 8, "bounds": null, "solver": "g3", "event": "opt", "opt_sum": 0, "vstar_lb": 0, "witness_inv": [0, 0], "vstar_ub": 0, "audit_errs": [], "sum_matches": true, "t": 0.0}
+{"tag": "bal_M16", "M": 16, "bounds": null, "solver": "g3", "event": "init", "lb_sum": 0, "vstar_lb": 0, "t": 0.3}
+{"tag": "bal_M16", "M": 16, "bounds": null, "solver": "g3", "event": "lb", "lb_sum": 1, "vstar_lb": 1, "t": 1.9, "core_sz": 1368, "core_orig": 1368}
+{"tag": "bal_M16", "M": 16, "bounds": null, "solver": "g3", "event": "lb", "lb_sum": 2, "vstar_lb": 1, "t": 5.9, "core_sz": 1407, "core_orig": 1406}
+{"tag": "bal_M16", "M": 16, "bounds": null, "solver": "g3", "event": "lb", "lb_sum": 3, "vstar_lb": 2, "t": 28.7, "core_sz": 1048, "core_orig": 1046}
+{"tag": "bal_M16", "M": 16, "bounds": null, "solver": "g3", "event": "lb", "lb_sum": 4, "vstar_lb": 2, "t": 239.4, "core_sz": 246, "core_orig": 243}
+{"tag": "xcheck_bal_M16_s4", "event": "xcheck", "M": 16, "bounds": null, "vA": 0, "vB": 3, "verdict": "UNSAT", "time": 31.5}
+{"tag": "xcheck_bal_M16_s4", "event": "xcheck", "M": 16, "bounds": null, "vA": 1, "vB": 2, "verdict": "UNSAT", "time": 57.2}
