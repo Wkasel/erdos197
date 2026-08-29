@@ -78,6 +78,19 @@ boundary, high member at the lower), so Σ_m x_m ≥ half the count of
 distinct displaced/advanced values — the bridge to P3 and to the
 donation currency.
 
+**Lemma L-SQUEEZE (no parking space) [PROVED — one line].**  For
+each team, Inv_T(N_j) = x_{j+1} + x_{j+2} ≤ Inv_T(N_{j-1}) +
+Inv_T(N_{j+1}): per-anchor prices are subadditive along the chain,
+because each of the anchor's two boundaries is shared with one
+neighbour.  Consequences: (i) bounding one 4-adic subchain bounds
+the whole chain (the odd-subchain price is dominated by adjacent
+even-subchain prices); (ii) in any multi-anchor gadget, pricing
+alternate anchors auto-prices the anchors between them — e.g. in
+the 5-block U5(M) cell (v, ·, 0), the middle anchor is forced ≤ v
+with no constraint imposed on it directly; a lavish middle dodge is
+geometrically impossible.  Demand statements need only be proved on
+a 4-adic subchain; dodges need only be excluded there.
+
 ## 2. The overlap that breaks naive T-TEL — measured, maximal
 
 Consecutive chain anchors share a boundary (s1 of N_j = s2 of
@@ -156,19 +169,28 @@ Assume:
 - [GAP-J-schema] the pump family: (v, 0) at anchor M UNSAT for all
   v < v_min(0)(M), for all large anchors in the regime (machine-true
   at M = 8, 16, 24 — three scales after this session);
-- [GAP-VMIN0-growth] v_min(0)(M) → ∞ (measured: > 6 at 8, > 6 at 16
-  with SAT at 384, > 65 at 24 — the curve exceeds the entire v*₃
-  bracket at every measured scale).
+- [GAP-VMIN0-growth] v_min(0)(M) → ∞ (measured, four scales, all
+  monotone: > 6 at 8, > 6 at 16 with SAT at 384, > 65 at 24, and NEW
+  this session **> 256 at 32** ((100,0)@32 UNSAT 62.6 s, (256,0)@32
+  UNSAT 137.2 s on the pod — deep-UNSAT stays cheap at the fourth
+  scale; (512,0)@32 queued).  The curve exceeds the entire v*₃
+  bracket at every measured scale, grows ≈ ×4 per scale step
+  24 → 32, and its lower bound at 32 (256) already approaches the
+  16-scale UPPER bound (384)).
 
 Then every valid pair in regime (I) satisfies, along any 2-adic
 chain, at least one of:
 
-  (a) **de facto price divergence:** limsup_j Inv_T-max(N_j) = ∞ —
-      indeed if Inv(N_j) = 0 for infinitely many j, the pump gives
-      Inv(N_{j+1}) ≥ v_min(0)(N_{j+1}) → ∞ at those j; moreover the
-      huge payment sits on β(4N_j)-side currency shared with anchor
-      N_{j+2}, which is then also forced ≥ that height minus its own
-      β(8N_j)-freedom — the lavish dodge is itself booked;
+  (a) **de facto price divergence, with an echo:** limsup_j
+      max_T Inv_T(N_j) = ∞.  Indeed if I(N_j) = 0 for infinitely
+      many j, then at each such j: x_{j+1} = x_{j+2} = 0 for both
+      teams, and the pump forces some team T with
+      Inv_T(N_{j+1}) = x_{j+2}(T) + x_{j+3}(T) ≥ v_min(0)(N_{j+1});
+      since x_{j+2}(T) = 0, the whole payment sits on x_{j+3}(T) —
+      whence **L-ECHO [PROVED]**: the SAME team also pays
+      Inv_T(N_{j+2}) ≥ x_{j+3}(T) ≥ v_min(0)(N_{j+1}).  A zero
+      anchor forces the giant payment to echo at TWO consecutive
+      anchors above, same team — the lavish dodge is booked twice;
   (b) **everywhere-payment:** Inv(N_j) ≥ 1 for all large j, and by
       T-LEDGER the 4-adic bookkeeping of these payments is a family
       of pairwise-disjoint fresh pairs — one new pair per 2 octaves
@@ -192,6 +214,18 @@ still diverges through T-TEL′ branch (a)/(b).**  The measured
 ordering v_min(0)(M) ≫ v*₃(M) at every scale (6 > [0], >65 ≥ bracket
 (4,65] at 24) is exactly why: zeroing an anchor is far more expensive
 than merely paying the per-anchor floor.
+
+**Bounds caveat (standard but load-bearing) — and its measured
+answer.**  The bal pump cells do NOT transfer to ε-linear bounds
+(Lemma M(b); Corollary D1 applies a cell only at anchors with
+μ(N) ≥ its bound vector), so T-TEL′ on all of regime (I) needs the
+pump at constant or c_ε bounds.  MEASURED this session: **the
+const-bounds pump fires — (6,0)@24 at bounds (2,3,6,12) UNSAT
+[106 s, pod]**.  By D1 + D2 this demand applies at EVERY Case-2
+anchor with μ(N) ≥ (2,3,6,12), i.e. cofinitely many anchors of
+every Case-2 pair: the pump is not a balance artifact.  The
+const-bounds growth ladder ((65,0)@24, (100,0)@32 const) is queued;
+[GAP-J-schema] should be stated and proved at const bounds.
 
 **What T-TEL′ does NOT buy — honest.**  The supply cap.  Branch (b)
 is satisfiable in pair currency by AP-free teams (X-INTERLEAVE); for
