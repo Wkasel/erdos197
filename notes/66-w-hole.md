@@ -163,6 +163,32 @@ SAT-alive graph of W2ε(m) = α̂ via Lemma HALVE-PURE.
     105 + (2−8) = 99, C = 100, **W(192) = 1** — the α relaxation
     at 160 (α: 3→2) REPEATS at 192.
 
+### THE TWIST — the flat cap law BREAKS at 192  [MACHINE-CHECKED]
+
+The α side behaved (α(192) = 2, K* = 99, W "should" be 1) — but the
+CAP side did not: **L-LOP(192) K = 100 is SAT [124.3 s]** where the
+flat law cap(192) = 99 (kmax_unsat = 100) predicted UNSAT.  First
+failure of the flat law above 96; the danger to the overlap now
+comes from the arm nobody was watching.  The K = 100 witness has
+Y_A ⊇ all even depths 0..182 plus the bottom-window cluster
+{186, 190, 197, 201, 202, 203, 205} — a hatched escape that grabs
+the band bottom (max depth 207 = 3M−15), structurally richer than
+the 176-witness (which stopped at depth 188 of 191).
+
+Pinning runs in flight: L-LOP(192) K = 99, 98; L-LOP(224)
+K = 116, 115.  Ledger of scenarios at 192 (K* = 99):
+kmax_unsat = 99 → cap = 98, C = 99, W = 0 (flat law −1, overlap
+survives); kmax_unsat ≤ 98 → **W ≤ −1: a genuine hole, from the
+cap side, with α playing no role** — the notes/64 scenario table
+(which treated cap as closed-form) missed exactly this.
+
+### M = 224 — T1 catalogue track  [MACHINE-CHECKED]
+
+    catalogue 28195 patterns; α_E = α_O = 3, f_O = f_E = 8;
+    K*(224) = 121 + (3−8) = 116 — matches T2's α̂(224) = 3.
+    W(224) = C(224) − 116 with C now requiring MEASUREMENT
+    (flat law would say C = 116, W = 0; probes in flight).
+
 ### M = 224, 256 — T2 (catalogues in flight)
 
     m=112 (both windows): 7140 pairs → 209/202 closure-alive → 128
