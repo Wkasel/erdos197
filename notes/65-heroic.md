@@ -47,8 +47,9 @@ variant, n = 4M+30 — its own 48-scale sanity UNSAT above).  Blind in
 the relevant sense: no schema knowledge in the encoding, fresh solver
 run, UNSAT sound under lazy transitivity.
 
-Confirmation on the EXACT locked closed-interval CORE′ (n = 4M+31):
-**VERDICT e165b M=256 core (2,2,2): UNSAT — LANDED, see delta below.**
+Confirmation on the EXACT locked closed-interval CORE′ (n = 4M+31) is
+in flight (e165b_M256_core, round 11 at 122s — tracking the original's
+trajectory, which verdicted at round 18); expect it within the hour.
 
 ## In flight (batch 1, launched 00:00 UTC via launch_heroic.sh)
 
