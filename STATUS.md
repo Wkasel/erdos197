@@ -1126,3 +1126,57 @@ data/e158*.
   naive multiplicative cascades — notes/62 §5); the growth of
   v_min(0)(M) is the decisive remaining measurement, and
   GAP-AFFORD′ (overpayment ledger) the decisive remaining statement.
+
+### FRONT TELESCOPE (2026-08-29, e173 + notes/70): the boundary
+### ledger — GAP-V*-growth made unnecessary, disjointness settled
+
+Full write-up notes/70-telescope.md; machine
+experiments/e173_telescope.py, data/e173_* + pod data/tel_*.
+
+- **The right tower**: boundary currency.  On the 2-adic chain
+  N_j = N₀·2^j, Inv_T(N_j) = x_{j+1} + x_{j+2} where x_m = inverted
+  adjacent-octave pairs at boundary β_m.  L-HOME (each pair at
+  exactly one boundary; skip pairs at none — P4 amplifies them),
+  L-2PRICE (each boundary priced by exactly the two anchors
+  N_{m-1}, N_{m-2}; machine-exact on 10/10 witness records incl. the
+  odd-base q=3 chain at 24), **T-LEDGER** (4-adic subchains partition
+  the boundary currency EXACTLY — payments there pairwise disjoint;
+  full chain double-counts exactly ×2), L-SQUEEZE (no parking:
+  Inv(N_j) ≤ Inv(N_{j-1}) + Inv(N_{j+1})), L-ECHO (a zero anchor
+  forces the giant v_min(0) payment to echo at TWO consecutive
+  anchors above, same team).
+- **Naive T-TEL refuted honestly**: consecutive-anchor disjointness
+  is FALSE — the C1@16 witness's ENTIRE upper payment (6 pairs, all
+  on the shared seam) is simultaneously lower-anchor payment
+  (maximal overlap, measured); and P1/NG4 kill any
+  divergence-as-contradiction reading (X-INTERLEAVE pays every
+  boundary legally).
+- **The corrected disjointness (T-FRESH) — machine-true at 16**:
+  F(16; 6) (pump cell with the shared seam FREED below, only
+  new-boundary currency banned) is **UNSAT [983.5 s]** — cheap upper
+  anchors mint fresh β(N)-currency that cannot ride the doubly-priced
+  shared seam; mints at distinct anchors sit at distinct boundaries,
+  hence pairwise disjoint at EVERY anchor (density 1/octave, no
+  factor 2), each with a P3-displaced low member.  Corollary: the
+  2-step chain cell U5(16) (6,·,0) UNSAT a fortiori — no parking.
+- **T-TEL′ dichotomy [proved modulo GAP-J/F-schema +
+  GAP-VMIN0-growth]**: every valid regime-(I) pair either (a) has
+  limsup Inv = ∞ (with L-ECHO booking each giant payment twice), or
+  (b) pays ≥ 1 with fresh disjoint currency at every large anchor —
+  the notes/47 §5.4 covering statement DERIVED.  Either way
+  cumulative fresh demand diverges: **GAP-V*-growth is demoted; the
+  demand curve is now v_min(0)(M), measurable by cheap deep-UNSAT
+  queries** (the near-critical wall does not apply: vdn = 0
+  collapses the lower order theory).
+- **New measurements**: v_min(0) monotone at FOUR scales — > 6 (@8,
+  NEW, 2.1 s), > 6/≤ 384 (@16), > 65 (@24), **> 256 (@32, pod,
+  137 s)**; and the **const-bounds pump fires**: (6,0)@24 at bounds
+  (2,3,6,12) UNSAT [106 s] ⟹ by D1+D2 the pump demand applies at
+  EVERY large Case-2 anchor — not a balance artifact.  In flight:
+  (512,0)@32, const ladder (65,0)@24 + (100,0)@32, F(24;65), pod
+  F(16;6) cross-check.
+- **What remains THE gap**: GAP-AFFORD′ unchanged — the supply cap
+  must charge, in donation currency, either branch (a)'s echoing
+  giant payments or branch (b)'s one-displaced-value-per-octave
+  system.  The telescope closes the demand bookkeeping; it cannot
+  (NG4) close supply.
