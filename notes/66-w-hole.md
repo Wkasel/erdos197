@@ -139,9 +139,16 @@ SAT-alive graph of W2ε(m) = α̂ via Lemma HALVE-PURE.
                 shallow clique 3 = {265,281,345} (halved gaps 16/64)
                 = EXACTLY the T1 α_E witness halved.  α̂_E(176) = 3.
 
-    ⟹ K*(176) = 88 + 9 + (3−8) = 92;  cap+1 = C(176) = 92;
-    **W(176) = 0.**  α_max(176) = 3: NO hole at 176, margin again
-    exactly zero — the W = 0 club is now {112, 128, 144, 176}.
+    ⟹ K*(176) = 88 + 9 + (3−8) = 92.  Cap side MEASURED, not
+    extrapolated: L-LOP(176) K = 92 UNSAT [444.6 s], K = 93 SAT
+    [220.5 s] (e152 probes, pod) — kmax_unsat = 92, cap(176) = 91,
+    the flat cap law (M+16)/2 − 5 holds at a sixth scale.  C = 92.
+    **W(176) = 0, both sides measured.**  α_max(176) = 3: NO hole
+    at 176 — the W = 0 club is now {112, 128, 144, 176}.
+    (e153 full run at 176 also passed D4/D5/D6: every admissible
+    defector minimum LOW, one-sided branch UNSAT at every s0 at
+    K = 92, sharp at K−1 at bottom minima {1}/{2} — the entire
+    notes/57 catalogue layer reproduces at 176.)
 
 ### M = 192 — T2 first (catalogue in flight)
 
