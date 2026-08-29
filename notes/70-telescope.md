@@ -100,6 +100,11 @@ Machine (e173 audit, on the e158 pump witnesses at M = 16):
   export the obligation one anchor up, exactly notes/62 §6.
 - **C0 (free):** overlap = s1 in both teams (16 and 74) — the set
   identity Inv(N) ∩ Inv(N/2) = x_{β(2N)} holds on every record.
+- **Scale 24 (chain base q = 3, boundaries 3·2^j):** the only SAT
+  record at 24 (C2 (none, 0)) passes all three laws with the octave
+  logic run on the odd-base chain — all payment on β(96) = β(4M)
+  (894/913), boundaries 24/48 clean: the lavish top-boundary export
+  is scale- and base-stable.  10/10 team-records pass in total.
 
 So: **any T-TEL that assumes payments at consecutive anchors demand
 disjoint inversion pairs is FALSE, and the witnesses realize the

@@ -58,26 +58,32 @@ def stream(row):
 
 # ---------------------------------------------------------------- audit
 
-def _pair_boundary(u, w):
-    """Home boundary of an adjacent-octave pair: the power of 2 (times
-    odd part of the chain base) separating u's and w's octaves.  Here
-    all e158 gadgets are dyadic (base a power of 2), so boundaries are
-    the values 2^j themselves — return the boundary value b with
+def _octave(v, q):
+    """Octave index of v on the chain with odd base q:
+    v in (q*2^{o-1}, q*2^o]  ->  o."""
+    o = 0
+    while q * (1 << o) < v:
+        o += 1
+    return o
+
+
+def _pair_boundary(u, w, q=1):
+    """Home boundary of an adjacent-octave pair on the chain with odd
+    base q (boundaries q*2^j): return the boundary value b with
     u <= b < w and octaves adjacent, else None (skip/same-octave)."""
-    ou = u.bit_length() - (1 if u & (u - 1) == 0 else 0)  # octave idx: (2^{o-1}, 2^o]
-    ow = w.bit_length() - (1 if w & (w - 1) == 0 else 0)
+    ou, ow = _octave(u, q), _octave(w, q)
     if ow == ou + 1:
-        return 1 << ou
+        return q * (1 << ou)
     return None
 
 
-def _chain_anchors_covering(u, w, jmax=30):
-    """Chain anchors N = 2^j at which (u, w) is an adjacent-seam
+def _chain_anchors_covering(u, w, q=1, jmax=30):
+    """Chain anchors N = q*2^j at which (u, w) is an adjacent-seam
     inversion-eligible pair of W(N): s1-type iff N < u <= 2N < w <= 4N,
     s2-type iff 2N < u <= 4N < w <= 8N."""
     out = []
     for j in range(jmax):
-        N = 1 << j
+        N = q * (1 << j)
         if N < u <= 2 * N < w <= 4 * N:
             out.append((N, 's1'))
         if 2 * N < u <= 4 * N < w <= 8 * N:
@@ -87,7 +93,8 @@ def _chain_anchors_covering(u, w, jmax=30):
 
 def run_audit():
     files = ['e158_c1_M16_up6.json', 'e158_c2_M16_dn0.json',
-             'e158_f_M16_up384_dn0.json', 'e158_c0_M16_free.json']
+             'e158_f_M16_up384_dn0.json', 'e158_c0_M16_free.json',
+             'e158_c2_M24_dn0.json']
     report = {}
     for fn in files:
         path = os.path.join(DATA, fn)
@@ -99,6 +106,9 @@ def run_audit():
             print(f'-- {fn}: verdict {rec.get("verdict")}, skipped')
             continue
         M = rec['M']
+        q = M
+        while q % 2 == 0:
+            q //= 2
         ent = {'M': M, 'vup': rec['vup'], 'vdn': rec['vdn'], 'teams': {}}
         for team in ('A', 'B'):
             a = rec['anatomy'][team]
@@ -107,7 +117,7 @@ def run_audit():
             s2 = set(map(tuple, a['inv_s2']))
             # L-HOME: each pair at exactly one boundary; seam label
             # must match the home boundary (s0->M, s1->2M, s2->4M).
-            homes_ok = all(_pair_boundary(u, w) == b
+            homes_ok = all(_pair_boundary(u, w, q) == b
                            for ps, b in ((s0, M), (s1, 2 * M), (s2, 4 * M))
                            for (u, w) in ps)
             # seam sets pairwise disjoint (distinct boundaries)
@@ -117,7 +127,7 @@ def run_audit():
             twoprice_ok = True
             for ps, b in ((s0, M), (s1, 2 * M), (s2, 4 * M)):
                 for (u, w) in ps:
-                    cov = _chain_anchors_covering(u, w)
+                    cov = _chain_anchors_covering(u, w, q)
                     expect = {(b // 2, 's1'), (b // 4, 's2')}
                     if set(cov) != expect:
                         twoprice_ok = False

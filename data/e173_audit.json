@@ -138,5 +138,40 @@
     "fresh_lower_mass": 18
    }
   }
+ },
+ "e158_c2_M24_dn0.json": {
+  "M": 24,
+  "vup": null,
+  "vdn": 0,
+  "teams": {
+   "A": {
+    "n_s0": 0,
+    "n_s1": 0,
+    "n_s2": 894,
+    "L_HOME": true,
+    "seams_disjoint": true,
+    "L_2PRICE": true,
+    "n_up": 894,
+    "n_dn": 0,
+    "overlap": 0,
+    "overlap_is_exactly_s1": true,
+    "upper_payment_fully_shared": false,
+    "fresh_lower_mass": 0
+   },
+   "B": {
+    "n_s0": 0,
+    "n_s1": 0,
+    "n_s2": 913,
+    "L_HOME": true,
+    "seams_disjoint": true,
+    "L_2PRICE": true,
+    "n_up": 913,
+    "n_dn": 0,
+    "overlap": 0,
+    "overlap_is_exactly_s1": true,
+    "upper_payment_fully_shared": false,
+    "fresh_lower_mass": 0
+   }
+  }
  }
 }
