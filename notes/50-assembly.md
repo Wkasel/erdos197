@@ -164,3 +164,34 @@ brackets (5/5/3) leave v*-growth undecided [GAP-V*].  Two prose
 fixes: CORE′ P1 is CLOSED [3M−15, 4M] (notes/51's "(3M−15," is
 off-by-one; |CORE′| = 4M+31 arbitrates); notes/57 §0.1 P2 parity
 counts should read M+8/M+7, not m+8/m+7.
+
+### Telescope delta (2026-08-29, notes/70 + e173)
+
+Ledger-graph changes from FRONT TELESCOPE:
+
+* **[GAP-V*-growth] DEMOTED from load-bearing** (Theorem D's demand
+  no longer needs it): T-TEL′ + T-FRESH (notes/70 §4) run the
+  regime-(I) demand side on the pump curve v_min(0)(M) instead —
+  divergence of cumulative fresh demand follows from
+  [GAP-J/F-schema] + [GAP-VMIN0-growth] alone, whether or not v*
+  grows.  [GAP-V*] survives only as constant-sharpening.
+* **New tags**: [GAP-F-schema] (freshness family F(N; v): pump with
+  shared seam freed below, new-boundary currency banned; UNSAT at
+  (16; 6), 983.5 s — refines GAP-J-schema); [GAP-VMIN0-growth]
+  promoted to THE demand curve (measured: = 12 exactly at 8; > 6 /
+  ≤ 384 at 16; > 65 at 24; > 256 at 32 — all deep-UNSAT-cheap).
+* **Const-bounds pump machine-true**: (6,0)@24 at (2,3,6,12) UNSAT
+  [106 s] — via D1+D2 the pump demand holds at every large Case-2
+  anchor; GAP-J-schema should be proved at const bounds.
+* **Proven infrastructure** (no tags): L-HOME, L-2PRICE, T-LEDGER
+  (exact 4-adic disjoint bookkeeping; ×2 exact overlap on the full
+  2-adic chain), L-SQUEEZE (no parking), L-ECHO (zero anchors book
+  the forced giant payment at two anchors, same team),
+  L-FRESH-DECOMP.  Naive consecutive-anchor disjointness REFUTED
+  (maximal overlap measured on C1@16; overlap ≡ shared seam on
+  10/10 records).
+* **Unchanged terminal gap**: [GAP-AFFORD′] — supply cap in donation
+  currency; the telescope proves it cannot be closed in pair
+  currency (NG4 confirmed at chain level) and pins its two targets:
+  echoing giant payments (branch a) or one-displaced-value-per-
+  octave forever (branch b).
