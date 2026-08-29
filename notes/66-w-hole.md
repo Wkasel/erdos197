@@ -119,15 +119,28 @@ First result (m = 24, local, reproduces e155b exactly — SAT-alive
     at m = 24 they have 2 members in/below the CW zone, outside α's
     vertex set entirely.
 
-## 4. α at the new scales  [pending: e168 catalogues → e153]
+## 4. α at the new scales  [MACHINE-CHECKED as results land]
 
-e168 (parallel e146, byte-identical output verified at M = 48) is
-generating the 176/192/224/256 catalogues on the pod; e153 then
-measures α_ε, f_ε and prints the K* prediction per the notes/57
-formula.  Cross-track: e169's shallow clique numbers at
-m = 88/96/112/128 give α̂ at the same scales independently of the
-catalogue path.  Consistency standard: at the eight measured scales
-48..160, shallow-ω(W2ε(m)) must equal the e153 catalogue α_ε(2m)
-wherever the catalogue's purity bookkeeping is faithful.
+Two independent tracks per scale: (T1) e168 catalogue (parallel
+e146, byte-identical output verified at M = 48) → e153 scan =
+the notes/57 method verbatim; (T2) e169 shallow clique of the
+SAT-alive graph of W2ε(m) = α̂ via Lemma HALVE-PURE.
 
-[results to follow]
+### M = 176  (catalogue 17976 patterns, 635 s @ 44 cores)
+
+    T1 (e153):  F0 total (8813/8813 same-parity patterns pure);
+                α_E = 3  (offs −174, −142, −14; gaps 32, 128)
+                α_O = 3  (offs −175, −143, −15)
+                f_O = f_E = 8 (both bottom singletons self-serve;
+                self-serving sets O:{1,5}, E:{2,6,10})
+                D5: every admissible defector set has LOW minimum.
+    T2 (e169):  m=88 W2e: 4560 pairs → 157 closure-alive → 82
+                SAT-alive; gaps {16,32,64,80} — H-LAT(mod 8) HOLDS;
+                shallow clique 3 = {265,281,345} (halved gaps 16/64)
+                = EXACTLY the T1 α_E witness halved.  α̂_E(176) = 3.
+
+    ⟹ K*(176) = 88 + 9 + (3−8) = 92;  cap+1 = C(176) = 92;
+    **W(176) = 0.**  α_max(176) = 3: NO hole at 176, margin again
+    exactly zero — the W = 0 club is now {112, 128, 144, 176}.
+
+[remaining scales to follow]
