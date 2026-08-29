@@ -156,7 +156,30 @@ SAT-alive graph of W2ε(m) = α̂ via Lemma HALVE-PURE.
     105 + (2−8) = 99, C = 100, **W(192) = 1** — the α relaxation
     at 160 (α: 3→2) REPEATS at 192.
 
-[224, 256 to follow]
+### M = 224, 256 — T2 (catalogues in flight)
+
+    m=112 (both windows): 7140 pairs → 209/202 closure-alive → 128
+      SAT-alive; gaps {16,32,48,64,96,112} — H-LAT HOLDS.
+      **Full-window max clique = 4**: {329,345,377,441}
+      (π-offsets {119,103,71,7}, halved gaps 16/32/64) — the FIRST
+      4-clique at an α-relevant tower level — but its deepest member
+      is π = 119 > m−1 = 111: OUTSIDE the shallow zone by exactly
+      ONE lattice step (8).  SHALLOW clique = 3 {337,369,433}.
+      α̂_E(224) = α̂_O(224) = 3.
+
+    m=128 W2e: 9180 pairs → 243 closure-alive → 139 SAT-alive;
+      gaps {32,64,96,128} (all ≡ 0 mod 32) — H-LAT HOLDS.
+      **Full-window max clique = 4**: {377,409,441,505} (π-offsets
+      {135,103,71,7}) — deepest member π = 135 > m−1 = 127: again
+      outside shallow by EXACTLY 8.  SHALLOW clique = 3
+      {392,424,488}.  α̂_E(256) = 3.
+
+    ⟹ predicted (catalogue tracks pending): α_max(224) =
+    α_max(256) = 3, W = 0 at both.  The notes/64 fear is
+    quantitatively real — shallow-adjacent 4-cliques EXIST from
+    m = 112 up — but the shallow boundary excludes their deepest
+    member by one lattice step at both scales.  NO five-alarm, and
+    no W ≥ 1 relaxation either: the margin at 224/256 is zero.
 
 ---
 
