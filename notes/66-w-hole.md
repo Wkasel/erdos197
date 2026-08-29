@@ -175,12 +175,17 @@ Y_A ⊇ all even depths 0..182 plus the bottom-window cluster
 the band bottom (max depth 207 = 3M−15), structurally richer than
 the 176-witness (which stopped at depth 188 of 191).
 
-Pinning runs in flight: L-LOP(192) K = 99, 98; L-LOP(224)
-K = 116, 115.  Ledger of scenarios at 192 (K* = 99):
-kmax_unsat = 99 → cap = 98, C = 99, W = 0 (flat law −1, overlap
-survives); kmax_unsat ≤ 98 → **W ≤ −1: a genuine hole, from the
-cap side, with α playing no role** — the notes/64 scenario table
-(which treated cap as closed-form) missed exactly this.
+RESOLVED: **L-LOP(192) K = 99 UNSAT [292.7 s]** → kmax_unsat = 99,
+cap(192) = 98 = (M+16)/2 − 6, C = 99 = K*(192): **W(192) = 0 — the
+overlap survives with zero margin; the flat cap law is dead** (off
+by −1 at its seventh scale).  The α relaxation at 192 (α = 2, which
+alone would have given W = 1) is EXACTLY cancelled by the cap
+dropping 1 — the two arms' frontiers move together, and the
+notes/64 scenario table (which held the cap closed-form and let
+only α move) understated the risk: BOTH quantities are per-scale
+measurements now.  Measured caps 96..192: 51/59/67/75/83/91/98
+(deltas 8,8,8,8,8,7); measured K*: 51/60/68/76/83/92/99.
+W series at 48..192: 4/2/3/1/0/0/0/1/0/0.
 
 ### M = 224 — T1 catalogue track  [MACHINE-CHECKED]
 
