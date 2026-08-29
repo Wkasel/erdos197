@@ -198,13 +198,23 @@ M = 224** — the first scale where the two wholesale arms do not
 meet.  min|Y| = 115 colorings are killed by neither arm: L-LOP
 stops at ≤ cap ≤ 114, DICH needs ≥ 116.  Crucially the mechanism is
 NOT the feared α_max = 4 (α(224) = 3, exactly as at 112/128/144/
-176): the CAP side fell.  Contingency executed immediately (the
-insurance chain, notes/58 §4.2 / notes/61 §4): DICH-upure(224, 115),
-DICH-zdef(224, 115, 4), RP-ARM(224, 4) launched; K = 115 probe in
-flight to pin cap(224).  If the robust chain closes at K_P = 115,
-COV-W′(224) holds and the hole is absorbed (the chain never needed
-the overlap); if RP-ARM fails, this is a genuine COV-W gap —
-task (3).
+176): the CAP side fell.  Pinned: **L-LOP(224) K = 115 UNSAT [728 s], K = 116/117 SAT** →
+kmax_unsat = 115, cap(224) = 114 = (M+16)/2 − 6 (same −1-from-flat
+as 192), C = 115.  **W(224) = −1 EXACTLY: a width-1 hole — the
+single value min|Y| = 115 is covered by neither wholesale arm.**
+This is the event the campaign was braced for, arriving through the
+cap (the α mechanism stayed quiet: α = 3, f = 8, K* on-formula).
+
+Contingency (the insurance chain, notes/58 §4.2 / notes/61 §4) at
+K_P = cap + 1 = 115 — exactly the hole value:
+
+    DICH-upure(224, 115):  UNSAT  [44.9 s]   ✓ U forced pure
+    DICH-zdef(224, 115, 4): [running]
+    RP-ARM(224, 4) --audit: [running]
+
+If both remaining links close, Theorem COV-W′(224) holds and the
+d₀ = 4 robust chain absorbs the hole (it never consumed the
+overlap); if RP-ARM fails, this is a genuine COV-W gap — task (3).
 
 ### M = 224, 256 — T2 (catalogues in flight)
 
