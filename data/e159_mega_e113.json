@@ -1,17 +1,6 @@
 {
  "rows": [
   {
-   "exp": 13,
-   "M": 8192,
-   "layer1_s": 0.31,
-   "layer1": "PASS",
-   "flip_s": 0.27,
-   "flip": "PASS",
-   "sharp_M+4": "PASS",
-   "sharp_s": 0.0,
-   "peak_rss_mb": 32.2
-  },
-  {
    "exp": 14,
    "M": 16384,
    "layer1_s": 0.98,
@@ -43,6 +32,28 @@
    "sharp_M+4": "PASS",
    "sharp_s": 0.0,
    "peak_rss_mb": 1195.3
+  },
+  {
+   "exp": 22,
+   "M": 4194304,
+   "layer1_s": 212.25,
+   "layer1": "PASS",
+   "flip_s": 124.81,
+   "flip": "PASS",
+   "sharp_M+4": "PASS",
+   "sharp_s": 0.0,
+   "peak_rss_mb": 4550.9
+  },
+  {
+   "exp": 13,
+   "M": 8192,
+   "layer1_s": 0.2,
+   "layer1": "PASS",
+   "flip_s": 0.12,
+   "flip": "PASS",
+   "sharp_M+4": "PASS",
+   "sharp_s": 0.0,
+   "peak_rss_mb": 31.5
   }
  ],
  "fail": []

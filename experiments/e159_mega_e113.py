@@ -32,6 +32,11 @@ def rss_mb():
 def main():
     exps = [int(a) for a in sys.argv[1:]] or [13, 14, 16, 20]
     out = {'rows': [], 'fail': []}
+    if os.path.exists(DATA):                    # append across invocations
+        prev = json.load(open(DATA))
+        out['rows'] = [r for r in prev.get('rows', [])
+                       if r['exp'] not in exps]
+        out['fail'] = prev.get('fail', [])
     for e in exps:
         M = 1 << e
         assert M % 8 == 0

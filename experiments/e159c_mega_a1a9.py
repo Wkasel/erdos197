@@ -56,9 +56,7 @@ def check_M(M, materialize=False):
             fams[key] = {(a, b, 2 * b - a)
                          for (b, alo, ahi) in rows for a in range(alo, ahi + 1)}
 
-    # ---- A1 (0,0,1): midpoint in P0 ----
-    rows = list(mid_rows(M, P0, P2 if False else P1, *P0))
-    # NB: pattern (0,0,1): a in P0, b in P0, c in P1
+    # ---- A1 (0,0,1): a in P0, midpoint b in P0, c in P1 ----
     rows = list(mid_rows(M, P0, P1, *P0))
     mat((0, 0, 1), rows)
     assert [b for b, _, _ in rows] == list(range(2 * M - 7, 2 * M + 1)), \

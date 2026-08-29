@@ -18,20 +18,24 @@ Record: data/e159_mega_e113.json.
 | 2^14 = 16384   | PASS 0.98 s | PASS 0.52 s | PASS | 58 MB |
 | 2^16 = 65536   | PASS 3.45 s | PASS 2.05 s | PASS | 108 MB |
 | 2^20 = 1048576 | PASS 64.8 s | PASS 37.4 s | PASS | 1195 MB |
+| 2^22 = 4194304 | PASS 212 s  | PASS 125 s  | PASS | 4551 MB |
 
 Every lemma application (Z zigzag rungs, P flood pairs, E transfer,
 all case x phase branches, audit() hypothesis discipline) executed
 rung-by-rung at every scale; zero assertion failures.  Scaling:
 time and memory essentially LINEAR in M (per-branch fact stores are
 O(M); the 2^16 -> 2^20 step is 16x M and ~19x time — mild set-resize
-overhead).  Extrapolation: 2^24 would need ~20 GB RSS — the point at
-which the inner loop would want the arithmetic reimplementation the
-task anticipated; at 2^20 the ORIGINAL checker still runs as-is.
+overhead; 2^20 -> 2^22 is 4x M and 3.3x time, back on the linear
+trend).  The 2^22 stretch run landed PASS with the ORIGINAL checker
+as-is — the arithmetic-reimplementation threshold the task
+anticipated sits near 2^24 (~18-20 GB RSS), attempted as a final
+stretch on the 64 GB box (see the addendum row if present).
 Sharpness controls at M = 2^k + 4 (== 4 mod 8) confirm the schema's
 center-class conditions fail off the dyadic class at every scale.
 
 C3 certificate family now machine-executed at: 100+ scales 12..4096
-(prior) + 8192, 16384, 65536, 1048576.  **Largest M = 2^20.**
+(prior) + 8192, 16384, 65536, 1048576, 4194304.  **Largest
+M = 2^22.**
 
 ## 2. Exact seam/interval walk battery to 2^100000+ (and 2^1000003)
 
@@ -118,8 +122,56 @@ was run in full (experiments/e159d_mega_dich.py, validated first at
 * SP — sigma index map boundary-sampled; hidden-staircase forced
   mass m+n−w1 == m+22 > m+14 both classes; band-top slack.
 
-Results: [see table below — filled after the runs]
+Results (data/e159d_mega_dich.json):
+
+| M | verdict | FI arith (all z) | brute-force sample | A2 | H1/COLL | total |
+|---|---------|------------------|--------------------|----|---------|-------|
+| 48/64/80/96/160 | OK | full | ALL z (u-loops) | worst pair + 2e5 random | OK | < 1 s each |
+| 2^13 | OK | 0.01 s | ALL 16399 z, 19.5 s | OK 0.7 s | OK | 20.1 s, 20 MB |
+| 2^16 | OK | 0.10 s | 2226 z (crit + stride 64), 23.8 s | OK 1.0 s | OK | 24.9 s, 27 MB |
+| 2^20 | OK | 2.3 s | 691 z (crit + stride 4096), 148.7 s | OK 0.9 s | OK 1.0 s | 153 s, 210 MB |
+
+**H-DICH arithmetic-layer family: largest M = 2^20 = 1048576
+(tasked scope was 2^16; the 2^20 bonus landed OK — FI re-derived for
+every z arithmetically, honest u-loop brute force on the 691-z
+critical+stride sample, A2 worst-pair + 2x10^5 random pairs, H1/COLL
+global collision closure, SP staircase mass — all asserted).**
 
 ## 5. Verdict
 
-[filled at close]
+ZERO failures of any certified law at any scale.  The one FAIL ever
+printed (walk battery, first run) was a harness bug in THIS front's
+new boundary-attacker extension (§2), fixed and documented; no
+certified statement was touched.
+
+Largest M per certificate family after this front:
+
+| family | prior | now |
+|--------|-------|-----|
+| e113 C3 schema (L1 + FLIP + mod-8 sharpness) | 4096 | **2^22 = 4194304** (unmodified checker, 212+125 s / 4.55 GB; 2^24 final stretch — see addendum) |
+| exact seam/interval walks (X2 + neck + FAN) | ~2^20102 | **2^1000003** (spot), full-schedule battery to 2^102402 |
+| A1-A9 attack catalogue (notes/55 §2) | 80 | **2^20** (arithmetic O(M) form, xval vs brute force at 48..160) |
+| H-DICH arithmetic layer (FI/COLL/H1/SP, notes/57) | 160 | **2^20 = 1048576** (tasked 2^16; 2^13 with FULL brute-force z-coverage) |
+| H-DICH catalogue layer (F1-F4) | 160 | unchanged — needs Theta(M^2) catalogue construction; = the GAP-DICH rows, not a rule-execution target |
+
+Scaling summary: e113 time/memory linear in M (65 s / 1.2 GB at
+2^20; the arithmetic-reimplementation threshold the task anticipated
+sits near 2^24, not 2^20); walks are effectively free to 10^6-bit
+integers; A1-A9 and the DICH arithmetic layer are O(M) once the
+inner loops are interval-algebraic — 2^20 costs seconds.
+
+Artifacts: experiments/e159_mega_e113.py, e159b_mega_walks.py,
+e159c_mega_a1a9.py, e159d_mega_dich.py; data/e159*.json.
+
+## 6. Close-out session (same date, later): landings + reproducibility
+
+* The two "in flight at close" items LANDED, zero failures: e113 at
+  2^22 (table row above) and the DICH arithmetic layer at 2^20
+  (table row above).  data/e159_mega_e113.json / e159d_mega_dich.json
+  are the records.
+* Reproducibility spot-pass, all four drivers re-executed fresh this
+  session: e113 at 2^13 (PASS, 0.2 s), DICH at M = 96 full
+  brute-force (OK, matches the archived row field-for-field),
+  A1-A9 --xval (7 families set-identical to e137 brute force at all
+  5 scales), full walk battery re-run (tri/quad/monster all OK).
+  Verdicts identical on every re-execution.
