@@ -137,10 +137,12 @@ ledger-neutral), or does it demand NEW-boundary currency?
 new-boundary currency banned, the shared seam left free below (the
 lower anchor may spend on it without limit beyond the upper cap).
 
-- F(16; 6): RUNNING at the time of writing (verdict lands in
-  data/e173_telescope.jsonl and §5; this paragraph records BOTH
-  readings, committed before the verdict).
-- F(24; 65): queued behind it (same shape at the second pump scale).
+- **F(16; 6): UNSAT [983.5 s local under load-140 contention;
+  landed after the pre-registration below was committed].**  Note
+  F(M; v) is a RELAXATION of (v, 0) (s1 freed below), so this is
+  strictly stronger than the (6,0) pump cell.
+- F(24; 65): running on the pod (same shape at the second pump
+  scale), with an independent pod F(16;6) as cross-check.
 
 **Lemma L-FRESH-DECOMP [PROVED — L-PREFIX part (i) machinery, one
 seam only].**  Under x_{β(M)} = 0 alone, each team is block-ordered
@@ -155,15 +157,27 @@ budget".**  F(M; v) SAT would require a balanced coloring with
 for its own H_dn floor on the shared seam, no coloring clears the
 upper anchor at v.
 
-Pre-registered readings.  UNSAT ⟹ by T-FORCE-4, every valid balanced
-pair with Inv_T(16) ≤ 6 for both teams has a team with an inverted
-pair at β(16) — currency DISJOINT from everything priced at anchor 16
-and above: the pump is NOT ledger-neutral, cheap upper anchors mint
-fresh currency one boundary down, booked disjointly by T-LEDGER.
-SAT ⟹ the forced lower payment can ride entirely on the doubly-priced
-shared seam: the pump's fresh-currency claim fails, disjoint demand
-lives only at the 4-adic granularity, and T-TEL′ branch (b) weakens
-from "one fresh pair per 2 octaves" to the D3 covering constant.
+Pre-registered readings (committed before the verdict; the UNSAT
+branch is now operative).  UNSAT ⟹ by T-FORCE-4, every valid
+balanced pair with Inv_T(16) ≤ 6 for both teams has a team with an
+inverted pair at β(16) — currency DISJOINT from everything priced at
+anchor 16 and above: the pump is NOT ledger-neutral, cheap upper
+anchors mint fresh currency one boundary down, booked disjointly by
+T-LEDGER.  SAT ⟹ the forced lower payment can ride entirely on the
+doubly-priced shared seam: the pump's fresh-currency claim fails,
+disjoint demand lives only at the 4-adic granularity, and T-TEL′
+branch (b) weakens from "one fresh pair per 2 octaves" to the D3
+covering constant.
+
+**Verdict: freshness is FORCED at the first pump scale.**  With
+L-FRESH-DECOMP this reads: even when a coloring is allowed to pay
+its own μ_dn floor on the shared seam inside the upper budget, no
+balanced coloring of (8, 128] clears Inv(16) ≤ 6 with β(16) clean —
+the fresh mint is not an artifact of the vdn = 0 collapse.
+Corollary (a fortiori, by restriction): the 2-step chain cell
+U5(16) (6, ·, 0) is UNSAT — cheapness at 16 with a free bottom
+anchor 4 is impossible REGARDLESS of the middle anchor's behavior
+(which L-SQUEEZE auto-prices ≤ 6 anyway); no run needed.
 
 ## 4. T-TEL: dead version, live version
 
@@ -262,9 +276,9 @@ set with δ ≥ 1 — one displaced value per 2 octaves forever).
 | **bal (100,0)@32** [pod] | **UNSAT** | 62.6 s | v_min(0)(32) > 100 |
 | **bal (256,0)@32** [pod] | **UNSAT** | 137.2 s | **v_min(0)(32) > 256** — the growth curve's 4th monotone point; (512,0)@32 queued |
 | **const (6,0)@24 at (2,3,6,12)** [pod] | **UNSAT** | 106.0 s | **the pump exists at constant bounds — regime-wide demand (D1+D2), not a balance artifact**; const growth ladder queued ((65,0)@24, (100,0)@32) |
-| fresh F(16;6) | see jsonl | | the freshness discriminator (§3); racing local (contended) + pod |
-| fresh F(24;65) | see jsonl | | scale-2 freshness [pod] |
-| five U5(16): (6,·,0) | see jsonl | | 2-step chain cell; the middle anchor is auto-priced ≤ 0+6 by the outer budgets (L-SQUEEZE — the chain has NO parking space); F(16;6) UNSAT ⟹ this cell UNSAT a fortiori by restriction |
+| **fresh F(16;6)** | **UNSAT** | 983.5 s | **freshness FORCED: cheap upper anchors mint β(M)-currency disjoint from all upper-priced pairs (§3); strictly stronger than the (6,0) pump cell** |
+| fresh F(24;65) | pod, in flight | | scale-2 freshness; + independent pod F(16;6) cross-check |
+| five U5(16): (6,·,0) | UNSAT (implied) | — | a fortiori from F(16;6) by restriction; middle anchor auto-priced ≤ 0+6 (L-SQUEEZE — no parking space); not run |
 
 (The jsonl is the live record; the table's open rows are filled by
 the queue as cells land.)
