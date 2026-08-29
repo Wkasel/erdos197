@@ -14,12 +14,15 @@ data/e173_telescope.jsonl, e173_audit.json, e173_{cell}.json.
 Verdict of the front in one line: **naive T-TEL (consecutive-anchor
 disjointness) is FALSE — the overlap is the shared seam and the C1
 witness realizes it MAXIMALLY; but the accounting has an exact
-repair (the boundary ledger: 4-adic subchains are perfectly
-disjoint), the pump fires at every scale measured INCLUDING the
-bottom one (new: (6,0)@8 UNSAT), and the surviving theorem T-TEL′ is
-a dichotomy that replaces GAP-V*-growth with GAP-VMIN0-growth — a
-curve measurable by cheap deep-UNSAT queries instead of hopeless
-near-critical decisions.**
+repair (the boundary ledger: 4-adic subchains perfectly disjoint,
+and the FORCED FRESH component is disjoint at every anchor —
+F(16;6) UNSAT), the pump fires at every scale measured INCLUDING
+the bottom one ((6,0)@8 UNSAT; v_min(0)(8) ∈ (6,16]) AND at
+constant bounds ((6,0)@24 const UNSAT — regime-wide demand), and
+the surviving theorem T-TEL′ + T-FRESH is a dichotomy that replaces
+GAP-V*-growth with GAP-VMIN0-growth — a curve measurable by cheap
+deep-UNSAT queries (now monotone at four scales, > 256 at 32)
+instead of hopeless near-critical decisions.**
 
 ## 1. The right tower: boundary currency on the 2-adic chain
 
@@ -198,13 +201,14 @@ Assume:
   v < v_min(0)(M), for all large anchors in the regime (machine-true
   at M = 8, 16, 24 — three scales after this session);
 - [GAP-VMIN0-growth] v_min(0)(M) → ∞ (measured, four scales, all
-  monotone: > 6 at 8, > 6 at 16 with SAT at 384, > 65 at 24, and NEW
+  monotone: **= 12 EXACTLY at 8** (this session's bisection), > 6 at
+  16 with SAT at 384 and TIMEOUTs at 96/192, > 65 at 24, and NEW
   this session **> 256 at 32** ((100,0)@32 UNSAT 62.6 s, (256,0)@32
   UNSAT 137.2 s on the pod — deep-UNSAT stays cheap at the fourth
-  scale; (512,0)@32 queued).  The curve exceeds the entire v*₃
-  bracket at every measured scale, grows ≈ ×4 per scale step
-  24 → 32, and its lower bound at 32 (256) already approaches the
-  16-scale UPPER bound (384)).
+  scale; (512,0)@32 and a fifth scale (512,0)@48 queued).  The curve
+  exceeds the entire v*₃ bracket at every measured scale, and its
+  lower bound at 32 (256) already approaches the 16-scale UPPER
+  bound (384)).
 
 Then every valid pair in regime (I) satisfies, along any 2-adic
 chain, at least one of:
@@ -289,6 +293,7 @@ set with δ ≥ 1 — one displaced value per 2 octaves forever).
 | audit (10 team-records, 5 witnesses, chains q = 1 and q = 3) | ALL PASS | — | L-HOME, seam-disjointness, L-2PRICE exact; overlap ≡ s1 identically; C1 overlap maximal (6/6); fresh mass 32; lavish witnesses export to the top boundary at both scales |
 | pump (6,0)@16 via e173 encoder | UNSAT | 2.1 s | cross-validates the new generalized encoder against e158 verbatim |
 | **pump (6,0)@8** | **UNSAT** | 2.1 s | **NEW: v_min(0)(8) > 6 — the pump fires at the BOTTOM scale, where BOTH standalone anchors are free (v*(bal,8) = 0); the chain step exists at every measured scale** |
+| pump (8..11,0)@8 / (12,0)@8 | UNSAT ×4 / SAT | 7–41 s / 8.6 s | **v_min(0)(8) = 12 EXACTLY — the program's first exact v_min(0) point** (UNSAT at 6,8,9,10,11; SAT at 12 with BOTH teams saturated at 12, ENTIRELY on s2 = the top boundary: the lavish export is the forced shape under vdn = 0).  No curve-fitting recorded (campaign rule); the exact point is schema material for the (v,0) hand family at its smallest instance |
 | **bal (100,0)@32** [pod] | **UNSAT** | 62.6 s | v_min(0)(32) > 100 |
 | **bal (256,0)@32** [pod] | **UNSAT** | 137.2 s | **v_min(0)(32) > 256** — the growth curve's 4th monotone point; (512,0)@32 queued |
 | **const (6,0)@24 at (2,3,6,12)** [pod] | **UNSAT** | 106.0 s | **the pump exists at constant bounds — regime-wide demand (D1+D2), not a balance artifact**; const growth ladder queued ((65,0)@24, (100,0)@32) |

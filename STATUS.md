@@ -1168,9 +1168,10 @@ experiments/e173_telescope.py, data/e173_* + pod data/tel_*.
   demand curve is now v_min(0)(M), measurable by cheap deep-UNSAT
   queries** (the near-critical wall does not apply: vdn = 0
   collapses the lower order theory).
-- **New measurements**: v_min(0) monotone at FOUR scales — > 6 (@8,
-  NEW, 2.1 s), > 6/≤ 384 (@16), > 65 (@24), **> 256 (@32, pod,
-  137 s)**; and the **const-bounds pump fires**: (6,0)@24 at bounds
+- **New measurements**: v_min(0) monotone at FOUR scales —
+  **= 12 EXACTLY (@8, bisected: UNSAT ≤ 11, SAT at 12 — the
+  program's first exact v_min(0) point)**, > 6/≤ 384 (@16), > 65
+  (@24), **> 256 (@32, pod, 137 s)**; and the **const-bounds pump fires**: (6,0)@24 at bounds
   (2,3,6,12) UNSAT [106 s] ⟹ by D1+D2 the pump demand applies at
   EVERY large Case-2 anchor — not a balance artifact.  In flight:
   (512,0)@32, const ladder (65,0)@24 + (100,0)@32, F(24;65), pod
