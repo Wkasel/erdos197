@@ -299,6 +299,19 @@ form of GAP-DICH-ALPHA — strictly easier than ODD-KILL (it is a
 statement about the DEEP structure only: cliques avoiding the
 bottom window must break).  [GAP: SPAN-4 for all m.]
 
+### The reframed seam (what notes/64 must now say)
+
+W(M) = C(M) − K*(M) with BOTH sides per-scale catalogue quantities:
+K* = m + 9 + max(α−f) (the notes/57 mechanistic law, now exact at
+TEN scales 48..224 with α measured twice independently), and C =
+kmax_unsat(L-LOP) whose flat reading (M+16)/2 − 4 broke at 192.
+Measured C: 52/60/68/76/84/92/99/115 at 96..224 — i.e. C = K* + W
+with W = 1/0/0/0/1/0/0/−1.  The cap's own mechanistic law is the
+open instrument: notes/61 §1.1's "+4 = E1-midpoint puncture
+tolerance" reading must become a catalogue scan of its own (the
+pre-registered, never-run e155c ThW1′ experiment is the tool).
+Scales 208, 240 remain unmeasured on both sides.
+
 ---
 
 ## 5. The lattice recursion, formalized — what is proved and what
