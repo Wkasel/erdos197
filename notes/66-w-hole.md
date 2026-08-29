@@ -143,7 +143,20 @@ SAT-alive graph of W2ε(m) = α̂ via Lemma HALVE-PURE.
     **W(176) = 0.**  α_max(176) = 3: NO hole at 176, margin again
     exactly zero — the W = 0 club is now {112, 128, 144, 176}.
 
-[remaining scales to follow]
+### M = 192 — T2 first (catalogue in flight)
+
+    T2 (e169):  m=96 W2e: 5356 pairs → 184 closure-alive → 97
+                SAT-alive; W2o: 173 → 96.  Gaps both windows
+                {16,32,48,64,96} — H-LAT(mod 8) HOLDS.
+                Full-window clique 3 = {281,297,329} (deep member
+                281 < 3m+1); SHALLOW clique 2 = {289, 353} in BOTH
+                windows.  α̂_E(192) = α̂_O(192) = 2.
+
+    ⟹ if the catalogue track agrees (and f = 8): K*(192) =
+    105 + (2−8) = 99, C = 100, **W(192) = 1** — the α relaxation
+    at 160 (α: 3→2) REPEATS at 192.
+
+[224, 256 to follow]
 
 ---
 

@@ -55,3 +55,6 @@
 {"exp": "e158c", "M": 32, "sched": "1100", "vup": 256, "vdn": 0, "verdict": "UNSAT", "time": 7.2}
 {"exp": "e158c", "M": 32, "sched": "1100", "vup": 384, "vdn": 0, "verdict": "UNSAT", "time": 8.9}
 {"exp": "e158c", "M": 32, "sched": "1100", "vup": 512, "vdn": 0, "verdict": "UNSAT", "time": 11.2}
+{"exp": "e158c", "M": 16, "sched": "1100", "vup": null, "vdn": 0, "verdict": "UNSAT", "time": 0.4}
+{"exp": "e158c", "M": 24, "sched": "1100", "vup": null, "vdn": 0, "verdict": "UNSAT", "time": 1.5}
+{"exp": "e158c", "M": 32, "sched": "1100", "vup": null, "vdn": 0, "verdict": "UNSAT", "time": 3.4}
