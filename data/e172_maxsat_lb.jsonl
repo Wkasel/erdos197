@@ -1,0 +1,2 @@
+{"tag": "sanity_bal_M8", "M": 8, "bounds": null, "solver": "g3", "event": "init", "lb_sum": 0, "vstar_lb": 0, "t": 0.0}
+{"tag": "sanity_bal_M8", "M": 8, "bounds": null, "solver": "g3", "event": "opt", "opt_sum": 0, "vstar_lb": 0, "witness_inv": [0, 0], "vstar_ub": 0, "audit_errs": [], "sum_matches": true, "t": 0.0}
