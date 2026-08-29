@@ -141,6 +141,19 @@ lower anchor may spend on it without limit beyond the upper cap).
   readings, committed before the verdict).
 - F(24; 65): queued behind it (same shape at the second pump scale).
 
+**Lemma L-FRESH-DECOMP [PROVED — L-PREFIX part (i) machinery, one
+seam only].**  Under x_{β(M)} = 0 alone, each team is block-ordered
+at the s0 seam ([Bm1∩T] ≺ [B0∩T]), so every mono H_dn triple
+(u, y, 2y−u) ∈ (Bm1×B0×B1)∩T³ has u ≺ y forced and must break on
+its s1 edge (2y−u ≺ y), edge-injectively.  Hence in any F-model,
+n_s1 ≥ μ_dn(col) and the upper budget obeys
+v ≥ n_s1 + n_s2 ≥ μ_dn(col) + n_s2: **the F-cell is the (v, 0) cell
+with the forced μ_dn = 0 relaxed to "μ_dn charged against the upper
+budget".**  F(M; v) SAT would require a balanced coloring with
+μ_dn ≤ v AND joint mixed-order price ≤ v; F UNSAT says even paying
+for its own H_dn floor on the shared seam, no coloring clears the
+upper anchor at v.
+
 Pre-registered readings.  UNSAT ⟹ by T-FORCE-4, every valid balanced
 pair with Inv_T(16) ≤ 6 for both teams has a team with an inverted
 pair at β(16) — currency DISJOINT from everything priced at anchor 16
