@@ -1,0 +1,10 @@
+{
+ "tag": "c1_M24_up65",
+ "M": 24,
+ "mode": "bal",
+ "bounds": null,
+ "vup": 65,
+ "vdn": null,
+ "verdict": "TIMEOUT",
+ "time": 10800.1
+}

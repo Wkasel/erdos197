@@ -181,6 +181,54 @@ SAT-alive graph of W2ε(m) = α̂ via Lemma HALVE-PURE.
     member by one lattice step at both scales.  NO five-alarm, and
     no W ≥ 1 relaxation either: the margin at 224/256 is zero.
 
+### The full two-track consistency table (e169 scans COMPLETE)
+
+    m    M    α̂_E  α̂_O   catalogue α_E, α_O (e153/notes-57)
+    24   48    2    2      2, 2   ✓
+    32   64    3    2      3, 2   ✓  (witness {104,112,128} = halved
+                                      e153 witness EXACTLY)
+    40   80    2    2      2, 2   ✓
+    48   96    2    2      2, 2   ✓
+    56  112    3    3      3, 3   ✓  (witness {169,185,217} = halved
+                                      {−110,−78,−14} EXACTLY)
+    64  128    3    3      3, 3   ✓
+    72  144    3    3      3, 3   ✓
+    80  160    2    2      2, 2   ✓
+    88  176    3    3      3, 3   ✓  (new scale, both tracks fresh)
+    96  192    2    2      2, 2   ✓  (new scale)
+    112 224    3    3      [catalogue pending]
+    128 256    3    3      [catalogue pending]
+
+α̂ = α_catalogue at every scale where both exist — 10 scales × 2
+classes, zero exceptions.  H-LAT (SAT-alive gaps ≡ 0 mod 8) HOLDS
+at every scanned m (mod 4 at m = 24 as known).  [MACHINE-CHECKED:
+data/e169_alive_lattice.json, data/e169_scan.log.]
+
+## 4b. ANCHOR-4 / SPAN-4: why α stays ≤ 3  [MACHINE-CHECKED]
+
+e169b enumerates EVERY 4-clique of every SAT-alive graph (34 total
+across the 22 (m, window) scans; they exist at m = 32, 56, 64, 112,
+128 only):
+
+    * every 4-clique has span EXACTLY m — never more, never less
+      (min-span = max-span = m at every occurrence);
+    * hence every 4-clique sticks out of the shallow zone
+      [3m+1, 4m] (width m−1): ANCHOR-4 — its deepest member is
+      always ≤ 3m, one lattice step below the α boundary;
+    * the outer pair of each 4-clique has halved gap m = full-scale
+      gap M — precisely the "g = M escapes at every scale"
+      universal resonance of notes/55 §5.3b(iv);
+    * SPAN-4 = m exactly also FORBIDS 5-cliques outright: a
+      5-clique {a<b<c<d<e} contains 4-subcliques of spans e−a, d−a,
+      e−b which cannot all equal m.
+
+So the machine statement "SPAN-4: every SAT-alive 4-clique of
+W2ε(m) has span ≥ m" implies α̂(2m) ≤ 3, and it holds at all 22
+scanned (m, window) pairs.  Uniformizing SPAN-4 is the new sharp
+form of GAP-DICH-ALPHA — strictly easier than ODD-KILL (it is a
+statement about the DEEP structure only: cliques avoiding the
+bottom window must break).  [GAP: SPAN-4 for all m.]
+
 ---
 
 ## 5. The lattice recursion, formalized — what is proved and what

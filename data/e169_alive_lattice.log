@@ -1,0 +1,12 @@
+H : M=48: 992 same-parity pairs; pure-closure dead 863 / alive 129; closure mismatches vs halved: 0; SAT mismatches on alive: 0 [4s]
+e169: DONE
+L : m=24 W2e: 496 pairs -> closure-alive 66 -> SAT-alive 46 [clo 0s, sat 0s]
+    gaps [4, 8, 12, 16, 20, 24, 28]; H-LAT(mod 8) VIOLATED at [4, 12, 20, 28]
+    max clique FULL = 4 [65, 69, 77, 93]; SHALLOW [3m+1,4m] = 2 [73, 89]  => alpha-hat bound 2 for M=48
+L : m=24 W2o: 496 pairs -> closure-alive 63 -> SAT-alive 44 [clo 0s, sat 0s]
+    gaps [4, 8, 12, 16, 24, 28]; H-LAT(mod 8) VIOLATED at [4, 12, 28]
+    max clique FULL = 4 [65, 69, 77, 93]; SHALLOW [3m+1,4m] = 2 [73, 89]  => alpha-hat bound 2 for M=48
+e169: DONE
+H : M=64: 1560 same-parity pairs; pure-closure dead 1428 / alive 132; closure mismatches vs halved: 0; SAT mismatches on alive: 0 [14s]
+H : M=96: 3080 same-parity pairs; pure-closure dead 2907 / alive 173; closure mismatches vs halved: 0; SAT mismatches on alive: 0 [46s]
+e169: DONE
