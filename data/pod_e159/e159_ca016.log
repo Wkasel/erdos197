@@ -1,0 +1,2 @@
+  ca016 (64:0): SAT [18.8s] {"A": {"sizes": [8, 16, 32], "n_inv_seam1": 64, "n_inv_seam2": 0, "n_mono": 21}, "B": {"sizes": [8, 16, 32], "n_inv_seam1": 60, "n_inv_seam2": 0, "n_mono": 28}}
+  ca016 (32:0): SAT [247.1s] {"A": {"sizes": [8, 16, 32], "n_inv_seam1": 32, "n_inv_seam2": 0, "n_mono": 13}, "B": {"sizes": [8, 16, 32], "n_inv_seam1": 32, "n_inv_seam2": 0, "n_mono": 17}}

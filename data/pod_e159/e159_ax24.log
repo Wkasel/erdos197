@@ -1,0 +1,5 @@
+  ax24 (n:0): SAT [29.2s] {"A": {"sizes": [12, 24, 48], "n_inv_seam1": 282, "n_inv_seam2": 0, "n_mono": 111}, "B": {"sizes": [12, 24, 48], "n_inv_seam1": 260, "n_inv_seam2": 0, "n_mono": 96}}
+  ax24 (0:n): SAT [26.4s] {"A": {"sizes": [12, 24, 48], "n_inv_seam1": 0, "n_inv_seam2": 686, "n_mono": 59}, "B": {"sizes": [12, 24, 48], "n_inv_seam1": 0, "n_inv_seam2": 780, "n_mono": 68}}
+  ax24 (1:n): SAT [15.8s] {"A": {"sizes": [12, 24, 48], "n_inv_seam1": 1, "n_inv_seam2": 807, "n_mono": 96}, "B": {"sizes": [12, 24, 48], "n_inv_seam1": 1, "n_inv_seam2": 816, "n_mono": 106}}
+  ax24 (2:n): SAT [14.6s] {"A": {"sizes": [12, 24, 48], "n_inv_seam1": 2, "n_inv_seam2": 804, "n_mono": 91}, "B": {"sizes": [12, 24, 48], "n_inv_seam1": 2, "n_inv_seam2": 843, "n_mono": 101}}
+  ax24 (4:n): SAT [56.7s] {"A": {"sizes": [12, 24, 48], "n_inv_seam1": 4, "n_inv_seam2": 780, "n_mono": 104}, "B": {"sizes": [12, 24, 48], "n_inv_seam1": 2, "n_inv_seam2": 826, "n_mono": 85}}

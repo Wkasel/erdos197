@@ -1,0 +1,3 @@
+  cross16 (0:n/n:0): SAT [1.9s] {"A": {"sizes": [8, 16, 32], "n_inv_seam1": 0, "n_inv_seam2": 362, "n_mono": 43}, "B": {"sizes": [8, 16, 32], "n_inv_seam1": 110, "n_inv_seam2": 0, "n_mono": 41}}
+  cross16 (0:0/n:n): SAT [1.0s] {"A": {"sizes": [8, 16, 32], "n_inv_seam1": 0, "n_inv_seam2": 0, "n_mono": 0}, "B": {"sizes": [8, 16, 32], "n_inv_seam1": 46, "n_inv_seam2": 208, "n_mono": 60}}
+  cross16 (n:n/0:0): SAT [0.8s] {"A": {"sizes": [8, 16, 32], "n_inv_seam1": 58, "n_inv_seam2": 238, "n_mono": 46}, "B": {"sizes": [8, 16, 32], "n_inv_seam1": 0, "n_inv_seam2": 0, "n_mono": 0}}

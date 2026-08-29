@@ -1,0 +1,1 @@
+  c0a16 (0:256): SAT [42.4s] {"A": {"sizes": [8, 16, 32], "n_inv_seam1": 0, "n_inv_seam2": 255, "n_mono": 30}, "B": {"sizes": [8, 16, 32], "n_inv_seam1": 0, "n_inv_seam2": 253, "n_mono": 31}}

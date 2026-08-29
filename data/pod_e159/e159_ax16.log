@@ -1,0 +1,7 @@
+  ax16 (0:n): SAT [1.9s] {"A": {"sizes": [8, 16, 32], "n_inv_seam1": 0, "n_inv_seam2": 380, "n_mono": 32}, "B": {"sizes": [8, 16, 32], "n_inv_seam1": 0, "n_inv_seam2": 405, "n_mono": 45}}
+  ax16 (1:n): SAT [0.8s] {"A": {"sizes": [8, 16, 32], "n_inv_seam1": 1, "n_inv_seam2": 278, "n_mono": 29}, "B": {"sizes": [8, 16, 32], "n_inv_seam1": 0, "n_inv_seam2": 457, "n_mono": 36}}
+  ax16 (2:n): SAT [1.7s] {"A": {"sizes": [8, 16, 32], "n_inv_seam1": 1, "n_inv_seam2": 364, "n_mono": 53}, "B": {"sizes": [8, 16, 32], "n_inv_seam1": 2, "n_inv_seam2": 346, "n_mono": 41}}
+  ax16 (4:n): SAT [1.5s] {"A": {"sizes": [8, 16, 32], "n_inv_seam1": 4, "n_inv_seam2": 393, "n_mono": 39}, "B": {"sizes": [8, 16, 32], "n_inv_seam1": 4, "n_inv_seam2": 406, "n_mono": 44}}
+  ax16 (8:n): SAT [1.7s] {"A": {"sizes": [8, 16, 32], "n_inv_seam1": 6, "n_inv_seam2": 386, "n_mono": 40}, "B": {"sizes": [8, 16, 32], "n_inv_seam1": 7, "n_inv_seam2": 366, "n_mono": 46}}
+  ax16 (16:n): SAT [5.9s] {"A": {"sizes": [8, 16, 32], "n_inv_seam1": 13, "n_inv_seam2": 430, "n_mono": 55}, "B": {"sizes": [8, 16, 32], "n_inv_seam1": 14, "n_inv_seam2": 384, "n_mono": 26}}
+  ax16 (32:n): SAT [4.3s] {"A": {"sizes": [8, 16, 32], "n_inv_seam1": 30, "n_inv_seam2": 317, "n_mono": 47}, "B": {"sizes": [8, 16, 32], "n_inv_seam1": 32, "n_inv_seam2": 224, "n_mono": 25}}
