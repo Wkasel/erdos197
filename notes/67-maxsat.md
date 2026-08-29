@@ -95,7 +95,21 @@ run's own question.
 
 ## 4. LB trajectories (the deliverable)
 
-(filled from data/e172_maxsat_lb.jsonl as bumps land)
+News thresholds per scale (from the pre-existing decision brackets;
+consistency floors the stream MUST clear, novelty levels where it
+beats every known bound):
+
+| M  | known v* bracket        | consistency floor s ≥ | first NEW sum LB |
+|----|-------------------------|-----------------------|------------------|
+| 16 | {5, 6} (decisions)      | 5 (s* ≥ v*)           | OPT itself + witness-max (could pin v* = 5 or 6 exactly) |
+| 24 | (4, 65]                 | 5                     | s ≥ 11 ⇒ v* ≥ 6; each +2 in s bumps the v*-LB by 1 |
+| 32 | (2, 368]                | 3                     | s ≥ 7 ⇒ v* ≥ 4 |
+| 40 | — (never measured)      | —                     | every bump (first bal@40 data ever) |
+
+A stream that STOPS below its consistency floor at OPT would falsify
+the encoding (s* < v* is impossible) — a built-in audit.
+
+(trajectories filled from data/e172_maxsat_lb.jsonl as bumps land)
 
 ## 5. What feeds forward
 
