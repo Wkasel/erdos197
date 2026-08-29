@@ -222,9 +222,16 @@ cluster at depths {M+5, M+9, M+10, M+11, M+13} (offsets −10, −6,
 tiny bottom defect — exactly the shape the robust P-arm's block
 theories attack, and consistent with upure/zdef UNSAT above.
 
-If both remaining links close, Theorem COV-W′(224) holds and the
-d₀ = 4 robust chain absorbs the hole (it never consumed the
-overlap); if RP-ARM fails, this is a genuine COV-W gap — task (3).
+**RP-ARM(224, 4) blocks (0,1,2): UNSAT [119.6 s]** (76.2M clauses,
+e170 streaming; blocks-(0,1) SAT control passed [197.5 s]).
+
+⟹ **Theorem COV-W′(224) HOLDS** [MACHINE-CHECKED]: every
+straddle-free (2,2,2)-bounded coloring of CORE′(224) dies through
+fan / L-LOP / robust-P.  The width-1 hole in the EXACT chain is
+absorbed by the d₀ = 4 robust chain, exactly as the notes/58 §4.2
+design intended — verified for the first time at a scale where the
+hole is REAL, not hypothetical.  COV-W (exact) fails at 224;
+COV-W′ (robust) survives.
 
 ### M = 224, 256 — T2 (catalogues in flight)
 
