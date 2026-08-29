@@ -53,8 +53,9 @@ and boundary β_m is priced by exactly two chain anchors: N_{m-1}
 (as its s1) and N_{m-2} (as its s2).  Conversely an adjacent-octave
 pair at β_m is an eligible seam pair of exactly those two anchors —
 verified pair-by-pair on every e158 witness (e173 audit: L-2PRICE
-true on 8/8 team-records, the covered-anchor set of every single
-inversion pair equals {(N_{m-1}, s1), (N_{m-2}, s2)}).
+true on 10/10 team-records incl. the q = 3 chain at M = 24; the
+covered-anchor set of every single inversion pair equals
+{(N_{m-1}, s1), (N_{m-2}, s2)}).
 
 **Theorem T-LEDGER (exact 4-adic disjointness) [PROVED from L-HOME +
 L-2PRICE].**  Along either 4-adic subchain (j even, or j odd):
@@ -255,12 +256,15 @@ set with δ ≥ 1 — one displaced value per 2 octaves forever).
 
 | cell | verdict | time | reading |
 |------|---------|------|---------|
-| audit (8 team-records, 4 witnesses) | ALL PASS | — | L-HOME, seam-disjointness, L-2PRICE exact; overlap ≡ s1; C1 overlap maximal (6/6); fresh mass 32 |
+| audit (10 team-records, 5 witnesses, chains q = 1 and q = 3) | ALL PASS | — | L-HOME, seam-disjointness, L-2PRICE exact; overlap ≡ s1 identically; C1 overlap maximal (6/6); fresh mass 32; lavish witnesses export to the top boundary at both scales |
 | pump (6,0)@16 via e173 encoder | UNSAT | 2.1 s | cross-validates the new generalized encoder against e158 verbatim |
-| **pump (6,0)@8** | **UNSAT** | 2.1 s | **NEW: v_min(0)(8) > 6 — the pump fires at the BOTTOM scale, where BOTH standalone anchors are free (v*(bal,8) = v*(bal,4)-side = 0); the chain step exists at every measured scale** |
-| fresh F(16;6) | see jsonl | | the freshness discriminator (§3) |
-| fresh F(24;65) | see jsonl | | scale-2 freshness |
-| five U5(16): (6,·,0) | see jsonl | | 2-step chain cell; note the middle anchor is auto-priced ≤ 0+6 by the outer budgets (its seams are shared — the chain has NO parking space); F(16;6) UNSAT ⟹ this cell UNSAT a fortiori by restriction |
+| **pump (6,0)@8** | **UNSAT** | 2.1 s | **NEW: v_min(0)(8) > 6 — the pump fires at the BOTTOM scale, where BOTH standalone anchors are free (v*(bal,8) = 0); the chain step exists at every measured scale** |
+| **bal (100,0)@32** [pod] | **UNSAT** | 62.6 s | v_min(0)(32) > 100 |
+| **bal (256,0)@32** [pod] | **UNSAT** | 137.2 s | **v_min(0)(32) > 256** — the growth curve's 4th monotone point; (512,0)@32 queued |
+| **const (6,0)@24 at (2,3,6,12)** [pod] | **UNSAT** | 106.0 s | **the pump exists at constant bounds — regime-wide demand (D1+D2), not a balance artifact**; const growth ladder queued ((65,0)@24, (100,0)@32) |
+| fresh F(16;6) | see jsonl | | the freshness discriminator (§3); racing local (contended) + pod |
+| fresh F(24;65) | see jsonl | | scale-2 freshness [pod] |
+| five U5(16): (6,·,0) | see jsonl | | 2-step chain cell; the middle anchor is auto-priced ≤ 0+6 by the outer budgets (L-SQUEEZE — the chain has NO parking space); F(16;6) UNSAT ⟹ this cell UNSAT a fortiori by restriction |
 
 (The jsonl is the live record; the table's open rows are filled by
 the queue as cells land.)
