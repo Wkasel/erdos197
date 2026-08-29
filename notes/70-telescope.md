@@ -225,6 +225,22 @@ chain, at least one of:
       forever, the notes/47 §5.4 covering statement DERIVED rather
       than assumed.
 
+**Corollary T-FRESH (the corrected disjointness theorem — the
+front's answer to "prove disjointness or find the overlap").**
+Naive disjointness of FULL payments at consecutive anchors is false
+(§2, maximal overlap measured).  But the freshness family repairs
+it: assume [GAP-F-schema] — F(N; v(N)) UNSAT for all large chain
+anchors (machine-true at (16; 6); F is a relaxation of the pump
+cell, so this refines [GAP-J-schema]).  Then whenever both teams pay
+≤ v(N_j) at anchor N_j, some team owns an inverted pair AT β_j
+itself.  Pairs forced at distinct anchors live at distinct
+boundaries, hence are pairwise DISJOINT by L-HOME — at EVERY anchor,
+consecutive included, no factor 2.  Under bounded per-anchor prices
+(the v*-bounded branch), the forced fresh mints form a
+disjoint-pair system of density one per octave, and each mint's low
+member is a displaced value (P3) in its own octave — an infinite
+displaced system, one per octave, forever.
+
 In both branches the cumulative fresh demand Σ_m x_m diverges with
 exactly-disjoint bookkeeping.  ∎ (two-line case split on whether
 {j : Inv(N_j) = 0} is infinite.)
@@ -288,8 +304,9 @@ the queue as cells land.)
 | tag | before | after |
 |-----|--------|-------|
 | GAP-V*-growth | load-bearing for Theorem D | **demoted**: T-TEL′ runs demand on v_min(0)-growth; v*-growth now only sharpens constants |
-| GAP-VMIN0 (notes/62) | side measurement | **promoted to THE demand curve**; lower bounds by deep-UNSAT cells; measured > 6 / > 6 / > 65 at 8 / 16 / 24 |
-| GAP-J-schema | 2-scale machine family | 3-scale (8 added); schema target unchanged (L-PREFIX + three-arm architecture, notes/62 §4c-d) |
+| GAP-VMIN0 (notes/62) | side measurement | **promoted to THE demand curve**; lower bounds by deep-UNSAT cells; measured > 6 / > 6 / > 65 / **> 256** at 8 / 16 / 24 / 32 |
+| GAP-J-schema | 2-scale machine family, bal only | 4-scale (8, 32 added); **const-bounds version machine-true at 24** (regime-wide by D1+D2); schema target unchanged (L-PREFIX + three-arm architecture, notes/62 §4c-d) |
+| GAP-F-schema (new) | — | freshness family F(N; v) — refines GAP-J-schema; machine-true at (16; 6); target of T-FRESH |
 | T-TEL (naive) | candidate | **refuted honestly** (maximal overlap measured; P1/NG4 kill divergence-as-contradiction) |
-| T-TEL′ dichotomy | — | proved modulo GAP-J-schema + GAP-VMIN0-growth |
-| GAP-AFFORD′ | terminal statement | unchanged, target sharpened (§4) |
+| T-TEL′ dichotomy + T-FRESH | — | proved modulo GAP-J/F-schema + GAP-VMIN0-growth; disjointness exact (T-LEDGER factor 2; T-FRESH density 1 with no factor) |
+| GAP-AFFORD′ | terminal statement | unchanged, target sharpened (§4): must charge (a) echoing giant payments or (b) one displaced value per octave forever |
