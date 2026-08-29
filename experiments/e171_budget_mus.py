@@ -165,7 +165,9 @@ def _worker(kw, outq):
 def solve_sub(kw, budget):
     import multiprocessing as mp
     import queue as _q
-    ctx = mp.get_context('fork')
+    # fork is broken under the local free-threaded 3.14t build (worker
+    # livelocks at ~1% CPU); spawn is safe everywhere, ~1 s overhead.
+    ctx = mp.get_context('spawn' if sys.platform == 'darwin' else 'fork')
     outq = ctx.Queue()
     p = ctx.Process(target=_worker, args=(kw, outq))
     t0 = time.time()
