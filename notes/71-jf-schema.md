@@ -435,3 +435,67 @@ The impure branch at w ≥ 1 loses L-PREFIX(i)'s hard μ_dn = 0
 case 3 needs the mass function at μ_dn ≤ w [GAP-MARGIN-MASS,
 scoped, not attempted].
 
+
+## 7. The band law across scales: pre-registration (BEFORE the
+## (8; 11,0) MUS harvest; §2d's forward pointer "§4" means this §)
+
+The (16; 6,0) MUS (notes/62 §3d): Bm1, B0 COMPLETE; B1 = [33..55]
+∖ {36,40,52}; B2 = stub (4M, 4M+6].  Parametric candidates for the
+(8; 11,0) support, committed while e158b descends (it has deleted
+{62, 63} at n = 58; deletion order is descending, the same bias at
+both scales, so the comparison is legitimate):
+
+- Bm1 = [5..8], B0 = [9..16] COMPLETE (the low chain is the case-2
+  engine; every value load-bearing);
+- B1: the (16) band [33..55] = (2M, 3M + 7], reaching TWO values
+  into the safe zone (z_max = 53 there).  Prediction at 8:
+  (2M, 3M + 7] = [17..31] minus ≤ 3 punctures — i.e. nearly all of
+  B1, INCLUDING part of the safe zone {27, 29, 31} (the low-pure
+  escape at 8 lives there, and the UNSAT core must refute it);
+- B2: constant-width stub (4M, 4M + 6] = [33..38] (vs the
+  proportional alternative (4M, 4M + M/2] = [33..36]); the 8/16
+  pair discriminates constant vs proportional — committed call:
+  CONSTANT (the stub is the attack-boundary family, arithmetic
+  not balance).
+
+## 8. Ledger movement (this front)
+
+| tag | before | after |
+|-----|--------|-------|
+| GAP-J-schema (·,0) part | notes/75: boot window = "documentation" | **Theorem J-BOOT**: uniform elementary schema, all M ≡ 0 mod 4 ≥ 12, v < M/2, modulo ONE counting lemma; boot window CLOSED at that level; no N6a dependency |
+| GAP-VMIN0-growth | discharged by collapse at M ≥ 32 (notes/75), boot window unpriced | boot window priced: v_min(0)(M) ≥ M/2 for 12 ≤ M ≤ 24 too [mod GAP-CMIN] — the demand curve has an elementary floor at EVERY anchor |
+| GAP-F-schema | single machine point F(16;6); no hand statement | **Theorem F-BOOT**: F(M; v) UNSAT for v < ⌈M/4⌉, all M ≡ 0 mod 4 ≥ 12 [mod GAP-FTOT] — first uniform F-family law; T-FRESH's density-one minting now has a per-scale engine |
+| GAP-FHALF (new) | — | f(M) ≥ M/2; measured EXACT at 5 scales (8/12/16/20/24, both residues mod 8); reduces to GAP-CMIN |
+| GAP-CMIN (new) | — | Σ_z min(c_A, c_B) ≥ M over balanced μ_dn = 0 low-impure splits of low ∪ B1; measured EXACT (= M) at 3 scales; proof skeleton = two-channel sweep, residual = partner conditions; THE hand target of the family |
+| GAP-FTOT (new) | — | f_F(M) ≥ M/2 (μ_dn-free variant); measured = f at 8/12 |
+| GAP-MARGIN-MASS (new, scoped) | — | impure-branch mass at μ_dn ≤ w (margin family); low-pure branch DONE via budgeted Lemma K (Lemma MARGIN-LP + measured K-diagonal) |
+| boot-window anomaly | v_min(0)(8) = 12 a bare machine point | complete anatomy: low-pure survival (Lemma K (6,2)), Lemma SZ, chain law = K(24,8) = 40 via 2 encoders, witness = 3 floor + 9 mixed |
+
+**Relation to the other fronts of this date**: Theorem J-DOWN
+(notes/75) owns M ≥ 32 by collapse into GAP-N6a; J-BOOT owns the
+boot window with a self-contained proof and supplies the (·,0)
+family's ONLY engine that does not ride the N6a gap pool — if the
+N6a uniformization pool were ever to shrink the wrong way, the
+J/F demand layer keeps an independent leg.  For notes/72's
+composed statement: T-TEL′ branch (a)/(b) demand at boot anchors
+can cite J-BOOT directly; F1 gives T-FRESH's minting a budget
+curve v(N) = ⌈N/4⌉ − 1 valid at every scale [mod GAP-FTOT].
+
+## 9. Next steps (queue state at close)
+
+1. [GAP-CMIN] Prove the partner conditions of the two-channel
+   sweep (balance + μ_dn = 0 must both enter; the extremal
+   witnesses' d = 2M / evenly-split structure is the guide).  One
+   lemma closes FHALF, J-BOOT, and (via the verbatim reduction)
+   most of FTOT.
+2. Pod ladders in flight: fmass at 28/32 (f = M/2 extrapolation
+   test at two more scales, incl. the first J-DOWN-covered scale —
+   consistency, not necessity); ftot at 16/20/24.
+3. e158b (8; 11,0) MUS descending (crash-safe resume); harvest
+   against §7's pre-registration.
+4. K(36,12) and K(30,10) for the notes/75 margin targets at
+   M = 48/40 (pod-sized; the interval encoder scales).
+5. NOT this front: (368,6)@32 margin cell (notes/75 queue), the
+   const-bounds analogue of f (J-BOOT at const bounds — needs the
+   parity-class count argument reworked without exact balance;
+   N3-species).
