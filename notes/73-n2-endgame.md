@@ -208,7 +208,7 @@ x, two machines, two engines.
 - **A4d(19)_r0 / the (pair 19, dyadic) cell**: covered TWICE —
   (a) the A4a lane at ξ=3 carries the K4 template parametrically
   (A4a(19) solver row: 17/17 in-class scales from M = 24, e174) —
-  grid cell A4a_xi3 [run in flight at first commit, §2b]; (b) the
+  grid cell A4a_xi3 (verified x = 11, 19, 27, 35 + deep-x); (b) the
   literal A4d(19) core is UNSAT at every in-class scale 24..152
   (e174, 17/17).  Either way the cell that Case 1 needs (pair 19,
   M ≡ 0 mod 8) has both a machine law and a parametric template.
