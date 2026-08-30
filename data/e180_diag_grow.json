@@ -459,5 +459,24 @@
    "secs": 13.4,
    "expected": "SAT"
   }
+ },
+ "partK19_M112": {
+  "3": {
+   "verdict": "UNSAT",
+   "secs": 23.0,
+   "expected": "UNSAT"
+  },
+  "4": {
+   "verdict": "SAT",
+   "escape": [
+    "b2",
+    "b4",
+    "b6",
+    "b8"
+   ],
+   "lane_units_hit": "4/4",
+   "secs": 0.5,
+   "expected": "SAT"
+  }
  }
 }

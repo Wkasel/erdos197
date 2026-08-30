@@ -2,3 +2,5 @@
 same-parity pairs audited: 992; halved-dead: 902; MISMATCHES (must be 0): 0   [116s]
 == e181 Lemma PURE bijection audit, M=64 (N=143) ==
 same-parity pairs audited: 1560; halved-dead: 1492; MISMATCHES (must be 0): 0   [446s]
+== e181 Lemma PURE bijection audit, M=56 (N=127) ==
+same-parity pairs audited: 1260; halved-dead: 1164; MISMATCHES (must be 0): 0   [142s]

@@ -1,0 +1,6 @@
+[S5CORE] h4096_F64 m=16: double-block-order + per-team AP-freeness on witness coloring: UNSAT(structural) [0.0s]
+[S5CORE] h4096_F64 m=32: double-block-order + per-team AP-freeness on witness coloring: UNSAT(structural) [0.0s]
+[S5CORE] h4096_F64 m=64: double-block-order + per-team AP-freeness on witness coloring: UNSAT(structural) [0.0s]
+[S5CORE] h4096_lin4 m=16: double-block-order + per-team AP-freeness on witness coloring: UNSAT(structural) [0.0s]
+[S5CORE] h4096_lin4 m=32: double-block-order + per-team AP-freeness on witness coloring: UNSAT(structural) [0.0s]
+[S5CORE] h4096_lin4 m=64: double-block-order + per-team AP-freeness on witness coloring: UNSAT(structural) [0.0s]

@@ -1,0 +1,2 @@
+[K19] x=19 M=112 atmost-3 punctures: {'verdict': 'UNSAT', 'secs': 23.0, 'expected': 'UNSAT'} [OK]
+[K19] x=19 M=112 atmost-4 punctures: {'verdict': 'SAT', 'escape': ['b2', 'b4', 'b6', 'b8'], 'lane_units_hit': '4/4', 'secs': 0.5, 'expected': 'SAT'} [OK]

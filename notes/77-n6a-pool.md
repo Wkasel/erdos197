@@ -238,6 +238,13 @@ parity-locked core (→ §5 / GAP-PARM).
 
 [MACHINE-CHECK: data/e180_deep_M*.json; runtimes 3–28 s/scale.]
 
+**Addendum (adjudication session): the in-flight sprint-D audit at
+M = 144, 160 LANDED CLEAN** — (RES-LAW) 0 violations (now EIGHT
+scales 48..160); (CLOSE-LAW′) 0 distance-≤15 escapes at both;
+stall-corner scaled-zone form confirmed (predicted-set ⊂ D(M)
+strictly, zero false predictions; extra stalls reach q = 112/128).
+[data/e180_deep_M144.json, e180_deep_M160.json, e180_deep_144_160.log]
+
 ---
 
 ## 3. GAP-DICH: Lemma PURE clears F0 and reduces ALPHA; the catalogue
@@ -438,7 +445,18 @@ independent re-verification e182 below.]
 Fresh encoder (full-scale coordinates, no halving; Glucose42, not
 CaDiCaL; independent clause construction) re-solves the α system
 minus every maximal clique AND minus random sub-cliques (a-fortiori
-sanity) at m = 48, 56: results below.
+sanity) at m = 48, 56.  **LANDED (adjudication session): 0 SAT
+verdicts across 156 solves** — m = 48 odd 24 cliques + subs (34
+solves), even 25 + subs (32); m = 56 odd 32 + subs (48), even 32 +
+subs (42); 2–4 s per class.  [data/e182_alpha_robust.json/.log]
+
+**Fresh-scale extension (notes/80 spot-audit): m = 64 (M = 128).**
+e155 → e155b → e155c chain run fresh: W2e 127 closure-alive → 75
+SAT-alive, W2o 119 → 72 SAT-alive, alive gaps ALL ≡ 0 mod 8
+(H-LAT seventh scale); e155c: full α system UNSAT, 0 single drops
+SAT (0/72 per class), 0/49 maximal-clique drops SAT (24 odd + 25
+even, 7 s/class).  **Theorem P-ARM‴ is modular at SIX scales
+M = 48..128.**  [data/e155_parm_hyp.json '64' keys]
 
 ### 4.8 PRE-REGISTRATION for the M = 176/192 chain (written BEFORE
 ### any probe at those scales ran)
@@ -509,8 +527,29 @@ coordinates, and hand-listable.
 ## 6. GAP-ASM′ = (OV-∀): the fresh-scale overlap + robust-chain
 ## insurance (filled with §5)
 
-## 7. FINAL pool inventory (end of day; supersedes the notes/50 §2a
-## sub-pool row — drafted, finalized at close)
+## 7. FINAL pool inventory (finalized in the adjudication session;
+## supersedes the notes/50 §2a sub-pool row — mirrored there)
+
+Cleared this front (uniform statement + proved/reduced schema + two
+fresh scales each): GAP-DICH-F0 (Lemma PURE [PROVED]; bijection
+audit ×3 scales 48/56/64), GAP-PARM-CORNER (Theorem P-ARM‴; modular
+at M = 48..128, e182 independent + m = 64 fresh chain),
+GAP-FG-schema fixed-pair half (Theorem AFF⁺ + Lemma MON).  Cleared
+as multi-scale machine laws: (RES-LAW) ×8 scales, (CLOSE-LAW′) ×8,
+(H-RW0′)/(H-LAT)/cliques ×6-7 — all now descriptive or GAP-RES
+instances.  New quantitative anatomy: ThW1′-TOL (finite packed-quad
+breaker family, hand-listable, exact complementarity with e155c).
+
+**The pool's residue, exactly (all still one species — finite
+catalogue/classification write-ups — except the first):**
+
+| item | uniform statement still owed |
+|------|------------------------------|
+| **GAP-RES** (consolidated crux) | classify, uniformly in window length N, the SAT-alive attacker pairs of the double-fan theory.  Via Cor. PURE-2 + the laws it PROVABLY carries: FG-schema's scaled zone (q ≳ 2M/3 + resonance lines p−q ∈ 8ℤ∩[40,56]), FG-deep's stall-corner taxonomy (Θ(M) population), DICH-ALPHA (α_c = half-scale alive clique), P-ARM's H-LAT.  Known: 8 \| gap necessary (8 full + 5 half windows), cliques ≤ 4, mod-8 aligned |
+| ThW1′-ROBUST / ThW1′-TOL | uniform-in-m write-ups of the two per-scale scans (α system minus alive-cliques UNSAT / breakers = packed core-triple quads) |
+| GAP-DICH-F2/CASC + SPLIT | f_c(M) self-service law + F3/F4 window cascade (deep-support service-reach species); SPLIT staircase finish (low risk, ×6 scales) |
+| GAP-LLOP-α/β | uniform hand schema for the full ThW1′ kill (sharply scoped by ROBUST + TOL: breaking = finite packed-quad family); robust Lemma-J on co-bounded band subsets |
+| GAP-ASM′ = (OV-∀) | K*(M) ≤ C(M) for all M ≡ 0 mod 16 — 8-scale record + robust-chain insurance (COV-W′ at 128/160); 176/192 extension pre-registered §4.8, catalogues building at close |
 
 ### 4.7 Status after §4 (supersedes the §4.4 draft table)
 

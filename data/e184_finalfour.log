@@ -1,0 +1,10 @@
+[PS] x=29 M=96: h_E(evens)==SA(15;48): True; h_O(odds)==SA(15;48): True (7 units)
+[PS] x=29 M=160: h_E(evens)==SA(15;80): True; h_O(odds)==SA(15;80): True (7 units)
+[PS] x=31 M=96: h_E(evens)==SA(16;48): True; h_O(odds)==SA(16;48): True (8 units)
+[PS] x=31 M=160: h_E(evens)==SA(16;80): True; h_O(odds)==SA(16;80): True (8 units)
+[LANE] count+disjointness for odd x in [11,99], M in {2x+4, 4x}: ALL OK
+[S5] h4096_F64: split_ok=True sparse_ok=True diffuse_ok=True supdens=0.7612 rung_safe=True depths A/B @F12=1/1 @F64=1/1 @F128=24/43 censor_ok=True
+[S5] h4096_lin4: split_ok=True sparse_ok=True diffuse_ok=True supdens=0.7692 rung_safe=True depths A/B @F12=1/1 @F64=25/14 @F128=58/24 censor_ok=True
+[C3SCHEMA] p=23 pair {69,70} flip M%8=4: layer1 104/104, flip 52/52, sharp 52/52 [1.9s]
+[S5] h8192_F64: split_ok=True sparse_ok=True diffuse_ok=True supdens=0.7576 rung_safe=True depths A/B @F12=0/1 @F64=0/1 @F128=25/43 censor_ok=True
+[C3SCHEMA] p=25 pair {75,76} flip M%8=0: layer1 104/104, flip 52/52, sharp 52/52 [1.9s]
