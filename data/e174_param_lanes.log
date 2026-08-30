@@ -1,0 +1,249 @@
+M=16: ok  (0.0s, total 0s)
+M=17: SAT!K1(11)  (0.0s, total 0s)
+M=18: ok  (0.0s, total 0s)
+M=19: ok  (0.0s, total 0s)
+M=20: SAT!K4e(11)  (0.0s, total 0s)
+M=21: ok  (0.0s, total 0s)
+M=22: SAT!K4e(13)  (0.0s, total 0s)
+M=23: ok  (0.0s, total 0s)
+M=24: SAT!K4e(15)  (0.0s, total 0s)
+M=25: SAT!K1(11)  (0.0s, total 0s)
+M=26: ok  (0.0s, total 0s)
+M=27: ok  (0.0s, total 0s)
+M=28: SAT!K4e(11)  (0.0s, total 0s)
+M=29: ok  (0.0s, total 0s)
+M=30: SAT!K4e(13)  (0.0s, total 0s)
+M=31: ok  (0.0s, total 0s)
+M=32: SAT!K4e(15)  (0.0s, total 0s)
+M=33: SAT!K1(11)  (0.0s, total 0s)
+M=34: ok  (0.0s, total 0s)
+M=35: ok  (0.0s, total 0s)
+M=36: SAT!K4e(11)  (0.0s, total 0s)
+M=37: ok  (0.0s, total 0s)
+M=38: SAT!K4e(13)  (0.0s, total 0s)
+M=39: ok  (0.0s, total 0s)
+M=40: SAT!K4e(15)  (0.0s, total 0s)
+M=41: ok  (0.0s, total 0s)
+M=42: SAT!K4e(17)  (0.0s, total 0s)
+M=43: ok  (0.0s, total 0s)
+M=44: SAT!K4e(19)  (0.0s, total 0s)
+M=45: ok  (0.0s, total 0s)
+M=46: ok  (0.0s, total 0s)
+M=47: ok  (0.0s, total 0s)
+M=48: ok  (0.0s, total 0s)
+M=49: ok  (0.0s, total 0s)
+M=50: ok  (0.0s, total 0s)
+M=51: ok  (0.1s, total 0s)
+M=52: SAT!K4e(11)  (0.1s, total 1s)
+M=53: ok  (0.1s, total 1s)
+M=54: SAT!K4e(13)  (0.1s, total 1s)
+M=55: ok  (0.1s, total 1s)
+M=56: SAT!K4e(15)  (0.1s, total 1s)
+M=57: ok  (0.1s, total 1s)
+M=58: SAT!K4e(17)  (0.1s, total 1s)
+M=59: ok  (0.1s, total 1s)
+M=60: SAT!K4e(11) SAT!K4e(19)  (0.1s, total 1s)
+M=61: ok  (0.1s, total 1s)
+M=62: SAT!K4e(13)  (0.1s, total 1s)
+M=63: ok  (0.1s, total 2s)
+M=64: SAT!K4e(15)  (0.1s, total 2s)
+M=65: ok  (0.1s, total 2s)
+M=66: ok  (0.1s, total 2s)
+M=67: ok  (0.2s, total 2s)
+M=68: ok  (0.2s, total 2s)
+M=69: ok  (0.1s, total 2s)
+M=70: ok  (0.2s, total 3s)
+M=71: ok  (0.2s, total 3s)
+M=72: ok  (0.2s, total 3s)
+M=73: ok  (0.2s, total 3s)
+M=74: ok  (0.2s, total 3s)
+M=75: ok  (0.2s, total 4s)
+M=76: ok  (0.2s, total 4s)
+M=77: ok  (0.2s, total 4s)
+M=78: ok  (0.2s, total 4s)
+M=79: ok  (0.3s, total 4s)
+M=80: ok  (0.3s, total 5s)
+M=81: ok  (0.2s, total 5s)
+M=82: ok  (0.3s, total 5s)
+M=83: ok  (0.2s, total 5s)
+M=84: ok  (0.3s, total 6s)
+M=85: ok  (0.3s, total 6s)
+M=86: ok  (0.4s, total 6s)
+M=87: ok  (0.4s, total 7s)
+M=88: ok  (0.4s, total 7s)
+M=89: ok  (0.4s, total 8s)
+M=90: ok  (0.4s, total 8s)
+M=91: ok  (0.5s, total 8s)
+M=92: ok  (0.5s, total 9s)
+M=93: ok  (0.5s, total 10s)
+M=94: ok  (0.5s, total 10s)
+M=95: ok  (0.5s, total 11s)
+M=96: ok  (0.5s, total 11s)
+M=97: ok  (0.5s, total 12s)
+M=98: ok  (0.7s, total 12s)
+M=99: ok  (0.5s, total 13s)
+M=100: ok  (0.7s, total 14s)
+M=101: ok  (0.6s, total 14s)
+M=102: ok  (0.7s, total 15s)
+M=103: ok  (0.8s, total 16s)
+M=104: ok  (0.8s, total 16s)
+M=105: ok  (0.6s, total 17s)
+M=106: ok  (0.7s, total 18s)
+M=107: ok  (0.8s, total 19s)
+M=108: ok  (0.8s, total 19s)
+M=109: ok  (0.9s, total 20s)
+M=110: ok  (0.9s, total 21s)
+M=111: ok  (1.0s, total 22s)
+M=112: ok  (0.9s, total 23s)
+M=113: ok  (1.0s, total 24s)
+M=114: ok  (0.9s, total 25s)
+M=115: ok  (1.0s, total 26s)
+M=116: ok  (1.4s, total 28s)
+M=117: ok  (1.4s, total 29s)
+M=118: ok  (1.4s, total 30s)
+M=119: ok  (1.3s, total 32s)
+M=120: ok  (1.2s, total 33s)
+M=121: ok  (1.1s, total 34s)
+M=122: ok  (1.3s, total 35s)
+M=123: ok  (1.5s, total 37s)
+M=124: ok  (1.4s, total 38s)
+M=125: ok  (1.9s, total 40s)
+M=126: ok  (1.9s, total 42s)
+M=127: ok  (1.4s, total 43s)
+M=128: ok  (1.5s, total 45s)
+M=129: ok  (1.5s, total 46s)
+M=130: ok  (1.6s, total 48s)
+M=131: ok  (1.6s, total 50s)
+M=132: ok  (1.7s, total 51s)
+M=133: ok  (1.7s, total 53s)
+M=134: ok  (1.9s, total 55s)
+M=135: ok  (1.8s, total 57s)
+M=136: ok  (1.9s, total 58s)
+M=137: ok  (1.8s, total 60s)
+M=138: ok  (1.9s, total 62s)
+M=139: ok  (2.1s, total 64s)
+M=140: ok  (2.2s, total 66s)
+M=141: ok  (2.0s, total 68s)
+M=142: ok  (2.1s, total 70s)
+M=143: ok  (2.1s, total 73s)
+M=144: ok  (2.2s, total 75s)
+M=145: ok  (2.0s, total 77s)
+M=146: ok  (2.4s, total 79s)
+M=147: ok  (2.3s, total 81s)
+M=148: ok  (2.6s, total 84s)
+M=149: ok  (2.2s, total 86s)
+M=150: ok  (2.6s, total 89s)
+M=151: ok  (2.4s, total 91s)
+M=152: ok  (2.7s, total 94s)
+
+=== per-instance verdicts (in-class UNSAT from threshold; controls at r+4) ===
+A4a(x=11) r0: UNSAT from M=16 (18/18 in-class scales); controls all SAT
+A4a(x=13) r2: UNSAT from M=18 (17/17 in-class scales); controls all SAT
+A4a(x=15) r4: UNSAT from M=20 (17/17 in-class scales); controls all SAT
+A4a(x=17) r6: UNSAT from M=22 (17/17 in-class scales); controls all SAT
+A4a(x=19) r0: UNSAT from M=24 (17/17 in-class scales); controls all SAT
+A4a(x=21) r2: UNSAT from M=26 (16/16 in-class scales); controls all SAT
+A4a(x=23) r4: UNSAT from M=28 (16/16 in-class scales); controls all SAT
+A4a(x=25) r6: UNSAT from M=30 (16/16 in-class scales); controls all SAT
+A4a(x=27) r0: UNSAT from M=32 (16/16 in-class scales); controls all SAT
+A4a(x=29) r2: UNSAT from M=34 (15/15 in-class scales); controls all SAT
+A4a(x=31) r4: UNSAT from M=36 (15/15 in-class scales); controls all SAT
+A4a(x=33) r6: UNSAT from M=38 (15/15 in-class scales); controls all SAT
+A4d(x=11) r0: UNSAT from M=16 (18/18 in-class scales); controls all SAT
+A4d(x=13) r2: UNSAT from M=18 (17/17 in-class scales); controls all SAT
+A4d(x=15) r4: UNSAT from M=20 (17/17 in-class scales); controls all SAT
+A4d(x=17) r6: UNSAT from M=22 (17/17 in-class scales); controls all SAT
+A4d(x=19) r0: UNSAT from M=24 (17/17 in-class scales); controls all SAT
+A4d(x=21) r2: UNSAT from M=26 (16/16 in-class scales); controls all SAT
+A4d(x=23) r4: UNSAT from M=28 (16/16 in-class scales); controls all SAT
+A4d(x=25) r6: UNSAT from M=30 (16/16 in-class scales); controls all SAT
+A4d(x=27) r0: UNSAT from M=32 (16/16 in-class scales); controls all SAT
+A4d(x=29) r2: UNSAT from M=34 (15/15 in-class scales); controls all SAT
+A4d(x=31) r4: UNSAT from M=36 (15/15 in-class scales); controls all SAT
+A4d(x=33) r6: UNSAT from M=38 (15/15 in-class scales); controls all SAT
+B2(x=11) r2: UNSAT from M=18 (17/17 in-class scales); controls all SAT
+B2(x=13) r4: UNSAT from M=20 (17/17 in-class scales); controls all SAT
+B2(x=15) r6: UNSAT from M=22 (17/17 in-class scales); controls all SAT
+B2(x=17) r0: UNSAT from M=24 (17/17 in-class scales); controls all SAT
+B2(x=19) r2: UNSAT from M=26 (16/16 in-class scales); controls all SAT
+B2(x=21) r4: UNSAT from M=28 (16/16 in-class scales); controls all SAT
+B2(x=23) r6: UNSAT from M=30 (16/16 in-class scales); controls all SAT
+B2(x=25) r0: UNSAT from M=32 (16/16 in-class scales); controls all SAT
+B2(x=27) r2: UNSAT from M=34 (15/15 in-class scales); controls all SAT
+B2(x=29) r4: UNSAT from M=36 (15/15 in-class scales); controls all SAT
+B2(x=31) r6: UNSAT from M=38 (15/15 in-class scales); controls all SAT
+B2(x=33) r0: UNSAT from M=40 (15/15 in-class scales); controls all SAT
+B6(x=11) r6: UNSAT from M=22 (17/17 in-class scales); controls all SAT
+B6(x=13) r0: UNSAT from M=24 (17/17 in-class scales); controls all SAT
+B6(x=15) r2: UNSAT from M=26 (16/16 in-class scales); controls all SAT
+B6(x=17) r4: UNSAT from M=28 (16/16 in-class scales); controls all SAT
+B6(x=19) r6: UNSAT from M=30 (16/16 in-class scales); controls all SAT
+B6(x=21) r0: UNSAT from M=32 (16/16 in-class scales); controls all SAT
+B6(x=23) r2: UNSAT from M=34 (15/15 in-class scales); controls all SAT
+B6(x=25) r4: UNSAT from M=36 (15/15 in-class scales); controls all SAT
+B6(x=27) r6: UNSAT from M=38 (15/15 in-class scales); controls all SAT
+B6(x=29) r0: UNSAT from M=40 (15/15 in-class scales); controls all SAT
+B6(x=31) r2: UNSAT from M=42 (14/14 in-class scales); controls all SAT
+B6(x=33) r4: UNSAT from M=44 (14/14 in-class scales); controls all SAT
+C(x=11) r5: UNSAT from M=21 (17/17 in-class scales); controls all SAT
+C(x=13) r7: UNSAT from M=23 (17/17 in-class scales); controls all SAT
+C(x=15) r1: UNSAT from M=25 (16/16 in-class scales); controls all SAT
+C(x=17) r3: UNSAT from M=27 (16/16 in-class scales); controls all SAT
+C(x=19) r5: UNSAT from M=29 (16/16 in-class scales); controls all SAT
+C(x=21) r7: UNSAT from M=31 (16/16 in-class scales); controls all SAT
+C(x=23) r1: UNSAT from M=33 (15/15 in-class scales); controls all SAT
+C(x=25) r3: UNSAT from M=35 (15/15 in-class scales); controls all SAT
+C(x=27) r5: UNSAT from M=37 (15/15 in-class scales); controls all SAT
+C(x=29) r7: UNSAT from M=39 (15/15 in-class scales); controls all SAT
+C(x=31) r1: UNSAT from M=41 (14/14 in-class scales); controls all SAT
+C(x=33) r3: UNSAT from M=43 (14/14 in-class scales); controls all SAT
+K1(x=11) r1: UNSAT from M=41 (14/17 in-class scales, misses [17, 25, 33]); controls all SAT
+K1(x=13) r3: UNSAT from M=19 (17/17 in-class scales); controls all SAT
+K1(x=15) r5: UNSAT from M=21 (17/17 in-class scales); controls all SAT
+K1(x=17) r7: UNSAT from M=23 (17/17 in-class scales); controls all SAT
+K1(x=19) r1: UNSAT from M=25 (16/16 in-class scales); controls all SAT
+K1(x=21) r3: UNSAT from M=27 (16/16 in-class scales); controls all SAT
+K1(x=23) r5: UNSAT from M=29 (16/16 in-class scales); controls all SAT
+K1(x=25) r7: UNSAT from M=31 (16/16 in-class scales); controls all SAT
+K1(x=27) r1: UNSAT from M=33 (15/15 in-class scales); controls all SAT
+K1(x=29) r3: UNSAT from M=35 (15/15 in-class scales); controls all SAT
+K1(x=31) r5: UNSAT from M=37 (15/15 in-class scales); controls all SAT
+K1(x=33) r7: UNSAT from M=39 (15/15 in-class scales); controls all SAT
+K3(x=11) r3: UNSAT from M=19 (17/17 in-class scales); controls all SAT
+K3(x=13) r5: UNSAT from M=21 (17/17 in-class scales); controls all SAT
+K3(x=15) r7: UNSAT from M=23 (17/17 in-class scales); controls all SAT
+K3(x=17) r1: UNSAT from M=25 (16/16 in-class scales); controls all SAT
+K3(x=19) r3: UNSAT from M=27 (16/16 in-class scales); controls all SAT
+K3(x=21) r5: UNSAT from M=29 (16/16 in-class scales); controls all SAT
+K3(x=23) r7: UNSAT from M=31 (16/16 in-class scales); controls all SAT
+K3(x=25) r1: UNSAT from M=33 (15/15 in-class scales); controls all SAT
+K3(x=27) r3: UNSAT from M=35 (15/15 in-class scales); controls all SAT
+K3(x=29) r5: UNSAT from M=37 (15/15 in-class scales); controls all SAT
+K3(x=31) r7: UNSAT from M=39 (15/15 in-class scales); controls all SAT
+K3(x=33) r1: UNSAT from M=41 (14/14 in-class scales); controls all SAT
+K4e(x=11) r4: UNSAT from M=68 (12/17 in-class scales, misses [20, 28, 36, 52, 60]); controls all SAT
+K4e(x=13) r6: UNSAT from M=70 (12/17 in-class scales, misses [22, 30, 38, 54, 62]); controls all SAT
+K4e(x=15) r0: UNSAT from M=72 (12/17 in-class scales, misses [24, 32, 40, 56, 64]); controls all SAT
+K4e(x=17) r2: UNSAT from M=66 (14/16 in-class scales, misses [42, 58]); controls all SAT
+K4e(x=19) r4: UNSAT from M=68 (14/16 in-class scales, misses [44, 60]); controls all SAT
+K4e(x=21) r6: UNSAT from M=30 (16/16 in-class scales); controls all SAT
+K4e(x=23) r0: UNSAT from M=32 (16/16 in-class scales); controls all SAT
+K4e(x=25) r2: UNSAT from M=34 (15/15 in-class scales); controls all SAT
+K4e(x=27) r4: UNSAT from M=36 (15/15 in-class scales); controls all SAT
+K4e(x=29) r6: UNSAT from M=38 (15/15 in-class scales); controls all SAT
+K4e(x=31) r0: UNSAT from M=40 (15/15 in-class scales); controls all SAT
+K4e(x=33) r2: UNSAT from M=42 (14/14 in-class scales); controls all SAT
+K7(x=11) r7: UNSAT from M=23 (17/17 in-class scales); controls all SAT
+K7(x=13) r1: UNSAT from M=25 (16/16 in-class scales); controls all SAT
+K7(x=15) r3: UNSAT from M=27 (16/16 in-class scales); controls all SAT
+K7(x=17) r5: UNSAT from M=29 (16/16 in-class scales); controls all SAT
+K7(x=19) r7: UNSAT from M=31 (16/16 in-class scales); controls all SAT
+K7(x=21) r1: UNSAT from M=33 (15/15 in-class scales); controls all SAT
+K7(x=23) r3: UNSAT from M=35 (15/15 in-class scales); controls all SAT
+K7(x=25) r5: UNSAT from M=37 (15/15 in-class scales); controls all SAT
+K7(x=27) r7: UNSAT from M=39 (15/15 in-class scales); controls all SAT
+K7(x=29) r1: UNSAT from M=41 (14/14 in-class scales); controls all SAT
+K7(x=31) r3: UNSAT from M=43 (14/14 in-class scales); controls all SAT
+K7(x=33) r5: UNSAT from M=45 (14/14 in-class scales); controls all SAT
+
+108/108 instances lawful -> /Users/will/Dev/personal/tasks/math/erdos197/data/e174_param_lanes.json
