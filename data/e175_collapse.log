@@ -1,0 +1,13 @@
+== COLLAPSE (L-PROJ made machine-explicit) ==
+  [PASS] C1 proj@32-bal (support=(16,128], none,0) UNSAT [1.5s] expect=UNSAT
+{"part": "cell", "tag": "C1 proj@32-bal (support=(16,128], none,0)", "M": 32, "bounds": null, "vup": null, "vdn": 0, "support": [17, 128, 112], "verdict": "UNSAT", "time": 1.5, "ts": "2026-08-30T09:57:14"}
+  [PASS] C2 full@32-bal (none,0) UNSAT [7.4s] expect=UNSAT
+{"part": "cell", "tag": "C2 full@32-bal (none,0)", "M": 32, "bounds": null, "vup": null, "vdn": 0, "support": null, "verdict": "UNSAT", "time": 7.4, "ts": "2026-08-30T09:57:28"}
+  [PASS] C3 proj@48-bal (support=(24,192], none,0) UNSAT [4.5s] expect=UNSAT
+{"part": "cell", "tag": "C3 proj@48-bal (support=(24,192], none,0)", "M": 48, "bounds": null, "vup": null, "vdn": 0, "support": [25, 192, 168], "verdict": "UNSAT", "time": 4.5, "ts": "2026-08-30T09:57:34"}
+  [PASS] C4 proj@64-const333 (support=(32,256], none,0) UNSAT [52.9s] expect=UNSAT
+{"part": "cell", "tag": "C4 proj@64-const333 (support=(32,256], none,0)", "M": 64, "bounds": [3, 3, 3, 0], "vup": null, "vdn": 0, "support": [33, 256, 224], "verdict": "UNSAT", "time": 52.9, "ts": "2026-08-30T09:58:32"}
+  [PASS] C5 CORE'(48)@96 (bounds 2,2,2,0; none,0) UNSAT [39.2s] expect=UNSAT
+{"part": "cell", "tag": "C5 CORE'(48)@96 (bounds 2,2,2,0; none,0)", "M": 96, "bounds": [2, 2, 2, 0], "vup": null, "vdn": 0, "support": [49, 303, 223], "verdict": "UNSAT", "time": 39.2, "ts": "2026-08-30T09:59:15"}
+== DONE: 0 failures ==
+{"part": "summary", "which": "collapse", "failures": [], "ts": "2026-08-30T09:59:15"}
