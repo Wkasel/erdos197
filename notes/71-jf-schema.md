@@ -380,6 +380,68 @@ Multi-defector colorings only ADD channels (any odd of B-low and
 any even of A-low serve), so minimal impurity is the extremal
 frame, consistent with every measured witness.
 
+### 4c. The near-pure case of GAP-CMIN: structural lemmas PROVED,
+### residue = top-corner casework
+
+Fix minimal impurity (one swap, the measured extremal frame): WLOG
+Bm1 stays parity-pure per team (a swap inside Bm1 CONSTRAINS the
+swapping teams strictly more — the mixed-Bm1 team's H_dn images
+cover both parities, confining BOTH parities of its B1; so the
+binding case is the swap inside B0), A-low = odds ∖ {r} ∪ {d},
+B-low = evens ∖ {d} ∪ {r}, r odd, d even ∈ B0.
+
+**Lemma SZ′ (confinement, both teams) [PROVED — SZ verbatim +
+image-parity bookkeeping].**  With Bm1∩A pure odd, EVERY A-image
+z = 2y − u (u ∈ Bm1∩A, y ∈ B0∩A) is odd, and image-fullness
+survives the swap (each image value has ≥ 2 representations once
+M ≥ 8): A's B1-ODDS ⊆ safe_A = odds of (z_maxA, 4M], and B's
+B1-EVENS ⊆ safe_B = evens of (z_maxB, 4M], with z_max = 7M/2−O(1)
+(exact ends as in Lemma SZ; removal of one y does not shrink the
+image).  Everything same-parity sits in the top ~M/4 of B1.
+
+**Lemma WALL (no mono windows below the corner) [PROVED — one
+line].**  Any interval of ≥ 2 consecutive B1-values contains an
+even and an odd; if it is all-B its evens are B-evens, forcing it
+inside (z_maxB − 1, 4M]; if all-A its odds force it inside
+(z_maxA − 1, 4M].  So single-team windows of length ≥ 2 exist ONLY
+in the top corner.
+
+**Consequences for the two-channel sweep (§4).**  D_A and D_B are
+integer intervals around 0 (length 3M/4 − 1 each; one-sided in the
+extreme r, d positions).  A failed candidate needs its entire
+partner window mono — by WALL only inside the corner.  Hence
+f_B := |F_B| ≤ (B-run length in the corner), f_A ≤ (A-run length),
+the two runs are disjoint inside a corner of size ~M/2, and
+OUTSIDE the corner every candidate is a unit:
+
+    S ≥ (|B ∩ I_r| − f_B) + (|A ∩ I_d| − f_A).
+
+**The baseline is exact.**  For the B1-parity-split coloring
+(A = all M evens of B1, B = all M odds — legal: zero same-parity
+material, SZ′ vacuous): no mono window of length ≥ 2 exists AT ALL
+(F_A = F_B = ∅), and
+
+    S ≥ |B ∩ I_r| + |A ∩ I_d| = (M − ⌈r/4⌉-ish) + M/2 ≥ M,
+
+with equality approached at r → 2M, d = 2M — the measured
+cmin = M witness shape (its B1 is a near-split: A-evens + safe-
+zone odds).  At d = 2M the F_A family is EMPTY outright (the
+downward window from any y ∈ I_d = (3M, 4M] reaches below the
+corner, hitting a below-safe odd, which cannot be A's) — verified
+on the f(8) witness (F_A = ∅, two d-units {31, 32}).
+
+**What remains of GAP-CMIN [honest]:** (i) the top-corner
+optimization — the adversary trades corner runs (cheap failures)
+against candidate supply; the witness realizes ONE corner failure
+at M = 8; needed: (candidates − failures) ≥ M over the ≤ 4
+one-sidedness cases × swap-in-Bm1/B0 — finite bookkeeping with
+all structural inputs proved above; (ii) multi-defector
+monotonicity (t ≥ 2 swaps only ADD channel supply and TIGHTEN
+SZ′-confinement; the extremal frame is t = 1 — measured, argued,
+not yet written as an exchange lemma).  No new mechanism is
+missing: every measured optimum is reproduced by the lemmas
+above.
+
 ## 5. The F-schema: the same dichotomy prices the freshness family
 
 notes/75 §2.4 leaves F(N; v) [GAP-F-schema] as a family that does
