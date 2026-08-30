@@ -1,0 +1,71 @@
+== e180 deep classification, M=64 (N=143) ==
+closure-alive pairs: 178
+base theory: 10153 vars, 964464 clauses (5041 APs) [0s]
+R(M) SAT escapes: 68;  D(M) UNSAT stalls: 110 [total 3s]
+(RES-LAW) SAT escapes with 8 not| gap (MUST be 0): 0 
+(DEEP-LAW) D(M) == E1xE1 non-mod-8 alive pairs: False
+   D minus pred: [(48, 72), (56, 64), (56, 76), (57, 65), (58, 66), (59, 67), (60, 68), (60, 70), (60, 72), (61, 69), (62, 70), (63, 71), (64, 72), (65, 73), (66, 74), (67, 75), (68, 76), (69, 77), (70, 78), (71, 79)]
+   pred minus D: []
+(CLOSE-LAW) distance<=15 escapes: 0; violators (not gap-8 E1xE1, MUST be 0): 0 
+R gaps realized: [16, 32, 48, 64]
+R q-range: 0..48
+slowest solves: [((67, 71), 0.09), ((64, 72), 0.06), ((59, 67), 0.05)]
+== e180 deep classification, M=80 (N=175) ==
+closure-alive pairs: 215
+base theory: 15225 vars, 1771088 clauses (7569 APs) [1s]
+R(M) SAT escapes: 96;  D(M) UNSAT stalls: 119 [total 6s]
+(RES-LAW) SAT escapes with 8 not| gap (MUST be 0): 0 
+(DEEP-LAW) D(M) == E1xE1 non-mod-8 alive pairs: False
+   D minus pred: [(64, 88), (72, 80), (73, 81), (74, 82), (75, 83), (76, 84), (76, 86), (76, 88), (77, 85), (77, 89), (78, 86), (78, 89), (78, 90), (79, 87), (79, 90), (79, 91), (80, 88), (81, 89), (82, 90), (83, 91)]
+   pred minus D: []
+(CLOSE-LAW) distance<=15 escapes: 0; violators (not gap-8 E1xE1, MUST be 0): 0 
+R gaps realized: [16, 32, 64, 80]
+R q-range: 0..79
+slowest solves: [((87, 89), 0.19), ((75, 83), 0.07), ((86, 88), 0.07)]
+== e180 deep classification, M=112 (N=239) ==
+closure-alive pairs: 292
+base theory: 28441 vars, 4522000 clauses (14161 APs) [3s]
+R(M) SAT escapes: 131;  D(M) UNSAT stalls: 161 [total 21s]
+(RES-LAW) SAT escapes with 8 not| gap (MUST be 0): 0 
+(DEEP-LAW) D(M) == E1xE1 non-mod-8 alive pairs: False
+   D minus pred: [(96, 120), (97, 113), (98, 114), (99, 115), (100, 116), (101, 117), (102, 118), (103, 119), (104, 112), (104, 116), (104, 118), (104, 120), (104, 124), (105, 113), (105, 117), (105, 119), (105, 121), (105, 125), (106, 114), (106, 118)]
+   pred minus D: []
+(CLOSE-LAW) distance<=15 escapes: 0; violators (not gap-8 E1xE1, MUST be 0): 0 
+R gaps realized: [16, 32, 48, 64, 96, 112]
+R q-range: 0..96
+slowest solves: [((108, 124), 0.24), ((121, 125), 0.2), ((108, 116), 0.19)]
+== e180 deep classification, M=128 (N=271) ==
+closure-alive pairs: 319
+base theory: 36585 vars, 6597360 clauses (18225 APs) [4s]
+R(M) SAT escapes: 147;  D(M) UNSAT stalls: 172 [total 28s]
+(RES-LAW) SAT escapes with 8 not| gap (MUST be 0): 0 
+(DEEP-LAW) D(M) == E1xE1 non-mod-8 alive pairs: False
+   D minus pred: [(96, 112), (112, 128), (112, 136), (113, 129), (114, 130), (115, 131), (116, 132), (117, 133), (118, 134), (119, 135), (120, 128), (120, 134), (120, 136), (120, 140), (121, 129), (121, 135), (121, 137), (121, 141), (122, 130), (122, 135)]
+   pred minus D: []
+(CLOSE-LAW) distance<=15 escapes: 0; violators (not gap-8 E1xE1, MUST be 0): 0 
+R gaps realized: [32, 64, 96, 128]
+R q-range: 0..111
+slowest solves: [((127, 135), 0.33), ((129, 139), 0.27), ((130, 134), 0.26)]
+== e180 deep classification, M=48 (N=111) ==
+closure-alive pairs: 165
+base theory: 6105 vars, 449680 clauses (3025 APs) [0s]
+R(M) SAT escapes: 90;  D(M) UNSAT stalls: 75 [total 1s]
+(RES-LAW) SAT escapes with 8 not| gap (MUST be 0): 0 
+(DEEP-LAW) D(M) == E1xE1 non-mod-8 alive pairs: True
+(CLOSE-LAW) distance<=15 escapes: 8; violators (not gap-8 E1xE1, MUST be 0): 0 
+R gaps realized: [8, 16, 24, 32, 40, 48, 56]
+R q-range: 0..55
+slowest solves: [((39, 55), 0.04), ((28, 60), 0.03), ((44, 60), 0.03)]
+== e180 deep classification, M=96 (N=207) ==
+closure-alive pairs: 230
+base theory: 21321 vars, 2935088 clauses (10609 APs) [2s]
+R(M) SAT escapes: 99;  D(M) UNSAT stalls: 131 [total 12s]
+(RES-LAW) SAT escapes with 8 not| gap (MUST be 0): 0 
+(DEEP-LAW) D(M) == E1xE1 non-mod-8 alive pairs: False
+   D minus pred: [(64, 80), (80, 104), (88, 96), (89, 97), (90, 98), (91, 99), (92, 100), (92, 102), (92, 104), (92, 106), (92, 110), (93, 101), (93, 103), (93, 105), (94, 102), (94, 104), (94, 106), (95, 103), (95, 105), (95, 107)]
+   pred minus D: []
+(CLOSE-LAW) distance<=15 escapes: 0; violators (not gap-8 E1xE1, MUST be 0): 0 
+R gaps realized: [16, 32, 48, 64, 96]
+R q-range: 0..80
+slowest solves: [((1, 65), 0.15), ((0, 64), 0.14), ((69, 101), 0.12)]
+e180: DONE

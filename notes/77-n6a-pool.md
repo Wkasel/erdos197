@@ -159,3 +159,83 @@ deep certificates are two faces of the same scaled-zone geometry).
 [MACHINE-CHECK: data/e179_glue_walk_M{48,64,80,96}.json; runtime 2/4/12/21 s.]
 
 ---
+
+## 2. GAP-FG-deep: the laws at six scales — resonance law CLEARED,
+## deep zone RECHARACTERIZED, close-pair law STRENGTHENED
+
+Instrument: experiments/e180_deep_classify.py (scale-generic e154:
+one incremental CaDiCaL instance per scale — full order theory,
+transitivity, AP-freeness on [1, 2M+15]; fan units as assumptions) →
+data/e180_deep_M{48,64,80,96,112,128}.json, data/e180_deep.log.
+M = 96 ran on sprint-D; the M = 48 run REPRODUCES e154 exactly
+(|R| = 90, |D| = 75).  Five of the six scales are FRESH for every law
+below (notes/59 §C had them exact at 48 only).
+
+### 2.1 The complete R/D map, 48..128
+
+    M     alive   R (SAT escapes)   D (UNSAT stalls)   D q-range
+    48    165     90                75                 [48, 62]
+    64    178     68                110                [48, 78]
+    80    215     96                119                [64, 94]
+    96    230     99                131                [64, 110]
+    112   292     131               161                [96, 126]
+    128   319     147               172                [96, 142]
+
+### 2.2 (RES-LAW)  [MACHINE-CHECKED at 6 scales — was 1]
+
+**Every SAT escape has gap ≡ 0 (mod 8).**  Zero violations among
+631 escapes across all six scales.  This is the uniform claim that
+GAP-DICH-ALPHA and P-ARM's H-LAT consume (a fan-safe attacker share
+is mod-8 aligned); it now stands at six scales with five fresh.
+
+### 2.3 (CLOSE-LAW′)  [MACHINE-CHECKED at 6 scales; STRENGTHENED]
+
+At M = 64, 80, 96, 112, 128 there are **ZERO escapes at distance
+≤ 15** — the notes/59 close-pair kill law holds WITHOUT the E1
+exclusion at every scale above 48:
+
+    for M ≥ 64 (audited grid): a team owning two band values at
+    distance ≤ 15 has a fan-dead pair — no exception zone.
+
+The 48-exceptional gap-8 E1×E1 escapes (the reason notes/59 added
+the E1 exclusion) die from 64 up: minimum realized escape gap is
+≥ 16 at every audited M ≥ 64 (gaps realized: 16/32/48/64 at 64;
+16/32/64/80 at 80; 16/32/48/64/96 at 96; …; 32/64/96/128 at 128).
+By Lemma MON's species this cannot be concluded for free at unseen
+scales (alive sets are not monotone), so the uniform form is a
+per-scale audit fact with a six-scale record; its consumer (the
+notes/55 §5.3b close-pair hypothesis) only ever fires per scale.
+
+### 2.4 (DEEP-LAW) CORRECTED: the E1×E1 characterization is
+### 48-specific  [MACHINE-CHECKED]
+
+At 48, D(48) = non-mod-8 alive pairs of E1×E1 exactly (reproduced).
+At EVERY scale 64..128 the stall set is strictly larger: 20/…/20
+extra stalls below q = M, reaching down to q_min(D) = 48, 64, 64,
+96, 96 at 64..128 — the stall corner is a SCALED zone q ≳ 2M/3
+(16-quantized onset), not the fixed-width band-edge corner.  And
+mod-8 gaps are NOT protected inside it: gap-8/16/24 stalls appear
+from 64 up (e.g. the whole gap-8 diagonal q ∈ [56, 71] at M = 64) —
+"mod-8 necessary, not sufficient" now has mass, including INSIDE
+E1×E1 (e.g. (64, 72) at M = 64 stalls).
+
+Consequences recorded: (i) the notes/59 §C.1 deep law and its
+"mod-8 members of E1×E1 are in R" clause are corrected as above;
+(ii) the D(M) branch-certificate taxonomy (L1/L2/L3, 55/75 at 48)
+is ALSO a scaled-zone question — |D| grows ≈ Θ(M), so a per-pair
+finite catalogue cannot close it; the honest species is the same
+scaled-zone recursion as §1.4's RESISTS item and the 20-pair
+parity-locked core (→ §5 / GAP-PARM).
+
+### 2.5 Status after §2
+
+| claim | verdict |
+|-------|---------|
+| (RES-LAW) 8 \| gap necessary for escape | **[CLEARED as a six-scale machine law]** — 0 violations / 631 escapes; 5 fresh scales |
+| (CLOSE-LAW′) distance ≤ 15 ⟹ fan-dead, M ≥ 64 | **[CLEARED as a six-scale machine law]** — stronger than the notes/59 form (no E1 exclusion) |
+| deep-stall characterization | **corrected**: scaled corner q ≳ 2M/3, 16-quantized onset; E1×E1 form retired |
+| D(M) branch-certificate taxonomy | **[RESISTS]** — exact statement: uniform-in-M certificates for the stall corner {(q,p) alive-UNSAT : q ≥ q₀(M)}; the corner's population grows Θ(M) and its even-gap members halve onto half-scale fan systems (GAP-PARM species); per-scale SAT verdicts + the six-scale laws above are the machine layer |
+
+[MACHINE-CHECK: data/e180_deep_M*.json; runtimes 3–28 s/scale.]
+
+---
