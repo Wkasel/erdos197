@@ -1671,3 +1671,91 @@ with explicit finite witnesses (data/e179_s5_witness_*) as the
 instrument bench.  New no-retry entries: band-depth weighting,
 single-team density drift.  Gating-gap count unchanged (AFFORD′ +
 N6a sub-pool + N3-GROW(N3-b)); the assembly theorem is untouched.
+
+### FINAL ADJUDICATION (2026-08-30, close of the final-four phase;
+### notes/80 + e184): six-species spot-audit clean, tournament
+### adjudicated, champion designated, YES-space characterized
+
+**Spot-audit (one reconstruction + one fresh scale per species —
+ZERO anomalies):** Theorem C3(p) — affine identity layer re-derived
+by independent code to p = 39, strict schema + independent solver at
+FRESH p = 23 AND 25 (both mod-4 classes: 104+52+52 scales each 0
+fail; 20/20 solver verdicts incl. M = 256/260) — the notes/78 "audit
+pending" rider is discharged, residual = referee prose pass at paper
+time.  Lemmas PS/LANE — halving identities exact at fresh x = 29/31,
+LANE numeric to x = 99, and a fresh law cell d*(19; 112) = 4
+(atmost-3 anywhere UNSAT; the SAT witness is the pure-bottom lane
+transversal).  Lemma PURE — set-level bijection re-implemented (4
+scales) + SAT-level equivalence at fresh M = 56: 1260 pairs, 0
+mismatches.  Theorem P-ARM‴ — fresh scale m = 64 (M = 128): full α
+system + 0/144 single drops + 0/49 maximal-clique drops SAT; e182
+independent-encoder re-verification landed (0 SAT / 156 solves);
+now modular at SIX scales 48..128.  L-DOUBLE-DUTY — counting
+argument re-derived, fresh scale M = 24 (UNSAT at 11 [1038 s];
+near-critical rows postscripted).  GAP-SPARSE-CORE — fresh scale
+m = 36 UNSAT ×4 + control triangle, AND the AAA covering argument
+QUANTIFIED into a hand closure for m ≥ 26 (⌈n/2⌉+⌈n/3⌉ < n at
+n = m/2 ≥ 13; machine covers 16..48) — AAA is closed at ALL m ≥ 16,
+residue = mixed-designation catalogue.  FG-deep laws — the sprint-D
+in-flight audit landed: RES-LAW/CLOSE-LAW′ 0 violations at 144/160
+(now EIGHT scales 48..160).
+
+**Tournament verdict (notes/80 §3).**  S1 proved tool; S2/S3 stay
+refuted (no-retry).  **Champion: S4, the sparse-corner pincer.**
+Its completed-proof bill: (a) mixed-designation catalogue (known
+species), (b) **MINT-LOC** — the NEW statement carrying all the
+AFFORD′ content for the (iii)-corner: the mint's displaced value is
+forced within distance ≤ 2 of minority material, so paying breaks
+axis (iii) within O(1) octaves and the corner self-destructs —
+finite, pre-registered, instrumentable on the witnesses at
+m = 32/64/128, honest either-way outcome; (c) arm B's p(k) → ∞
+pump (N2 species).  S5's bill for a YES: ω-corner coloring (easy
+now — see below), TRUE subcriticality at ω, and a coupled pair of
+AP-free orders paying every anchor forever (constructive ¬AFFORD′
+— no precedent, no finite handle).
+
+**THE structural find (notes/80 §4): the dodger corner's
+inhabitants are MOD-4 LATTICE colorings.**  All three S5 witnesses
+(2^12 ×2, 2^13 — independently re-verified from the raw colorings:
+split/sparse/diffuse floors, sup window densities 0.758–0.769 <
+13/16, censors clean) have minority = a difference-4 AP on a single
+mod-4 residue class per dyadic block (exact 1/4–3/4 splits; class
+3, 1, 0 mod 4 resp.).  Consequences: (1) gap ≥ 3 forces the
+minority off the parity lattice and the solver lands EXACTLY one
+step up — the corner's canonical shape is arithmetic, not solver
+noise, and extends to ω as a coloring; (2) a mod-4 class is closed
+under v ↦ 2v−f (in-class f), so the minority is a SELF-REFLECTING
+doubling lattice — the censor dodge is essential, and deeper than
+e179 estimated (exact DP: chain depth 24–58 one reflector band up,
+vs ~10 reported); (3) a mod-4 class is AP-closed, so
+lattice-minority colorings carry cross-3-block in-team APs and are
+STRUCTURALLY void for double block order (explicit certificates,
+e.g. B-triple (35, 82, 129) at m = 32) — the corner pays T-TEL″
+mints at every anchor by a two-line hand fact.  The YES/NO frontier
+is now one question asked of one arithmetic family: **can the mod-4
+lattice corner afford its everywhere-mint system?** (= MINT-LOC's
+two directions).
+
+**Ledger.**  Gating gaps: (1) GAP-AFFORD′ (champion route fixed),
+(2) GAP-N6a residue (led by GAP-RES — classify the SAT-alive fan
+pairs uniformly in window length; PURE/P-ARM‴/AFF⁺+MON cleared out
+of the pool), (4) GAP-N3-GROW (N3-b).  Gap (3) C3(p) is PROVED and
+spot-audited.  In flight at close: s1lemma M = 24 budgets 12/13;
+e146 catalogues 176/192 (sprint-B/-C) with the notes/77 §4.8
+pre-registered probe chain unrun.
+
+**Honest assessment (updated at adjudication): NO ≈ 93 %, YES ≈ 7 %
+— HELD, variance reduced.**  For a bump: zero anomalies across the
+entire spot-audit; a gating gap audit-cleared; the sparse core's
+AAA arm hand-closed at 8 machine scales.  Against (and why held):
+the S5 verification upgraded the YES side too — the corner is
+inhabited by a canonical arithmetic family with a trivial
+ω-extension as a coloring, whose essence (T-SHARP procrastination)
+is exactly what no finite instrument can refute; and AFFORD′ /
+MINT-LOC, carrying the whole of Case 2, is genuinely open with a
+live either-way experiment.  Composition: of the 7 % YES — ≈ 5 %
+the mod-4 lattice corner affords its mints, ≈ 2 % unmodeled break;
+of the 93 % NO — the three catalogue-species gaps are near-certain
+writing (every attempted instance ever discharged; two full audit
+cycles + this spot-audit, zero breaks); essentially all residual
+NO-risk sits in AFFORD′.
