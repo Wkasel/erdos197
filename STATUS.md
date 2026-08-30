@@ -1609,3 +1609,65 @@ data/e180_diag_grow.json, e180_*.log, e123_diagonal_p21.log.
 - Gap ledger after this front: gating gaps (1) GAP-AFFORD′,
   (2) GAP-N6a sub-pool, (4) GAP-N3-GROW (N3-b) — three left;
   (3) is a write-up awaiting its adversarial audit only.
+
+### FRONT AFFORD-TOURNAMENT (2026-08-30 night, notes/79 + e179): five
+### strategies vs the terminal gap — two refuted, one proved tool, two
+### survivors that CONVERGE on the sparse corner
+
+GAP-AFFORD′ received its first dedicated attack since notes/62.  Five
+pre-registered strategies, each machine-attacked in-session:
+
+- **S1 (home-conflict): Lemma L-DOUBLE-DUTY [PROVED, sharp].**  A
+  value serving two consecutive mint boundaries (high at β_{m−1},
+  low at β_m) costs ≥ |O_m ∩ T| + 1 at the anchor below (pure
+  transitivity; machine thresholds exactly 5 = 4+1 at M = 8 and
+  BLIND 9 = 8+1 at M = 16).  T-FRESH's pair-disjoint mint system is
+  now VALUE-disjoint below presence-scale prices.  A bookkeeping
+  theorem, not a supply cap (NG4 still delimits).
+- **S2 (band-weight): REFUTED.**  The mint band map at the boot
+  scale is FULL — every singleton low-member band of Bm1 is SAT
+  ((11,0)@8 base UNSAT, fresh encoder).  No thin forced band exists,
+  so no band-depth weighting separates demand from supply.
+- **S3 (density-transfer): REFUTED.**  No order→coloring channel
+  (donation flux ≡ 0); payer identity ALTERNATES with scale (ROT4
+  double-block-order failures: B/both/both/A/both at m = 16/32/48/
+  64/80 — fresh scales 48, 80 this session); no universal
+  concentration bound exists to contradict (L1′ dead, 5/6 is
+  ROT4-specific).
+- **S4 (dodger-axis split): THE SPARSE CORE — headline.**  The
+  coupled core at bounds (1,1,1) with the dodger corner's own
+  axis (iii) (per-block minority pair-sparse, gaps ≥ 3) is UNSAT at
+  m = 16, 20, 24, 28, 32, 40, 48 — seven scales, boot window
+  m ≤ 12, with a full attribution triangle (bare (1,1,1) SAT
+  everywhere; minority-cap-only SAT; gap-≥2-only SAT with exactly
+  the parity-lattice escape surviving).  Axis (iii) SUBSTITUTES for
+  balance in the core engine: sparse dodgers pay T-TEL″ mints at
+  EVERY anchor from presence 1.  Hand skeleton for the AAA
+  designation (gap-≥3 sets cannot jointly cover a spacing-2 u-line
+  and a contiguous y-interval, forcing a contiguous band into the
+  sparse team) — tag GAP-SPARSE-CORE, same uniformization species
+  as the N6a pool.  Repair-price parity measured: p_sparse(k) =
+  p(k) = 3, 7, 7, 11 at M = 64 (sparseness free at the repair
+  layer).  Encoder cross-validated against the known (2,2,2)@48
+  UNSAT.
+- **S5 (honest dodger build): the corner is FINITELY INHABITED.**
+  CP-SAT builds of (i-censored)+(ii)+(iii) colorings succeed at
+  2^12 AND 2^13 — including rung-safe sup window density
+  0.769 < 13/16 and an orbit censor at ROT4's own strength (max
+  chain depth 1, reflectors ≤ 64, seeds > 64).  Every witness dodges
+  its censor exactly one reflector band up (depth ~10 at 2F) —
+  T-SHARP's procrastination realized by the solver; corner
+  emptiness is NOT reachable by finite orbit censors.  The
+  witnesses measurably PAY: their colorings fail double block order
+  for BOTH teams at every anchor tested (m = 16/32/64).
+
+**Net movement.**  The dodger corner (the entire known YES-space)
+is now pincered and inhabited at once: (iii) buys a strictly
+stronger demand core and no repair discount, yet the corner's
+finite theory is SAT under every censor.  GAP-AFFORD′ stands, in
+its sharpest form yet: *can a sparse-corner coloring afford one
+displaced value per octave forever in single-use colored values?* —
+with explicit finite witnesses (data/e179_s5_witness_*) as the
+instrument bench.  New no-retry entries: band-depth weighting,
+single-team density drift.  Gating-gap count unchanged (AFFORD′ +
+N6a sub-pool + N3-GROW(N3-b)); the assembly theorem is untouched.

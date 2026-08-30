@@ -1,0 +1,4 @@
+e182 m=48 odd class: 24 maximal cliques + sampled sub-cliques (34 solves, fresh Glucose42 full-scale encoder): SAT verdicts (MUST be 0): 0 [2s]
+e182 m=48 even class: 25 maximal cliques + sampled sub-cliques (32 solves, fresh Glucose42 full-scale encoder): SAT verdicts (MUST be 0): 0 [2s]
+e182 m=56 odd class: 32 maximal cliques + sampled sub-cliques (48 solves, fresh Glucose42 full-scale encoder): SAT verdicts (MUST be 0): 0 [4s]
+e182 m=56 even class: 32 maximal cliques + sampled sub-cliques (42 solves, fresh Glucose42 full-scale encoder): SAT verdicts (MUST be 0): 0 [3s]
