@@ -209,6 +209,38 @@ unbounded-run (procrastinating) alternating lattices + punctured
 near-lattices + non-lattice gap-≥3 minorities (the last two dodge
 L-NOTAIL; permutable-set density theory at length 3 is open).
 
+CHART KILL (notes/82 professor pass + notes/81 verification,
+2026-08-30 late): **Lemma Q + Theorem ALT-DEAD [PROVED — zero new
+gaps]**: in a blockwise mod-4 lattice coloring every residue class
+is blockwise monochromatic; the 4-adic chart φ(x) = (x−c+4)/4
+(x/4 at c = 0) maps class-sections Λ_c(t) EXACTLY onto dyadic
+blocks B(t−2); permutability restricts and transports; the image
+has infinitely many 0-clean blocks — dead by Theorem B1 at C₀ = 0
+= PIN + DIAG-DENSE + C3(p), all [PROVED].  So: infinitely many
+4-pure scales ⟹ not a valid pair.  The ENTIRE lattice corner
+(constant, alternating, ANY run law, T-SHARP-procrastinating) and
+all on-class punctured variants (ANY puncture count) are DEAD;
+off-class bounded dust = GAP-N3-GROW (existing gate); Cor. HSPLIT:
+every valid pair is everywhere-split in EVERY 2-adic chart
+(eventually-2^k-periodic minorities all dead); odd-q siblings =
+Cor. Q-ODD mod BRIDGE1-AF + N2-UNIF.  The Case-2 corner inherits a
+Case-1 kill — N4's dichotomy is not restriction-stable.  Only
+rider: the C3(p) referee prose pass.  Adversarially verified
+(notes/81 §2, e186): chart exactness 44/44, AP transport
+44 400/44 400, C3(p)-units-in-R 6/6, fresh rung UNSAT p = 13,
+witness 4-purity + transported clean blocks 8/8, Geneson-W Λ-scan
+0 hits t = 5..200 (Lemma Q's finiteness prediction confirmed on
+the sharpest known permutable set).  Complementary instrument
+measurement (notes/81 §1): the majority team of a sparse-minority
+window CANNOT be killed via its own punctured rung (every
+extractable class-punctured cell SAT, exact touch-the-class law)
+— the chart through the MINORITY is the unique working route.
+**GAP-AFFORD″-ALT is RETIRED.  Residue renamed GAP-AFFORD‴-SPLIT:
+the supply cap for gap-≥3, 2-adically split (HSPLIT-generic)
+minorities — no known inhabitant satisfying all corner axes, no
+arithmetic shape; first instrument = the HSPLIT-constrained dodger
+build (e186, notes/81 §2 pre-registration).**
+
 ## 3. Retired / reframed tags (final dispositions)
 
 | tag | disposition |
@@ -258,7 +290,7 @@ Critical path (all four needed; nothing else is):
 
 | tag | exact statement | species | evidence state |
 |-----|-----------------|---------|----------------|
-| **GAP-AFFORD′** | for every valid Case-2 pair, the donation supply (single-use colored values, P3-accounted) cannot fund the T-TEL″ mint system (≥ 1 displaced value per 2 octaves) forever | **genuinely new ledger statement** — no template in the campaign | no-go results (NG1–NG4, GAP-COMP refuted) + tournament (notes/79) + adjudication (notes/80): S2/S3 refuted, L-DOUBLE-DUTY [PROVED, ×3 scales], SPARSE-CORE ×8 scales + AAA hand arm, corner INHABITED by mod-4 lattice colorings (verified + characterized) which pay STRUCTURALLY at every anchor — champion route S4, decisive statement MINT-LOC (pre-registered); PINCER EXECUTED (notes/80-pincer): MINT-LOC resolved strong-form, Theorem AFFORD-CORNER [PROVED] (L-NOTAIL + presence-scale demand + one-mint emptiness), S5-ALT UNSAT ×2 censors; residue = GAP-AFFORD″-ALT (unbounded-run alternating + punctured + non-lattice sparse) — the supply CAP itself still has zero completed proof strategies |
+| **GAP-AFFORD′** | for every valid Case-2 pair, the donation supply (single-use colored values, P3-accounted) cannot fund the T-TEL″ mint system (≥ 1 displaced value per 2 octaves) forever | **genuinely new ledger statement** — no template in the campaign | no-go results (NG1–NG4, GAP-COMP refuted) + tournament (notes/79) + adjudication (notes/80): S2/S3 refuted, L-DOUBLE-DUTY [PROVED, ×3 scales], SPARSE-CORE ×8 scales + AAA hand arm; PINCER EXECUTED (notes/80-pincer): MINT-LOC resolved strong-form, Theorem AFFORD-CORNER [PROVED], S5-ALT UNSAT ×2 censors; **CHART KILL (notes/82 + notes/81 verification): Lemma Q + ALT-DEAD [PROVED, zero new gaps] retire the ENTIRE arithmetic corner** (all lattices any ownership law, on-class punctures any count, 2^k-periodic minorities via Cor. HSPLIT) — residue = **GAP-AFFORD‴-SPLIT** (gap-≥3, 2-adically split minorities: no known inhabitant, no arithmetic shape) — the supply CAP on that residue still has zero completed proof strategies (professor certifies no elegant kill among directions 1–4 for it) |
 | **GAP-N6a sub-pool** | the CI(m) core fires for ALL m (bal ≥ 16; const (2,2,2) ≥ 48): remaining per notes/77 §7 = **GAP-RES** (consolidated: classify SAT-alive fan pairs uniformly in N — carries FG-scaled-zone, FG-deep taxonomy, DICH-ALPHA, H-LAT) + ThW1′-ROBUST/-TOL + DICH-F2/CASC + SPLIT + LLOP-α/β + ASM′ = (OV-∀) | uniformization/classification (discharged instances exist for each; PURE/P-ARM‴/AFF⁺+MON cleared out of the pool) | machine-closed everywhere asked (8 CI scales + robust ×2; P-ARM‴ modular 48..128; laws ×8 full + ×7 half scales; blind hits; 176/192 pre-registered) |
 | **GAP-N2-DIAG** | C3(p) UNSAT on its flip class for every odd p ≥ 5 (uniform-in-p write-up) | uniformization — **DISCHARGED: Theorem C3(p), notes/78 Part I [PROVED — spot-audited notes/80]** | schema p = 5..25 (0 fail; 23/25 fresh both mod-4 classes), boundaries exact, solver x-val ×9 p-values, identity layer re-derived p ≤ 39; residual = referee prose pass |
 | **GAP-N3-GROW (N3-b)** | < ⌊(x−1)/4⌋ punctures leave the rung UNSAT, uniformly in x and puncture set | uniformization + robustness (severed-ladder closures = machine shadow); skeleton LANE + SEV + (N3-b′), notes/78 §II.3 | exact at x = 11/15/19/23/27 global, x = 19 AND 27 each at two scales (d*(19; 112) = 4 fresh, notes/80); closures complete at M = 112 |
@@ -275,7 +307,8 @@ Hardening layer (not gating the assembly):
 | GAP-V* | v*₃(m; bounds) growth | rate sharpening only |
 | GAP-ZERO | classify the sumset floor's zero variety | all zeros measured LOW-PURE (order-dead); N3-species |
 | GAP-SPARSE-CORE (new, notes/79; adjudicated notes/80) | CI(m) at (1,1,1) + per-block minority gap ≥ 3 UNSAT for all m ≥ 16 | machine ×8 scales (16..48 incl. fresh 36, boot ≤ 12), control triangle + gap-≥2 discriminator; **AAA designation HAND-CLOSED m ≥ 26** (covering bound; machine covers 16..48) — residue = mixed-designation catalogue; lattice-minority sub-family void STRUCTURALLY (AP-closed minorities carry cross-3-block triples); strengthens Case-2 demand on the (iii)-corner to presence-1 bounds — does not gate the assembly but arms it |
-| L-NOTAIL + Theorem AFFORD-CORNER (new, notes/80-pincer) | no 3-permutable team contains an infinite AP (DEGS77 import); blockwise-lattice corner: ownership must alternate, every H-carrier pays Θ(m²) seam inversions/anchor as an exact orientation with presence-scale displaced sets (Θ(N) cumulative), no anchor one-mint payable | [PROVED] + machine (e185: census closed-form exact, 26/26 one-mint cells empty, ν(8/12/16) = 9/31/58, S5-ALT UNSAT ×2 + controls) — arms the corner kill; does not gate the assembly |
+| L-NOTAIL + Theorem AFFORD-CORNER (new, notes/80-pincer) | no 3-permutable team contains an infinite AP (DEGS77 import); blockwise-lattice corner: ownership must alternate, every H-carrier pays Θ(m²) seam inversions/anchor as an exact orientation with presence-scale displaced sets (Θ(N) cumulative), no anchor one-mint payable | [PROVED] + machine (e185: census closed-form exact, 26/26 one-mint cells empty, ν(8/12/16) = 9/31/58, S5-ALT UNSAT ×2 + controls) — arms the corner kill; does not gate the assembly.  L-NOTAIL is now a corollary of Lemma Q on the lattice family (kept for classical self-audit value) |
+| **Lemma Q + Theorem ALT-DEAD + Cor. HSPLIT (new, notes/82; verified notes/81)** | no permutable set contains a full mod-4 class-section of infinitely many dyadic blocks (exact 4-adic chart onto B(t−2) + restriction + B1 at C₀ = 0); infinitely many 4-pure scales ⟹ invalid pair; every valid pair is everywhere-split in every 2-adic chart | [PROVED — inputs PIN + DIAG-DENSE + C3(p) only; rider = C3(p) prose pass] + adversarial machine verification (e186 partQVERIFY 0 fails across 5 layers; Geneson Λ-scan 0 hits t = 5..200) — retires the arithmetic corner; does not gate the assembly (GAP-AFFORD‴-SPLIT gates) |
 
 **If any critical tag BREAKS instead of clearing**: (i)/(ii) breaking
 re-opens Case 1 only via a coloring evading every lane at every
@@ -297,7 +330,15 @@ realized inhabitant — is DEAD at ω (L-NOTAIL); the live
 (rejected finitely at run-length 1 by S5-ALT, both censors),
 punctured near-lattices, and non-lattice gap-≥3 minorities, none
 realized.  The YES question is: can THOSE afford presence-scale
-payments (GAP-AFFORD″-ALT).]
+payments (GAP-AFFORD″-ALT).]  [Updated again, notes/82 + notes/81:
+Lemma Q/ALT-DEAD kill EVERY arithmetic member of that list at ω —
+all lattices regardless of ownership law, all on-class punctured
+variants, all eventually-2^k-periodic minorities.  The live
+(iv)-negative is now ONLY a gap-≥3 minority that is 2-adically
+split in every chart (Cor. HSPLIT) — aperiodic by construction,
+never realized (the censor-off alternating coloring is
+HSPLIT-compatible as a coloring but is not corner-certified); the
+YES question is GAP-AFFORD‴-SPLIT.]
 
 ## 7. Certificates index (one line each)
 
@@ -317,3 +358,5 @@ payments (GAP-AFFORD″-ALT).]
 - notes/79: L-DOUBLE-DUTY [PROVED, sharp ×2 blind]; SPARSE-CORE [MACHINE ×8 + controls]; S2/S3 refutations; dodger-corner witnesses (e179)
 - notes/80: six-species spot-audit (zero anomalies, e184); C3(p) audit rider discharged; AAA covering hand closure; S5 witnesses verified + characterized (mod-4 lattices, structural payment); champion S4 + MINT-LOC pre-registration
 - notes/80-pincer: L-NOTAIL, γ-RIGID/MINT-1, D-FLOOR/D-SAT, Theorem AFFORD-CORNER [PROVED]; MINT-LOC executed as pre-registered (e185: 26/26 one-mint cells empty, census closed-form exact, ν frontiers 9/31/58); S5-ALT + attribution battery [MACHINE]
+- notes/82: Lemma Q, Theorem ALT-DEAD, Cor. HSPLIT [PROVED — professor pass; inputs PIN/DIAG-DENSE/C3(p)]; Cor. Q-ODD [stated]; directions 1/3/4 failure analysis; GAP-AFFORD″-ALT retired → GAP-AFFORD‴-SPLIT
+- notes/81: adversarial verification of Lemma Q (e186 partQVERIFY, 5 layers, 0 fails; Geneson Λ-scan 0 hits t = 5..200); the measured complement (class-punctured rungs: exact touch-the-class law, majority-side siege provably void); HSPLIT-constrained dodger build (the SPLIT residue's first instrument)
