@@ -54,7 +54,8 @@ bal mode (exact balance):
 | 16 | 6 (2.1s ×2 encoders); **12 (12.3s), 24 (36.6s), 48 (706.2s)** [sprint-B, correct encoder, landed in-session] | 384 (17.2s); TIMEOUT@3600s at 96, 192 | ∈ **(48, 384]** |
 | 24 | 65 (46.0s) | — | > 65 |
 | 32 | 100 (62.6s), 256 (137.2s), **512 (98.6s)** | — | **> 512** |
-| 48 | **64 (67.7s), 128 (164.4s), 256 (246.6s)** [sprint-D, landed in-session]; 512 TIMEOUT @43200s (main pod) | — | = ∞ predicted (J-DOWN, m = 24 core); the three UNSATs are its blind confirmations at the 5th scale |
+| 40 | **(none,0) UNSAT [12.6s]** [sprint-D wave 2, in-session] | — | **= ∞ MACHINE — and m = 20 is a FRESH scale for the coupled-core family itself** (e120 tested 16/24/32) |
+| 48 | **64 (67.7s), 128 (164.4s), 256 (246.6s), then (none,0) UNSAT [22.0s]** [sprint-D, in-session]; 512 TIMEOUT @43200s (main pod) | — | **= ∞ MACHINE** (the (none,0) cell settles what the deep-budget cells could only suggest) |
 
 const mode (bounds (2, 3, 6, 12) — NO balance):
 
@@ -252,9 +253,11 @@ Let M ≡ 0 mod 4.  bal mode:
 restriction].**  If the balanced 2-seam coupled core at anchor
 m = M/2 is infeasible, then the (v,0) cell at M is infeasible for
 EVERY v: v_min(0)(M) = ∞.  The core is machine-true at
-m = 16, 24, 32, 48, 64, 80 ⟹ **v_min(0)(M) = ∞ at
-M = 32, 48, 64, 96, 128, 160** ((none,0)@32 direct: UNSAT 7.4s,
-notes/75 C2); all-m is GAP-N6a (the near-closed N6a schema).  The
+m = 16, 24, 32, 48, 64, 80 — **plus m = 20, NEW this session:
+(none,0)@40 UNSAT [12.6s] via the 4-block encoder, a fresh core
+scale** — ⟹ **v_min(0)(M) = ∞ at M = 32, 40, 48 by DIRECT
+(none,0) cells (7.4s / 12.6s / 22.0s) and at 64, 96, 128, 160 via
+the tested m's**; all-m is GAP-N6a (the near-closed N6a schema).  The
 finite regime is exactly M ∈ {8, 16, 24}: 12 exact; (6, 384];
 (65, 1440] ((none,0)@24 SAT — the m = 12 core does not fire).
 
@@ -401,7 +404,7 @@ hypothesis.
 | sprint-B (relaunched, correct encoder) | pump grid 16: 12/24/48/96; 24: 128/256; 32: 768/1024 (last four = J-DOWN blind tests) | data/vmin0_series.log on pod |
 | sprint-C cert battery (LANDED in-session) | pump (11,0)@8 **UNSAT [24.9s]** — the same pod that printed SAT under the wrong encoder now confirms the true verdict, closing the incident loop; (12,0)@8 **SAT [5.6s]** (v_min(0)(8) = 12 re-verified cross-pod); (6,0)@16 UNSAT [3.2s]; (65,0)@24 UNSAT [71.9s]; **F(16;6) UNSAT [802.0s] — THIRD independent run**; F(24;65)@86400 in flight | data/vmus_cert.log on pod |
 | sprint-D wave 1 (correct encoder) | (64,0)@48 UNSAT [67.7s], (128,0)@48 UNSAT [164.4s], (256,0)@48 UNSAT [246.6s] — fifth-scale deep-UNSAT cheap, J-DOWN-consistent | data/fresh_series.log on pod |
-| sprint-D wave 2 (re-task, RUNNING at close) | (none,0)@40 [m=20: FRESH core scale] / @48 / @64 / @96 + margin (368,6)@32 [86400s] | /root/e/run_fresh2.py → data/fresh_fix2.log |
+| sprint-D wave 2 (re-task) | **(none,0)@40 UNSAT [12.6s] — m = 20, FRESH core scale; (none,0)@48 UNSAT [22.0s]**; @64 / @96 + margin (368,6)@32 [86400s] running at close | /root/e/run_fresh2.py → data/fresh_fix2.log |
 
 Open rows to harvest next session: sprint logs (above), e174 fhalf
 24/32/40, F(24;65).  Decisive next mathematics: GAP-AFFORD′ (the
