@@ -1,0 +1,17 @@
+{"tag": "bal_M16p", "M": 16, "bounds": null, "solver": "g3", "event": "init", "lb_sum": 0, "vstar_lb": 0, "t": 0.3}
+{"tag": "bal_M16p", "M": 16, "bounds": null, "solver": "g3", "event": "lb", "lb_sum": 1, "vstar_lb": 1, "t": 1.7, "core_sz": 1368, "core_orig": 1368}
+{"tag": "bal_M24", "M": 24, "bounds": null, "solver": "g3", "event": "init", "lb_sum": 0, "vstar_lb": 0, "t": 0.8}
+{"tag": "bal_M16p", "M": 16, "bounds": null, "solver": "g3", "event": "lb", "lb_sum": 2, "vstar_lb": 1, "t": 5.2, "core_sz": 1407, "core_orig": 1406}
+{"tag": "bal_M32", "M": 32, "bounds": null, "solver": "g3", "event": "init", "lb_sum": 0, "vstar_lb": 0, "t": 2.0}
+{"tag": "bal_M40", "M": 40, "bounds": null, "solver": "g3", "event": "init", "lb_sum": 0, "vstar_lb": 0, "t": 3.9}
+{"tag": "bal_M16p", "M": 16, "bounds": null, "solver": "g3", "event": "lb", "lb_sum": 3, "vstar_lb": 2, "t": 25.7, "core_sz": 1048, "core_orig": 1046}
+{"tag": "bal_M24", "M": 24, "bounds": null, "solver": "g3", "event": "lb", "lb_sum": 1, "vstar_lb": 1, "t": 28.4, "core_sz": 2577, "core_orig": 2577}
+{"tag": "bal_M24g4", "M": 24, "bounds": null, "solver": "g4", "event": "init", "lb_sum": 0, "vstar_lb": 0, "t": 1.0}
+{"tag": "bal_M24g4", "M": 24, "bounds": null, "solver": "g4", "event": "lb", "lb_sum": 1, "vstar_lb": 1, "t": 43.9, "core_sz": 2757, "core_orig": 2757}
+{"tag": "bal_M24g4", "M": 24, "bounds": null, "solver": "g4", "event": "lb", "lb_sum": 2, "vstar_lb": 1, "t": 82.5, "core_sz": 2955, "core_orig": 2954}
+{"tag": "bal_M16g4", "M": 16, "bounds": null, "solver": "g4", "event": "init", "lb_sum": 0, "vstar_lb": 0, "t": 0.3}
+{"tag": "bal_M16g4", "M": 16, "bounds": null, "solver": "g4", "event": "lb", "lb_sum": 2, "vstar_lb": 1, "t": 6.4, "core_sz": 1629, "core_orig": 1629}
+{"tag": "bal_M16p", "M": 16, "bounds": null, "solver": "g3", "event": "lb", "lb_sum": 4, "vstar_lb": 2, "t": 265.7, "core_sz": 246, "core_orig": 243}
+{"tag": "bal_M16g4", "M": 16, "bounds": null, "solver": "g4", "event": "lb", "lb_sum": 3, "vstar_lb": 2, "t": 62.1, "core_sz": 1976, "core_orig": 1975}
+{"tag": "const3_6_12_M24", "M": 24, "bounds": [3, 6, 12], "solver": "g3", "event": "init", "lb_sum": 0, "vstar_lb": 0, "t": 1.2}
+{"tag": "const3_6_12_M32", "M": 32, "bounds": [3, 6, 12], "solver": "g3", "event": "init", "lb_sum": 0, "vstar_lb": 0, "t": 2.9}

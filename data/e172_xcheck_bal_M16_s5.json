@@ -1,0 +1,36 @@
+{
+ "tag": "xcheck_bal_M16_s5",
+ "rows": [
+  {
+   "tag": "xcheck_bal_M16_s5",
+   "event": "xcheck",
+   "M": 16,
+   "bounds": null,
+   "vA": 0,
+   "vB": 4,
+   "verdict": "UNSAT",
+   "time": 151.9
+  },
+  {
+   "tag": "xcheck_bal_M16_s5",
+   "event": "xcheck",
+   "M": 16,
+   "bounds": null,
+   "vA": 1,
+   "vB": 3,
+   "verdict": "UNSAT",
+   "time": 203.8
+  },
+  {
+   "tag": "xcheck_bal_M16_s5",
+   "event": "xcheck",
+   "M": 16,
+   "bounds": null,
+   "vA": 2,
+   "vB": 2,
+   "verdict": "UNSAT",
+   "time": 234.8
+  }
+ ],
+ "verdict": "CONFIRMED sum >= 5"
+}

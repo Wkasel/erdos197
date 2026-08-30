@@ -1,0 +1,9 @@
+<frozen importlib._bootstrap>:491: RuntimeWarning: The global interpreter lock (GIL) has been enabled to load module 'pyformula', which has not declared that it can run safely without the GIL. To override this behavior and keep the GIL disabled (at your own risk), run with PYTHON_GIL=0 or -Xgil=0.
+== bal_M16: building (M=16, bounds=bal)
+   934496 hard, 5120 soft [0.8s]
+  bal_M16 init cost=0 (adapt) t=0.3s
+  bal_M16 LB sum>=1 (v*>=1) t=1.9s core=1368/1368
+  bal_M16 LB sum>=2 (v*>=1) t=5.9s core=1407/1406
+  bal_M16 LB sum>=3 (v*>=2) t=28.7s core=1048/1046
+  bal_M16 LB sum>=4 (v*>=2) t=239.4s core=246/243
+  bal_M16 LB sum>=5 (v*>=3) t=1624.3s core=276/272
