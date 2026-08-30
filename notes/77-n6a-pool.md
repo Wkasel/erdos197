@@ -316,7 +316,16 @@ relative to their per-scale catalogue 𝔉(M), unchanged.)
 
 ### 3.2 The bijection audit  [MACHINE-CHECKED, 2 fresh scales]
 
-e181 result placeholder — filled below on completion.
+e181_pure_halving.py solves (b) (class-c subsystem, full-scale
+coordinates) and (c) (halved fan on [1, N̂]) with independent direct
+encodings for EVERY same-parity pair:
+
+    M=48: 992 pairs, 902 halved-dead, 0 mismatches   [116 s]
+    M=64: 1560 pairs, 1492 halved-dead, 0 mismatches [446 s]
+
+Both scales fresh for this equivalence (it was never before stated,
+let alone checked).  The window-end arithmetic of Lemma PURE(i) is
+exact.  [data/e181_pure_M{48,64}.json, data/e181_pure.log]
 
 ---
 
