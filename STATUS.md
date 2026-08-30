@@ -1430,3 +1430,66 @@ of its removed y = 13).  Machine: f(28) = 14 (6th f = M/2 scale);
 F(12;2), F(20;4) UNSAT at the F-BOOT thresholds and F(12;5) UNSAT
 beyond them; K-diagonal extended: K(30,10) = 69, K(36,12) = 111
 (the (v,3)@48 margin target's low-pure branch dead, margin 108).
+
+### FRONT N2-PARAMETRIC (2026-08-30, e174–e177 + notes/73): Case 1's
+### last writing — the 8-lane residue system is parametric in x,
+### the grid is 36/36, Theorem N2-COMPLETE stated
+
+Full write-up notes/73-n2-endgame.md; machine
+experiments/e174_param_lanes.py, e175_param_template.py,
+e176_derivation_meter.py + e176b_deepx_sweep.py, e177_evenx_rung.py;
+records data/e174_param_lanes.*, e175_param_template.json (+
+data/pod_e175/), e176*, e177* (bulk on sprint-B).
+
+- **The 8-lane residue system [MACHINE, 108/108 lawful]**: NINE
+  translation lanes — five from e124b plus FOUR NEW (K4e/K3/K7/K1 =
+  the (2,0)-translates of e124m's bespoke {11,12} cells K11_r4/r3/
+  r7/r1) — tile ALL EIGHT residues of M mod 8 with laws
+  M ≡ x + c (mod 8), c = 1,3,5,7 (even M) / 0,2,4,6 (odd M).
+  Verified by direct Cadical probe at every pair x = 11..33, every
+  in-class scale to 152, controls SAT (e174).  Thresholds slope-1
+  affine; uniform safe bound T(x) = x + 57 (only K4e at x ≤ 19 and
+  K1 at x = 11 start late; all else fires from the first
+  non-degenerate scale).
+- **The x ≡ 7 mod 8 hole is CLOSED**: the new K4e lane's law
+  x + 1 ≡ 0 lands exactly on the dyadic class for x ≡ 7 — K4e(23),
+  K4e(31) fire at every probed scale; the "first open cell" of
+  notes/49 §8 no longer exists.
+- **The parametric template grid is COMPLETE: 36/36 (lane, x mod 8)
+  cells** (e175 + e176b, sprint-B + local): per cell ONE fixed
+  (v*, S_hi, S_lo, ladders) closes all Lemma-D polarity branches at
+  x = x₀, x₀+8, …, x₀+48 (seven x-values; branch-0 closures to
+  x ≈ 73) × up to 6 in-class scales (M to ~145), with Cadical
+  cross-checks (fresh x to 41 + local x = 47 replay of the flagship
+  K4e_xi7 dyadic cell) and solver-adjudicated sharpness controls.
+  Both notes/49 open cells closed (B6(21)_r0 ∈ B6_xi5; A4d(19)_r0 ∈
+  A4d_xi3 — and the e124m stalls were two verifier bugs, not
+  mathematics: cross-x minimality pruning + false degeneracy on
+  shared-target/self-battleground cells; all stuck cells close in
+  1–4 s fixed).  Grid-wide laws: v* ∈ {t1,t2,t3} with parity
+  opposite ctr; full ladder = v*'s d=2 class; EVERY A4 cell is the
+  K4 attacker-split {0,2}/{1,3}; mod-4 twins (ξ, ξ+4) share
+  templates up to O/E swap.
+- **The uniform hand layer (notes/73 §4)**: Lemma MIR [PROVED,
+  uniform] — MP at the centre gives ctr ≺ t_i ⟺ ctr ≺ b_i (even M;
+  b_{i−1} odd M): the battleground t_{i*} has a bottom twin INSIDE
+  the unit-target zone b₁..b₆, which is why v* is always t1/t2/t3.
+  Metatheorem T reduces every cell to branch closures; MP/D/PC all
+  proved x-free.  Derivation meter (e176): closure work Θ(M²) in M,
+  FLAT in x — the sliding-flood signature.  Remaining:
+  **[GAP-N2-UNIF]** = per-cell per-branch uniform write-ups of the
+  MIR/Z/transitivity weaves (36 cells × ≤ 8 branches, same species
+  as the DISCHARGED instances C3/notes-33, K4/B2(11)/C(11)/notes-49,
+  C3(p)/e123).
+- **Theorem N2-COMPLETE** (notes/73 §6): for every odd x ≥ 11 and
+  every M ≥ x + 57, the pair {x, x+1}'s single-block rung fires,
+  with a per-residue schema at each of the eight classes — machine-
+  complete for x ≤ 33, M ≤ 152; schema-verified on the stated
+  lattice; uniform modulo GAP-N2-UNIF.  Even-x pairs: full rungs
+  machine-UNSAT at every M = 16..120 (e177, scope note).  GAP-N2's
+  three named remainders (parametric lane proof, A4d(19)/B6(21),
+  x ≡ 7 mod 8) are all DISCHARGED at their stated level; what
+  remains of GAP-N2 is exactly GAP-N2-UNIF ⊃ GAP-N2-DIAG (the
+  assembly's Case-1 chain still consumes only the diagonal
+  sub-piece; N2-COMPLETE feeds BRIDGE1-AF and lifts the usable-pair
+  supply in clean blocks from density 1/12 to 1/2).

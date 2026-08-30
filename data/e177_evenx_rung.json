@@ -1,0 +1,26 @@
+{
+ "12": {
+  "sat_scales": [],
+  "verdict": "UNSAT everywhere"
+ },
+ "14": {
+  "sat_scales": [],
+  "verdict": "UNSAT everywhere"
+ },
+ "16": {
+  "sat_scales": [],
+  "verdict": "UNSAT everywhere"
+ },
+ "18": {
+  "sat_scales": [],
+  "verdict": "UNSAT everywhere"
+ },
+ "20": {
+  "sat_scales": [],
+  "verdict": "UNSAT everywhere"
+ },
+ "22": {
+  "sat_scales": [],
+  "verdict": "UNSAT everywhere"
+ }
+}
