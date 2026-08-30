@@ -17,7 +17,7 @@ witness realizes it MAXIMALLY; but the accounting has an exact
 repair (the boundary ledger: 4-adic subchains perfectly disjoint,
 and the FORCED FRESH component is disjoint at every anchor —
 F(16;6) UNSAT), the pump fires at every scale measured INCLUDING
-the bottom one ((6,0)@8 UNSAT; v_min(0)(8) ∈ (6,16]) AND at
+the bottom one ((6,0)@8 UNSAT; v_min(0)(8) = 12 exactly) AND at
 constant bounds ((6,0)@24 const UNSAT — regime-wide demand), and
 the surviving theorem T-TEL′ + T-FRESH is a dichotomy that replaces
 GAP-V*-growth with GAP-VMIN0-growth — a curve measurable by cheap
@@ -199,7 +199,8 @@ route.  The ledger can only ever be the demand bookkeeping.
 Assume:
 - [GAP-J-schema] the pump family: (v, 0) at anchor M UNSAT for all
   v < v_min(0)(M), for all large anchors in the regime (machine-true
-  at M = 8, 16, 24 — three scales after this session);
+  at M = 8, 16, 24, 32 — four scales after this session, plus the
+  const-bounds point at 24);
 - [GAP-VMIN0-growth] v_min(0)(M) → ∞ (measured, four scales, all
   monotone: **= 12 EXACTLY at 8** (this session's bisection), > 6 at
   16 with SAT at 384 and TIMEOUTs at 96/192, > 65 at 24, and NEW
@@ -259,8 +260,8 @@ order theory to wholesale block order (L-PREFIX): 2.1 s at 16, 46 s
 at 24, 2.1 s at 8.  GAP-V*-growth is demoted from load-bearing to
 nice-to-have: **if v* stays bounded forever, Theorem LT's demand
 still diverges through T-TEL′ branch (a)/(b).**  The measured
-ordering v_min(0)(M) ≫ v*₃(M) at every scale (6 > [0], >65 ≥ bracket
-(4,65] at 24) is exactly why: zeroing an anchor is far more expensive
+ordering v_min(0)(M) ≫ v*₃(M) at every scale (12 > 0 at 8; > 65 vs
+bracket (4,65] at 24; > 256 vs witness 368 at 32) is exactly why: zeroing an anchor is far more expensive
 than merely paying the per-anchor floor.
 
 **Bounds caveat (standard but load-bearing) — and its measured
@@ -284,7 +285,8 @@ notes/62 §6.  The telescope sharpens its target: the donation ledger
 must charge branch (a)'s diverging payments (which L-2PRICE books on
 TWO anchors each — overpayment is never private) or branch (b)'s
 everywhere-fresh minting (which P3 converts to an infinite displaced
-set with δ ≥ 1 — one displaced value per 2 octaves forever).
+set with δ ≥ 1 — one displaced value per two octaves by T-LEDGER,
+density one per octave under GAP-F-schema).
 
 ## 5. Machine record (this session)
 
@@ -309,7 +311,7 @@ the queue as cells land.)
 | tag | before | after |
 |-----|--------|-------|
 | GAP-V*-growth | load-bearing for Theorem D | **demoted**: T-TEL′ runs demand on v_min(0)-growth; v*-growth now only sharpens constants |
-| GAP-VMIN0 (notes/62) | side measurement | **promoted to THE demand curve**; lower bounds by deep-UNSAT cells; measured > 6 / > 6 / > 65 / **> 256** at 8 / 16 / 24 / 32 |
+| GAP-VMIN0 (notes/62) | side measurement | **promoted to THE demand curve**; lower bounds by deep-UNSAT cells; measured **= 12** / > 6 / > 65 / **> 256** at 8 / 16 / 24 / 32 |
 | GAP-J-schema | 2-scale machine family, bal only | 4-scale (8, 32 added); **const-bounds version machine-true at 24** (regime-wide by D1+D2); schema target unchanged (L-PREFIX + three-arm architecture, notes/62 §4c-d) |
 | GAP-F-schema (new) | — | freshness family F(N; v) — refines GAP-J-schema; machine-true at (16; 6); target of T-FRESH |
 | T-TEL (naive) | candidate | **refuted honestly** (maximal overlap measured; P1/NG4 kill divergence-as-contradiction) |
