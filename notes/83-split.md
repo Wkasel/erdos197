@@ -114,3 +114,107 @@ SAT 55 % — retained):**
 Survival protocol: §1 harvest; §2 witness anatomy / emptiness
 assembly; §3 the exact residue statement + ledger.  Honest tags
 throughout.
+
+---
+
+## 1. Harvest (weak-censor HSPLIT battery)
+
+(cells in flight; table filled as rows land — checker calibration
+below done while waiting)
+
+**Checker calibration (e187b on altw, the censor-off coloring):**
+the independent auditor (no CP-SAT) reports EXACTLY the expected
+profile — censor violations only (15 322 depth-2 chains at F = 12:
+altw is deep in supercritical territory), all other axioms pass:
+split floor ✓, minority gap-≥3 ✓ (ownership ALTERNATES B,B,A,B,…),
+window floor ✓ (ν(a) = a/4 at the floor from a = 256 up), HSPLIT
+mods 4+8 ✓ (0 mono sections, matching e186's compat record) — and
+the anatomy is P-4's predicted shape verbatim: gap multiset
+concentrated on {3, 4, 5} (mod-6 profile mixed), longest fixed-gap
+run ≤ 8 out of minority 512 at t = 11, descent miner finds NO
+recurring one-team class section at any modulus 2..12 (sporadic
+hits at 7/10/11/12 only, ≤ 2 each, non-recurring).  So the
+COLORING class dodges the gap-g descent by construction — the
+whole question is whether any of it coexists with the censor.
+data/e187b_audit_e185_s5alt_h4096_F12_r1_noorb_a6.json.
+
+---
+
+## 2. The gap-g descent: Lemma Q-g and Corollary ASPLIT (desk,
+## verdict-independent)
+
+Notation: for g ≥ 2, c ∈ {0..g−1}, let Λ^g_c(t) = {v ∈ B(t) :
+v ≡ c (mod g)} and φ_g(x) = (x − c)/g + 1, the increasing affine
+bijection (c + gℤ) → ℤ⁺-tail.
+
+**Chart facts [MACHINE-CHECKED this session, §1 desk rows]:**
+φ_g(Λ^g_c(t)) is an INTERVAL of length 2^t/g ± 1 = a ratio-2
+window (M_t, 2M_t] with ≤ 1 value of dust at each end,
+M_t = ⌊(2^t − c)/g⌋ ± 1.  For g = 2^k: exactly B(t−k), zero dust
+(Cor. HSPLIT's case).  Anchor residues mod 8 CYCLE with t: g = 3
+alternates 5, 2 (the CROWN-2ADIC identity (4^k−1)/3 ≡ 5 confirmed);
+g = 5 cycles (3, 6, 4, 1); g = 7 cycles (4, 1, 2); g = 6, 12
+reindex the g = 3 law.  Every anchor class is hit cofinally.
+
+**Lemma Q-g.**  No 3-permutable set contains Λ^g_c(t) for one
+fixed (g, c) and infinitely many t.
+[g = 2^k: PROVED — Lemma Q verbatim at k′ = k, C3(p) prose rider
+only.  g with odd part: stated, PROVED mod BRIDGE1-AF +
+GAP-N2-UNIF + GAP-N3-GROW at C = 2 — exactly Cor. Q-ODD's gates,
+now for ALL g, not just odd g.]
+
+*Proof shape.*  Steps (i)–(ii) of Lemma Q are modulus-agnostic:
+restriction of the arrangement to T ∩ (c + gℤ) preserves order
+type and monotone 3-APs; φ_g transports 3-APs both ways (affine),
+pulled-back midpoints land in class c automatically.  The image
+S′ then contains, at infinitely many t, ratio-2 windows
+(M_t, 2M_t] clean up to C₀ ≤ 2 end dust.  g = 2^k: the windows
+are 0-dust dyadic blocks — B1 at C₀ = 0 (PIN + DIAG-DENSE +
+C3(p)), done.  General g: non-dyadic anchors — the anchor-free
+Case-1 assembly (BRIDGE1-AF species) + all-residue pair rungs
+(N2-COMPLETE: every odd pair {x, x+1}, x ≥ 11, fires at ALL 8
+residues, M ≥ x + 57) + dust robustness (N3-GROW at C = 2 for the
+seam dust) kill S′; the cycling anchor residues cannot escape a
+law that covers all 8.  ∎-shape; the odd-part tags are the gates
+above, no new species.
+
+**Corollary ASPLIT (all-modulus hereditary splitness; same
+tags).**  For every valid pair, every m ≥ 2 and c mod m, the
+section (c + mℤ) ∩ B(t) is bichromatic for all but finitely
+many t.  *Proof.*  2m cells (c, team); infinitely many
+monochromatic scales pigeonhole onto one cell; Lemma Q-g kills
+that team.  ∎
+
+**What ASPLIT does to the residue (the sharpening):**
+
+1. Every eventually-periodic minority dies at EVERY modulus, not
+   just 2^k — and both containment directions die: minority ⊇
+   Λ^q_c(t) infinitely often kills the minority's team (Q-g
+   direct); minority ⊆ Λ^q_c(t) (on-class punctured mod-q
+   lattice) kills the MAJORITY (the other q−1 classes are pure —
+   ALT-DEAD Cor.-2 argument at modulus q).  The "spacing-3
+   minority" of notes/82 §2.3 is the special case q = 3.
+2. Hence the surviving minority must, for EVERY m, in cofinitely
+   many blocks, TOUCH every class mod m and MISS ≥ 1 value of
+   every class mod m: totally aperiodic, m-adically generic for
+   all m — not merely 2-adically split.  (Touching all classes
+   mod m needs minority size ≥ m: consistent with the diverging
+   split floor, but it pins the floor's ROLE — a slow-divergence
+   inhabitant has LESS room, not more, against large-m ASPLIT.)
+3. The reach boundary is honest and sharp: Q-g needs co-full
+   class sections (clean blocks in the image).  Fixed-gap runs of
+   length εM/g that do NOT exhaust their section chart onto
+   positive-density subsets of the image window — N5 territory,
+   ρ* → 1, REFUTED as a kill.  So the descent kills every
+   arithmetic (periodic-pattern) shape and NOTHING diffuse: the
+   gap-≥3 minority that mixes gaps {3, 4, 5} aperiodically
+   (altw's measured shape, P-4) is untouchable by any chart in
+   this family.  The (1b) geometry lesson repeats one level up.
+
+**Ledger effect:** GAP-AFFORD‴-SPLIT's inhabitant must now be
+m-adically split for ALL m (mod the Q-ODD gates) — rename residue
+axis (d) from HSPLIT-compatible to ASPLIT-compatible at ω.  The
+finite instrument keeps mods 4+8 (imposing all m finitely is
+neither possible nor needed: ASPLIT is the ω-law that kills
+whatever periodic structure a finite witness would extrapolate
+to).
