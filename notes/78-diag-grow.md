@@ -125,12 +125,13 @@ has the seed-leader parity, which the displayed gap computes.  ∎
 ≺ be an AP-free order of (M, 2M] satisfying A2(p) and A3(p).  Then
 b_p ≺ b_{p−2} and t_{p−2} ≺ t_p.
 
-*Proof.*  It suffices to refute S: b_{p−2} ≺ b_p (then Lemma E(p)
-gives the transfer; M ≥ p+7 ≥ 2p+2 fails only for p ≥ 5 when
-M < 2p+2, and every step below is checked without that bound — the
-four E-values are distinct for M ∉ {2p−4, 2p−2, 2p}, and at those
-scales ≥ p+7 the machine record covers the statement directly, see
-I.5).  Assume A2, A3, S.
+*Proof.*  It suffices to refute S: b_{p−2} ≺ b_p — then Lemma E(p)
+supplies the transfer.  (The refutation below never needs Lemma E's
+bound M ≥ 2p+2.  For the transfer half at p+7 ≤ M < 2p+2: within
+M ≡ 0 (mod 4) the only E-collision scale is M = 2p−2, where
+b_p = t_{p−2} and b_{p−2} = t_p, so the transfer statement IS the
+already-forced pair and holds trivially; 2p−4 and 2p are ≡ 2 mod 4.)
+Assume A2, A3, S.
 
 **Phases and centers.**  Lemma Z on the odd ladder, seeded by S at the
 adjacent indices (p−3)/2 ≺ (p−1)/2: the ODD2 leaders are the offsets
