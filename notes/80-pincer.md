@@ -147,10 +147,12 @@ Readings:
    desk formula of §3.3 lands to the integer.  The majority count
    is ≈ 7× that (mixed-class families).
 2. **max-matching = |T ∩ B0| — the König displaced-value floor
-   saturates at FULL anchor-block presence at every measured
-   cell** (8 = |B∩B0| at m=32; 96 = |B∩B0| at m=128; both teams,
-   all colorings, zero exceptions).  Sharper than predicted (only
-   Θ(m) was pre-registered).
+   saturates at FULL anchor-block presence at every pure-lattice
+   cell** (8 = |B∩B0| at m = 32; 96 = |B∩B0| at m = 128; both
+   teams).  Two boot-contaminated cells fall just short:
+   h4096_F64 (m = 64, A) 15/16 and lin4 (m = 32, B) 3/8 — still
+   Θ(presence).  Sharper than predicted (only Θ(m) was
+   pre-registered).
 3. The ownership case-table is machine-exact: H_A = 0 precisely at
    the (B,A,A)-vector anchor m = 32 of both F64 witnesses (the
    e184 §4.3 anomaly, now DERIVED and postdicted); everywhere else
@@ -290,10 +292,10 @@ the class-c minority on pure-lattice blocks, N(x) = {y ≡ c :
 y > 2m + x/2} has |N(x)| ≥ m/4 = |T ∩ B0| for every x, so Hall
 gives a matching saturating T ∩ B0: **|D_T(m) ∩ (m, 4m)| ≥
 |T ∩ B0(m)| — the anchor block's ENTIRE presence is displaced.**
-Machine (§1.1): max-matching = |T ∩ B0| exactly at every measured
-cell, BOTH teams, witnesses included — the majority-side
-saturation is machine-fact (same staircase shape; not needed by
-hand below).
+Machine (§1.1): max-matching = |T ∩ B0| exactly at every
+pure-lattice cell, BOTH teams (boot-contaminated cells 15/16 and
+3/8, still Θ(presence)) — the majority-side saturation is
+machine-fact (same staircase shape; not needed by hand below).
 
 ### 2.3 The resolution
 
