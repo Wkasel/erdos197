@@ -68,7 +68,7 @@ x_{s1} + x_{s2} ≤ v):
 
 | cell | verdict |
 |------|---------|
-| F(16; 6) | UNSAT — TWICE independently (983.5s local, 1350.2s main pod) |
+| F(16; 6) | UNSAT — THREE TIMES independently (983.5s local, 1350.2s main pod, 802.0s sprint-C in-session) |
 | F(24; 65) | TIMEOUT @43200s (relaunched on sprint-C at 86400s) |
 
 Key facts: v_min(0)(8) = 12 = 1.5M; v_min(0)(24) > 65 ≈ 2.7M;
@@ -399,7 +399,7 @@ hypothesis.
 | e174 fhalf | f = 4/6/8 at M = 8/12/16 = M/2 exact (OPT); 24/32/40 running | data/e174_band_floor.jsonl |
 | fleet incident | wrong cell (e127 per-team) on all 3 sprint pods; killed + quarantined; nothing entered the series | §2 |
 | sprint-B (relaunched, correct encoder) | pump grid 16: 12/24/48/96; 24: 128/256; 32: 768/1024 (last four = J-DOWN blind tests) | data/vmin0_series.log on pod |
-| sprint-C (relaunched) | cert battery (11,0)@8=UNSAT-expected, (12,0)@8=SAT-expected, (6,0)@16, (65,0)@24 + F(16;6) 3rd run + F(24;65)@86400 | data/vmus_cert.log on pod |
+| sprint-C cert battery (LANDED in-session) | pump (11,0)@8 **UNSAT [24.9s]** — the same pod that printed SAT under the wrong encoder now confirms the true verdict, closing the incident loop; (12,0)@8 **SAT [5.6s]** (v_min(0)(8) = 12 re-verified cross-pod); (6,0)@16 UNSAT [3.2s]; (65,0)@24 UNSAT [71.9s]; **F(16;6) UNSAT [802.0s] — THIRD independent run**; F(24;65)@86400 in flight | data/vmus_cert.log on pod |
 | sprint-D wave 1 (correct encoder) | (64,0)@48 UNSAT [67.7s], (128,0)@48 UNSAT [164.4s], (256,0)@48 UNSAT [246.6s] — fifth-scale deep-UNSAT cheap, J-DOWN-consistent | data/fresh_series.log on pod |
 | sprint-D wave 2 (re-task, RUNNING at close) | (none,0)@40 [m=20: FRESH core scale] / @48 / @64 / @96 + margin (368,6)@32 [86400s] | /root/e/run_fresh2.py → data/fresh_fix2.log |
 
