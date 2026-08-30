@@ -265,3 +265,58 @@ Corollary Q-ODD [stated, not claimed].
   thm:main and thm:blockgranular.
 
 ---
+
+## 3. Direction (3) — DENSITY/CLASSICAL.  Verdict: FAILS
+
+Three walls, each already measured by the campaign:
+
+1. **Density never fires rungs.**  N5's resolved verdict: the
+   single-block rung tolerance is O(1) punctures — ρ* = 1 − O(1)/M
+   → 1.  A positive-density union of d=4 runs is far below every
+   firing threshold; "positive density ⇒ rung configuration" is
+   not merely unproven, it is REFUTED at the instrument level.
+2. **APs in the SET are not obstructions.**  Szemerédi/vdW
+   applied to the minority yields long APs inside the team — but
+   permutable sets can have density 2/3 (Geneson) and every
+   finite set is permutable (DEGS77 constructions); one team
+   always has upper density ≥ 1/2, so Roth already floods both
+   teams with 3-APs.  Death never comes from containing APs; it
+   comes from pair+window ORDER theories.  Only the infinite AP
+   is fatal (L-NOTAIL) — and the alternating corner contains
+   none by construction.
+3. **Varnavides-species counting gives demand, not death.**
+   Positive-density AP counts on the corner are exactly
+   AFFORD-DEMAND's Θ(m²) floor — already proven, and explicitly
+   insufficient: NG4 (demand instruments cannot cap supply) plus
+   the measured 3× per-window supply slack (notes/80-pincer
+   §3.4).  "Unbounded-run alternation is self-defeating by
+   density" would need a density-only bridge from demand to
+   contradiction, which is the refuted budget-rectangle shape.
+
+What is true in (3)'s direction is only this: the runs the rungs
+CAN reach are the block-scale ones ((1b) geometry), and for those
+the correct classical import is not Szemerédi but restriction —
+i.e. §2.
+
+---
+
+## 4. Direction (4) — EMPTINESS BY ACCOUNTING.  Verdict: the
+## accounting route FAILS; the emptiness CONCLUSION is TRUE via §2
+
+As accounting: no.  The proved constraints (forced alternation +
+T-FRESH minting + AFFORD-CORNER's Θ(m²)) are all demand-side; the
+pincer's own §3.4 already recorded the honest arithmetic — per
+4-adic window, demand ≤ presence, supply = 3× presence, no
+counting contradiction — and NG1–NG4 stand.  S5-ALT's censor-off
+SAT shows the alternating family is finitely inhabited AS
+COLORINGS, so no finite theory refutes it at the coloring level
+either; any pure-accounting emptiness proof would have to
+contradict one of these measured facts.
+
+But the family IS empty as a class of VALID PAIRS — that is
+Theorem ALT-DEAD, and the mechanism is orthogonal to accounting:
+the corner colorings are Case 1 in disguise (in the 4-adic
+chart), and Case 1 is closed.  Direction (4) asked the right
+question with the wrong instrument.
+
+---
