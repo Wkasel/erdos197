@@ -345,6 +345,41 @@ check: the f(8)-witness's impurity sits at d = 16 = 2M — the TOP
 of B0 — making |I| = M exactly; the measured cmin = M says the
 adversary can achieve the sweep bound but never beat it.
 
+### 4b. The sweep mechanism, verified value-by-value on the
+### extremal witness (added after §4's skeleton, same session)
+
+The f(8) = 4 witness (e174 dump): A-low = {5,7} ∪ {9,11,15,16}
+(impurity d = 16 = 2M; A-odds {5,7,9,11,15}), B-low = {6,8} ∪
+{10,12,13,14} (r = 13), B1∩A = {18,19,20,21,22,24,31,32}.  Sweeps:
+I_r = [23..32], I_d = [25..32].  Offsets: D_A = (A-odds − r)/2 =
+{−4,−3,−2,−1,+1}, D_B = (B-evens − d)/2 = {−5,...,−1} (one-sided —
+the adversary pushed d to the top).  Candidates: 7 B-values in I_r
+(23,25,26,27,28,29,30) + 2 A-values in I_d (31,32) = 9; the value
+24 ∈ A ∩ (I_r ∖ I_d) is channel-less (a LOSS), and exactly one
+candidate FAILS its partner window (b = 29: A ∩ [25,30] = ∅ — the
+adversary hollowed A out of [25,30]).  Units: 6 + 2 = 8 = S =
+cmin(8) — every number matches the measured optimum exactly.
+
+**The rigidity observation (the path to closing GAP-CMIN).**  A
+failed B-candidate b needs A ∩ (b + D_A) ∩ B1 = ∅ with |D_A| =
+(#A-odds − 1) ≥ ... and D_A a set of CONSECUTIVE integers around 0
+(odds/evens of an interval have every-2 spacing, so the offset set
+is an integer interval, minus 0, possibly one-sided when r or d
+sits at an end of its range).  So every failure hollows the other
+team out of a |D|-length window, and every channel-less loss needs
+y ∈ (I_max ∖ I_min) with the wrong color.  B1-balance (M each in
+2M positions) caps how much hollowing the teams can afford
+simultaneously; the witness achieves candidates − failures −
+(overcount) = M with ONE failure and ONE loss at M = 8.  The
+remaining work of GAP-CMIN is exactly to bound
+#failures + #losses ≤ #candidates − M in general — a
+one-dimensional packing statement about two colors excluding each
+other at interval offsets, with the clipping/one-sidedness cases
+(r near M/2 or 2M − 1, d near M/2 + 2 or 2M) as the case split.
+Multi-defector colorings only ADD channels (any odd of B-low and
+any even of A-low serve), so minimal impurity is the extremal
+frame, consistent with every measured witness.
+
 ## 5. The F-schema: the same dichotomy prices the freshness family
 
 notes/75 §2.4 leaves F(N; v) [GAP-F-schema] as a family that does
