@@ -114,6 +114,98 @@
     80,
     88
    ]
+  },
+  {
+   "p": 15,
+   "x": 45,
+   "pair": [
+    45,
+    46
+   ],
+   "flip_class_mod8": 4,
+   "layer1_ok": 104,
+   "layer1_total": 104,
+   "flip_ok": 52,
+   "flip_total": 52,
+   "sharp_ok": 52,
+   "sharp_total": 52,
+   "l1_first": 60,
+   "fl_scales_sample": [
+    60,
+    68,
+    76,
+    84,
+    92
+   ]
+  },
+  {
+   "p": 17,
+   "x": 51,
+   "pair": [
+    51,
+    52
+   ],
+   "flip_class_mod8": 0,
+   "layer1_ok": 104,
+   "layer1_total": 104,
+   "flip_ok": 52,
+   "flip_total": 52,
+   "sharp_ok": 52,
+   "sharp_total": 52,
+   "l1_first": 68,
+   "fl_scales_sample": [
+    72,
+    80,
+    88,
+    96,
+    104
+   ]
+  },
+  {
+   "p": 19,
+   "x": 57,
+   "pair": [
+    57,
+    58
+   ],
+   "flip_class_mod8": 4,
+   "layer1_ok": 104,
+   "layer1_total": 104,
+   "flip_ok": 52,
+   "flip_total": 52,
+   "sharp_ok": 52,
+   "sharp_total": 52,
+   "l1_first": 76,
+   "fl_scales_sample": [
+    76,
+    84,
+    92,
+    100,
+    108
+   ]
+  },
+  {
+   "p": 21,
+   "x": 63,
+   "pair": [
+    63,
+    64
+   ],
+   "flip_class_mod8": 0,
+   "layer1_ok": 104,
+   "layer1_total": 104,
+   "flip_ok": 52,
+   "flip_total": 52,
+   "sharp_ok": 52,
+   "sharp_total": 52,
+   "l1_first": 84,
+   "fl_scales_sample": [
+    88,
+    96,
+    104,
+    112,
+    120
+   ]
   }
  ],
  "fail": []

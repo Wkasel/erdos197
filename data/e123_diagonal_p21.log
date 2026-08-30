@@ -1,0 +1,11 @@
+p=5 (pair {15,16}): layer1 104/104 scales, flip 52/52 (M = 0 mod 8), sharpness 52/52
+p=7 (pair {21,22}): layer1 104/104 scales, flip 52/52 (M = 4 mod 8), sharpness 52/52
+p=9 (pair {27,28}): layer1 104/104 scales, flip 52/52 (M = 0 mod 8), sharpness 52/52
+p=11 (pair {33,34}): layer1 104/104 scales, flip 52/52 (M = 4 mod 8), sharpness 52/52
+p=13 (pair {39,40}): layer1 104/104 scales, flip 52/52 (M = 0 mod 8), sharpness 52/52
+p=15 (pair {45,46}): layer1 104/104 scales, flip 52/52 (M = 4 mod 8), sharpness 52/52
+p=17 (pair {51,52}): layer1 104/104 scales, flip 52/52 (M = 0 mod 8), sharpness 52/52
+p=19 (pair {57,58}): layer1 104/104 scales, flip 52/52 (M = 4 mod 8), sharpness 52/52
+p=21 (pair {63,64}): layer1 104/104 scales, flip 52/52 (M = 0 mod 8), sharpness 52/52
+failures: 0
+-> /Users/will/Dev/personal/tasks/math/erdos197/data/e123_diagonal_schema.json

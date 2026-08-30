@@ -1,0 +1,463 @@
+{
+ "partMINM": {
+  "rows": {
+   "5": {
+    "l1_bound_claim": 20,
+    "l1_ok_from_bound": true,
+    "l1_below_bound_pass": [
+     12,
+     16
+    ],
+    "l1_below_bound_fail": [
+     8
+    ],
+    "flip_bound_claim": 24,
+    "flip_ok_from_bound": true,
+    "flip_below_bound_pass": [
+     16
+    ],
+    "flip_below_bound_fail": []
+   },
+   "7": {
+    "l1_bound_claim": 24,
+    "l1_ok_from_bound": true,
+    "l1_below_bound_pass": [
+     16,
+     20
+    ],
+    "l1_below_bound_fail": [
+     8,
+     12
+    ],
+    "flip_bound_claim": 28,
+    "flip_ok_from_bound": true,
+    "flip_below_bound_pass": [
+     20
+    ],
+    "flip_below_bound_fail": []
+   },
+   "9": {
+    "l1_bound_claim": 28,
+    "l1_ok_from_bound": true,
+    "l1_below_bound_pass": [
+     16,
+     20,
+     24
+    ],
+    "l1_below_bound_fail": [
+     8,
+     12
+    ],
+    "flip_bound_claim": 32,
+    "flip_ok_from_bound": true,
+    "flip_below_bound_pass": [
+     24
+    ],
+    "flip_below_bound_fail": [
+     16
+    ]
+   },
+   "11": {
+    "l1_bound_claim": 32,
+    "l1_ok_from_bound": true,
+    "l1_below_bound_pass": [
+     20,
+     24,
+     28
+    ],
+    "l1_below_bound_fail": [
+     8,
+     12,
+     16
+    ],
+    "flip_bound_claim": 36,
+    "flip_ok_from_bound": true,
+    "flip_below_bound_pass": [
+     28
+    ],
+    "flip_below_bound_fail": [
+     20
+    ]
+   },
+   "13": {
+    "l1_bound_claim": 36,
+    "l1_ok_from_bound": true,
+    "l1_below_bound_pass": [
+     20,
+     24,
+     28,
+     32
+    ],
+    "l1_below_bound_fail": [
+     8,
+     12,
+     16
+    ],
+    "flip_bound_claim": 40,
+    "flip_ok_from_bound": true,
+    "flip_below_bound_pass": [
+     32
+    ],
+    "flip_below_bound_fail": [
+     16,
+     24
+    ]
+   },
+   "15": {
+    "l1_bound_claim": 40,
+    "l1_ok_from_bound": true,
+    "l1_below_bound_pass": [
+     24,
+     28,
+     32,
+     36
+    ],
+    "l1_below_bound_fail": [
+     8,
+     12,
+     16,
+     20
+    ],
+    "flip_bound_claim": 44,
+    "flip_ok_from_bound": true,
+    "flip_below_bound_pass": [
+     36
+    ],
+    "flip_below_bound_fail": [
+     20,
+     28
+    ]
+   },
+   "17": {
+    "l1_bound_claim": 44,
+    "l1_ok_from_bound": true,
+    "l1_below_bound_pass": [
+     24,
+     28,
+     32,
+     36,
+     40
+    ],
+    "l1_below_bound_fail": [
+     8,
+     12,
+     16,
+     20
+    ],
+    "flip_bound_claim": 48,
+    "flip_ok_from_bound": true,
+    "flip_below_bound_pass": [
+     40
+    ],
+    "flip_below_bound_fail": [
+     16,
+     24,
+     32
+    ]
+   },
+   "19": {
+    "l1_bound_claim": 48,
+    "l1_ok_from_bound": true,
+    "l1_below_bound_pass": [
+     28,
+     32,
+     36,
+     40,
+     44
+    ],
+    "l1_below_bound_fail": [
+     8,
+     12,
+     16,
+     20,
+     24
+    ],
+    "flip_bound_claim": 52,
+    "flip_ok_from_bound": true,
+    "flip_below_bound_pass": [
+     44
+    ],
+    "flip_below_bound_fail": [
+     20,
+     28,
+     36
+    ]
+   },
+   "21": {
+    "l1_bound_claim": 52,
+    "l1_ok_from_bound": true,
+    "l1_below_bound_pass": [
+     28,
+     32,
+     36,
+     40,
+     44,
+     48
+    ],
+    "l1_below_bound_fail": [
+     8,
+     12,
+     16,
+     20,
+     24
+    ],
+    "flip_bound_claim": 56,
+    "flip_ok_from_bound": true,
+    "flip_below_bound_pass": [
+     48
+    ],
+    "flip_below_bound_fail": [
+     16,
+     24,
+     32,
+     40
+    ]
+   }
+  },
+  "boundaries_hold": true
+ },
+ "partXVAL": {
+  "rows": [
+   {
+    "p": 17,
+    "x": 51,
+    "M": 80,
+    "class": "flip",
+    "core": "UNSAT",
+    "core_expected": "UNSAT",
+    "rung": "UNSAT",
+    "t": 0.1
+   },
+   {
+    "p": 17,
+    "x": 51,
+    "M": 84,
+    "class": "comp",
+    "core": "SAT",
+    "core_expected": "SAT",
+    "rung": "UNSAT",
+    "t": 0.1
+   },
+   {
+    "p": 17,
+    "x": 51,
+    "M": 88,
+    "class": "flip",
+    "core": "UNSAT",
+    "core_expected": "UNSAT",
+    "rung": "UNSAT",
+    "t": 0.3
+   },
+   {
+    "p": 17,
+    "x": 51,
+    "M": 92,
+    "class": "comp",
+    "core": "SAT",
+    "core_expected": "SAT",
+    "rung": "UNSAT",
+    "t": 0.4
+   },
+   {
+    "p": 17,
+    "x": 51,
+    "M": 96,
+    "class": "flip",
+    "core": "UNSAT",
+    "core_expected": "UNSAT",
+    "rung": "UNSAT",
+    "t": 0.4
+   },
+   {
+    "p": 17,
+    "x": 51,
+    "M": 100,
+    "class": "comp",
+    "core": "SAT",
+    "core_expected": "SAT",
+    "rung": "UNSAT",
+    "t": 0.4
+   },
+   {
+    "p": 17,
+    "x": 51,
+    "M": 104,
+    "class": "flip",
+    "core": "UNSAT",
+    "core_expected": "UNSAT",
+    "rung": "UNSAT",
+    "t": 0.4
+   },
+   {
+    "p": 17,
+    "x": 51,
+    "M": 108,
+    "class": "comp",
+    "core": "SAT",
+    "core_expected": "SAT",
+    "rung": "UNSAT",
+    "t": 0.5
+   },
+   {
+    "p": 17,
+    "x": 51,
+    "M": 256,
+    "class": "flip",
+    "core": "UNSAT",
+    "core_expected": "UNSAT",
+    "rung": "UNSAT",
+    "t": 11.2
+   },
+   {
+    "p": 17,
+    "x": 51,
+    "M": 260,
+    "class": "comp",
+    "core": "SAT",
+    "core_expected": "SAT",
+    "rung": "UNSAT",
+    "t": 5.6
+   },
+   {
+    "p": 21,
+    "x": 63,
+    "M": 96,
+    "class": "flip",
+    "core": "UNSAT",
+    "core_expected": "UNSAT",
+    "rung": "UNSAT",
+    "t": 0.2
+   },
+   {
+    "p": 21,
+    "x": 63,
+    "M": 100,
+    "class": "comp",
+    "core": "SAT",
+    "core_expected": "SAT",
+    "rung": "UNSAT",
+    "t": 0.2
+   },
+   {
+    "p": 21,
+    "x": 63,
+    "M": 104,
+    "class": "flip",
+    "core": "UNSAT",
+    "core_expected": "UNSAT",
+    "rung": "UNSAT",
+    "t": 0.2
+   },
+   {
+    "p": 21,
+    "x": 63,
+    "M": 108,
+    "class": "comp",
+    "core": "SAT",
+    "core_expected": "SAT",
+    "rung": "UNSAT",
+    "t": 0.3
+   },
+   {
+    "p": 21,
+    "x": 63,
+    "M": 112,
+    "class": "flip",
+    "core": "UNSAT",
+    "core_expected": "UNSAT",
+    "rung": "UNSAT",
+    "t": 0.3
+   },
+   {
+    "p": 21,
+    "x": 63,
+    "M": 116,
+    "class": "comp",
+    "core": "SAT",
+    "core_expected": "SAT",
+    "rung": "UNSAT",
+    "t": 0.4
+   },
+   {
+    "p": 21,
+    "x": 63,
+    "M": 120,
+    "class": "flip",
+    "core": "UNSAT",
+    "core_expected": "UNSAT",
+    "rung": "UNSAT",
+    "t": 0.4
+   },
+   {
+    "p": 21,
+    "x": 63,
+    "M": 124,
+    "class": "comp",
+    "core": "SAT",
+    "core_expected": "SAT",
+    "rung": "UNSAT",
+    "t": 0.5
+   },
+   {
+    "p": 21,
+    "x": 63,
+    "M": 256,
+    "class": "flip",
+    "core": "UNSAT",
+    "core_expected": "UNSAT",
+    "rung": "UNSAT",
+    "t": 7.5
+   },
+   {
+    "p": 21,
+    "x": 63,
+    "M": 260,
+    "class": "comp",
+    "core": "SAT",
+    "core_expected": "SAT",
+    "rung": "UNSAT",
+    "t": 7.1
+   }
+  ],
+  "fail": []
+ },
+ "partK19_M80": {
+  "3": {
+   "verdict": "UNSAT",
+   "secs": 7.7,
+   "expected": "UNSAT"
+  },
+  "4": {
+   "verdict": "SAT",
+   "escape": [
+    "b3",
+    "b5",
+    "b6",
+    "b7"
+   ],
+   "lane_units_hit": "1/4",
+   "secs": 0.2,
+   "expected": "SAT"
+  }
+ },
+ "partK23_M112": {
+  "4": {
+   "verdict": "UNSAT",
+   "secs": 82.6,
+   "expected": "UNSAT"
+  },
+  "5": {
+   "verdict": "SAT",
+   "escape": [
+    "b2",
+    "b4",
+    "b6",
+    "b8",
+    "b10"
+   ],
+   "lane_units_hit": "5/5",
+   "secs": 13.4,
+   "expected": "SAT"
+  }
+ }
+}

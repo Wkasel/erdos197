@@ -1,0 +1,10 @@
+[MINM] p=5: L1 from 20 ALL PASS (below: pass [12, 16], fail [8]); FLIP from 24 ALL PASS (below: pass [16], fail [])
+[MINM] p=7: L1 from 24 ALL PASS (below: pass [16, 20], fail [8, 12]); FLIP from 28 ALL PASS (below: pass [20], fail [])
+[MINM] p=9: L1 from 28 ALL PASS (below: pass [16, 20, 24], fail [8, 12]); FLIP from 32 ALL PASS (below: pass [24], fail [16])
+[MINM] p=11: L1 from 32 ALL PASS (below: pass [20, 24, 28], fail [8, 12, 16]); FLIP from 36 ALL PASS (below: pass [28], fail [20])
+[MINM] p=13: L1 from 36 ALL PASS (below: pass [20, 24, 28, 32], fail [8, 12, 16]); FLIP from 40 ALL PASS (below: pass [32], fail [16, 24])
+[MINM] p=15: L1 from 40 ALL PASS (below: pass [24, 28, 32, 36], fail [8, 12, 16, 20]); FLIP from 44 ALL PASS (below: pass [36], fail [20, 28])
+[MINM] p=17: L1 from 44 ALL PASS (below: pass [24, 28, 32, 36, 40], fail [8, 12, 16, 20]); FLIP from 48 ALL PASS (below: pass [40], fail [16, 24, 32])
+[MINM] p=19: L1 from 48 ALL PASS (below: pass [28, 32, 36, 40, 44], fail [8, 12, 16, 20, 24]); FLIP from 52 ALL PASS (below: pass [44], fail [20, 28, 36])
+[MINM] p=21: L1 from 52 ALL PASS (below: pass [28, 32, 36, 40, 44, 48], fail [8, 12, 16, 20, 24]); FLIP from 56 ALL PASS (below: pass [48], fail [16, 24, 32, 40])
+total 1s -> /Users/will/Dev/personal/tasks/math/erdos197/data/e180_diag_grow.json
