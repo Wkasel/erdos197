@@ -319,3 +319,149 @@ same arrow:
 What it pins: not a 2-neighborhood of minority material but the
 FULL presence mass of the paying block, lattice-structured,
 window-confined — the input the pincer (§3) needs.
+
+---
+
+## 3. The lattice-affordability core and the pincer
+
+### 3.1 Lemma L-NOTAIL [PROVED — classical import, two lines]
+
+**Lemma L-NOTAIL.**  No 3-permutable team contains an infinite
+arithmetic progression.
+
+*Proof.*  Suppose T ⊇ L = {a + id : i ≥ 0}.  The restriction of
+π_T to L is an ω-permutation of L; the affine bijection
+i ↦ a + id identifies 3-APs of ℤ⁺ with 3-APs of L in both
+directions.  By DEGS77's opening observation (any ω-permutation of
+ℤ⁺ contains an INCREASING 3-AP: first term a₁, least k with
+a_k > a₁, then 2a_k − a₁ is right of both), π_T|_L contains a
+monotone in-team 3-AP; monotone-AP-freeness is closed under
+restriction.  ∎
+
+**Corollary C-LATDEAD (the preserve-the-lattice arm CLOSES).**  A
+blockwise mod-4 lattice coloring whose class-ownership sequence
+τ(t) is eventually constant has a team containing the class tail
+{v ≡ c (4), v > 2^{t₀}} — an infinite AP.  It is not a valid
+pair.  **In particular the verbatim ω-extensions of ALL THREE S5
+witnesses (ownership constant above t = 6, §0 D3) are dead** —
+the notes/80 §3.2(a) "easy part" of the YES-bill produces only
+dead colorings from the realized witnesses.  The corner's
+ω-YES-space shrinks to lattices whose ownership ALTERNATES
+between the teams infinitely often.  (More generally: any
+gap-≥3-corner coloring whose minority material contains an
+infinite AP owned by one team from some point on is dead — the
+lattice does not need to be mod-4 for L-NOTAIL to bite.)
+
+### 3.2 The ownership case-table [hand; machine-exact]
+
+For pure blockwise lattices, at the anchor on blocks
+(t, t+1, t+2) with ownership vector (τ_t, τ_{t+1}, τ_{t+2}), the
+H-carrier status is forced by residue arithmetic (x + z = 2y,
+classes mod 4; the minority side of a block is exactly class c,
+the majority side exactly the other three classes):
+
+| vector | H-silent team | carrier channels |
+|---|---|---|
+| (X,X,X) | none | X: in-class (c,c,c); Y: (b,b,b) b ≠ c and mixed |
+| (X,X,Y) | X (z ≡ c lands in Y) | Y: (c+2, c±1, c) |
+| (Y,X,X) | X (x ≡ c lands in Y) | Y: (c, c±1, c+2) — TWO channels |
+| (X,Y,X) | none | X: (c, c+2, c) via i+k odd; Y: (b, c, 2c−b) |
+
+Every anchor has ≥ 1 carrier; at most one team is H-silent, and
+only at run boundaries (patterns XXY / YXX).  Each carrier channel
+is a fixed-residue staircase, so |H_carrier| ≥ 5m²/64 − O(m)
+(§1.1's closed form; the two-channel row measures 164 ≈ 2×80 at
+m = 32 — machine-exact).  Machine: §1.1 confirms every row,
+including H_A = 0 exactly at the F64 witnesses' (B,A,A) anchor.
+NOTE (measured, §1.2/§1.3): H-silence is NOT payment-silence — the
+silent team's 3/4-dense near-interval blocks carry Varnavides-
+species demand: budget-0 UNSAT and ν > 12 at both silent cells.
+The hand floor below uses carriers only; the silent-row payments
+are machine-fact on the witnesses.
+
+### 3.3 Theorem AFFORD-DEMAND [PROVED; the demand half of
+### L-AFFORD on the lattice corner, unconditional]
+
+**Theorem AFFORD-DEMAND.**  Let (A, B) be a valid pair whose
+coloring is a blockwise mod-4 lattice above scale 2^{t₀}
+(ownership sequence τ, any).  Then, with no further hypotheses
+(no N6a, no budget, no machine):
+
+1. τ alternates infinitely (L-NOTAIL).
+2. At every anchor m = 2^t, t > t₀: for every H-carrier team T
+   (≥ 1 exists, §3.2):  Inv_T(m) ≥ |H_T(m)| ≥ 5m²/64 − O(m)
+   (Lemma H-COVER = P5 + the census closed form).
+3. |D_T(m) ∩ (m, 4m)| ≥ matching(G_T(m)) ≥ m/4 − O(1)
+   (Lemmas D-FLOOR + D-SAT applied to a carrier channel; measured
+   saturation is the FULL block presence |T ∩ B0|).
+4. Along either 4-adic subchain the windows (m_j, 4m_j) are
+   disjoint, so the displaced sets of item 3 are disjoint sets of
+   values: for every horizon N, at least (1/3)·max m_j ≥ N/12 −
+   O(log N) DISTINCT values below 4N are displaced (each the low
+   member of an inverted adjacent-seam pair, P3).
+
+Reading: T-TEL″'s unconditional ledger floor on general Case-2
+pairs was one displaced value per two octaves — Θ(log N)
+cumulative.  On the corner's canonical family the floor is a
+POSITIVE FRACTION of all values: Θ(N) cumulative, Θ(m²) pair
+demand per anchor, measured exactly (ν(8), ν(12), ν(16) = 9, 31,
+58 ≈ 0.23 m² on the pure minority — 2.9× the hand floor).
+
+### 3.4 The pincer, assembled — and where it stops
+
+- **Arm 1 (preserve the lattice as a team-object): CLOSED.**
+  Eventually-constant ownership dies by L-NOTAIL — including
+  every realized S5 witness's canonical extension.  The exterior
+  machinery required was classical (DEGS77), not the campaign's.
+- **Arm 2 (alternate): DEMAND QUANTIFIED, SUPPLY STILL OPEN.**
+  Alternating lattices must pay Θ(m²) inversions per anchor with
+  presence-scale displaced sets forever (AFFORD-DEMAND) — and at
+  switch-dense regimes BOTH teams carry (§3.2 row 4), while
+  switch-sparse regimes approach the L-NOTAIL wall (long constant
+  runs make the class-material of a run an ever-longer finite AP
+  owned by one team — no finite kill, but the runs' interiors
+  admit no donation escape in the L-CASCADE outflow trichotomy:
+  within a run, u ≡ c displaced has its Top-band pairs
+  (a, b) = (2b−u, b) in-class, hence in-team — outflows 2/3
+  (donate a or b) are unavailable; only comply (cascade
+  inversions 1–5 octaves down) or order-dodge remain).
+  The strictly-decreasing-slack recursion the pincer aimed at
+  does NOT close from these floors alone: per 4-adic window,
+  demand ≥ (window presence)/1 but supply of colored values in
+  the same window is 3× that; no counting contradiction — this
+  is NG1–NG4 territory, as pre-registered in notes/79.
+
+**What remains, exactly (the sharpened terminal gap):**
+
+> **GAP-AFFORD″-ALT.**  No blockwise mod-4 lattice coloring with
+> infinitely-alternating ownership admits a pair of ω-orders
+> paying Θ(m²) adjacent-seam inversions at every anchor subject
+> to: L-COMP (forced descents never compose along an AP),
+> L-DOUBLE-DUTY (consecutive-boundary value-disjointness below
+> presence prices), the d-zigzag law (along every AP line of a
+> team, positions strictly alternate), and the L-CASCADE outflow
+> trichotomy with in-run donation channels VOID (above).  Plus
+> its sibling for non-lattice gap-≥3 corners (unchanged: the
+> SPARSE-CORE mixed catalogue + arm B).
+
+### 3.5 Pre-registration: S5-ALT (the alternating family's finite
+### theory — run next, predictions first)
+
+The alternating family is now the ENTIRE lattice-corner ω-YES-
+space, and NO witness realizes it (all three are constant-
+ownership).  Experiment (e185 partS5ALT = e179 s5dodger + forced
+designation alternation mA_t ≠ mA_{t+1} for t ≥ 6): hor = 4096,
+(i)-censor D = 2 with F = 12 and F = 64 (u₀ = 32/64), (ii) lin4,
+(iii) sparse, split floor as in e179.  Predictions (committed
+before the run): genuinely uncertain; lean SAT ≈ 60 % at F = 12
+(the constraints are local; the solver was simply never asked to
+alternate), less at F = 64 (alternation moves class material
+across teams every block — reflector traffic between teams may
+create censored chains).  If SAT: first alternating inhabitant;
+audit its per-anchor H (both teams should carry at switch
+anchors — its payment obligation is then WORSE than the constant
+witnesses').  If UNSAT at both censors: the corner's finite
+theory REJECTS alternation under orbit censors while ω demands
+it (L-NOTAIL) — the pincer closes at the (i)-proxy level, with
+only the proxy-vs-true-(i) caveat (T-SHARP) between the corner
+and emptiness.
