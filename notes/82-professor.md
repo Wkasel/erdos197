@@ -86,3 +86,182 @@ reachable boundary, and it is the family we need to kill.**  That
 reframing is direction (2).
 
 ---
+
+## 2. Direction (2) — SELF-SIMILARITY DESCENT.  Verdict: WORKS.
+## Theorem ALT-DEAD, complete hand proof
+
+The key structural observation, missed because the corner was
+always approached from the order/affordability side: **in a
+blockwise mod-4 lattice coloring, EVERY mod-4 residue class is
+monochromatic within every lattice block** — the minority is one
+full class, so the other three classes lie wholly in the
+majority, and the minority class lies wholly in the minority
+team.  A lattice coloring is everywhere-split as a partition of
+ℤ⁺ (Case 2), but its 4-adic shadow is block-granular — Case 1.
+The N4 dichotomy is not stable under affine restriction, and
+permutability IS.  That asymmetry is the whole kill.
+
+### 2.1 Lemma Q (quarter-tail lemma)
+
+Notation: B(t) = (2^t, 2^{t+1}]; for c ∈ {0,1,2,3} and t ≥ 2 let
+
+    Λ_c(t) := {v ∈ B(t) : v ≡ c (mod 4)}
+
+(the class-c section of block t — a d=4 run of length 2^{t−2}).
+
+**Lemma Q.**  No 3-permutable set contains Λ_c(t) for one fixed c
+and infinitely many t.
+
+*Proof.*  Suppose T ⊇ Λ_c(t) for all t in an infinite set 𝕋, and
+let π be an arrangement of T with no monotone 3-AP.
+
+(i) *The affine chart.*  Define φ on the class c + 4ℤ by
+φ(x) = x/4 if c = 0, φ(x) = (x − c + 4)/4 if c ∈ {1,2,3} — an
+increasing affine bijection onto a tail of ℤ⁺.  Exact block
+alignment: for c ∈ {1,2,3}, Λ_c(t) = {2^t + c, …, 2^{t+1} − 4 + c}
+and φ maps it onto {2^{t−2}+1, …, 2^{t−1}} = B(t−2); for c = 0,
+Λ_0(t) = {2^t + 4, …, 2^{t+1}} and φ = x/4 maps it onto B(t−2)
+likewise.  **φ(Λ_c(t)) = B(t−2), exactly — no boundary dust.**
+
+(ii) *Transport of AP-freeness.*  Restrict π to T ∩ (c + 4ℤ) and
+reindex: an arrangement (order type ω) of that subset, and any
+monotone 3-AP in it is a monotone 3-AP of π (positions restrict;
+a 3-AP of class-c values is a 3-AP in ℤ⁺).  Push forward by φ:
+S′ := φ(T ∩ (c + 4ℤ)) inherits an arrangement.  A 3-AP of S′
+pulls back under φ^{-1} to a triple x, y, z ∈ c + 4ℤ with
+x + z = 2y (affinity, both directions; note the pulled-back
+midpoint is automatically in class c because φ^{-1} is affine).
+So a monotone 3-AP of the image arrangement would be a monotone
+3-AP of π.  **S′ is 3-permutable.**
+
+(iii) *The contradiction.*  S′ ⊇ B(t−2) for every t ∈ 𝕋: S′ has
+infinitely many 0-clean dyadic blocks.  Theorem B1 (notes/52
+§3.1) applies with C₀ = 0.  Its proof at C₀ = 0 consumes: Lemma
+DIAG-DENSE [PROVED] to extract a diagonal pair {3p, 3p+1},
+p ≡ 1 (mod 4), from one clean block of S′; Lemma PIN [PROVED] to
+force the pair before cofinitely many later clean blocks; and the
+rung hypothesis (H1) only at C = 0 — which is exactly Theorem
+C3(p) [PROVED, notes/78 Part I; spot-audited notes/80 §1.1]: for
+p ≡ 1 (mod 4) the flip class is M ≡ 2p+6 ≡ 0 (mod 8), and every
+dyadic scale 2^m, m ≥ 3, is in it.  (The three C3(p) units are
+among R(3p, 3p+1; 2^m, ∅)'s fired units — attackers 3p, 3p, 3p+1
+— so C3(p)'s inconsistency kills R a fortiori.)  So S′ is not
+3-permutable.  Contradiction.  ∎
+
+Remarks.  (a) The species is exactly L-NOTAIL: restriction
+closure + affine invariance; where L-NOTAIL feeds the restricted
+permutation to DEGS77, Lemma Q feeds it to the campaign's own B1.
+L-NOTAIL needs one team to own an infinite AP — the CONSTANT-
+ownership tail; Lemma Q needs only the block-aligned finite
+truncations, each owned by SOMEBODY, and pigeonholes ownership.
+That is precisely the upgrade the alternating corner was built to
+dodge, and it cannot dodge this one: alternation redistributes
+the sections but cannot make them stop existing.  (b) The map
+v ↦ 4v is already a proof device in the paper (thm:blockgranular
+lifts UNSAT cores along it; thm:restriction restricts along it);
+Lemma Q is the same move pointed at a coloring instead of a
+window class.
+
+### 2.2 Theorem ALT-DEAD
+
+Call scale t *4-pure* for a partition (A, B) if some mod-4 class
+is monochromatic on B(t) (contained in one team).
+
+**Theorem ALT-DEAD.**  If infinitely many scales are 4-pure, then
+A and B are not both 3-permutable.  Consequently:
+
+1. **Every blockwise mod-4 lattice coloring is dead** — minority
+   of each block = one full class ⟹ every class is pure at every
+   lattice scale.  The ownership sequence never enters: constant,
+   alternating at any run-length law, unbounded runs,
+   T-SHARP-procrastinating — all dead.  GAP-AFFORD″-ALT's
+   alternating-lattice component is CLOSED.
+2. **Every punctured near-lattice with on-class dust is dead** —
+   if the minority of block t is CONTAINED in class c_t
+   (punctures = class values ceded to the majority, the
+   L-NOTAIL-dodging shape), the three classes ≠ c_t are still
+   pure at t; some fixed c* differs from c_t infinitely often
+   (for each t three classes qualify, so one class qualifies on a
+   set of density ≥ 3/4 of scales), so infinitely many scales are
+   4-pure.  Dead — at ANY puncture count, bounded or not, with or
+   without constant ownership.  GAP-AFFORD″-ALT's punctured
+   component is CLOSED, and no puncture-budget catalogue is
+   needed.
+3. **Off-class dust reduces to an existing gate, not a new one**:
+   if the minority strays off its class but some class c* is pure
+   up to ≤ C₀ dust at infinitely many scales, step (i)–(ii)
+   transport verbatim and the image blocks are C₀-clean; B1 at
+   C₀ needs (H1) at C = C₀ = GAP-N3-GROW — gating gap (4) of
+   notes/50, already on the critical path.  Nothing new.
+
+*Proof of the theorem.*  Each 4-pure scale t yields a pair
+(c, S) ∈ {0,1,2,3} × {A, B} with S ⊇ Λ_c(t).  Eight cells,
+infinitely many scales: some (c, S) recurs infinitely.  Lemma Q
+kills S.  ∎
+
+*Dependency audit.*  Lemma Q + ALT-DEAD consume: Lemma PIN
+[PROVED, notes/52 §1.3 = thm:ogred's pigeonhole], DIAG-DENSE
+[PROVED, notes/52 §2.1], Theorem C3(p) [PROVED, notes/78;
+spot-audit clean, residual = referee prose pass], restriction +
+affine transport (steps i–ii above, same rigor class as
+L-NOTAIL).  **No open tag is touched for conclusions 1 and 2.**
+ALT-DEAD inherits exactly one rider: the C3(p) prose pass at
+paper time.
+
+### 2.3 The general corollary (paper-grade) and the odd-modulus
+### sibling
+
+The same chart at modulus 2^k (φ(x) = (x − c + 2^k)/2^k, resp.
+x/2^k) maps class-c sections of B(t) EXACTLY onto B(t−k).  Hence:
+
+**Corollary HSPLIT (hereditary splitness).**  For every valid
+pair (A, B), every k ≥ 1 and every c mod 2^k, the section
+(c + 2^k ℤ) ∩ B(t) is bichromatic for all but finitely many t.
+*A valid partition must be everywhere-split in every 2-adic
+chart, not just the identity chart.*  [Modulo nothing beyond the
+C3(p) prose rider.]  In particular any coloring eventually
+2^k-periodic on blocks is dead; k = 1 says no team may own all
+odds (or all evens) of infinitely many dyadic blocks.
+
+Odd modulus q (e.g. the spacing-3 minority, a legal gap-≥3
+shape): the chart maps class sections onto ratio-2 windows at
+NON-dyadic anchors M_t = (2^t − c)/q + O(1) with O(1) seam dust.
+For q = 3 the anchors alternate between ≡ 5 (mod 8) (the
+(4^k−1)/3 ≡ 5 identity of CROWN-2ADIC) and ≡ 2 (mod 8) — exactly
+the C-lane and B2-lane residues with verified off-diagonal
+schemas.  So odd-q lattice-like minorities die modulo
+BRIDGE1-AF + GAP-N2-UNIF (+ N3-GROW at C = 2 for the seam dust)
+— known species, catalogued, not gating the assembly; tag as
+Corollary Q-ODD [stated, not claimed].
+
+### 2.4 Consistency checks (done by hand against the corpus)
+
+- *Geneson's W (density 2/3, permutable).*  Lemma Q predicts W
+  misses a value of every class-section at cofinitely many
+  scales.  Verified consistent at modulus 2: W's complement
+  contains 2^s + 3 (the H1 orbit, notes/34), which is odd and
+  ≡ 3 mod 4, so W never owns the full odd section, nor Λ_3.
+  Recommended machine check (e186): scan W's generator for full
+  Λ_c(t) at all c — Lemma Q says the count is finite.  A failure
+  would indict B1/C3(p), not the transport — this is a genuine
+  adversarial audit of the proved layer, for free.
+- *geo/A, geomirror/B (the clean teams).*  Their blocks miss
+  growing slivers (s_t → ∞), which meet every class; no full
+  class-section recurs.  Lemma Q is SILENT — correctly: these
+  teams were never proven non-permutable by Case-1 tools.  The
+  block-alignment requirement in Lemma Q is real, not pedantry.
+- *ROT4.*  Quarters are intervals, every interval of length ≥ 4
+  meets all classes; silent.  Consistent — ROT4 is killed by the
+  coupled core, not Case 1.
+- *X-INTERLEAVE.*  Sparse; silent.  Consistent.
+- *S5/S5-ALT witnesses.*  Finite colorings; Lemma Q is an ω
+  statement — no tension with their finite SAT cells.  Their
+  ω-extensions: constant-ownership ones were already dead
+  (L-NOTAIL); ALL are now dead (Cor. 1), including every
+  alternating extension the S5-ALT siege was bracketing, and the
+  weak-censor TIMEOUT cells (run ≥ 2 at F = 12) are MOOT at ω.
+- *Canonical S_A / block-granular shapes.*  4-pure at every
+  scale; ALT-DEAD re-derives their death — consistent with
+  thm:main and thm:blockgranular.
+
+---
