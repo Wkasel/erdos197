@@ -1,0 +1,35 @@
+{"n": 5, "k": 2, "sat": true, "expect_sat": true, "ok": true, "part": "71a", "t": 0.0}
+{"n": 6, "k": 2, "sat": true, "expect_sat": true, "ok": true, "part": "71a", "t": 0.0}
+{"n": 7, "k": 2, "sat": false, "expect_sat": false, "ok": true, "part": "71a", "t": 0.0}
+{"n": 8, "k": 2, "sat": false, "expect_sat": false, "ok": true, "part": "71a", "t": 0.0}
+{"n": 9, "k": 2, "sat": false, "expect_sat": false, "ok": true, "part": "71a", "t": 0.0}
+{"n": 6, "k": 3, "sat": true, "expect_sat": true, "ok": true, "part": "71a", "t": 0.0}
+{"n": 7, "k": 3, "sat": true, "expect_sat": true, "ok": true, "part": "71a", "t": 0.0}
+{"n": 8, "k": 3, "sat": false, "expect_sat": false, "ok": true, "part": "71a", "t": 0.0}
+{"n": 9, "k": 3, "sat": false, "expect_sat": false, "ok": true, "part": "71a", "t": 0.0}
+{"n": 10, "k": 3, "sat": false, "expect_sat": false, "ok": true, "part": "71a", "t": 0.0}
+{"n": 7, "k": 4, "sat": true, "expect_sat": true, "ok": true, "part": "71a", "t": 0.0}
+{"n": 8, "k": 4, "sat": true, "expect_sat": true, "ok": true, "part": "71a", "t": 0.0}
+{"n": 9, "k": 4, "sat": false, "expect_sat": false, "ok": true, "part": "71a", "t": 0.0}
+{"n": 10, "k": 4, "sat": false, "expect_sat": false, "ok": true, "part": "71a", "t": 0.0}
+{"n": 11, "k": 4, "sat": false, "expect_sat": false, "ok": true, "part": "71a", "t": 0.1}
+{"verdict": "PASS", "part": "71a", "t": 0.1}
+{"M": 48, "lemma_unsat": true, "control_sat": true, "ok": true, "part": "72", "t": 0.1}
+{"M": 16, "brute_clean_pairs": 0, "ok": true, "part": "72", "t": 0.9}
+{"M": 200, "empty": [[-1, -1, 1], [-1, -1, 2], [-1, 0, 2], [0, 0, 2]], "laws": {"H_up": [50000, 50000], "H_dn": [12500, 12500], "SKIP": [32500, 32500]}, "ok": true, "part": "75cat", "t": 1.1}
+{"horizon": 131072, "max_excess_A": -6, "max_excess_B": -6, "ok": false, "part": "74", "t": 0.1}
+{"chains_f_max": 64, "seed_octave": 12, "max_depth": 1, "ok": true, "part": "74", "t": 0.2}
+{"horizon": 131072, "max_excess_A": 0, "max_excess_B": 0, "ok": true, "part": "74", "t": 0.1}
+{"chains_f_max": 64, "seed_octave": 12, "max_depth": 1, "ok": true, "part": "74", "t": 0.2}
+{"x": 23, "lane": "K4e", "M_in": 160, "in_class_unsat": true, "M_ctl": 164, "control_sat": true, "ok": true, "part": "73", "t": 2.1}
+{"n": 9, "k": 3, "claimed_K": 3, "unsat_below": true, "sat_at": true, "ok": true, "part": "71b", "t": 0.0}
+{"n": 12, "k": 4, "claimed_K": 4, "unsat_below": true, "sat_at": true, "ok": true, "part": "71b", "t": 0.0}
+{"fresh_probe": 54, "sat": true, "part": "71b", "t": 0.0}
+{"fresh_probe": 47, "sat": false, "part": "71b", "t": 0.1}
+{"fresh_probe": 50, "sat": false, "part": "71b", "t": 0.1}
+{"fresh_probe": 52, "sat": true, "part": "71b", "t": 0.1}
+{"fresh_probe": 51, "sat": true, "part": "71b", "t": 0.1}
+{"fresh": "K(27,9)", "value": 51, "monotone_between": true, "part": "71b", "t": 0.1}
+{"verdict": "PASS", "part": "71b", "t": 0.1}
+{"M": 20, "status": "OPTIMAL", "cmin": 20, "expect": 20, "ok": true, "part": "71c", "t": 25.7}
+{"m": 28, "n": 196, "n_ap": 9506, "n_clauses": 2548000, "sat": false, "solve_s": 3.2, "ok": true, "part": "75core", "t": 4.2}
