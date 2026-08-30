@@ -1,0 +1,19 @@
+{"part": "s4core", "m": 32, "k": 1, "mode": "sparse", "desig": "AAA", "verdict": "UNSAT", "secs": 5.2, "ts": 1788115436.9}
+{"part": "s4core", "m": 32, "k": 1, "mode": "sparse", "desig": "AAB", "verdict": "UNSAT", "secs": 8.0, "ts": 1788115449.5}
+{"part": "s4core", "m": 32, "k": 1, "mode": "sparse", "desig": "ABA", "verdict": "UNSAT", "secs": 44.5, "ts": 1788115498.7}
+{"part": "s4core", "m": 32, "k": 1, "mode": "sparse", "desig": "AAA", "verdict": "UNSAT", "secs": 4.9, "ts": 1788115510.5}
+{"part": "s4core", "m": 32, "k": 1, "mode": "sparse", "desig": "ABB", "verdict": "UNSAT", "secs": 11.5, "ts": 1788115514.8}
+{"part": "s4core", "m": 32, "k": 1, "mode": "sparse", "desig": "CELL", "verdict": "UNSAT", "detail": ["UNSAT", "UNSAT", "UNSAT", "UNSAT"], "ts": 1788115514.8}
+{"part": "s4core", "m": 32, "k": 1, "mode": "none", "desig": "---", "verdict": "SAT", "secs": 14.1, "sizesA": [1, 63, 60], "ts": 1788115519.5}
+{"part": "s4core", "m": 32, "k": 1, "mode": "none", "desig": "CELL", "verdict": "SAT", "detail": ["SAT"], "ts": 1788115519.5}
+{"part": "s4core", "m": 32, "k": 1, "mode": "cap", "desig": "AAA", "verdict": "UNSAT", "secs": 15.0, "ts": 1788115520.4}
+{"part": "s4core", "m": 32, "k": 1, "mode": "sparse", "desig": "AAB", "verdict": "UNSAT", "secs": 7.5, "ts": 1788115522.8}
+{"part": "s4core", "m": 32, "k": 1, "mode": "cap", "desig": "AAB", "verdict": "UNSAT", "secs": 14.7, "ts": 1788115539.7}
+{"part": "s4core", "m": 32, "k": 1, "mode": "cap", "desig": "ABA", "verdict": "SAT", "secs": 13.5, "sizesA": [1, 62, 59], "ts": 1788115557.9}
+{"part": "s4core", "m": 32, "k": 1, "mode": "sparse", "desig": "ABA", "verdict": "UNSAT", "secs": 43.6, "ts": 1788115571.0}
+{"part": "s4core", "m": 32, "k": 1, "mode": "cap", "desig": "ABB", "verdict": "SAT", "secs": 9.9, "sizesA": [1, 63, 65], "ts": 1788115572.4}
+{"part": "s4core", "m": 32, "k": 1, "mode": "cap", "desig": "CELL", "verdict": "SAT", "detail": ["UNSAT", "UNSAT", "SAT", "SAT"], "ts": 1788115572.4}
+{"part": "s4core", "m": 32, "k": 1, "mode": "sparse", "desig": "ABB", "verdict": "UNSAT", "secs": 12.5, "ts": 1788115588.2}
+{"part": "s4core", "m": 32, "k": 1, "mode": "sparse", "desig": "CELL", "verdict": "UNSAT", "detail": ["UNSAT", "UNSAT", "UNSAT", "UNSAT"], "ts": 1788115588.2}
+{"part": "s4core", "m": 48, "k": 2, "mode": "none", "desig": "---", "verdict": "UNSAT", "secs": 267.1, "ts": 1788116043.5}
+{"part": "s4core", "m": 48, "k": 2, "mode": "none", "desig": "CELL", "verdict": "UNSAT", "detail": ["UNSAT"], "ts": 1788116043.5}
