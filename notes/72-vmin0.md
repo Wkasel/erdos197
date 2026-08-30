@@ -51,10 +51,10 @@ bal mode (exact balance):
 | M | UNSAT at v (time) | SAT at v (time) | v_min(0)(M) |
 |---|-------------------|-----------------|-------------|
 | 8 | 6 (2.1s), 8 (7.3s), 9 (11.5s), 10 (24.5s), 11 (40.6s) | 12 (8.6s), 16, 64, 256 | **= 12 EXACT** |
-| 16 | 6 (2.1s ×2 encoders) | 384 (17.2s); TIMEOUT@3600s at 96, 192 | ∈ (6, 384] |
+| 16 | 6 (2.1s ×2 encoders); **12 (12.3s), 24 (36.6s), 48 (706.2s)** [sprint-B, correct encoder, landed in-session] | 384 (17.2s); TIMEOUT@3600s at 96, 192 | ∈ **(48, 384]** |
 | 24 | 65 (46.0s) | — | > 65 |
 | 32 | 100 (62.6s), 256 (137.2s), **512 (98.6s)** | — | **> 512** |
-| 48 | — (512 TIMEOUT @43200s, main pod) | — | open (5th scale) |
+| 48 | **64 (67.7s), 128 (164.4s), 256 (246.6s)** [sprint-D, landed in-session]; 512 TIMEOUT @43200s (main pod) | — | = ∞ predicted (J-DOWN, m = 24 core); the three UNSATs are its blind confirmations at the 5th scale |
 
 const mode (bounds (2, 3, 6, 12) — NO balance):
 
@@ -293,7 +293,9 @@ points at 24 ((6,0), (65,0) UNSAT) are finite-regime demand.
 2. **f(M) measured by a second instrument** (e174 fhalf, CP-SAT
    min-max over teams, exact): f(8) = 4, f(12) = 6, f(16) = 8 —
    agreeing with notes/71's pod ladder value M/2 at all three
-   scales; M = 24, 32, 40 queued (running at close).
+   scales — and EXTENDED: **f(24) = 12 = M/2, optimal certificate
+   [84.8s]** — the fourth exact scale, first beyond notes/71's
+   ladder; M = 32, 40 running at close.
 3. **Proved extremal steps toward GAP-FHALF** (§3–4): L-MID (the
    midband (2M, 3M] is never sumset-clean: every balanced (U, W)
    mints (2U−W)-mass there — hand proof M ≥ 32, machine 16..40),
@@ -398,7 +400,8 @@ hypothesis.
 | fleet incident | wrong cell (e127 per-team) on all 3 sprint pods; killed + quarantined; nothing entered the series | §2 |
 | sprint-B (relaunched, correct encoder) | pump grid 16: 12/24/48/96; 24: 128/256; 32: 768/1024 (last four = J-DOWN blind tests) | data/vmin0_series.log on pod |
 | sprint-C (relaunched) | cert battery (11,0)@8=UNSAT-expected, (12,0)@8=SAT-expected, (6,0)@16, (65,0)@24 + F(16;6) 3rd run + F(24;65)@86400 | data/vmus_cert.log on pod |
-| sprint-D | re-task to (none,0)@40/48/64/96 + margin (368,6)@32 prepared; deploy pending (pod connection flaky at close — old moot driver may still be running) | scratchpad run_fresh_D2.py |
+| sprint-D wave 1 (correct encoder) | (64,0)@48 UNSAT [67.7s], (128,0)@48 UNSAT [164.4s], (256,0)@48 UNSAT [246.6s] — fifth-scale deep-UNSAT cheap, J-DOWN-consistent | data/fresh_series.log on pod |
+| sprint-D wave 2 (re-task, RUNNING at close) | (none,0)@40 [m=20: FRESH core scale] / @48 / @64 / @96 + margin (368,6)@32 [86400s] | /root/e/run_fresh2.py → data/fresh_fix2.log |
 
 Open rows to harvest next session: sprint logs (above), e174 fhalf
 24/32/40, F(24;65).  Decisive next mathematics: GAP-AFFORD′ (the
