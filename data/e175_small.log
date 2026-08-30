@@ -1,0 +1,11 @@
+== PUMP-SMALL (the finite regime) ==
+  [PASS] S1a (11,0)@8-bal UNSAT [39.6s] expect=UNSAT
+{"part": "cell", "tag": "S1a (11,0)@8-bal", "M": 8, "bounds": null, "vup": 11, "vdn": 0, "support": null, "verdict": "UNSAT", "time": 39.6, "ts": "2026-08-30T10:00:10"}
+  [PASS] S1b (12,0)@8-bal SAT [7.7s] expect=SAT
+{"part": "cell", "tag": "S1b (12,0)@8-bal", "M": 8, "bounds": null, "vup": 12, "vdn": 0, "support": null, "verdict": "SAT", "time": 7.7, "anatomy": {"A": {"sizes": [2, 4, 8, 16], "n_s0": 0, "n_s1": 0, "n_s2": 11, "n_up": 11, "n_dn": 0, "n_H_up": 2, "n_H_dn": 0}, "B": {"sizes": [2, 4, 8, 16], "n_s0": 0, "n_s1": 0, "n_s2": 12, "n_up": 12, "n_dn": 0, "n_H_up": 1, "n_H_dn": 0}}, "ts": "2026-08-30T10:00:18"}
+  [PASS] S2 (6,0)@16-bal UNSAT [3.2s] expect=UNSAT
+{"part": "cell", "tag": "S2 (6,0)@16-bal", "M": 16, "bounds": null, "vup": 6, "vdn": 0, "support": null, "verdict": "UNSAT", "time": 3.2, "ts": "2026-08-30T10:00:22"}
+  [PASS] S3 (65,0)@24-bal UNSAT [56.9s] expect=UNSAT
+{"part": "cell", "tag": "S3 (65,0)@24-bal", "M": 24, "bounds": null, "vup": 65, "vdn": 0, "support": null, "verdict": "UNSAT", "time": 56.9, "ts": "2026-08-30T10:01:23"}
+== DONE: 0 failures ==
+{"part": "summary", "which": "small", "failures": [], "ts": "2026-08-30T10:01:23"}

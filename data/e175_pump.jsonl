@@ -32,3 +32,8 @@
 {"part": "cell", "tag": "C4 proj@64-const333 (support=(32,256], none,0)", "M": 64, "bounds": [3, 3, 3, 0], "vup": null, "vdn": 0, "support": [33, 256, 224], "verdict": "UNSAT", "time": 52.9, "ts": "2026-08-30T09:58:32"}
 {"part": "cell", "tag": "C5 CORE'(48)@96 (bounds 2,2,2,0; none,0)", "M": 96, "bounds": [2, 2, 2, 0], "vup": null, "vdn": 0, "support": [49, 303, 223], "verdict": "UNSAT", "time": 39.2, "ts": "2026-08-30T09:59:15"}
 {"part": "summary", "which": "collapse", "failures": [], "ts": "2026-08-30T09:59:15"}
+{"part": "cell", "tag": "S1a (11,0)@8-bal", "M": 8, "bounds": null, "vup": 11, "vdn": 0, "support": null, "verdict": "UNSAT", "time": 39.6, "ts": "2026-08-30T10:00:10"}
+{"part": "cell", "tag": "S1b (12,0)@8-bal", "M": 8, "bounds": null, "vup": 12, "vdn": 0, "support": null, "verdict": "SAT", "time": 7.7, "anatomy": {"A": {"sizes": [2, 4, 8, 16], "n_s0": 0, "n_s1": 0, "n_s2": 11, "n_up": 11, "n_dn": 0, "n_H_up": 2, "n_H_dn": 0}, "B": {"sizes": [2, 4, 8, 16], "n_s0": 0, "n_s1": 0, "n_s2": 12, "n_up": 12, "n_dn": 0, "n_H_up": 1, "n_H_dn": 0}}, "ts": "2026-08-30T10:00:18"}
+{"part": "cell", "tag": "S2 (6,0)@16-bal", "M": 16, "bounds": null, "vup": 6, "vdn": 0, "support": null, "verdict": "UNSAT", "time": 3.2, "ts": "2026-08-30T10:00:22"}
+{"part": "cell", "tag": "S3 (65,0)@24-bal", "M": 24, "bounds": null, "vup": 65, "vdn": 0, "support": null, "verdict": "UNSAT", "time": 56.9, "ts": "2026-08-30T10:01:23"}
+{"part": "summary", "which": "small", "failures": [], "ts": "2026-08-30T10:01:23"}
