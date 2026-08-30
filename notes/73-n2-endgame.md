@@ -347,4 +347,78 @@ such write-ups.  Nothing measured here obstructs it: template data
 are x-invariant per cell, closure work is x-flat, and every lattice
 sample closes.
 
-## 6. [placeholder — Theorem N2-COMPLETE]
+## 6. Theorem N2-COMPLETE
+
+**Theorem N2-COMPLETE.**  Let x ≥ 11 be odd and {x, x+1} the
+attacker pair.  For every M ≥ T(x) = x + 57, the single-block rung
+of {x, x+1} at scale M fires: AP-freeness on (M, 2M] is
+inconsistent with the pair's block-ordered attack units.
+Specifically, the lane selected by (M − x) mod 8 in the §1 table
+has its 3–4-unit core L(x) ⊆ rung units UNSAT, witnessed by the
+two-ladder phase-clash schema (Metatheorem T, §4.2) with the cell
+data of §2 — a per-residue schema at every one of the eight residue
+classes.
+
+**Epistemic status, layer by layer** (the honest tags):
+
+  1. [MACHINE-CHECKED, complete on its range] x = 11..33 (twelve
+     pairs), every residue, every in-class scale from the measured
+     threshold to 152: direct Cadical UNSAT of the lane core, one
+     solver build per scale, all units selectable (e174; 108/108
+     instances lawful, controls SAT).  For these x the theorem
+     needs no schema below M = 152.
+  2. [SCHEMA-VERIFIED at the stated lattice] every (lane, ξ) cell:
+     branch closures at x = x₀, x₀+8, x₀+16, x₀+24 × 6 in-class
+     scales (e175) + ALL branches at x = x₀+32, x₀+40, x₀+48 × 2
+     scales (e176b) + branch-0 closures to x ≈ 73 (e176) + local
+     independent replay of the flagship dyadic cell at x = 47 with
+     complete-encoding solver cross-check (this file §2).  Fresh-x
+     solver cross-checks at x = 35..41 inside e175 (complete
+     encodings, M ≤ 112).
+  3. [PROVED, uniform] Lemmas MP / D / PC / MIR (§4.1), Metatheorem
+     T (§4.2), the lane algebra (attacker sanity + the 8-residue
+     tiling, §1) — all x-free or affine.
+  4. [GAP-N2-UNIF] the per-cell, per-branch closure compositions as
+     uniform (x, M)-schemas — the finite write-ups of §4.3's
+     MIR/Z/transitivity weaves.  36 cells × ≤ 8 branches, each the
+     same species as the DISCHARGED instances: C3 (notes/33), K4 /
+     B2(11) / C(11) (notes/49), C3(p) diagonal (e123).
+
+**Corollary (the notes/49 §8 goal state).**  "All 8 residues × all
+pairs" holds as a parametric statement: every adjacent pair
+{x, x+1}, x odd ≥ 11, has a per-residue killing schema at every
+residue class mod 8, with all constants affine in x.  The
+x ≡ 7 mod 8 pairs (23, 31, 39, 47, …), which this morning had NO
+catalogued dyadic cell, are covered by the K4e lane at exactly the
+dyadic class (law x + 1 ≡ 0), verified at x = 23, 31, 39, 47, 55,
+63 (e175 + e176b + local replay).
+
+**Even-x pairs (scope note, e177).**  The program's rung pairs are
+odd-x by convention (attackers {odd, even} adjacent).  For the
+even-x pairs {12,13}..{22,23} the FULL rung is machine-UNSAT at
+every M = 16..120 (e177, data/e177_evenx_rung.json) — no residue
+structure needed at the rung level; their lane anatomy is left
+undone (nothing in the assembly consumes it).
+
+**Relation to the assembly (what Case 1 actually needs).**
+Theorem B1 (notes/52) consumes only GAP-N2-DIAG — the diagonal
+C3(p) family on dyadic scales — plus GAP-N3 dust.  N2-COMPLETE is
+strictly broader on the pair axis AND the residue axis: it feeds
+(a) the anchor-free bridge variant BRIDGE1-AF (notes/52 §5), whose
+blocks need non-dyadic residues, and (b) any future assembly that
+extracts whatever fully-owned adjacent pair is available rather
+than hunting a diagonal one — at C₀-clean blocks the available
+pair supply grows from density-1/12 (diagonal) to density-1/2
+(any adjacent pair), dropping the clean-block size threshold from
+12C₀ + 25 to 2C₀ + 13ish (adjacent pairs at spacing 2).  The
+uniformization gap for Case 1 is now ONE species with 36 + 1
+instances pending write-up, several discharged, and zero machine
+anomalies across ~2.3k lattice checks.
+
+## 7. Ordinal collision note
+
+A parallel session (notes/74, FRONT N3+L1') independently uses the
+ordinal e174 for its machine layer; this front's files are
+e174_param_lanes.py / e175_param_template.py / e176_* / e177_* —
+names are distinct, only ordinals collide (same situation as the
+e152 collision recorded in STATUS).
