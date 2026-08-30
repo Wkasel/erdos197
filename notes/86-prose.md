@@ -185,3 +185,108 @@ ALT-DEAD, and Cor. HSPLIT carry no rider at all**: their input chain
 [PROVED] end to end.  Tag move for notes/50 §6 row (H1′) part 1:
 "residual = referee prose pass at paper time" → **NONE (prose pass
 done, notes/86 §1)**.
+
+---
+
+## 2. Tag-graph reconciliation (notes 50–82) and THE DEFINITIVE
+## GAP LIST
+
+Method: every bracketed [GAP…] tag and every named GAP-* mention in
+notes 50–82 was grepped, read in context, and traced to its latest
+disposition (authorities: notes/50 final graph, notes/77 §7 pool
+inventory, notes/80-pincer §3.4, notes/82 §5, plus §1 above).  The
+drift is real: 14 stale tags dangle in notes that later notes closed,
+superseded, or renamed.  §2.1 is the reconciliation; §2.2 is the
+single authoritative list.
+
+### 2.1 Reconciliation table (dangling tag → disposition)
+
+| dangling tag (where it dangles) | disposition (closer) |
+|---|---|
+| GAP-N2-DIAG (notes/52 §; 50 §6 row) | **DISCHARGED**: Theorem C3(p) [PROVED — notes/78 Part I; spot-audited notes/80 §1.1; prose pass DONE notes/86 §1].  Residual: NONE |
+| GAP-N3 uniform-C (notes/52) | REFUTED as posed (transversal escapes); reshaped → GAP-N3-GROW (notes/74); only (N3-b) open |
+| GAP-RHO (notes/54 IIa) | SUPERSEDED (route retired): the notes/54 regime-(II) ledger route was replaced by the N4 frame + coupled-core + T-TEL″ chain (notes/43/46/70/72), which needs no density-regime split; no successor tag; nothing cites it after notes/54 |
+| GAP-ALT (notes/54 IIb — OLD tag, ≠ GAP-AFFORD″-ALT) | SUPERSEDED with the same route; the ω-alternation question was reborn as GAP-AFFORD″-ALT (notes/80-pincer) and KILLED by Theorem ALT-DEAD (notes/82).  Name collision noted for the record |
+| GAP-AFFORD (notes/54 §4) | superseded by the sharper **GAP-AFFORD′** (notes/62 §5) — still THE terminal gap |
+| GAP-COMP (notes/54) | REFUTED (notes/62 §4b: descent digraphs carry zero AP 2-paths; counting form dead; no-retry) |
+| GAP-JOINT (notes/54) | RESOLVED as measurement (notes/62 §§3–4: downward coupling real, priced, demand-side only — NG4); surviving content absorbed into GAP-AFFORD′ + L-CASCADE |
+| GAP-V*-growth (notes/54, 68, 70) | DEMOTED (notes/75: demand existence rides J-DOWN collapse, not the curve); GAP-V* survives for RATE sharpening only |
+| COV(M) [GAP] = GAP-STRUCT (notes/56) | ABSORBED: the DP/CEGAR catalogue became the N6a machine layer (COV-W ×6 scales, COV-W′ robust); the uniform residue is the pool's GAP-ASM′ = (OV-∀) + GAP-RES (notes/59 ASM′; notes/77 §7) |
+| GAP-PARM residual (notes/55 §7, 58) | reduces to GAP-RES + ThW1′-ROBUST (notes/77 §4.7); GAP-PARM-CORNER itself CLEARED (Theorem P-ARM‴) |
+| FW-boundary cross-scale [GAP — cheap compute] (notes/59 §1) | CLOSED by notes/77 §1.2: the q = M−12 deep-block edge is 48-SPECIFIC (machine, 4 scales) — recharacterized into GAP-RES's scaled zone |
+| GAP-J-schema (notes/62, 70) | ABSORBED: large-M = GAP-N6a verbatim via J-DOWN (notes/75); boot window = Theorem J-BOOT [PROVED mod GAP-CMIN]; residue = GAP-J-margin + GAP-F-schema |
+| GAP-VMIN0-growth (notes/70, 71) | DISCHARGED (notes/72: collapse J-DOWN + floor J-BOOT; confirmed notes/75) |
+| SPAN-4 / ODD-KILL clustered [GAP] (notes/66) | CONSOLIDATED into GAP-RES as its DICH-ALPHA arm via Cor. PURE-2 (notes/77 §7); current front material |
+| GAP-DICH-F0 (notes/57) | CLEARED (Lemma PURE [PROVED] + SAT-level bijection ×3 scales; notes/77 §3.1) |
+| GAP-FG-schema fixed-pair half (notes/59) | CLEARED (Theorem AFF⁺ + Lemma MON; notes/77 §1.3); glue half → GAP-RES |
+| GAP-FHALF / GAP-FTOT (notes/71, 72) | REDUCED to GAP-CMIN (verbatim reduction, notes/71); not independent tags anymore |
+| GAP-BRIDGE1, GAP-G2/DNP, GAP-L1′, GAP-N2's 3 remainders | as notes/50 §3: discharged / refuted-reframed / REFUTED (ROT4) / discharged |
+| MINT-LOC (notes/80 §3) | RETIRED resolved-strong-form (notes/80-pincer §2: literal mechanism wrong, stronger theorem AFFORD-DEMAND [PROVED]) |
+| GAP-AFFORD″-ALT (notes/80-pincer §3.4) | RETIRED (notes/82: Lemma Q + ALT-DEAD kill the whole arithmetic corner); residue renamed **GAP-AFFORD‴-SPLIT** |
+| L-NOTAIL (notes/80-pincer §3) | not a gap — [PROVED], now a COROLLARY of Lemma Q on the lattice family (notes/82 §5); kept for classical self-audit |
+| C3(p) prose rider (notes/82 §2.2; 50 §6; STATUS) | DISCHARGED this note (§1).  Lemma Q / ALT-DEAD / HSPLIT are rider-free |
+
+Notes whose bracketed [GAP]s are NOT stale (verified current):
+notes/71 (CMIN/FTOT/MARGIN-MASS), notes/72 (ZERO, V*, F-schema,
+J-margin), notes/73 (N2-UNIF), notes/74/78 ((N3-b)), notes/59 §5
+((OV-∀)), notes/58 (LLOP-α/β), notes/77 §7 (the pool residue),
+notes/80-pincer/82 (AFFORD‴-SPLIT).
+
+### 2.2 THE DEFINITIVE GAP LIST (2026-08-30, post notes/82 + §1)
+
+**GATING (the assembly theorem's hypotheses, notes/50 §5 — now
+THREE, was four):**
+
+1. **GAP-AFFORD′** — the terminal supply cap: no valid Case-2 pair
+   can fund the T-TEL″ mint system (≥ 1 displaced value per 2
+   octaves, single-use colored values) forever.  Sharpest surviving
+   form after the chart kill: **GAP-AFFORD‴-SPLIT** — the cap for
+   gap-≥3, 2-adically split (HSPLIT-generic, hence aperiodic)
+   minorities; no known inhabitant; plus arm B's p(k) → ∞ pump.
+   Species: genuinely new ledger mathematics; zero completed
+   strategies; professor-certified no elegant kill (notes/82 §5).
+2. **GAP-N6a sub-pool** — CI(m)/CORE′ fires for all m; owed
+   write-ups per notes/77 §7: **GAP-RES** (consolidated crux:
+   classify SAT-alive fan pairs uniformly in window length; carries
+   FG-scaled-zone, FG-deep taxonomy, DICH-ALPHA/SPAN-4, H-LAT) +
+   ThW1′-ROBUST/-TOL + GAP-DICH-F2/CASC + SPLIT staircase +
+   GAP-LLOP-α/β + GAP-ASM′ = (OV-∀).  Species: uniformization/
+   classification, discharged instances exist for every item.
+3. **GAP-N3-GROW (N3-b)** — every puncture set D, |D| < ⌊(x−1)/4⌋,
+   leaves R(x; M) UNSAT, uniformly in odd x ≥ 11 and D.  Skeleton
+   LANE + SEV + (N3-b′) stated (notes/78 §II.3); machine-exact at
+   x = 11/15/19/23/27.  Species: uniformization + robustness.
+
+**HARDENING (open, NOT gating the assembly):**
+
+4. GAP-CMIN — Σ_z min(c_A, c_B) ≥ M (extremal cell PROVED M ≥ 32;
+   near-pure = O(1) bookkeeping + 2 scoped subcases); carries
+   GAP-FHALF and GAP-FTOT verbatim, hence J-BOOT/F-BOOT
+   unconditional.
+5. GAP-F-schema — F(N; v) freshness family; only sharpens demand
+   density 1/2 → 1 per octave.
+6. GAP-J-margin / GAP-MARGIN-MASS — the U4 margin family's impure
+   arm (low-pure arm PROVED, MARGIN-LP + K-diagonal).
+7. GAP-N2-UNIF ∖ N2-DIAG — the remaining 35 template cells; feeds
+   BRIDGE1-AF only, and (with N3-GROW at C = 2) Cor. Q-ODD [stated].
+8. GAP-SA-HALF — SA(y; m) always SAT (single-attacker rungs never
+   kill); gates only the SHARPNESS side (N3-a) of the growth law.
+9. GAP-V* — v*₃ growth/rate sharpening only (+ the GAP-V*-schema
+   seed of notes/68).
+10. GAP-ZERO — classify the sumset floor's zero variety (all zeros
+    measured low-pure/order-dead; N3-species).
+11. GAP-SPARSE-CORE residue — mixed-designation catalogue only (AAA
+    arm HAND-CLOSED m ≥ 26 + machine 16..48; strengthens the
+    (iii)-corner demand, arms but does not gate).
+
+**Standing no-gos respected by all of the above:** NG1–NG4 (supply
+caps not provable by demand instruments), T-SHARP (no orbit-growth
+shortcut), the notes/47 DNP refutation, L1′ refuted (ROT4), N5
+ρ* → 1 (density never fires rungs), notes/81 §1 (majority-side
+class-punctured rungs provably SAT — the minority chart is the only
+route).
+
+**Count check:** gating gaps 3 (was 4 — GAP-N2-DIAG cleared with
+zero residual); the entire arithmetic YES-corner dead at ω with the
+last rider now discharged; the YES requires a 2-adically generic
+gap-≥3 coloring (never constructed) AND ¬AFFORD on it.
