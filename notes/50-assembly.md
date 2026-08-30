@@ -248,3 +248,34 @@ The 4-block gadget's uniform law landed; ledger-graph changes:
   S3 = 2×S2 wall — MUS stub ⊂ S3(16) machine-exact), band
   pigeonhole.  Independent cross-validation: CORE′(48) reproduced
   UNSAT through the 4-block encoder (C5, 39.2 s).
+
+### Keystone delta (2026-08-30, notes/72 + notes/71 + notes/75)
+
+Three same-day fronts merged; notes/72 §6 now holds THE composed
+ledger statement (Theorem T-TEL″) with the complete link-status
+table.  Tag movements:
+
+* **[GAP-VMIN0-growth] DISCHARGED** — two independent routes:
+  (a) notes/75 Theorem J-DOWN collapse: v_min(0)(M) = ∞ for M ≥ 32
+  modulo GAP-N6a (machine to 160); (b) notes/71 two-case schema:
+  ≥ M/2 for M ≥ 12 modulo [GAP-FHALF].  Finite regime exactly
+  M ∈ {8, 16, 24} (12 exact / (6,384] / (65,1440]).
+* **[GAP-J-schema] absorbed at large M**: the (·,0) family IS
+  GAP-N6a via J-DOWN; residual tags [GAP-J-margin] (the
+  (v, w ≥ v*₃(m)) rectangle — all measured pump content) and
+  [GAP-F-schema] (freshness family; does not project; (16;6)
+  UNSAT ×2 pods).
+* **New [GAP-FHALF]** (from notes/71, instrumented in notes/72):
+  f(M) ≥ M/2, orders-free counting; = M/2 exact at 8/12/16 by two
+  independent instruments; proved pieces L-MID / L-SEESAW / L-HIT /
+  L-RANGE (notes/72 §3-4); needed only for the finite-scale linear
+  law independent of N6a — NOT on the critical path.
+* **[GAP-G2/T-FORCE] demand half now a theorem modulo N6a closure**
+  (T-TEL″): no zero anchors + ≥ 1 disjoint fresh pair per two
+  octaves forever, no budget hypothesis; rate statements re-point
+  at [GAP-V*].  **Critical path for Case 2 is now: N6a sub-gap
+  closure + [GAP-AFFORD′]** (terminal, unchanged).
+* e174 zero-variety: the sumset floor's zeros extend beyond the
+  parity schedules (range-top composites) but all fall in the
+  LOW-PURE order-dead arm — the two-case split is machine-exhaustive
+  at 16..40.
