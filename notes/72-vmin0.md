@@ -101,3 +101,126 @@ e158_c3/f_* + main-pod e158_tel_*.)
 Also harvested from the main pod this session (correct encoder,
 previously unlogged in notes): (512,0)@32 UNSAT [98.6s] and the
 const-bounds (65,0)@24 UNSAT [14797.6s] — both now in §1.
+
+## 3. The demand calculus of the (v, 0) cell [PROVED]
+
+Notation, per team T: W = Bm1∩T, U = B0∩T, Y = B1∩T, X = B2∩T.
+At bal: |W| = M/4, |U| = M/2, |Y| = M, |X| = 2M.  Sumset masses:
+μ_dn = #{(u,y,z) ∈ U×Y... } — CORRECTION, campaign convention
+(notes/62): μ_dn = #AP triples in W×U×Y, μ_up = # in U×Y×X,
+μ_skip = # in W×Y×X (an AP triple (a, b, 2b−a) with the three
+members in the three listed blocks respectively).
+
+**Theorem T-CHAN (three-channel demand) [PROVED — this is L-PREFIX
+(notes/62 §4c) restated in (v,0) coordinates; proof reproduced for
+self-containment].**  In any model of the (v,0) cell, for each team:
+
+(i) **μ_dn(T) = 0 as a coloring fact.**  vdn = 0 forces wholesale
+block order W ≺ U ≺ Y (every cross pair at s0 and s1 non-inverted).
+An AP (w, u, 2u−w) ∈ W×U×Y would be positioned w ≺ u ≺ 2u−w —
+monotone, and BOTH break edges (u before w, or 2u−w before u) are
+banned s0/s1 inversions.  So no such AP exists in the coloring:
+(2U − W) ∩ Y = ∅.
+
+(ii) **Every AP (u, y, 2y−u) ∈ U×Y×X costs one s2 unit.**  u ≺ y is
+forced (s1); monotone-freedom forces 2y−u ≺ y — an inverted s2 pair
+(y, 2y−u).
+
+(iii) **Every AP (w, y, 2y−w) ∈ W×Y×X costs one s2 unit** (same
+argument through s0∪s1 transitivity: w ≺ y forced).
+
+The charged edges are pairwise distinct within and across channels
+(ii)/(iii): the edge (y, z) determines a = 2y − z, which lies in
+exactly one of B0, Bm1.  Hence for each team
+
+    v ≥ x_{s2}(T) ≥ μ_up(T) + μ_skip(T),
+
+and therefore
+    v_min(0)(M) ≥ min { max_T (μ_up + μ_skip)(T) :
+                        legal coloring, μ_dn(A) = μ_dn(B) = 0 }.   (F)
+
+Everything else the cell charges (in-block orientation systems under
+the wholesale prefix order — the Lemma-K/flood theory) is NOT priced
+in v; that is the order-theory arm (§5).
+
+**Lemma L-HIT [PROVED — one line].**  Let Z(T) = (2Y − U) ∪ (2Y − W).
+Every z ∈ X ∩ Z has ≥ 1 representation, so
+μ_up + μ_skip ≥ |X ∩ Z| ≥ |X| + |Z ∩ B2| − |B2| = |Z ∩ B2| − 2M
+(bal).  Coverage of the band beyond 2M values is paid unit-for-unit.
+
+**Lemma L-SEESAW [PROVED].**  Unconditionally at bal,
+|Z ∩ B2| ≥ |Y ∩ (2M + w₁/2, 4M]| ≥ M/2 where w₁ = min W ≤ M
+(the map y ↦ 2y − w₁ is injective into B2 for y > 2M + w₁/2).
+Pushing Y low to dodge this runs into μ_dn = 0 (§4); pushing Y high
+doubles it straight into B2 — the window seesaw: **2·B1 = B2
+identically — the reachable band IS the double of the mid block.**
+
+## 4. The zero set of the sumset floor, and the extremal lemma L-MID
+
+The floor (F) is toothless by itself: the block-parity schedule
+(x, x, 1−x, 1−x) (T = odds of (M/2, 2M] ∪ evens of (2M, 8M], and its
+complement) has μ_dn = μ_up = μ_skip = 0 for both teams (notes/62
+§4c: unique zero among pure parity schedules), and it is killed only
+by pure order theory — Lemma K + Theorem SCHED-DEAD [PROVED,
+notes/62 §4d]: UNSAT at EVERY budget, every M ≥ 12.  The growth
+theorem is therefore forced into a two-arm shape (§5).  What is new
+here is the extremal structure of the zero set and the price of
+leaving it.
+
+**Lemma L-MID (the midband is never sumset-clean) [PROVED, hand,
+M ≥ 32; machine-checked at M = 16, 24, 32, 40 (e174, §6)].**  For
+every U ⊆ (M, 2M] with |U| = M/2 and every W ⊆ (M/2, M] with
+|W| = M/4:  (2U − W) ∩ (2M, 3M] ≠ ∅.
+
+*Proof.*  Say u ∈ U is HOT if some w ∈ (M/2, M] has 2u − w ∈
+(2M, 3M], i.e. the w-window V(u) = [2u−3M, 2u−2M) ∩ (M/2, M] is
+nonempty; the pair (U, W) is clean iff W avoids V(u) for every
+u ∈ U.  Compute V(u): u ≤ 5M/4 ⟹ V = ∅ (safe); u ∈ (5M/4, 3M/2] ⟹
+V = (M/2, 2u−2M); u ∈ (3M/2, 7M/4] ⟹ V = (M/2, M] ENTIRE (no W can
+avoid it — such u are forbidden in U outright); u ∈ (7M/4, 2M) ⟹
+V = [2u−3M, M]; u = 2M ⟹ V = {M} (avoid by M ∉ W).  Since
+|(M, 5M/4]| = M/4 < M/2 = |U|, at least M/4 members of U exceed
+5M/4, and none may lie in (3M/2, 7M/4], so U' := U ∩ ((5M/4, 3M/2] ∪
+(7M/4, 2M]) has |U'| ≥ M/4 − 1 (allowing u = 2M).  Three cases.
+(B) U' ∩ (7M/4, 2M) = ∅: then U' ⊆ (5M/4, 3M/2], and |U'| ≥ M/4 − 1
+forces max U' ≥ 3M/2 − 2, whence W ⊆ [2·max−2M, M] ⊆ [M−4, M]:
+|W| ≤ 5 < M/4 for M ≥ 32 — contradiction.  (C) U' ∩ (5M/4, 3M/2] =
+∅: then U' ⊆ (7M/4, 2M] must contain all but O(1) of that quarter,
+in particular some u ≤ 7M/4 + 2, forcing W ⊆ (M/2, 2u−3M) ⊆
+(M/2, M/2 + 4): |W| ≤ 3 < M/4 — contradiction.  (A) both nonempty:
+let u_a = max U'∩(5M/4, 3M/2], u_b = min U'∩(7M/4, 2M).  W ⊆
+[2u_a − 2M, 2u_b − 3M), so M/4 ≤ 2(u_b − u_a) − M, i.e.
+u_a ≤ u_b − 5M/8 ≤ 2M − 5M/8 = 11M/8.  Then U ⊆ (M, 5M/4] ∪
+(5M/4, 11M/8] ∪ [u_b, 2M] with the middle piece of size ≤ M/8 and,
+for W (M/4 values) to fit in (M/2, 2u_b − 3M), also 2u_b − 3M ≥
+M/2 + M/4 ⟹ u_b ≥ 15M/8: |[u_b, 2M]| ≤ M/8 + 1.  Total |U| ≤ M/4 +
+M/8 + M/8 + 1 = M/2 + 1 — tight, but the W-fit ALSO requires
+2u_a − 2M ≤ M/2 + 2 ⟹ u_a ≤ 5M/4 + 1, collapsing the middle piece
+to ≤ 1 value: |U| ≤ M/4 + 1 + M/8 + 1 < M/2 for M ≥ 32 —
+contradiction.  ∎
+
+Reading: the prefix material (W, U) ALWAYS mints sumset mass into
+the midband (2M, 3M].  μ_dn = 0 then FORBIDS Y from sitting on the
+hit set — the bottom-interval range dodge Y ⊇ (2M, 3M] is dead for
+every (U, W) (this is the general form of the worked example: any
+attempt to hide Y low collides with L-MID; any Y pushed high is
+doubled into B2 by L-SEESAW).
+
+**Lemma L-RANGE (canonical up-range family priced) [PROVED].**  If
+Y ⊆ (3M, 4M] (the up-interval dodge, forced when Y dodges a
+midband-covering hit set), then for u₀ = min U ≤ 3M/2 + 1 (bal),
+Z ⊇ 2Y − u₀ ⊇ step-2 values filling (2·3M − u₀, 8M − u₀], and with
+the U-sweep 2Y − U ⊇ (9M/2 + 2, 7M − 1) once U contains any M/2
+values of B0; hence |Z ∩ B2| ≥ 5M/2 − O(1) and by L-HIT the team
+pays μ_up + μ_skip ≥ M/2 − O(1).  (Worked instance: U = (M, 3M/2],
+Y = (3M, 4M]: μ_dn = 0 holds — 2U − W ⊆ (5M/4, 5M/2 − 1] misses Y —
+and Z_up = (9M/2, 7M): coverage 5M/2, demand ≥ M/2.)
+
+**The zero-set question.**  Is the (x,x,1−x,1−x) schedule pair the
+ONLY zero of the floor (F) at bal?  L-MID + L-SEESAW say every zero
+must thread: Y off the midband hit set, X off a ≥ M/2-deep covered
+band, μ_dn = 0.  The parity thread does it via congruence classes;
+higher-modulus lattice threads are capacity-limited (Y needs M of
+2M values — exactly ONE class mod 4; W is forced to be ALL of one
+parity of Bm1).  e174 (§6) answers the question by machine at
+16..40; the hand classification is [GAP-ZERO], expected N3-species.
