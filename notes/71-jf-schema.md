@@ -18,7 +18,8 @@ the low chain outright at EVERY budget for every M ≥ 12 (M ≡ 0 mod
 4 — no residue casework needed beyond this), or LOW-IMPURE, in
 which case it carries forced sumset mass μ_up + μ_skip ≥ f(M) on
 some team, paid unit-for-unit in s2 by L-PREFIX — with f(M) = M/2
-measured EXACTLY at M = 8, 12, 16 (f = 4/6/8, min-max both teams);
+measured EXACTLY at SEVEN scales M = 8..32 step 4 (final count;
+early sections quote the first three);
 so (v,0) is UNSAT for every v < M/2, all M ≡ 0 mod 4, M ≥ 12,
 modulo one new counting lemma [GAP-FHALF: f(M) ≥ M/2, no orders
 involved], and v_min(0)(M) ≥ M/2 → ∞ — [GAP-VMIN0-growth]'s
@@ -704,3 +705,10 @@ curve v(N) = ⌈N/4⌉ − 1 valid at every scale [mod GAP-FTOT].
   the counting floor and the collapse coexist as predicted (the
   floor is real but the true v_min(0)(32) is ∞; J-BOOT's content
   at M ≥ 32 is the FLOOR shape, J-DOWN's the verdict).
+
+- LATE (t = 1 extremality machine-confirmed): forcing impurity
+  ≥ 2 per parity per team gives **cmin_{t≥2}(8) = 10 > 8** and
+  **cmin_{t≥2}(12) = 22 > 12** — extra defectors add net supply
+  exactly as §4d's exchange claim asserts (M = 16 running; the
+  t = 1 frame is where the optimum lives, at every measured
+  scale).
