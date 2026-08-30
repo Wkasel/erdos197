@@ -452,6 +452,55 @@ not yet written as an exchange lemma).  No new mechanism is
 missing: every measured optimum is reproduced by the lemmas
 above.
 
+### 4d. GAP-CMIN nearly closed: witness law at 4 scales, the
+### extremal cell PROVED, the general near-pure case reduced to
+### bookkeeping + two scoped subcases
+
+**Witness audit (machine, this session).**  The pod f-witnesses at
+M = 20/24/28 (plus the local f(8)) are ALL: one-swap colorings
+(each team's low minority = a single defector), defectors at the
+TOP of B0 — {39,40} / {47,48} / {55,56} = {2M−1, 2M} — and their
+same-parity B1 material is corner-confined 1/1, 3/3, 4/4 per team
+(everything above 7M/2 − 8).  The extremal frame is measured
+stable: minimal impurity, defectors maximal, corner-confined.
+
+**The extremal cell (r = 2M−1, d = 2M; swap in B0) [PROVED for
+M ≥ 32; the O(1) safe-zone constants need c, c′ < M/4 which holds
+from 32, and 8..28 are covered by the exact measurements].**  Both
+offset sets are purely downward (D_A = [−(3M/4−1), −1] since every
+other odd is below r; D_B likewise below d), so a failed candidate
+y ≤ 4M would need its window [y − 3M/4 + 1, y − 1] to be mono; the
+window bottom ≤ 13M/4 + 1 sits BELOW the corner, where a mono
+window is impossible (its lowest even resp. odd would violate
+SZ′).  Hence F_A = F_B = ∅ and every y ∈ (3M, 4M] is a unit in
+exactly one channel (B → r-channel, A → d-channel):
+S ≥ |(3M, 4M]| = M.  ∎  (Tightness: the measured witnesses sit at
+exactly this cell and achieve S = M.)
+
+**The general near-pure cell (any r, d; swap in B0) — argued,
+bookkeeping unwritten.**  Three proved-in-sketch steps:
+(1) *Below-corner rigidity*: below the corner no team may hold 2
+    consecutive values (a pair contains an odd and an even; A-odds
+    and B-evens are corner-confined by SZ′) — so (2M, 7M/2 − c] is
+    EXACTLY the parity split A = evens, B = odds.
+(2) *Corner shares*: |A| = M exceeds the below-corner even supply
+    (~3M/4), so each team owns ≥ M/4 − O(1) corner values.
+(3) *Candidates*: by (1)+(2), |B ∩ I_r| + |A ∩ I_d| =
+    2M − (r + d)/4 − O(1) ≥ M − O(1) (r + d ≤ 4M − 1; the measured
+    optimum r + d = 4M − 1 makes this exactly M).  *Failures*: a
+    mono window must fit inside one team's corner block, but
+    two-sided windows of length 3M/4 cannot fit in a ≤ M/4 block
+    unless top-clipped with w₁ ≤ block length, i.e. only when
+    r ≤ M + O(1) — which moves the swap into Bm1, a STRICTLY more
+    confined configuration (the impure-Bm1 team's images cover
+    both parities, so BOTH parities of its B1 are corner-locked).
+Remaining to write: the exact O(1) bookkeeping in (1)-(3), the
+swap-in-Bm1 subcase, and the t ≥ 2 exchange lemma (more defectors
+only add channels).  No open mechanism remains — [GAP-CMIN] is
+now a finite drafting task, not a research question, for the
+near-pure regime; the multi-swap regime rests on the exchange
+lemma.
+
 ## 5. The F-schema: the same dichotomy prices the freshness family
 
 notes/75 §2.4 leaves F(N; v) [GAP-F-schema] as a family that does
