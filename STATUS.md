@@ -1828,3 +1828,81 @@ axes at every tested censor; the residual YES-mass sits in
 unbounded-run procrastination and non-lattice sparse corners,
 both unconstructed.  All supply-side no-gos (NG1–NG4) remain
 respected — the cap itself is still unproven.
+
+---
+
+## FRONT ALT-CLOSURE (2026-08-30 late; notes/82 professor pass +
+## notes/81 verification & errand; e186): THE ARITHMETIC CORNER IS
+## DEAD — Lemma Q / Theorem ALT-DEAD [PROVED, zero new gaps]
+
+**The kill (notes/82 §2, one page):** in a blockwise mod-4 lattice
+coloring every residue class is monochromatic within every block;
+the 4-adic chart φ(x) = (x−c+4)/4 (x/4 for c = 0) maps the class-c
+section of B(t) EXACTLY onto the dyadic block B(t−2); restriction
+preserves permutability, affine maps preserve 3-APs both ways —
+so the transported team has infinitely many 0-CLEAN dyadic blocks
+and dies by Theorem B1 at C₀ = 0 = Lemma PIN + DIAG-DENSE +
+Theorem C3(p), ALL [PROVED].  **Lemma Q**: no permutable set
+contains a full mod-4 class-section of infinitely many dyadic
+blocks.  **Theorem ALT-DEAD**: infinitely many 4-pure scales ⟹
+not a valid pair.  Consequences: every lattice coloring dead at
+ANY ownership law (constant/alternating/unbounded-run/
+procrastinating — the whole S5-ALT siege target), every on-class
+punctured variant dead at ANY puncture count, off-class bounded
+dust = existing GAP-N3-GROW gate, **Cor. HSPLIT**: valid pairs are
+everywhere-split in EVERY 2-adic chart (2^k-periodic minorities
+all dead).  The Case-2 corner inherits a Case-1 kill; N4's
+dichotomy is not restriction-stable.  Only rider: C3(p) referee
+prose pass.  L-NOTAIL becomes a corollary.
+
+**Adversarial verification (notes/81 §2, e186 partQVERIFY — every
+machine-checkable layer attacked, ALL PASS):** chart exactness
+44/44 cells; AP transport + midpoint-class 44 400 triples 0 fail;
+C3(p)-units-⊆-R(3p,3p+1;M,∅) 6/6; fresh rung UNSAT R(39,40;128)
+(p = 13) + R(15,16)/R(27,28) at 128/256 in a fresh encoder;
+witness 4-purity (h8192_F64 pure at ALL scales; F64/lin4 pure
+above boot) + transported clean blocks 8/8 exact; **Geneson W
+Λ-scan: 0 full class-sections for t = 5..200** (Lemma Q predicts
+finiteness on the density-2/3 permutable witness — confirmed with
+~196 scales to spare).  Verification verdict: SOUND, no hole
+found.
+
+**The measured complement (notes/81 §1, e186 grid run before the
+professor's note landed):** the majority team of a sparse-minority
+window CANNOT be killed via its own class-punctured rung — exact
+law across 40 cells at M = 128/256: UNSAT ⟺ an attacker touches
+the punctured class (unextractable); every EXTRACTABLE cell SAT;
+existential gap-≥3 punctures dodge 2-pair menus at every scale
+tried.  The §0 siege predictions falsified in the informative
+direction: the chart through the MINORITY is the unique working
+route, and the run-length/censor siege (R-scans, ν-growth, F12
+boundary cells) stands down as moot at ω.
+
+**Residue: GAP-AFFORD″-ALT RETIRED → GAP-AFFORD‴-SPLIT** — the
+supply cap for gap-≥3, 2-adically split (HSPLIT-generic, hence
+aperiodic) minorities.  No known inhabitant satisfies all corner
+axes (the e185 censor-off alternating coloring is NOT 4-pure —
+machine-verified, n_pure = 0 at every t ≥ 6 — so the residue class
+is real as colorings, but it was never corner-certified).  First
+honest instrument launched: the HSPLIT-constrained dodger build
+(e186 partHSPLIT: s5dodger axes + every class mod 4 AND mod 8
+bichromatic per block; F = 12 and F = 64 + mod-4-only control;
+pre-registered notes/81 §2: SAT 55 %/35 %).  Professor certifies
+no elegant kill among directions (1)–(4) for THIS residue — it is
+genuine AFFORD′-species mathematics, now stripped of every
+arithmetic example.
+
+**Ledger:** gating gaps now (1) GAP-AFFORD′ with residue
+GAP-AFFORD‴-SPLIT (the only Case-2 corner remnant) + arm B,
+(2) GAP-N6a sub-pool, (3) GAP-N3-GROW (N3-b) — GAP-N2-DIAG stays
+discharged.  New proved tags: Lemma Q, Theorem ALT-DEAD,
+Cor. HSPLIT (+ Q-ODD stated, rides N2-UNIF/BRIDGE1-AF).
+**Honest assessment: NO ≈ 96–97 % (was 95).**  FOR: the entire
+arithmetic YES-space — everything ever realized or parameterized —
+is now dead at ω through the proved Case-1 chain with zero new
+gaps and a clean adversarial audit; the YES now requires a
+2-adically generic sparse coloring nobody has constructed, PLUS
+¬AFFORD on it.  AGAINST more: the SPLIT residue has no finite
+refutation (S5-species colorings exist), the supply cap has zero
+completed strategies (NG1–NG4 stand), and α_ℕ(3) density theory
+remains open.  HSPLIT build verdicts pending (in flight on pods).
