@@ -243,3 +243,30 @@ UNSAT ×2 censors ⟹ the residue is finitely EMPTY at ROT4 strength
 — the entire corner would then be machine-rejected at the finite
 level while ω-dead on every arithmetic sub-family: probability
 moves accordingly.
+
+## 3. HSPLIT battery — the SPLIT residue's first instrument
+
+Attribution baseline established WITHOUT a run: the e185
+censor-off alternating coloring (altw) satisfies the FULL HSPLIT
+constraint (every mod-4 AND mod-8 class-section bichromatic at
+every t ≥ 6 — machine-checked, 0 monochromatic sections).  So
+HSPLIT-generic corner COLORINGS exist; the build tests whether
+the orbit censor tolerates them.
+
+| cell (hor 4096, D = 2, lin4, split floor) | verdict | secs |
+|---|---|---|
+| F = 64, u₀ = 64, HSPLIT mod 4+8 | **UNSAT** | 30 |
+| F = 64, hor = 2048 (scale control) | **UNSAT** | 13 |
+| F = 64, mod-4-only HSPLIT (attribution) | **UNSAT** | 28 |
+| F = 12, u₀ = 32, HSPLIT mod 4+8 | (in flight) | — |
+| F = 12, mod-4-only (attribution) | (in flight) | — |
+
+Reading (F = 64 rows): **at the ROT4-strength censor the corner
+tolerates NOTHING but lattices** — the un-HSPLIT build was SAT at
+exactly these parameters (e179: 45 s, witness = mod-4 lattice);
+banning only the mod-4 monochromatic sections (k8 = False row)
+already empties it, at both horizons.  Since ALT-DEAD kills every
+lattice at ω, the strong-censor corner is now dead END TO END:
+finitely, every inhabitant is a lattice; at ω, every lattice is
+invalid.  The weak-censor cells decide whether GAP-AFFORD‴-SPLIT
+has ANY finite inhabitant at all.
