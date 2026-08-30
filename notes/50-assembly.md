@@ -279,3 +279,42 @@ table.  Tag movements:
   parity schedules (range-top composites) but all fall in the
   LOW-PURE order-dead arm — the two-case split is machine-exhaustive
   at 16..40.
+
+### J/F-schema delta (2026-08-30 later, notes/71 final — this
+### front's additions on top of the keystone delta above)
+
+* **[GAP-FHALF] tightened**: f(M) = M/2 now EXACT at FIVE scales
+  8/12/16/20/24 (pod ladder; both residues mod 8 — no mod-8
+  casework exists, the family is mod-4 uniform, M = 8 the sole
+  boot anomaly).  NEW reduction [GAP-CMIN]: f ≥ ⌈cmin/2⌉ with
+  cmin(M) = Σ_z min(c_A, c_B) minimized — B2-coloring-free, pure
+  one-seam combinatorics; cmin(M) = M EXACT at 8/12/16; low-pure
+  splits have cmin = 0, ONE defector jumps to M.  Proof skeleton:
+  two-channel sweep (|I| ≥ 2M − max(r,d)/2 ≥ M) + partner
+  conditions; verified value-by-value on the extremal witness
+  (notes/71 §4b).  Complements notes/72's L-MID/L-SEESAW/L-HIT/
+  L-RANGE coverage route.
+* **Theorem J-BOOT** (notes/71 §3) [PROVED mod GAP-CMIN]: (v,0)
+  UNSAT for all v < M/2, ALL M ≡ 0 mod 4, M ≥ 12 — elementary
+  (Lemma K + counting), no N6a dependency; closes the boot window
+  12..24 that J-DOWN's collapse does not reach.  End-to-end cells:
+  (5,0)@12, (7,0)@16 (predicted then confirmed), (9,0)@20,
+  (11,0)@12, (19,0)@20 — all UNSAT, fresh scales + ≡ 4 mod 8.
+* **[GAP-F-schema] gains its first uniform law — Theorem F-BOOT**
+  (notes/71 §5) [PROVED mod GAP-FTOT]: F(M; v) UNSAT for
+  v < ⌈M/4⌉, all M ≡ 0 mod 4, M ≥ 12 (low-pure arm: Lemma K needs
+  only s0; impure arm: factor-2 edge charging of the total mass;
+  f_F = f measured at 8/12).  T-FRESH's density-one minting now
+  has a per-scale budget curve, independent of N6a.
+* **[GAP-J-margin] low-pure arm DONE** (notes/71 §6, Lemma
+  MARGIN-LP): U4(M; v, w) kills every low-pure coloring whenever
+  w < K(3M/4, M/4) — the BUDGETED Lemma K; K-diagonal measured
+  exact: K(6,2)=0, K(9,3)=3, K(12,4)=4, K(15,5)=11, K(18,6)=20,
+  K(21,7)=28, K(24,8)=40.  Impure arm scoped as
+  [GAP-MARGIN-MASS].
+* **v_min(0)(8) = 12 fully anatomized** (notes/71 §2): low-pure
+  survival via Lemma K's sharp SAT cell (6,2), Lemma SZ safe zone,
+  parity-schedule price = K(24,8) = 40 (two encoders), witness =
+  3 sumset floor + 9 mixed (forced fan + collateral).
+* Housekeeping: sprint-C vmus_cert.log DISCARDED (mis-instrumented
+  e127 3-block cell, not the pump; notes/71 §0).
