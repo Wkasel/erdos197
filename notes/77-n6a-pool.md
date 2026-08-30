@@ -10,7 +10,10 @@ Audit baseline: notes/60/60-1/61-2 (scales through 160), notes/76.
 verification pointer and a status tag [PROVED] / [MACHINE-CHECKED] /
 [GAP] / [CLEARED] / [RESISTS].**
 
-**Overall status: `in progress`.**
+**Overall status: `front CLOSED` (adjudicated notes/80; in-flight
+runs landed and folded — e182, e180@144/160, m = 64 chain; final
+residue inventory in §7; M = 176 probe chain launched at close,
+M = 192 catalogue building).**
 
 ## 0. The pool, the clearing bar, and the dependency order
 
