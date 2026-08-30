@@ -1,4 +1,4 @@
-# Erdős #197 campaign — STATUS (2026-08-28, post-audit of the night-shift fronts; see the final section for the current state)
+# Erdős #197 campaign — STATUS (2026-08-30 end-of-day, MASTER ASSEMBLY + AUDIT; see the final section for the current state and notes/50 for the final dependency graph)
 
 ## Bottom line
 
@@ -1493,3 +1493,69 @@ data/pod_e175/), e176*, e177* (bulk on sprint-B).
   assembly's Case-1 chain still consumes only the diagonal
   sub-piece; N2-COMPLETE feeds BRIDGE1-AF and lifts the usable-pair
   supply in clean blocks from density 1/12 to 1/2).
+
+### MASTER ASSEMBLY + AUDIT (2026-08-30 end-of-day, notes/76 +
+### notes/50 FINAL): five-front merge audited — 8/8 spot checks PASS;
+### the final dependency graph has exactly FOUR gating gaps
+
+The five same-day fronts (notes/71 J/F-schema, 72 vmin0-keystone,
+73 N2-parametric, 74 N3+L1′, 75 pump-schema) were adversarially
+spot-verified (notes/76; experiments/e178_audit_spot.py — every
+encoder written from scratch, every expectation pre-registered):
+
+- **8/8 PASS at fresh scales**: Lemma K re-proved exhaustively
+  (sharp at n = k+5, k = 2..4); cmin(20) = 20 = M OPTIMAL (fourth
+  exact scale for GAP-CMIN); L-MID UNSAT at fresh M = 48 + brute
+  force at 16; K4e(23) lane law at fresh M = 160 with 164-control;
+  ROT4 window law sup = 5/6 exact to fresh horizon 2^17 + chains
+  depth 1 (f ≤ 64, fresh seed octave); P-CAT laws exact at fresh
+  M = 200; **balanced coupled core UNSAT at FRESH anchor m = 28
+  [3.2s, from-scratch encoder]** ⟹ v_min(0)(56) = ∞ via J-DOWN.
+- **New points minted by the audit itself**: K(27,9) = 51 (the k = 9
+  diagonal hole; monotone inside (40, 69]); K(36,12) = 111
+  ADJUDICATED by fresh encoder (the pod log only bracketed
+  (110, 120] — notes/71's value was right, its cited provenance
+  incomplete; recorded notes/76 §2).
+- **Pod harvest**: (none,0)@64 UNSAT [56.0s] — FOURTH direct
+  collapse scale (32/40/48/64); fmass(40) ≥ 18 descending;
+  ftot(16) ≥ 7; v_min(0)(16) bracket stands at (48, 384];
+  F(24;65) + margin (368,6)@32 still running (86400s).
+
+**notes/50 is rewritten as the FINAL dependency graph.**  The
+conditional assembly theorem now reads: modulo exactly FOUR gating
+gaps, Erdős #197 = NO.  (1) [GAP-AFFORD′] — the terminal supply cap
+in donation currency: the ONLY genuinely new open statement, no
+surviving proof strategy, untouched since notes/62.  (2) the
+GAP-N6a sub-pool (DICH rows / LLOP-α,β / PARM / (OV-∀) / FG) —
+uniformization write-ups of a species with multiple discharged
+instances; machine-closed everywhere ever asked (now incl. m = 28).
+(3) GAP-N2-DIAG — the affine-in-p C3(p) write-up (p = 5 instance
+PROVED as thm:c3core; schema-verified p ≤ 13).  (4) GAP-N3-GROW's
+(N3-b) — puncture robustness uniform in x (exact at x = 11/15/27).
+Everything else (GAP-CMIN → FHALF/FTOT, F-schema, margin family,
+N2-UNIF beyond the diagonal, V*, ZERO) hardens the graph without
+gating it.  The demand half of Case 2 is now a THEOREM modulo N6a
+(T-TEL″); the boot window is closed modulo one counting lemma
+(J-BOOT/F-BOOT); Case 1 is closed modulo (3)+(4).
+
+**Is the NO-proof complete modulo standard audits?  NO.**
+GAP-AFFORD′ is not an audit item — it is open mathematics; and the
+uniformization pool, while all of one proved-in-instances species,
+is real writing that has not been done.  No announcement draft is
+warranted or written.
+
+**Honest assessment (updated 2026-08-30): NO ≈ 93 %, YES ≈ 7 %**
+(up from 92).  FOR the bump: a second full adversarial audit cycle
+(fresh encoders, fresh scales) broke nothing; GAP-VMIN0-growth,
+GAP-J-schema's large-M family, the N2 named remainders, and the
+boot window all closed or collapsed into existing engines this
+session; Case 2's demand side became a theorem modulo N6a; the gap
+list is now FOUR items with three of one well-understood species.
+Held below higher: GAP-AFFORD′ is a genuinely new statement with
+zero surviving attack routes — the program's history says such
+statements can refuse to close (DNP, L1′ both DIED when finally
+engaged, and each death was survivable only because parallel
+structure existed; AFFORD′ has no parallel spare) — and the
+notes/46 dodger corner (i)+(ii)+(iii) remains unexcluded, with
+(i)+(ii) now REALIZED by ROT4.  A YES lives exactly there if it
+lives anywhere.
