@@ -1872,26 +1872,29 @@
    "part": "s5alt",
    "hor": 4096,
    "D": 2,
+   "F": 64,
+   "u0": 64,
+   "gmode": "lin4",
+   "alt_from": 6,
+   "verdict": "UNSAT",
+   "orbit": true,
+   "diffuse": true,
+   "maxrun": 2,
+   "secs": 40.5
+  },
+  {
+   "part": "s5alt",
+   "hor": 4096,
+   "D": 2,
    "F": 12,
    "u0": 32,
    "gmode": "lin4",
    "alt_from": 6,
-   "verdict": "SAT",
-   "orbit": false,
+   "verdict": "TIMEOUT",
+   "orbit": true,
    "diffuse": true,
-   "maxrun": 1,
-   "secs": 136.8,
-   "witness": "/Users/will/Dev/personal/tasks/math/erdos197/data/e185_s5alt_h4096_F12_r1_noorb_a6.json",
-   "nA": 1703,
-   "ownership": [
-    "B",
-    "B",
-    "A",
-    "B",
-    "A",
-    "B",
-    "A"
-   ]
+   "maxrun": 3,
+   "secs": 900.8
   }
  ]
 }

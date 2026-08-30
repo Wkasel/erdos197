@@ -1803,8 +1803,12 @@ e179 dodger build at 2^12: **UNSAT at BOTH censors** (F = 12:
 688 s; F = 64: 19 s) — while censor-OFF is SAT (98 s, alternating
 coloring exists) and diffuse-OFF is SAT (5 s).  The kill is the
 JOINT (i-proxy) ∧ (ii) ∧ (iii) ∧ alternation interaction — each
-3-of-4 subset is satisfiable.  [Bounded-run and boot/horizon
-robustness rows: see notes/80-pincer §4.]  The pincer's shape:
+3-of-4 subset is satisfiable.  Robustness battery (all landed):
+alternation-from-t = 7 UNSAT (1057 s), hor = 2048 UNSAT (217 s —
+not scale-emergent), and **run-length-≤ 2 alternation UNSAT at
+the ROT4-strength censor F = 64** (40 s); the weak-censor
+run-≥ 2 cells TIMEOUT (decision boundary, recorded undecided).
+The pincer's shape:
 **the finite corner accepts constant ownership and rejects
 alternation; ω acceptance requires alternation.**  The remaining
 seam between the corner and emptiness = T-SHARP procrastination

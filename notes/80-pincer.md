@@ -598,11 +598,26 @@ outflow trichotomy on in-run displaced values (donation channels
 void inside runs, §3.4) composed against run growth; (4) the
 mixed-designation catalogue + arm B (bill unchanged).
 
-### 4.5 Postscript: in flight at write time
+### 4.5 Postscript — the full battery landed (all rows)
 
-- s5altctl alt_from = 7 (CP-SAT grinding ≥ 1 h at write) and
-  hor = 2048; s5run (run ≤ 2 / ≤ 3, F = 12; run ≤ 2, F = 64).
-  Crash-safe rerun:
-  `.venv/bin/python experiments/e185_mintloc.py s5altctl s5run`.
-  Verdicts fold into this table when landed; none is load-bearing
-  for §4.2 (they scope the S5-ALT robustness only).
+| cell | verdict | secs |
+|---|---|---|
+| alternation from t = 7 (boot-shift control) | **UNSAT** | 1057 |
+| hor = 2048 (scale control) | **UNSAT** | 217 |
+| run ≤ 2, F = 64 | **UNSAT** | 40 |
+| run ≤ 2, F = 12 | TIMEOUT (1800 s) | — |
+| run ≤ 3, F = 12 | TIMEOUT (900 s) | — |
+
+Readings: (1) the alternation kill is robust to the boot offset
+and NOT scale-emergent (a 2^11 certificate exists).  (2) **At the
+ROT4-strength censor F = 64 even run-length-2 alternation is
+UNSAT** — under the strong censor the corner tolerates NO bounded
+alternation tested; with L-NOTAIL demanding infinitely many
+switches, the ω-space at that censor strength needs ownership
+runs ≥ 3 recurring (next session: scan R at F = 64 — each further
+UNSAT pushes the required run length up, pinning the
+procrastination shape).  (3) At the weak censor F = 12 the
+run-≥2 cells sit at the solver's decision boundary (TIMEOUTs) —
+genuinely undecided, recorded as such.  Machine record:
+data/e185_mintloc.json partS5ALT (10 rows), witnesses
+data/e185_s5alt_*.json.
