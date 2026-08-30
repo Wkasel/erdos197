@@ -1347,3 +1347,62 @@ data/e174_band_floor.jsonl; harvest from main pod e158_tel_*.
   [GAP-AFFORD′] (supply cap in donation currency); demand-rate
   statements re-point at [GAP-V*]; L-ECHO lives only at the three
   finite scales.
+
+### FRONT J/F-SCHEMA (2026-08-30, e174_jf_schema + notes/71): the
+### residual family's uniform hand schema — boot window closed,
+### first uniform F-law, GAP-FHALF reduced to a one-seam counting
+### lemma
+
+Full write-up notes/71-jf-schema.md; machine
+experiments/e174_jf_schema.py (fmass/ftot/interval) + e158b MUS at
+(8; 11,0) + sprint-B/C pod runs; records data/e174_jf.jsonl,
+data/e158b_mus_M8_up11_dn0.*.
+
+- **The dichotomy (Theorem J-BOOT) [PROVED mod GAP-CMIN]**: every
+  balanced coloring of (M/2, 8M] is low-pure (its Bm1 ∪ B0
+  single-parity per team) or low-impure.  Low-pure + s0-clean ⟹
+  the low set is a full parity class ≅ interval [1, 3M/4] with
+  prefix M/4 — Lemma K kills it at EVERY budget for M ≥ 12
+  (M ≡ 0 mod 4).  Low-impure + μ_dn = 0 ⟹ forced sumset mass
+  max_T (μ_up + μ_skip) ≥ f(M), paid unit-for-unit in s2
+  (L-PREFIX).  So (v,0) UNSAT for v < f(M), uniformly, elementary
+  — no N6a machinery; with notes/75's J-DOWN (M ≥ 32 collapse)
+  the (·,0) family is covered at every anchor: boot by J-BOOT,
+  large by J-DOWN.
+- **f(M) = M/2 EXACT at FIVE scales** (8/12/16/20/24, both
+  residues mod 8): the task's residue question resolves to "mod-4
+  uniform, no mod-8 casework, M = 8 the sole boot anomaly".
+- **[GAP-CMIN]** — THE remaining hand target: Σ_z min(c_A, c_B)
+  ≥ M over balanced μ_dn = 0 low-impure splits of low ∪ B1
+  (B2-free, pure counting); measured EXACT (= M) at 8/12/16;
+  low-pure splits give 0 — one defector jumps the floor to M.
+  Proof skeleton: two-channel sweep with |I| ≥ 2M − max(r,d)/2 ≥ M
+  candidates, verified value-by-value on the extremal witness
+  (9 candidates, 1 window failure, 6+2 = 8 units at M = 8).
+  Residual: the partner-condition packing bound.
+- **Theorem F-BOOT [PROVED mod GAP-FTOT]**: F(M; v) UNSAT for all
+  v < ⌈M/4⌉, M ≡ 0 mod 4, M ≥ 12 — the FIRST uniform-in-M law for
+  the freshness family (notes/75's named live residue): Lemma K
+  needs only s0 = 0, and the impure arm pays
+  ⌈(μ_dn + μ_up + μ_skip)/2⌉ by 2-served-triples-per-s1-edge
+  charging; f_F = f measured at 8/12.  T-FRESH minting gets a
+  per-scale budget curve independent of the N6a pool.
+- **Margin family low-pure arm DONE** (Lemma MARGIN-LP): (v, w)
+  kills low-pure colorings iff w < K(3M/4, M/4) — budgeted Lemma
+  K, diagonal measured exact: 0/3/4/11/20/28/40 at k = 2..8.
+  Impure arm = [GAP-MARGIN-MASS], scoped.
+- **v_min(0)(8) = 12 completely anatomized** (notes/71 §2): why 8
+  is exceptional (Lemma K's sharp SAT cell (6,2)); Lemma SZ safe
+  zone (z_max, 4M], z_max = 7M/2 − 3 or −2 by team parity; pure
+  parity-schedule price = K(24,8) = 40 via TWO independent
+  encoders (chain decomposition exact); the 12-witness = 3 sumset
+  floor + 9 mixed (one advanced fan-completion z = 41, one delayed
+  fan-anchor y = 24, collateral by transitivity).
+- **End-to-end machine checks**: (5,0)@12, (7,0)@16 (f-predicted
+  BEFORE the run), (9,0)@20, (11,0)@12, (19,0)@20 — all UNSAT
+  (sprint-B), fresh scales and the ≡ 4 mod 8 residue; pod ladders
+  f/f_F crash-safe; (8; 11,0) deletion-MUS descending with §7
+  band pre-registration committed before harvest.
+- Housekeeping: sprint-C vmus_cert.log = mis-instrumented e127
+  3-block cell (NOT a pump refutation) — discarded, documented
+  (notes/71 §0).
