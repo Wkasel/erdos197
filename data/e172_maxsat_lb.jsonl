@@ -12,3 +12,4 @@
 {"tag": "xcheck_bal_M16_s5", "event": "xcheck", "M": 16, "bounds": null, "vA": 2, "vB": 2, "verdict": "UNSAT", "time": 234.8}
 {"tag": "bal_M16", "M": 16, "bounds": null, "solver": "g3", "event": "lb", "lb_sum": 5, "vstar_lb": 3, "t": 1624.3, "core_sz": 276, "core_orig": 272}
 {"tag": "bal_M16", "M": 16, "bounds": null, "solver": "g3", "event": "lb", "lb_sum": 6, "vstar_lb": 3, "t": 75897.5, "core_sz": 198, "core_orig": 194}
+{"tag": "bal_M16", "M": 16, "bounds": null, "solver": "g3", "event": "lb", "lb_sum": 7, "vstar_lb": 4, "t": 86280.6, "core_sz": 110, "core_orig": 104}
