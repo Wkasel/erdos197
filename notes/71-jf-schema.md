@@ -390,21 +390,31 @@ cover both parities, confining BOTH parities of its B1; so the
 binding case is the swap inside B0), A-low = odds ∖ {r} ∪ {d},
 B-low = evens ∖ {d} ∪ {r}, r odd, d even ∈ B0.
 
-**Lemma SZ′ (confinement, both teams) [PROVED — SZ verbatim +
-image-parity bookkeeping].**  With Bm1∩A pure odd, EVERY A-image
-z = 2y − u (u ∈ Bm1∩A, y ∈ B0∩A) is odd, and image-fullness
-survives the swap (each image value has ≥ 2 representations once
-M ≥ 8): A's B1-ODDS ⊆ safe_A = odds of (z_maxA, 4M], and B's
-B1-EVENS ⊆ safe_B = evens of (z_maxB, 4M], with z_max = 7M/2−O(1)
-(exact ends as in Lemma SZ; removal of one y does not shrink the
-image).  Everything same-parity sits in the top ~M/4 of B1.
+**Lemma SZ′ (confinement, both teams; M ≥ 16) [PROVED —
+rep-counting; SCOPE CORRECTION: FAILS at M = 8].**  With Bm1∩A
+pure odd, every A-image z = 2y − u (u ∈ Bm1∩A, y ∈ B0∩A) is odd
+(parity = u's).  Rep-counting: an interior image value
+z ∈ (2M, 3M] has exactly one rep per u ∈ Bm1∩A with u ≡ 2 − z
+(mod 4) — M/8 reps — and each removed y kills at most ONE rep of
+each z (u = 2y − z is determined).  So for the one-swap coloring
+and M ≥ 16, the image still covers ALL odds of (2M, 3M], and
+above 3M it covers odds of (3M, z_maxA − c₁] for a constant c₁
+(reps decline linearly to 1 at z_maxA as the u-window shrinks;
+≥ 2 reps survive up to 7M/2 − O(1)).  Hence A's B1-ODDS ⊆
+safe_A = odds of (7M/2 − c, 4M] and B's B1-EVENS ⊆ safe_B =
+evens of (7M/2 − c′, 4M], constants absolute for t = 1.  At
+M = 8, Bm1∩A has only 2 values (≤ 1 rep per z) and one y-removal
+punches real holes — the f(8) witness's B1-odds {19, 21} sit in
+exactly the two holes killed by its removed y = 13.  The corner
+is ~M/4 + O(1) wide for M ≥ 16; M = 8 is handled by §2's
+complete anatomy instead.
 
-**Lemma WALL (no mono windows below the corner) [PROVED — one
-line].**  Any interval of ≥ 2 consecutive B1-values contains an
-even and an odd; if it is all-B its evens are B-evens, forcing it
-inside (z_maxB − 1, 4M]; if all-A its odds force it inside
-(z_maxA − 1, 4M].  So single-team windows of length ≥ 2 exist ONLY
-in the top corner.
+**Lemma WALL (no mono windows below the corner; M ≥ 16, from
+SZ′) [PROVED — one line].**  Any interval of ≥ 2 consecutive
+B1-values contains an even and an odd; if it is all-B its evens
+are B-evens, forcing it inside the safe_B corner; if all-A its
+odds force it inside the safe_A corner.  So single-team windows
+of length ≥ 2 exist ONLY in the top corner (width M/4 + O(1)).
 
 **Consequences for the two-channel sweep (§4).**  D_A and D_B are
 integer intervals around 0 (length 3M/4 − 1 each; one-sided in the
