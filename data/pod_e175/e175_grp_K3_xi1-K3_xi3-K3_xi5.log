@@ -1,0 +1,5 @@
+K3_xi1 (x0=17, r1): v*=t2; hi<={t7b5+t13b2}[O+Q2], lo<={t10b4+t13b2}[O+Q2]; x=[17, 25, 33, 41] scales ['33..105', '33..113', '41..121', '49..129']: ALL OK (5s)
+K3_xi3 (x0=11, r3): v*=t3; hi<={t4b4+t7b2}[E+Q2], lo<={t1b5+t7b2}[E+Q4]; x=[11, 19, 27, 35] scales ['19..91', '27..99', '35..107', '43..115']: ALL OK (3s)
+K3_xi5 (x0=13, r5): v*=t2; hi<={t3b5+t9b2}[O+Q2], lo<={t6b4+t9b2}[O+Q2]; x=[13, 21, 29, 37] scales ['21..93', '29..101', '45..117', '45..125']: ALL OK (3s)
+
+PARAM TEMPLATE: 3/3 cells OK -> /root/e/data/e175_grp_K3_xi1-K3_xi3-K3_xi5.json

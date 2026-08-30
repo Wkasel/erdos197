@@ -1,0 +1,5 @@
+C_xi5 (x0=13, r7): v*=t3; hi<={t2b6+t4b5}[E+Q1], lo<={t4b5+t7b3}[E+Q1]; x=[13, 21, 29, 37] scales ['23..95', '31..103', '47..119', '47..127']: ALL OK (4s)
+C_xi7 (x0=15, r1): v*=t2; hi<={t6b5+t9b3}[O+Q1], lo<={t4b6+t6b5}[O+Q3]; x=[15, 23, 31, 39] scales ['25..97', '41..113', '41..121', '49..129']: ALL OK (4s)
+K7_xi1 (x0=17, r5): v*=t2; hi<={t12b3+t15b1}[O+Q3], lo<={t10b4+t12b3}[O+Q1]; x=[17, 25, 33, 41] scales ['37..109', '37..117', '45..125', '53..133']: ALL OK (5s)
+
+PARAM TEMPLATE: 3/3 cells OK -> /root/e/data/e175_grp_C_xi5-C_xi7-K7_xi1.json

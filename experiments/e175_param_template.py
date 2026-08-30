@@ -146,20 +146,25 @@ def candidates(cellK0, cellK1, M0, M1, imax):
             for S_lo in lo_opts:
                 cands.append((i, S_hi, S_lo,
                               len(S_hi) + len(S_lo)))
-    cands.sort(key=lambda c: (c[3], c[0]))
+    # every verified cell is a 2+2 clash: rank those first, then by
+    # total size and battleground height
+    cands.sort(key=lambda c: ((len(c[1]) != 2) + (len(c[2]) != 2),
+                              c[3], c[0]))
     return [(i, S_hi, S_lo) for i, S_hi, S_lo, _ in cands]
 
 
-def ladder_search(halves_test, prefer):
+def ladder_search(halves_test, prefer, cheap=False):
     """halves_test: {half: [(M, seeds)]}; find per-half ladder keys.
-    prefer: list of known-good combos to try first."""
+    prefer: known-good combos tried first; cheap=True restricts to
+    the prefer list (fast cross-candidate pass)."""
     combos = list(prefer)
-    combos += [c for c in itertools.combinations(POOL6, 2)]
-    combos += [c for c in itertools.combinations(POOL6, 3)]
-    # restricted d=8 escalation: full parity ladder + quarter + eighth
-    combos3 = [(p, g) for p in ("O", "E") for g in POOL8]
-    combos3 += [(p, q, g) for p in ("O", "E")
-                for q in ("Q1", "Q2", "Q3", "Q4") for g in POOL8]
+    if not cheap:
+        combos += [c for c in itertools.combinations(POOL6, 2)]
+        combos += [c for c in itertools.combinations(POOL6, 3)]
+        # restricted d=8 escalation: parity ladder + quarter + eighth
+        combos += [(p, g) for p in ("O", "E") for g in POOL8]
+        combos += [(p, q, g) for p in ("O", "E")
+                   for q in ("Q1", "Q2", "Q3", "Q4") for g in POOL8]
     choice = {}
     for hn, tests in halves_test.items():
         found = None
@@ -168,12 +173,6 @@ def ladder_search(halves_test, prefer):
                    for M, sd in tests):
                 found = tuple(combo)
                 break
-        if found is None:
-            for combo in combos3:
-                if all(branches_ok(M, sd, combo, early=True) == 0
-                       for M, sd in tests):
-                    found = tuple(combo)
-                    break
         if found is None:
             return None
         choice[hn] = found
@@ -215,7 +214,7 @@ def run_cell(lane, xi, xs_extra=(), verbose=True):
     xs = [x0, x1, x0 + 16, x0 + 24] + list(xs_extra)
     Klane = {x: lanes_for(x)[lane] for x in xs}
 
-    def search(cand_list, extra_tests):
+    def search(cand_list, extra_tests, cheap=False):
         """extra_tests: {half: [(x, M)]} to include in the ladder
         search; returns (istar, Shi, Slo, choice) or None."""
         for (istar, Shi, Slo) in cand_list[:24]:
@@ -236,12 +235,14 @@ def run_cell(lane, xi, xs_extra=(), verbose=True):
             prefer = [("O", "E"), ("E", "Q1"), ("O", "Q2"), ("O", "Q3"),
                       ("O", "Q1"), ("E", "Q2"), ("O", "Q4"), ("E", "Q4"),
                       ("E", "Q3"), ("O", "E", "Q1"), ("O", "E", "Q3")]
-            choice = ladder_search(halves_test, prefer)
+            choice = ladder_search(halves_test, prefer, cheap=cheap)
             if choice is not None:
                 return (istar, Shi, Slo, choice)
         return None
 
-    rec = search(cands, {})
+    # cheap cross-candidate pass over the prefer list first, then the
+    # full ladder pool on the ranked candidates
+    rec = search(cands, {}, cheap=True) or search(cands, {})
     if rec is None:
         return {"cell": f"{lane}_xi{xi}", "ok": False, "istar": None,
                 "reason": f"no ladder set for {len(cands[:24])} cands",

@@ -1,0 +1,3 @@
+K7_xi7 (x0=15, r3): v*=t3; hi<={t8b4+t10b3}[E+Q1], lo<={t10b3+t13b1}[E+Q1]; x=[15, 23, 31, 39] scales ['27..99', '43..115', '43..123', '51..131']: ALL OK (8s)
+
+PARAM TEMPLATE: 1/1 cells OK -> /root/e/data/e175_v2_K7_xi7.json

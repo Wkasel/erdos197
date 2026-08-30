@@ -80,6 +80,11 @@ def cell_data():
             json.load(open(OUT))["cells"] if r.get("ok")}
 
 
+def degenerate_at(K, istar, M):
+    from e175_param_template import degenerate
+    return degenerate(M, K, istar)
+
+
 def measure(rec, x, M, branch=0):
     lane = rec["lane"]
     K = lanes_for(x)[lane]
@@ -105,19 +110,29 @@ def main():
         lane, xi = rec["lane"], rec["xi"]
         x0, istar, r8 = rec["x0"], rec["istar"], \
             (rec["x0"] + __import__("e174_param_lanes").LAW[lane]) % 8
+        # x-axis at FIXED M: the law M = x + c (mod 8) is invariant
+        # under x -> x+8, so ONE M is in-class for every x = xi mod 8.
+        # A sliding-pattern derivation predicts fact counts AFFINE in
+        # x at fixed M (entry points move 4 ladder steps per x-step).
+        xs = [x0 + 8 * k for k in range(8)]
+        Mbig = in_class_scales(r8, lanes_for(xs[-1])[lane], istar, 1,
+                               e174_thr(lane, xs[-1]) + 8)[0]
         rows = []
-        for k in range(0, 8):
-            x = x0 + 8 * k
+        for x in xs:
             K = lanes_for(x)[lane]
-            if min(i for i, _ in K) < 0:
+            if min(i for i, _ in K) < 0 or degenerate_at(K, istar,
+                                                         Mbig):
                 continue
-            M = in_class_scales(r8, K, istar, 2, e174_thr(lane, x))[1]
-            r = measure(rec, x, M)
-            rows.append((x, M, r["hi"], r["lo"]))
+            r = measure(rec, x, Mbig)
+            rows.append((x, Mbig, r["hi"], r["lo"]))
         report["x_axis"][cell] = rows
-        print(f"{cell} x-axis: " + "; ".join(
-            f"x={x} M={M} hi={h} lo={l}" for x, M, h, l in rows),
-            flush=True)
+        d1 = [rows[k + 1][2][1] - rows[k][2][1]
+              for k in range(len(rows) - 1)]
+        d2 = [rows[k + 1][3][1] - rows[k][3][1]
+              for k in range(len(rows) - 1)]
+        print(f"{cell} x-axis @M={Mbig}: " + "; ".join(
+            f"x={x} hi={h} lo={l}" for x, _, h, l in rows)
+            + f"  Dhi={d1} Dlo={d2}", flush=True)
         # M-axis at x0
         K = lanes_for(x0)[lane]
         rowsM = []

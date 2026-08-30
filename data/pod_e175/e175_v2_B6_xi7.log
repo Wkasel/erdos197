@@ -1,0 +1,3 @@
+B6_xi7 (x0=15, r2): v*=t2; hi<={t7b4+t9b3}[E+Q1], lo<={t9b3+t14b1}[E+Q1]; x=[15, 23, 31, 39] scales ['26..98', '42..114', '42..122', '50..130']: ALL OK (7s)
+
+PARAM TEMPLATE: 1/1 cells OK -> /root/e/data/e175_v2_B6_xi7.json

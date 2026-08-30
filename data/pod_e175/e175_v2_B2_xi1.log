@@ -1,0 +1,3 @@
+B2_xi1 (x0=17, r0): v*=t1; hi<={t8b5+t11b3}[O+Q3], lo<={t11b3+t13b2}[O+Q1]; x=[17, 25, 33, 41] scales ['24..96', '40..112', '40..120', '48..128']: ALL OK (7s)
+
+PARAM TEMPLATE: 1/1 cells OK -> /root/e/data/e175_v2_B2_xi1.json
