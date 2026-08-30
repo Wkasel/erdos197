@@ -1181,3 +1181,47 @@ experiments/e173_telescope.py, data/e173_* + pod data/tel_*.
   giant payments or branch (b)'s one-displaced-value-per-octave
   system.  The telescope closes the demand bookkeeping; it cannot
   (NG4) close supply.
+
+### FRONT PUMP-SCHEMA (2026-08-30, e175 + notes/75): the 4-block
+### gadget's uniform law — the pump COLLAPSES into the CORE′ engine
+### one window down; GAP-VMIN0-growth discharged
+
+Full write-up notes/75-pump-schema.md; machine
+experiments/e175_pump_schema.py, data/e175_* (all parts 0 failures).
+
+- **NEST correspondence [PROVED]**: the lower window (M/2, 4M] of
+  the 4-block gadget IS the two-seam coupled-core window at anchor
+  m = M/2, block for block ((Bm1,B0,B1) = (B0′,B1′,B2′)), and
+  vdn = 0 is exactly its block-order hypothesis (transitivity gives
+  the outer seam).  Dictionary (notes/75 §2.1): H_dn = the straddle
+  family of CI(m); L-PREFIX(i) = Lemma U(m)'s condition (S); the
+  parity dodge = A7(a) one level down; vup is charged on the
+  S3 = 2×S2 seam-2 wall of CORE′(M) — the (16;6,0)-MUS B2 stub is
+  the bottom 6 of S3(16) machine-exactly.
+- **Theorem J-DOWN [PROVED — three-line restriction]**: U4(M; v, w)
+  UNSAT for EVERY vup whenever the anchor-m 3-block core fires at
+  budget w.  Machine: (none,0)@32-bal UNSAT [7.4 s] (THE collapse
+  cell), proj@32/48/64 reproduce the e120 half-cores through the
+  4-block encoder, and CORE′(48)@96 (bounds (2,2,2,0), vdn = 0)
+  UNSAT [39.2 s] — the locked CI(48) engine reached through the
+  pump, independent xval of e135.  **GAP-J's (·,0) family at large
+  anchors is GAP-N6a verbatim — one schema engine.**
+- **Corollary VMIN0**: v_min(0)(M) = ∞ for every M ≥ 32 (bal
+  32/48/64 machine; const (2,2,2) 96/128/160 via e125/e126; uniform
+  for m ≡ 0 mod 16, m ≥ 48 modulo GAP-N6a + the proved balance→band
+  pigeonhole 16/15).  The finite regime is the boot window M ≤ 24:
+  v_min(0)(8) = 12 (re-verified fresh: (11,0) UNSAT / (12,0) SAT),
+  (6, 384] at 16, (65, 1440] at 24.  [GAP-VMIN0-growth] is
+  DISCHARGED BY COLLAPSE — the notes/70 demand curve reverts to the
+  budgeted half-core frontier v*₃(m; bounds) [GAP-V*] + the margin
+  family.  The queued (512,0)@32 / (512,0)@48 pod cells are MOOT.
+- **Parametric geometry [PROVED + machine at 6 scales]**: 4-block
+  pattern catalogue (exactly 4 empty patterns), family laws
+  |H_up| = 5M²/4, |H_dn| = 5M²/16, |SKIP| = 13M²/16, and Lemma
+  LEAK — the C1 witness's '8' is Σ_{z∈leak} c(z) (leak
+  {36,40,44,48}, 2 parents each), verified on 5 recorded witnesses.
+- **Honest residue**: the margin family U4(2m; v, v*₃(m)+b) (all
+  measured pump content lives there; (368,6)@32 still unresolved)
+  and the freshness family F(N; v) [GAP-F-schema], which does NOT
+  project (one-seam 3-block theories are SAT).  NG4/supply
+  [GAP-AFFORD′] untouched.

@@ -195,3 +195,43 @@ Ledger-graph changes from FRONT TELESCOPE:
   currency (NG4 confirmed at chain level) and pins its two targets:
   echoing giant payments (branch a) or one-displaced-value-per-
   octave forever (branch b).
+
+### Pump-schema delta (2026-08-30, notes/75 + e175)
+
+The 4-block gadget's uniform law landed; ledger-graph changes:
+
+* **[GAP-VMIN0-growth] DISCHARGED BY COLLAPSE** (Theorem J-DOWN,
+  notes/75 §2.2–2.3): the lower window of U4(M) IS the coupled-core
+  window at m = M/2 and vdn = 0 is its block-order hypothesis, so
+  U4(M; v, w) is UNSAT for EVERY v whenever the anchor-m core fires
+  at budget w (three-line L-PROJ restriction).  Hence
+  **v_min(0)(M) = ∞ for all M ≥ 32** (bal machine at M = 32/48/64
+  via e120 half-cores — new direct cell (none,0)@32 UNSAT 7.4 s;
+  const (2,2,2) at M = 96/128/160 via e125/e126; uniform for
+  M = 2m, m ≡ 0 mod 16, m ≥ 48 modulo GAP-N6a with the balance→
+  band pigeonhole 16/15 proved).  The demand curve reverts to the
+  budgeted half-core frontier v*₃(m; bounds) [GAP-V*, const form]
+  plus the margin family below.  Queued pod cells (512,0)@32 and
+  (512,0)@48 are MOOT.
+* **[GAP-J-schema] RESCOPED**: the (·,0) family at large anchors is
+  GAP-N6a verbatim (one schema engine — the intended collapse);
+  the surviving content is the MARGIN family
+  U4(2m; v, v*₃(m)+b) (all measured pump cells (6,0)@16 /
+  (65,0)@24 are margin instances with v*₃(m) = 0; (368,6)@32
+  unresolved) and the boot window M ≤ 24 (calibration only;
+  v_min(0)(24) ∈ (65, 1440], finite).  The notes/62 §4c–4d
+  three-arm (·,0) hand schema is demoted from load-bearing to
+  boot-window documentation.
+* **[GAP-F-schema] UNTOUCHED** (does not project: one-seam 3-block
+  theories are SAT) — T-FRESH keeps genuine joint content; it is
+  now the pump instrument's only load-bearing residual besides the
+  margin family.
+* **Proven infrastructure** (no tags): Lemma P-CAT (4-block pattern
+  catalogue, 4 empty patterns; family laws |H_up| = 5M²/4,
+  |H_dn| = 5M²/16, |SKIP| = 13M²/16), Lemma LEAK (the parametric
+  '8': μ_dn = Σ_{z∈leak} c(z), verified on 5 witnesses), NEST
+  correspondence + dictionary (notes/75 §2.1: H_dn = straddles(m),
+  L-PREFIX(i) = Lemma-U(m) condition (S), vup charged on the
+  S3 = 2×S2 wall — MUS stub ⊂ S3(16) machine-exact), band
+  pigeonhole.  Independent cross-validation: CORE′(48) reproduced
+  UNSAT through the 4-block encoder (C5, 39.2 s).
