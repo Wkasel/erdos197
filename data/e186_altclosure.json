@@ -1779,5 +1779,44 @@
    }
   ],
   "n_hits": 2
+ },
+ "partHSPLIT": [
+  {
+   "part": "hsplit",
+   "hor": 4096,
+   "D": 2,
+   "F": 64,
+   "u0": 64,
+   "k8": true,
+   "verdict": "UNSAT",
+   "secs": 30.1,
+   "pod": "sprint-B"
+  },
+  {
+   "part": "hsplit",
+   "hor": 2048,
+   "D": 2,
+   "F": 64,
+   "u0": 64,
+   "k8": true,
+   "verdict": "UNSAT",
+   "secs": 12.5,
+   "pod": "sprint-B"
+  },
+  {
+   "part": "hsplit",
+   "hor": 4096,
+   "D": 2,
+   "F": 64,
+   "u0": 64,
+   "k8": false,
+   "verdict": "UNSAT",
+   "secs": 27.6,
+   "pod": "sprint-B"
+  }
+ ],
+ "altw_hsplit_compat": {
+  "mod4_mono_sections_t6up": 0,
+  "mod8_mono_sections_t6up": 0
  }
 }
