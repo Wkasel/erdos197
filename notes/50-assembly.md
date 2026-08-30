@@ -21,8 +21,16 @@ restatement: notes/46 §4A).
    diagonal lane machine-complete M=16..135 all residues, hand schema for
    5 pairs, 0 failures; GAP-N2: off-diagonal lanes (e124) + uniform hand
    proof of the family].
-2. **Bounded-dust robustness** [N3: exact single-block tolerances d*=2/3;
-   scale-stable; GAP-N3: one-paragraph hand extension of C3-PUNCT].
+2. **Bounded-dust robustness** [N3 — RESHAPED (notes/74): the
+   uniform-in-C form at fixed p is REFUTED (8 offset-stable
+   transversal 3-escapes for {15,16} at every dyadic scale tested);
+   the load-bearing form is N3-GROW: tolerance d*(x) grows along the
+   diagonal (measured 2 / 3 / ≥ 4 at x = 11 / 15 / 27, exhaustive),
+   and B1's extracted pair has p > 2^{m₀}/3 so a one-line patch to
+   B1 Step 1 (choose m₀ with 2^{m₀} ≥ 3x₀(C₀)) restores the chain
+   under (H1′) = N3-GROW + N2-DIAG.  GAP-N3-GROW: hand schema open;
+   severed-ladder derivation closes odd/top punctures, open at
+   even/b1/center (e130c part2)].
 3. **T-PIN pigeonhole** [N1, proven]: fixed attacker pair at finite
    positions + infinitely many disjoint UNSAT windows ⟹ not permutable.
 4. Assembly: **DONE (notes/52, Theorem B1) — AUDIT-CLEARED (60-audit
@@ -35,7 +43,8 @@ restatement: notes/46 §4A).
    cleanliness), and the planned landing-pad descent provably has no
    well-ordering (notes/52 §4.3 — finite usable families admit a
    splitter fixed point; density is necessary).  Case-1 chain is now
-   N1 + B1 + (GAP-N2-DIAG, GAP-N3); GAP-BRIDGE1 discharged.
+   N1 + B1(patched, notes/74 §I.4) + (GAP-N2-DIAG, GAP-N3-GROW);
+   GAP-BRIDGE1 discharged.
 
 ## Case 2 kill chain
 1. **The coupled 2-seam core** [N6]: balanced 3-block gadget UNSAT at
@@ -57,8 +66,12 @@ restatement: notes/46 §4A).
 
 ## Support layer (proven)
 - lem:orbit + T-SHARP sharpness (kills doubling-supercritical teams
-  directly — iid-like colorings die here; L1' concentration lemma for the
-  subcritical remainder [GAP-L1': hand proof — measured true everywhere]).
+  directly — iid-like colorings die here).  The L1' concentration lemma
+  that was slated for the subcritical remainder is REFUTED (notes/74:
+  ROT4 — rotating quarters — is balanced, subcritical in both teams for
+  every finite reflector family [PROVED], and window-diffuse with sharp
+  sup density 5/6); the subcritical remainder is handled by the ordinary
+  Case-1/Case-2 dichotomy, which never needed L1'.
 - d_t law, Lemma NECK, seam 7-channel law (octave/stage-alternating
   shapes — subsumed by Case 1 once GAP-BRIDGE1 lands, kept as independent
   confirmation).
@@ -71,11 +84,11 @@ restatement: notes/46 §4A).
 | Tag | Statement | Type | Status |
 |-----|-----------|------|--------|
 | GAP-N2 | off-diagonal lanes + uniform family proof | hand+machine | largely EXECUTED (notes/49: {11,12} all 8 residues, lane laws, template cells 13..19); remains: PARAMETRIC-in-x lane proof, cells A4d(19)/B6(21), pairs x ≡ 7 mod 8.  PRIORITY UPDATE (notes/52): the Case-1 critical path needs ONLY the diagonal parametric sub-piece **GAP-N2-DIAG** (C3(p) write-up, p ≡ 1 mod 4, dyadic scales — e123's verbatim-schema claim; fresh-p machine evidence now at p = 21 both dyadic scales + robustness, 60-audit-1 §3); off-diagonal parametrics matter only for BRIDGE1-AF |
-| GAP-N3 | dust-robust C3 | hand (short) | flagged one-paragraph, unwritten |
-| GAP-BRIDGE1 | ~~pair-ownership/split dichotomy in Case 1~~ **DISCHARGED + AUDIT-CLEARED** (notes/52 Theorem B1; refereed SOUND by 60-audit §4 and 60-audit-1 §1/§3 — line-by-line re-derivation + fresh adversarial colorings χA/χA′/χB incl. H1 robustness at fresh p = 21; the two §4.3 wording fixes 52-G1/52-G2 APPLIED to notes/52) — residual dependencies unchanged: GAP-N2-DIAG + GAP-N3; BRIDGE1-AF still open | hand | CLOSED modulo N2-DIAG/N3; audited |
+| GAP-N3 | ~~dust-robust C3 (uniform in C at fixed p)~~ RESHAPED → **GAP-N3-GROW**: d*(x) → ∞ along the diagonal | hand + machine | uniform-C form REFUTED at p = 5 (notes/74 §I.2: the 8 transversal 3-escapes of {t11≺b2, t7≺b4, t3≺b6}, offset-stable at M = 80/96/128/144 — no m*(5, C ≥ 3) exists); growth form measured: d* = 2 / 3 / ≥ 4 at x = 11 / 15 / 27 with the p = 9 census EXHAUSTIVE (all ≤ 3-subsets of the 41-value support at M = 80, all 2-subsets at 112/144); B1 patched (notes/74 §I.4, one line — extracted p > 2^{m₀}/3 makes x₀(C₀) free); hand schema open — severed-ladder Lemma-D extension closes odd/top punctures at 3 scales, open at even/b1/center (e130c part2) |
+| GAP-BRIDGE1 | ~~pair-ownership/split dichotomy in Case 1~~ **DISCHARGED + AUDIT-CLEARED** (notes/52 Theorem B1; refereed SOUND by 60-audit §4 and 60-audit-1 §1/§3 — line-by-line re-derivation + fresh adversarial colorings χA/χA′/χB incl. H1 robustness at fresh p = 21; the two §4.3 wording fixes 52-G1/52-G2 APPLIED to notes/52) — residual dependencies: GAP-N2-DIAG + GAP-N3-GROW (Step 1 patched per notes/74 §I.4 — the literal (H1) is refuted at small p, the extracted pair's p > 2^{m₀}/3 restores it as (H1′)); BRIDGE1-AF still open | hand | CLOSED modulo N2-DIAG/N3-GROW; audited |
 | GAP-N6a | all-M coupled schema | hand (from MUS) | DECOMPOSED (notes/55 skeleton + notes/56 bridge + notes/59 low-gap closures; notes/57 DICH + notes/58 LLOP/PARM both refereed SOUND — 60-audit, 60-audit-1, 61-audit-2).  Proved layer: Lemma U, A1–A9, Seesaw/Z′/D′, E2/C, P′, W, PAR, FG-high, Theorem H, Cor. PAR-i, Lemma J (PROVED, independently re-established), fan-walk calculus + affine families, Lemma AO/D3, Lemma PH+, Theorem ASM′ + COV-W′ compositions, DICH case tree (H-DICH over F0–F4).  **Machine record**: DICH/L-LOP thresholds measured at all EIGHT scales 48..160 (step 16); mechanistic K* law exact at all 8 incl. 4 blind hits (K*(144) = 76, K*(160) = 83); flat cap law C(M) = (M+16)/2 − 4 exact at 96..160 (caps 51/59/67/75/83); (OV) W(M) = C − K* ≥ 0 at ALL EIGHT scales (W = 1 at 160 — the feared hole never materialized); full bridge chains verified at SIX scales (48/64/80/96 exact COV-W + **robust COV-W′ at 128 AND 160**, 61-audit-2 §4; 112/144 have thresholds but no P-arm run).  Sub-gaps remaining (unchanged in kind, shrunk in load): GAP-DICH (5 catalogue-schema rows, notes/57 §7), GAP-LLOP-α/β, GAP-PARM (⊇ GAP-PARM-CORNER ⊇ FG-deep 20-pair halving core), GAP-ASM′ = (OV-∀) only — now 8-scale-true with robust-chain insurance, GAP-FG-schema (RT-glue + deep block), GAP-FG-deep (L1/L2/L3 write-ups; cross-scale audit at 64 RUN, 61-audit-2 §5.3: resonance law CONFIRMED two-scale, but the E1×E1/non-resonant characterization of the stall set is 48-specific — at 64 twelve stalls spill to the E1 shoulder q ∈ [M−16, M−1] incl. resonant gaps 8/24, so the uniformization target must not bake in the 48 shape) |
 | GAP-G2 | ~~double non-procrastination~~ REFRAMED: T-FORCE affordability — two Θ(M)-dense teams cannot both afford forced > v*(M) inversions at every anchor forever | hand (THE gap, ledger-type) | DNP as stated is FALSE (single-team, all budgets to N^{1−o(1)}, irreducibly two-sided — notes/47); FORMAL LEDGER THEOREM drafted (notes/54: demand side PROVEN modulo GAP-V*-schema/growth; supply side = GAP-AFFORD with proven mechanism lemmas; X-INTERLEAVE survives the accounting — e130 all-pass); pump brackets still wide: v*(bal,16) ∈ [3,6] (CP-SAT witness at 6), v*(bal,24) ∈ (4,65], v*(bal,32) ∈ (2,368], v*(pin,16) > 4 (fleet verdicts, 60-audit §5.0c) — too wide to confirm or refute growth.  **GAP-AFFORD session (2026-08-28, e158 + notes/62): GAP-JOINT measured YES — the 4-block downward gadget fires: (vup,vdn) = (6,0)@16 and (65,0)@24 UNSAT at componentwise-payable budgets (v*(bal,8) = v*(bal,12) = 0 measured; pure pump, attribution controls C1/C2 SAT); joint demand curve strictly above per-anchor floors at 2 scales [GAP-J-schema].  GAP-COMP refuted as counting (parity orientation, witness-realized); NG4 proved (budget rectangles are demand-only — L-AFFORD needs the donation currency); L-PREFIX proved (prefix-cohort tax; skip family Θ(M²), exact law 13M²/64+M/8); Lemma K + Theorem SCHED-DEAD proved (zero-sumset parity class dead at every budget, every M ≥ 12 — first complete arm of the (·,0) schema); (16;6,0)-MUS n = 50 FULLY critical (B2 = six-value stub).  Live sub-gaps: GAP-J-schema (2-scale staircase, machine-true 16/24), GAP-VMIN0 (v_min(0)(24) > 65; growth law open), GAP-AFFORD′ (overpayment ledger in donations — THE residual) |
-| GAP-L1' | concentration lemma | hand | measured-true, unproven |
+| GAP-L1' | ~~concentration lemma~~ | — | **REFUTED, tag retired** (notes/74 Part II): ROT4 is everywhere-split + doubling-subcritical both teams for EVERY finite reflector family (hand proof, chains die at depth ≤ 2; machine max depth 1 with adversarial f ≤ 64 to 2^22) yet window-diffuse (every ratio-2 window misses ≥ a/16 − O(1) of each team by hand, sharp a/6 machine-exact to 2^16).  The notes/46 dodger corner (i)+(ii) is REALIZED; (iii) fails for ROT4 (Θ(M) gap-1 pairs — rotation is intervals); ROT4 itself dies at the coupled core (e131: ≥ 1 team UNSAT at each of M = 16/32/64, both at 32).  The ledger route's final step must point at the coupled core / T-FORCE instead |
 
 Note the STRUCTURAL simplification bought by the MUS landing: if the
 M=48 support confirms the anchor-coordinate match, GAP-N6a's schema is
