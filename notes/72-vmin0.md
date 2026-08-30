@@ -7,16 +7,25 @@ T-LEDGER + T-FRESH + v_min(0) → ∞ ⟹ demand side of L-AFFORD for the
 linear regime, with every link's status.  This is the keystone
 document for the Case-2 ledger chain.
 
-Verdict in one line: **the demand calculus of the (v,0) cell is now a
-proved three-channel theorem (T-CHAN), the sumset floor is exactly
-computable and its ONLY zero is the parity schedule already killed by
-SCHED-DEAD at every budget — the growth theorem reduces to one
-extremal coverage inequality [GAP-BAND-COV] plus one robustness
-radius [GAP-K-ROB], both stated exactly, with the coverage arm
-PROVED on the canonical range family (demand ≥ M − O(1)); the series
-itself is harvested to five scales (v_min(0)(32) > 512, const-bounds
-(65,0)@24 UNSAT) after quarantining a fleet mis-launch that was
-solving the WRONG CELL.**
+Verdict in one line (WRITTEN MID-SESSION, then overtaken and merged
+— see §5): **the demand calculus of the (v,0) cell is a proved
+three-channel theorem (T-CHAN) with new proved extremal lemmas
+(L-MID, L-SEESAW, L-RANGE — direct progress on notes/71's
+[GAP-FHALF]); the sumset floor's zero set is STRICTLY BIGGER than
+the parity schedules (e174: composite parity-core + range-top zeros
+at every scale, all LOW-PURE, hence all Lemma-K-dead) — and the
+growth question itself was resolved during this session by the
+convergence of three fronts: notes/75's Theorem J-DOWN collapses
+the pump into the anchor-m coupled core, giving v_min(0)(M) = ∞ for
+every M ≥ 32 (machine at 32; modulo GAP-N6a beyond), notes/71's
+two-case schema gives v_min(0)(M) ≥ M/2 for all M ≥ 12 modulo the
+orders-free counting lemma [GAP-FHALF], and this front's harvest
+pins the finite regime to exactly M ∈ {8, 16, 24} (12 exact;
+(6,384]; (65,1440]).  [GAP-VMIN0-growth] is DISCHARGED.  The
+composed keystone statement (T-LEDGER + T-FRESH + collapse ⟹
+demand side of L-AFFORD, linear regime) is §6, every link
+statused.  Fleet incident: the pods were mis-launched on the wrong
+cell — caught, quarantined, redeployed (§2).**
 
 ## 0. The object
 
@@ -62,15 +71,19 @@ x_{s1} + x_{s2} ≤ v):
 | F(16; 6) | UNSAT — TWICE independently (983.5s local, 1350.2s main pod) |
 | F(24; 65) | TIMEOUT @43200s (relaunched on sprint-C at 86400s) |
 
-Key monotone facts: v_min(0)(8) = 12 = 1.5M; v_min(0)(24) > 65 ≈
-2.7M; v_min(0)(32) > 512 = 16M.  The lower-bound curve is
-super-linear on its face between 24 and 32 (both are only lower
-bounds; no curve-fitting per campaign rule).  Every point sits far
-above the balanced v*₃ bracket at its scale (v*(bal,8) = 0;
-v*(bal,32) witness 368 < 512) — zeroing an anchor costs
-qualitatively more than paying the floor, at every measured scale.
-Deep-UNSAT stays cheap through v = 512 at M = 32 (98.6s); the wall
-is scale (M = 48), not budget depth.
+Key facts: v_min(0)(8) = 12 = 1.5M; v_min(0)(24) > 65 ≈ 2.7M;
+v_min(0)(32) > 512 = 16M.  Every point sits far above the balanced
+v*₃ bracket at its scale (v*(bal,8) = 0; v*(bal,32) witness
+368 < 512) — zeroing an anchor costs qualitatively more than paying
+the floor, at every measured scale.  Deep-UNSAT stays cheap through
+v = 512 at M = 32 (98.6s); the wall is scale (M = 48), not budget
+depth.  READING CORRECTED BY THE MERGE (§5): the 32-row is not a
+large finite lower bound but the shadow of v_min(0)(32) = ∞
+(notes/75 J-DOWN: (none,0)@32 UNSAT [7.4s] — the anchor-16 coupled
+core fires under vdn = 0 regardless of vup); the finite regime is
+exactly M ∈ {8, 16, 24} with v_min(0)(24) ∈ (65, 1440] (notes/75
+C2@24 (none,0) SAT).  The 48-timeout row is moot (predicted UNSAT
+at every v by J-DOWN + the bal core at 24).
 
 ## 2. FLEET INCIDENT (quarantine + fix, this session) — the wrong cell
 
@@ -224,3 +237,170 @@ higher-modulus lattice threads are capacity-limited (Y needs M of
 2M values — exactly ONE class mod 4; W is forced to be ALL of one
 parity of Bm1).  e174 (§6) answers the question by machine at
 16..40; the hand classification is [GAP-ZERO], expected N3-species.
+
+## 5. The growth theorem — resolved by three-front convergence
+## (MERGE section: notes/71 + notes/75 + this front, same day)
+
+This front was tasked with proving v_min(0)(M) ≥ c·M.  Mid-session,
+two sibling fronts landed results that resolve the growth question
+from both sides; this section is the merged statement, with this
+front's contributions folded in where they now belong.
+
+**Theorem V0 (growth/collapse of the free-lower-anchor price).**
+Let M ≡ 0 mod 4.  bal mode:
+
+(a) **Collapse route [notes/75 Theorem J-DOWN, PROVED; 3-line
+restriction].**  If the balanced 2-seam coupled core at anchor
+m = M/2 is infeasible, then the (v,0) cell at M is infeasible for
+EVERY v: v_min(0)(M) = ∞.  The core is machine-true at
+m = 16, 24, 32, 48, 64, 80 ⟹ **v_min(0)(M) = ∞ at
+M = 32, 48, 64, 96, 128, 160** ((none,0)@32 direct: UNSAT 7.4s,
+notes/75 C2); all-m is GAP-N6a (the near-closed N6a schema).  The
+finite regime is exactly M ∈ {8, 16, 24}: 12 exact; (6, 384];
+(65, 1440] ((none,0)@24 SAT — the m = 12 core does not fire).
+
+(b) **Two-case route [notes/71 schema; unconditional on (a)].**
+Every balanced coloring is either LOW-PURE (its Bm1∪B0 part
+single-parity per team) — dead at EVERY budget by Lemma K on the
+low chain (M ≥ 12; the kill is intrinsic to the chain: any AP-free
+team order restricts to an AP-free prefix-order of the parity
+chain, so it covers ALL low-pure colorings, including the
+composite zeros found by e174 below) — or LOW-IMPURE, in which
+case it pays μ_up + μ_skip ≥ f(M) in s2 by T-CHAN (§3).  Hence
+v_min(0)(M) ≥ f(M), and [GAP-FHALF: f(M) ≥ M/2] gives the linear
+bound this front was tasked with — as an orders-free counting
+lemma.
+
+(c) **[GAP-VMIN0-growth] is DISCHARGED**: divergence holds by
+route (a) modulo GAP-N6a (machine-true along the tested ladder to
+M = 160), and independently v_min(0)(M) ≥ M/2 → ∞ modulo the
+single counting lemma GAP-FHALF.  const mode: the collapse
+threshold is m = 48 via the (2,2,2) cores (J-DOWN + D1/D2), so
+const-(v,0)@M = ∞ for M ≥ 96 modulo GAP-N6a; the measured const
+points at 24 ((6,0), (65,0) UNSAT) are finite-regime demand.
+
+**This front's standing contributions (the GAP-FHALF layer):**
+
+1. **The zero set of the sumset floor is bigger than the parity
+   schedules** (e174 zeroset, M = 16, 24, 32, 40): balanced
+   colorings with μ_dn = μ_up = μ_skip = 0 for BOTH teams exist at
+   Hamming distance 6..26 from the nearest (x,x,1−x,1−x) schedule —
+   anatomy: parity core + full-range blocks at the TOPS of B1/B2
+   (e.g. M = 32: A = evens(16,64] ∪ odds(64,109] ∪ [120,128] ∪
+   odds(128,221] ∪ {233,237} ∪ [242,256]).  Every zero found is
+   LOW-PURE, hence Lemma-K-dead — machine confirmation that the
+   two-case split of route (b) is exhaustive-in-practice: **the
+   floor's entire zero variety lives inside the order-dead class.**
+2. **f(M) measured by a second instrument** (e174 fhalf, CP-SAT
+   min-max over teams, exact): f(8) = 4, f(12) = 6, f(16) = 8 —
+   agreeing with notes/71's pod ladder value M/2 at all three
+   scales; M = 24, 32, 40 queued (running at close).
+3. **Proved extremal steps toward GAP-FHALF** (§3–4): L-MID (the
+   midband (2M, 3M] is never sumset-clean: every balanced (U, W)
+   mints (2U−W)-mass there — hand proof M ≥ 32, machine 16..40),
+   L-SEESAW (2·B1 = B2: coverage ≥ M/2 unconditionally), L-HIT
+   (coverage beyond 2M paid unit-for-unit), L-RANGE (the
+   up-interval dodge family pays ≥ M/2 − O(1) — the f-target
+   achieved on that family).  What remains of GAP-FHALF: the
+   general low-impure case analysis (lattice/range composites, N3
+   species) — the same residue-casework species as the campaign's
+   other uniformization gaps.
+
+## 6. THE KEYSTONE: the composed ledger statement, every link
+## statused
+
+**Theorem T-TEL″ (demand side of L-AFFORD, linear regime;
+composition of T-LEDGER + T-FRESH + the V0 collapse).**
+Assume:
+
+- [N6a] the coupled core fires at every anchor m ≥ 16 (bal) /
+  m ≥ 48 (const (2,2,2)) — machine-true m = 16..80, hand schema
+  near-closed (sub-gaps: GAP-DICH catalogue rows, GAP-LLOP-α/β,
+  GAP-PARM, GAP-ASM′ = (OV-∀), GAP-FG — notes/50 inventory);
+- [D1+D2, PROVED] cell transfer: a const-bounds cell applies at
+  every anchor whose per-block presence meets its bounds —
+  cofinitely many anchors of every Case-2 pair.
+
+Then for every valid Case-2 pair and every 2-adic chain {N_j}:
+
+1. **No zero anchors** (J-DOWN reading): for all large j, some team
+   has Inv_T(N_j) ≥ 1 — the everywhere-payment branch of notes/70's
+   T-TEL′ dichotomy holds UNCONDITIONALLY on that dichotomy; the
+   zero-anchor/echo branch (a) is empty above the collapse
+   threshold.  (L-ECHO stays live only at the three finite scales.)
+2. **Disjoint ledger** [T-LEDGER, PROVED]: along each 4-adic
+   subchain the forced payments are pairwise-disjoint inversion-pair
+   families — an infinite disjoint system, ≥ 1 fresh pair per two
+   octaves, forever.
+3. **Fresh mints at every anchor** [T-FRESH, PROVED modulo
+   GAP-F-schema]: if both teams pay ≤ v(N_j) at anchor N_j, some
+   team owns an inverted pair AT β_j itself; by L-HOME these are
+   disjoint at EVERY anchor — density one per octave — and each
+   mint's low member is a displaced value (P3), feeding the
+   donation ledger.
+4. **Per-anchor demand size**: with v_min(0) collapsed to ∞, the
+   quantitative per-anchor floor reverts to the budgeted half-core
+   frontier v*₃(m; bounds) [GAP-V*, now constant-sharpening for the
+   ledger but load-bearing for RATE statements — notes/75 §segment].
+
+Conclusion: **the demand side of L-AFFORD holds in regime (I)** —
+diverging cumulative forced fresh demand with exact disjoint
+bookkeeping, at density ≥ 1 pair per two octaves (unconditional
+modulo [N6a]) and 1 per octave (modulo [GAP-F-schema]).  What the
+composition does NOT give — unchanged, and provably not obtainable
+in this currency (NG1–NG4; X-INTERLEAVE realizes branch-2 demand
+with a valid free team): the supply cap.  **L-AFFORD = demand
+(above) ∧ [GAP-AFFORD′]** (overpayment capacity in donations,
+single-use colored values — the program's terminal gap).
+
+### Link-status table (complete, as of this session)
+
+| link | statement | status |
+|------|-----------|--------|
+| L-HOME | each adjacent-octave pair lives at exactly one boundary | PROVED (notes/70 §1) |
+| L-2PRICE | each boundary priced by exactly 2 chain anchors | PROVED (notes/70; 10/10 witness audit) |
+| T-LEDGER | 4-adic subchain payments = perfect disjoint partition | PROVED (notes/70 §1) |
+| L-SQUEEZE | per-anchor price subadditivity (no parking) | PROVED (notes/70 §1) |
+| L-ECHO | zero anchor books its giant payment at 2 anchors, same team | PROVED; subsumed above collapse threshold (no zero anchors); live at M ∈ {8,16,24} |
+| T-CHAN / L-PREFIX | (v,0) three-channel demand calculus | PROVED (notes/62 §4c = notes/72 §3) |
+| Lemma K + SCHED-DEAD + low-pure arm | low-pure colorings dead at every budget, M ≥ 12 | PROVED (notes/62 §4d; notes/71 §1) |
+| Theorem J-DOWN | anchor-m core fires ⟹ (·,0)@2m UNSAT ∀vup | PROVED (notes/75 §2.2) |
+| coupled core, all m | bal m ≥ 16; const (2,2,2) m ≥ 48 | machine m = 16..80; hand = GAP-N6a (near-closed, sub-gaps in notes/50) |
+| GAP-FHALF | f(M) ≥ M/2 (orders-free counting) | OPEN; = M/2 exact at 8/12/16 (two independent instruments); 24/32/40 in flight; proved pieces L-MID/L-SEESAW/L-HIT/L-RANGE (notes/72 §3–4) |
+| GAP-VMIN0-growth | v_min(0)(M) → ∞ | **DISCHARGED** (route (a) modulo GAP-N6a; route (b) modulo GAP-FHALF) |
+| GAP-J-schema | (v,0) all-M family | large M = GAP-N6a verbatim (J-DOWN); finite scales machine-done; residual: margin family (v, w ≥ v*₃(m)) [GAP-J-margin, open] |
+| GAP-F-schema | freshness family F(N; v) UNSAT | OPEN; machine (16;6) UNSAT ×2 pods; does NOT project under J-DOWN (notes/75) — genuinely new content; F(24;65) in flight (sprint-C, 86400s) |
+| T-FRESH | disjoint fresh mints, density 1/octave | PROVED modulo GAP-F-schema (notes/70 §4) |
+| D1 + D2 | transfer of const cells to Case-2 anchors | PROVED (notes/62, notes/54) |
+| GAP-V* | v*₃(m; bounds) growth | open; demoted for demand EXISTENCE, load-bearing for demand RATE |
+| GAP-AFFORD′ | supply cap in donation currency | **OPEN — the terminal gap**; unchanged; targets: charge the everywhere-fresh mint system (1 displaced value per octave forever) |
+
+Net for the ledger chain: with GAP-VMIN0-growth discharged, the
+Case-2 kill = [N6a closure] + [GAP-AFFORD′] (+ GAP-F-schema for the
+density-1 sharpening; + GAP-FHALF only if one wants the finite-scale
+linear law independent of N6a).  The demand half of GAP-G2's
+reframed T-FORCE statement is now a THEOREM modulo N6a — the first
+time the everywhere-payment conclusion holds without any budget
+hypothesis.
+
+## 7. Machine record + fleet state (this session)
+
+| item | verdict | provenance |
+|------|---------|------------|
+| harvest (512,0)@32 bal | UNSAT [98.6s] | main pod e158_tel_M32_up512_dn0.json |
+| harvest (65,0)@24 const (2,3,6,12) | UNSAT [14797.6s] | main pod e158_tel_M24_const_up65_dn0.json |
+| harvest (100,0)@32 const | TIMEOUT [43200s] | main pod |
+| harvest (512,0)@48 bal | TIMEOUT [43200s] — moot post-J-DOWN | main pod |
+| harvest F(16;6) pod re-run | UNSAT [1350.2s] — 2nd independent | main pod e173_fresh_M16_v6.json |
+| harvest F(24;65) | TIMEOUT [43200.4s] | main pod; relaunched sprint-C 86400s |
+| e174 midcheck (L-MID) | UNSAT (= lemma holds) ×4, M = 16/24/32/40 | data/e174_band_floor.jsonl |
+| e174 zeroset | SAT ×4 — non-schedule zeros exist, all LOW-PURE | data/e174_band_floor.jsonl (witnesses inline) |
+| e174 fhalf | f = 4/6/8 at M = 8/12/16 = M/2 exact (OPT); 24/32/40 running | data/e174_band_floor.jsonl |
+| fleet incident | wrong cell (e127 per-team) on all 3 sprint pods; killed + quarantined; nothing entered the series | §2 |
+| sprint-B (relaunched, correct encoder) | pump grid 16: 12/24/48/96; 24: 128/256; 32: 768/1024 (last four = J-DOWN blind tests) | data/vmin0_series.log on pod |
+| sprint-C (relaunched) | cert battery (11,0)@8=UNSAT-expected, (12,0)@8=SAT-expected, (6,0)@16, (65,0)@24 + F(16;6) 3rd run + F(24;65)@86400 | data/vmus_cert.log on pod |
+| sprint-D | re-task to (none,0)@40/48/64/96 + margin (368,6)@32 prepared; deploy pending (pod connection flaky at close — old moot driver may still be running) | scratchpad run_fresh_D2.py |
+
+Open rows to harvest next session: sprint logs (above), e174 fhalf
+24/32/40, F(24;65).  Decisive next mathematics: GAP-AFFORD′ (the
+terminal), GAP-FHALF general case, GAP-J-margin, N6a sub-gaps.
