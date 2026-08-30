@@ -1,0 +1,81 @@
+[CENSUS] h4096_F64 m=16 T=A: |H|=44 nx=10 ny=14 match=10 pres=12/24/16
+[CENSUS] h4096_F64 m=16 T=B: |H|=2 nx=2 ny=2 match=2 pres=4/8/48
+[CENSUS] h4096_F64 m=32 T=A: |H|=0 nx=0 ny=0 match=0 pres=24/16/32
+[CENSUS] h4096_F64 m=32 T=B: |H|=164 nx=8 ny=24 match=8 pres=8/48/96
+[CENSUS] h4096_F64 m=64 T=A: |H|=296 nx=15 ny=23 match=15 pres=16/32/64
+[CENSUS] h4096_F64 m=64 T=B: |H|=2201 nx=48 ny=72 match=48 pres=48/96/192
+[CENSUS] h4096_F64 m=128 T=A: |H|=1280 nx=32 ny=48 match=32 pres=32/64/128
+[CENSUS] h4096_F64 m=128 T=B: |H|=8928 nx=96 ny=144 match=96 pres=96/192/384
+[CENSUS] h4096_F64 m=256 T=A: |H|=5120 nx=64 ny=96 match=64 pres=64/128/256
+[CENSUS] h4096_F64 m=256 T=B: |H|=35776 nx=192 ny=288 match=192 pres=192/384/768
+[CENSUS] h4096_lin4 m=16 T=A: |H|=0 nx=0 ny=0 match=0 pres=0/24/48
+[CENSUS] h4096_lin4 m=16 T=B: |H|=23 nx=11 ny=6 match=6 pres=16/8/16
+[CENSUS] h4096_lin4 m=32 T=A: |H|=562 nx=24 ny=36 match=24 pres=24/48/96
+[CENSUS] h4096_lin4 m=32 T=B: |H|=26 nx=3 ny=10 match=3 pres=8/16/32
+[CENSUS] h4096_lin4 m=64 T=A: |H|=2346 nx=48 ny=72 match=48 pres=48/96/192
+[CENSUS] h4096_lin4 m=64 T=B: |H|=167 nx=9 ny=23 match=9 pres=16/32/64
+[CENSUS] h4096_lin4 m=128 T=A: |H|=8960 nx=96 ny=144 match=96 pres=96/192/384
+[CENSUS] h4096_lin4 m=128 T=B: |H|=1280 nx=32 ny=48 match=32 pres=32/64/128
+[CENSUS] h4096_lin4 m=256 T=A: |H|=35840 nx=192 ny=288 match=192 pres=192/384/768
+[CENSUS] h4096_lin4 m=256 T=B: |H|=5120 nx=64 ny=96 match=64 pres=64/128/256
+[CENSUS] h8192_F64 m=16 T=A: |H|=42 nx=4 ny=12 match=4 pres=12/24/16
+[CENSUS] h8192_F64 m=16 T=B: |H|=0 nx=0 ny=0 match=0 pres=4/8/48
+[CENSUS] h8192_F64 m=32 T=A: |H|=0 nx=0 ny=0 match=0 pres=24/16/32
+[CENSUS] h8192_F64 m=32 T=B: |H|=164 nx=8 ny=24 match=8 pres=8/48/96
+[CENSUS] h8192_F64 m=64 T=A: |H|=320 nx=16 ny=24 match=16 pres=16/32/64
+[CENSUS] h8192_F64 m=64 T=B: |H|=2240 nx=48 ny=72 match=48 pres=48/96/192
+[CENSUS] h8192_F64 m=128 T=A: |H|=1280 nx=32 ny=48 match=32 pres=32/64/128
+[CENSUS] h8192_F64 m=128 T=B: |H|=8960 nx=96 ny=144 match=96 pres=96/192/384
+[CENSUS] h8192_F64 m=256 T=A: |H|=5120 nx=64 ny=96 match=64 pres=64/128/256
+[CENSUS] h8192_F64 m=256 T=B: |H|=35840 nx=192 ny=288 match=192 pres=192/384/768
+[CENSUS] pureL3 m=16 T=A: |H|=20 nx=4 ny=6 match=4 pres=4/8/16
+[CENSUS] pureL3 m=16 T=B: |H|=136 nx=12 ny=18 match=12 pres=12/24/48
+[CENSUS] pureL3 m=32 T=A: |H|=80 nx=8 ny=12 match=8 pres=8/16/32
+[CENSUS] pureL3 m=32 T=B: |H|=552 nx=24 ny=36 match=24 pres=24/48/96
+[CENSUS] pureL3 m=64 T=A: |H|=320 nx=16 ny=24 match=16 pres=16/32/64
+[CENSUS] pureL3 m=64 T=B: |H|=2224 nx=48 ny=72 match=48 pres=48/96/192
+[CENSUS] pureL3 m=128 T=A: |H|=1280 nx=32 ny=48 match=32 pres=32/64/128
+[CENSUS] pureL3 m=128 T=B: |H|=8928 nx=96 ny=144 match=96 pres=96/192/384
+[CENSUS] pureL3 m=256 T=A: |H|=5120 nx=64 ny=96 match=64 pres=64/128/256
+[CENSUS] pureL3 m=256 T=B: |H|=35776 nx=192 ny=288 match=192 pres=192/384/768
+[census] done 0.1s
+[MINTLOC] h4096_F64 m=32 T=A: budget0=UNSAT |H|=0 cands=896 Ksurv=29 SATregion=0 xvalfail=0 [0.2s]
+[MINTLOC] h4096_F64 m=32 T=B: budget0=UNSAT-structural |H|=164 cands=4992 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] h4096_F64 m=64 T=A: budget0=UNSAT-structural |H|=296 cands=2560 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] h4096_F64 m=64 T=B: budget0=UNSAT-structural |H|=2201 cands=23040 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] h4096_F64 m=128 T=A: budget0=UNSAT-structural |H|=1280 cands=10240 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] h4096_F64 m=128 T=B: budget0=UNSAT-structural |H|=8928 cands=92160 Ksurv=0 SATregion=0 xvalfail=0 [0.1s]
+[MINTLOC] h4096_lin4 m=32 T=A: budget0=UNSAT-structural |H|=562 cands=5760 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] h4096_lin4 m=32 T=B: budget0=UNSAT-structural |H|=26 cands=640 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] h4096_lin4 m=64 T=A: budget0=UNSAT-structural |H|=2346 cands=23040 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] h4096_lin4 m=64 T=B: budget0=UNSAT-structural |H|=167 cands=2560 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] h4096_lin4 m=128 T=A: budget0=UNSAT-structural |H|=8960 cands=92160 Ksurv=0 SATregion=0 xvalfail=0 [0.1s]
+[MINTLOC] h4096_lin4 m=128 T=B: budget0=UNSAT-structural |H|=1280 cands=10240 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] h8192_F64 m=32 T=A: budget0=UNSAT |H|=0 cands=896 Ksurv=144 SATregion=0 xvalfail=0 [1.3s]
+[MINTLOC] h8192_F64 m=32 T=B: budget0=UNSAT-structural |H|=164 cands=4992 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] h8192_F64 m=64 T=A: budget0=UNSAT-structural |H|=320 cands=2560 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] h8192_F64 m=64 T=B: budget0=UNSAT-structural |H|=2240 cands=23040 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] h8192_F64 m=128 T=A: budget0=UNSAT-structural |H|=1280 cands=10240 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] h8192_F64 m=128 T=B: budget0=UNSAT-structural |H|=8960 cands=92160 Ksurv=0 SATregion=0 xvalfail=0 [0.1s]
+[MINTLOC] pureL3 m=32 T=A: budget0=UNSAT-structural |H|=80 cands=640 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] pureL3 m=32 T=B: budget0=UNSAT-structural |H|=552 cands=5760 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] pureL3 m=64 T=A: budget0=UNSAT-structural |H|=320 cands=2560 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[MINTLOC] pureL3 m=64 T=B: budget0=UNSAT-structural |H|=2224 cands=23040 Ksurv=0 SATregion=0 xvalfail=0 [0.0s]
+[mintloc] done 1.9s
+[NU] h4096_F64 m=32 T=A n=72: [(0, 'UNSAT', 0.0), (1, 'UNSAT', 0.0), (2, 'UNSAT', 0.0), (4, 'UNSAT', 0.0), (8, 'UNSAT', 0.0), (12, 'UNSAT', 0.0)] [0.1s]
+[NU] h4096_F64 m=32 T=B n=152: [(0, 'UNSAT', 0.0), (1, 'UNSAT', 0.0), (2, 'UNSAT', 0.0), (4, 'UNSAT', 0.0), (8, 'UNSAT', 0.0), (12, 'UNSAT', 0.0)] [0.7s]
+[NU] h4096_F64 m=64 T=A n=112: [(0, 'UNSAT', 0.0), (2, 'UNSAT', 0.0), (8, 'UNSAT', 0.0), (12, 'UNSAT', 0.0)] [0.3s]
+[NU] h4096_F64 m=64 T=B: n=336 SKIP (too large for local scan)
+[NU] h4096_lin4 m=32 T=A n=168: [(0, 'UNSAT', 0.0), (1, 'UNSAT', 0.0), (2, 'UNSAT', 0.0), (4, 'UNSAT', 0.0), (8, 'UNSAT', 0.0), (12, 'UNSAT', 0.0)] [1.1s]
+[NU] h4096_lin4 m=32 T=B n=56: [(0, 'UNSAT', 0.0), (1, 'UNSAT', 0.0), (2, 'UNSAT', 0.0), (4, 'UNSAT', 0.0), (8, 'UNSAT', 0.0), (12, 'UNSAT', 0.0)] [0.0s]
+[NU] h4096_lin4 m=64 T=A: n=336 SKIP (too large for local scan)
+[NU] h4096_lin4 m=64 T=B n=112: [(0, 'UNSAT', 0.0), (2, 'UNSAT', 0.0), (8, 'UNSAT', 0.0), (12, 'UNSAT', 0.0)] [0.3s]
+[NU] h8192_F64 m=32 T=A n=72: [(0, 'UNSAT', 0.0), (1, 'UNSAT', 0.0), (2, 'UNSAT', 0.0), (4, 'UNSAT', 0.0), (8, 'UNSAT', 0.0), (12, 'UNSAT', 0.0)] [0.1s]
+[NU] h8192_F64 m=32 T=B n=152: [(0, 'UNSAT', 0.0), (1, 'UNSAT', 0.0), (2, 'UNSAT', 0.0), (4, 'UNSAT', 0.0), (8, 'UNSAT', 0.0), (12, 'UNSAT', 0.0)] [0.8s]
+[NU] h8192_F64 m=64 T=A n=112: [(0, 'UNSAT', 0.0), (2, 'UNSAT', 0.0), (8, 'UNSAT', 0.0), (12, 'UNSAT', 0.0)] [0.3s]
+[NU] h8192_F64 m=64 T=B: n=336 SKIP (too large for local scan)
+[NU] pureL3 m=16 T=A n=28: [(0, 'UNSAT', 0.0), (1, 'UNSAT', 0.0), (2, 'UNSAT', 0.0), (3, 'UNSAT', 0.0), (4, 'UNSAT', 0.0), (5, 'UNSAT', 0.0), (6, 'UNSAT', 0.0), (7, 'UNSAT', 0.0), (8, 'UNSAT', 0.0), (9, 'UNSAT', 0.0), (10, 'UNSAT', 0.0), (11, 'UNSAT', 0.0), (12, 'UNSAT', 0.0), (13, 'UNSAT', 0.0), (14, 'UNSAT', 0.0), (15, 'UNSAT', 0.0), (16, 'UNSAT', 0.0), (17, 'UNSAT', 0.0), (18, 'UNSAT', 0.0), (19, 'UNSAT', 0.0), (20, 'UNSAT', 0.0), (21, 'UNSAT', 0.0), (22, 'UNSAT', 0.0), (23, 'UNSAT', 0.0), (24, 'UNSAT', 0.0)] [0.0s]
+[NU] pureL3 m=16 T=B n=84: [(0, 'UNSAT', 0.0), (1, 'UNSAT', 0.0), (2, 'UNSAT', 0.0), (3, 'UNSAT', 0.0), (4, 'UNSAT', 0.0), (5, 'UNSAT', 0.0), (6, 'UNSAT', 0.0), (7, 'UNSAT', 0.0), (8, 'UNSAT', 0.0), (9, 'UNSAT', 0.0), (10, 'UNSAT', 0.0), (11, 'UNSAT', 0.0), (12, 'UNSAT', 0.0), (13, 'UNSAT', 0.0), (14, 'UNSAT', 0.0), (15, 'UNSAT', 0.0), (16, 'UNSAT', 0.0), (17, 'UNSAT', 0.0), (18, 'UNSAT', 0.0), (19, 'UNSAT', 0.0), (20, 'UNSAT', 0.0), (21, 'UNSAT', 0.0), (22, 'UNSAT', 0.0), (23, 'UNSAT', 0.0), (24, 'UNSAT', 0.0)] [0.2s]
+[NU] pureL3 m=32 T=A n=56: [(0, 'UNSAT', 0.0), (4, 'UNSAT', 0.0), (12, 'UNSAT', 0.0), (24, 'UNSAT', 0.0)] [0.0s]
+[NU] pureL3 m=32 T=B n=168: [(0, 'UNSAT', 0.0), (4, 'UNSAT', 0.0), (12, 'UNSAT', 0.1), (24, 'UNSAT', 0.0)] [1.2s]
+[nu] done 5.1s

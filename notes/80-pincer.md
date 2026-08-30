@@ -115,3 +115,94 @@ any e185 run (campaign rule).
 
 Survival protocol: §1 machine harvest; §2 MINT-LOC resolution
 (hand); §3 the lattice-affordability core + the pincer; §4 ledger.
+
+---
+
+## 1. Machine harvest (e185; census + mintloc landed, nu appended
+## below)
+
+### 1.1 partCENSUS — the H-family census [P-a CONFIRMED, and
+### sharper]
+
+Selected rows (full table data/e185_mintloc.json):
+
+| coloring | m | H_A | match_A | H_B | match_B | pres A / B (B0) |
+|---|---|---|---|---|---|---|
+| pureL3 (control) | 32 | 80 | 8 | 552 | 24 | 8 / 24 |
+| pureL3 | 64 | 320 | 16 | 2224 | 48 | 16 / 48 |
+| pureL3 | 128 | 1280 | 32 | 8928 | 96 | 32 / 96 |
+| pureL3 | 256 | 5120 | 64 | 35776 | 192 | 64 / 192 |
+| h4096_F64 | 32 | **0** | 0 | 164 | 8 | 24 / 8 |
+| h4096_F64 | 64 | 296 | 15 | 2201 | 48 | 16 / 48 |
+| h4096_F64 | 128 | 1280 | 32 | 8928 | 96 | 32 / 96 |
+| h4096_lin4 | 32 | 562 | 24 | 26 | 3 | 24 / 8 |
+| h4096_lin4 | 128 | 8960 | 96 | 1280 | 32 | 96 / 32 |
+| h8192_F64 | 32 | **0** | 0 | 164 | 8 | 24 / 8 |
+| h8192_F64 | 128 | 1280 | 32 | 8960 | 96 | 32 / 96 |
+
+Readings:
+
+1. **The pure-lattice minority H-count is the closed form
+   |H| = 5m²/64 EXACTLY** (80/320/1280/5120 at m = 32..256) — the
+   desk formula of §3.3 lands to the integer.  The majority count
+   is ≈ 7× that (mixed-class families).
+2. **max-matching = |T ∩ B0| — the König displaced-value floor
+   saturates at FULL anchor-block presence at every measured
+   cell** (8 = |B∩B0| at m=32; 96 = |B∩B0| at m=128; both teams,
+   all colorings, zero exceptions).  Sharper than predicted (only
+   Θ(m) was pre-registered).
+3. The ownership case-table is machine-exact: H_A = 0 precisely at
+   the (B,A,A)-vector anchor m = 32 of both F64 witnesses (the
+   e184 §4.3 anomaly, now DERIVED and postdicted); everywhere else
+   both teams carry Θ(m²).
+4. Above the boot zone the witnesses' counts converge to the pure
+   lattice verbatim (35776 = pureL3's own m=256 majority count on
+   h4096_F64) — the witnesses ARE the canonical family plus boot
+   noise, as characterized in notes/80 §4.2.
+
+### 1.2 partMINTLOC — the pre-registered enumeration [P-b
+### CONFIRMED, and strengthened]
+
+All three witnesses, m = 32/64/128, both teams, both seams, ALL
+candidate mints (896–92160 per cell), fast filter cross-validated
+against the exact γ-filter on 150-cand samples + all survivors
+(**xval failures: 0 across all cells**):
+
+- **The one-mint SAT region is EMPTY at every cell** (22/22,
+  including the pure-lattice control at 32/64).
+- Every team with H ≠ 0 is budget-0 UNSAT-STRUCTURAL with ZERO
+  K-survivors: no candidate even reaches a solver.
+- **The silent-row teams (H = 0: team A at m = 32, both F64
+  witnesses) are budget-0 UNSAT at the SOLVER level too** — the
+  within-block + 2-block AP system kills them without any
+  H-triple; and their K-survivors (29 resp. 144 candidates) are
+  ALL solver-UNSAT.  Prediction P-b had budget-0 SAT here — wrong
+  in the direction that STRENGTHENS the demand side: at every
+  witness anchor tested, both teams pay ≥ 1, and no single mint
+  is ever sufficient (pay ≥ 2 even in the silent rows).
+
+MINT-LOC as pre-registered is therefore resolved by the machine in
+the STRONG (empty-region) form; the hand argument is §2.
+
+### 1.3 partNU — the budget frontier [P-c CONFIRMED, and the
+### silent rows pay too]
+
+Minimum-payment scans (adjacent-seam inversion indicators,
+totalizer; per-team theory on the fixed coloring):
+
+- **Witnesses, m = 32 (all 3, both teams) and m = 64 (the ≤ 260
+  side): UNSAT through budget 12, every cell** — including
+  h4096_F64/h8192_F64 team A at m = 32, the H = 0 silent rows
+  (n = 72): their payment is > 12 from the within-block +
+  2-block AP system alone (A's blocks there are 3/4-dense
+  near-intervals — Varnavides-species demand, no H needed).
+- **Pure lattice control, m = 16, minority: UNSAT through
+  b = 24 > |H| = 20** (n = 28, instant solves): the true frontier
+  ν EXCEEDS the H-cover floor — the K-cascade families (§2.1)
+  charge above |H|.  Majority at m = 16 and both teams at m = 32:
+  UNSAT through 24.
+
+Net: on the corner's canonical inhabitants, per-anchor per-team
+payment is > 12 at every cell measured, > 24 where scanned, with
+the proven floor |H_T| = Θ(m²) (P5) wherever H ≠ 0 — against
+T-TEL″'s previous unconditional floor of ONE pair per two octaves.

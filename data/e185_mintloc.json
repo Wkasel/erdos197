@@ -1,0 +1,1870 @@
+{
+ "partCENSUS": {
+  "h4096_F64": {
+   "ownership": [
+    {
+     "t": 5,
+     "min_team": "B",
+     "cA": 24,
+     "size": 32,
+     "mod4_top": 3,
+     "pure": true
+    },
+    {
+     "t": 6,
+     "min_team": "A",
+     "cA": 16,
+     "size": 64,
+     "mod4_top": 3,
+     "pure": false
+    },
+    {
+     "t": 7,
+     "min_team": "A",
+     "cA": 32,
+     "size": 128,
+     "mod4_top": 3,
+     "pure": true
+    },
+    {
+     "t": 8,
+     "min_team": "A",
+     "cA": 64,
+     "size": 256,
+     "mod4_top": 3,
+     "pure": true
+    },
+    {
+     "t": 9,
+     "min_team": "A",
+     "cA": 128,
+     "size": 512,
+     "mod4_top": 3,
+     "pure": true
+    },
+    {
+     "t": 10,
+     "min_team": "A",
+     "cA": 256,
+     "size": 1024,
+     "mod4_top": 3,
+     "pure": true
+    },
+    {
+     "t": 11,
+     "min_team": "A",
+     "cA": 512,
+     "size": 2048,
+     "mod4_top": 3,
+     "pure": true
+    }
+   ],
+   "anchors": [
+    {
+     "m": 16,
+     "team": "A",
+     "H": 44,
+     "nx": 10,
+     "ny": 14,
+     "matching": 10,
+     "presence": [
+      12,
+      24,
+      16
+     ],
+     "patterns": {
+      "(1, 0, 3)": 20,
+      "(1, 2, 3)": 18,
+      "(2, 2, 2)": 2,
+      "(2, 0, 2)": 2,
+      "(0, 1, 2)": 2
+     }
+    },
+    {
+     "m": 16,
+     "team": "B",
+     "H": 2,
+     "nx": 2,
+     "ny": 2,
+     "matching": 2,
+     "presence": [
+      4,
+      8,
+      48
+     ],
+     "patterns": {
+      "(3, 3, 3)": 2
+     }
+    },
+    {
+     "m": 32,
+     "team": "A",
+     "H": 0,
+     "nx": 0,
+     "ny": 0,
+     "matching": 0,
+     "presence": [
+      24,
+      16,
+      32
+     ],
+     "patterns": {}
+    },
+    {
+     "m": 32,
+     "team": "B",
+     "H": 164,
+     "nx": 8,
+     "ny": 24,
+     "matching": 8,
+     "presence": [
+      8,
+      48,
+      96
+     ],
+     "patterns": {
+      "(3, 0, 1)": 84,
+      "(3, 2, 1)": 80
+     }
+    },
+    {
+     "m": 64,
+     "team": "A",
+     "H": 296,
+     "nx": 15,
+     "ny": 23,
+     "matching": 15,
+     "presence": [
+      16,
+      32,
+      64
+     ],
+     "patterns": {
+      "(3, 3, 3)": 296
+     }
+    },
+    {
+     "m": 64,
+     "team": "B",
+     "H": 2201,
+     "nx": 48,
+     "ny": 72,
+     "matching": 48,
+     "presence": [
+      48,
+      96,
+      192
+     ],
+     "patterns": {
+      "(1, 1, 1)": 320,
+      "(0, 0, 0)": 320,
+      "(0, 1, 2)": 312,
+      "(0, 2, 0)": 312,
+      "(2, 0, 2)": 304,
+      "(2, 2, 2)": 296
+     }
+    },
+    {
+     "m": 128,
+     "team": "A",
+     "H": 1280,
+     "nx": 32,
+     "ny": 48,
+     "matching": 32,
+     "presence": [
+      32,
+      64,
+      128
+     ],
+     "patterns": {
+      "(3, 3, 3)": 1280
+     }
+    },
+    {
+     "m": 128,
+     "team": "B",
+     "H": 8928,
+     "nx": 96,
+     "ny": 144,
+     "matching": 96,
+     "presence": [
+      96,
+      192,
+      384
+     ],
+     "patterns": {
+      "(2, 0, 2)": 1296,
+      "(1, 1, 1)": 1280,
+      "(2, 2, 2)": 1280,
+      "(0, 0, 0)": 1280,
+      "(2, 1, 0)": 1264,
+      "(0, 1, 2)": 1264
+     }
+    },
+    {
+     "m": 256,
+     "team": "A",
+     "H": 5120,
+     "nx": 64,
+     "ny": 96,
+     "matching": 64,
+     "presence": [
+      64,
+      128,
+      256
+     ],
+     "patterns": {
+      "(3, 3, 3)": 5120
+     }
+    },
+    {
+     "m": 256,
+     "team": "B",
+     "H": 35776,
+     "nx": 192,
+     "ny": 288,
+     "matching": 192,
+     "presence": [
+      192,
+      384,
+      768
+     ],
+     "patterns": {
+      "(2, 0, 2)": 5152,
+      "(1, 1, 1)": 5120,
+      "(2, 2, 2)": 5120,
+      "(0, 0, 0)": 5120,
+      "(2, 1, 0)": 5088,
+      "(0, 1, 2)": 5088
+     }
+    }
+   ]
+  },
+  "h4096_lin4": {
+   "ownership": [
+    {
+     "t": 5,
+     "min_team": "B",
+     "cA": 24,
+     "size": 32,
+     "mod4_top": 0,
+     "pure": false
+    },
+    {
+     "t": 6,
+     "min_team": "B",
+     "cA": 48,
+     "size": 64,
+     "mod4_top": 0,
+     "pure": false
+    },
+    {
+     "t": 7,
+     "min_team": "B",
+     "cA": 96,
+     "size": 128,
+     "mod4_top": 0,
+     "pure": true
+    },
+    {
+     "t": 8,
+     "min_team": "B",
+     "cA": 192,
+     "size": 256,
+     "mod4_top": 0,
+     "pure": true
+    },
+    {
+     "t": 9,
+     "min_team": "B",
+     "cA": 384,
+     "size": 512,
+     "mod4_top": 0,
+     "pure": true
+    },
+    {
+     "t": 10,
+     "min_team": "B",
+     "cA": 768,
+     "size": 1024,
+     "mod4_top": 0,
+     "pure": true
+    },
+    {
+     "t": 11,
+     "min_team": "B",
+     "cA": 1536,
+     "size": 2048,
+     "mod4_top": 0,
+     "pure": true
+    }
+   ],
+   "anchors": [
+    {
+     "m": 16,
+     "team": "A",
+     "H": 0,
+     "nx": 0,
+     "ny": 0,
+     "matching": 0,
+     "presence": [
+      0,
+      24,
+      48
+     ],
+     "patterns": {}
+    },
+    {
+     "m": 16,
+     "team": "B",
+     "H": 23,
+     "nx": 11,
+     "ny": 6,
+     "matching": 6,
+     "presence": [
+      16,
+      8,
+      16
+     ],
+     "patterns": {
+      "(0, 0, 0)": 5,
+      "(0, 1, 2)": 4,
+      "(2, 0, 2)": 4,
+      "(2, 2, 2)": 3,
+      "(0, 3, 2)": 2,
+      "(1, 0, 3)": 1
+     }
+    },
+    {
+     "m": 32,
+     "team": "A",
+     "H": 562,
+     "nx": 24,
+     "ny": 36,
+     "matching": 24,
+     "presence": [
+      24,
+      48,
+      96
+     ],
+     "patterns": {
+      "(1, 3, 1)": 75,
+      "(1, 1, 1)": 71,
+      "(3, 3, 3)": 58,
+      "(1, 2, 3)": 56,
+      "(3, 1, 3)": 56,
+      "(0, 3, 2)": 53
+     }
+    },
+    {
+     "m": 32,
+     "team": "B",
+     "H": 26,
+     "nx": 3,
+     "ny": 10,
+     "matching": 3,
+     "presence": [
+      8,
+      16,
+      32
+     ],
+     "patterns": {
+      "(0, 0, 0)": 24,
+      "(0, 2, 0)": 2
+     }
+    },
+    {
+     "m": 64,
+     "team": "A",
+     "H": 2346,
+     "nx": 48,
+     "ny": 72,
+     "matching": 48,
+     "presence": [
+      48,
+      96,
+      192
+     ],
+     "patterns": {
+      "(1, 3, 1)": 328,
+      "(1, 1, 1)": 320,
+      "(1, 2, 3)": 320,
+      "(3, 2, 1)": 298,
+      "(3, 3, 3)": 298,
+      "(3, 1, 3)": 290
+     }
+    },
+    {
+     "m": 64,
+     "team": "B",
+     "H": 167,
+     "nx": 9,
+     "ny": 23,
+     "matching": 9,
+     "presence": [
+      16,
+      32,
+      64
+     ],
+     "patterns": {
+      "(0, 0, 0)": 167
+     }
+    },
+    {
+     "m": 128,
+     "team": "A",
+     "H": 8960,
+     "nx": 96,
+     "ny": 144,
+     "matching": 96,
+     "presence": [
+      96,
+      192,
+      384
+     ],
+     "patterns": {
+      "(1, 3, 1)": 1296,
+      "(1, 1, 1)": 1280,
+      "(1, 2, 3)": 1280,
+      "(2, 2, 2)": 1280,
+      "(3, 2, 1)": 1280,
+      "(3, 3, 3)": 1280
+     }
+    },
+    {
+     "m": 128,
+     "team": "B",
+     "H": 1280,
+     "nx": 32,
+     "ny": 48,
+     "matching": 32,
+     "presence": [
+      32,
+      64,
+      128
+     ],
+     "patterns": {
+      "(0, 0, 0)": 1280
+     }
+    },
+    {
+     "m": 256,
+     "team": "A",
+     "H": 35840,
+     "nx": 192,
+     "ny": 288,
+     "matching": 192,
+     "presence": [
+      192,
+      384,
+      768
+     ],
+     "patterns": {
+      "(1, 3, 1)": 5152,
+      "(1, 1, 1)": 5120,
+      "(1, 2, 3)": 5120,
+      "(2, 2, 2)": 5120,
+      "(3, 2, 1)": 5120,
+      "(3, 3, 3)": 5120
+     }
+    },
+    {
+     "m": 256,
+     "team": "B",
+     "H": 5120,
+     "nx": 64,
+     "ny": 96,
+     "matching": 64,
+     "presence": [
+      64,
+      128,
+      256
+     ],
+     "patterns": {
+      "(0, 0, 0)": 5120
+     }
+    }
+   ]
+  },
+  "h8192_F64": {
+   "ownership": [
+    {
+     "t": 5,
+     "min_team": "B",
+     "cA": 24,
+     "size": 32,
+     "mod4_top": 1,
+     "pure": true
+    },
+    {
+     "t": 6,
+     "min_team": "A",
+     "cA": 16,
+     "size": 64,
+     "mod4_top": 1,
+     "pure": true
+    },
+    {
+     "t": 7,
+     "min_team": "A",
+     "cA": 32,
+     "size": 128,
+     "mod4_top": 1,
+     "pure": true
+    },
+    {
+     "t": 8,
+     "min_team": "A",
+     "cA": 64,
+     "size": 256,
+     "mod4_top": 1,
+     "pure": true
+    },
+    {
+     "t": 9,
+     "min_team": "A",
+     "cA": 128,
+     "size": 512,
+     "mod4_top": 1,
+     "pure": true
+    },
+    {
+     "t": 10,
+     "min_team": "A",
+     "cA": 256,
+     "size": 1024,
+     "mod4_top": 1,
+     "pure": true
+    },
+    {
+     "t": 11,
+     "min_team": "A",
+     "cA": 512,
+     "size": 2048,
+     "mod4_top": 1,
+     "pure": true
+    },
+    {
+     "t": 12,
+     "min_team": "A",
+     "cA": 1024,
+     "size": 4096,
+     "mod4_top": 1,
+     "pure": true
+    }
+   ],
+   "anchors": [
+    {
+     "m": 16,
+     "team": "A",
+     "H": 42,
+     "nx": 4,
+     "ny": 12,
+     "matching": 4,
+     "presence": [
+      12,
+      24,
+      16
+     ],
+     "patterns": {
+      "(3, 0, 1)": 22,
+      "(3, 2, 1)": 20
+     }
+    },
+    {
+     "m": 16,
+     "team": "B",
+     "H": 0,
+     "nx": 0,
+     "ny": 0,
+     "matching": 0,
+     "presence": [
+      4,
+      8,
+      48
+     ],
+     "patterns": {}
+    },
+    {
+     "m": 32,
+     "team": "A",
+     "H": 0,
+     "nx": 0,
+     "ny": 0,
+     "matching": 0,
+     "presence": [
+      24,
+      16,
+      32
+     ],
+     "patterns": {}
+    },
+    {
+     "m": 32,
+     "team": "B",
+     "H": 164,
+     "nx": 8,
+     "ny": 24,
+     "matching": 8,
+     "presence": [
+      8,
+      48,
+      96
+     ],
+     "patterns": {
+      "(1, 0, 3)": 84,
+      "(1, 2, 3)": 80
+     }
+    },
+    {
+     "m": 64,
+     "team": "A",
+     "H": 320,
+     "nx": 16,
+     "ny": 24,
+     "matching": 16,
+     "presence": [
+      16,
+      32,
+      64
+     ],
+     "patterns": {
+      "(1, 1, 1)": 320
+     }
+    },
+    {
+     "m": 64,
+     "team": "B",
+     "H": 2240,
+     "nx": 48,
+     "ny": 72,
+     "matching": 48,
+     "presence": [
+      48,
+      96,
+      192
+     ],
+     "patterns": {
+      "(2, 0, 2)": 328,
+      "(2, 2, 2)": 320,
+      "(2, 3, 0)": 320,
+      "(3, 3, 3)": 320,
+      "(0, 3, 2)": 320,
+      "(0, 0, 0)": 320
+     }
+    },
+    {
+     "m": 128,
+     "team": "A",
+     "H": 1280,
+     "nx": 32,
+     "ny": 48,
+     "matching": 32,
+     "presence": [
+      32,
+      64,
+      128
+     ],
+     "patterns": {
+      "(1, 1, 1)": 1280
+     }
+    },
+    {
+     "m": 128,
+     "team": "B",
+     "H": 8960,
+     "nx": 96,
+     "ny": 144,
+     "matching": 96,
+     "presence": [
+      96,
+      192,
+      384
+     ],
+     "patterns": {
+      "(2, 0, 2)": 1296,
+      "(2, 2, 2)": 1280,
+      "(2, 3, 0)": 1280,
+      "(3, 3, 3)": 1280,
+      "(0, 3, 2)": 1280,
+      "(0, 0, 0)": 1280
+     }
+    },
+    {
+     "m": 256,
+     "team": "A",
+     "H": 5120,
+     "nx": 64,
+     "ny": 96,
+     "matching": 64,
+     "presence": [
+      64,
+      128,
+      256
+     ],
+     "patterns": {
+      "(1, 1, 1)": 5120
+     }
+    },
+    {
+     "m": 256,
+     "team": "B",
+     "H": 35840,
+     "nx": 192,
+     "ny": 288,
+     "matching": 192,
+     "presence": [
+      192,
+      384,
+      768
+     ],
+     "patterns": {
+      "(2, 0, 2)": 5152,
+      "(2, 2, 2)": 5120,
+      "(2, 3, 0)": 5120,
+      "(3, 3, 3)": 5120,
+      "(0, 3, 2)": 5120,
+      "(0, 0, 0)": 5120
+     }
+    }
+   ]
+  },
+  "pureL3": {
+   "ownership": [
+    {
+     "t": 5,
+     "min_team": "A",
+     "cA": 8,
+     "size": 32,
+     "mod4_top": 3,
+     "pure": true
+    },
+    {
+     "t": 6,
+     "min_team": "A",
+     "cA": 16,
+     "size": 64,
+     "mod4_top": 3,
+     "pure": true
+    },
+    {
+     "t": 7,
+     "min_team": "A",
+     "cA": 32,
+     "size": 128,
+     "mod4_top": 3,
+     "pure": true
+    },
+    {
+     "t": 8,
+     "min_team": "A",
+     "cA": 64,
+     "size": 256,
+     "mod4_top": 3,
+     "pure": true
+    },
+    {
+     "t": 9,
+     "min_team": "A",
+     "cA": 128,
+     "size": 512,
+     "mod4_top": 3,
+     "pure": true
+    },
+    {
+     "t": 10,
+     "min_team": "A",
+     "cA": 256,
+     "size": 1024,
+     "mod4_top": 3,
+     "pure": true
+    }
+   ],
+   "anchors": [
+    {
+     "m": 16,
+     "team": "A",
+     "H": 20,
+     "nx": 4,
+     "ny": 6,
+     "matching": 4,
+     "presence": [
+      4,
+      8,
+      16
+     ],
+     "patterns": {
+      "(3, 3, 3)": 20
+     }
+    },
+    {
+     "m": 16,
+     "team": "B",
+     "H": 136,
+     "nx": 12,
+     "ny": 18,
+     "matching": 12,
+     "presence": [
+      12,
+      24,
+      48
+     ],
+     "patterns": {
+      "(2, 0, 2)": 22,
+      "(1, 1, 1)": 20,
+      "(2, 2, 2)": 20,
+      "(0, 0, 0)": 20,
+      "(2, 1, 0)": 18,
+      "(0, 1, 2)": 18
+     }
+    },
+    {
+     "m": 32,
+     "team": "A",
+     "H": 80,
+     "nx": 8,
+     "ny": 12,
+     "matching": 8,
+     "presence": [
+      8,
+      16,
+      32
+     ],
+     "patterns": {
+      "(3, 3, 3)": 80
+     }
+    },
+    {
+     "m": 32,
+     "team": "B",
+     "H": 552,
+     "nx": 24,
+     "ny": 36,
+     "matching": 24,
+     "presence": [
+      24,
+      48,
+      96
+     ],
+     "patterns": {
+      "(2, 0, 2)": 84,
+      "(1, 1, 1)": 80,
+      "(2, 2, 2)": 80,
+      "(0, 0, 0)": 80,
+      "(2, 1, 0)": 76,
+      "(0, 1, 2)": 76
+     }
+    },
+    {
+     "m": 64,
+     "team": "A",
+     "H": 320,
+     "nx": 16,
+     "ny": 24,
+     "matching": 16,
+     "presence": [
+      16,
+      32,
+      64
+     ],
+     "patterns": {
+      "(3, 3, 3)": 320
+     }
+    },
+    {
+     "m": 64,
+     "team": "B",
+     "H": 2224,
+     "nx": 48,
+     "ny": 72,
+     "matching": 48,
+     "presence": [
+      48,
+      96,
+      192
+     ],
+     "patterns": {
+      "(2, 0, 2)": 328,
+      "(1, 1, 1)": 320,
+      "(2, 2, 2)": 320,
+      "(0, 0, 0)": 320,
+      "(2, 1, 0)": 312,
+      "(0, 1, 2)": 312
+     }
+    },
+    {
+     "m": 128,
+     "team": "A",
+     "H": 1280,
+     "nx": 32,
+     "ny": 48,
+     "matching": 32,
+     "presence": [
+      32,
+      64,
+      128
+     ],
+     "patterns": {
+      "(3, 3, 3)": 1280
+     }
+    },
+    {
+     "m": 128,
+     "team": "B",
+     "H": 8928,
+     "nx": 96,
+     "ny": 144,
+     "matching": 96,
+     "presence": [
+      96,
+      192,
+      384
+     ],
+     "patterns": {
+      "(2, 0, 2)": 1296,
+      "(1, 1, 1)": 1280,
+      "(2, 2, 2)": 1280,
+      "(0, 0, 0)": 1280,
+      "(2, 1, 0)": 1264,
+      "(0, 1, 2)": 1264
+     }
+    },
+    {
+     "m": 256,
+     "team": "A",
+     "H": 5120,
+     "nx": 64,
+     "ny": 96,
+     "matching": 64,
+     "presence": [
+      64,
+      128,
+      256
+     ],
+     "patterns": {
+      "(3, 3, 3)": 5120
+     }
+    },
+    {
+     "m": 256,
+     "team": "B",
+     "H": 35776,
+     "nx": 192,
+     "ny": 288,
+     "matching": 192,
+     "presence": [
+      192,
+      384,
+      768
+     ],
+     "patterns": {
+      "(2, 0, 2)": 5152,
+      "(1, 1, 1)": 5120,
+      "(2, 2, 2)": 5120,
+      "(0, 0, 0)": 5120,
+      "(2, 1, 0)": 5088,
+      "(0, 1, 2)": 5088
+     }
+    }
+   ]
+  }
+ },
+ "partMINTLOC": {
+  "h4096_F64_m32_A": {
+   "m": 32,
+   "team": "A",
+   "H": 0,
+   "budget0": "UNSAT",
+   "n_cands": 896,
+   "k_survivors": 29,
+   "solved": 29,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.2
+  },
+  "h4096_F64_m32_B": {
+   "m": 32,
+   "team": "B",
+   "H": 164,
+   "budget0": "UNSAT-structural",
+   "n_cands": 4992,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "h4096_F64_m64_A": {
+   "m": 64,
+   "team": "A",
+   "H": 296,
+   "budget0": "UNSAT-structural",
+   "n_cands": 2560,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "h4096_F64_m64_B": {
+   "m": 64,
+   "team": "B",
+   "H": 2201,
+   "budget0": "UNSAT-structural",
+   "n_cands": 23040,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "h4096_F64_m128_A": {
+   "m": 128,
+   "team": "A",
+   "H": 1280,
+   "budget0": "UNSAT-structural",
+   "n_cands": 10240,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "h4096_F64_m128_B": {
+   "m": 128,
+   "team": "B",
+   "H": 8928,
+   "budget0": "UNSAT-structural",
+   "n_cands": 92160,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.1
+  },
+  "h4096_lin4_m32_A": {
+   "m": 32,
+   "team": "A",
+   "H": 562,
+   "budget0": "UNSAT-structural",
+   "n_cands": 5760,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "h4096_lin4_m32_B": {
+   "m": 32,
+   "team": "B",
+   "H": 26,
+   "budget0": "UNSAT-structural",
+   "n_cands": 640,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "h4096_lin4_m64_A": {
+   "m": 64,
+   "team": "A",
+   "H": 2346,
+   "budget0": "UNSAT-structural",
+   "n_cands": 23040,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "h4096_lin4_m64_B": {
+   "m": 64,
+   "team": "B",
+   "H": 167,
+   "budget0": "UNSAT-structural",
+   "n_cands": 2560,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "h4096_lin4_m128_A": {
+   "m": 128,
+   "team": "A",
+   "H": 8960,
+   "budget0": "UNSAT-structural",
+   "n_cands": 92160,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.1
+  },
+  "h4096_lin4_m128_B": {
+   "m": 128,
+   "team": "B",
+   "H": 1280,
+   "budget0": "UNSAT-structural",
+   "n_cands": 10240,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "h8192_F64_m32_A": {
+   "m": 32,
+   "team": "A",
+   "H": 0,
+   "budget0": "UNSAT",
+   "n_cands": 896,
+   "k_survivors": 144,
+   "solved": 144,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 1.3
+  },
+  "h8192_F64_m32_B": {
+   "m": 32,
+   "team": "B",
+   "H": 164,
+   "budget0": "UNSAT-structural",
+   "n_cands": 4992,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "h8192_F64_m64_A": {
+   "m": 64,
+   "team": "A",
+   "H": 320,
+   "budget0": "UNSAT-structural",
+   "n_cands": 2560,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "h8192_F64_m64_B": {
+   "m": 64,
+   "team": "B",
+   "H": 2240,
+   "budget0": "UNSAT-structural",
+   "n_cands": 23040,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "h8192_F64_m128_A": {
+   "m": 128,
+   "team": "A",
+   "H": 1280,
+   "budget0": "UNSAT-structural",
+   "n_cands": 10240,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "h8192_F64_m128_B": {
+   "m": 128,
+   "team": "B",
+   "H": 8960,
+   "budget0": "UNSAT-structural",
+   "n_cands": 92160,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.1
+  },
+  "pureL3_m32_A": {
+   "m": 32,
+   "team": "A",
+   "H": 80,
+   "budget0": "UNSAT-structural",
+   "n_cands": 640,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "pureL3_m32_B": {
+   "m": 32,
+   "team": "B",
+   "H": 552,
+   "budget0": "UNSAT-structural",
+   "n_cands": 5760,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "pureL3_m64_A": {
+   "m": 64,
+   "team": "A",
+   "H": 320,
+   "budget0": "UNSAT-structural",
+   "n_cands": 2560,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  },
+  "pureL3_m64_B": {
+   "m": 64,
+   "team": "B",
+   "H": 2224,
+   "budget0": "UNSAT-structural",
+   "n_cands": 23040,
+   "k_survivors": 0,
+   "solved": 0,
+   "sat_region_size": 0,
+   "sat_region": [],
+   "xval_fail": 0,
+   "secs": 0.0
+  }
+ },
+ "partNU": {
+  "h4096_F64_m32_A": {
+   "n": 72,
+   "scan": [
+    [
+     0,
+     "UNSAT",
+     0.0
+    ],
+    [
+     1,
+     "UNSAT",
+     0.0
+    ],
+    [
+     2,
+     "UNSAT",
+     0.0
+    ],
+    [
+     4,
+     "UNSAT",
+     0.0
+    ],
+    [
+     8,
+     "UNSAT",
+     0.0
+    ],
+    [
+     12,
+     "UNSAT",
+     0.0
+    ]
+   ],
+   "secs": 0.1
+  },
+  "h4096_F64_m32_B": {
+   "n": 152,
+   "scan": [
+    [
+     0,
+     "UNSAT",
+     0.0
+    ],
+    [
+     1,
+     "UNSAT",
+     0.0
+    ],
+    [
+     2,
+     "UNSAT",
+     0.0
+    ],
+    [
+     4,
+     "UNSAT",
+     0.0
+    ],
+    [
+     8,
+     "UNSAT",
+     0.0
+    ],
+    [
+     12,
+     "UNSAT",
+     0.0
+    ]
+   ],
+   "secs": 0.7
+  },
+  "h4096_F64_m64_A": {
+   "n": 112,
+   "scan": [
+    [
+     0,
+     "UNSAT",
+     0.0
+    ],
+    [
+     2,
+     "UNSAT",
+     0.0
+    ],
+    [
+     8,
+     "UNSAT",
+     0.0
+    ],
+    [
+     12,
+     "UNSAT",
+     0.0
+    ]
+   ],
+   "secs": 0.3
+  },
+  "h4096_lin4_m32_A": {
+   "n": 168,
+   "scan": [
+    [
+     0,
+     "UNSAT",
+     0.0
+    ],
+    [
+     1,
+     "UNSAT",
+     0.0
+    ],
+    [
+     2,
+     "UNSAT",
+     0.0
+    ],
+    [
+     4,
+     "UNSAT",
+     0.0
+    ],
+    [
+     8,
+     "UNSAT",
+     0.0
+    ],
+    [
+     12,
+     "UNSAT",
+     0.0
+    ]
+   ],
+   "secs": 1.1
+  },
+  "h4096_lin4_m32_B": {
+   "n": 56,
+   "scan": [
+    [
+     0,
+     "UNSAT",
+     0.0
+    ],
+    [
+     1,
+     "UNSAT",
+     0.0
+    ],
+    [
+     2,
+     "UNSAT",
+     0.0
+    ],
+    [
+     4,
+     "UNSAT",
+     0.0
+    ],
+    [
+     8,
+     "UNSAT",
+     0.0
+    ],
+    [
+     12,
+     "UNSAT",
+     0.0
+    ]
+   ],
+   "secs": 0.0
+  },
+  "h4096_lin4_m64_B": {
+   "n": 112,
+   "scan": [
+    [
+     0,
+     "UNSAT",
+     0.0
+    ],
+    [
+     2,
+     "UNSAT",
+     0.0
+    ],
+    [
+     8,
+     "UNSAT",
+     0.0
+    ],
+    [
+     12,
+     "UNSAT",
+     0.0
+    ]
+   ],
+   "secs": 0.3
+  },
+  "h8192_F64_m32_A": {
+   "n": 72,
+   "scan": [
+    [
+     0,
+     "UNSAT",
+     0.0
+    ],
+    [
+     1,
+     "UNSAT",
+     0.0
+    ],
+    [
+     2,
+     "UNSAT",
+     0.0
+    ],
+    [
+     4,
+     "UNSAT",
+     0.0
+    ],
+    [
+     8,
+     "UNSAT",
+     0.0
+    ],
+    [
+     12,
+     "UNSAT",
+     0.0
+    ]
+   ],
+   "secs": 0.1
+  },
+  "h8192_F64_m32_B": {
+   "n": 152,
+   "scan": [
+    [
+     0,
+     "UNSAT",
+     0.0
+    ],
+    [
+     1,
+     "UNSAT",
+     0.0
+    ],
+    [
+     2,
+     "UNSAT",
+     0.0
+    ],
+    [
+     4,
+     "UNSAT",
+     0.0
+    ],
+    [
+     8,
+     "UNSAT",
+     0.0
+    ],
+    [
+     12,
+     "UNSAT",
+     0.0
+    ]
+   ],
+   "secs": 0.8
+  },
+  "h8192_F64_m64_A": {
+   "n": 112,
+   "scan": [
+    [
+     0,
+     "UNSAT",
+     0.0
+    ],
+    [
+     2,
+     "UNSAT",
+     0.0
+    ],
+    [
+     8,
+     "UNSAT",
+     0.0
+    ],
+    [
+     12,
+     "UNSAT",
+     0.0
+    ]
+   ],
+   "secs": 0.3
+  },
+  "pureL3_m16_A": {
+   "n": 28,
+   "scan": [
+    [
+     0,
+     "UNSAT",
+     0.0
+    ],
+    [
+     1,
+     "UNSAT",
+     0.0
+    ],
+    [
+     2,
+     "UNSAT",
+     0.0
+    ],
+    [
+     3,
+     "UNSAT",
+     0.0
+    ],
+    [
+     4,
+     "UNSAT",
+     0.0
+    ],
+    [
+     5,
+     "UNSAT",
+     0.0
+    ],
+    [
+     6,
+     "UNSAT",
+     0.0
+    ],
+    [
+     7,
+     "UNSAT",
+     0.0
+    ],
+    [
+     8,
+     "UNSAT",
+     0.0
+    ],
+    [
+     9,
+     "UNSAT",
+     0.0
+    ],
+    [
+     10,
+     "UNSAT",
+     0.0
+    ],
+    [
+     11,
+     "UNSAT",
+     0.0
+    ],
+    [
+     12,
+     "UNSAT",
+     0.0
+    ],
+    [
+     13,
+     "UNSAT",
+     0.0
+    ],
+    [
+     14,
+     "UNSAT",
+     0.0
+    ],
+    [
+     15,
+     "UNSAT",
+     0.0
+    ],
+    [
+     16,
+     "UNSAT",
+     0.0
+    ],
+    [
+     17,
+     "UNSAT",
+     0.0
+    ],
+    [
+     18,
+     "UNSAT",
+     0.0
+    ],
+    [
+     19,
+     "UNSAT",
+     0.0
+    ],
+    [
+     20,
+     "UNSAT",
+     0.0
+    ],
+    [
+     21,
+     "UNSAT",
+     0.0
+    ],
+    [
+     22,
+     "UNSAT",
+     0.0
+    ],
+    [
+     23,
+     "UNSAT",
+     0.0
+    ],
+    [
+     24,
+     "UNSAT",
+     0.0
+    ]
+   ],
+   "secs": 0.0
+  },
+  "pureL3_m16_B": {
+   "n": 84,
+   "scan": [
+    [
+     0,
+     "UNSAT",
+     0.0
+    ],
+    [
+     1,
+     "UNSAT",
+     0.0
+    ],
+    [
+     2,
+     "UNSAT",
+     0.0
+    ],
+    [
+     3,
+     "UNSAT",
+     0.0
+    ],
+    [
+     4,
+     "UNSAT",
+     0.0
+    ],
+    [
+     5,
+     "UNSAT",
+     0.0
+    ],
+    [
+     6,
+     "UNSAT",
+     0.0
+    ],
+    [
+     7,
+     "UNSAT",
+     0.0
+    ],
+    [
+     8,
+     "UNSAT",
+     0.0
+    ],
+    [
+     9,
+     "UNSAT",
+     0.0
+    ],
+    [
+     10,
+     "UNSAT",
+     0.0
+    ],
+    [
+     11,
+     "UNSAT",
+     0.0
+    ],
+    [
+     12,
+     "UNSAT",
+     0.0
+    ],
+    [
+     13,
+     "UNSAT",
+     0.0
+    ],
+    [
+     14,
+     "UNSAT",
+     0.0
+    ],
+    [
+     15,
+     "UNSAT",
+     0.0
+    ],
+    [
+     16,
+     "UNSAT",
+     0.0
+    ],
+    [
+     17,
+     "UNSAT",
+     0.0
+    ],
+    [
+     18,
+     "UNSAT",
+     0.0
+    ],
+    [
+     19,
+     "UNSAT",
+     0.0
+    ],
+    [
+     20,
+     "UNSAT",
+     0.0
+    ],
+    [
+     21,
+     "UNSAT",
+     0.0
+    ],
+    [
+     22,
+     "UNSAT",
+     0.0
+    ],
+    [
+     23,
+     "UNSAT",
+     0.0
+    ],
+    [
+     24,
+     "UNSAT",
+     0.0
+    ]
+   ],
+   "secs": 0.2
+  },
+  "pureL3_m32_A": {
+   "n": 56,
+   "scan": [
+    [
+     0,
+     "UNSAT",
+     0.0
+    ],
+    [
+     4,
+     "UNSAT",
+     0.0
+    ],
+    [
+     12,
+     "UNSAT",
+     0.0
+    ],
+    [
+     24,
+     "UNSAT",
+     0.0
+    ]
+   ],
+   "secs": 0.0
+  },
+  "pureL3_m32_B": {
+   "n": 168,
+   "scan": [
+    [
+     0,
+     "UNSAT",
+     0.0
+    ],
+    [
+     4,
+     "UNSAT",
+     0.0
+    ],
+    [
+     12,
+     "UNSAT",
+     0.1
+    ],
+    [
+     24,
+     "UNSAT",
+     0.0
+    ]
+   ],
+   "secs": 1.2
+  }
+ }
+}
