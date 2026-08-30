@@ -1,0 +1,16 @@
+{
+ "partP27": {
+  "80": {
+   "support_size": 41,
+   "intact": "UNSAT",
+   "n1": 41,
+   "escapes1": [],
+   "n2": 820,
+   "escapes2": [],
+   "n3": 10660,
+   "escapes3": [],
+   "sup3": "exhaustive",
+   "secs": 2.4
+  }
+ }
+}
