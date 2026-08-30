@@ -1290,3 +1290,60 @@ experiments/e174_n3_growth.py, data/e174_*.
   "Measured true everywhere" for L1' was a corpus artifact — no
   rotating colorings had ever been measured (same salting lesson as
   N4's anchor-free restatement).
+
+### FRONT VMIN0-GROWTH (2026-08-30, e174_band_floor + notes/72): the
+### demand-series keystone — series harvested, growth resolved by
+### three-front merge, composed ledger statement written
+
+Full write-up notes/72-vmin0.md (THE keystone document for the
+Case-2 ledger chain: composed statement + complete link-status
+table in its §6).  Machine: experiments/e174_band_floor.py,
+data/e174_band_floor.jsonl; harvest from main pod e158_tel_*.
+
+- **Series harvested to its final shape**: (512,0)@32 UNSAT [98.6s]
+  and const-bounds (65,0)@24 UNSAT [14797.6s] pulled from the main
+  pod (previously unlogged); with notes/75's (none,0) cells the
+  curve reads: v_min(0) = 12 / (6,384] / (65,1440] at 8/16/24, = ∞
+  from 32 on (machine at 32/48/64 bal + 96/128/160 const; all-M
+  modulo GAP-N6a).  F(16;6) UNSAT now × 2 independent runs;
+  F(24;65) TIMEOUT@43200 → relaunched at 86400.
+- **FLEET INCIDENT (caught + quarantined)**: all three sprint pods
+  had been mis-launched on e127's 3-block per-TEAM cell instead of
+  the 4-block per-ANCHOR pump — detected via sprint-C's
+  "(11,0)@8 SAT [0s]" against the true pump UNSAT [40.6s].  Killed
+  before any wrong point entered the series; e173 deployed; drivers
+  rewritten (sprint-B: 16-bisect 12/24/48/96 + 24: 128/256 + 32
+  blind tests; sprint-C: cert battery + F cells; sprint-D re-task
+  to (none,0)@40/48/64/96 + margin (368,6)@32 prepared).
+  Quarantine rule now in notes/72 §2.
+- **New proved extremal layer (GAP-FHALF progress, notes/72 §3-4)**:
+  T-CHAN (the (v,0) three-channel demand calculus, self-contained
+  restatement), L-HIT (band coverage beyond 2M paid unit-for-unit),
+  L-SEESAW (2·B1 = B2: coverage ≥ M/2 unconditional), **L-MID (NEW
+  hand extremal lemma: the midband (2M, 3M] is NEVER sumset-clean —
+  every balanced (U, W) mints (2U−W)-mass there; 3-case proof for
+  M ≥ 32, machine-verified 16/24/32/40)**, L-RANGE (the up-interval
+  dodge family pays ≥ M/2 − O(1) — the f-target on that family).
+- **The zero variety of the sumset floor is BIGGER than the parity
+  schedules** [e174 zeroset, 4 scales]: balanced μ ≡ 0 colorings
+  exist at Hamming distance 6-26 from the nearest (x,x,1−x,1−x)
+  schedule — parity core + full-range blocks at B1/B2 TOPS — but
+  every zero found is LOW-PURE, hence Lemma-K-dead: machine
+  confirmation that notes/71's two-case split catches the whole
+  zero variety inside its order-dead arm.
+- **f(M) cross-instrumented**: e174's CP-SAT min-max reproduces
+  notes/71's pod ladder EXACTLY — f(8/12/16) = 4/6/8 = M/2, optimal
+  certificates; 24/32/40 queued.  [GAP-FHALF: f(M) ≥ M/2] is the
+  orders-free counting lemma that gives the finite-scale linear law
+  independent of N6a.
+- **THE KEYSTONE (notes/72 §6, Theorem T-TEL″)**: T-LEDGER [PROVED]
+  + T-FRESH [PROVED mod GAP-F-schema] + the V0 collapse [J-DOWN +
+  N6a] compose to: every valid Case-2 pair has NO zero anchors at
+  large scale, pays ≥ 1 fresh disjoint pair per two octaves forever
+  (per octave under GAP-F-schema), each mint P3-convertible to a
+  displaced value — **the demand side of L-AFFORD in regime (I) is
+  a theorem modulo N6a closure**, with no budget hypothesis.
+  Link-status table complete in notes/72 §6.  Unchanged terminal:
+  [GAP-AFFORD′] (supply cap in donation currency); demand-rate
+  statements re-point at [GAP-V*]; L-ECHO lives only at the three
+  finite scales.

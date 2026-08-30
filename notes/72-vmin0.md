@@ -118,11 +118,10 @@ const-bounds (65,0)@24 UNSAT [14797.6s] — both now in §1.
 ## 3. The demand calculus of the (v, 0) cell [PROVED]
 
 Notation, per team T: W = Bm1∩T, U = B0∩T, Y = B1∩T, X = B2∩T.
-At bal: |W| = M/4, |U| = M/2, |Y| = M, |X| = 2M.  Sumset masses:
-μ_dn = #{(u,y,z) ∈ U×Y... } — CORRECTION, campaign convention
-(notes/62): μ_dn = #AP triples in W×U×Y, μ_up = # in U×Y×X,
-μ_skip = # in W×Y×X (an AP triple (a, b, 2b−a) with the three
-members in the three listed blocks respectively).
+At bal: |W| = M/4, |U| = M/2, |Y| = M, |X| = 2M.  Sumset masses
+(campaign convention, notes/62): μ_dn = #AP triples in W×U×Y,
+μ_up = # in U×Y×X, μ_skip = # in W×Y×X (an AP triple (a, b, 2b−a)
+with the three members in the three listed blocks respectively).
 
 **Theorem T-CHAN (three-channel demand) [PROVED — this is L-PREFIX
 (notes/62 §4c) restated in (v,0) coordinates; proof reproduced for
