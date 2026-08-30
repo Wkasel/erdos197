@@ -1,0 +1,1783 @@
+{
+ "partLATRUNG": [
+  {
+   "tag": "LATRUNG-ctl",
+   "M": 128,
+   "attackers": [
+    15,
+    16
+   ],
+   "nD": 0,
+   "n": 128,
+   "verdict": "UNSAT",
+   "secs": 0.5
+  },
+  {
+   "tag": "LATRUNG-c0",
+   "M": 128,
+   "attackers": [
+    15,
+    16
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "SAT",
+   "secs": 0.3
+  },
+  {
+   "tag": "LATRUNG-c1",
+   "M": 128,
+   "attackers": [
+    15,
+    16
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "SAT",
+   "secs": 0.3
+  },
+  {
+   "tag": "LATRUNG-c2",
+   "M": 128,
+   "attackers": [
+    15,
+    16
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "SAT",
+   "secs": 0.3
+  },
+  {
+   "tag": "LATRUNG-c3",
+   "M": 128,
+   "attackers": [
+    15,
+    16
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "SAT",
+   "secs": 0.2
+  },
+  {
+   "tag": "LATRUNG-ctl",
+   "M": 128,
+   "attackers": [
+    17,
+    18
+   ],
+   "nD": 0,
+   "n": 128,
+   "verdict": "UNSAT",
+   "secs": 0.8
+  },
+  {
+   "tag": "LATRUNG-c0",
+   "M": 128,
+   "attackers": [
+    17,
+    18
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "SAT",
+   "secs": 0.3
+  },
+  {
+   "tag": "LATRUNG-c1",
+   "M": 128,
+   "attackers": [
+    17,
+    18
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "SAT",
+   "secs": 0.2
+  },
+  {
+   "tag": "LATRUNG-c2",
+   "M": 128,
+   "attackers": [
+    17,
+    18
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "UNSAT",
+   "secs": 0.3
+  },
+  {
+   "tag": "LATRUNG-c3",
+   "M": 128,
+   "attackers": [
+    17,
+    18
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "SAT",
+   "secs": 0.3
+  },
+  {
+   "tag": "LATRUNG-ctl",
+   "M": 128,
+   "attackers": [
+    25,
+    26
+   ],
+   "nD": 0,
+   "n": 128,
+   "verdict": "UNSAT",
+   "secs": 0.7
+  },
+  {
+   "tag": "LATRUNG-c0",
+   "M": 128,
+   "attackers": [
+    25,
+    26
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "SAT",
+   "secs": 0.3
+  },
+  {
+   "tag": "LATRUNG-c1",
+   "M": 128,
+   "attackers": [
+    25,
+    26
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "UNSAT",
+   "secs": 0.4
+  },
+  {
+   "tag": "LATRUNG-c2",
+   "M": 128,
+   "attackers": [
+    25,
+    26
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "UNSAT",
+   "secs": 0.1
+  },
+  {
+   "tag": "LATRUNG-c3",
+   "M": 128,
+   "attackers": [
+    25,
+    26
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "SAT",
+   "secs": 0.3
+  },
+  {
+   "tag": "LATRUNG-ctl",
+   "M": 128,
+   "attackers": [
+    27,
+    28
+   ],
+   "nD": 0,
+   "n": 128,
+   "verdict": "UNSAT",
+   "secs": 0.7
+  },
+  {
+   "tag": "LATRUNG-c0",
+   "M": 128,
+   "attackers": [
+    27,
+    28
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "UNSAT",
+   "secs": 0.3
+  },
+  {
+   "tag": "LATRUNG-c1",
+   "M": 128,
+   "attackers": [
+    27,
+    28
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "SAT",
+   "secs": 0.2
+  },
+  {
+   "tag": "LATRUNG-c2",
+   "M": 128,
+   "attackers": [
+    27,
+    28
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "SAT",
+   "secs": 0.3
+  },
+  {
+   "tag": "LATRUNG-c3",
+   "M": 128,
+   "attackers": [
+    27,
+    28
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "UNSAT",
+   "secs": 0.3
+  },
+  {
+   "tag": "LATRUNG-ctl",
+   "M": 256,
+   "attackers": [
+    15,
+    16
+   ],
+   "nD": 0,
+   "n": 256,
+   "verdict": "UNSAT",
+   "secs": 6.7
+  },
+  {
+   "tag": "LATRUNG-c0",
+   "M": 256,
+   "attackers": [
+    15,
+    16
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "UNSAT",
+   "secs": 2.5
+  },
+  {
+   "tag": "LATRUNG-c1",
+   "M": 256,
+   "attackers": [
+    15,
+    16
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "SAT",
+   "secs": 1.9
+  },
+  {
+   "tag": "LATRUNG-c2",
+   "M": 256,
+   "attackers": [
+    15,
+    16
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "SAT",
+   "secs": 1.7
+  },
+  {
+   "tag": "LATRUNG-c3",
+   "M": 256,
+   "attackers": [
+    15,
+    16
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "SAT",
+   "secs": 1.7
+  },
+  {
+   "tag": "LATRUNG-ctl",
+   "M": 256,
+   "attackers": [
+    17,
+    18
+   ],
+   "nD": 0,
+   "n": 256,
+   "verdict": "UNSAT",
+   "secs": 3.7
+  },
+  {
+   "tag": "LATRUNG-c0",
+   "M": 256,
+   "attackers": [
+    17,
+    18
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "SAT",
+   "secs": 1.6
+  },
+  {
+   "tag": "LATRUNG-c1",
+   "M": 256,
+   "attackers": [
+    17,
+    18
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "UNSAT",
+   "secs": 1.9
+  },
+  {
+   "tag": "LATRUNG-c2",
+   "M": 256,
+   "attackers": [
+    17,
+    18
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "UNSAT",
+   "secs": 1.8
+  },
+  {
+   "tag": "LATRUNG-c3",
+   "M": 256,
+   "attackers": [
+    17,
+    18
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "SAT",
+   "secs": 1.6
+  },
+  {
+   "tag": "LATRUNG-ctl",
+   "M": 256,
+   "attackers": [
+    25,
+    26
+   ],
+   "nD": 0,
+   "n": 256,
+   "verdict": "UNSAT",
+   "secs": 4.0
+  },
+  {
+   "tag": "LATRUNG-c0",
+   "M": 256,
+   "attackers": [
+    25,
+    26
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "SAT",
+   "secs": 1.5
+  },
+  {
+   "tag": "LATRUNG-c1",
+   "M": 256,
+   "attackers": [
+    25,
+    26
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "UNSAT",
+   "secs": 2.0
+  },
+  {
+   "tag": "LATRUNG-c2",
+   "M": 256,
+   "attackers": [
+    25,
+    26
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "UNSAT",
+   "secs": 2.0
+  },
+  {
+   "tag": "LATRUNG-c3",
+   "M": 256,
+   "attackers": [
+    25,
+    26
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "SAT",
+   "secs": 1.7
+  },
+  {
+   "tag": "LATRUNG-ctl",
+   "M": 256,
+   "attackers": [
+    27,
+    28
+   ],
+   "nD": 0,
+   "n": 256,
+   "verdict": "UNSAT",
+   "secs": 5.7
+  },
+  {
+   "tag": "LATRUNG-c0",
+   "M": 256,
+   "attackers": [
+    27,
+    28
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "UNSAT",
+   "secs": 3.9
+  },
+  {
+   "tag": "LATRUNG-c1",
+   "M": 256,
+   "attackers": [
+    27,
+    28
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "SAT",
+   "secs": 4.2
+  },
+  {
+   "tag": "LATRUNG-c2",
+   "M": 256,
+   "attackers": [
+    27,
+    28
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "SAT",
+   "secs": 3.0
+  },
+  {
+   "tag": "LATRUNG-c3",
+   "M": 256,
+   "attackers": [
+    27,
+    28
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "UNSAT",
+   "secs": 4.4
+  }
+ ],
+ "partSPARSE": [
+  {
+   "tag": "SPARSE-ctl27",
+   "M": 112,
+   "attackers": [
+    27,
+    28
+   ],
+   "sparse": true,
+   "extra_cap": null,
+   "nbase": 0,
+   "verdict": "SAT",
+   "secs": 0.9,
+   "D": [
+    113,
+    117,
+    121,
+    125,
+    128,
+    132,
+    136,
+    140,
+    144,
+    148,
+    151,
+    155,
+    162,
+    174,
+    180,
+    184,
+    192,
+    198,
+    202,
+    206,
+    211,
+    216,
+    220
+   ],
+   "D_size": 23,
+   "min_gap": 3,
+   "D_mod4": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "tag": "SPARSE-15+27",
+   "M": 64,
+   "attackers": [
+    15,
+    16,
+    27,
+    28
+   ],
+   "sparse": true,
+   "extra_cap": null,
+   "nbase": 0,
+   "verdict": "SAT",
+   "secs": 0.4,
+   "D": [
+    65,
+    68,
+    72,
+    76,
+    80,
+    85,
+    88,
+    92,
+    95,
+    99,
+    102,
+    105,
+    109,
+    114,
+    117,
+    121,
+    126
+   ],
+   "D_size": 17,
+   "min_gap": 3,
+   "D_mod4": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "tag": "SPARSE-17+25",
+   "M": 64,
+   "attackers": [
+    17,
+    18,
+    25,
+    26
+   ],
+   "sparse": true,
+   "extra_cap": null,
+   "nbase": 0,
+   "verdict": "SAT",
+   "secs": 0.3,
+   "D": [
+    65,
+    68,
+    71,
+    74,
+    77,
+    80,
+    84,
+    87,
+    92,
+    95,
+    99,
+    103,
+    107,
+    111,
+    115,
+    119,
+    122,
+    127
+   ],
+   "D_size": 18,
+   "min_gap": 3,
+   "D_mod4": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "tag": "SPARSE-15+27",
+   "M": 96,
+   "attackers": [
+    15,
+    16,
+    27,
+    28
+   ],
+   "sparse": true,
+   "extra_cap": null,
+   "nbase": 0,
+   "verdict": "SAT",
+   "secs": 0.6,
+   "D": [
+    97,
+    101,
+    105,
+    109,
+    113,
+    116,
+    124,
+    128,
+    132,
+    138,
+    142,
+    146,
+    152,
+    156,
+    164,
+    170,
+    178,
+    182,
+    190
+   ],
+   "D_size": 19,
+   "min_gap": 3,
+   "D_mod4": [
+    0,
+    1,
+    2
+   ]
+  },
+  {
+   "tag": "SPARSE-17+25",
+   "M": 96,
+   "attackers": [
+    17,
+    18,
+    25,
+    26
+   ],
+   "sparse": true,
+   "extra_cap": null,
+   "nbase": 0,
+   "verdict": "SAT",
+   "secs": 0.6,
+   "D": [
+    99,
+    102,
+    105,
+    109,
+    112,
+    116,
+    120,
+    126,
+    130,
+    134,
+    138,
+    142,
+    146,
+    150,
+    154,
+    158,
+    164,
+    168,
+    176,
+    184,
+    188
+   ],
+   "D_size": 21,
+   "min_gap": 3,
+   "D_mod4": [
+    0,
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "tag": "SPARSE-15+27",
+   "M": 128,
+   "attackers": [
+    15,
+    16,
+    27,
+    28
+   ],
+   "sparse": true,
+   "extra_cap": null,
+   "nbase": 0,
+   "verdict": "SAT",
+   "secs": 1.6,
+   "D": [
+    132,
+    136,
+    139,
+    143,
+    148,
+    153,
+    156,
+    159,
+    165,
+    168,
+    171,
+    177,
+    181,
+    184,
+    187,
+    193,
+    196,
+    199,
+    203,
+    208,
+    211,
+    215,
+    219,
+    224,
+    227,
+    233,
+    236,
+    241,
+    245,
+    253
+   ],
+   "D_size": 30,
+   "min_gap": 3,
+   "D_mod4": [
+    0,
+    1,
+    3
+   ]
+  },
+  {
+   "tag": "SPARSE-17+25",
+   "M": 128,
+   "attackers": [
+    17,
+    18,
+    25,
+    26
+   ],
+   "sparse": true,
+   "extra_cap": null,
+   "nbase": 0,
+   "verdict": "SAT",
+   "secs": 1.9,
+   "D": [
+    130,
+    134,
+    139,
+    142,
+    146,
+    150,
+    153,
+    156,
+    160,
+    163,
+    166,
+    169,
+    174,
+    177,
+    180,
+    184,
+    189,
+    192,
+    195,
+    199,
+    204,
+    207,
+    210,
+    215,
+    218,
+    221,
+    224,
+    227,
+    231,
+    236,
+    239,
+    242,
+    247,
+    251,
+    255
+   ],
+   "D_size": 35,
+   "min_gap": 3,
+   "D_mod4": [
+    0,
+    1,
+    2,
+    3
+   ]
+  }
+ ],
+ "partJOINT": [
+  {
+   "tag": "JOINT-15+27-c0",
+   "M": 128,
+   "attackers": [
+    15,
+    16,
+    27,
+    28
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "UNSAT",
+   "secs": 0.6
+  },
+  {
+   "tag": "JOINT-15+27-c1",
+   "M": 128,
+   "attackers": [
+    15,
+    16,
+    27,
+    28
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "SAT",
+   "secs": 0.5
+  },
+  {
+   "tag": "JOINT-15+27-c2",
+   "M": 128,
+   "attackers": [
+    15,
+    16,
+    27,
+    28
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "SAT",
+   "secs": 0.4
+  },
+  {
+   "tag": "JOINT-15+27-c3",
+   "M": 128,
+   "attackers": [
+    15,
+    16,
+    27,
+    28
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "UNSAT",
+   "secs": 0.5
+  },
+  {
+   "tag": "JOINT-17+25-c0",
+   "M": 128,
+   "attackers": [
+    17,
+    18,
+    25,
+    26
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "SAT",
+   "secs": 0.3
+  },
+  {
+   "tag": "JOINT-17+25-c1",
+   "M": 128,
+   "attackers": [
+    17,
+    18,
+    25,
+    26
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "UNSAT",
+   "secs": 0.4
+  },
+  {
+   "tag": "JOINT-17+25-c2",
+   "M": 128,
+   "attackers": [
+    17,
+    18,
+    25,
+    26
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "UNSAT",
+   "secs": 0.3
+  },
+  {
+   "tag": "JOINT-17+25-c3",
+   "M": 128,
+   "attackers": [
+    17,
+    18,
+    25,
+    26
+   ],
+   "nD": 32,
+   "n": 96,
+   "verdict": "SAT",
+   "secs": 0.3
+  },
+  {
+   "tag": "JOINT-15+27-c0",
+   "M": 256,
+   "attackers": [
+    15,
+    16,
+    27,
+    28
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "UNSAT",
+   "secs": 3.5
+  },
+  {
+   "tag": "JOINT-15+27-c1",
+   "M": 256,
+   "attackers": [
+    15,
+    16,
+    27,
+    28
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "SAT",
+   "secs": 3.4
+  },
+  {
+   "tag": "JOINT-15+27-c2",
+   "M": 256,
+   "attackers": [
+    15,
+    16,
+    27,
+    28
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "SAT",
+   "secs": 3.3
+  },
+  {
+   "tag": "JOINT-15+27-c3",
+   "M": 256,
+   "attackers": [
+    15,
+    16,
+    27,
+    28
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "UNSAT",
+   "secs": 2.5
+  },
+  {
+   "tag": "JOINT-17+25-c0",
+   "M": 256,
+   "attackers": [
+    17,
+    18,
+    25,
+    26
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "SAT",
+   "secs": 2.6
+  },
+  {
+   "tag": "JOINT-17+25-c1",
+   "M": 256,
+   "attackers": [
+    17,
+    18,
+    25,
+    26
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "UNSAT",
+   "secs": 2.6
+  },
+  {
+   "tag": "JOINT-17+25-c2",
+   "M": 256,
+   "attackers": [
+    17,
+    18,
+    25,
+    26
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "UNSAT",
+   "secs": 2.4
+  },
+  {
+   "tag": "JOINT-17+25-c3",
+   "M": 256,
+   "attackers": [
+    17,
+    18,
+    25,
+    26
+   ],
+   "nD": 64,
+   "n": 192,
+   "verdict": "SAT",
+   "secs": 2.2
+  }
+ ],
+ "partQVERIFY": {
+  "chart_exact": {
+   "cells": 44,
+   "fail": []
+  },
+  "ap_transport": {
+   "checked": 44400,
+   "fail": 0
+  },
+  "c3_units_in_R": {
+   "cells": 6,
+   "fail": []
+  },
+  "R39_M128": "UNSAT",
+  "witnesses": {
+   "h4096_F64": {
+    "blocks": [
+     {
+      "t": 5,
+      "pure": [
+       [
+        0,
+        "A"
+       ],
+       [
+        1,
+        "A"
+       ],
+       [
+        2,
+        "A"
+       ],
+       [
+        3,
+        "B"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 6,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "B"
+       ]
+      ],
+      "n_pure": 2
+     },
+     {
+      "t": 7,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "B"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 8,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "B"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 9,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "B"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 10,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "B"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 11,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "B"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     }
+    ],
+    "img": [
+     {
+      "t": 10,
+      "c": 0,
+      "team": "B",
+      "clean": true
+     },
+     {
+      "t": 11,
+      "c": 0,
+      "team": "B",
+      "clean": true
+     }
+    ]
+   },
+   "h4096_lin4": {
+    "blocks": [
+     {
+      "t": 5,
+      "pure": [],
+      "n_pure": 0
+     },
+     {
+      "t": 6,
+      "pure": [
+       [
+        1,
+        "A"
+       ]
+      ],
+      "n_pure": 1
+     },
+     {
+      "t": 7,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "A"
+       ],
+       [
+        2,
+        "A"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 8,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "A"
+       ],
+       [
+        2,
+        "A"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 9,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "A"
+       ],
+       [
+        2,
+        "A"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 10,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "A"
+       ],
+       [
+        2,
+        "A"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 11,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "A"
+       ],
+       [
+        2,
+        "A"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     }
+    ],
+    "img": [
+     {
+      "t": 10,
+      "c": 0,
+      "team": "B",
+      "clean": true
+     },
+     {
+      "t": 11,
+      "c": 0,
+      "team": "B",
+      "clean": true
+     }
+    ]
+   },
+   "h8192_F64": {
+    "blocks": [
+     {
+      "t": 5,
+      "pure": [
+       [
+        0,
+        "A"
+       ],
+       [
+        1,
+        "B"
+       ],
+       [
+        2,
+        "A"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 6,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "A"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "B"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 7,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "A"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "B"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 8,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "A"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "B"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 9,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "A"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "B"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 10,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "A"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "B"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 11,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "A"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "B"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 12,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "A"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "B"
+       ]
+      ],
+      "n_pure": 4
+     }
+    ],
+    "img": [
+     {
+      "t": 11,
+      "c": 0,
+      "team": "B",
+      "clean": true
+     },
+     {
+      "t": 12,
+      "c": 0,
+      "team": "B",
+      "clean": true
+     }
+    ]
+   },
+   "pureL3": {
+    "blocks": [
+     {
+      "t": 5,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "B"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 6,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "B"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 7,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "B"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 8,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "B"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 9,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "B"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     },
+     {
+      "t": 10,
+      "pure": [
+       [
+        0,
+        "B"
+       ],
+       [
+        1,
+        "B"
+       ],
+       [
+        2,
+        "B"
+       ],
+       [
+        3,
+        "A"
+       ]
+      ],
+      "n_pure": 4
+     }
+    ],
+    "img": [
+     {
+      "t": 9,
+      "c": 0,
+      "team": "B",
+      "clean": true
+     },
+     {
+      "t": 10,
+      "c": 0,
+      "team": "B",
+      "clean": true
+     }
+    ]
+   },
+   "altw": {
+    "blocks": [
+     {
+      "t": 5,
+      "pure": [
+       [
+        2,
+        "A"
+       ]
+      ],
+      "n_pure": 1
+     },
+     {
+      "t": 6,
+      "pure": [],
+      "n_pure": 0
+     },
+     {
+      "t": 7,
+      "pure": [],
+      "n_pure": 0
+     },
+     {
+      "t": 8,
+      "pure": [],
+      "n_pure": 0
+     },
+     {
+      "t": 9,
+      "pure": [],
+      "n_pure": 0
+     },
+     {
+      "t": 10,
+      "pure": [],
+      "n_pure": 0
+     },
+     {
+      "t": 11,
+      "pure": [],
+      "n_pure": 0
+     }
+    ],
+    "img": []
+   }
+  }
+ },
+ "partGENESON": {
+  "t_max": 200,
+  "hits": [
+   {
+    "t": 2,
+    "full_classes": [
+     0,
+     1,
+     2,
+     3
+    ]
+   },
+   {
+    "t": 4,
+    "full_classes": [
+     0,
+     1,
+     2,
+     3
+    ]
+   }
+  ],
+  "n_hits": 2
+ }
+}

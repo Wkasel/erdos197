@@ -145,3 +145,101 @@ Survival protocol: §1 machine harvest; §2 the kill assembled by
 hand (whatever survives); §3 near-lattices + non-lattice; §4 the
 pre-registered S5 rows; §5 ledger + assembly.  Honest tags
 throughout; SAT rows are structure, not failure.
+
+---
+
+## 1. SUPERSEDED MID-SESSION by notes/82 (professor pass) — and
+## the §0 instrument's data is the measured COMPLEMENT of the kill
+
+Between §0 and the first harvest, notes/82 landed Lemma Q +
+Theorem ALT-DEAD: the mod-4 lattice corner (ANY ownership law) and
+all on-class punctured variants are dead by a one-step 4-adic
+chart onto the PROVED Case-1 chain (PIN + DIAG-DENSE + C3(p)).
+The §0 siege (run scans, ν-growth, F12 boundary, puncture budgets)
+stands down as pre-registered next steps — moot at ω.  Pod jobs
+killed (rscan/f12 after launch, nugrow unstarted); partial rows,
+if any, are not read as mathematics.
+
+**What the §0 grid measured before standing down (e186 partLATRUNG
+/ partJOINT / partSPARSE, all rows in data/e186_altclosure.json)
+— kept as the measured complement:**
+
+| instrument | verdict |
+|---|---|
+| single-pair rung ∖ class-c, M = 256, x ∈ {15,17,25,27} × c ∈ {0..3} | UNSAT ONLY where an attacker sits ON class c (unextractable cells); every EXTRACTABLE cell SAT |
+| 2-pair menus ∖ class-c, M = 128/256 | same law exactly: UNSAT ⟺ menu touches c |
+| existential gap-≥3 punctures vs 2-pair menus, M = 64..128 | SAT everywhere (D ≈ M/4, min-gap 3, mixed classes) |
+| PS-dodge prediction (§0 D3) | confirmed where it applied (c ≡ −x cells SAT); the c-even/odd-alive UNSAT leans were WRONG at extractable cells |
+
+Reading: **the majority team of a sparse-minority window cannot be
+killed through its own punctured rung** — the corner's gap-≥3 dust
+severs every rung the majority would actually face (P-1/P-2/P-3
+falsified in the informative direction).  This is the instrument-
+level confirmation of notes/82 §1's verdict that the direct/siege
+attack fails, and of WHY the kill must route through the MINORITY
+class-section (Lemma Q's chart) instead: the minority's own
+material is the only window content that cannot dodge.  The
+scale-flip rows (several cells SAT at M = 128, UNSAT at 256) and
+the exact touch-the-class law are recorded as structure for the
+Q-ODD/N2-UNIF write-ups.
+
+## 2. Adversarial verification of Lemma Q / ALT-DEAD [ALL PASS]
+## + the notes/82 machine errand
+
+partQVERIFY (e186; every layer of the notes/82 §2 proof attacked):
+
+1. **Chart exactness**: φ(Λ_c(t)) = B(t−2) as EXACT sets — 44/44
+   cells (c ∈ {0..3}, t = 4..14), 0 fail.  Both endpoint
+   conventions (c = 0 vs c ∈ {1,2,3}) verified.
+2. **AP transport**: 44 400 triples exhaustive on [1, 600]: 3-APs
+   map to 3-APs under φ and pull back under φ⁻¹ with midpoint
+   automatically in class c — 0 fail, both directions.
+3. **C3(p) ⊆ R fired-unit membership** (the a-fortiori step):
+   the three C3(p) units are among R(3p, 3p+1; M, ∅)'s fired
+   units at p = 5, 9, 13 × M = 128, 256 — 6/6, 0 fail.
+4. **Rung UNSAT direct**: R(39, 40; 128, ∅) UNSAT (p = 13 fresh);
+   R(15,16)/R(27,28) at M = 128 AND 256 already UNSAT as §1's ctl
+   rows — three C3(p) lanes solver-confirmed in this session's
+   fresh encoder.
+5. **Witness 4-purity + transported clean blocks**: h8192_F64
+   4-pure at ALL 8 classes×blocks scales; h4096_F64 pure at
+   t = 5, 7–11 (t = 6 boot-contaminated, n_pure = 2); lin4 pure
+   from t = 7; pureL3 everywhere.  Transported image contains the
+   predicted CLEAN blocks (checked exactly at the top two pure
+   scales per witness — 8/8 True).  The finite shadow of ALT-DEAD
+   is exactly realized on every S5 witness.
+6. **Geneson Λ-scan (the free adversarial audit of the proved
+   layer)**: Geneson's density-2/3 permutable W contains a full
+   class-section Λ_c(t) ONLY at t = 2 and t = 4 (boot octaves);
+   ZERO hits for t = 5..200, any c.  Lemma Q predicts finiteness;
+   the sharpest permutable set known complies with ~196 scales to
+   spare.  No indictment of B1/C3(p).
+
+**One genuine adversarial finding (structure, not a flaw):** the
+alternating CENSOR-OFF coloring (e185 altw, nA = 1703) is NOT
+4-pure — every class-section is bichromatic at every t ≥ 6
+(n_pure = 0).  So ALT-DEAD does not touch it; it was never a
+corner-certified inhabitant (censor off), but it shows alternating
+(ii)+(iii)+split colorings need not be lattices — the
+GAP-AFFORD‴-SPLIT residue is a real, inhabited-as-COLORING class,
+and the professor's residue table is honest.  Verification
+verdict: **Lemma Q + ALT-DEAD SOUND — every machine-checkable
+layer passes; I found no hole in the restriction/transport steps
+(order-type, position-preservation, midpoint-class, B1-at-C₀=0
+threshold arithmetic all re-derived and checked).**
+
+**HSPLIT build pre-registration (the errand's part (c); committed
+before the run):** e179 s5dodger axes verbatim + Cor. HSPLIT as a
+constraint (every class mod 4 AND mod 8 bichromatic in every
+block t ≥ 6), hor = 4096, D = 2, cells: (F = 12, u₀ = 32),
+(F = 64, u₀ = 64), + mod-4-only attribution control at F = 12.
+Predictions: F = 12 SAT 55 % (HSPLIT bans the lattice shape the
+solver always chose, but is mild — few clauses per block; the
+(i)/(iii) tension of notes/74 §II.4 was resolved BY orbit-closed
+lattice minorities, so banning them may re-expose it); F = 64 SAT
+35 %; mod-4-only ≥ k8 rate.  SAT ⟹ first certified inhabitant of
+the SPLIT residue (audit gap structure + purity + H-census);
+UNSAT ×2 censors ⟹ the residue is finitely EMPTY at ROT4 strength
+— the entire corner would then be machine-rejected at the finite
+level while ω-dead on every arithmetic sub-family: probability
+moves accordingly.
