@@ -320,3 +320,82 @@ chart), and Case 1 is closed.  Direction (4) asked the right
 question with the wrong instrument.
 
 ---
+
+## 5. Residue, ledger, and the next (single) experiment
+
+**GAP-AFFORD″-ALT after this note:**
+
+| component | status |
+|---|---|
+| unbounded-run alternating mod-4 lattices | **DEAD (ALT-DEAD Cor. 1; zero new gaps)** — the S5-ALT siege, run-length scans, and censor escalation are obsolete at ω |
+| punctured near-lattices, on-class dust (any count) | **DEAD (ALT-DEAD Cor. 2; zero new gaps)** |
+| near-lattices with bounded off-class dust | DEAD mod GAP-N3-GROW (existing gate (4); no new tag) |
+| eventually-2^k-periodic minorities, any k | DEAD (Cor. HSPLIT) |
+| odd-q periodic minorities (e.g. spacing-3) | DEAD mod BRIDGE1-AF + GAP-N2-UNIF (known species; Cor. Q-ODD) |
+| non-lattice, 2-adically split gap-≥3 minorities | **SURVIVES** — rename the tag |
+
+The surviving object is sharply characterized and is NOT
+"mod-4-lattice-like": by HSPLIT it must, at every modulus 2^k,
+split every class in cofinitely many blocks — a 2-adically
+generic sparse minority, aperiodic by construction, of which the
+campaign has never produced a single inhabitant (all realized
+corner witnesses were lattices — notes/80 §4).  Proposed rename:
+**GAP-AFFORD‴-SPLIT** — the supply cap for gap-≥3, 2-adically
+split minorities — patrolled as before by SPARSE-CORE (demand,
+8 scales + AAA hand arm) and MINT-1, with L-CASCADE/arm B
+unchanged.  Honest note: for THIS residue I certify that none of
+directions (1)–(4) yields an elegant kill — (1b)'s geometry
+blocks fixed attackers (no class-section structure to align on),
+(3) and (4) fail as above — it remains genuine AFFORD′-type
+mathematics, but it is now a strictly smaller and stranger
+target, stripped of every arithmetic example.
+
+**Ledger moves (for notes/50 §2d and §6):**
+
+- NEW [PROVED]: Lemma Q, Theorem ALT-DEAD (+ Cor. HSPLIT) —
+  inputs PIN + DIAG-DENSE + C3(p) only; rider = C3(p) referee
+  prose pass.  The Case-2 corner inherits a Case-1 kill; N4's
+  dichotomy is not restriction-stable, and HSPLIT is the correct
+  hereditary form of "everywhere-split".
+- GAP-AFFORD″-ALT: RETIRED in favor of GAP-AFFORD‴-SPLIT (above).
+  All run-length/puncture siege lines (S5-ALT escalation, R-scans
+  at F = 64, puncture catalogues) can stand down.
+- L-NOTAIL: now a corollary of Lemma Q on the lattice family
+  (kept for its classical self-audit value).
+- The YES-composition shifts: of the residual YES-mass, the
+  "canonical arithmetic family with trivial ω-extension" argument
+  (notes/80 adjudication, the reason the estimate was held) is
+  VOID — every arithmetic inhabitant is dead; a YES now requires
+  a 2-adically generic sparse coloring nobody has constructed AND
+  ¬AFFORD on it.
+
+**One machine errand (cheap, adversarial, not gating):** e186 —
+(a) scan Geneson's W for full Λ_c(t) (Lemma Q predicts finitely
+many; a counterexample would indict the B1/C3(p) layer); (b) on
+the S5/S5-ALT witnesses, verify 4-purity at every lattice scale
+and exhibit the transported image's clean blocks (the finite
+shadow of ALT-DEAD); (c) re-run the S5 dodger build with the
+HSPLIT constraint (every class mod 4 and mod 8 bichromatic per
+block) added — the first honest instrument for GAP-AFFORD‴-SPLIT's
+inhabitants.
+
+**Ranking of survivors by shortest path:** only (2) survived, and
+it is finished above.  Within it: Cor. 1 + Cor. 2 (zero gaps,
+~1 page, paper-ready now) ≺ Cor. 3 / HSPLIT bookkeeping (zero
+gaps, half page) ≺ Q-ODD (rides the N2-UNIF pool) ≺
+GAP-AFFORD‴-SPLIT (open mathematics, no elegant kill certified).
+
+---
+
+## 6. Summary
+
+The siege was aimed at a family that a one-page restriction
+argument kills outright: mod-4 lattice minorities make every
+residue class blockwise monochromatic, the 4-adic chart carries
+class sections EXACTLY onto dyadic blocks, permutability restricts,
+and the image is Case 1 — dead by PIN + DIAG-DENSE + C3(p), all
+proved.  Alternation, run lengths, punctures on the class, and
+censors never enter.  What remains of the corner is only the
+2-adically split gap-≥3 residue — no known inhabitant, no
+arithmetic shape — and the terminal supply question lives there
+alone now.
