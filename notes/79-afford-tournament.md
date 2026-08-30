@@ -103,3 +103,51 @@ likely to produce a surprise in either direction.
 Survival protocol: each §1–§5 records statement → machine verdict →
 survival status ∈ {PROVED-TOOL, SURVIVES (escalate), WOUNDED,
 REFUTED}.  §6 is the tournament verdict + ledger movement.
+
+---
+
+## 1. S1 RECURSION — Lemma L-DOUBLE-DUTY [PROVED, machine-exact ×2]
+
+**Lemma L-DOUBLE-DUTY.**  Let T be a team of a valid pair, u ∈ O_m,
+and suppose u serves double duty: u is the HIGH member of an
+inverted pair (u′, u) at β_{m−1} (u′ ∈ O_{m−1}, pos(u) < pos(u′))
+AND the LOW member of an inverted pair (u, w) at β_m (w ∈ O_{m+1},
+pos(w) < pos(u)).  Then
+
+    Inv_T(2^{m−1})  =  x_{m−1}(T) + x_m(T)  ≥  |O_m ∩ T| + 1.
+
+*Proof.*  pos(w) < pos(u) < pos(u′) gives pos(w) < pos(u′): the
+skip pair (u′, w) is inverted across O_m.  For every y ∈ O_m ∩ T:
+if pos(y) < pos(u′) then (u′, y) is an inverted β_{m−1} pair; else
+pos(y) ≥ pos(u′) > pos(w), so (y, w) is an inverted β_m pair.  The
+|O_m ∩ T| pairs so produced are distinct (each names y), and the
+mint pair (u, w) itself is an inverted β_m pair distinct from all
+of them except the y = u case — count again: y = u produces
+(u′, u) at β_{m−1}, and (u, w) is separate.  Total ≥ |O_m ∩ T| + 1.
+Both pairs are eligible seam pairs of anchor 2^{m−1} (L-2PRICE:
+β_{m−1} = its s1, β_m = its s2).  ∎
+
+**Machine (e179 s1lemma, 4-block gadget, balance, double duty
+forced on a mid value u ∈ B0, budget on the payer's s0+s1 total):**
+M = 8: UNSAT at 3, 4, SAT at 5 = |B0∩A| + 1 exactly.  M = 16
+(BLIND after the M = 8 correction): UNSAT at 8, SAT at 9 = 8 + 1
+exactly.  The lemma is sharp — the machine found the +1 the first
+draft missed (the mint pair itself), then confirmed it blind at the
+next scale.
+
+**Reading (the home-conflict formalized).**  T-FRESH mints are
+pair-disjoint across boundaries (L-HOME); L-DOUBLE-DUTY upgrades
+this to VALUE-disjointness at consecutive boundaries for any team
+whose anchor price is below its own presence: if
+Inv_T(2^{m−1}) ≤ |O_m ∩ T| (true forever for Θ-dense teams under
+any sub-presence payment regime), then the O_m-values used by the
+mint at β_{m−1} (as highs) and by the mint at β_m (as lows) are
+DISTINCT.  Per octave, the everywhere-mint branch of T-TEL′
+consumes ≥ 2 distinct values of paying teams.  What it does NOT
+give: any upper bound on supply — the two values are fresh per
+octave (P1) and the payer may alternate (notes/47).  S1 is a
+bookkeeping theorem, not a route to the cap.
+
+**Survival: PROVED-TOOL** — enters the ledger chain next to
+L-HOME/L-2PRICE; escalation value = combines with any future
+band-localization (S2) to charge SPECIFIC values twice.
