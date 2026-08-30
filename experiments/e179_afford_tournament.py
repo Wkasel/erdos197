@@ -369,7 +369,8 @@ def s4core(m, k, designations=None, mode="sparse"):
 
 # ------------------------------------------------------------------ s5dodger
 
-def s5dodger(hor, D, F, gmode, fmode, budget):
+def s5dodger(hor, D, F, gmode, fmode, budget, sparse_on=True, orbit_on=True,
+             diffuse_on=True, u0=32):
     from ortools.sat.python import cp_model
     t0 = time.time()
     mdl = cp_model.CpModel()
@@ -391,31 +392,37 @@ def s5dodger(hor, D, F, gmode, fmode, budget):
             f = 2
         mdl.Add(cntA >= f)
         mdl.Add(cntA <= len(blk) - f)
-        mA = mdl.NewBoolVar(f"mA{t}")    # A is minority in block t
-        mdl.Add(2 * cntA <= len(blk)).OnlyEnforceIf(mA)
-        mdl.Add(2 * cntA >= len(blk)).OnlyEnforceIf(mA.Not())
-        for v in blk:
-            for g in (1, 2):
-                if v + g <= blk[-1]:
-                    mdl.AddBoolOr([A[v].Not(), A[v + g].Not(),
-                                   mA.Not()])
-                    mdl.AddBoolOr([A[v], A[v + g], mA])
+        if sparse_on:
+            mA = mdl.NewBoolVar(f"mA{t}")    # A is minority in block t
+            mdl.Add(2 * cntA <= len(blk)).OnlyEnforceIf(mA)
+            mdl.Add(2 * cntA >= len(blk)).OnlyEnforceIf(mA.Not())
+            for v in blk:
+                for g in (1, 2):
+                    if v + g <= blk[-1]:
+                        mdl.AddBoolOr([A[v].Not(), A[v + g].Not(),
+                                       mA.Not()])
+                        mdl.AddBoolOr([A[v], A[v + g], mA])
     # (ii) window floor via prefix sums
     S = {0: mdl.NewConstant(0)}
     for v in range(1, hor + 1):
         S[v] = mdl.NewIntVar(0, v, f"S{v}")
         mdl.Add(S[v] == S[v - 1] + A[v])
-    for a in range(32, hor // 2 + 1):
-        w = 2 * a - a
-        if gmode == "log":
-            g = max(2, a.bit_length() - 5)
-        else:
-            g = 2
-        cA = S[2 * a] - S[a]
-        mdl.Add(cA >= g)
-        mdl.Add(cA <= w - g)
+    if diffuse_on:
+        for a in range(32, hor // 2 + 1):
+            w = 2 * a - a
+            if gmode == "log":
+                g = max(2, a.bit_length() - 5)
+            elif gmode == "lin4":
+                g = a // 4
+            elif gmode == "lin8":
+                g = a // 8
+            else:
+                g = 2
+            cA = S[2 * a] - S[a]
+            mdl.Add(cA >= g)
+            mdl.Add(cA <= w - g)
     # (i) censored chain depth: reach vars
-    for tname in ("A", "B"):
+    for tname in ("A", "B") if orbit_on else ():
         reach = {}
         for d in range(1, D + 1):
             for v in range(1, hor + 1):
@@ -425,9 +432,11 @@ def s5dodger(hor, D, F, gmode, fmode, budget):
                 w = 2 * v - f
                 if w <= v or w > hor:
                     continue
-                # depth-1 step v -> w (v, f, w all in team)
-                mdl.AddBoolOr([team(tname, v).Not(), team(tname, f).Not(),
-                               team(tname, w).Not(), reach[(1, w)]])
+                # depth-1 step v -> w (v, f, w all in team); seed floor u0
+                if v > u0:
+                    mdl.AddBoolOr([team(tname, v).Not(),
+                                   team(tname, f).Not(),
+                                   team(tname, w).Not(), reach[(1, w)]])
                 for d in range(2, D + 1):
                     mdl.AddBoolOr([reach[(d - 1, v)].Not(),
                                    team(tname, f).Not(),
@@ -443,10 +452,12 @@ def s5dodger(hor, D, F, gmode, fmode, budget):
             cp_model.INFEASIBLE: "UNSAT"}.get(st, "TIMEOUT")
     row = {"part": "s5dodger", "hor": hor, "D": D, "F": F,
            "gmode": gmode, "fmode": fmode, "verdict": name,
+           "sparse": sparse_on, "orbit": orbit_on, "diffuse": diffuse_on,
+           "u0": u0,
            "secs": round(time.time() - t0, 1)}
     if name == "SAT":
         col = [v for v in range(1, hor + 1) if solver.Value(A[v])]
-        out = os.path.join(BASE, f"e179_s5_witness_h{hor}_D{D}F{F}.json")
+        out = os.path.join(BASE, f"e179_s5_witness_h{hor}_D{D}F{F}_{gmode}.json")
         with open(out, "w") as fo:
             json.dump({"hor": hor, "D": D, "F": F, "A": col}, fo)
         row["witness"] = out
@@ -459,7 +470,7 @@ def s5dodger(hor, D, F, gmode, fmode, budget):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("cmd", choices=["s1lemma", "s2band", "s3rot", "s4core",
-                                    "s5dodger"])
+                                    "s5dodger", "s4price"])
     ap.add_argument("--M", type=int, default=8)
     ap.add_argument("--v", type=int, default=11)
     ap.add_argument("--m", type=int, default=16)
@@ -476,6 +487,10 @@ def main():
     ap.add_argument("--budget", type=float, default=3600.0)
     ap.add_argument("--mode", type=str, default="sparse",
                     choices=["sparse", "sparse1", "cap", "none"])
+    ap.add_argument("--sparse_off", action="store_true")
+    ap.add_argument("--orbit_off", action="store_true")
+    ap.add_argument("--diffuse_off", action="store_true")
+    ap.add_argument("--u0", type=int, default=32)
     args = ap.parse_args()
     if args.cmd == "s1lemma":
         Ms = [int(x) for x in args.Ms.split(",")]
@@ -500,9 +515,98 @@ def main():
     elif args.cmd == "s4core":
         ds = args.desigs.split(",") if args.desigs else None
         s4core(args.m, args.k, ds, args.mode)
+    elif args.cmd == "s4price":
+        s4price(args.M, sparse_on=not args.sparse_off)
     elif args.cmd == "s5dodger":
         s5dodger(args.hor, args.D, args.F, args.gmode, args.fmode,
-                 args.budget)
+                 args.budget, sparse_on=not args.sparse_off,
+                 orbit_on=not args.orbit_off,
+                 diffuse_on=not args.diffuse_off, u0=args.u0)
+
+
+
+
+# ------------------------------------------------------- s4price (escalation)
+
+def s4price(M, sparse_on=True, maxb=24):
+    """e121 price_curve verbatim + optional pair-sparse constraint on the
+    donation set (B-colored values in (M, 2M]): p_sparse(k) vs p(k)."""
+    from pysat.card import ITotalizer
+    pairs = [(15, 16), (31, 32), (23, 24), (47, 48)]
+    V = list(range(M + 1, 2 * M + 1))
+    n = len(V)
+    idx = {v: i for i, v in enumerate(V)}
+    for k in range(1, len(pairs) + 1):
+        atk = [x for p in pairs[:k] for x in p]
+        var = 0
+        col = {}
+        for v in V + atk:
+            var += 1
+            col[v] = var
+        ov = {'A': {}, 'B': {}}
+        for T in ('A', 'B'):
+            for i in range(n):
+                for j in range(i + 1, n):
+                    var += 1
+                    ov[T][(i, j)] = var
+
+        def o(T, u, w):
+            i, j = idx[u], idx[w]
+            return ov[T][(i, j)] if i < j else -ov[T][(j, i)]
+
+        def notT(T, v):
+            return -col[v] if T == 'A' else col[v]
+
+        cl = []
+        for y in V:
+            d = 1
+            while y + d <= 2 * M:
+                x, z = y - d, y + d
+                d += 1
+                if x > M:
+                    for T in ('A', 'B'):
+                        g = [notT(T, x), notT(T, y), notT(T, z)]
+                        cl.append(g + [-o(T, x, y), -o(T, y, z)])
+                        cl.append(g + [-o(T, z, y), -o(T, y, x)])
+        for x in atk:
+            for j in range(1, x // 2 + 1):
+                y, z = M + j, 2 * M + 2 * j - x
+                if M < z <= 2 * M and M < y <= 2 * M:
+                    cl.append([notT('A', y), notT('A', z), o('A', z, y)])
+        for T in ('A', 'B'):
+            for i in range(n):
+                for j in range(i + 1, n):
+                    oij = ov[T][(i, j)]
+                    for kk in range(j + 1, n):
+                        cl.append([-oij, -ov[T][(j, kk)], ov[T][(i, kk)]])
+                        cl.append([oij, ov[T][(j, kk)], -ov[T][(i, kk)]])
+        cl += [[col[x]] for x in atk]
+        if sparse_on:                     # donation set pair-sparse
+            for v in V:
+                for g in (1, 2):
+                    if v + g <= 2 * M:
+                        cl.append([col[v], col[v + g]])
+        don = [-col[v] for v in V]
+        sol = Cadical195(bootstrap_with=cl)
+        tot = ITotalizer(lits=don, ubound=min(maxb, len(don)), top_id=var)
+        sol.append_formula(tot.cnf.clauses)
+        t0 = time.time()
+        p = None
+        witness = None
+        for b in range(0, maxb + 1):
+            assum = [-tot.rhs[b]] if b < len(tot.rhs) else []
+            if sol.solve(assumptions=assum):
+                model = set(l for l in sol.get_model() if l > 0)
+                witness = sorted(v for v in V if col[v] not in model)
+                p = b
+                break
+        stream({"part": "s4price", "M": M, "k": k, "sparse": sparse_on,
+                "p": p, "witness": witness,
+                "secs": round(time.time() - t0, 1)})
+        sol.delete()
+        tot.delete()
+        if p is None:
+            break
 
 
 if __name__ == "__main__":

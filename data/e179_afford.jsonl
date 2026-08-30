@@ -46,3 +46,12 @@
 {"part": "s4core", "m": 24, "k": 1, "mode": "sparse1", "desig": "ABB", "verdict": "UNSAT", "secs": 2.8, "ts": 1788115948.4}
 {"part": "s4core", "m": 24, "k": 1, "mode": "sparse1", "desig": "CELL", "verdict": "SAT", "detail": ["UNSAT", "UNSAT", "SAT", "UNSAT"], "ts": 1788115948.4}
 {"part": "s5dodger", "hor": 4096, "D": 2, "F": 12, "gmode": "log", "fmode": "slow", "verdict": "UNSAT", "secs": 14.6, "ts": 1788116016.8}
+{"part": "s5dodger", "hor": 4096, "D": 2, "F": 12, "gmode": "log", "fmode": "slow", "verdict": "UNSAT", "sparse": false, "orbit": true, "diffuse": true, "secs": 13.0, "ts": 1788116124.3}
+{"part": "s5dodger", "hor": 4096, "D": 2, "F": 12, "gmode": "log", "fmode": "slow", "verdict": "SAT", "sparse": false, "orbit": true, "diffuse": true, "u0": 32, "secs": 13.8, "witness": "/Users/will/Dev/personal/tasks/math/erdos197/data/e179_s5_witness_h4096_D2F12.json", "nA": 75, "ts": 1788116182.9}
+{"part": "s5dodger", "hor": 4096, "D": 2, "F": 12, "gmode": "log", "fmode": "slow", "verdict": "SAT", "sparse": true, "orbit": true, "diffuse": true, "u0": 32, "secs": 33.2, "witness": "/Users/will/Dev/personal/tasks/math/erdos197/data/e179_s5_witness_h4096_D2F12.json", "nA": 744, "ts": 1788116222.2}
+{"part": "s5dodger", "hor": 4096, "D": 2, "F": 12, "gmode": "lin4", "fmode": "slow", "verdict": "SAT", "sparse": true, "orbit": true, "diffuse": true, "u0": 32, "secs": 163.2, "witness": "/Users/will/Dev/personal/tasks/math/erdos197/data/e179_s5_witness_h4096_D2F12.json", "nA": 3051, "ts": 1788116450.4}
+{"part": "s5dodger", "hor": 4096, "D": 2, "F": 64, "gmode": "lin4", "fmode": "slow", "verdict": "SAT", "sparse": true, "orbit": true, "diffuse": true, "u0": 64, "secs": 44.6, "witness": "/Users/will/Dev/personal/tasks/math/erdos197/data/e179_s5_witness_h4096_D2F64_lin4.json", "nA": 1056, "ts": 1788116547.2}
+{"part": "s4price", "M": 64, "k": 1, "sparse": true, "p": 3, "witness": [66, 70, 121], "secs": 5.3, "ts": 1788116643.9}
+{"part": "s4price", "M": 64, "k": 2, "sparse": true, "p": 7, "witness": [68, 76, 101, 109, 113, 117, 125], "secs": 79.0, "ts": 1788116723.4}
+{"part": "s4price", "M": 64, "k": 3, "sparse": true, "p": 7, "witness": [68, 72, 76, 101, 109, 117, 125], "secs": 25.1, "ts": 1788116748.7}
+{"part": "s4price", "M": 64, "k": 4, "sparse": true, "p": 11, "witness": [85, 89, 93, 97, 101, 105, 109, 113, 117, 121, 125], "secs": 4.1, "ts": 1788116753.0}

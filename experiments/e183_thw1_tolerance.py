@@ -51,8 +51,9 @@ def main():
         M = 2 * m
         for parity in (1, 0):
             t0 = time.time()
-            e1 = [v for v in range(3 * M - 15, 3 * M) if v % 2 == parity]
-            assert len(e1) == 8
+            e1 = [v for v in range(3 * M - 15, 3 * M + 1)
+                  if v % 2 == parity]
+            assert len(e1) == 8, (M, parity, e1)
             min_break = None
             breakers = []
             for k in range(1, 6):

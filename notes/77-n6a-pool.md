@@ -463,6 +463,17 @@ no threshold at either scale has ever been measured.  Predictions:
 4. **SPLIT**: e154_dich_split UNSAT at both scales, fast (it has died
    far below threshold at all six audited scales).
 
+---
+
+## 5. GAP-LLOP: the fresh-scale caps, the tolerance law, and the arms
+## (filled as the 176/192 chain lands)
+
+## 6. GAP-ASM′ = (OV-∀): the fresh-scale overlap + robust-chain
+## insurance (filled with §5)
+
+## 7. FINAL pool inventory (end of day; supersedes the notes/50 §2a
+## sub-pool row — drafted, finalized at close)
+
 ### 4.7 Status after §4 (supersedes the §4.4 draft table)
 
 | claim | verdict |

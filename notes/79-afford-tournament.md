@@ -309,3 +309,72 @@ the displaced value of each mint forced to sit at distance ≤ 2
 from other minority material?  If yes, paying mints EVENTUALLY
 BREAKS (iii) and the corner self-destructs — that is a NEW
 statement of exactly AFFORD′'s shape, now with a finite handle.
+
+**Escalation probe run in-session (repair-price parity):**
+p_sparse(k) — the e121 Part-B per-block repair price with the
+donation set constrained gap ≥ 3 — equals p(k) EXACTLY at M = 64:
+3, 7, 7, 11 for k = 1..4 (e179 s4price; optimal sparse witnesses
+are difference-4 APs, e.g. k = 4: 85, 89, …, 125).  Sparseness is
+FREE at the repair layer — the corner does not self-destruct
+through repair-price inflation; the pincer's force stays entirely
+on the demand side (the sparse core).  Also: encoder
+cross-validation — the same fresh encoder reproduces the known
+(2,2,2)@48 bare UNSAT (sprint-B).
+
+---
+
+## 5. S5 YES-CONSTRUCTION — the corner is FINITELY INHABITED under
+## every censor tried [SAT ×4 + audits; the strongest YES-material
+## the campaign has produced]
+
+Instrument (e179 s5dodger, CP-SAT): 2-coloring of [1, hor] with
+(i) orbit censor: no in-team doubling chain of depth ≥ D with
+reflectors ≤ F and seed > u₀ (reach-var encoding, forcing
+implications only — sound); (ii) window floor g(a) on the minority
+count of EVERY ratio-2 window (a, 2a], 32 ≤ a ≤ hor/2, prefix-sum
+encoding; (iii) per-dyadic-block minority pair-sparse (gap ≥ 3,
+reified designation); everywhere-split floor f(t) = max(2, t−5).
+The seed floor u₀ is necessary and honest: ROT4 itself has
+depth-2 chains at seeds ≤ 26 (measured), so a censor without a
+seed floor excludes even the known (i)+(ii) realizer — the first
+run (no floor) returned UNSAT and was DISCARDED as an encoding
+artifact, not recorded as mathematics.
+
+| hor | D | F | u₀ | diffuseness | verdict | witness audit |
+|-----|---|---|----|-------------|---------|----------------|
+| 4096 | 2 | 12 | 32 | log (g = maxbit−5) | **SAT** 33 s | (ii)(iii) exact; 0 censored chains; majority density 0.82 — ABOVE the 13/16 rung line; true depth at F = 64: 10 |
+| 4096 | 2 | 12 | 32 | log, sparse OFF (control) | SAT 14 s | attribution control |
+| 4096 | 2 | 12 | 32 | linear g = a/4 | **SAT** 163 s | exact 3/4-1/4 every block; sup window density 0.769 < 13/16 (RUNG-SAFE); minority sparse everywhere; true depth at F = 64: 10/8 |
+| 4096 | 2 | 64 | 64 | linear g = a/4 | **SAT** 45 s | sup density 0.761; **max chain depth 1 at F = 64 (ROT4-strength clean)**; at F = 128: depth 9/11 |
+
+Readings:
+
+1. **The dodger corner (i)+(ii)+(iii) has explicit finite
+   inhabitants** — including at rung-safe majority density
+   (sup < 13/16, out of reach of the N5 two-block ρ*-rungs) and
+   under a censor as strong as ROT4's own orbit profile (max
+   depth 1, reflectors ≤ 64).  Before today the only known
+   (i)+(ii) mechanism maximally violated (iii); the tension
+   "(i)+(ii) vs (iii)" measured in notes/74 §II.4 is NOT a finite
+   obstruction.
+2. **The censor is always dodged exactly one reflector band up.**
+   Every witness is clean at its censor and carries depth ~10
+   chains at 2F — the solver rediscovers T-SHARP's procrastination
+   (reflectors pushed past the censor's range).  By T-SHARP this
+   is NOT prima facie fatal at ω: growing-reflector orbits are
+   compatible with permutability.  No finite orbit censor can
+   certify corner emptiness (this direction is now measured, not
+   just argued).
+3. **What the witnesses still owe.**  By the sparse core (§4)
+   their window patterns pay T-TEL″ mints at EVERY anchor with
+   presence ≥ 1; as YES-shapes they need the supply side —
+   AFFORD′ failing — which nothing today grants.  And their
+   (i)-status at ω is unverifiable by construction (the depth
+   blowup at 2F is suspicious in both directions).
+4. Horizon stress (8192, F = 64, lin4) queued at close.
+
+**Survival: SURVIVES — as YES-material** (the task's SAT branch).
+The corner's emptiness is NOT a viable NO-route: S5's UNSAT branch
+is closed off by T-SHARP-realizing witnesses at every censor.  A
+NO must go through supply (AFFORD′ proper) — the corner cannot be
+starved at the coloring level.
