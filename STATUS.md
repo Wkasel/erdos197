@@ -792,13 +792,29 @@ unproven link, listed with its current shape:
    GAP-N2-DIAG (parametric diagonal schema — now THE Case-1 rung
    target) + GAP-N3.  Bonus: Cor B1.2 recovers "ℤ⁺ itself is not
    3-permutable" unconditionally from thm:c3core.
-5. **GAP-N3 (dust robustness).**  Exact machine constants (d* = 2/3,
-   scale-stable, C = 1 suffices from M = 48) but the one-paragraph
-   hand extension of C3 to punctured blocks is unwritten.
-6. **GAP-L1' (concentration lemma).**  "Both teams doubling-subcritical
-   ⇒ some team keeps near-clean ratio-2 windows" — measured true
-   everywhere, no proof; it patrols the dodger corner (subcritical +
-   diffuse), the only YES-shape not excluded by known machinery.
+5. **GAP-N3 → GAP-N3-GROW (dust robustness, RESHAPED — notes/74).**
+   The "one-paragraph extension" does not exist: the uniform-in-C
+   form at fixed p is REFUTED by machine (e174: {15,16} admits
+   exactly the 8 transversals of {t11≺b2, t7≺b4, t3≺b6} as
+   3-puncture escapes, offset-stable at every dyadic scale tested —
+   no threshold m*(5, C ≥ 3) can exist).  The load-bearing form is
+   the growth law d*(x) → ∞ along the diagonal (measured 2 / 3 / ≥ 4
+   at x = 11 / 15 / 27, the p = 9 point exhaustive over all
+   ≤ 3-subsets of the support), and B1 Step 1 is patched (one line)
+   so only pairs with 3p ≥ x₀(C₀) are ever used.  Hand schema open;
+   the severed-ladder Lemma-D extension is machine-witnessed for
+   odd/top punctures and open for even/b1/center ones.
+6. **GAP-L1' (concentration lemma): REFUTED, tag retired
+   (notes/74).**  ROT4 (rotating quarters) is everywhere-split,
+   exactly balanced, doubling-subcritical in BOTH teams for every
+   finite reflector family (hand proof: doubling preserves octave
+   phase, ownership rotates — chains die at depth ≤ 2), yet every
+   ratio-2 window misses ≥ a/16 − O(1) of each team (sharp constant
+   a/6, machine-exact to 2^16).  The dodger corner (i)+(ii) is
+   REALIZED; what patrols it now is the coupled core (ROT4 dies
+   there at machine level: ≥ 1 team UNSAT at each M = 16/32/64) and
+   the failure of (iii) (rotation ⇒ Θ(M) gap-1 pairs, feeding the
+   supply/price route).
 7. **Rung finiteness caveat (global).**  Every machine-true rung
    family in the program (STG, chain, seam, coupled) is verified at
    finitely many scales; each use at ω rides on its (b)-style schema
@@ -1225,3 +1241,52 @@ experiments/e175_pump_schema.py, data/e175_* (all parts 0 failures).
   and the freshness family F(N; v) [GAP-F-schema], which does NOT
   project (one-seam 3-block theories are SAT).  NG4/supply
   [GAP-AFFORD′] untouched.
+
+### FRONT N3+L1' (2026-08-30, e174 + notes/74): dust robustness is a
+### GROWTH law, not a fixed-pair law; the concentration lemma is
+### REFUTED by rotation
+
+Full write-up notes/74-n3-l1.md (replaces the stalled session's
+never-committed notes/53; its artifacts e130/e130b/e130c/e131/e132/
+e132b are read into the record there).  New machine layer
+experiments/e174_n3_growth.py, data/e174_*.
+
+- **GAP-N3's ledgered form (H1 uniform-in-C at fixed p) is FALSE**
+  [MACHINE]: exhaustive 3-subset census over {15,16}'s unit support
+  at M = 80/96/128/144 — escapes at EVERY scale, with stable core
+  exactly the 8 transversals {b2|t11}×{b4|t7}×{b6|t3} of the three
+  odd-attacker units (j = 2,4,6).  Minimal escapes = lane
+  transversals (the "bottom midpoints" phrasing of N5 is corrected:
+  all-top transversals escape too).  {11,12}'s ten 2-escapes are
+  lane transversals likewise (e132 partT re-read).
+- **The salvage measured**: d*(27) ≥ 4 with the p = 9 census
+  EXHAUSTIVE (all 41 singles, all 820 support 2-subsets at three
+  scales, ALL 10 660 support 3-subsets at M = 80 — zero escapes),
+  consistent with the transversal count prediction d*(x) ≈
+  ⌊(x−1)/4⌋ and the N5 law ρ* ≈ 1 − x/4M.  **B1 survives via a
+  one-line patch** (notes/74 §I.4): its extracted pair already has
+  p > 2^{m₀}/3, so requiring 2^{m₀} ≥ 3x₀(C₀) costs nothing;
+  (H1) is replaced by (H1′) = N3-GROW + N2-DIAG.  Case-1 chain now:
+  N1 + B1(patched) + GAP-N2-DIAG + GAP-N3-GROW.
+- **GAP-L1' RESOLVED NEGATIVELY** [PROVED]: ROT4 (team = two
+  octave-quarters rotating one quarter per octave) satisfies both
+  L1' hypotheses and violates the conclusion.  Hand proofs: exact
+  balance; window-diffuseness (every ratio-2 window misses
+  ≥ 2^{oct(a)}/8 − O(1) of each team — arc-misalignment case
+  analysis; sharp constant: sup window density = 5/6 exactly, both
+  teams, machine excess = 0 to 2^16); subcriticality for EVERY
+  finite reflector family via the exact phase identity
+  φ(2u−f) = φ(u) − 4(f−1)/2^{m+1} — every in-team doubling chain
+  dies within 2 steps (machine: max depth 1, adversarial f ≤ 64,
+  horizon 2^22).  Controls: ROT2 re-synchronizes (density-1 windows,
+  Case-1 feed), ROT8 sup 3/4.
+- **Program impact**: L1' removed from the support layer; the
+  notes/46 ledger route's final step re-pointed at the coupled core
+  (ROT4's own coloring is UNSAT under double block-order for ≥ 1
+  team at each of M = 16/32/64, both at 32 — e131).  Dodger spec
+  tightened: (i)+(ii) realizable (rotation), the open YES-corner is
+  (i)+(ii)+(iii), and the only known (i)+(ii) mechanism maximally
+  violates (iii) (Θ(M) gap-1 pairs per octave, e132 partV).
+  "Measured true everywhere" for L1' was a corpus artifact — no
+  rotating colorings had ever been measured (same salting lesson as
+  N4's anchor-free restatement).
