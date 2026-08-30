@@ -58,3 +58,21 @@
 {"exp": "e158c", "M": 16, "sched": "1100", "vup": null, "vdn": 0, "verdict": "UNSAT", "time": 0.4}
 {"exp": "e158c", "M": 24, "sched": "1100", "vup": null, "vdn": 0, "verdict": "UNSAT", "time": 1.5}
 {"exp": "e158c", "M": 32, "sched": "1100", "vup": null, "vdn": 0, "verdict": "UNSAT", "time": 3.4}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 0, "vdn": 0, "verdict": "UNSAT", "time": 0.0}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 4, "vdn": 0, "verdict": "UNSAT", "time": 0.0}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 8, "vdn": 0, "verdict": "UNSAT", "time": 0.0}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 10, "vdn": 0, "verdict": "UNSAT", "time": 0.0}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 11, "vdn": 0, "verdict": "UNSAT", "time": 0.0}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 12, "vdn": 0, "verdict": "UNSAT", "time": 0.0}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 16, "vdn": 0, "verdict": "UNSAT", "time": 0.1}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 24, "vdn": 0, "verdict": "UNSAT", "time": 0.1}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 32, "vdn": 0, "verdict": "UNSAT", "time": 0.1}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 64, "vdn": 0, "verdict": "SAT", "time": 0.1, "anatomy": {"A": {"sizes": [2, 4, 8, 16], "n_s0": 0, "n_s1": 0, "n_s2": 53, "n_up": 53, "n_dn": 0, "n_H_up": 0, "n_H_dn": 0}, "B": {"sizes": [2, 4, 8, 16], "n_s0": 0, "n_s1": 0, "n_s2": 53, "n_up": 53, "n_dn": 0, "n_H_up": 0, "n_H_dn": 0}}}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 48, "vdn": 0, "verdict": "SAT", "time": 0.1, "anatomy": {"A": {"sizes": [2, 4, 8, 16], "n_s0": 0, "n_s1": 0, "n_s2": 43, "n_up": 43, "n_dn": 0, "n_H_up": 0, "n_H_dn": 0}, "B": {"sizes": [2, 4, 8, 16], "n_s0": 0, "n_s1": 0, "n_s2": 43, "n_up": 43, "n_dn": 0, "n_H_up": 0, "n_H_dn": 0}}}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 40, "vdn": 0, "verdict": "SAT", "time": 0.1, "anatomy": {"A": {"sizes": [2, 4, 8, 16], "n_s0": 0, "n_s1": 0, "n_s2": 40, "n_up": 40, "n_dn": 0, "n_H_up": 0, "n_H_dn": 0}, "B": {"sizes": [2, 4, 8, 16], "n_s0": 0, "n_s1": 0, "n_s2": 40, "n_up": 40, "n_dn": 0, "n_H_up": 0, "n_H_dn": 0}}}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 36, "vdn": 0, "verdict": "UNSAT", "time": 0.1}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 34, "vdn": 0, "verdict": "UNSAT", "time": 0.1}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 33, "vdn": 0, "verdict": "UNSAT", "time": 0.1}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 38, "vdn": 0, "verdict": "UNSAT", "time": 0.1}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 37, "vdn": 0, "verdict": "UNSAT", "time": 0.1}
+{"exp": "e158c", "M": 8, "sched": "1100", "vup": 39, "vdn": 0, "verdict": "UNSAT", "time": 0.1}

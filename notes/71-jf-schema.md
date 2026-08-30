@@ -520,13 +520,14 @@ at K):**
                    schedule price at M = 8 via the §2c chain
                    decomposition — two encoders agree)
 
-No growth law recorded (campaign rule); the raw values suffice
-for every margin cell in the boot-and-collapse range: e.g. the
-notes/75 margin targets (v, 3)@48 have their low-pure branch dead
-by w = 3 < K(9,3)·(scale) — precisely: at M = 48, w < K(36, 12)
-(unmeasured, ≥ K(24,8) = 40 by deletion-monotonicity of Lemma K's
-step 1... the monotone step gives K non-increasing in n at fixed
-k is FALSE in budget form; K(36,12) needs its own run — queued).
+No growth law recorded (campaign rule).  Late addition (sprint-D):
+**K(30,10) = 69** (UNSAT ≤ 68, SAT 69) — the M = 40 margin
+diagonal point; K(36,12) (the M = 48 point, the notes/75 margin
+target (v, 3)@48 — its low-pure branch is dead iff 3 < K(36,12),
+true already if K keeps growing) bracketing in flight.  Note
+budget-K is NOT monotone-by-deletion (deleting values can remove
+inversions from the count), so each diagonal point needs its own
+run.
 The impure branch at w ≥ 1 loses L-PREFIX(i)'s hard μ_dn = 0
 (≤ w mono H_dn triples become payable) — the margin analogue of
 case 3 needs the mass function at μ_dn ≤ w [GAP-MARGIN-MASS,
