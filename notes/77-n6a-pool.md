@@ -440,6 +440,29 @@ CaDiCaL; independent clause construction) re-solves the α system
 minus every maximal clique AND minus random sub-cliques (a-fortiori
 sanity) at m = 48, 56: results below.
 
+### 4.8 PRE-REGISTRATION for the M = 176/192 chain (written BEFORE
+### any probe at those scales ran)
+
+Catalogues at 176/192 are building on sprint-B/-C at time of writing;
+no threshold at either scale has ever been measured.  Predictions:
+
+1. **Cap flat law** (notes/58 §1.1, survived 96..160):
+   C(176) = (176+16)/2 − 4 = **92**;  C(192) = **100**
+   (probe protocol: e152_llop_probe K = C expect UNSAT, K = C+1
+   expect SAT).
+2. **K\* mechanistic law** (notes/57): K*(M) = m + 9 + max(α_E − f_O,
+   α_O − f_E) with α, f computed from the catalogue by e153_dich_lemmas
+   BEFORE the phi1 probes — the numeric prediction is whatever the
+   scan outputs, registered in §5 the moment it prints, then tested
+   by e153_dich_probe phi1 at K* (UNSAT) and K*−1 (SAT).  No residue
+   law is assumed (the α non-monotonicity at 160 is on record).
+3. **(OV)**: K*(M) ≤ C(M) expected to HOLD at both scales (it held at
+   all eight 48..160), but the robust chain is run REGARDLESS:
+   DICH-upure(M, K_P), DICH-zdef(M, K_P, 4), RP-ARM(M, 4) with
+   K_P = C(M) — the ASM′ insurance that does not ride on (OV).
+4. **SPLIT**: e154_dich_split UNSAT at both scales, fast (it has died
+   far below threshold at all six audited scales).
+
 ### 4.7 Status after §4 (supersedes the §4.4 draft table)
 
 | claim | verdict |
