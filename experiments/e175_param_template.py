@@ -146,10 +146,21 @@ def candidates(cellK0, cellK1, M0, M1, imax):
             for S_lo in lo_opts:
                 cands.append((i, S_hi, S_lo,
                               len(S_hi) + len(S_lo)))
-    # every verified cell is a 2+2 clash: rank those first, then by
-    # total size and battleground height
-    cands.sort(key=lambda c: ((len(c[1]) != 2) + (len(c[2]) != 2),
-                              c[3], c[0]))
+    # Ranking (all verified cells obey): 2+2 clash; i* <= 3; 4-unit
+    # lanes split BY ATTACKER ({0,2} vs {1,3} — the K4/A4d anatomy);
+    # 3-unit lanes have OVERLAPPING halves (shared unit).
+    n_units = len(cellK0)
+
+    def rank(c):
+        i, S_hi, S_lo, tot = c
+        two2 = (len(S_hi) != 2) + (len(S_lo) != 2)
+        if n_units == 4:
+            shape = 0 if {tuple(sorted(S_hi)), tuple(sorted(S_lo))} \
+                == {(0, 2), (1, 3)} else 1
+        else:
+            shape = 0 if (set(S_hi) & set(S_lo)) else 1
+        return (two2, i > 3, shape, tot, i)
+    cands.sort(key=rank)
     return [(i, S_hi, S_lo) for i, S_hi, S_lo, _ in cands]
 
 
