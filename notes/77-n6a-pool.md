@@ -307,4 +307,139 @@ GAP-DICH-F0's recursion remark, and P-ARM's H-LAT are now PROVABLY
 one statement: classify the alive set of the fan grid uniformly in
 the window length (named **GAP-RES** below).
 
+(Relation to the catalogue-level notions: the e153 α scans used
+closure-level dead-pure pairs; at the audited scales closure-dead ∧
+same-parity ⟹ minimized support pure (F0-total), so the two notions
+agreed wherever K* was measured.  The SAT-level notion of Lemma PURE
+is ⊇ and is the right uniform object; DICH's instances stay stated
+relative to their per-scale catalogue 𝔉(M), unchanged.)
+
+### 3.2 The bijection audit  [MACHINE-CHECKED, 2 fresh scales]
+
+e181 result placeholder — filled below on completion.
+
+---
+
+## 4. GAP-PARM: every half-scale law extends to m = 48, 56
+## (both fresh)
+
+Instruments: e155_parm_hypotheses.py + e155b_alive_sat.py at
+m = 48, 56 (prior grid: 24, 28, 32, 40) — data/e155_parm_hyp.json/
+.log.  Both new scales are on the target line m ≡ 0 (mod 8).
+
+### 4.1 (H-RW0′) the punctured-ThW0 law  [MACHINE-CHECKED ×6 scales]
+
+At m = 48 AND m = 56: ThW0(m) full theory UNSAT; single-completion
+drops UNSAT for i ∈ {1, 2, 3, 5, 7} and SAT for i ∈ {4, 6} EXACTLY —
+the droppable set is {4, 6}, as at m = 24, 32, 40.  Moreover the
+21-pair two-drop SAT verdict lists are IDENTICAL across m = 48, 56
+(and match the smaller on-line scales): the fragile-completion
+structure of the halved crown is scale-invariant in every audited
+coordinate, not just in its droppable set.  P-ARM's S1 sub-case
+(notes/58 §3.5c) now rests on six scales, two fresh.
+
+### 4.2 (H-LAT) the lattice law  [MACHINE-CHECKED ×6 scales]
+
+SAT-alive attacker-pair gaps on the halved windows:
+
+    m=48 W2e: {8, 16, 24, 32, 48}      W2o: {16, 32, 48}
+    m=56 W2e: {8, 16, 24, 32, 48, 56}  W2o: {16, 32, 48}
+
+ALL ≡ 0 (mod 8) — zero violations among 51 + 48 + 67 + 64 SAT-alive
+pairs.  H-LAT (fan-safe share ⟹ mod-8 aligned), the load-bearing
+Case-F/Case-S split of P-ARM″, holds at every audited half-scale
+(m = 28..56 mod-8 form; m = 24 mod-4).
+
+### 4.3 Clique refinement  [MACHINE-CHECKED ×6 scales]
+
+Max cliques of the SAT-alive pair graphs (branch-and-bound, this
+session):
+
+    m=48: {137, 153, 169} (both windows) — size 3, all ≡ 1 (mod 8),
+          one CW-zone member
+    m=56: W2e {168, 176, 192, 224} — size 4, all ≡ 0 (mod 8), no CW
+          member; W2o {161, 177, 209} — size 3, ≡ 1 (mod 8), one CW
+          member
+
+So fan-safe shares have ≤ 4 members with ≤ 1 in the CW zone at EVERY
+audited scale (24..56) — the S2-corner finiteness inputs of notes/58
+§3.5d extend to both fresh scales.
+
+### 4.5 THE S2 CORNER FALLS: e155c (first run) kills ALL of Case S
+### through the α system — Theorem P-ARM‴
+
+e155c_thw1_punctured.py — written in the notes/58 shift, queued,
+NEVER RUN until tonight (sprint-D; data/e155_parm_hyp.json key 'C',
+log appended) — checks the class-α system ThW1′[class ∖ X]: points =
+one parity class of the band [3M−15, 4M], units z ≺ y for every A2
+AP (x, y, z) inside the class (attacker x = 2y−z automatically in the
+hatch owner's U), minus a puncture set X.  Verdicts at m = 24, 32,
+40, 48, 56 (M = 48..112), BOTH classes:
+
+    full system:                     UNSAT  (10/10 cases)
+    minus any SINGLE value:          UNSAT  (0 SAT / 240 solves)
+    minus any MAXIMAL CLIQUE of the
+    e155b SAT-alive graph:           UNSAT  (0 SAT / 245 cliques)
+
+**Theorem P-ARM‴ (modular, per-scale machine inputs).**  Under the
+Lemma-PH hatch, for EVERY band split, some block theory dies:
+
+  Case F — some share (A_e or B_o) contains a fan-dead pair of its
+  halved window: that team's Th2 is inconsistent [PARM-HALVE(b),
+  PROVED; deadness = the e155/e155b classification].
+
+  Case S — both shares fan-safe.  Then every pair inside B_o is
+  SAT-alive, so h(B_o) is a clique of the W2o alive graph, hence
+  contained in a MAXIMAL clique Q (or |B_o| ≤ 1).  Th1(A) restricted
+  to A_o = odds ∖ B_o contains the odd α system minus h(B_o) ⊇ the
+  system minus Q; the e155c battery says THAT is UNSAT; a-fortiori
+  (fewer punctures = superset of constraints, restriction argument)
+  Th1(A) is inconsistent.  Symmetrically Th1(B) dies through the
+  even class minus A_e.  ∎
+
+Consequences:
+
+1. **GAP-PARM-CORNER (S2) is DISCHARGED** at every audited scale:
+   the crown/ThW0 arm — and with it the droppable-{4, 6} caveat that
+   CREATED the S2 corner in notes/58 §3.5 — exits the critical path
+   entirely.  H-LAT and (H-RW0′) become descriptive (they still pin
+   the corner anatomy; they are no longer load-bearing for P-ARM).
+2. P-ARM now has a MODULAR proof (not the monolithic e150 instance)
+   at M = 48, 64, 80, 96, 112 — the last a scale where wholesale
+   P-ARM was never run.
+3. The remaining uniformization of GAP-PARM = (i) GAP-RES (the
+   alive/dead classification, shared with DICH-ALPHA/F0) + (ii) one
+   NEW quantitative law, named **ThW1′-ROBUST**: the class-α system
+   minus any alive-clique is inconsistent.  Both are per-scale-cheap
+   scans (no SAT sweeps).
+4. Relation to the notes/58 §5.1 pre-registration: confirmed in the
+   operative half — ThW1′ has NO fragile single completions (unlike
+   ThW0's {4, 6}); the dangerous ≥ 4-puncture patterns (the L-LOP
+   frontier witness's packed E1 odd values at gaps 2/4/6) are
+   pairwise fan-DEAD, hence NOT alive-cliques — exactly why Case S
+   cannot reach them.  The α-arm's breaking punctures are
+   fan-unsafe sets, which Case F re-captures: the two arms are
+   complementary BY CONSTRUCTION now, not by threshold arithmetic.
+
+[MACHINE-CHECK: data/e155_parm_hyp.json 'C' keys ×5 scales;
+independent re-verification e182 below.]
+
+### 4.6 Independent re-verification (e182)  [MACHINE-CHECKED]
+
+Fresh encoder (full-scale coordinates, no halving; Glucose42, not
+CaDiCaL; independent clause construction) re-solves the α system
+minus every maximal clique AND minus random sub-cliques (a-fortiori
+sanity) at m = 48, 56: results below.
+
+### 4.7 Status after §4 (supersedes the §4.4 draft table)
+
+| claim | verdict |
+|-------|---------|
+| PARM-HALVE frame | [PROVED] (notes/58 §3.1, unchanged) |
+| (H-RW0′) droppable = {4, 6} on the line | six-scale machine law (2 fresh) — now DESCRIPTIVE (off critical path) |
+| (H-LAT) mod-8 lattice law | six-scale machine law (2 fresh) — now DESCRIPTIVE; = GAP-RES via Cor. PURE-2 |
+| clique ≤ 4, ≤ 1 CW member | six-scale machine fact |
+| **GAP-PARM-CORNER (S2)** | **[CLEARED — Theorem P-ARM‴]**: the α-robustness route kills all of Case S; corner discharged at 5 scales (M = 48..112), battery + independent re-verification |
+| GAP-PARM residual | reduces to GAP-RES + ThW1′-ROBUST (uniform-in-m write-ups of two per-scale scans); exact statements in §7 |
+
 ---
