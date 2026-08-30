@@ -160,15 +160,31 @@ def dump():
     json.dump(OUT, open(f"{BASE}/e174_n3_growth.json", "w"), indent=1)
 
 
-def census(g, subsets, tag):
+def census(g, subsets, tag, budget=None):
+    """budget: conflict cap per query (solve_limited); over-budget
+    queries are recorded UNKNOWN (skipped), never called escapes."""
     esc = []
+    unk = []
     n = 0
     for P in subsets:
         n += 1
-        if g.query(P):
-            esc.append(sorted(offset(v, g.M) for v in P))
-    print(f"  [{tag}] {n} queries, escapes={esc or 'NONE'}", flush=True)
-    return n, esc
+        if budget is None:
+            if g.query(P):
+                esc.append(sorted(offset(v, g.M) for v in P))
+        else:
+            P = set(P)
+            assump = [(-g.sel[v] if v in P else g.sel[v])
+                      for v in g.vals]
+            g.solver.conf_budget(budget)
+            r = g.solver.solve_limited(assumptions=assump)
+            if r is True:
+                g._audit(P)
+                esc.append(sorted(offset(v, g.M) for v in P))
+            elif r is None:
+                unk.append(sorted(offset(v, g.M) for v in P))
+    print(f"  [{tag}] {n} queries, escapes={esc or 'NONE'}"
+          + (f", UNKNOWN(budget)={unk}" if unk else ""), flush=True)
+    return n, esc, unk
 
 
 def partP15():
@@ -177,8 +193,8 @@ def partP15():
         t0 = time.time()
         g = Gadget(M, x)
         sup = support_values(M, x)
-        n3, esc3 = census(g, itertools.combinations(sup, 3),
-                          f"P15 M={M} sup3")
+        n3, esc3, _ = census(g, itertools.combinations(sup, 3),
+                             f"P15 M={M} sup3")
         g.delete()
         OUT.setdefault("partP15", {})[str(M)] = {
             "support": [offset(v, M) for v in sup],
@@ -202,16 +218,18 @@ def partP27():
                "intact": "SAT!" if intact else "UNSAT"}
         print(f"[P27] M={M}: support {len(sup)} values, "
               f"intact={row['intact']}", flush=True)
-        n1, esc1 = census(g, ([v] for v in sup), f"P27 M={M} sup1")
-        n2, esc2 = census(g, itertools.combinations(sup, 2),
-                          f"P27 M={M} sup2")
+        n1, esc1, _ = census(g, ([v] for v in sup), f"P27 M={M} sup1")
+        n2, esc2, _ = census(g, itertools.combinations(sup, 2),
+                             f"P27 M={M} sup2")
         row.update({"n1": n1, "escapes1": esc1,
                     "n2": n2, "escapes2": esc2})
         if M == 80:
-            n3, esc3 = census(g, itertools.combinations(sup, 3),
-                              f"P27 M={M} sup3-ALL")
+            n3, esc3, _ = census(g, itertools.combinations(sup, 3),
+                                 f"P27 M={M} sup3-ALL")
             row.update({"n3": n3, "escapes3": esc3, "sup3": "exhaustive"})
         else:
+            # budgeted: a pathological UNSAT triple at M = 112 burned
+            # > 7 min in the first run; cap and record UNKNOWNs
             bots = [v for v in sup if v <= M + 14]
             trip = list(itertools.combinations(bots, 3))
             seen = set(map(frozenset, trip))
@@ -220,9 +238,11 @@ def partP27():
                 if P not in seen:
                     seen.add(P)
                     trip.append(tuple(sorted(P)))
-            n3, esc3 = census(g, trip, f"P27 M={M} sup3-bot+rand")
-            row.update({"n3": n3, "escapes3": esc3,
-                        "sup3": "bottom-exhaustive + 300 random"})
+            n3, esc3, unk3 = census(g, trip, f"P27 M={M} sup3-bot+rand",
+                                    budget=300_000)
+            row.update({"n3": n3, "escapes3": esc3, "unknown3": unk3,
+                        "sup3": "bottom-exhaustive + 300 random, "
+                                "300k-conflict budget"})
         g.delete()
         row["secs"] = round(time.time() - t0, 1)
         OUT.setdefault("partP27", {})[str(M)] = row

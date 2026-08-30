@@ -1,0 +1,15 @@
+[ext] M=48 even_mid: {'branches': 64, 'closed_by_extra_splits': 4, 'still_surviving': 8, 'max_extra_depth': 1, 'secs': 0.6}
+[ext] M=48 b1: {'branches': 32, 'closed_by_extra_splits': 2, 'still_surviving': 0, 'max_extra_depth': 2, 'secs': 0.2}
+[ext] M=48 m0_c+2: {'branches': 64, 'closed_by_extra_splits': 2, 'still_surviving': 2, 'max_extra_depth': 1, 'secs': 0.6}
+[ext] M=48 m0_c-2: {'branches': 64, 'closed_by_extra_splits': 6, 'still_surviving': 2, 'max_extra_depth': 3, 'secs': 0.7}
+[ext] M=80 even_mid: {'branches': 64, 'closed_by_extra_splits': 6, 'still_surviving': 6, 'max_extra_depth': 1, 'secs': 3.0}
+[ext] M=80 b1: {'branches': 32, 'closed_by_extra_splits': 2, 'still_surviving': 0, 'max_extra_depth': 2, 'secs': 0.5}
+[ext] M=80 m0_c+2: {'branches': 64, 'closed_by_extra_splits': 8, 'still_surviving': 0, 'max_extra_depth': 1, 'secs': 1.2}
+[ext] M=80 m0_c-2: {'branches': 64, 'closed_by_extra_splits': 10, 'still_surviving': 0, 'max_extra_depth': 3, 'secs': 1.3}
+[ext] M=112 even_mid: {'branches': 64, 'closed_by_extra_splits': 12, 'still_surviving': 0, 'max_extra_depth': 1, 'secs': 3.9}
+[ext] M=112 b1: {'branches': 32, 'closed_by_extra_splits': 2, 'still_surviving': 0, 'max_extra_depth': 2, 'secs': 1.3}
+[ext] M=112 m0_c+2: {'branches': 64, 'closed_by_extra_splits': 8, 'still_surviving': 0, 'max_extra_depth': 1, 'secs': 2.7}
+[ext] M=112 m0_c-2: {'branches': 64, 'closed_by_extra_splits': 10, 'still_surviving': 0, 'max_extra_depth': 3, 'secs': 2.5}
+[ext] control M=52: {'branches': 32, 'closed_by_extra_splits': 0, 'still_surviving': 4, 'max_extra_depth': 0}
+[ext] control M=84: {'branches': 32, 'closed_by_extra_splits': 0, 'still_surviving': 4, 'max_extra_depth': 0}
+-> /Users/will/Dev/personal/tasks/math/erdos197/data/e174b_severed.json
