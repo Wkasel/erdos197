@@ -214,3 +214,224 @@ colorings" would need the low-pure mixed-tax analysis at 8
 not written) and the impure interpolation 4..11; NOT attempted —
 at 8 this is anatomy, not schema: the M ≥ 12 schema (§3) never
 needs the mixed engine.
+
+## 3. The uniform boot schema: Theorem J-BOOT
+
+The dichotomy discovered on the way to the M = 8 anatomy turns out
+to be the uniform law for the whole (v,0) family — stated here
+with its division of labor against notes/75's Theorem J-DOWN
+(which collapses the family into the half-anchor coupled core for
+M ≥ 32): **J-BOOT is elementary (Lemma K + one counting lemma —
+no CORE′/N6a machinery), uniform over ALL M ≡ 0 mod 4, M ≥ 12,
+and is the only uniform law in the boot window M ∈ {12, 16, 20,
+24}, exactly where J-DOWN's half-core does not fire.**
+
+**Theorem J-BOOT [PROVED modulo GAP-CMIN].**  Let M ≡ 0 (mod 4),
+M ≥ 12, and consider U4(M; bal; v, 0).  Every balanced coloring
+falls into exactly one of:
+
+1. **μ_dn > 0**: some mono H_dn triple; both its edges are forced
+   by the vdn = 0 block order — infeasible outright [L-PREFIX(i)].
+2. **μ_dn = 0, low-pure** (each team's (Bm1 ∪ B0) single-parity):
+   balance makes each team's low set the FULL parity class of
+   (M/2, 2M] ≅ the interval [1, 3M/4] with prefix M/4 (§2a), the
+   prefix wholesale-first by s0 ∪ s1 cleanliness.  Lemma K
+   (bases (7,2)/(8,3), k = M/4 ≥ 3, n − k = M/2 ≥ 6) kills the
+   chain — infeasible at EVERY budget vup.
+3. **μ_dn = 0, low-impure**: some team carries sumset mass
+   μ_up + μ_skip ≥ f(M), and L-PREFIX(ii,iii) charges each such
+   triple a distinct s2 unit: n_s2 ≥ f(M).  Infeasible for every
+   vup < f(M).
+
+Hence (v, 0) is UNSAT for all v < f(M), where
+
+    f(M) := min over balanced μ_dn = 0 LOW-IMPURE colorings of
+            max_T (μ_up + μ_skip)(T)
+
+is a pure coloring-layer (counting) function — no order variables.
+
+**Measured: f(M) = M/2 EXACTLY at FIVE scales** (e174 fmass, local
+8/12/16 + sprint-C pod 20/24; scan UNSAT at every m < M/2, SAT
+witness at M/2):
+
+    f(8) = 4, f(12) = 6, f(16) = 8, f(20) = 10, f(24) = 12.
+
+[GAP-FHALF] f(M) ≥ M/2 for all M ≡ 0 mod 4 — reduced to GAP-CMIN
+below.  Corollaries, modulo that one tag:
+
+- **v_min(0)(M) ≥ M/2 for every M ≡ 0 mod 4, M ≥ 12** — in
+  particular the whole boot window; combined with Theorem J-DOWN
+  (v_min(0)(M) = ∞ for M ≥ 32, notes/75) the (·,0) demand family
+  is now covered at EVERY anchor: boot by J-BOOT, large by J-DOWN.
+- The pump cells (6,0)@16, (6,0)@24, (5..7,0)@anything in range
+  are schema instances, not isolated machine facts.
+
+**Residue casework (task question 3): there is NONE beyond
+M ≡ 0 mod 4.**  The instance requires M ≡ 0 (mod 4) (even block
+halves and integral M/4); given that, every ingredient (Lemma K
+thresholds, the interval isomorphism, L-PREFIX, the f-law) is
+uniform in M, and f(M) = M/2 is measured on BOTH residues mod 8
+(8/16/24 ≡ 0, 12/20 ≡ 4).  M = 8 is the unique exceptional scale:
+case 2's chain is Lemma K's sharp SAT cell (6, 2), which is why
+v_min(0)(8) = 12 is finite and its witness is low-pure (§2).  The
+task's "M ≡ 0 mod 8" guess was the wrong class — the family is
+mod-4 uniform with a single boot anomaly at 8.
+
+**End-to-end machine checks (sprint-B, e173 encoder, fresh scales
+AND fresh residues, all this session):**
+
+    ( 5,0)@12 UNSAT [1.1 s]   (schema: v < 6)   — NEW scale, ≡ 4 mod 8
+    ( 7,0)@16 UNSAT [2.9 s]   (schema: v < 8)   — first cell beyond the
+                                                  measured (6,0); predicted
+                                                  by f(16) = 8 before the run
+    ( 9,0)@20 UNSAT [8.5 s]   (schema: v < 10)  — NEW scale, ≡ 4 mod 8
+    (11,0)@12 UNSAT [7.0 s]   beyond the counting bound — mixed tax
+    (19,0)@20 UNSAT [9.5 s]     (consistent with J-DOWN-side behavior;
+                                 not claimed by J-BOOT)
+
+Zero mismatches with any prediction; the two beyond-bound cells
+show the counting floor is not the whole truth at boot scales
+(the mixed engine tops up, as at M = 8).
+
+## 4. The counting lemma: anatomy and proof skeleton [GAP-CMIN]
+
+**Reduction CMIN→FHALF [PROVED — three lines].**  For a coloring
+write c_T(z) = #{(u, y) ∈ (low∩T) × (B1∩T) : 2y − u = z} for
+z ∈ B2.  Then Mass(T) := μ_up + μ_skip = Σ_{z ∈ B2∩T} c_T(z), so
+
+    Mass(A) + Mass(B) ≥ Σ_{z ∈ B2} min(c_A(z), c_B(z)) =: S(col)
+
+(each z lands in one team and contributes at least the min), and
+max_T Mass ≥ ⌈S/2⌉.  The B2 coloring has vanished: S depends only
+on the split of low ∪ B1.  Define cmin(M) = min S over balanced
+μ_dn = 0 LOW-IMPURE splits of low ∪ B1.  Then f(M) ≥ ⌈cmin(M)/2⌉.
+
+**Measured: cmin(M) = M exactly at 8, 12, 16** (adversarial
+side-selection encoding; UNSAT at every m < M, SAT at M) — and the
+f-witness at 8 realizes S = 8 = M with the 4/4 split: BOTH
+inequalities of the reduction are tight.  [GAP-CMIN]: S ≥ M for
+every balanced μ_dn = 0 low-impure split — pure combinatorics of
+one seam of colors, THE remaining hand target of the (·,0) family.
+
+**The discontinuity that explains the dichotomy.**  For LOW-PURE
+splits S = 0 identically (an odd z has all its low-representatives
+u ≡ z odd, and the even team owns no odd low values — one of
+c_A, c_B vanishes at every z).  One impurity makes S jump to M:
+
+**Proof skeleton (the two-channel sweep) — the partner conditions
+are the open residue.**  Low-impure gives d ∈ low∩A even and
+r ∈ low∩B odd (both teams have both parities: if one team's low
+were pure, its partner's low would be the complementary full
+parity class, pure too).  For y ∈ B1 define the two channels
+
+    z_r(y) = 2y − r  (odd),    z_d(y) = 2y − d  (even).
+
+For every y ∈ B1 with y > 2M + max(r, d)/2, both z's land in B2
+with y as a legal representative pair-partner (u = r resp. d).
+The sweep interval I = (2M + max(r,d)/2, 4M] has ≥ M values
+(max(r,d) ≤ 2M).  Every y ∈ I is colored: y ∈ B gives
+c_B(z_r(y)) ≥ 1 via (r, y); y ∈ A gives c_A(z_d(y)) ≥ 1 via
+(d, y).  The maps y ↦ z_r(y), y ↦ z_d(y) are injective and the
+two channels are parity-disjoint, so DISTINCT y ∈ I contribute at
+DISTINCT z: if every such z also has a representative on the
+OTHER team (the partner condition), then S ≥ |I| ≥ M.  ∎(skeleton)
+
+The partner condition is where balance and μ_dn = 0 must enter
+(each z needs one opposite-team pair (u', y') with y' in an
+explicit 3M/4-long window — a dodging team must concentrate its
+B1 mass, which feeds the other channel; the extremal witnesses
+confirm the tension is real and exactly balanced).  Sharpness
+check: the f(8)-witness's impurity sits at d = 16 = 2M — the TOP
+of B0 — making |I| = M exactly; the measured cmin = M says the
+adversary can achieve the sweep bound but never beat it.
+
+## 5. The F-schema: the same dichotomy prices the freshness family
+
+notes/75 §2.4 leaves F(N; v) [GAP-F-schema] as a family that does
+NOT collapse (one-seam theories are SAT; F keeps genuine joint
+content at every scale).  The J-BOOT engine transfers — the ONLY
+property of vdn = 0 that case 2 used was s0-cleanliness, which F
+has by definition:
+
+**Theorem F-BOOT [PROVED modulo GAP-FTOT].**  Let M ≡ 0 (mod 4),
+M ≥ 12, and consider F(M; v) (s0 = 0; n_s1 + n_s2 ≤ v per team)
+with v < M/2.  Then:
+
+1. **Low-pure colorings are infeasible at EVERY v** — Lemma K on
+   the low chain needs only the s0-forced prefix.  (For v ≥ M/2
+   nothing is claimed; a B1-value jumped before Bm1 costs ≥ M/2
+   s1-inversions, see step 3, so the chain hypothesis holds
+   whenever v < M/2.)
+2. **Low-impure colorings pay ⌈mass_tot/2⌉:** with v < M/2 every
+   B1∩T value sits after every Bm1∩T value (jumping one costs
+   ≥ |B0∩T| = M/2 s1-units, over budget), so: each mono H_dn
+   triple charges its s1 edge (y, z); each mono H_up triple
+   charges its s1 edge (u, y) or its s2 edge (y, z); each mono
+   SKIP triple charges its s2 edge.  An s1 pair (b0, b1) serves at
+   most 2 triples (one H_dn as (y,z), one H_up as (u,y)); an s2
+   pair serves at most 1 (its u = 2y − z is in exactly one block).
+   Hence v ≥ n_s1 + n_s2 ≥ (μ_dn + μ_up + μ_skip)/2 ≥ f_F(M)/2,
+
+   f_F(M) := min over balanced LOW-IMPURE colorings (μ_dn free!)
+             of max_T (μ_dn + μ_up + μ_skip)(T).
+
+**Measured: f_F(8) = 4, f_F(12) = 6 — EQUAL to f(M) = M/2** (pod
+ladder; f_F(16) descending, ≥ 6 at harvest).  Letting μ_dn > 0
+does not help the adversary at the measured scales.  [GAP-FTOT]:
+f_F(M) ≥ M/2 (implied by GAP-CMIN if the μ_dn-free minimum keeps
+matching f; the CMIN reduction applies verbatim to the
+μ_up + μ_skip part).
+
+**Corollary F1: F(M; v) UNSAT for every v < ⌈M/4⌉, uniformly in
+M ≡ 0 mod 4, M ≥ 12 [modulo GAP-FTOT].**  This is the first
+uniform-in-M statement ever produced for the freshness family:
+T-FRESH's hypothesis [GAP-F-schema] now has a proved-modulo-one-
+counting-lemma instance family at every scale — density-one fresh
+minting with v(N) = ⌈N/4⌉ − 1 — rather than a single machine point
+(16; 6).  The measured F(16; 6) UNSAT [983.5 s] sits 2 units above
+the counting bound (v < 4): the F mixed engine tops up exactly as
+the (·,0) one does.  What F1 buys T-TEL′/T-FRESH at ω: branch (b)
+freshness holds with any budget curve below M/4, no appeal to the
+half-core, no N6a dependency — an INDEPENDENT second engine under
+the telescope's disjointness theorem.
+
+## 6. The margin family: the budgeted Lemma K is its low-pure engine
+
+notes/75 §2.4's other residue is the margin family
+U4(M; v, w), w ≥ 1.  Case 2 of J-BOOT generalizes verbatim: under
+vdn = w, a low-pure team's chain (≅ [1, 3M/4], prefix M/4) may
+carry at most w inverted (prefix, rest) pairs — i.e. the LOW-PURE
+branch of the (v, w) cell is governed by the BUDGETED Lemma K:
+
+    K(n, k) := least v such that [1..n] with low [1..k] admits a
+    monotone-3AP-free order with ≤ v inverted (low, high) pairs.
+
+**Lemma MARGIN-LP [PROVED].**  If w < K(3M/4, M/4) then every
+low-pure coloring is infeasible in U4(M; v, w) for every v.
+(The chain's (prefix, rest) inversions are s0 pairs ≤ w.)
+
+**Measured K-diagonal (e174 interval, exact — UNSAT at K−1, SAT
+at K):**
+
+    K(6,2) = 0    (M = 8:  the boot anomaly)
+    K(9,3) = 3    (M = 12)
+    K(12,4) = 4   (M = 16)
+    K(15,5) = 11  (M = 20)
+    K(18,6) = 20  (M = 24)
+    K(21,7) = 28  (M = 28)
+    K(24,8) = 40  (M = 32; independently = the fixed-parity-
+                   schedule price at M = 8 via the §2c chain
+                   decomposition — two encoders agree)
+
+No growth law recorded (campaign rule); the raw values suffice
+for every margin cell in the boot-and-collapse range: e.g. the
+notes/75 margin targets (v, 3)@48 have their low-pure branch dead
+by w = 3 < K(9,3)·(scale) — precisely: at M = 48, w < K(36, 12)
+(unmeasured, ≥ K(24,8) = 40 by deletion-monotonicity of Lemma K's
+step 1... the monotone step gives K non-increasing in n at fixed
+k is FALSE in budget form; K(36,12) needs its own run — queued).
+The impure branch at w ≥ 1 loses L-PREFIX(i)'s hard μ_dn = 0
+(≤ w mono H_dn triples become payable) — the margin analogue of
+case 3 needs the mass function at μ_dn ≤ w [GAP-MARGIN-MASS,
+scoped, not attempted].
+
