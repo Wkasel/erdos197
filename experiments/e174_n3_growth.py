@@ -257,8 +257,8 @@ def partP27():
         dump()
 
 
-def partKCRIT():
-    x, M = 27, 80
+def partKCRIT(M=80, kmin=3):
+    x = 27
     g = Gadget(M, x)
     pool = IDPool(start_from=g.top + 10)
     neg = [-g.sel[v] for v in g.vals]     # true iff v punctured
@@ -285,9 +285,9 @@ def partKCRIT():
             row[k] = {"verdict": "UNKNOWN (budget)",
                       "secs": round(time.time() - t0, 1)}
         sol.delete()
-        print(f"[KCRIT] x=27 M=80 atmost-{k} punctures: {row[k]}",
+        print(f"[KCRIT] x=27 M={M} atmost-{k} punctures: {row[k]}",
               flush=True)
-        OUT["partKCRIT"] = row
+        OUT[f"partKCRIT_M{M}"] = row
         dump()
         if r is True:
             break
@@ -355,7 +355,9 @@ def partROTB():
 
 
 PARTS = {"partP15": partP15, "partP27": partP27,
-         "partKCRIT": partKCRIT, "partKCRIT15": partKCRIT15,
+         "partKCRIT": partKCRIT,
+         "partKCRIT112": lambda: partKCRIT(M=112, kmin=5),
+         "partKCRIT15": partKCRIT15,
          "partROTB": partROTB}
 
 if __name__ == "__main__":

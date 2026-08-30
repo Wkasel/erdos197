@@ -533,5 +533,11 @@
    "sup3": "exhaustive",
    "secs": 2.0
   }
+ },
+ "partKCRIT_M112": {
+  "3": {
+   "verdict": "UNSAT",
+   "secs": 16.0
+  }
  }
 }
