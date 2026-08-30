@@ -481,6 +481,18 @@ no threshold at either scale has ever been measured.  Predictions:
 4. **SPLIT**: e154_dich_split UNSAT at both scales, fast (it has died
    far below threshold at all six audited scales).
 
+**REGISTRATION (adjudication session, the moment the scan printed —
+BEFORE any probe): M = 176 catalogue landed (17976 pairs, sprint-B);
+e153_dich_lemmas scan: α_E = α_O = 3, both bottom singletons
+self-serve (f_O = f_E = 8) ⟹ K*(176) = 88 + 9 − 5 = 92.**  Note
+this MEETS the cap: C(176) = 92 predicted by the flat law — (OV) at
+176 is predicted to hold WITH EQUALITY (first such scale; at
+48..160 the overlap had slack).  Probes launched at registration:
+e152_llop_probe 176 @ K = 92 (expect UNSAT) / 93 (expect SAT);
+e153_dich_probe 176 phi1 @ 92 (expect UNSAT) / 91 (expect SAT).
+M = 192 catalogue still building at close.
+[data/e153_scan_M176.out on sprint-B]
+
 ---
 
 ## 5. GAP-LLOP: the fresh-scale caps, the tolerance law, and the arms
