@@ -1759,3 +1759,68 @@ of the 93 % NO — the three catalogue-species gaps are near-certain
 writing (every attempted instance ever discharged; two full audit
 cycles + this spot-audit, zero breaks); essentially all residual
 NO-risk sits in AFFORD′.
+
+### THE SPARSE-CORNER PINCER (2026-08-30, notes/80-pincer + e185):
+### MINT-LOC resolved (strong form), L-NOTAIL kills the constant
+### corner, alternating corner rejected by the finite axes
+
+**MINT-LOC executed exactly as pre-registered** (notes/80 §3.3;
+predictions committed first, notes/80-pincer §0).  Census: the
+witnesses' cross-3-block AP family H_T obeys the pure-lattice
+closed form |H| = 5m²/64 EXACTLY (80/320/1280/5120 at
+m = 32..256), with König matching = FULL anchor-block presence at
+every cell, and H_A = 0 exactly at the ownership vector (B,A,A) —
+the e184 anomaly, now derived from a residue case-table verified
+to channel granularity ((c,c±1,c+2) at 84+80 = 164).  Enumeration:
+**the one-mint SAT region is EMPTY at all 22 cells** (3 witnesses
+× m = 32/64/128 × both teams + controls; exact γ-filter
+cross-validated, 0 mismatches); even the H = 0 silent-row teams
+are budget-0 UNSAT at solver level.  Budget scans: UNSAT through
+b = 12 at every witness cell; pure-lattice minority frontier
+ν(8), ν(12), ν(16) = 9, 31, 58 ≈ 0.23 m² (2.9× the hand floor).
+Hand: Lemma γ-RIGID + K-catalogue + Lemma MINT-1 (one-mint SAT
+forces ALL of H through the mint pair), H-COVER (= P5's floor,
+now computed Θ(m²) on the corner), D-FLOOR/D-SAT (König + Hall:
+displaced values ≥ full B0-presence, confined to (m, 4m)).
+**Verdict: MINT-LOC's literal form (displaced value within ≤ 2 of
+minority material, breaking (iii)) is the WRONG mechanism — order
+payment never recolors; the TRUE statement is stronger:
+Θ(m²) inversions and presence-scale displaced sets per anchor,
+Θ(N) cumulative (Theorem AFFORD-DEMAND, unconditional on the
+lattice family).**
+
+**L-NOTAIL [PROVED, classical import]:** DEGS77's opening
+observation + restriction closure + affine invariance ⟹ no
+3-permutable team contains an infinite AP.  Consequences: the
+verbatim ω-extensions of ALL THREE S5 witnesses are DEAD (their
+minority ownership is eventually constant — measured; constant
+ownership hands one team the mod-4 class tail).  The corner's
+ω-YES-space must alternate class ownership infinitely often.
+
+**S5-ALT (pre-registered §3.5, run + attribution controls):**
+forcing designation alternation (run length 1 from t = 6) on the
+e179 dodger build at 2^12: **UNSAT at BOTH censors** (F = 12:
+688 s; F = 64: 19 s) — while censor-OFF is SAT (98 s, alternating
+coloring exists) and diffuse-OFF is SAT (5 s).  The kill is the
+JOINT (i-proxy) ∧ (ii) ∧ (iii) ∧ alternation interaction — each
+3-of-4 subset is satisfiable.  [Bounded-run and boot/horizon
+robustness rows: see notes/80-pincer §4.]  The pincer's shape:
+**the finite corner accepts constant ownership and rejects
+alternation; ω acceptance requires alternation.**  The remaining
+seam between the corner and emptiness = T-SHARP procrastination
+(true axis (i) vs any finite censor) + unbounded-run alternation
++ punctured/non-lattice sparse minorities (α_ℕ(3)-territory:
+density parameters of permutable sets are open — Geneson).
+
+Ledger: new tags L-NOTAIL [PROVED], γ-RIGID/MINT-1/D-FLOOR/D-SAT
+[PROVED], AFFORD-DEMAND [PROVED — the demand half of L-AFFORD on
+the lattice corner at presence scale]; MINT-LOC retired (resolved
+strong-form); GAP-AFFORD′ residue on the corner sharpened to
+GAP-AFFORD″-ALT (unbounded-run alternating + punctured variants).
+Honest assessment: NO ≈ 95 % (was 93): the entire realized
+YES-material dies at ω by a two-line classical fact, and the
+alternating replacement is rejected by the corner's own finite
+axes at every tested censor; the residual YES-mass sits in
+unbounded-run procrastination and non-lattice sparse corners,
+both unconstructed.  All supply-side no-gos (NG1–NG4) remain
+respected — the cap itself is still unproven.

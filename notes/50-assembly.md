@@ -185,6 +185,30 @@ enumeration ON the witnesses at m = 32/64/128.  AFFORD′ remains
 open and terminal; its sharpest form: can the mod-4 lattice corner
 afford one displaced value per octave forever.
 
+PINCER EXECUTION (notes/80-pincer + e185, same night): MINT-LOC
+resolved in the STRONG form — one-mint SAT region EMPTY at all
+pre-registered cells (26/26 incl. the new alternating witness;
+hand: Lemmas γ-RIGID/MINT-1); the literal ≤2-distance mechanism is
+RETIRED (order payment never recolors, so paying never breaks
+(iii)).  **Theorem AFFORD-CORNER [PROVED]**: on blockwise mod-4
+lattice colorings (the corner's characterized inhabitants),
+(a) L-NOTAIL (DEGS77 + restriction + affine: no permutable team
+contains an infinite AP) forces class-ownership to alternate — the
+verbatim ω-extensions of ALL THREE S5 witnesses are DEAD;
+(b) every H-carrier team pays ≥ 5m²/64 − O(m) seam inversions per
+anchor (P5 floor with H computed; exact orientation: one inverted
+seam pair per H-triple) with ≥ presence-scale displaced values
+confined to (m, 4m), Θ(N) cumulative (vs T-TEL″'s Θ(log N));
+(c) no anchor is one-mint payable.  S5-ALT: forcing alternation on
+the dodger build = UNSAT at both censors (controls: censor-off SAT
+— alternating corner colorings exist and pay double-sided
+presence-scale at every anchor; diffuse-off SAT only degenerately)
+— the finite corner rejects alternation while ω requires it.
+Residue on this family = **GAP-AFFORD″-ALT**: the supply cap for
+unbounded-run (procrastinating) alternating lattices + punctured
+near-lattices + non-lattice gap-≥3 minorities (the last two dodge
+L-NOTAIL; permutable-set density theory at length 3 is open).
+
 ## 3. Retired / reframed tags (final dispositions)
 
 | tag | disposition |
@@ -234,7 +258,7 @@ Critical path (all four needed; nothing else is):
 
 | tag | exact statement | species | evidence state |
 |-----|-----------------|---------|----------------|
-| **GAP-AFFORD′** | for every valid Case-2 pair, the donation supply (single-use colored values, P3-accounted) cannot fund the T-TEL″ mint system (≥ 1 displaced value per 2 octaves) forever | **genuinely new ledger statement** — no template in the campaign | no-go results (NG1–NG4, GAP-COMP refuted) + tournament (notes/79) + adjudication (notes/80): S2/S3 refuted, L-DOUBLE-DUTY [PROVED, ×3 scales], SPARSE-CORE ×8 scales + AAA hand arm, corner INHABITED by mod-4 lattice colorings (verified + characterized) which pay STRUCTURALLY at every anchor — champion route S4, decisive statement MINT-LOC (pre-registered); the cap itself still has zero completed proof strategies |
+| **GAP-AFFORD′** | for every valid Case-2 pair, the donation supply (single-use colored values, P3-accounted) cannot fund the T-TEL″ mint system (≥ 1 displaced value per 2 octaves) forever | **genuinely new ledger statement** — no template in the campaign | no-go results (NG1–NG4, GAP-COMP refuted) + tournament (notes/79) + adjudication (notes/80): S2/S3 refuted, L-DOUBLE-DUTY [PROVED, ×3 scales], SPARSE-CORE ×8 scales + AAA hand arm, corner INHABITED by mod-4 lattice colorings (verified + characterized) which pay STRUCTURALLY at every anchor — champion route S4, decisive statement MINT-LOC (pre-registered); PINCER EXECUTED (notes/80-pincer): MINT-LOC resolved strong-form, Theorem AFFORD-CORNER [PROVED] (L-NOTAIL + presence-scale demand + one-mint emptiness), S5-ALT UNSAT ×2 censors; residue = GAP-AFFORD″-ALT (unbounded-run alternating + punctured + non-lattice sparse) — the supply CAP itself still has zero completed proof strategies |
 | **GAP-N6a sub-pool** | the CI(m) core fires for ALL m (bal ≥ 16; const (2,2,2) ≥ 48): remaining per notes/77 §7 = **GAP-RES** (consolidated: classify SAT-alive fan pairs uniformly in N — carries FG-scaled-zone, FG-deep taxonomy, DICH-ALPHA, H-LAT) + ThW1′-ROBUST/-TOL + DICH-F2/CASC + SPLIT + LLOP-α/β + ASM′ = (OV-∀) | uniformization/classification (discharged instances exist for each; PURE/P-ARM‴/AFF⁺+MON cleared out of the pool) | machine-closed everywhere asked (8 CI scales + robust ×2; P-ARM‴ modular 48..128; laws ×8 full + ×7 half scales; blind hits; 176/192 pre-registered) |
 | **GAP-N2-DIAG** | C3(p) UNSAT on its flip class for every odd p ≥ 5 (uniform-in-p write-up) | uniformization — **DISCHARGED: Theorem C3(p), notes/78 Part I [PROVED — spot-audited notes/80]** | schema p = 5..25 (0 fail; 23/25 fresh both mod-4 classes), boundaries exact, solver x-val ×9 p-values, identity layer re-derived p ≤ 39; residual = referee prose pass |
 | **GAP-N3-GROW (N3-b)** | < ⌊(x−1)/4⌋ punctures leave the rung UNSAT, uniformly in x and puncture set | uniformization + robustness (severed-ladder closures = machine shadow); skeleton LANE + SEV + (N3-b′), notes/78 §II.3 | exact at x = 11/15/19/23/27 global, x = 19 AND 27 each at two scales (d*(19; 112) = 4 fresh, notes/80); closures complete at M = 112 |
@@ -251,6 +275,7 @@ Hardening layer (not gating the assembly):
 | GAP-V* | v*₃(m; bounds) growth | rate sharpening only |
 | GAP-ZERO | classify the sumset floor's zero variety | all zeros measured LOW-PURE (order-dead); N3-species |
 | GAP-SPARSE-CORE (new, notes/79; adjudicated notes/80) | CI(m) at (1,1,1) + per-block minority gap ≥ 3 UNSAT for all m ≥ 16 | machine ×8 scales (16..48 incl. fresh 36, boot ≤ 12), control triangle + gap-≥2 discriminator; **AAA designation HAND-CLOSED m ≥ 26** (covering bound; machine covers 16..48) — residue = mixed-designation catalogue; lattice-minority sub-family void STRUCTURALLY (AP-closed minorities carry cross-3-block triples); strengthens Case-2 demand on the (iii)-corner to presence-1 bounds — does not gate the assembly but arms it |
+| L-NOTAIL + Theorem AFFORD-CORNER (new, notes/80-pincer) | no 3-permutable team contains an infinite AP (DEGS77 import); blockwise-lattice corner: ownership must alternate, every H-carrier pays Θ(m²) seam inversions/anchor as an exact orientation with presence-scale displaced sets (Θ(N) cumulative), no anchor one-mint payable | [PROVED] + machine (e185: census closed-form exact, 26/26 one-mint cells empty, ν(8/12/16) = 9/31/58, S5-ALT UNSAT ×2 + controls) — arms the corner kill; does not gate the assembly |
 
 **If any critical tag BREAKS instead of clearing**: (i)/(ii) breaking
 re-opens Case 1 only via a coloring evading every lane at every
@@ -265,9 +290,14 @@ exact DP depth 24–58 one reflector band above the censor; the pure
 lattice family extends to ω as a coloring).  That corner is the
 entire known YES-space; its inhabitants pay T-TEL″ mints at EVERY
 anchor — for the lattice sub-family STRUCTURALLY (AP-closed
-minorities cannot be double-block-ordered at all).  The YES
-question is exactly: can the lattice corner AFFORD those payments
-(= ¬MINT-LOC direction).
+minorities cannot be double-block-ordered at all).  [Updated,
+notes/80-pincer: the constant-ownership lattice corner — every
+realized inhabitant — is DEAD at ω (L-NOTAIL); the live
+(iv)-negative shrinks to unbounded-run alternating lattices
+(rejected finitely at run-length 1 by S5-ALT, both censors),
+punctured near-lattices, and non-lattice gap-≥3 minorities, none
+realized.  The YES question is: can THOSE afford presence-scale
+payments (GAP-AFFORD″-ALT).]
 
 ## 7. Certificates index (one line each)
 
@@ -286,3 +316,4 @@ question is exactly: can the lattice corner AFFORD those payments
 - audits: notes/60, 60-audit-1, 61-audit-2 (2026-08-28); notes/76 (2026-08-30) — all SOUND, 0 breaks
 - notes/79: L-DOUBLE-DUTY [PROVED, sharp ×2 blind]; SPARSE-CORE [MACHINE ×8 + controls]; S2/S3 refutations; dodger-corner witnesses (e179)
 - notes/80: six-species spot-audit (zero anomalies, e184); C3(p) audit rider discharged; AAA covering hand closure; S5 witnesses verified + characterized (mod-4 lattices, structural payment); champion S4 + MINT-LOC pre-registration
+- notes/80-pincer: L-NOTAIL, γ-RIGID/MINT-1, D-FLOOR/D-SAT, Theorem AFFORD-CORNER [PROVED]; MINT-LOC executed as pre-registered (e185: 26/26 one-mint cells empty, census closed-form exact, ν frontiers 9/31/58); S5-ALT + attribution battery [MACHINE]
