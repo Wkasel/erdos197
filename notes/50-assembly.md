@@ -1,5 +1,7 @@
 # Master assembly: the complete NO — FINAL dependency graph
 # (rewritten 2026-08-30 end-of-day, post five-front merge + notes/76 audit;
+# adjudication pass applied same night — notes/80: six-species spot-audit
+# clean, champion = S4/MINT-LOC, S5 witnesses = mod-4 lattice colorings;
 # supersedes all earlier versions of this file — history in git)
 
 Target: **Theorem (conditional assembly).**  No partition of ℤ⁺ into two
@@ -18,11 +20,13 @@ node is tagged
 are structurally closed, machine-locked, and twice audit-cleared, but
 the graph still contains genuinely open links.  The two that carry the
 program: [GAP-AFFORD′] (Case 2's terminal supply statement — new
-mathematics, no surviving proof strategy) and the uniformization pool
-(finite catalogue-schema write-ups of one proved-in-instances species:
-GAP-N3-GROW's (N3-b), the GAP-N6a sub-pool, GAP-CMIN; GAP-N2-DIAG
-left this pool 2026-08-30 late — Theorem C3(p), notes/78, [PROVED —
-audit pending]).  No announcement-shape document exists or should.
+mathematics; champion route S4 + MINT-LOC after the notes/79/80
+tournament + adjudication) and the uniformization pool (finite
+catalogue/classification write-ups of one proved-in-instances species:
+GAP-N3-GROW's (N3-b), the GAP-N6a sub-pool residue led by GAP-RES,
+GAP-CMIN; GAP-N2-DIAG left this pool 2026-08-30 late — Theorem C3(p),
+notes/78, [PROVED — spot-audited notes/80]).  No announcement-shape
+document exists or should.
 
 ---
 
@@ -53,8 +57,8 @@ already dead unconditionally or modulo the Case-1 rungs (thm:main
 |------|-----------|-----|--------------|
 | N1 / T-PIN(-STAGE/-BLOCKS) | fixed pair + infinitely many disjoint UNSAT windows ⟹ not permutable | [PROVED] | notes/37/42/43; thm:ogred verbatim |
 | Theorem B1 | a team with ∞ many C₀-clean blocks is not 3-permutable, NO partner hypothesis; Step-1 patched to extract pairs with 3p ≥ x₀(C₀) = 4C₀+6 | [PROVED mod (H1′)] | notes/52 + patch notes/74 §I.4; audit-cleared (60-audit §4, 60-audit-1 §1/§3); adversarial colorings incl. fresh p=21 |
-| (H1′) part 1 = GAP-N2-DIAG | the diagonal rung C3(p) = {t_p≺b_p, t_{p−2}≺b_{p+1}, t_{p+5}≺b_{p−2}} UNSAT on its flip class M ≡ 2p+6 mod 8, uniformly in odd p ≥ 5 | **[PROVED — notes/78 Part I (Theorem C3(p)); adversarial audit pending]**: affine-in-p Z/D/E/P write-up complete (L1(p) all 4 \| M ≥ p+7, FLIP(p) in-class M ≥ 2p+6, boundaries machine-EXACT); schema executed p = 5..21 (fresh 15/17/19/21), 104+52+52 scales each, 0 fail (e123 rerun); solver x-val p = 5..13 (e123b) + fresh 17/21 20/20 (e180) | p = 5 instance is thm:c3core [PROVED, audited ×3] |
-| (H1′) part 2 = GAP-N3-GROW | punctured-rung tolerance d*(x) = ⌊(x−1)/4⌋ → ∞: rung stays UNSAT under any < ⌊(x−1)/4⌋ punctures, uniformly | (N3-a) ≤-side [PROVED mod GAP-SA-HALF] — ONE hypothesis after the notes/78 correction (both parity classes halve onto SA((x+1)/2; M/2), Lemma PS); (N3-b) ≥-side [MACHINE]: exact global at x = 11/15/19/23/27 (e174/e180 KCRIT, cardinality-exhaustive; 19 and 23 FRESH, 23 ≡ 7 mod 8; d*(27) at TWO scales), severed-ladder closures complete at M = 112 (e174b); uniform skeleton LANE + SEV + (N3-b′) stated (notes/78 §II.3) | notes/74 Part I + notes/78 Part II; e130/e130b/e130c/e132 |
+| (H1′) part 1 = GAP-N2-DIAG | the diagonal rung C3(p) = {t_p≺b_p, t_{p−2}≺b_{p+1}, t_{p+5}≺b_{p−2}} UNSAT on its flip class M ≡ 2p+6 mod 8, uniformly in odd p ≥ 5 | **[PROVED — notes/78 Part I (Theorem C3(p)); SPOT-AUDITED notes/80 §1.1]**: affine-in-p Z/D/E/P write-up complete (L1(p) all 4 \| M ≥ p+7, FLIP(p) in-class M ≥ 2p+6, boundaries machine-EXACT); schema p = 5..25 (fresh 23/25 in the audit, both mod-4 classes), 0 fail; solver x-val p = 5..25 20/20 each; identity layer re-derived independently p ≤ 39; residual formality = referee prose pass at paper time | p = 5 instance is thm:c3core [PROVED, audited ×3] |
+| (H1′) part 2 = GAP-N3-GROW | punctured-rung tolerance d*(x) = ⌊(x−1)/4⌋ → ∞: rung stays UNSAT under any < ⌊(x−1)/4⌋ punctures, uniformly | (N3-a) ≤-side [PROVED mod GAP-SA-HALF] — ONE hypothesis after the notes/78 correction (both parity classes halve onto SA((x+1)/2; M/2), Lemma PS; identities re-derived + exact at x ≤ 31, notes/80); (N3-b) ≥-side [MACHINE]: exact global at x = 11/15/19/23/27 with x = 19 at TWO scales (d*(19; 112) = 4 fresh, notes/80) and d*(27) at two; severed-ladder closures complete at M = 112 (e174b); uniform skeleton LANE + SEV + (N3-b′) stated (notes/78 §II.3; LANE numeric to x = 99) | notes/74 Part I + notes/78 Part II; e130/e130b/e130c/e132; e184 |
 | N2-COMPLETE (feeds BRIDGE1-AF + supply 1/12→1/2; NOT consumed by B1) | every odd pair {x, x+1}, x ≥ 11, fires at all 8 residues, M ≥ x+57 | [MACHINE+SCHEMA mod GAP-N2-UNIF]: 108/108 lane laws x = 11..33 ≤ 152; 36/36 template grid, 7 x-values/cell to x≈73, ~2.3k lattice checks, 0 anomalies; MP/D/PC/MIR + Metatheorem T [PROVED, x-free]; audit: K4e(23) fresh at M = 160/164 (notes/76) | notes/73; e174_param_lanes, e175_param_template, e176/e176b, e177 |
 
 Case-1 residual: **GAP-N3-GROW(N3-b) alone** (notes/78: N2-DIAG's
@@ -79,11 +83,22 @@ seams, bounds bal or const.
 - Proved skeleton [PROVED]: Lemma U, A1–A9, E2/C, P′, W, PAR,
   FG-high, Theorem H, Lemma J (independently re-established), DICH
   case tree (H-DICH), Lemma D3, Lemma PH+, ASM′/COV-W′ compositions.
-- **Sub-gap pool (the uniformization residue — all one species:
-  finite catalogue-schema write-ups):** GAP-DICH (5 rows, notes/57
-  §7), GAP-LLOP-α/β, GAP-PARM (⊇ GAP-PARM-CORNER ⊇ FG-deep 20-pair
-  core), GAP-ASM′ = (OV-∀) only (8-scale-true + robust-chain
-  insurance), GAP-FG-schema, GAP-FG-deep.
+- **Sub-gap pool — REDUCED (notes/77 front + notes/80 adjudication;
+  authoritative inventory notes/77 §7).**  CLEARED: GAP-DICH-F0
+  (Lemma PURE [PROVED]; SAT-level bijection ×3 scales 48/56/64),
+  GAP-PARM-CORNER (Theorem P-ARM‴, modular at M = 48..128 — e155c
+  battery + e182 independent encoder + fresh m = 64 chain),
+  GAP-FG-schema's fixed-pair half (Theorem AFF⁺ + Lemma MON: one
+  certificate per pair valid at all larger M).  Multi-scale laws:
+  RES-LAW/CLOSE-LAW′ ×8 scales 48..160; H-LAT/H-RW0′/cliques ×6-7
+  half-scales — all descriptive or GAP-RES instances.  **Residue:
+  GAP-RES (the consolidated crux — classify the SAT-alive fan pairs
+  uniformly in window length; provably carries FG-scaled-zone,
+  FG-deep taxonomy, DICH-ALPHA, H-LAT via Cor. PURE-2)** +
+  ThW1′-ROBUST/-TOL uniformization (finite packed-quad breaker
+  family, hand-listable) + GAP-DICH-F2/CASC + SPLIT finish +
+  GAP-LLOP-α/β + GAP-ASM′ = (OV-∀) (8-scale + robust insurance;
+  176/192 extension pre-registered, catalogues building).
 
 ### 2b. Demand side — a THEOREM modulo N6a (T-TEL″, notes/72 §6)
 
@@ -138,21 +153,37 @@ strategies pre-registered and machine-attacked.  Two refuted and
 added to the no-retry list (band-depth weighting — the mint band
 map is FULL; single-team density drift — payer identity alternates
 with scale, ROT4 measured to m = 80).  One new proved bookkeeping
-lemma: **L-DOUBLE-DUTY** [PROVED, sharp ×2 blind] — consecutive-
-boundary mints are VALUE-disjoint below presence-scale prices
-(threshold exactly |O_m ∩ T| + 1).  One new machine core family:
-**GAP-SPARSE-CORE** — the dodger corner's own axis (iii) (donation
-material gap ≥ 3) makes the coupled core fire at bounds (1,1,1)
-from m = 16 (7 scales, 4 residues, boot ≤ 12, full control
-triangle, gap-≥2 discriminator = the parity-lattice escape, AAA
-hand skeleton via spacing-2 covering; J-DOWN transfers the pump
-collapse verbatim).  And the corner (i)+(ii)+(iii) is FINITELY
-INHABITED (CP-SAT witnesses at 2^12 and 2^13, rung-safe sup
-density < 13/16, ROT4-strength orbit censors, always dodged one
-reflector band up — T-SHARP realized): corner emptiness is NOT a
-viable NO-route.  AFFORD′ remains open and terminal, now in its
-sharpest form: can a sparse-corner coloring afford one displaced
-value per octave forever, with explicit witnesses to instrument.
+lemma: **L-DOUBLE-DUTY** [PROVED, sharp ×2 blind + fresh M = 24] —
+consecutive-boundary mints are VALUE-disjoint below presence-scale
+prices (threshold exactly |O_m ∩ T| + 1).  One new machine core
+family: **GAP-SPARSE-CORE** — the dodger corner's own axis (iii)
+(donation material gap ≥ 3) makes the coupled core fire at bounds
+(1,1,1) from m = 16 (8 scales 16..48 incl. fresh 36, boot ≤ 12,
+full control triangle, gap-≥2 discriminator = the parity-lattice
+escape; **AAA designation now HAND-CLOSED for m ≥ 26** by the
+spacing-2 covering bound ⌈n/2⌉+⌈n/3⌉ < n, n = m/2 ≥ 13 — notes/80
+§1.4; J-DOWN transfers the pump collapse verbatim).  And the corner
+(i)+(ii)+(iii) is FINITELY INHABITED (CP-SAT witnesses at 2^12 and
+2^13, rung-safe sup density < 13/16, ROT4-strength orbit censors).
+
+ADJUDICATION (notes/80, same night): witnesses independently
+re-verified (fresh checker: all axes hold) and CHARACTERIZED —
+**the corner's inhabitants are mod-4 lattice colorings** (minority
+= a difference-4 AP on one residue class mod 4 per block, exact
+1/4 splits).  The lattice minority is orbit-CLOSED (2c−c ≡ c mod
+4), so the censor dodge is its essence (exact DP: depth 24–58 one
+reflector band up — deeper than e179's ~10 estimate), and it is
+AP-closed, so lattice-minority colorings are STRUCTURALLY void for
+double block order (explicit cross-3-block certificates; they pay
+at every anchor unconditionally).  **Champion: S4 (sparse-corner
+pincer).  The decisive next statement is MINT-LOC** (notes/80
+§3.1(b)): the mint's displaced value is forced within distance ≤ 2
+of minority material — if true, paying mints eventually breaks
+(iii) and the corner self-destructs; if false, first affordability
+evidence for YES.  Pre-registered instrument: mint-region
+enumeration ON the witnesses at m = 32/64/128.  AFFORD′ remains
+open and terminal; its sharpest form: can the mod-4 lattice corner
+afford one displaced value per octave forever.
 
 ## 3. Retired / reframed tags (final dispositions)
 
@@ -181,7 +212,7 @@ zero structural breaks.
 ## 5. The composed conditional theorem (exact form)
 
 **Theorem (assembly).**  Assume (i) Theorem C3(p) (= former
-GAP-N2-DIAG; now proved, notes/78 Part I, audit pending),
+GAP-N2-DIAG; proved, notes/78 Part I; spot-audited notes/80),
 (ii) GAP-N3-GROW (N3-b), (iii) GAP-N6a's sub-pool (§2a),
 (iv) GAP-AFFORD′.  Then no 2-set partition of ℤ⁺ has both parts
 3-permutable.
@@ -203,10 +234,10 @@ Critical path (all four needed; nothing else is):
 
 | tag | exact statement | species | evidence state |
 |-----|-----------------|---------|----------------|
-| **GAP-AFFORD′** | for every valid Case-2 pair, the donation supply (single-use colored values, P3-accounted) cannot fund the T-TEL″ mint system (≥ 1 displaced value per 2 octaves) forever | **genuinely new ledger statement** — no template in the campaign | no-go results (NG1–NG4, GAP-COMP refuted) + tournament (notes/79): S2/S3 routes refuted, L-DOUBLE-DUTY [PROVED] joins the bookkeeping, GAP-SPARSE-CORE [MACHINE ×7 scales] pincers the (iii)-corner, corner finitely INHABITED (2^12/2^13 witnesses) — supply cap itself still has zero surviving proof strategies |
-| **GAP-N6a sub-pool** | the CI(m) core fires for ALL m (bal ≥ 16; const (2,2,2) ≥ 48): remaining = GAP-DICH (5 catalogue rows), GAP-LLOP-α/β, GAP-PARM (⊇ CORNER ⊇ FG-deep), GAP-ASM′ = (OV-∀), GAP-FG-schema/-deep | uniformization (catalogue-schema write-ups; discharged instances exist for each) | machine-closed everywhere asked (8 scales + 2 robust + m = 28 fresh); laws mechanistic with blind hits |
-| **GAP-N2-DIAG** | C3(p) UNSAT on its flip class for every odd p ≥ 5 (uniform-in-p write-up) | uniformization — **DISCHARGED: Theorem C3(p), notes/78 Part I [PROVED — audit pending]** | schema-verified p = 5..21 (0 fail), boundaries exact, solver x-val ×6 p-values |
-| **GAP-N3-GROW (N3-b)** | < ⌊(x−1)/4⌋ punctures leave the rung UNSAT, uniformly in x and puncture set | uniformization + robustness (severed-ladder closures = machine shadow); skeleton LANE + SEV + (N3-b′), notes/78 §II.3 | exact at x = 11/15/19/23/27 global (2 fresh, ≡ 7 mod 8 covered); closures complete at M = 112 |
+| **GAP-AFFORD′** | for every valid Case-2 pair, the donation supply (single-use colored values, P3-accounted) cannot fund the T-TEL″ mint system (≥ 1 displaced value per 2 octaves) forever | **genuinely new ledger statement** — no template in the campaign | no-go results (NG1–NG4, GAP-COMP refuted) + tournament (notes/79) + adjudication (notes/80): S2/S3 refuted, L-DOUBLE-DUTY [PROVED, ×3 scales], SPARSE-CORE ×8 scales + AAA hand arm, corner INHABITED by mod-4 lattice colorings (verified + characterized) which pay STRUCTURALLY at every anchor — champion route S4, decisive statement MINT-LOC (pre-registered); the cap itself still has zero completed proof strategies |
+| **GAP-N6a sub-pool** | the CI(m) core fires for ALL m (bal ≥ 16; const (2,2,2) ≥ 48): remaining per notes/77 §7 = **GAP-RES** (consolidated: classify SAT-alive fan pairs uniformly in N — carries FG-scaled-zone, FG-deep taxonomy, DICH-ALPHA, H-LAT) + ThW1′-ROBUST/-TOL + DICH-F2/CASC + SPLIT + LLOP-α/β + ASM′ = (OV-∀) | uniformization/classification (discharged instances exist for each; PURE/P-ARM‴/AFF⁺+MON cleared out of the pool) | machine-closed everywhere asked (8 CI scales + robust ×2; P-ARM‴ modular 48..128; laws ×8 full + ×7 half scales; blind hits; 176/192 pre-registered) |
+| **GAP-N2-DIAG** | C3(p) UNSAT on its flip class for every odd p ≥ 5 (uniform-in-p write-up) | uniformization — **DISCHARGED: Theorem C3(p), notes/78 Part I [PROVED — spot-audited notes/80]** | schema p = 5..25 (0 fail; 23/25 fresh both mod-4 classes), boundaries exact, solver x-val ×8 p-values, identity layer re-derived p ≤ 39; residual = referee prose pass |
+| **GAP-N3-GROW (N3-b)** | < ⌊(x−1)/4⌋ punctures leave the rung UNSAT, uniformly in x and puncture set | uniformization + robustness (severed-ladder closures = machine shadow); skeleton LANE + SEV + (N3-b′), notes/78 §II.3 | exact at x = 11/15/19/23/27 global, x = 19 AND 27 each at two scales (d*(19; 112) = 4 fresh, notes/80); closures complete at M = 112 |
 
 Hardening layer (not gating the assembly):
 
@@ -219,20 +250,24 @@ Hardening layer (not gating the assembly):
 | GAP-N2-UNIF ∖ N2-DIAG | remaining 35 template cells' uniform write-ups | feeds BRIDGE1-AF only |
 | GAP-V* | v*₃(m; bounds) growth | rate sharpening only |
 | GAP-ZERO | classify the sumset floor's zero variety | all zeros measured LOW-PURE (order-dead); N3-species |
-| GAP-SPARSE-CORE (new, notes/79) | CI(m) at (1,1,1) + per-block minority gap ≥ 3 UNSAT for all m ≥ 16 | machine ×7 scales (16..48, boot ≤ 12), control triangle + gap-≥2 discriminator; AAA designation hand skeleton (spacing-2 covering); strengthens Case-2 demand on the (iii)-corner to presence-1 bounds — does not gate the assembly (the (2,2,2) core suffices) but arms it |
+| GAP-SPARSE-CORE (new, notes/79; adjudicated notes/80) | CI(m) at (1,1,1) + per-block minority gap ≥ 3 UNSAT for all m ≥ 16 | machine ×8 scales (16..48 incl. fresh 36, boot ≤ 12), control triangle + gap-≥2 discriminator; **AAA designation HAND-CLOSED m ≥ 26** (covering bound; machine covers 16..48) — residue = mixed-designation catalogue; lattice-minority sub-family void STRUCTURALLY (AP-closed minorities carry cross-3-block triples); strengthens Case-2 demand on the (iii)-corner to presence-1 bounds — does not gate the assembly but arms it |
 
 **If any critical tag BREAKS instead of clearing**: (i)/(ii) breaking
 re-opens Case 1 only via a coloring evading every lane at every
 residue — excluded at machine level through x = 33, M = 152; (iii)
 breaking contradicts an 8-scale mechanistic law family with blind
 hits; (iv) has a live negative shape: the notes/46 dodger corner
-(i)+(ii)+(iii) — now REALIZED JOINTLY at finite level (notes/79
-S5: CP-SAT witnesses at 2^12/2^13, rung-safe density, ROT4-strength
-orbit censors; asymptotic (i) undecided — every witness carries
-depth ~10 chains one reflector band above its censor, T-SHARP
-shape).  That corner is the entire known YES-space; by
-GAP-SPARSE-CORE its inhabitants pay T-TEL″ mints at EVERY anchor
-from presence 1.
+(i)+(ii)+(iii) — REALIZED JOINTLY at finite level and now
+CHARACTERIZED (notes/80 §4): its inhabitants are **mod-4 lattice
+colorings** (minority = difference-4 AP on one mod-4 class per
+block; orbit-closed, so T-SHARP procrastination is their essence —
+exact DP depth 24–58 one reflector band above the censor; the pure
+lattice family extends to ω as a coloring).  That corner is the
+entire known YES-space; its inhabitants pay T-TEL″ mints at EVERY
+anchor — for the lattice sub-family STRUCTURALLY (AP-closed
+minorities cannot be double-block-ordered at all).  The YES
+question is exactly: can the lattice corner AFFORD those payments
+(= ¬MINT-LOC direction).
 
 ## 7. Certificates index (one line each)
 
@@ -249,4 +284,5 @@ from presence 1.
 - notes/62: L-PREFIX, Lemma K, SCHED-DEAD, NG4 [PROVED]
 - notes/47/54: DNP refutation, T-FORCE reframing, ledger theorem demand half
 - audits: notes/60, 60-audit-1, 61-audit-2 (2026-08-28); notes/76 (2026-08-30) — all SOUND, 0 breaks
-- notes/79: L-DOUBLE-DUTY [PROVED, sharp ×2 blind]; SPARSE-CORE [MACHINE ×7 + controls]; S2/S3 refutations; dodger-corner witnesses (e179)
+- notes/79: L-DOUBLE-DUTY [PROVED, sharp ×2 blind]; SPARSE-CORE [MACHINE ×8 + controls]; S2/S3 refutations; dodger-corner witnesses (e179)
+- notes/80: six-species spot-audit (zero anomalies, e184); C3(p) audit rider discharged; AAA covering hand closure; S5 witnesses verified + characterized (mod-4 lattices, structural payment); champion S4 + MINT-LOC pre-registration
