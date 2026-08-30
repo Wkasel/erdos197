@@ -596,3 +596,23 @@ curve v(N) = ⌈N/4⌉ − 1 valid at every scale [mod GAP-FTOT].
    const-bounds analogue of f (J-BOOT at const bounds — needs the
    parity-class count argument reworked without exact balance;
    N3-species).
+
+## 10. Late-session landings (same date, after §§8–9)
+
+- **f(28) = 14 = M/2 — SIXTH scale** (pod; 28 ≡ 4 mod 8); f(32)
+  descending, UNSAT through m = 13 at harvest.  The f-law now
+  covers 8/12/16/20/24/28 with zero exceptions.
+- **Theorem F-BOOT's predictions CONFIRMED end-to-end** (sprint-B,
+  e173 fresh encoder, cells that had never been run at scales
+  never touched by the F-family):
+      F(12; 2) UNSAT [7.2 s]     (F-BOOT: v < ⌈12/4⌉ = 3)
+      F(20; 4) UNSAT [225.4 s]   (F-BOOT: v < ⌈20/4⌉ = 5)
+  These are the second and third freshness cells ever resolved
+  (after (16; 6)) and the first at ≡ 4 mod 8 scales — the
+  freshness family is now machine-true at THREE scales with a
+  uniform conditional hand schema behind it.  F(12; 5) queued
+  (probes beyond the counting bound).
+- MUS (8; 11,0) still descending (n = 58, crash-safe resume;
+  deletions {62, 63} accepted at harvest) — §7's pre-registration
+  stands for the next session's harvest.
+- ftot(16) ≥ 6 and counting (UNSAT through m = 5 at 156 s/query).
