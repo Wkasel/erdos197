@@ -697,3 +697,10 @@ curve v(N) = ⌈N/4⌉ − 1 valid at every scale [mod GAP-FTOT].
   .log, sprint-D /root/e/data/e174_{K36,fmass_3640}.log +
   e174_K30.log, sprint-B /root/e/data/e174_{cells,fcells}.log,
   local data/e158b_mus_M8_up11_dn0.{log,resume.json}.
+
+- LATE: **f(32) = 16 = M/2 — SEVENTH scale** (pod SAT at m = 16,
+  71.3 s; UNSAT through 15).  The f-law is now exact at
+  8/12/16/20/24/28/32 — including the first J-DOWN-covered scale:
+  the counting floor and the collapse coexist as predicted (the
+  floor is real but the true v_min(0)(32) is ∞; J-BOOT's content
+  at M ≥ 32 is the FLOOR shape, J-DOWN's the verdict).
