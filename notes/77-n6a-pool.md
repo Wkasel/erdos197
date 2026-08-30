@@ -239,3 +239,72 @@ parity-locked core (→ §5 / GAP-PARM).
 [MACHINE-CHECK: data/e180_deep_M*.json; runtimes 3–28 s/scale.]
 
 ---
+
+## 3. GAP-DICH: Lemma PURE clears F0 and reduces ALPHA; the catalogue
+## facts and the K* law at two fresh scales
+
+### 3.1 Lemma PURE (the class-c subsystem IS the halved double fan)
+### [PROVED]
+
+Fix a same-parity attacker pair (q, p), q ≡ p ≡ ε (mod 2), on the
+window O = [1, N] (N = 2M+15), class c := {s ∈ O : s ≡ ε (mod 2)}
+(= the parity class of the attackers' VALUES 4M−p, 4M−q inside P2).
+
+**Definition (class-c subsystem).**  Order theory on O ∩ c: in-class
+AP-freeness (APs with all three members in c, i.e. even common
+difference) + the fan units (2a+r) ≺ a with midpoint a ∈ c (their
+sources 2a+r ≡ r ≡ ε are in c automatically).
+
+**Lemma PURE.**  (i) The halving map h(s) = s/2 (ε = 0) resp.
+h(s) = (s+1)/2 (ε = 1) is an isomorphism from the class-c subsystem
+onto ThFG(q̂, p̂; N̂) with q̂ = (q−ε)/2, p̂ = (p−ε)/2 and
+N̂ = ⌊N/2⌋ (ε = 0) resp. (N+1)/2 (ε = 1): it is a bijection
+O ∩ c → [1, N̂] carrying in-class APs bijectively onto the APs of
+[1, N̂] and the in-class unit family bijectively onto the halved
+fan-unit family (source (2a+r) ↦ 2h(a) + r̂, r̂ = (r−ε)/2; the range
+bounds match exactly: a ≤ (N−r+2ε)/4 on both sides).
+(ii) Consequently the following are EQUIVALENT:
+    (a) (q, p) is *pure-dead*: some death pattern S (Th₂[S] UNSAT,
+        notes/56 §0.2) with attacker pair (q, p) has support ⊆ c;
+    (b) the class-c subsystem is inconsistent;
+    (c) the halved pair (q̂, p̂) is fan-dead (SAT level) on [1, N̂].
+
+*Proof.*  (i) Parity bookkeeping: sources 2a+r ≡ r (mod 2) always,
+so a unit has BOTH members in c iff its midpoint does; h preserves
+and reflects APs on one parity class (notes/33 Lemma H); the window
+and range arithmetic is the displayed formulas (checked: for ε = 0,
+2a+r ≤ N ⟺ 2h(a)+r̂ ≤ ⌊N/2⌋; for ε = 1, ⟺ 2h(a)+r̂ ≤ (N+1)/2).
+(ii) (b) ⟺ (c) by (i).  (b) ⟹ (a): the class-c subsystem is itself
+the S-restricted theory of S = {attackers} ∪ (O ∩ c) — a pure death
+pattern.  (a) ⟹ (b): every constraint of Th₂[S] for a pure S (its
+in-S APs have all members in c; its units have midpoint AND source
+in S ⊆ c) is a constraint of the class-c subsystem, so a model of
+the subsystem restricts to a model of Th₂[S]; contrapositive.  ∎
+
+[MACHINE-CHECK (bijection bookkeeping): experiments/
+e181_pure_halving.py solves (b) and (c) with independent direct
+encodings for EVERY same-parity pair at M = 48 and 64 — both scales
+fresh for this equivalence — asserting identical verdicts; results
+§3.2.]
+
+**Corollary PURE-1 (GAP-DICH-F0 discharged as a lemma).**  The
+H-DICH case analysis (notes/57 §4) consumes F0 only through: "for a
+dead-pure class-c pair inside a class-c-owning team's band material,
+a monochromatic pure pattern exists".  By PURE(ii)(a) ⟺ (b) this is
+DEFINITIONALLY available whenever the pair is pure-dead — no appeal
+to the catalogue-wide purity observation is needed.  F0-total (every
+same-parity catalogue pattern IS pure, 100% at the six audited
+scales) survives as a machine curiosity about minimized supports,
+no longer load-bearing.
+
+**Corollary PURE-2 (GAP-DICH-ALPHA = half-scale resonance).**  The
+dead-pure pair graph on any subset of the band's class c equals the
+lift, through h, of the half-scale fan-dead pair graph on [1, N̂].
+Hence α_c(M) (notes/57 F1: max alive-clique of the shallow zone) is
+EXACTLY a max clique in the half-scale ALIVE graph — the object
+classified by (RES-LAW) and the e155b clique data.  GAP-DICH-ALPHA,
+GAP-DICH-F0's recursion remark, and P-ARM's H-LAT are now PROVABLY
+one statement: classify the alive set of the fan grid uniformly in
+the window length (named **GAP-RES** below).
+
+---

@@ -187,3 +187,125 @@ scales — v_min(0) = ∞ from 32 on, J-DOWN.)
 band map itself — mint-location freedom is now measured, which any
 future supply argument must respect (it must charge mints
 independently of WHERE in the octave they are minted).
+
+---
+
+## 3. S3 DENSITY-TRANSFER — REFUTED (payer identity alternates)
+
+Formalization attempted: "infinitely many against-type mint
+displacements force one team's density in some window family to
+drift, contradicting a concentration bound."  Three independent
+kills, one new machine layer:
+
+1. **No channel.**  Window density is a COLORING fact; a mint is an
+   ORDER fact.  The only known order→coloring channel is donation
+   flux, and donation→donation completion flux is identically 0 on
+   every coloring ever measured (e121; L2-strong REFUTED).  A drift
+   argument would need a new channel; none is on the table.
+2. **No fixed payer.**  Both one-sided budget weakenings of the
+   coupled core are SAT at v = 0 (notes/47 asym/majb) — nothing
+   forces the SAME team to pay twice, let alone forever.
+3. **Machine (e179 s3rot, fresh scales): the payer identity of the
+   only known (i)+(ii) realizer alternates.**  ROT4-colored double
+   block order, per team: m = 16: B fails; 32: both; 48: both
+   (NEW); 64: A fails, B survives; 80: both (NEW).  The failing
+   team follows the 4-phase rotation — no eventually-constant
+   payer, hence no single-team drift, on the exact witness class a
+   density-transfer argument would have to bite.  (Also
+   cross-validates e131's 16/32/64 rows verbatim.)
+4. The quoted concentration bounds cannot serve anyway: L1′ is
+   REFUTED (ROT4), and the 5/6 sup-density law is a ROT4-specific
+   theorem (ROT2 has sup 1) — there is no universal window
+   concentration to contradict.
+
+**Survival: REFUTED.**  Nothing here is salvageable as a supply
+route; the alternation map is kept as a constraint on future
+strategies (any ledger must allow the payer to rotate).
+
+---
+
+## 4. S4 HYBRID-CASE — the SPARSE CORE fires: axis (iii) buys the
+## dodger a STRICTLY STRONGER core [MACHINE, 7 scales + controls]
+
+**The instrument** (e179 s4core): CI-geometry at anchor m — blocks
+(m, 2m], (2m, 4m], (4m, 8m], both teams block-ordered at both
+seams, per-team per-block lower bound k = 1 ONLY (no balance, no
+(2,2,2)) — plus the dodger's axis (iii): in each block, the
+designated minority team (card ≤ half) is pair-sparse (no two of
+its values at distance ≤ 2, i.e. all gaps ≥ 3, the notes/46 §5
+constraint verbatim).  All 4 designation vectors mod global team
+swap; cell = UNSAT iff every designation is UNSAT.
+
+**Machine map (all cells this session; sprint fleet + local):**
+
+| m | bare (1,1,1) | cap-only | sparse gap≥3 | sparse1 gap≥2 |
+|---|--------------|----------|--------------|---------------|
+| 8  | SAT | — | SAT (ABA escape) | — |
+| 12 | SAT | — | SAT (ABA escape) | — |
+| 16 | SAT | SAT (ABA/ABB) | **UNSAT ×4** | SAT (ABA escape) |
+| 20 | SAT | — | **UNSAT ×4** | — |
+| 24 | SAT | — | **UNSAT ×4** | SAT (ABA escape) |
+| 28 | SAT | — | **UNSAT ×4** | — |
+| 32 | SAT | SAT (ABA/ABB) | **UNSAT ×4** | — |
+| 40 | SAT | — | **UNSAT ×4** | — |
+| 48 | SAT | — | **UNSAT ×4** (≤ 222 s) | — |
+
+Readings, in order of weight:
+
+1. **The sparse core fires from m = 16 at bounds (1,1,1)** — seven
+   consecutive scales, all four residues mod 16 represented, boot
+   window m ≤ 12 (exactly the bal core's boot window).  The general
+   Case-2 core needs (2,2,2) + m ≥ 48; under axis (iii) the SAME
+   double-block-order death appears at minority size 1 and scale
+   16.  Pair-sparseness SUBSTITUTES for balance in the coupled-core
+   engine.
+2. **Attribution is complete.**  Bare (1,1,1): SAT at every scale
+   (the known hide-a-block escapes).  Cap-only (minority ≤ half,
+   no sparseness): SAT.  Gap ≥ 2 only: SAT — and the surviving
+   designation is exactly ABA, the parity-lattice escape (minority
+   on a spacing-2 class).  Gap ≥ 3 — precisely the (iii)
+   constraint — is what outlaws the parity lattice, and with it
+   every escape.  The dodger corner's own defining constraint is
+   the killing clause.
+3. **Hand-schema skeleton (the spacing-2 covering argument), AAA
+   designation.**  If one team A is sparse-minority in all three
+   blocks, the majority B must void its straddle family
+   (u, y, 2y−u) ∈ (B∩B0)×(B∩B1)×(B∩B2) (each mono triple forces a
+   banned seam edge — L-PREFIX/T-CHAN verbatim).  Fix z ∈ B∩B2 in
+   the reachable midband: its representation line
+   ℓ_z = {(u, y) : u = 2y − z} has u-values spaced 2 (one parity
+   class) and y-values CONTIGUOUS.  Voiding z needs every rep hit
+   by A: but a gap-≥3 set covers ≤ every other point of a
+   spacing-2 u-line and ≤ 1/3 of a contiguous y-interval —
+   jointly < 1 once ℓ_z is long enough, so z must leave B: B
+   vacates a contiguous Θ(m) midband of B2, i.e. A ⊇ a contiguous
+   band — contradicting A's own sparseness.  Mixed designations
+   are catalogue cases (the machine closes all of them); the
+   uniformization residue is the same N6a species as the rest of
+   the pool.  [Write-up gap tagged GAP-SPARSE-CORE.]
+4. **What this does to the dodger corner (the honest reading).**
+   The corner (i)+(ii)+(iii) was the entire known YES-space, with
+   (iii) the unexcluded axis.  Now: a Case-2 pair satisfying (iii)
+   meets the sparse core at EVERY anchor with presence ≥ 1 — its
+   T-TEL″ demand fires immediately (no (2,2,2) threshold, no boot
+   beyond m = 12), and the ¬(iii) branch hands the partner
+   attacker pairs (the p(k) pump, measured growing 3/7/7/11).
+   Axis (iii) is a pincer, not an escape: it minimizes the
+   partner's attack supply at the price of a strictly stronger
+   forced-demand core.  NOT claimed: corner emptiness — both arms
+   end in demand statements, and the supply cap (AFFORD′ proper)
+   is untouched; arm B's general form (p(k) → ∞ + T-PIN at
+   varying x) remains open.
+
+**Survival: SURVIVES — escalate.**  Concrete escalation targets:
+(a) GAP-SPARSE-CORE uniformization (the covering argument is
+close to a complete hand proof for AAA; catalogue the mixed
+designations); (b) test whether the sparse core, like CORE′,
+collapses the 4-block pump at (·, 0) for sparse colorings
+(J-DOWN transfers verbatim — restriction argument is
+coloring-agnostic); (c) the sharp question the pincer isolates:
+can the MINT SYSTEM ITSELF be paid while keeping (iii) — i.e. is
+the displaced value of each mint forced to sit at distance ≤ 2
+from other minority material?  If yes, paying mints EVENTUALLY
+BREAKS (iii) and the corner self-destructs — that is a NEW
+statement of exactly AFFORD′'s shape, now with a finite handle.
