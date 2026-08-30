@@ -474,6 +474,128 @@ def partNU():
 
 PARTS = {"census": partCENSUS, "mintloc": partMINTLOC, "nu": partNU}
 
+
+# ---------------------------------------------------------------- s5alt
+
+def partS5ALT(hor=4096, F=12, u0=32, budget=3600.0, orbit_on=True,
+              diffuse_on=True, alt_from=6):
+    """e179 s5dodger verbatim + forced designation alternation
+    mA_t != mA_{t+1} for t >= alt_from (notes/80-pincer SS3.5);
+    orbit_on/diffuse_on controls for attribution."""
+    from ortools.sat.python import cp_model
+    t0 = time.time()
+    D, gmode = 2, "lin4"
+    mdl = cp_model.CpModel()
+    A = {v: mdl.NewBoolVar(f"A{v}") for v in range(1, hor + 1)}
+
+    def team(t, v):
+        return A[v] if t == "A" else A[v].Not()
+
+    t_lo, t_hi = 5, hor.bit_length() - 2
+    mAs = {}
+    for t in range(t_lo, t_hi + 1):
+        blk = list(range((1 << t) + 1, (1 << (t + 1)) + 1))
+        cntA = mdl.NewIntVar(0, len(blk), f"cA{t}")
+        mdl.Add(cntA == sum(A[v] for v in blk))
+        f = max(2, t - 5)
+        mdl.Add(cntA >= f)
+        mdl.Add(cntA <= len(blk) - f)
+        mA = mdl.NewBoolVar(f"mA{t}")
+        mdl.Add(2 * cntA <= len(blk)).OnlyEnforceIf(mA)
+        mdl.Add(2 * cntA >= len(blk)).OnlyEnforceIf(mA.Not())
+        mAs[t] = mA
+        for v in blk:
+            for g in (1, 2):
+                if v + g <= blk[-1]:
+                    mdl.AddBoolOr([A[v].Not(), A[v + g].Not(), mA.Not()])
+                    mdl.AddBoolOr([A[v], A[v + g], mA])
+    # THE new constraint: designation alternates from alt_from up
+    # (maxrun=1); maxrun=R: every window of R+1 consecutive blocks
+    # contains both designations (no ownership run longer than R)
+    R = globals().get("_MAXRUN", 1)
+    for t in range(alt_from, t_hi - R + 1):
+        win = [mAs[s_] for s_ in range(t, t + R + 1)]
+        mdl.Add(sum(win) >= 1)
+        mdl.Add(sum(win) <= R)
+    S = {0: mdl.NewConstant(0)}
+    for v in range(1, hor + 1):
+        S[v] = mdl.NewIntVar(0, v, f"S{v}")
+        mdl.Add(S[v] == S[v - 1] + A[v])
+    if diffuse_on:
+        for a in range(32, hor // 2 + 1):
+            g = a // 4
+            cA = S[2 * a] - S[a]
+            mdl.Add(cA >= g)
+            mdl.Add(cA <= a - g)
+    for tname in ("A", "B") if orbit_on else ():
+        reach = {}
+        for d in range(1, D + 1):
+            for v in range(1, hor + 1):
+                reach[(d, v)] = mdl.NewBoolVar(f"r{tname}{d}_{v}")
+        for v in range(1, hor + 1):
+            for f in range(1, F + 1):
+                w = 2 * v - f
+                if w <= v or w > hor:
+                    continue
+                if v > u0:
+                    mdl.AddBoolOr([team(tname, v).Not(),
+                                   team(tname, f).Not(),
+                                   team(tname, w).Not(), reach[(1, w)]])
+                for d in range(2, D + 1):
+                    mdl.AddBoolOr([reach[(d - 1, v)].Not(),
+                                   team(tname, f).Not(),
+                                   team(tname, w).Not(), reach[(d, w)]])
+        for v in range(1, hor + 1):
+            mdl.Add(reach[(D, v)] == 0)
+    solver = cp_model.CpSolver()
+    solver.parameters.max_time_in_seconds = budget
+    solver.parameters.num_search_workers = 8
+    st = solver.Solve(mdl)
+    name = {cp_model.OPTIMAL: "SAT", cp_model.FEASIBLE: "SAT",
+            cp_model.INFEASIBLE: "UNSAT"}.get(st, "TIMEOUT")
+    row = {"part": "s5alt", "hor": hor, "D": D, "F": F, "u0": u0,
+           "gmode": gmode, "alt_from": alt_from, "verdict": name,
+           "orbit": orbit_on, "diffuse": diffuse_on,
+           "maxrun": globals().get("_MAXRUN", 1),
+           "secs": round(time.time() - t0, 1)}
+    if name == "SAT":
+        col = [v for v in range(1, hor + 1) if solver.Value(A[v])]
+        fl = (f"e185_s5alt_h{hor}_F{F}_r{globals().get('_MAXRUN', 1)}"
+              f"{'' if orbit_on else '_noorb'}"
+              f"{'' if diffuse_on else '_nodiff'}_a{alt_from}.json")
+        out = os.path.join(BASE, fl)
+        json.dump({"hor": hor, "D": D, "F": F, "A": col}, open(out, "w"))
+        row["witness"] = out
+        row["nA"] = len(col)
+        row["ownership"] = [("A" if solver.Value(mAs[t]) else "B")
+                            for t in range(t_lo, t_hi + 1)]
+    log(f"[S5ALT] {json.dumps(row)}")
+    OUT.setdefault("partS5ALT", []).append(row)
+    dump()
+
+
+PARTS["s5alt"] = lambda: [partS5ALT(F=12, u0=32), partS5ALT(F=64, u0=64)]
+def _runvar(R, **kw):
+    globals()["_MAXRUN"] = R
+    try:
+        partS5ALT(**kw)
+    finally:
+        globals()["_MAXRUN"] = 1
+
+
+PARTS["s5run"] = lambda: [
+    _runvar(2, F=12, u0=32),
+    _runvar(3, F=12, u0=32),
+    _runvar(2, F=64, u0=64),
+]
+PARTS["s5altctl"] = lambda: [
+    partS5ALT(F=12, u0=32, orbit_on=False),
+    partS5ALT(F=12, u0=32, diffuse_on=False),
+    partS5ALT(F=12, u0=32, alt_from=7),
+    partS5ALT(hor=2048, F=12, u0=32),
+]
+
+
 if __name__ == "__main__":
     want = sys.argv[1:] or ["all"]
     names = list(PARTS) if want == ["all"] else want

@@ -465,3 +465,142 @@ theory REJECTS alternation under orbit censors while ω demands
 it (L-NOTAIL) — the pincer closes at the (i)-proxy level, with
 only the proxy-vs-true-(i) caveat (T-SHARP) between the corner
 and emptiness.
+
+---
+
+## 4. S5-ALT verdicts, Theorem AFFORD-CORNER, ledger
+
+### 4.1 S5-ALT + attribution battery (pre-registered §3.5)
+
+| cell (hor 4096, D = 2, lin4 unless noted) | verdict | secs |
+|---|---|---|
+| alternation (run ≤ 1 from t = 6), F = 12 | **UNSAT** | 688 |
+| alternation, F = 64 | **UNSAT** | 19 |
+| control: censor OFF | SAT (real alternating coloring, nA = 1703) | 137 |
+| control: diffuse OFF (censor on) | SAT — DEGENERATE (floor-size minorities, presences like [2, 62, 3]) | 5 |
+| control: alternation from t = 7 | in flight (postscript) | — |
+| control: hor = 2048 | queued (postscript) | — |
+| run ≤ 2 / ≤ 3 variants | queued (postscript) | — |
+
+Readings:
+
+1. **The corner's finite theory REJECTS forced alternation at both
+   censors** while the SAME encoder accepts constant ownership at
+   the same parameters (the e179 witnesses).  Attribution exact:
+   censor-OFF is SAT — alternating corner COLORINGS exist, axes
+   (ii) + (iii) + split tolerate alternation; diffuse-OFF is SAT
+   only degenerately ((ii) is what makes the minority
+   substantial).  The kill is the JOINT (i-proxy) ∧ (ii) ∧ (iii)
+   ∧ alternation interaction: every 3-of-4 subset is satisfiable.
+2. **The alternating coloring pays MORE than the constant ones**:
+   census of the censor-OFF witness: both teams carry
+   presence-scale H at EVERY anchor ((|H|, matching) per team:
+   m = 32: (174, 24)/(66, 8); 64: (633, 22)/(267, 17);
+   128: (980, 32)/(2888, 48); 256: (11514, 96)/(3746, 64)) — no
+   silent rows anywhere, the §3.2 case-table's (X,Y,X) rows
+   realized.  Alternation buys ω-legality (L-NOTAIL) at the price
+   of double-sided presence-scale demand at every anchor.
+3. **One-mint enumeration extended to the alternating witness**:
+   budget-0 UNSAT-structural, ZERO K-survivors, empty SAT region
+   at m = 32/64 both teams (xval 0 fail) — now 26/26 cells across
+   four colorings.
+
+### 4.2 Theorem AFFORD-CORNER (what is now proved)
+
+**Theorem AFFORD-CORNER.**  Let (A, B) be a valid Case-2 pair
+whose coloring is a blockwise mod-4 lattice above some scale
+(minority of each block = the full class c ∩ block — the notes/80
+§4.2 characterization of the corner's inhabitants).  Then:
+
+  (a) [L-NOTAIL] the class-ownership sequence alternates
+      infinitely — eventually-constant ownership (in particular
+      the verbatim ω-extension of EVERY S5 witness) is dead;
+  (b) [AFFORD-DEMAND] at every anchor above boot, every H-carrier
+      team (≥ 1 always; both teams at (X,Y,X)/(X,X,X) anchors)
+      pays ≥ |H_T| ≥ 5m²/64 − O(m) adjacent-seam inversions, and
+      the payment is an EXACT orientation — each H-triple has
+      exactly one of its two seam pairs inverted (≥ 1 by P5, not
+      both or the AP is placed monotone-decreasing) — whose
+      displaced low members include ≥ max-matching(G_T) ≥
+      m/4 − O(1) distinct values confined to (m, 4m):
+      cumulatively Θ(N) distinct displaced values below any
+      horizon (4-adic window disjointness);
+  (c) [MINT-1] no anchor is payable by a single mint (one-mint
+      region empty wherever |H_T| ≥ 2; on all witnesses:
+      everywhere, including the H = 0 cells).
+
+Links: L-NOTAIL [PROVED, DEGS77 + two lines]; γ-RIGID, MINT-1,
+D-FLOOR, D-SAT [PROVED, §2]; H-COVER = notes/54 P5 [PROVED] with
+the corner's H-counts computed (closed form 5m²/64 + census ×4
+colorings ×5 anchors); ownership case-table [PROVED §3.2,
+machine-exact to channel granularity].  No N6a, budget, or
+uniformization hypothesis anywhere in (a)–(c).
+
+### 4.3 The assembly state of Case 2 (honest)
+
+Case 2 closes via: corner dead + exterior dead.  After this
+session:
+
+- exterior (¬(iii)): arm B unchanged (p(k) → ∞ pump, N2 species).
+- corner, lattice family, constant ownership: **DEAD at ω**
+  (L-NOTAIL) — includes every corner coloring ever realized.
+- corner, lattice family, alternating: presence-scale double-
+  sided demand at every anchor (4.1.2, 4.2b); REJECTED by the
+  finite corner theory at run-length 1, both censors; ω-legal
+  variants must procrastinate (unbounded runs — T-SHARP's shape
+  again) and are unconstructed.  Their supply cap is the terminal
+  residue on this family: **GAP-AFFORD″-ALT** (§3.4).
+- corner, punctured near-lattices + non-lattice gap-≥3
+  minorities: dodge L-NOTAIL (the density theory of 3-permutable
+  sets is open — α_ℕ(3) ≥ 2/3, Geneson); they meet SPARSE-CORE
+  demand (×8 scales, AAA hand-closed) and MINT-1 wherever
+  |H| ≥ 2, but their quantitative demand theory and the cap are
+  open.
+
+**The pincer closes the corner's realized YES-space and its
+forced-alternation replacement, and converts MINT-LOC into a
+presence-scale demand theorem; it does NOT close Case 2.**  The
+residue = GAP-AFFORD″-ALT + non-lattice corner + arm B — known
+species except AFFORD″-ALT, which is new and sharper than
+GAP-AFFORD′ was.
+
+### 4.4 Ledger movement + probability
+
+| tag | movement |
+|---|---|
+| MINT-LOC | RESOLVED (strong form); literal ≤2-distance form RETIRED (wrong mechanism — order payment never recolors) |
+| L-NOTAIL | NEW [PROVED — classical import]: no permutable team contains an infinite AP |
+| C-LATDEAD | NEW [PROVED]: constant-ownership lattice corner dead at ω; all three S5 witnesses' verbatim extensions dead |
+| γ-RIGID / MINT-1 / D-FLOOR / D-SAT | NEW [PROVED] — the one-mint calculus |
+| AFFORD-DEMAND / AFFORD-CORNER | NEW [PROVED]: presence-scale demand on the lattice corner, unconditional |
+| S5-ALT | NEW [MACHINE ×2 censors + controls]: finite corner rejects forced alternation; attribution = joint (i) ∧ (ii) ∧ (iii) |
+| GAP-AFFORD′ | corner portion sharpened to GAP-AFFORD″-ALT (supply cap for unbounded-run alternating lattices + punctured/non-lattice siblings); general statement retained |
+
+**Probability: NO ≈ 95 % (was 93), YES ≈ 5 %.**  FOR the bump:
+the ENTIRE realized YES-space dies at ω by a two-line classical
+fact (no self-audit risk — not campaign machinery); its forced
+replacement is UNSAT at every censor tried with clean
+attribution; the corner demand is now a presence-scale THEOREM.
+AGAINST more: the supply cap still has zero completed strategies
+(NG1–NG4 delimit as before); unbounded-run procrastination is
+exactly what no finite instrument refutes (T-SHARP), and the
+length-3 density parameters of permutable sets are open —
+the ~5 % = (≈ 3.5 %) some procrastinating/punctured/non-lattice
+corner coloring affords its mints, (≈ 1.5 %) unmodeled break.
+
+**Next targets:** (1) S5-RUN growing-run builds (runs ~log t) —
+can ANY censored build alternate at all; (2) ν-frontier growth at
+m = 64/128 (pod scans): is ν/m² bounded below for both teams of
+alternating colorings; (3) GAP-AFFORD″-ALT via the L-CASCADE
+outflow trichotomy on in-run displaced values (donation channels
+void inside runs, §3.4) composed against run growth; (4) the
+mixed-designation catalogue + arm B (bill unchanged).
+
+### 4.5 Postscript: in flight at write time
+
+- s5altctl alt_from = 7 (CP-SAT grinding ≥ 1 h at write) and
+  hor = 2048; s5run (run ≤ 2 / ≤ 3, F = 12; run ≤ 2, F = 64).
+  Crash-safe rerun:
+  `.venv/bin/python experiments/e185_mintloc.py s5altctl s5run`.
+  Verdicts fold into this table when landed; none is load-bearing
+  for §4.2 (they scope the S5-ALT robustness only).

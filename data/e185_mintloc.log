@@ -79,3 +79,9 @@
 [NU] pureL3 m=32 T=A n=56: [(0, 'UNSAT', 0.0), (4, 'UNSAT', 0.0), (12, 'UNSAT', 0.0), (24, 'UNSAT', 0.0)] [0.0s]
 [NU] pureL3 m=32 T=B n=168: [(0, 'UNSAT', 0.0), (4, 'UNSAT', 0.0), (12, 'UNSAT', 0.1), (24, 'UNSAT', 0.0)] [1.2s]
 [nu] done 5.1s
+[S5ALT] {"part": "s5alt", "hor": 4096, "D": 2, "F": 12, "u0": 32, "gmode": "lin4", "alt_from": 6, "verdict": "UNSAT", "secs": 688.3}
+[S5ALT] {"part": "s5alt", "hor": 4096, "D": 2, "F": 64, "u0": 64, "gmode": "lin4", "alt_from": 6, "verdict": "UNSAT", "secs": 18.7}
+[s5alt] done 707.3s
+[S5ALT] {"part": "s5alt", "hor": 4096, "D": 2, "F": 12, "u0": 32, "gmode": "lin4", "alt_from": 6, "verdict": "SAT", "orbit": false, "diffuse": true, "secs": 97.7, "witness": "/Users/will/Dev/personal/tasks/math/erdos197/data/e185_s5alt_h4096_F12.json", "nA": 1701, "ownership": ["B", "B", "A", "B", "A", "B", "A"]}
+[S5ALT] {"part": "s5alt", "hor": 4096, "D": 2, "F": 12, "u0": 32, "gmode": "lin4", "alt_from": 6, "verdict": "SAT", "orbit": true, "diffuse": false, "secs": 5.3, "witness": "/Users/will/Dev/personal/tasks/math/erdos197/data/e185_s5alt_h4096_F12.json", "nA": 1354, "ownership": ["A", "B", "A", "B", "A", "B", "A"]}
+[S5ALT] {"part": "s5alt", "hor": 4096, "D": 2, "F": 12, "u0": 32, "gmode": "lin4", "alt_from": 6, "verdict": "SAT", "orbit": false, "diffuse": true, "maxrun": 1, "secs": 136.8, "witness": "/Users/will/Dev/personal/tasks/math/erdos197/data/e185_s5alt_h4096_F12_r1_noorb_a6.json", "nA": 1703, "ownership": ["B", "B", "A", "B", "A", "B", "A"]}
