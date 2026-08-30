@@ -85,10 +85,15 @@ def seeds_for(M, S_units, istar, ph):
 
 
 def degenerate(M, units, istar):
+    """Degenerate scale: a unit value hits the centre, a top value
+    collides with a bottom value, or a value leaves the block.  Two
+    units SHARING a target (A4a/A4d have b5 twice) is fine — only
+    cross-side collisions are degenerate."""
     ctr = 3 * M // 2
-    vals = [2 * M - i for i, _ in units] + [M + j for _, j in units] \
-        + [2 * M - istar]
-    return ctr in vals or len(set(vals)) < len(vals) \
+    ts = {2 * M - i for i, _ in units} | {2 * M - istar}
+    bs = {M + j for _, j in units}
+    vals = ts | bs
+    return ctr in vals or bool(ts & bs) \
         or any(not (M < v <= 2 * M) for v in vals)
 
 

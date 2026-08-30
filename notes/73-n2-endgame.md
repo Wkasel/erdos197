@@ -29,13 +29,16 @@ units is UNSAT.  ctr := ⌊3M/2⌋ (= m₀ for even M, = c− for odd M).
    notes/49 §8 no longer exists.
 3. **Both open template cells closed** (§3): B6(21)_r0 and the
    (pair 19, dyadic) cell — each now sits inside a PARAMETRIC
-   template cell verified at four x values including two fresh ones.
-4. **The parametric template** (§4, e175): per (lane, x mod 8) cell,
-   ONE fixed data vector (v*, S_hi, S_lo, ladder keys) closes the
-   Lemma-D branch analysis at every probed x ≡ ξ (x = x₀, x₀+8,
-   x₀+16, x₀+24 — the last two fresh, beyond every catalogue) and
-   every probed in-class M.  This is the uniform schema of notes/49
-   §5.3, now with x a genuine parameter.
+   template cell verified at seven x values including fresh ones to
+   x₀+48; A4d(19)_r0 is literally the x = 19 point of A4d_xi3.
+4. **The parametric template grid is COMPLETE: 36/36 cells** (§2,
+   e175+e176b): per (lane, x mod 8) cell, ONE fixed data vector
+   (v*, S_hi, S_lo, ladder keys) closes the Lemma-D branch analysis
+   at every probed x ≡ ξ (x = x₀ .. x₀+48, seven values; branch-0
+   to x ≈ 73) and every probed in-class M (up to ~145).  This is
+   the uniform schema of notes/49 §5.3 with x a genuine parameter;
+   the e124m stalls turn out to have been verifier bugs (§2b), not
+   mathematics.
 5. **Theorem N2-COMPLETE** (§6): modulo the tagged closure-schema
    gap [GAP-N2-UNIF], for every adjacent pair {x, x+1} (x odd ≥ 11)
    and every M ≥ T(x) (affine), the rung fires — per-residue cores,
@@ -128,8 +131,52 @@ data/pod_e175/).  Master table (S_hi/S_lo as unit indices into the
     K7_xi3    11  t3  {0,1}  {1,2}  [E+Q1]/[E+Q1]     11,19,27,35
     K7_xi5    13  t2  {1,2}  {0,1}  [O+Q3]/[O+Q1]     13,21,29,37
     K7_xi7    15  t3  {0,1}  {1,2}  [E+Q1]/[E+Q1]     15,23,31,39
-    [A4a/A4d ×4, B2_xi3, C_xi3, K1_xi3, K4e_xi3, K4e_xi5: runs in
-     flight at first commit — see §2b update]
+    A4a_xi3   11  t1  {0,2}  {1,3}  [O+Q2]/[O+Q3]     11,19,27,35  = K4 verbatim
+    A4a_xi5   13  t2  {1,3}  {0,2}  [E+Q1]/[E+Q4]     13,21,29,37
+    A4a_xi1   17  t2  {1,3}  {0,2}  [E+Q1]/[E+Q4]     17,25,33,41
+    A4a_xi7   15  t1  {0,2}  {1,3}  [O+Q2]/[O+Q3]     15,23,31,39
+    A4d_xi3   11  t1  {1,3}  {0,2}  [O+Q3]/[O+Q3]     11,19,27,35
+    A4d_xi5   13  t2  {0,2}  {1,3}  [E+Q1]/[E+Q1]     13,21,29,37
+    A4d_xi1   17  t2  {0,2}  {1,3}  [E+Q1]/[E+Q1]     17,25,33,41
+    A4d_xi7   15  t1  {1,3}  {0,2}  [O+Q3]/[O+Q3]     15,23,31,39
+    B2_xi3    11  t2  {1,2}  {0,1}  [E+Q1]/[E+Q1]     11,19,27,35  = notes/49 §5 verbatim
+    C_xi3     11  t2  {1,2}  {0,1}  [O+Q1]/[O+E+Q1]   11,19,27,35  = C(11)/e124p species
+    K1_xi3    11  t2  {1,2}  {0,1}  [O+Q2]/[O+Q4]     11,19,27,35  = K11_r1 verbatim
+    K4e_xi3   11  t1  {0,2}  {0,1}  [O+Q2]/[O+Q2]     11,19,27,35  = K11_r4 verbatim
+    K4e_xi5   13  t2  {0,1}  {0,2}  [E+Q2]/[O+E+Q2]   13,21,29,37
+
+EVERY A4 cell is the attacker split {0,2}/{1,3} (or its reflection)
+— the K4 2+2 disjoint anatomy holds for BOTH x+5 lanes at all four
+ξ; the mod-4 twin pairing (ξ, ξ+4 share templates up to the O/E
+polarity swap) is exact across the grid.
+
+**GRID COMPLETE: 36/36 cells, zero failures.**  (S-index sets refer
+to each cell's own lane unit list; a few cells' searches picked an
+equivalent template differing from the table rows above them —
+recorded exactly in data/e175_param_template.json.)
+
+### 2b. Two engineering bugs (methods lessons, both mathematical no-ops)
+
+The 13 late cells were never mathematically hard — they were stuck
+on two verifier bugs, each a lesson:
+
+  1. **Minimal-kill pruning breaks cross-x matching**: recording
+     only MINIMAL killing subsets makes the (S_hi, S_lo) index sets
+     incomparable between x₀ and x₀+8 whenever a smaller kill
+     exists at one x only.  Record all ≤2-subsets.
+  2. **False degeneracy from shared targets and self-battlegrounds**:
+     A4a/A4d carry b₅ TWICE (two units, same target), and the
+     C/K4e-species battleground v* = t_{i*} may coincide with a
+     unit's own t-value (C(11)'s v* = t2 IS unit t2≺b5's value —
+     the notes/49 §7 anatomy).  A duplicate-count degeneracy test
+     rejects every scale of such cells: in_class_scales spins
+     forever, which is exactly the "slow ladder searches" that
+     stalled e124m on A4d(19)/B6(21) in the original session.
+     Degeneracy is CROSS-SIDE value collision (t-value = b-value,
+     value = ctr, value out of block), nothing else.
+
+With both fixed, every previously-stuck cell closed in 1–4 s.  The
+e124m mystery is thereby solved: nothing about those cells is hard.
 
 Uniformities visible in the grid (the §4.4 casework laws, now data):
 v* parity always opposite ctr's; the d=2 ladder is always v*'s

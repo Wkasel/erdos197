@@ -1,0 +1,4 @@
+A4a_xi3 (x0=11, r0): v*=t1; hi<={t0b6+t2b5}[O+Q2], lo<={t1b5+t3b4}[O+Q3]; x=[11, 19, 27, 35] scales ['16..88', '24..96', '40..112', '40..120']: ALL OK (2s)
+A4d_xi3 (x0=11, r0): v*=t1; hi<={t2b5+t6b3}[O+Q3], lo<={t1b5+t3b4}[O+Q3]; x=[11, 19, 27, 35] scales ['16..88', '24..96', '32..104', '40..112']: ALL OK (2s)
+
+PARAM TEMPLATE: 25/25 cells OK -> /Users/will/Dev/personal/tasks/math/erdos197/data/e175_param_template.json

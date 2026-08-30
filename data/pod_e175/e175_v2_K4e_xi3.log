@@ -1,0 +1,3 @@
+K4e_xi3 (x0=11, r4): v*=t1; hi<={t0b6+t6b3}[O+Q2], lo<={t0b6+t3b4}[O+Q2]; x=[11, 19, 27, 35] scales ['68..140', '68..140', '36..116', '44..124']: ALL OK (3s)
+
+PARAM TEMPLATE: 1/1 cells OK -> /root/e/data/e175_v2_K4e_xi3.json

@@ -1,0 +1,3 @@
+A4d_xi1 (x0=17, r6): v*=t2; hi<={t7b5+t9b4}[E+Q1], lo<={t8b5+t12b3}[E+Q1]; x=[17, 25, 33, 41] scales ['22..94', '38..110', '38..118', '46..126']: ALL OK (3s)
+
+PARAM TEMPLATE: 1/1 cells OK -> /root/e/data/e175_v2_A4d_xi1.json
