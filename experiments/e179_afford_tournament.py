@@ -346,9 +346,10 @@ def s4core(m, k, designations=None, mode="sparse"):
             for i, blk in enumerate(blocks):
                 t = d[i]
                 e.card_atmost([e.inteam(t, v) for v in blk], len(blk) // 2)
-                if mode == "sparse":
+                if mode in ("sparse", "sparse1"):
+                    gaps = (1, 2) if mode == "sparse" else (1,)
                     for v in blk:
-                        for g in (1, 2):
+                        for g in gaps:
                             if v + g <= blk[-1]:
                                 e.cls.append([-e.inteam(t, v),
                                               -e.inteam(t, v + g)])
@@ -474,7 +475,7 @@ def main():
     ap.add_argument("--fmode", type=str, default="slow")
     ap.add_argument("--budget", type=float, default=3600.0)
     ap.add_argument("--mode", type=str, default="sparse",
-                    choices=["sparse", "cap", "none"])
+                    choices=["sparse", "sparse1", "cap", "none"])
     args = ap.parse_args()
     if args.cmd == "s1lemma":
         Ms = [int(x) for x in args.Ms.split(",")]

@@ -1559,3 +1559,53 @@ structure existed; AFFORD′ has no parallel spare) — and the
 notes/46 dodger corner (i)+(ii)+(iii) remains unexcluded, with
 (i)+(ii) now REALIZED by ROT4.  A YES lives exactly there if it
 lives anywhere.
+
+### FRONT N2-DIAG + N3-GROW (2026-08-30 late, e180 + notes/78):
+### gating gap (3) DISCHARGED — Theorem C3(p) written affine-in-p;
+### the growth law at five exact x-points with its uniform skeleton
+
+Final-four phase, first front home.  Full write-up notes/78;
+machine experiments/e180_diag_grow.py (+ e123 rerun at pmax = 21) →
+data/e180_diag_grow.json, e180_*.log, e123_diagonal_p21.log.
+
+- **GAP-N2-DIAG → Theorem C3(p) [PROVED — audit pending]** (notes/78
+  Part I): for every odd p ≥ 5 and every M ≡ 2p+6 (mod 8), M ≥ 2p+6,
+  AP-freeness on (M, 2M] is inconsistent with C3(p).  The notes/33
+  toolkit (Z/D/P) is used UNCHANGED — only Lemma E and the constants
+  are parametric; the two flip fulcrum APs ride the p-FREE identities
+  b_{p−2}+t_p = 3M−2, b_p+t_{p−2} = 3M+2 (the structural reason the
+  diagonal lane exists).  Components: Theorem L1(p) (all M ≡ 0 mod 4,
+  M ≥ p+7), Theorem FLIP(p) (flip class, M ≥ 2p+6), Lemma E(p),
+  uniform sharpness on the complementary class.  Machine: e123 strict
+  schema executor at p = 5..21 — fresh 15/17/19/21 — 104+52+52
+  scales each, 0 failures; applicability boundaries verified EXACT
+  and affine (e180 partMINM: L1 passes from the first 4 | M ≥ p+7,
+  FLIP from in-class 2p+6, all nine p); independent complete-encoding
+  solver x-val at fresh p = 17/21: 20/20 incl. M = 256/260 (e180
+  partXVAL).  Theorem B1's (H1′) part 1 is discharged; **Case 1's
+  residue is GAP-N3-GROW (N3-b) alone** (plus the audit cycle).
+- **GAP-N3-GROW sharpened** (notes/78 Part II): (N3-a) is now a
+  ONE-hypothesis schema — Lemma PS(x): both parity classes of the
+  transversal-punctured rung halve onto the SAME single-attacker
+  system SA((x+1)/2; M/2) (exact set equalities, 5 x-values;
+  CORRECTS notes/74's (x+3)/2 for the odd class), so
+  d*(x) ≤ ⌊(x−1)/4⌋ rides one machine-true hypothesis
+  (GAP-SA-HALF: singles always SAT).  (N3-b)'s uniform skeleton is
+  stated and partially proved: Lemma LANE(x) (pigeonhole on the
+  ⌊(x−1)/4⌋ disjoint transport units) + Lemma SEV (severed-run
+  locality of Z/D/P: catalogued core derivations survive any
+  puncture set avoiding their support + flood exposure) + residue
+  (N3-b′) (per-D core choice / uniform interior splits) — the e130b/
+  e130c/e132/e174b record maps exactly onto (N3-b′).  **Two fresh
+  machine points of the law**: d*(19; 80) = 4 (atmost-3 anywhere
+  UNSAT 7.7 s; SAT at 4) and d*(23; 112) = 5 (atmost-4 UNSAT 82.6 s;
+  SAT at 5, witness the pure-bottom lane transversal) — x = 23 is
+  the first ≡ 7 (mod 8) point, outside every earlier census; plus
+  the stalled e174 KCRIT112 landing folded in: d*(27; 112) = 6.
+  Five exact x-points (11/15/19/23/27).  Honest new anatomy fact:
+  the x = 19 minimal escape {b₃,b₅,b₆,b₇} hits only 1 of 4 lane
+  units — a fresh non-transversal decoration escape, re-confirming
+  that only the COUNT form of the law is true.
+- Gap ledger after this front: gating gaps (1) GAP-AFFORD′,
+  (2) GAP-N6a sub-pool, (4) GAP-N3-GROW (N3-b) — three left;
+  (3) is a write-up awaiting its adversarial audit only.

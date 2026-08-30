@@ -52,13 +52,14 @@ already dead unconditionally or modulo the Case-1 rungs (thm:main
 |------|-----------|-----|--------------|
 | N1 / T-PIN(-STAGE/-BLOCKS) | fixed pair + infinitely many disjoint UNSAT windows ⟹ not permutable | [PROVED] | notes/37/42/43; thm:ogred verbatim |
 | Theorem B1 | a team with ∞ many C₀-clean blocks is not 3-permutable, NO partner hypothesis; Step-1 patched to extract pairs with 3p ≥ x₀(C₀) = 4C₀+6 | [PROVED mod (H1′)] | notes/52 + patch notes/74 §I.4; audit-cleared (60-audit §4, 60-audit-1 §1/§3); adversarial colorings incl. fresh p=21 |
-| (H1′) part 1 = GAP-N2-DIAG | the diagonal rung C3(p) = {t_p≺b_p, t_{p−2}≺b_{p+1}, t_{p+5}≺b_{p−2}} UNSAT on its flip class, uniformly in p ≡ 1 mod 4 | [MACHINE+SCHEMA] — schema verified p = 5..13 (104 L1-scales + 52 flip + 52 controls each, e123/e123b, 0 fail); p = 5 is thm:c3core [PROVED] | write-up = the affine-in-p Z/D/E/P composition, species DISCHARGED at p = 5 (notes/33) |
-| (H1′) part 2 = GAP-N3-GROW | punctured-rung tolerance d*(x) = ⌊(x−1)/4⌋ → ∞: rung stays UNSAT under any < ⌊(x−1)/4⌋ punctures, uniformly | (N3-a) ≤-side [PROVED mod half-scale witnesses] (parity-split schema, notes/74 §I.6, e174c); (N3-b) ≥-side [MACHINE]: exact global at x = 11/15/27 (e174 KCRIT, cardinality-exhaustive), severed-ladder closures complete at M = 112 (e174b) | notes/74 Part I; e130/e130b/e130c/e132 |
+| (H1′) part 1 = GAP-N2-DIAG | the diagonal rung C3(p) = {t_p≺b_p, t_{p−2}≺b_{p+1}, t_{p+5}≺b_{p−2}} UNSAT on its flip class M ≡ 2p+6 mod 8, uniformly in odd p ≥ 5 | **[PROVED — notes/78 Part I (Theorem C3(p)); adversarial audit pending]**: affine-in-p Z/D/E/P write-up complete (L1(p) all 4 \| M ≥ p+7, FLIP(p) in-class M ≥ 2p+6, boundaries machine-EXACT); schema executed p = 5..21 (fresh 15/17/19/21), 104+52+52 scales each, 0 fail (e123 rerun); solver x-val p = 5..13 (e123b) + fresh 17/21 20/20 (e180) | p = 5 instance is thm:c3core [PROVED, audited ×3] |
+| (H1′) part 2 = GAP-N3-GROW | punctured-rung tolerance d*(x) = ⌊(x−1)/4⌋ → ∞: rung stays UNSAT under any < ⌊(x−1)/4⌋ punctures, uniformly | (N3-a) ≤-side [PROVED mod GAP-SA-HALF] — ONE hypothesis after the notes/78 correction (both parity classes halve onto SA((x+1)/2; M/2), Lemma PS); (N3-b) ≥-side [MACHINE]: exact global at x = 11/15/19/23/27 (e174/e180 KCRIT, cardinality-exhaustive; 19 and 23 FRESH, 23 ≡ 7 mod 8; d*(27) at TWO scales), severed-ladder closures complete at M = 112 (e174b); uniform skeleton LANE + SEV + (N3-b′) stated (notes/78 §II.3) | notes/74 Part I + notes/78 Part II; e130/e130b/e130c/e132 |
 | N2-COMPLETE (feeds BRIDGE1-AF + supply 1/12→1/2; NOT consumed by B1) | every odd pair {x, x+1}, x ≥ 11, fires at all 8 residues, M ≥ x+57 | [MACHINE+SCHEMA mod GAP-N2-UNIF]: 108/108 lane laws x = 11..33 ≤ 152; 36/36 template grid, 7 x-values/cell to x≈73, ~2.3k lattice checks, 0 anomalies; MP/D/PC/MIR + Metatheorem T [PROVED, x-free]; audit: K4e(23) fresh at M = 160/164 (notes/76) | notes/73; e174_param_lanes, e175_param_template, e176/e176b, e177 |
 
-Case-1 residual: **GAP-N2-DIAG + GAP-N3-GROW(N3-b)** — both single
-species (finite Z/D/MIR closure write-ups with affine offsets), with
-every instance ever attempted discharged and zero machine anomalies.
+Case-1 residual: **GAP-N3-GROW(N3-b) alone** (notes/78: N2-DIAG's
+write-up is done, tag [PROVED — audit pending]) — single species,
+with every instance ever attempted discharged and zero machine
+anomalies; skeleton LANE + SEV + (N3-b′) stated.
 
 ## 2. Case-2 kill chain
 

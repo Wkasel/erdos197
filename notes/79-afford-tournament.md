@@ -151,3 +151,39 @@ bookkeeping theorem, not a route to the cap.
 **Survival: PROVED-TOOL** — enters the ledger chain next to
 L-HOME/L-2PRICE; escalation value = combines with any future
 band-localization (S2) to charge SPECIFIC values twice.
+
+---
+
+## 2. S2 BAND-WEIGHT — REFUTED as stated (full band map measured)
+
+**Machine (e179 s2band, M = 8, v = 11 = v_min(0)(8) − 1).**  The
+(11, 0) cell (s0 = s1 = 0, s2 ≤ 11) is UNSAT [38.1 s, fresh
+encoder — third independent replication of the point].  Relaxation:
+allow s0 (= β(8)) inversions ONLY when the pair's low member lies
+in band B ⊆ Bm1 = {5, 6, 7, 8}, s1 still 0, s2 ≤ 11.  Result:
+**SAT for EVERY singleton** B = {5}, {6}, {7}, {8} (5.2 / 6.3 /
+94.4 / 20.7 s) and for both halves and the full band.  The mint
+can be minted on ANY single low-member value; the forced-band map
+is FULL, not thin.
+
+**Why this kills the strategy (a-priori half, now with the machine
+half confirming).**  A band-depth weighting w(·) proves a supply
+cap only if per-octave forced-demand weight exceeds per-octave
+supply weight infinitely often.  T-TEL″ demand is O(1) mints per
+octave, each consuming O(1) values (L-DOUBLE-DUTY: 2 per octave);
+supply per octave is EVERY colored value of the octave (P1
+freshness), and the band map says no sub-band is forced — the mint
+chooses its band freely, so any weighting that makes demand
+diverge makes supply diverge at least as fast, at every octave,
+for every monotone band weighting.  The only escape would have
+been a FORCED thin band with vanishing team presence — but values
+partition: some team always has band material, and the map shows
+even singletons suffice.  (Caveat recorded: measured at the
+(·,0)-form of the mint at the boot scale M = 8; the F-form and the
+scales 16/24 are the same shape and are the only other finite
+scales — v_min(0) = ∞ from 32 on, J-DOWN.)
+
+**Survival: REFUTED** (as a route to AFFORD′).  Salvage kept: the
+band map itself — mint-location freedom is now measured, which any
+future supply argument must respect (it must charge mints
+independently of WHERE in the octave they are minted).

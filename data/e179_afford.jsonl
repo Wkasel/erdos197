@@ -28,3 +28,10 @@
 {"part": "s1lemma", "M": 16, "u": 24, "budget": 8, "halfB0": 8, "verdict": "UNSAT", "secs": 36.3, "ts": 1788115605.6}
 {"part": "s1lemma", "M": 16, "u": 24, "budget": 9, "halfB0": 8, "verdict": "SAT", "secs": 1.1, "ts": 1788115607.3}
 {"part": "s2band", "M": 8, "v": 11, "band": "none", "B": [], "verdict": "UNSAT", "secs": 38.1, "ts": 1788115653.6}
+{"part": "s2band", "M": 8, "v": 11, "band": "u5", "B": [5], "verdict": "SAT", "secs": 5.2, "ts": 1788115658.9}
+{"part": "s2band", "M": 8, "v": 11, "band": "u6", "B": [6], "verdict": "SAT", "secs": 6.3, "ts": 1788115665.2}
+{"part": "s2band", "M": 8, "v": 11, "band": "u7", "B": [7], "verdict": "SAT", "secs": 94.4, "ts": 1788115759.7}
+{"part": "s2band", "M": 8, "v": 11, "band": "u8", "B": [8], "verdict": "SAT", "secs": 20.7, "ts": 1788115780.5}
+{"part": "s2band", "M": 8, "v": 11, "band": "bottomhalf", "B": [5, 6], "verdict": "SAT", "secs": 2.5, "ts": 1788115783.0}
+{"part": "s2band", "M": 8, "v": 11, "band": "tophalf", "B": [7, 8], "verdict": "SAT", "secs": 5.4, "ts": 1788115788.5}
+{"part": "s2band", "M": 8, "v": 11, "band": "all", "B": [5, 6, 7, 8], "verdict": "SAT", "secs": 3.8, "ts": 1788115792.4}
