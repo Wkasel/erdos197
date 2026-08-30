@@ -1415,3 +1415,18 @@ data/e158b_mus_M8_up11_dn0.*.
 - Housekeeping: sprint-C vmus_cert.log = mis-instrumented e127
   3-block cell (NOT a pump refutation) — discarded, documented
   (notes/71 §0).
+
+**J/F-SCHEMA late addenda (same session):** GAP-CMIN's extremal
+cell (r = 2M−1, d = 2M) PROVED for M ≥ 32 (one-sided windows
+cannot be mono below the corner: zero failures, S ≥ M outright);
+general near-pure case reduced to below-corner rigidity (parity
+split FORCED below 7M/2 − c by SZ′ + no-2-consecutive) + O(1)
+bookkeeping + two scoped subcases (Bm1-swap, t ≥ 2 exchange) —
+no open mechanism left, and pod witnesses at 20/24/28 all realize
+the extremal frame (one swap at {2M−1, 2M}, corner-confined
+100%).  SZ′ scoped honestly to M ≥ 16 (rep-counting; at M = 8
+the f-witness's B1-odds {19, 21} occupy exactly the image holes
+of its removed y = 13).  Machine: f(28) = 14 (6th f = M/2 scale);
+F(12;2), F(20;4) UNSAT at the F-BOOT thresholds and F(12;5) UNSAT
+beyond them; K-diagonal extended: K(30,10) = 69, K(36,12) = 111
+(the (v,3)@48 margin target's low-pure branch dead, margin 108).
