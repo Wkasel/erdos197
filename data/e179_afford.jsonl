@@ -56,3 +56,4 @@
 {"part": "s4price", "M": 64, "k": 3, "sparse": true, "p": 7, "witness": [68, 72, 76, 101, 109, 117, 125], "secs": 25.1, "ts": 1788116748.7}
 {"part": "s4price", "M": 64, "k": 4, "sparse": true, "p": 11, "witness": [85, 89, 93, 97, 101, 105, 109, 113, 117, 121, 125], "secs": 4.1, "ts": 1788116753.0}
 {"part": "s5dodger", "hor": 8192, "D": 2, "F": 64, "gmode": "lin4", "fmode": "slow", "verdict": "SAT", "sparse": true, "orbit": true, "diffuse": true, "u0": 64, "secs": 57.6, "witness": "/Users/will/Dev/personal/tasks/math/erdos197/data/e179_s5_witness_h8192_D2F64_lin4.json", "nA": 2080, "ts": 1788116825.4}
+{"part": "s1lemma", "M": 24, "u": 36, "budget": 11, "halfB0": 12, "verdict": "UNSAT", "secs": 1037.5, "ts": 1788118636.6}
