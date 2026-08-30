@@ -82,9 +82,89 @@ Dyadic (M ≡ 0 mod 8) coverage by x mod 8 — the row T-PIN quotes:
     x ≡ 1: B2(x)      x ≡ 3: A4a(x)/A4d(x)      x ≡ 5: B6(x)
     x ≡ 7: K4e(x)     [+ the diagonal C3(x/3) when 3 | x, x/3 ≡ 5 mod 8]
 
-## 2. [placeholder — e175 parametric template grid]
+## 2. The parametric template grid (e175)
 
-## 3. [placeholder — the two open cells]
+Protocol per cell (lane, ξ = x mod 8): (1) double-kill scan at x₀
+AND x₀+8 (solver; ALL killing ≤2-subsets recorded — minimality
+pruning breaks cross-x matching, the session's one methods lesson);
+(2) ladder search over {O, E, Q1..Q4} (+d=8 escalation), the SAME
+data required to close both discovery x's; (3) parametric verify at
+x = x₀, x₀+8, x₀+16, x₀+24 (the last two ALWAYS fresh — beyond
+every catalogue that existed this morning; x up to 41), 6 in-class
+scales each (spread ≥ 72 in M, scales up to ~145), all polarity
+branches must close; (4) Cadical cross-checks at x > 33 (complete
+encodings) and SAT controls at r+4 — a 0-survivor control is
+adjudicated by the solver (closure is sound: at large x/M ratios
+the cores genuinely fire off-class sporadically; solver-SAT there
+would be a soundness bug and never occurred).
+
+Grid record: data/e175_param_template.json (+ per-cell pod logs in
+data/pod_e175/).  Master table (S_hi/S_lo as unit indices into the
+§1 lane lists; ladder keys positional: O = (M+1, +2), E = (M+2,
++2), Qk = (M+k, +4)):
+
+    cell      x0  v*  S_hi   S_lo   ladders hi/lo     xs verified
+    B2_xi1    17  t1  {0,1}  {1,2}  [O+Q3]/[O+Q1]     17,25,33,41
+    B2_xi5    13  t1  {0,1}  {1,2}  [O+Q3]/[O+Q1]     13,21,29,37
+    B2_xi3*   11  t2  {1,2}  {0,1}  [E+Q1]/[E+Q1]     (§ notes/49 anchor; grid pending)
+    B2_xi7    15  t2  {1,2}  {0,1}  [E+Q1]/[E+Q1]     15,23,31,39
+    B6_xi1    17  t1  {1,2}  {0,1}  [O+Q3]/[O+Q1]     17,25,33,41
+    B6_xi3    11  t2  {0,1}  {1,2}  [E+Q1]/[E+Q1]     11,19,27,35
+    B6_xi5    13  t1  {1,2}  {0,1}  [O+Q3]/[O+E+Q1]   13,21,29,37
+    B6_xi7    15  t2  {0,1}  {1,2}  [E+Q1]/[E+Q1]     15,23,31,39
+    C_xi1     17  t3  {0,1}  {1,2}  [E+Q1]/[E+Q1]     17,25,33,41
+    C_xi5     13  t3  {0,1}  {1,2}  [E+Q1]/[E+Q1]     13,21,29,37
+    C_xi7     15  t2  {1,2}  {0,1}  [O+Q1]/[O+Q3]     15,23,31,39
+    K1_xi1    17  t3  {0,1}  {1,2}  [E+Q4]/[E+Q2]     17,25,33,41
+    K1_xi5    13  t3  {0,1}  {1,2}  [O+E+Q2]/[E+Q2]   13,21,29,37
+    K1_xi7    15  t2  {1,2}  {0,1}  [O+Q2]/[O+Q2]     15,23,31,39
+    K3_xi1    17  t2  {0,2}  {1,2}  [O+Q2]/[O+Q2]     17,25,33,41
+    K3_xi3    11  t3  {1,2}  {0,2}  [E+Q2]/[E+Q4]     11,19,27,35
+    K3_xi5    13  t2  {0,2}  {1,2}  [O+Q2]/[O+Q2]     13,21,29,37
+    K3_xi7    15  t3  {1,2}  {0,2}  [E+Q2]/[E+Q4]     15,23,31,39
+    K4e_xi1   17  t2  {0,1}  {0,2}  [E+Q2]/[O+E+Q2]   17,25,33,41
+    K4e_xi7   15  t1  {0,2}  {0,1}  [O+Q2]/[O+Q2]     15,23,31,39 (+47 local)
+    K7_xi1    17  t2  {1,2}  {0,1}  [O+Q3]/[O+Q1]     17,25,33,41
+    K7_xi3    11  t3  {0,1}  {1,2}  [E+Q1]/[E+Q1]     11,19,27,35
+    K7_xi5    13  t2  {1,2}  {0,1}  [O+Q3]/[O+Q1]     13,21,29,37
+    K7_xi7    15  t3  {0,1}  {1,2}  [E+Q1]/[E+Q1]     15,23,31,39
+    [A4a/A4d ×4, B2_xi3, C_xi3, K1_xi3, K4e_xi3, K4e_xi5: runs in
+     flight at first commit — see §2b update]
+
+Uniformities visible in the grid (the §4.4 casework laws, now data):
+v* parity always opposite ctr's; the d=2 ladder is always v*'s
+value class; within a lane the template depends on ξ only — and
+the ξ-pairs (1,5) and (3,7) share templates verbatim (v* differs
+only through the M-parity of the class, i.e. the casework is really
+by M mod 4 of the law class: mod-4 twins).  Overlapping halves
+(shared unit) appear exactly where notes/49 §5.1 predicted
+(B2/C/K3/K4e species); the disjoint-2+2 species is the A4/K4 lane.
+
+**Flagship cell (the x ≡ 7 mod 8 dyadic class, previously the one
+open class): K4e_xi7** — v* = t1, S_hi = {t_{x−11}≺b6, t_{x−5}≺b3},
+S_lo = {t_{x−11}≺b6, t_{x−8}≺b4}, both halves closed by [O+Q2] on
+every branch at x = 15, 23, 31, 39 × 6 scales each, PLUS an
+independent local replay at x = 47: branches close at M = 56, 64,
+120; Cadical complete-encoding UNSAT at M = 56; sharpness SAT
+controls at M = 100, 108 (≡ 4 mod 8).  Five x-values spanning 32 in
+x, two machines, two engines.
+
+## 3. The two open cells of notes/49 §6 — CLOSED
+
+- **B6(21)_r0**: the cell (pair {21,22}, dyadic class) is the x = 21
+  instance of B6_xi5, verified ALL OK at x = 13, 21, 29, 37 with the
+  B6(13) template verbatim (v* = t1, [O+Q3]/[O+E+Q1]; the lo half
+  needs the 3-ladder set — the e124m single-cell search that stalled
+  was searching 2-ladder sets at the wrong scales).  Scales for
+  x = 21: 32..112 (6 scales) + e174 solver row (16/16 in-class
+  scales 32..152).
+- **A4d(19)_r0 / the (pair 19, dyadic) cell**: covered TWICE —
+  (a) the A4a lane at ξ=3 carries the K4 template parametrically
+  (A4a(19) solver row: 17/17 in-class scales from M = 24, e174) —
+  grid cell A4a_xi3 [run in flight at first commit, §2b]; (b) the
+  literal A4d(19) core is UNSAT at every in-class scale 24..152
+  (e174, 17/17).  Either way the cell that Case 1 needs (pair 19,
+  M ≡ 0 mod 8) has both a machine law and a parametric template.
 
 ## 4. The uniform argument over x (the parametric lane proof)
 
@@ -227,6 +307,44 @@ T(x) = x + 57.  Degenerate in-class scales (unit value collision
 or t_i = ctr, both solvable affinely) all lie below these
 thresholds, so the statements quantify cleanly over M ≥ T_L(x).
 
-## 5. [placeholder — derivation meter / uniformization status]
+## 5. Derivation scaling: the meter (e176/e176b) and what
+## uniformization still requires
+
+e176_derivation_meter measures the closure fact-count at the moment
+of contradiction, per cell/half, along two axes (record
+data/e176_derivation_meter.{json,log}):
+
+  - **M-axis (fixed x = x₀)**: counts grow superlinearly, ≈ Θ(M²)
+    (e.g. B2_xi1: 155 @ M=24 → 1441 @ M=64) — the flood fills a
+    constant fraction of the O(M²) pair lattice before the cycle
+    shows.  This is Lemma-Z/P species work: transport chains along
+    ladders, length set by M.
+  - **x-axis (fixed M, x = x₀..x₀+56, same in-class M valid for all
+    x ≡ ξ)**: NO growth trend in x — counts fluctuate (the engine's
+    pop order makes the count at contradiction non-canonical) around
+    the same Θ(M²) level, e.g. K4e_xi7 @ M=88: 2222/1982 (x=15) →
+    2345/1987 (23) → 2545/1853 (31) → 2449/1784 (39) → 1762/2802
+    (47) → … → 1913/2464 (x=71).  The work is set by the block, not
+    by the pair.
+
+  Two byproducts upgrade the grid itself:
+  - the x-axis rows are genuine (branch-0) closures at x up to 73
+    for every measured cell;
+  - **e176b_deepx_sweep re-runs ALL branches of every verified cell
+    at x = x₀+32, x₀+40, x₀+48** (two in-class scales each) — the
+    full-branch parametric record extends to seven x-values per
+    cell, x up to 65 (and 47 for K4e_xi7's flagship local replay;
+    73 branch-0).
+
+What the meter CANNOT show: fact-counts are order-sensitive, so
+count-stability is evidence of, not proof of, a sliding derivation
+pattern.  The uniform proof [GAP-N2-UNIF] needs, per cell and per
+branch, the finite composition of MIR/Z/transitivity moves written
+with offsets affine in (x, M) — the FG-high precedent (notes/55
+§5.3b: machine law → 4-value affine MUS → 3-cycle hand proof) is
+the model, and the C3(p) diagonal (e123) proves the species admits
+such write-ups.  Nothing measured here obstructs it: template data
+are x-invariant per cell, closure work is x-flat, and every lattice
+sample closes.
 
 ## 6. [placeholder — Theorem N2-COMPLETE]
