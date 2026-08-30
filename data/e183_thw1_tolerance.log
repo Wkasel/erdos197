@@ -1,0 +1,5 @@
+e183 m=32 M=64 odd: min E1-breaking size = 4; minimal breakers (offsets from 3M): [(-15, -13, -9, -5), (-13, -11, -9, -5), (-13, -9, -7, -5), (-13, -9, -5, -3)]; non-E1 control SAT (expect 0): 0 [] [2s]
+e183 m=32 M=64 even: min E1-breaking size = 4; minimal breakers (offsets from 3M): [(-14, -12, -8, -4), (-12, -10, -8, -4), (-12, -8, -6, -4), (-12, -8, -4, -2)]; non-E1 control SAT (expect 0): 0 [] [2s]
+e183 m=48 M=96 odd: min E1-breaking size = 4; minimal breakers (offsets from 3M): [(-15, -13, -9, -5), (-13, -11, -9, -5), (-13, -9, -7, -5)]; non-E1 control SAT (expect 0): 0 [] [6s]
+e183 m=48 M=96 even: min E1-breaking size = 4; minimal breakers (offsets from 3M): [(-14, -12, -8, -4), (-12, -10, -8, -4), (-12, -8, -6, -4)]; non-E1 control SAT (expect 0): 0 [] [6s]
+e183: DONE

@@ -378,3 +378,52 @@ The corner's emptiness is NOT a viable NO-route: S5's UNSAT branch
 is closed off by T-SHARP-realizing witnesses at every censor.  A
 NO must go through supply (AFFORD′ proper) — the corner cannot be
 starved at the coloring level.
+
+---
+
+## 6. Tournament verdict + ledger movement
+
+| strategy | verdict | survival |
+|----------|---------|----------|
+| S1 recursion / home-conflict | Lemma L-DOUBLE-DUTY [PROVED, sharp, blind-confirmed at 2 scales] | PROVED-TOOL |
+| S2 band-weight | band map FULL at the only finite (·,0) scale; weighting cannot separate demand from supply | REFUTED |
+| S3 density-transfer | no order→coloring channel; payer identity alternates (ROT4 4-phase, fresh scales 48/80); concentration bounds unavailable | REFUTED |
+| S4 hybrid-case / sparse core | **SPARSE-CORE**: CI(m) at (1,1,1) + per-block minority gap ≥ 3 UNSAT at m = 16, 20, 24, 28, 32, 40, 48 (boot ≤ 12); controls SAT; gap-≥2 leaves exactly the parity-lattice escape; hand skeleton (spacing-2 covering); p_sparse = p (repairs free) | **SURVIVES — escalate (NO-side)** |
+| S5 YES-construction | corner (i-proxy)+(ii)+(iii) SAT at 2^12 AND 2^13, rung-safe density, ROT4-strength censor; censor always dodged one reflector band up (T-SHARP realized); witnesses fail double block order at every anchor tested (m = 16/32/64, both teams) — they PAY | **SURVIVES — escalate (YES-side)** |
+
+**The two survivors converge on one battleground.**  S4: any
+(iii)-coloring pays T-TEL″ mints at EVERY anchor from presence 1
+(sparse core; and by J-DOWN restriction the 4-block (·,0) pump
+collapses for sparse colorings identically — corollary, no new
+machinery).  S5: such colorings exist finitely, at rung-safe
+density, under every orbit censor tried — and the constructed
+witnesses measurably fail double block order at every anchor
+(both teams, three anchors).  So the dodger corner can neither be
+starved at the coloring level (S5) nor escape per-anchor demand
+(S4).  GAP-AFFORD′ for the sparse corner is now THE decisive
+question in its sharpest form yet, with explicit finite witnesses
+to instrument:
+
+> Can a sparse-corner coloring AFFORD its everywhere-mint system —
+> one displaced value per octave, forever, P3-accounted in
+> single-use colored values — given that its donation material is
+> gap-≥3 (which the repair layer permits at par, p_sparse = p, but
+> which arms the partner with nothing)?
+
+**Ledger movement (for notes/50):**
+
+| tag | movement |
+|-----|----------|
+| L-DOUBLE-DUTY | NEW [PROVED] — consecutive-boundary mints are value-disjoint below presence-scale prices; joins L-HOME/L-2PRICE in the T-TEL″ bookkeeping |
+| GAP-SPARSE-CORE | NEW [MACHINE+SCHEMA-seed] — the (iii)-corner coupled core at (1,1,1), 7 scales + controls + discriminator + AAA hand skeleton; same uniformization species as the N6a pool |
+| GAP-AFFORD′ | still OPEN, still terminal — but no longer "zero surviving proof strategies": the sparse corner is pincered (S4) and inhabited (S5); the corner's (iii) axis moves from "open" to "finitely realized, asymptotically undecided" |
+| notes/46 dodger corner | (i)+(ii)+(iii) jointly realized at finite level (was: (i)+(ii) only, by ROT4); S5 witnesses in data/e179_s5_witness_* |
+| S2/S3 routes | added to the REFUTED list (do not retry): band-depth weighting; single-team density drift |
+
+Machine record: data/e179_afford.jsonl (local + pod rows),
+experiments/e179_afford_tournament.py; witnesses
+data/e179_s5_witness_h{4096,8192}_*.json; fleet: sprint-B (m=32
+triangle + (2,2,2)@48 xcheck), sprint-C (m=48), sprint-D (m=40,
+boot scales, s3rot 48/64/80).  Every UNSAT cell above ran a
+SAT-side control in the same encoder; the s4core encoder
+additionally reproduces the known (2,2,2)@48 UNSAT verbatim.
