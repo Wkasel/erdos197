@@ -157,7 +157,14 @@ class Gadget:
 
 
 def dump():
-    json.dump(OUT, open(f"{BASE}/e174_n3_growth.json", "w"), indent=1)
+    """Merge-write: per-part runs must not clobber other parts' rows."""
+    path = f"{BASE}/e174_n3_growth.json"
+    try:
+        old = json.load(open(path))
+    except Exception:
+        old = {}
+    old.update(OUT)
+    json.dump(old, open(path, "w"), indent=1)
 
 
 def census(g, subsets, tag, budget=None):
@@ -287,6 +294,30 @@ def partKCRIT():
     g.delete()
 
 
+def partKCRIT15():
+    """x=15: atmost-2 punctures ANYWHERE must be UNSAT (=> d*(15)=3
+    globally, closing the off-support hole in the pair censuses)."""
+    x = 15
+    row = {}
+    for M in (80, 112, 144):
+        g = Gadget(M, x)
+        pool = IDPool(start_from=g.top + 10)
+        neg = [-g.sel[v] for v in g.vals]
+        t0 = time.time()
+        card = CardEnc.atmost(lits=neg, bound=2, vpool=pool,
+                              encoding=EncType.seqcounter)
+        sol = Cadical195(bootstrap_with=g.clauses + card.clauses)
+        r = sol.solve()
+        row[M] = {"atmost2": "SAT!" if r else "UNSAT",
+                  "secs": round(time.time() - t0, 1)}
+        sol.delete()
+        g.delete()
+        print(f"[KCRIT15] x=15 M={M} atmost-2 anywhere: {row[M]}",
+              flush=True)
+        OUT["partKCRIT15"] = row
+        dump()
+
+
 def octave(v):
     m = v.bit_length() - 1
     if v == 1 << m:
@@ -324,7 +355,8 @@ def partROTB():
 
 
 PARTS = {"partP15": partP15, "partP27": partP27,
-         "partKCRIT": partKCRIT, "partROTB": partROTB}
+         "partKCRIT": partKCRIT, "partKCRIT15": partKCRIT15,
+         "partROTB": partROTB}
 
 if __name__ == "__main__":
     want = sys.argv[1:] or ["all"]

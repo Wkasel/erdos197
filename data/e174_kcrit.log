@@ -1,0 +1,5 @@
+[KCRIT] x=27 M=80 atmost-3 punctures: {'verdict': 'UNSAT', 'secs': 6.3}
+[KCRIT] x=27 M=80 atmost-4 punctures: {'verdict': 'UNSAT', 'secs': 25.2}
+[KCRIT] x=27 M=80 atmost-5 punctures: {'verdict': 'UNSAT', 'secs': 94.8}
+[KCRIT] x=27 M=80 atmost-6 punctures: {'verdict': 'SAT', 'escape': ['b2', 'b4', 'b6', 'b8', 'b10', 'b12'], 'secs': 0.2}
+total 127s -> /Users/will/Dev/personal/tasks/math/erdos197/data/e174_n3_growth.json

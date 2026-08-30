@@ -1259,15 +1259,24 @@ experiments/e174_n3_growth.py, data/e174_*.
   transversals (the "bottom midpoints" phrasing of N5 is corrected:
   all-top transversals escape too).  {11,12}'s ten 2-escapes are
   lane transversals likewise (e132 partT re-read).
-- **The salvage measured**: d*(27) ≥ 4 with the p = 9 census
-  EXHAUSTIVE (all 41 singles, all 820 support 2-subsets at three
-  scales, ALL 10 660 support 3-subsets at M = 80 — zero escapes),
-  consistent with the transversal count prediction d*(x) ≈
-  ⌊(x−1)/4⌋ and the N5 law ρ* ≈ 1 − x/4M.  **B1 survives via a
-  one-line patch** (notes/74 §I.4): its extracted pair already has
-  p > 2^{m₀}/3, so requiring 2^{m₀} ≥ 3x₀(C₀) costs nothing;
-  (H1) is replaced by (H1′) = N3-GROW + N2-DIAG.  Case-1 chain now:
-  N1 + B1(patched) + GAP-N2-DIAG + GAP-N3-GROW.
+- **The salvage is now an EXACT three-point law**: d*(x) =
+  ⌊(x−1)/4⌋ fits d* = 2 / 3 / 6 at x = 11 / 15 / 27, all GLOBAL
+  (cardinality queries over every puncture position: {27,28} at
+  M = 80 atmost-3/4/5 UNSAT, atmost-6 SAT with witness EXACTLY the
+  predicted pure-bottom lane transversal {b2,b4,b6,b8,b10,b12};
+  {15,16} atmost-2 UNSAT at 80/112/144; corroborating censuses
+  exhaustive — all ≤ 3-subsets of the p = 9 support at 80, zero
+  escapes), matching the N5 law ρ* ≈ 1 − x/4M.  Explicit
+  x₀(C) = 4C + 6.  **B1 survives via a one-line patch** (notes/74
+  §I.4): its extracted pair already has p > 2^{m₀}/3, so requiring
+  2^{m₀} ≥ 3x₀(C₀) costs nothing; (H1) is replaced by (H1′) =
+  N3-GROW + N2-DIAG.  Case-1 chain now: N1 + B1(patched) +
+  GAP-N2-DIAG + GAP-N3-GROW.  Hand-target sharpened (notes/74
+  §I.6): (N3-a) witness-order schema for the transversal-punctured
+  block [constructive, short]; (N3-b) one surviving transport unit
+  re-runs the flip [= anchor-freedom; the severed-ladder layer
+  e130c+e174b is its machine shadow — even/b1/center punctures now
+  close under bounded order-trichotomy splits, complete at M = 112].
 - **GAP-L1' RESOLVED NEGATIVELY** [PROVED]: ROT4 (team = two
   octave-quarters rotating one quarter per octave) satisfies both
   L1' hypotheses and violates the conclusion.  Hand proofs: exact

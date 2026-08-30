@@ -1,0 +1,5 @@
+[KCRIT15] x=15 M=80 atmost-2 anywhere: {'atmost2': 'UNSAT', 'secs': 1.7}
+[KCRIT15] x=15 M=112 atmost-2 anywhere: {'atmost2': 'UNSAT', 'secs': 4.8}
+[KCRIT15] x=15 M=144 atmost-2 anywhere: {'atmost2': 'UNSAT', 'secs': 19.1}
+[ROTB] max_a 6|T n (a,2a]| - 5a: A=0, B=0 (<= 0 means sup window density <= 5/6 for both teams)
+total 28s -> /Users/will/Dev/personal/tasks/math/erdos197/data/e174_n3_growth.json

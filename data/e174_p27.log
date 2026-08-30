@@ -1,0 +1,8 @@
+[P27] M=80: support 41 values, intact=UNSAT
+  [P27 M=80 sup1] 41 queries, escapes=NONE
+  [P27 M=80 sup2] 820 queries, escapes=NONE
+  [P27 M=80 sup3-ALL] 10660 queries, escapes=NONE
+[P27] M=80 done (2.0s)
+[P27] M=112: support 41 values, intact=UNSAT
+  [P27 M=112 sup1] 41 queries, escapes=NONE
+  [P27 M=112 sup2] 820 queries, escapes=NONE
