@@ -44,8 +44,9 @@ from e124g_branch_closure import ladder, fiat_edges
 from e124i_k4_schema_verify import solver_check
 from e174_param_lanes import lanes_for, LAW
 
-BASE = "/Users/will/Dev/personal/tasks/math/erdos197/data"
-OUT = f"{BASE}/e175_param_template.json"
+BASE = os.environ.get(
+    "E_BASE", "/Users/will/Dev/personal/tasks/math/erdos197/data")
+OUT = os.environ.get("E175_OUT", f"{BASE}/e175_param_template.json")
 
 POOL6 = ("O", "E", "Q1", "Q3", "Q2", "Q4")
 POOL8 = ("G1", "G2", "G3", "G4", "G5", "G6", "G7", "G8")
@@ -60,7 +61,7 @@ def pool_def(M):
     return d
 
 
-def branches_ok(M, seeds, lkeys):
+def branches_ok(M, seeds, lkeys, early=False):
     pool = pool_def(M)
     lads = [ladder(*pool[k]) for k in lkeys]
     surv = 0
@@ -70,6 +71,8 @@ def branches_ok(M, seeds, lkeys):
             ed |= fiat_edges(lad, lf)
         if closure(M, ed)[0] != "contradiction":
             surv += 1
+            if early:
+                return surv
     return surv
 
 
@@ -113,8 +116,9 @@ def phase_kills(M, K, imax):
             mins = []
             for sz in (1, 2):
                 for Sx in itertools.combinations(range(len(K)), sz):
-                    if any(set(m) <= set(Sx) for m in mins):
-                        continue
+                    # record ALL killing subsets (no minimality
+                    # pruning): cross-x intersection must survive a
+                    # smaller kill existing at one x only
                     if not sol.solve(
                             assumptions=[sel[K[k]] for k in Sx]
                             + [phase[(tv, ph)]]):
@@ -152,19 +156,21 @@ def ladder_search(halves_test, prefer):
     combos = list(prefer)
     combos += [c for c in itertools.combinations(POOL6, 2)]
     combos += [c for c in itertools.combinations(POOL6, 3)]
-    ext = POOL6 + POOL8
-    combos3 = [c for c in itertools.combinations(ext, 3)
-               if any(g in POOL8 for g in c)]
+    # restricted d=8 escalation: full parity ladder + quarter + eighth
+    combos3 = [(p, g) for p in ("O", "E") for g in POOL8]
+    combos3 += [(p, q, g) for p in ("O", "E")
+                for q in ("Q1", "Q2", "Q3", "Q4") for g in POOL8]
     choice = {}
     for hn, tests in halves_test.items():
         found = None
         for combo in combos:
-            if all(branches_ok(M, sd, combo) == 0 for M, sd in tests):
+            if all(branches_ok(M, sd, combo, early=True) == 0
+                   for M, sd in tests):
                 found = tuple(combo)
                 break
         if found is None:
             for combo in combos3:
-                if all(branches_ok(M, sd, combo) == 0
+                if all(branches_ok(M, sd, combo, early=True) == 0
                        for M, sd in tests):
                     found = tuple(combo)
                     break
@@ -174,76 +180,131 @@ def ladder_search(halves_test, prefer):
     return choice
 
 
+_E174 = None
+
+
+def e174_thr(lane, x):
+    """Measured in-class firing threshold from e174 (x <= 33), else
+    slope-1 extrapolation from the largest observed x of the lane."""
+    global _E174
+    if _E174 is None:
+        _E174 = {}
+        for r in json.load(open(f"{BASE}/e174_param_lanes.json"))["lanes"]:
+            if r["threshold"] is not None:
+                _E174[(r["lane"], r["x"])] = r["threshold"]
+    if (lane, x) in _E174:
+        return _E174[(lane, x)]
+    xm = max(xx for (ln, xx) in _E174 if ln == lane)
+    return _E174[(lane, xm)] + (x - xm)
+
+
 def run_cell(lane, xi, xs_extra=(), verbose=True):
     x0 = min(x for x in range(11, 30, 2) if x % 8 == xi
              and min(i for i, _ in lanes_for(x)[lane]) >= 0)
     x1 = x0 + 8
     r8 = (x0 + LAW[lane]) % 8
     K0, K1 = lanes_for(x0)[lane], lanes_for(x1)[lane]
-    thr0 = max(16, x0 + 5)
-    scanM0 = in_class_scales(r8, K0, 0, 1, thr0 + 48)[0]
-    scanM1 = in_class_scales(r8, K1, 0, 1, x1 + 5 + 48)[0]
+    scanM0 = in_class_scales(r8, K0, 0, 1, e174_thr(lane, x0) + 8)[0]
+    scanM1 = in_class_scales(r8, K1, 0, 1, e174_thr(lane, x1) + 8)[0]
     t0 = time.time()
     cands = candidates(K0, K1, scanM0, scanM1,
                        max(8, min(i for i, _ in K0) - 1))
     if not cands:
         return {"cell": f"{lane}_xi{xi}", "ok": False,
                 "reason": "no common double kill"}
-    rec = None
-    for (istar, Shi, Slo) in cands[:12]:
-        halves_test = {}
-        for hn, Sx, ph in (("hi", Shi, "lo"), ("lo", Slo, "hi")):
-            tests = []
-            for (x, K) in ((x0, K0), (x0, K0), (x1, K1)):
-                pass
-            Ms0 = in_class_scales(r8, K0, istar, 2, scanM0)
-            Ms1 = in_class_scales(r8, K1, istar, 1, scanM1)
-            tests = [(m, seeds_for(m, [K0[k] for k in Sx], istar, ph))
-                     for m in Ms0]
-            tests += [(m, seeds_for(m, [K1[k] for k in Sx], istar, ph))
-                      for m in Ms1]
-            halves_test[hn] = tests
-        prefer = [("O", "E"), ("E", "Q1"), ("O", "Q2"), ("O", "Q3"),
-                  ("O", "Q1"), ("E", "Q2"), ("O", "Q4"), ("E", "Q4"),
-                  ("E", "Q3"), ("O", "E", "Q1"), ("O", "E", "Q3")]
-        choice = ladder_search(halves_test, prefer)
-        if choice is not None:
-            rec = (istar, Shi, Slo, choice)
-            break
+    xs = [x0, x1, x0 + 16, x0 + 24] + list(xs_extra)
+    Klane = {x: lanes_for(x)[lane] for x in xs}
+
+    def search(cand_list, extra_tests):
+        """extra_tests: {half: [(x, M)]} to include in the ladder
+        search; returns (istar, Shi, Slo, choice) or None."""
+        for (istar, Shi, Slo) in cand_list[:24]:
+            halves_test = {}
+            for hn, Sx, ph in (("hi", Shi, "lo"), ("lo", Slo, "hi")):
+                pts = [(x0, m) for m in
+                       in_class_scales(r8, K0, istar, 2,
+                                       e174_thr(lane, x0))]
+                pts += [(x0, in_class_scales(r8, K0, istar, 1,
+                                             scanM0)[0])]
+                pts += [(x1, in_class_scales(r8, K1, istar, 1,
+                                             scanM1)[0])]
+                pts += extra_tests.get(hn, [])
+                halves_test[hn] = [
+                    (m, seeds_for(m, [Klane.get(x, lanes_for(x)[lane])[k]
+                                      for k in Sx], istar, ph))
+                    for x, m in pts]
+            prefer = [("O", "E"), ("E", "Q1"), ("O", "Q2"), ("O", "Q3"),
+                      ("O", "Q1"), ("E", "Q2"), ("O", "Q4"), ("E", "Q4"),
+                      ("E", "Q3"), ("O", "E", "Q1"), ("O", "E", "Q3")]
+            choice = ladder_search(halves_test, prefer)
+            if choice is not None:
+                return (istar, Shi, Slo, choice)
+        return None
+
+    rec = search(cands, {})
     if rec is None:
         return {"cell": f"{lane}_xi{xi}", "ok": False, "istar": None,
-                "reason": f"no ladder set for {len(cands[:12])} cands",
+                "reason": f"no ladder set for {len(cands[:24])} cands",
                 "cands": [(i, list(a), list(b))
                           for i, a, b in cands[:12]]}
-    istar, Shi, Slo, choice = rec
-    # ---- parametric verify ----
-    xs = [x0, x1, x0 + 16, x0 + 24] + list(xs_extra)
-    verify, controls, fails = {}, {}, []
-    for x in xs:
-        K = lanes_for(x)[lane]
-        if min(i for i, _ in K) < 0:
-            continue
-        start = max(16, x + 5)
-        vMs = in_class_scales(r8, K, istar, 4, start)
-        vMs += in_class_scales(r8, K, istar, 2, vMs[-1] + 40)
-        for m in vMs:
-            for hn, Sx, ph in (("hi", Shi, "lo"), ("lo", Slo, "hi")):
-                sv = branches_ok(m, seeds_for(
+    # ---- parametric verify, with e124m-style retry on failures ----
+    verify, controls, sporadic = {}, {}, []
+    for _round in range(3):
+        istar, Shi, Slo, choice = rec
+        verify, controls, fails = {}, {}, []
+        for x in xs:
+            K = lanes_for(x)[lane]
+            if min(i for i, _ in K) < 0:
+                continue
+            start = e174_thr(lane, x)
+            vMs = in_class_scales(r8, K, istar, 4, start)
+            vMs += in_class_scales(r8, K, istar, 2, vMs[-1] + 40)
+            for m in vMs:
+                for hn, Sx, ph in (("hi", Shi, "lo"),
+                                   ("lo", Slo, "hi")):
+                    sv = branches_ok(m, seeds_for(
+                        m, [K[k] for k in Sx], istar, ph), choice[hn])
+                    if sv:
+                        fails.append((x, m, hn, sv))
+            verify[x] = vMs
+            # solver cross-check where e174 has no record (x > 33)
+            if x > 33:
+                for m in [m for m in vMs if m <= 112][:2]:
+                    if solver_check(m, K, expect_unsat=True) is not True:
+                        fails.append((x, m, "solver",
+                                      "expected UNSAT"))
+            # controls at r+4: expect a surviving branch; a 0-survivor
+            # control is adjudicated by the solver (closure is sound,
+            # so it can only be a genuine sporadic off-class kill --
+            # solver SAT there would be a soundness bug = hard fail)
+            cMs = in_class_scales((r8 + 4) % 8, K, istar, 2,
+                                  start + 12)
+            ct = []
+            for m in cMs:
+                sv = sum(branches_ok(m, seeds_for(
                     m, [K[k] for k in Sx], istar, ph), choice[hn])
-                if sv:
-                    fails.append((x, m, hn, sv))
-        verify[x] = vMs
-        # controls at r+4: some branch survives in at least one half
-        cMs = in_class_scales((r8 + 4) % 8, K, istar, 2, start + 16)
-        ct = []
-        for m in cMs:
-            sv = sum(branches_ok(m, seeds_for(
-                m, [K[k] for k in Sx], istar, ph), choice[hn])
-                for hn, Sx, ph in (("hi", Shi, "lo"), ("lo", Slo, "hi")))
-            ct.append((m, sv))
-            if sv == 0:
-                fails.append((x, m, "control", "0 survivors"))
-        controls[x] = ct
+                    for hn, Sx, ph in (("hi", Shi, "lo"),
+                                      ("lo", Slo, "hi")))
+                ct.append((m, sv))
+                if sv == 0:
+                    if m <= 112 and solver_check(m, K,
+                                                 expect_unsat=True):
+                        sporadic.append((x, m))
+                    else:
+                        fails.append((x, m, "control",
+                                      "0 survivors + solver SAT"))
+            controls[x] = ct
+        br_fails = [f for f in fails if f[2] in ("hi", "lo")]
+        if not br_fails:
+            break
+        extra = {}
+        for (x, m, hn, _) in br_fails:
+            extra.setdefault(hn, []).append((x, m))
+        rec2 = search(cands, extra)
+        if rec2 is None:
+            break
+        rec = rec2
+    istar, Shi, Slo, choice = rec
     ok = not fails
     out = {"cell": f"{lane}_xi{xi}", "ok": ok, "lane": lane, "xi": xi,
            "x0": x0, "istar": istar,

@@ -86,7 +86,146 @@ Dyadic (M ≡ 0 mod 8) coverage by x mod 8 — the row T-PIN quotes:
 
 ## 3. [placeholder — the two open cells]
 
-## 4. [placeholder — the uniform argument]
+## 4. The uniform argument over x (the parametric lane proof)
+
+Everything in this section is a hand proof unless tagged; the
+residue casework is §4.4; what is machine-verified vs uniformly
+proven is delineated in §5.
+
+### 4.1 The calculus (restatements, all x- and M-free)
+
+**Middle Principle (MP)** [PROVED, = AP-freeness].  Let ≺ be a
+monotone-3-AP-free placement of (M, 2M].  For every in-block AP
+(u, v, w) (v the middle): v ≺ u ⟺ v ≺ w.  I.e. the middle of any
+AP is temporally extreme in its triple.  (Monotone u≺v≺w is
+excluded by v≺u ⟸ ¬(v≺w)… direct check of the four directed
+forms; these are exactly the closure rules R1–R4 of e124e.)
+Conversely a total order satisfying MP for every AP is AP-free.
+MP + transitivity IS the entire in-block theory.
+
+**Lemma D (ladder dichotomy)** [PROVED, notes/33; re-proved here in
+MP form].  Let L = (v, v+d, …, v+kd) be a d-ladder in the block.
+Call an interior point a PIT if it precedes both ladder-neighbours,
+a PEAK if it follows both.  By MP on the AP of three consecutive
+ladder points, every interior point is a pit or a peak; two
+adjacent interior points cannot be pits together (each would
+precede the other) nor peaks together.  Hence pit/peak strictly
+alternates: exactly TWO polarity phases per ladder.  ∎
+
+**Lemma PC (phase clash)** [PROVED, trivial].  Let ctr be any value
+≠ v*.  If AP + S_hi + (v* ≺ ctr) and AP + S_lo + (ctr ≺ v*) are
+both infeasible, then AP + (S_hi ∪ S_lo) is infeasible.  ∎
+
+**Lemma MIR (mirror twin at the centre)** [PROVED, uniform].  Let
+ctr := ⌊3M/2⌋ and 1 ≤ i < M/2.
+  - M even (ctr = m₀ = 3M/2): b_i + t_i = 3M = 2·ctr, so
+    (b_i, ctr, t_i) is an AP with middle ctr, and MP gives
+      ctr ≺ t_i ⟺ ctr ≺ b_i.
+  - M odd (ctr = c− = (3M−1)/2): b_{i−1} + t_i = 3M−1 = 2·ctr, so
+      ctr ≺ t_i ⟺ ctr ≺ b_{i−1}   (i ≥ 1).
+So the phase of the top value t_i relative to the centre EQUALS the
+phase of its bottom twin b_i (resp. b_{i−1}).  ∎
+
+MIR is the engine of the whole template: the phase hypothesis at
+v* = t_{i*} (i* ≤ 3 in every cell) is, by MIR, a hypothesis on the
+bottom twin b_{i*} (resp. b_{i*−1}) — a value sitting INSIDE the
+unit-target zone b₁..b₆ where the lane's attack units land.  Each
+half's two units t_a ≺ b_c, t_a′ ≺ b_c′ (a, a′ affine in x; c, c′
+fixed) then fight the twin over the orientation of the bottom
+cluster, and the two half-verdicts disagree.  That is why the
+battleground is always t₁/t₂/t₃: those are the top values whose
+twins live at b₁/b₂/b₃, adjacent to the unit targets.
+
+### 4.2 The template metatheorem
+
+**Metatheorem T (cell schema).**  Fix a lane L (§1 table) and
+ξ ∈ {1, 3, 5, 7}.  Suppose the cell data (i*, S_hi, S_lo, Λ_hi,
+Λ_lo) — i* ≤ 3; S_hi, S_lo ⊆ L(x) given by unit INDICES (hence
+coordinates affine in x); Λ_h fixed ladder keys — satisfy, for a
+given pair (x, M) with x ≡ ξ (mod 8), M ≡ x + c_L (mod 8),
+M ≥ T_L(x):
+
+  CLOSE(x, M):  for each half h ∈ {hi, lo} and EACH polarity branch
+  of Λ_h (Lemma D), the closure of
+      S_h(x)  +  the phase edge at v* = t_{i*}  +  branch fiat edges
+  under MP + transitivity reaches a contradiction.
+
+Then AP + L(x) is infeasible at (x, M).  Proof: each branch closing
+means the polarity assignment is inconsistent with S_h + phase;
+Lemma D says some polarity assignment holds in any placement; so
+AP + S_h + phase is infeasible, i.e. S_hi forces ctr-side hi for
+v*, S_lo forces lo.  v* ≠ ctr on the class (degeneracy excluded by
+T_L(x) ≥ 2i*+1… in-class scales with t_{i*} = ctr or coincident
+unit values are skipped as degenerate — finitely many, below
+threshold).  Lemma PC closes.  ∎  [The closure derivations are
+sound formal proofs; CLOSE(x, M) at each lattice point is what e175
+verifies mechanically.]
+
+### 4.3 Uniformity in x: what the derivations are made of
+
+The seeds of every branch are: (i) two unit edges per half, top
+coordinates t_{x−k} (k ∈ {1, …, 11} fixed per lane), bottom
+coordinates b₁..b₆ fixed; (ii) the phase edge at t_{i*}, i* ≤ 3
+fixed; (iii) alternation edges on one or two FIXED d ∈ {2, 4}
+ladders.  The closure weaves them with three uniform moves:
+
+  1. MIR at the centre (x-free, §4.1) — converts phase information
+     at the top into twin information at the bottom and back; more
+     generally MP on any mirror AP (u, ctr′, 2ctr′−u) at ladder
+     midpoints ctr′;
+  2. zigzag transport (Lemma Z species, notes/33) — a precedence
+     seed entering a ladder at ANY position propagates along the
+     ladder monotonically in the polarity branch; the induction is
+     in the M-direction and position-uniform, so the Θ(x) offset of
+     the unit's entry point changes the propagation LENGTH, never
+     the propagation step;
+  3. transitivity.
+
+The x-dependence of a branch derivation is therefore confined to
+the entry positions of the two unit edges on the fixed ladders —
+each an affine function of x — while the derivation PATTERN
+(which move follows which) is x-invariant.  This is the same
+situation as the diagonal family C3(p) (e123: the notes/33 proof
+generalises verbatim with constants affine in p), now for all
+eight residue lanes.  §5 quantifies this: the measured derivation
+sizes at fixed M-offset are x-flat (the flood length is set by M,
+not x), and the template data never change with x.
+
+**Status tag**: the branch-by-branch composition of moves 1–3 is
+written out by hand for three anchor cells at x = 11 (notes/49
+§4/§5/§7: K4 = A4-lane ξ=3, B2(11) = B2-lane ξ=3, C(11) = C-lane
+ξ=3) and executed mechanically at every verified lattice point for
+all cells.  The uniform-in-(x, M) write-up of each cell's ≤ 8
+branch patterns is [GAP-N2-UNIF] — the exact analogue, cell by
+cell, of GAP-N2-DIAG for C3(p), and the same species: Z/D/MIR
+compositions with affine offsets.
+
+### 4.4 The residue casework
+
+Two layers of casework, both finite and rigid:
+
+  (a) LANE by residue of M − x (mod 8): the §1 table.  Eight
+      classes, eight lanes (plus spares A4d, and the diagonal on
+      its own line).
+  (b) Within a lane, TEMPLATE DATA by ξ = x mod 8 (equivalently
+      M mod 8 = ξ + c_L): the e175 grid (§2).  The rigid laws
+      visible in the grid, uniform across all 36 cells:
+        - v* has parity OPPOSITE to ctr (both M-parities); v* ∈
+          {t₁, t₂, t₃} always;
+        - the full d=2 ladder used is v*'s own value class (label
+          O/E is positional: at odd M the (M+1)-start ladder is the
+          even class);
+        - the d=4 quarter ladder(s) carry the value class of the
+          half's key unit target (the shared unit for overlapping
+          halves — the B2/C anatomy; the pinch class of notes/49
+          §5.3).
+
+### 4.5 Thresholds
+
+T_L(x) as measured (§1); all slope-1 affine.  Uniform safe bound
+T(x) = x + 57.  Degenerate in-class scales (unit value collision
+or t_i = ctr, both solvable affinely) all lie below these
+thresholds, so the statements quantify cleanly over M ≥ T_L(x).
 
 ## 5. [placeholder — derivation meter / uniformization status]
 
