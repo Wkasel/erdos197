@@ -466,7 +466,45 @@ no threshold at either scale has ever been measured.  Predictions:
 ---
 
 ## 5. GAP-LLOP: the fresh-scale caps, the tolerance law, and the arms
-## (filled as the 176/192 chain lands)
+
+### 5.1 The ThW1′ tolerance law (e183, first measurement)
+### [MACHINE-CHECKED, 2 scales × 2 classes; pre-registered]
+
+Instrument: e183_thw1_tolerance.py (sprint-D; fresh e182 encoder) →
+data/e183_thw1_tolerance.json/.log.  Scan: all puncture sets
+X ⊆ E1 ∩ class (8 values, offsets −15..0 from 3M) of sizes 1..5,
+plus 60 random non-E1 control sets of sizes 3–4, per class, at
+m = 32, 48 (M = 64, 96).
+
+**Result — the pre-registration (§ header of e183, and notes/58
+§5.1) is CONFIRMED exactly:**
+
+* minimum breaking puncture size = **4**, at both scales and both
+  classes (no set of ≤ 3 E1 values breaks; all global singles were
+  already UNSAT by e155c);
+* every minimal breaker contains the CORE TRIPLE
+  {3M−13, 3M−9, 3M−5} (odd class) resp. {3M−12, 3M−8, 3M−4} (even —
+  the same pattern shifted one), completed by one further E1 value
+  at distance 2–4; the full lists:
+      odd,  m=32: (−15,−13,−9,−5) (−13,−11,−9,−5) (−13,−9,−7,−5) (−13,−9,−5,−3)
+      odd,  m=48: (−15,−13,−9,−5) (−13,−11,−9,−5) (−13,−9,−7,−5)
+      even: the +1 shifts of the same (4 at m=32, 3 at m=48)
+  — the L-LOP frontier witness at M = 128 (notes/58 §1.1: defected
+  odd values 3M−5, −9, −11, −13) is literally the second breaker;
+* all 240 non-E1 control sets UNSAT: the breaking mechanism is
+  E1-LOCAL (the α-unit midpoint zone attacking itself), matching
+  the §2 deep-stall corner anatomy one level up.
+
+**Law (ThW1′-TOL).**  The class-α system survives every E1-puncture
+set of size ≤ 3 and dies at exactly the packed core-triple quads;
+its breaking sets are pairwise fan-DEAD-rich (gaps 2–4), hence
+disjoint from the alive-cliques of ThW1′-ROBUST — the e155c/e183
+pair together give the exact complementarity of P-ARM‴'s Case S
+(clique punctures: harmless) and L-LOP's frontier (packed quads:
+the cap's escape hatch).  The notes/58 §5.1 conjecture "the cap
+law's +4 IS the ThW1′ puncture tolerance" now has its object: the
+minimal-breaker family is finite, scale-stable in offset
+coordinates, and hand-listable.
 
 ## 6. GAP-ASM′ = (OV-∀): the fresh-scale overlap + robust-chain
 ## insurance (filled with §5)
