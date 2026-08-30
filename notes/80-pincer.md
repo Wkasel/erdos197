@@ -206,3 +206,116 @@ Net: on the corner's canonical inhabitants, per-anchor per-team
 payment is > 12 at every cell measured, > 24 where scanned, with
 the proven floor |H_T| = Θ(m²) (P5) wherever H ≠ 0 — against
 T-TEL″'s previous unconditional floor of ONE pair per two octaves.
+
+**Encoder positive control + exact frontiers (post-scan
+addendum):** the same encoder's SAT side is reachable — pure
+lattice minority: **ν(8) = 9 (|H| = 5), ν(12) = 31 (|H| = 11),
+ν(16) = 58 (|H| = 20)**, each pinned by consecutive
+UNSAT/SAT rows in one totalizer.  ν ≈ 2.8–2.9 × |H| ≈ 0.23 m²:
+quadratic per-anchor payment measured EXACTLY at three scales,
+with the hand floor 5m²/64 below it and the cascade factor on
+top.
+
+---
+
+## 2. MINT-LOC resolved (the hand argument)
+
+Throughout: one team T, window (m, 8m], blocks B0, B1, B2, block
+order = all adjacent-seam pairs (a, b) ∈ (B_i × B_{i+1}) ∩ T²
+placed pos(a) < pos(b); H_T = the cross-3-block AP family
+{(x, y, 2y−x) ∈ (B0×B1×B2) ∩ T³}.  Teams decouple (the coloring is
+fixed), so all statements are per-team; joint verdicts are
+conjunctions.
+
+### 2.1 Lemma γ-RIGID + the K-catalogue [PROVED; machine-exact]
+
+**Lemma γ-RIGID.**  In the one-mint theory (block order minus the
+single pair (u, w) at seam s, the mint forced inverted), if
+T ∩ B_{s+1} ∖ {w} ≠ ∅ the team order decomposes into rigid
+segments
+
+    seam 0:  B0∖{u}  <  w  <  u  <  B1∖{w}  <  B2
+    seam 1:  B0  <  B1∖{u}  <  w  <  u  <  B2∖{w}
+
+(only within-segment order is free).  *Proof.*  Every non-mint
+seam pair is oriented by its ban; w after B_s∖{u} (their pairs
+with w are banned), w before u (the mint), u before
+B_{s+1}∖{w} (banned pairs), the rest by transitivity through any
+value of the middle block.  ∎
+
+**K-catalogue.**  Writing γ for the segment index, an in-team AP
+(x, y, z) with strictly increasing γ is forced monotone-increasing
+— fatal.  Enumerating the γ-patterns (§0 D1, verified against the
+exact filter with 0 mismatches on every cell):
+
+- seam 0 fatal families: any H-triple with (x, y) ≠ (u, w); APs
+  (x, w, z) x ∈ B0∖{u}; (x, u, z) with z ≠ w; (w, y, z) into
+  B1×B2; (u, y, z) with y ≠ w.
+- seam 1 fatal families: any H-triple with (y, z) ≠ (u, w); APs
+  (x, y, w) y ≠ u; (x, y, u) y ∈ B1∖{u}; (x, w, z); (x, u, z)
+  z ≠ w; (y, w, z) y ≠ u; (y, u, z) z ≠ w.
+
+**Lemma MINT-1 (one-mint characterization).**  The one-mint theory
+at (u, w) is satisfiable only if EVERY H-triple passes through the
+mint pair itself (x = u ∧ y = w at seam 0; y = u ∧ z = w at
+seam 1) — hence only if |H_T| ≤ 1 (the mint pair determines its
+third point) — AND the listed auxiliary families are empty, AND
+the residual within-block system is satisfiable.  *Proof.*  The
+K-catalogue plus γ-RIGID.  ∎
+
+Machine realization (§1.2): on the witnesses |H_T| ≥ 26 at every
+carrier cell — region empty by the first clause; at the two
+|H| = 0 cells the auxiliary + within-block layers finish it
+(solver).  22/22 empty.
+
+### 2.2 The floors that survive any budget [PROVED]
+
+**Lemma H-COVER.**  In ANY valid order of T (no block-order
+hypothesis): each H-triple (x, y, z) forces pos(y) < pos(x) or
+pos(z) < pos(y) (P5, notes/54 — else monotone), i.e. an inverted
+adjacent-seam pair; and distinct H-triples force DISTINCT pairs
+((x, y) determines z, (y, z) determines x).  Hence
+Inv_T(m) ≥ |H_T(m)|.  [This is notes/47 §3 / notes/54 P5's proven
+price floor, now with |H_T| computed on the corner: Θ(m²).]
+
+**Lemma D-FLOOR (the König displaced floor).**  Let G_T(m) be the
+bipartite graph on (T∩B0) ⊔ (T∩B1) with an edge (x, y) for each
+H-triple.  The displaced set D_T(m) (distinct low members of
+inverted adjacent-seam pairs) contains a vertex cover of G_T(m),
+so |D_T(m) ∩ (m, 4m)| ≥ max-matching(G_T(m)).  *Proof.*  Each
+H-triple puts x ∈ D (left seam) or y ∈ D (right seam); König.  ∎
+
+**Lemma D-SAT (matching saturates presence, pure lattice).**  For
+the class-c minority on pure-lattice blocks, N(x) = {y ≡ c :
+y > 2m + x/2} has |N(x)| ≥ m/4 = |T ∩ B0| for every x, so Hall
+gives a matching saturating T ∩ B0: **|D_T(m) ∩ (m, 4m)| ≥
+|T ∩ B0(m)| — the anchor block's ENTIRE presence is displaced.**
+Machine (§1.1): max-matching = |T ∩ B0| exactly at every measured
+cell, BOTH teams, witnesses included — the majority-side
+saturation is machine-fact (same staircase shape; not needed by
+hand below).
+
+### 2.3 The resolution
+
+**MINT-LOC [RESOLVED — literal form REFUTED-VACUOUS, strong form
+PROVED].**  The pre-registered literal statement ("the displaced
+value is forced within distance ≤ 2 of other minority material,
+so paying breaks axis (iii) within O(1) octaves") is the WRONG
+mechanism: order payment never recolors, and on the corner's
+canonical family the displaced values sit ON the minority lattice
+(mutual distance exactly 4) or on majority values — axis (iii) is
+never broken by paying.  What is TRUE is stronger and carries the
+same arrow:
+
+> **T-MINT-LOC (location/mass form).**  For any blockwise mod-4
+> lattice coloring, at every anchor m above boot and any valid
+> pair of orders: the one-mint theory is void for both teams
+> (Lemma MINT-1 + |H| ≥ 2 resp. the measured aux layer), and any
+> valid order pays Inv_T(m) ≥ |H_T(m)| = Θ(m²) for every
+> H-carrier team, with displaced values confined to (m, 4m) in
+> at least full-anchor-block-presence numbers
+> (|D_T ∩ (m, 4m)| ≥ |T ∩ B0(m)|, Lemmas D-FLOOR + D-SAT).
+
+What it pins: not a 2-neighborhood of minority material but the
+FULL presence mass of the paying block, lattice-structured,
+window-confined — the input the pincer (§3) needs.
