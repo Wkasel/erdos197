@@ -676,3 +676,24 @@ curve v(N) = ⌈N/4⌉ − 1 valid at every scale [mod GAP-FTOT].
   deletions {62, 63} accepted at harvest) — §7's pre-registration
   stands for the next session's harvest.
 - ftot(16) ≥ 6 and counting (UNSAT through m = 5 at 156 s/query).
+
+## 11. Final harvest of the session (jobs left running are
+## crash-safe; resume states committed)
+
+- **K(36,12) = 111** (sprint-D, UNSAT 110 / SAT 111): the M = 48
+  margin-diagonal point; with K(30,10) = 69 the diagonal reads
+  0, 3, 4, 11, 20, 28, 40, 69, 111 at k = 2..8, 10, 12.  The
+  notes/75 margin target (v, 3)@48 has its low-pure branch dead
+  with margin 108.
+- **F(12; 5) UNSAT [185.3 s]** (sprint-B): the freshness family
+  at M = 12 is dead well past the counting bound (⌈M/4⌉ − 1 = 2)
+  — the F mixed engine tops up at 12 exactly as the (·,0) one
+  does at 8; the F-frontier at 12 is > 5.
+- In flight at close (all streaming to committed logs): fmass(32)
+  ≥ 15 (m = 14 UNSAT, 265 s/query), fmass(36) ≥ 15, fmass(40)
+  queued; ftot(16) ≥ 7 (m = 6 UNSAT, 1187 s) heading to the
+  predicted 8; e158b (8; 11,0) MUS at n = 58; K(36,12) done.
+  Harvest paths: sprint-C /root/e/data/e174_{fmass,ftot}_ladder
+  .log, sprint-D /root/e/data/e174_{K36,fmass_3640}.log +
+  e174_K30.log, sprint-B /root/e/data/e174_{cells,fcells}.log,
+  local data/e158b_mus_M8_up11_dn0.{log,resume.json}.
