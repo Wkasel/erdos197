@@ -20,8 +20,9 @@ the graph still contains genuinely open links.  The two that carry the
 program: [GAP-AFFORD′] (Case 2's terminal supply statement — new
 mathematics, no surviving proof strategy) and the uniformization pool
 (finite catalogue-schema write-ups of one proved-in-instances species:
-GAP-N2-DIAG/UNIF, GAP-N3-GROW's (N3-b), the GAP-N6a sub-pool,
-GAP-CMIN).  No announcement-shape document exists or should.
+GAP-N3-GROW's (N3-b), the GAP-N6a sub-pool, GAP-CMIN; GAP-N2-DIAG
+left this pool 2026-08-30 late — Theorem C3(p), notes/78, [PROVED —
+audit pending]).  No announcement-shape document exists or should.
 
 ---
 
@@ -160,9 +161,11 @@ zero structural breaks.
 
 ## 5. The composed conditional theorem (exact form)
 
-**Theorem (assembly).**  Assume (i) GAP-N2-DIAG, (ii) GAP-N3-GROW,
-(iii) GAP-N6a's sub-pool (§2a), (iv) GAP-AFFORD′.  Then no 2-set
-partition of ℤ⁺ has both parts 3-permutable.
+**Theorem (assembly).**  Assume (i) Theorem C3(p) (= former
+GAP-N2-DIAG; now proved, notes/78 Part I, audit pending),
+(ii) GAP-N3-GROW (N3-b), (iii) GAP-N6a's sub-pool (§2a),
+(iv) GAP-AFFORD′.  Then no 2-set partition of ℤ⁺ has both parts
+3-permutable.
 
 *Proof shape.*  By N4 either Case 1 — dead by N1 + B1 + (i) + (ii) —
 or Case 2.  In Case 2, (iii) closes the coupled core at every large
@@ -183,8 +186,8 @@ Critical path (all four needed; nothing else is):
 |-----|-----------------|---------|----------------|
 | **GAP-AFFORD′** | for every valid Case-2 pair, the donation supply (single-use colored values, P3-accounted) cannot fund the T-TEL″ mint system (≥ 1 displaced value per 2 octaves) forever | **genuinely new ledger statement** — no template in the campaign | no-go results only (NG1–NG4, GAP-COMP refuted); zero proof attempts survive |
 | **GAP-N6a sub-pool** | the CI(m) core fires for ALL m (bal ≥ 16; const (2,2,2) ≥ 48): remaining = GAP-DICH (5 catalogue rows), GAP-LLOP-α/β, GAP-PARM (⊇ CORNER ⊇ FG-deep), GAP-ASM′ = (OV-∀), GAP-FG-schema/-deep | uniformization (catalogue-schema write-ups; discharged instances exist for each) | machine-closed everywhere asked (8 scales + 2 robust + m = 28 fresh); laws mechanistic with blind hits |
-| **GAP-N2-DIAG** | C3(p) UNSAT on its flip class for every p ≡ 1 mod 4 (uniform-in-p write-up) | uniformization (affine Z/D/E/P; p = 5 instance PROVED) | schema-verified p = 5..13, 0 fail |
-| **GAP-N3-GROW (N3-b)** | < ⌊(x−1)/4⌋ punctures leave the rung UNSAT, uniformly in x and puncture set | uniformization + robustness (severed-ladder closures = machine shadow) | exact at x = 11/15/27 global; closures complete at M = 112 |
+| **GAP-N2-DIAG** | C3(p) UNSAT on its flip class for every odd p ≥ 5 (uniform-in-p write-up) | uniformization — **DISCHARGED: Theorem C3(p), notes/78 Part I [PROVED — audit pending]** | schema-verified p = 5..21 (0 fail), boundaries exact, solver x-val ×6 p-values |
+| **GAP-N3-GROW (N3-b)** | < ⌊(x−1)/4⌋ punctures leave the rung UNSAT, uniformly in x and puncture set | uniformization + robustness (severed-ladder closures = machine shadow); skeleton LANE + SEV + (N3-b′), notes/78 §II.3 | exact at x = 11/15/19/23/27 global (2 fresh, ≡ 7 mod 8 covered); closures complete at M = 112 |
 
 Hardening layer (not gating the assembly):
 
@@ -213,6 +216,7 @@ known YES-space.
 - notes/52 (+74 patch): Theorem B1 [PROVED mod H1′]
 - notes/73: N2-COMPLETE + 36/36 grid [MACHINE+SCHEMA]
 - notes/74: N3-GROW + L1′ refutation [MACHINE / PROVED]
+- notes/78: Theorem C3(p) affine write-up [PROVED — audit pending] + N3-GROW skeleton (LANE/PS/SEV) + fresh law points d*(19)/d*(23)
 - notes/55-59 + 51: N6a skeleton + bridge [PROVED skeleton + sub-pool]
 - notes/75: J-DOWN + P-CAT + LEAK + NEST [PROVED]
 - notes/71: J-BOOT, F-BOOT, MARGIN-LP, SZ/SZ′/WALL [PROVED mod CMIN/FTOT]
