@@ -7,3 +7,4 @@
   bal_M16 LB sum>=3 (v*>=2) t=28.7s core=1048/1046
   bal_M16 LB sum>=4 (v*>=2) t=239.4s core=246/243
   bal_M16 LB sum>=5 (v*>=3) t=1624.3s core=276/272
+  bal_M16 LB sum>=6 (v*>=3) t=75897.5s core=198/194
