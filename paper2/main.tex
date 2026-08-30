@@ -1,0 +1,473 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\pos}{\mathrm{pos}}
+\newcommand{\Rung}{\mathrm{R}}
+\newcommand{\CI}{\mathrm{CI}}
+
+% ---------------------------------------------------------------
+% SKELETON DOCUMENT.  Every \source{} names the campaign note that
+% contains the finished mathematics for that item; [PROVED] /
+% [MACHINE-CHECKED] / [GAP] tags are the campaign's honest status
+% tags.  NOTHING in this file is new mathematics: statements are
+% transcribed from the notes, proofs are deferred to transcription.
+% ---------------------------------------------------------------
+\newcommand{\source}[1]{\par\smallskip\noindent\textbf{Source:} {#1}\par}
+\newcommand{\status}[1]{\textbf{[#1]}}
+
+\title{The Erd\H{o}s--Graham two-set problem, II:\\ the general case}
+\author{William Kasel\thanks{With extensive machine assistance from Claude
+(Anthropic) and from the SAT solvers CaDiCaL and OR-Tools CP-SAT; SAT
+certificates, code, and a one-command reproduction kit are available in the
+accompanying repository (see Data Availability).  All proofs have been verified
+by hand unless explicitly marked as machine-checked.}}
+\date{Skeleton draft: August 2026 --- NOT FOR CIRCULATION}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Call a set $S \subseteq \Z^+$ \emph{3-permutable} if it admits an arrangement
+(a bijection $\N \to S$) containing no monotone 3-term arithmetic progression.
+Davis, Entringer, Graham and Simmons (1977) partitioned $\Z^+$ into three
+3-permutable sets and asked whether two suffice (Erd\H{o}s--Graham 1979;
+problem \#197).  Part~I of this series proved that the canonical dyadic
+partition fails.  This paper studies the general problem.  Unconditionally, we
+prove a \emph{hereditary splitness} theorem: if $(A,B)$ is a partition of
+$\Z^+$ with both parts 3-permutable, then for every $k \ge 1$ and every residue
+$c \bmod 2^k$, the class-$c$ section of all but finitely many dyadic blocks
+meets both parts.  In particular no 3-permutable set contains infinitely many
+full dyadic blocks, none contains a full mod-$4$ class section of infinitely
+many blocks, none contains an infinite arithmetic progression, and every
+blockwise ``lattice'' partition --- with one part's block minority a full
+residue class modulo a power of two, under \emph{any} law of which part owns
+the class at each scale --- fails.  The proof runs through a new
+uniform-in-$p$ rigidity theorem for a three-axiom diagonal core $C3(p)$ on
+$(M, 2M]$, an affine restriction transport, and a density argument for
+diagonal pairs.  Conditionally, we assemble a proof that \emph{no} two-set
+partition works, modulo three explicitly stated open statements whose exact
+machine-verified status we document: a punctured-rung growth law, a coupled
+two-seam core closure, and a supply-cap (affordability) statement that we
+isolate as the problem's terminal open question.
+\end{abstract}
+
+% ===============================================================
+\section*{Status of this document}
+
+This is an assembly skeleton (campaign notes/86 \S3): section plan, full
+theorem statements, dependency graph, and per-section pointers to the
+campaign notes that already contain the finished mathematics.  Status tags:
+\status{PROVED} = complete hand proof in the named note, audit-cleared where
+audited; \status{MACHINE-CHECKED} = machine-verified at the stated scales
+with per-instance schema; \status{GAP} = open statement, stated here as a
+numbered Hypothesis.  The three Hypotheses (\ref{hyp:n3grow},
+\ref{hyp:n6a}, \ref{hyp:afford}) are the \emph{only} open inputs; every
+other statement in this skeleton is \status{PROVED}.
+
+% ===============================================================
+\section{Introduction}\label{sec:intro}
+
+Problem statement; history (DEGS 1977, Erd\H{o}s--Graham 1979, Geneson 2018,
+LeSaulnier--Vijay 2010, Hirose--Saito); summary of Part~I (the canonical
+dyadic partition fails: order-gadget reduction + $C3$ core rigidity at
+$p = 5$); the two main results of this paper:
+
+\begin{itemize}
+\item \textbf{Theorem A} (unconditional): the hereditary-splitness package ---
+  Lemma~Q, Theorem~ALT-DEAD, Corollary~HSPLIT (\S\ref{sec:chart}), resting on
+  Theorem~$C3(p)$ (\S\ref{sec:c3p}) and the Case-1 bridge at zero dust
+  (\S\ref{sec:case1}).
+\item \textbf{Theorem B} (conditional assembly): no two-set partition of
+  $\Z^+$ has both parts 3-permutable, modulo
+  Hypotheses~\ref{hyp:n3grow}--\ref{hyp:afford} (\S\ref{sec:assembly}).
+\end{itemize}
+
+\source{notes/50 (final dependency graph); paper/main.tex \S1 for the shared
+history; notes/86 \S2 (definitive gap list).  Prose to be written fresh.}
+
+% ===============================================================
+\section{Preliminaries and the block dichotomy}\label{sec:prelim}
+
+Arrangements, monotone 3-APs, 3-permutability; the midpoint-extremal rules
+R1--R4; dyadic blocks $B(t) = (2^t, 2^{t+1}]$; $C$-clean blocks; the rung
+theory $\Rung(a_1, a_2; M, D)$ (AP theory of $(M,2M] \setminus D$ plus all
+guarded attack units $(t_{a-2j} \prec b_j)$ of the pair $\{a_1, a_2\}$, where
+$b_j := M+j$, $t_i := 2M-i$).
+
+\begin{proposition}[Block dichotomy, N4]\label{prop:n4}
+For every partition $(A, B)$ of\, $\Z^+$ exactly one holds:
+\emph{(Case 1)} some part has infinitely many $C_0$-clean dyadic blocks for
+some constant $C_0$; \emph{(Case 2)} both parts' in-block presence diverges.
+\status{PROVED}
+\end{proposition}
+
+\source{notes/43 \S2, notes/46 \S4A; transcription straightforward.}
+
+Supporting unconditional results imported from Part~I: the orbit obstruction
+(lem:orbit), no-infinite-AP for finite reflector sets, the tower
+characterization, the $\times 4$ restriction lemma.  \status{PROVED, Part I}
+
+% ===============================================================
+\section{The affine core theorem $C3(p)$}\label{sec:c3p}
+
+The paper's engine.  Order $\prec$ on $(M, 2M]$, AP-free = no monotone
+in-block 3-AP; $m_0 := 3M/2$; for odd $p \ge 5$ the \emph{diagonal core} is
+\[
+  C3(p) \;=\; \{\, t_p \prec b_p,\;\; t_{p-2} \prec b_{p+1},\;\;
+  t_{p+5} \prec b_{p-2} \,\}
+\]
+(the attack units $j = p,\, p+1$ of attacker $3p$ and $j = p-2$ of attacker
+$3p+1$).
+
+\begin{lemma}[Zigzag; phase dichotomy]\label{lem:zd}
+Every $d$-ladder of a linear order is globally in one of two zigzag phases;
+adjacent rungs alternate leader/trailer.  \status{PROVED}
+\end{lemma}
+
+\begin{lemma}[Transfer lock $E(p)$]\label{lem:ep}
+For even $M \ge 2p+2$, on the odd $d=2$ ladder the four odd core values sit
+in two adjacent index pairs, and: $M \equiv 0 \pmod 4$:
+$b_p \prec b_{p-2} \iff t_{p-2} \prec t_p$; $M \equiv 2 \pmod 4$: the lock
+reverses.  \status{PROVED}
+\end{lemma}
+
+\begin{lemma}[Flood $P$]\label{lem:flood}
+The mirror/zigzag induction at a center $c$ over a $g$-class (POLAR, P2, G4
+instances), phase-blind.  \status{PROVED}
+\end{lemma}
+
+\begin{theorem}[$L1(p)$]\label{thm:l1p}
+Let $p \ge 5$ be odd, $M \equiv 0 \pmod 4$, $M \ge p+7$, and let $\prec$ be
+an AP-free order of $(M, 2M]$ satisfying $A2(p)$ and $A3(p)$.  Then
+$b_p \prec b_{p-2}$ and $t_{p-2} \prec t_p$.  \status{PROVED}
+\end{theorem}
+
+\begin{theorem}[$\mathrm{FLIP}(p)$]\label{thm:flipp}
+Let $p \ge 5$ be odd, $M \equiv 2p+6 \pmod 8$, $M \ge 2p+6$, and let $\prec$
+be AP-free satisfying $A2(p)$, $A3(p)$ and $b_p \prec b_{p-2}$.  Then
+$A1(p)$ is impossible.  \status{PROVED}
+\end{theorem}
+
+\begin{theorem}[$C3(p)$ rigidity]\label{thm:c3p}
+For every odd $p \ge 5$ and every $M \equiv 2p+6 \pmod 8$ with
+$M \ge 2p+6$, no AP-free order of $(M, 2M]$ satisfies $C3(p)$.  Moreover the
+flip class is exact: on the complementary even class $C3(p)$ is satisfiable
+at every tested $p$ \status{MACHINE-CHECKED}.  For $p \equiv 1 \pmod 4$ the
+flip class is $M \equiv 0 \pmod 8$, which contains every dyadic scale
+$2^m \ge 2p+6$.  \status{PROVED}
+\end{theorem}
+
+\source{notes/78 Part I (the affine write-up), toolkit notes/33 \S\S2--3;
+referee prose pass DONE, notes/86 \S1 (one display fix: FLIP$(p)$ Case~I
+step~3, ``$M > 2p+2$'' $\to$ ``$M > 2p-2$'').  Machine record: e123 schema
+$p = 5..25$, e180 exact boundary scan, solver cross-validation at 9 odd
+$p$-values, identity layer re-derived to $p = 39$ (notes/80 \S1.1).
+$p = 5$ instance = Part~I thm:c3core.}
+
+% ===============================================================
+\section{Case 1: pigeonhole, density, and the bridge}\label{sec:case1}
+
+\begin{lemma}[PIN]\label{lem:pin}
+Let $T$ be 3-permutable, $a_1 < a_2 \in T$ fixed, and $\mathbb{M}$ an
+infinite set of scales such that each $B(m)$, $m \in \mathbb{M}$, is
+$C$-clean for $T$ and $2^m > a_2$.  Then for all but finitely many
+$m \in \mathbb{M}$ the theory $\Rung(a_1, a_2; 2^m, D_m)$ is consistent
+($D_m$ the in-block dust).  \status{PROVED}
+\end{lemma}
+
+\begin{lemma}[DIAG-DENSE]\label{lem:diagdense}
+The number of diagonal usable pairs $\{3p, 3p+1\}$, $p \equiv 1 \pmod 4$,
+contained in $B(m)$ is at least $(2^m - 13)/12$.  \status{PROVED}
+\end{lemma}
+
+\begin{definition}[Rung hypothesis (H1)]\label{def:h1}
+For every $p \equiv 1 \pmod 4$, $p \ge 5$, and every $C \ge 0$ there is
+$m^*(p, C)$ such that for every $m \ge m^*(p, C)$ and every
+$D \subseteq B(m)$ with $|D| \le C$, the theory
+$\Rung(3p, 3p+1; 2^m, D)$ is inconsistent.
+\end{definition}
+
+\begin{theorem}[B1]\label{thm:b1}
+Assume \emph{(H1)}.  If $T \subseteq \Z^+$ has infinitely many $C_0$-clean
+dyadic blocks for some constant $C_0$, then $T$ is not 3-permutable.  No
+hypothesis on the partner is used.  \status{PROVED modulo (H1)}
+\end{theorem}
+
+\begin{corollary}[B1 at zero dust --- unconditional]\label{cor:b1zero}
+\emph{(H1)} at $C = 0$ is exactly Theorem~\ref{thm:c3p} (the three $C3(p)$
+units are among the rung's fired units).  Hence, unconditionally: no
+3-permutable set contains infinitely many full dyadic blocks.
+\status{PROVED}
+\end{corollary}
+
+The general-$C$ case of (H1) is the first open input:
+
+\begin{hypothesis}[N3-GROW, the $\ge$-side (N3-b)]\label{hyp:n3grow}
+For every odd $x \ge 11$, all large $M$, and every puncture set $D$ with
+$|D| < \lfloor (x-1)/4 \rfloor$, the theory $\Rung(x; M) \setminus D$ is
+inconsistent.  \status{GAP}
+\end{hypothesis}
+
+\source{notes/52 (PIN \S1.3, DIAG-DENSE \S2.1, B1 \S3.1) + Step-1 patch
+notes/74 \S I.4; audits notes/60/60-1.  Hypothesis~\ref{hyp:n3grow}: exact
+statement, proof skeleton LANE + SEV + (N3-b$'$), and the machine record
+(law $d^*(x) = \lfloor (x-1)/4 \rfloor$ exact and global at
+$x = 11/15/19/23/27$) in notes/74 Part I and notes/78 Part II.  The
+$\le$-side (N3-a) is \status{PROVED} modulo the single half-scale
+hypothesis GAP-SA-HALF (sharpness only, not consumed here).  Supporting:
+Theorem N2-COMPLETE (every adjacent pair fires at all residues,
+$M \ge x + 57$), notes/73 \status{MACHINE-CHECKED + partial schema}.}
+
+% ===============================================================
+\section{Hereditary 2-adic splitness (Theorem A)}\label{sec:chart}
+
+The paper's unconditional headline.  For $c \in \{0,1,2,3\}$ let
+$\Lambda_c(t) := \{ v \in B(t) : v \equiv c \pmod 4 \}$.
+
+\begin{lemma}[Q, quarter-tail]\label{lem:q}
+No 3-permutable set contains $\Lambda_c(t)$ for one fixed $c$ and infinitely
+many $t$.  \status{PROVED}
+\end{lemma}
+
+\noindent\emph{Proof shape (one page): the 4-adic chart
+$\varphi(x) = (x - c + 4)/4$ (resp.\ $x/4$) maps $\Lambda_c(t)$ exactly onto
+$B(t-2)$; restriction preserves permutability, affine maps preserve 3-APs in
+both directions; the image has infinitely many full dyadic blocks ---
+contradiction with Corollary~\ref{cor:b1zero}.}
+
+\begin{theorem}[ALT-DEAD]\label{thm:altdead}
+Call a scale $t$ \emph{4-pure} for a partition $(A,B)$ if some mod-4 class
+is monochromatic on $B(t)$.  If infinitely many scales are 4-pure, then $A$
+and $B$ are not both 3-permutable.  \status{PROVED}
+\end{theorem}
+
+\begin{corollary}[Lattice colorings die at every ownership law]
+\label{cor:lattice}
+Every blockwise mod-4 lattice coloring is dead --- constant, alternating at
+any run-length law, unbounded-run, procrastinating ownership all included;
+every punctured near-lattice with on-class dust is dead at any puncture
+count.  \status{PROVED}
+\end{corollary}
+
+\begin{corollary}[HSPLIT, hereditary splitness]\label{cor:hsplit}
+For every partition $(A,B)$ with both parts 3-permutable, every $k \ge 1$
+and every $c \bmod 2^k$, the section $(c + 2^k\Z) \cap B(t)$ is bichromatic
+for all but finitely many $t$.  In particular every eventually
+$2^k$-periodic block minority is dead.  \status{PROVED}
+\end{corollary}
+
+\begin{corollary}[L-NOTAIL]\label{cor:notail}
+No 3-permutable set contains an infinite arithmetic progression.
+\status{PROVED} \emph{(two proofs: DEGS77 + restriction + affine
+invariance; or as a corollary of Lemma~Q on the lattice family.)}
+\end{corollary}
+
+\begin{remark}[Q-ODD, stated only]\label{rem:qodd}
+The odd-modulus analogue (class sections at modulus $q$ odd, e.g.\ $q = 3$)
+transports onto ratio-2 windows at non-dyadic anchors with $O(1)$ seam dust
+and dies modulo the off-diagonal lane write-ups (BRIDGE1-AF + GAP-N2-UNIF
+$+$ Hypothesis~\ref{hyp:n3grow} at $C = 2$).  Not claimed here.
+\status{stated}
+\end{remark}
+
+\source{notes/82 \S2 (complete hand proofs of Q/ALT-DEAD/HSPLIT + the
+consistency checks \S2.4), notes/80-pincer \S3 (L-NOTAIL); adversarial
+machine verification notes/81 \S2 (e186: chart exactness 44/44, AP
+transport 44\,400/44\,400, units-in-rung 6/6, fresh rung UNSAT at $p=13$,
+witness 4-purity, Geneson-$W$ $\Lambda$-scan 0 hits $t = 5..200$).
+Rider-free after notes/86 \S1.}
+
+% ===============================================================
+\section{Case 2, demand I: the coupled two-seam core}\label{sec:core}
+
+The finite engine.  $\CI(m)$: three blocks $(m, 8m]$, both teams
+block-ordered at both seams, presence bounds (balanced or constant).
+
+Proved skeleton to transcribe: Lemma U, the anchor comparisons A1--A9,
+E2/C, P$'$, W, PAR, FG-high, Theorem H, Lemma J, the DICH case tree, Lemma
+D3, Lemma PH$+$, ASM$'$/COV-W$'$ compositions; Lemma PURE (class-$c$
+subsystem = halved double fan) and Theorem P-ARM$'''$; Theorem AFF$^+$ +
+Lemma MON.  \status{PROVED}  Machine layer: $\CI(m)$ UNSAT at
+$m = 16, 20, 24, 28, 32, 48, 64, 80$; bridge chains at six scales; law
+families at eight scales with blind hits.  \status{MACHINE-CHECKED}
+
+\begin{hypothesis}[N6a closure]\label{hyp:n6a}
+The coupled core fires at every anchor: $\CI(m)$ is inconsistent for all
+$m \ge 16$ (balanced bounds) and all $m \ge 48$ (constant $(2,2,2)$
+bounds).  \status{GAP --- uniformization pool: GAP-RES (classify SAT-alive
+fan pairs uniformly in window length) + ThW1$'$-ROBUST/-TOL + DICH-F2/CASC
++ SPLIT + LLOP-$\alpha/\beta$ + ASM$'$ = (OV-$\forall$); authoritative
+inventory notes/77 \S7.}
+\end{hypothesis}
+
+\source{notes/51, 55, 56, 57, 58, 59, 66, 77; audits notes/60/61-2/76.}
+
+% ===============================================================
+\section{Case 2, demand II: the telescope and the demand theorem}
+\label{sec:telescope}
+
+To transcribe: the 2-adic anchor chain; T-LEDGER (disjoint 4-adic payment
+bookkeeping), T-FRESH (fresh mints, modulo GAP-F-schema), L-HOME/L-2PRICE/
+L-SQUEEZE, J-DOWN (three-line restriction collapse), the boot-window floors
+J-BOOT and F-BOOT (\status{PROVED} modulo the non-gating counting gaps
+GAP-CMIN/FTOT), and the composition:
+
+\begin{theorem}[T-TEL$''$, demand side]\label{thm:ttel}
+Assume Hypothesis~\ref{hyp:n6a}.  Then every valid Case-2 pair pays, along
+every 2-adic anchor chain, an infinite pairwise-disjoint system of forced
+fresh inversion pairs --- at density $\ge 1$ per two octaves (and $1$ per
+octave modulo GAP-F-schema) --- each mint convertible (P3) to a displaced
+value in the donation ledger.  No budget hypothesis is used.
+\status{PROVED modulo Hypothesis~\ref{hyp:n6a}}
+\end{theorem}
+
+\source{notes/70 (ledger lemmas), notes/71 (boot window), notes/72 \S6 (the
+composed statement + link-status table), notes/75 (J-DOWN, P-CAT, LEAK,
+NEST).}
+
+% ===============================================================
+\section{The corner, and the supply question}\label{sec:supply}
+
+What a YES would now require.  To transcribe: the dodger-corner axes
+(i)/(ii)/(iii) and their finite inhabitation (e179/e185 witnesses); the
+mod-4 lattice characterization of all realized inhabitants; Theorem
+AFFORD-CORNER / AFFORD-DEMAND ($\Theta(m^2)$ seam inversions and
+presence-scale displaced sets per anchor on the lattice family,
+$\Theta(N)$ cumulative) \status{PROVED}; Lemmas $\gamma$-RIGID, MINT-1,
+D-FLOOR/D-SAT, L-DOUBLE-DUTY \status{PROVED}; the sparse-core demand
+strengthening (GAP-SPARSE-CORE machine family + the AAA covering closure
+for $m \ge 26$) \status{PROVED + MACHINE-CHECKED}; the no-go results
+NG1--NG4 \status{PROVED}.  By \S\ref{sec:chart} the entire arithmetic
+corner is dead; what survives is exactly:
+
+\begin{hypothesis}[AFFORD$'$, the terminal supply cap]\label{hyp:afford}
+No valid Case-2 pair can fund the T-TEL$''$ mint system --- at least one
+displaced value per two octaves, in single-use colored values --- forever.
+Sharpest surviving special case (all others are closed by
+\S\ref{sec:chart}): the cap for gap-$\ge 3$, 2-adically split
+(HSPLIT-generic, hence aperiodic) block minorities, of which no inhabitant
+satisfying all corner axes is known.  \status{GAP --- the problem's
+terminal open statement}
+\end{hypothesis}
+
+\source{notes/62 (AFFORD$'$ isolation, NG4), notes/79 (tournament),
+notes/80 + notes/80-pincer (adjudication, pincer, AFFORD-CORNER),
+notes/81/82 (chart kill + SPLIT residue).}
+
+% ===============================================================
+\section{The conditional assembly (Theorem B)}\label{sec:assembly}
+
+\begin{theorem}[Assembly]\label{thm:assembly}
+Assume Hypotheses~\ref{hyp:n3grow}, \ref{hyp:n6a} and \ref{hyp:afford}.
+Then no partition of\, $\Z^+$ into two sets has both parts 3-permutable.
+\end{theorem}
+
+\begin{proof}[Proof shape]
+By Proposition~\ref{prop:n4}, Case 1 or Case 2.  Case 1 dies by
+Lemma~\ref{lem:pin} + Theorem~\ref{thm:b1}, whose hypothesis (H1) is
+Theorem~\ref{thm:c3p} at $C = 0$ plus Hypothesis~\ref{hyp:n3grow} at
+$C > 0$.  In Case 2, Hypothesis~\ref{hyp:n6a} closes the coupled core at
+every large anchor; Theorem~\ref{thm:ttel} forces the infinite disjoint
+fresh-payment system; Hypothesis~\ref{hyp:afford} caps supply below it.
+\end{proof}
+
+\subsection*{Dependency graph}
+
+\begin{verbatim}
+                 N4 dichotomy [P]
+                /               \
+        Case 1                   Case 2
+          |                        |
+   PIN [P]  DIAG-DENSE [P]   CI(m) core: skeleton [P]
+          \   |                machine x8 scales [M]
+           B1 [P mod H1]         |    ... Hyp N6a [GAP]
+          /        \             |
+  C3(p) [P]     Hyp N3-GROW    T-TEL'' demand [P mod N6a]
+ (Z/D/E(p)/P     (N3-b) [GAP]    |
+  L1(p), FLIP(p))                |
+          |                    Hyp AFFORD' [GAP]
+   B1 at C0=0 [P]              (residue: SPLIT corner;
+          |                     all arithmetic shapes dead
+   Lemma Q [P]                  via Lemma Q/ALT-DEAD)
+          |                        |
+   ALT-DEAD + HSPLIT [P]  ---->  kills the whole known
+   (+ L-NOTAIL [P])              YES-corner at omega
+          \                       /
+           +---- Theorem B [conditional] ----+
+   Theorem A = Q/ALT-DEAD/HSPLIT/L-NOTAIL, unconditional
+\end{verbatim}
+
+\noindent [P] = \status{PROVED}, [M] = \status{MACHINE-CHECKED},
+[GAP] = open Hypothesis.
+
+% ===============================================================
+\section{Machine verification and reproducibility}\label{sec:machine}
+
+To transcribe from the certificates index (notes/50 \S7): the strict schema
+executors (e113/e123 discipline), independent closure engines, independent
+SAT encoders and cross-validations, the two full adversarial audit cycles
+plus the final spot-audit (zero structural breaks), and the e186
+adversarial verification of \S\ref{sec:chart}.  Data availability mirrors
+Part~I.
+
+% ===============================================================
+\section*{Section-to-notes map (assembly checklist)}
+
+\begin{center}
+\begin{tabular}{l l l}
+\hline
+Section & finished mathematics in & state \\
+\hline
+\S\ref{sec:prelim}  & notes/43, 46, 50 \S0; Part I & transcribe \\
+\S\ref{sec:c3p}     & notes/78 Part I + notes/33 + notes/86 \S1 & transcribe (prose pass done) \\
+\S\ref{sec:case1}   & notes/52 + notes/74 \S I.4 + notes/73 & transcribe \\
+\S\ref{sec:chart}   & notes/82 \S2 + notes/81 \S2 + notes/80-pincer \S3 & transcribe (rider-free) \\
+\S\ref{sec:core}    & notes/51, 55--59, 66, 77 & transcribe + Hyp \ref{hyp:n6a} open \\
+\S\ref{sec:telescope} & notes/70, 71, 72 \S6, 75 & transcribe \\
+\S\ref{sec:supply}  & notes/62, 79, 80, 80-pincer, 81, 82 & transcribe + Hyp \ref{hyp:afford} open \\
+\S\ref{sec:assembly} & notes/50 \S5 & transcribe \\
+\S\ref{sec:machine} & notes/50 \S7 + audits 60/60-1/61-2/76/80 & transcribe \\
+\hline
+\end{tabular}
+\end{center}
+
+A publishable Part II exists at two truncation points: (a) \emph{now}, as
+``structure + Theorem A'': \S\S\ref{sec:prelim}--\ref{sec:chart} are
+unconditional and complete (this is the recommended cut); (b) in full, once
+any of Hypotheses~\ref{hyp:n3grow}--\ref{hyp:afford} moves.
+
+\section*{Data availability}
+As in Part I: repository with SAT certificates, schema executors, audit
+scripts, and a one-command reproduction kit.
+
+\begin{thebibliography}{9}
+\bibitem{DEGS77} J.~A. Davis, R.~C. Entringer, R.~L. Graham,
+G.~J. Simmons, \emph{On permutations containing no long arithmetic
+progressions}, Acta Arith.\ 34 (1977), 81--90.
+\bibitem{EG79} P.~Erd\H{o}s, R.~L. Graham, \emph{Old and new problems and
+results in combinatorial number theory}, Monogr.\ Enseign.\ Math.\ 28
+(1980).
+\bibitem{Gen18} J.~Geneson, \emph{Forbidden arithmetic progressions in
+permutations of subsets of the integers}, 2018.
+\bibitem{LV10} T.~D. LeSaulnier, S.~Vijay, \emph{On permutations avoiding
+arithmetic progressions}, 2010.
+\bibitem{HS24} M.~Hirose, S.~Saito, arXiv:2404.13510.
+\bibitem{PartI} W.~Kasel, \emph{Structural rigidity in the
+Erd\H{o}s--Graham two-set permutation problem} (Part I), draft 2026.
+\end{thebibliography}
+
+\end{document}

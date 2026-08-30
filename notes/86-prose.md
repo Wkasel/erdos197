@@ -290,3 +290,44 @@ route).
 zero residual); the entire arithmetic YES-corner dead at ω with the
 last rider now discharged; the YES requires a 2-adically generic
 gap-≥3 coloring (never constructed) AND ¬AFFORD on it.
+
+---
+
+## 3. Paper-2 skeleton: paper2/main.tex
+
+Drafted and compiled (tectonic, clean): **"The Erdős–Graham two-set
+problem, II: the general case"** — paper/main.tex conventions
+(11pt article, amsthm envs, same author/thanks block).  Contents,
+NO new mathematics:
+
+- Theorem A (unconditional headline): the hereditary-splitness
+  package — Lemma Q, Theorem ALT-DEAD, Cor. HSPLIT, Cor. L-NOTAIL —
+  stated verbatim from notes/82/80-pincer, tagged [PROVED],
+  rider-free per §1.
+- Theorem B (conditional assembly, notes/50 §5) modulo exactly
+  three numbered Hypotheses = the gating gaps of §2.2: N3-GROW
+  (N3-b), N6a closure (sub-pool per notes/77 §7), AFFORD′ (with the
+  SPLIT-residue sharpening stated inside the hypothesis).
+- Full statements transcribed for: C3(p)/L1(p)/FLIP(p)/E(p)
+  (notes/78 Part I), PIN/DIAG-DENSE/(H1)/B1 + the unconditional
+  C₀ = 0 corollary (notes/52), N4 (notes/43/46), T-TEL″ (notes/72
+  §6), Q-ODD [stated only].
+- Dependency graph (verbatim block, [P]/[M]/[GAP] legend) mirroring
+  notes/50; section-to-notes assembly checklist table; the
+  recommended truncation cut (a): §§2–5 = "structure + Theorem A"
+  is publication-complete NOW; cut (b) = full paper when a
+  hypothesis moves.
+
+Every section of the skeleton names the notes that already contain
+its finished mathematics; the only [GAP]-tagged objects in the file
+are the three Hypotheses.  File: paper2/main.tex (compiles to
+main.pdf, 113 KB).
+
+## 4. Session summary
+
+| deliverable | state |
+|---|---|
+| C3(p) referee prose pass (notes/82's sole ALT-DEAD rider) | DISCHARGED (§1); one cosmetic paper fix recorded; Lemma Q / ALT-DEAD / HSPLIT rider-free |
+| tag-graph reconciliation notes 50–82 | §2.1 table, 14+ stale tags traced to closers; notes/50 rider lines updated |
+| DEFINITIVE gap list | §2.2 — gating: GAP-AFFORD′ (residue AFFORD‴-SPLIT), GAP-N6a sub-pool, GAP-N3-GROW (N3-b); hardening: CMIN, F-schema, J-margin/MARGIN-MASS, N2-UNIF, SA-HALF, V*, ZERO, SPARSE-CORE catalogue |
+| paper-2 skeleton | paper2/main.tex, compiles; Theorem A unconditional cut identified |

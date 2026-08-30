@@ -1906,3 +1906,23 @@ gaps and a clean adversarial audit; the YES now requires a
 refutation (S5-species colorings exist), the supply cap has zero
 completed strategies (NG1–NG4 stand), and α_ℕ(3) density theory
 remains open.  HSPLIT build verdicts pending (in flight on pods).
+
+### FRONT PROSE+ASSEMBLY-PREP (2026-08-30, notes/86): C3(p) prose
+### rider DISCHARGED, tag graph reconciled, paper-2 skeleton drafted
+
+- The referee prose pass of notes/78 Part I vs notes/33 (notes/86
+  SS1): every identity/congruence/index/mirror/window re-derived by
+  hand; ONE cosmetic slip (FLIP(p) Case I step 3: "M > 2p+2" should
+  read "M > 2p-2"; conservative, zero effect).  Lemma Q / ALT-DEAD /
+  Cor. HSPLIT are now RIDER-FREE end to end.
+- Tag reconciliation notes 50-82 (notes/86 SS2): 14+ dangling tags
+  traced (RHO/ALT-old/AFFORD/JOINT superseded; COMP refuted;
+  VMIN0-growth discharged; J-schema absorbed; FW-boundary closed by
+  notes/77; SPAN-4 -> GAP-RES; AFFORD-double-prime-ALT retired;
+  L-NOTAIL = corollary; MINT-LOC resolved).  DEFINITIVE gap list:
+  gating = AFFORD-prime (residue AFFORD-triple-prime-SPLIT) + N6a
+  sub-pool + N3-GROW(N3-b); GAP-N2-DIAG now ZERO-residual.
+- paper2/main.tex drafted + compiles (tectonic): Theorem A =
+  Q/ALT-DEAD/HSPLIT/L-NOTAIL unconditional package (publishable cut
+  NOW); Theorem B = assembly modulo exactly the three gating
+  hypotheses; dependency graph + section-to-notes map inside.
