@@ -161,7 +161,7 @@ def run_cmin(M, tmin, timeout, workers):
     stream(row)
 
 
-def run_bm1vac(M):
+def run_bm1vac(M, tcap=None):
     from pysat.solvers import Cadical195
     from pysat.card import CardEnc, EncType
     low, bm1, b0, b1 = split_sets(M)
@@ -185,16 +185,31 @@ def run_bm1vac(M):
     # Bm1∩A mixed-parity (⟺ Bm1∩B mixed, since |Bm1∩A| = #odds(Bm1))
     cls.append([ai[v] for v in bm1 if v % 2 == 1])
     cls.append([ai[v] for v in bm1 if v % 2 == 0])
+    if tcap is not None:
+        # impurity t ≤ tcap in the canonical (majority-odd) labeling:
+        # t = #evens in A-low if A majority-odd.  Symmetrize: cap BOTH
+        # (#evens in A-low) and (#odds in A-low) by "≥ 3M/4 − tcap on
+        # the majority side" — i.e. one parity count ≤ tcap.
+        lo = [ai[v] for v in low if v % 2 == 1]
+        le = [ai[v] for v in low if v % 2 == 0]
+        selo, nxt = nxt + 1, nxt + 1        # A majority-odd selector
+        for lits, s in ((le, selo), (lo, -selo)):
+            enc = CardEnc.atmost(lits=lits, bound=tcap, top_id=nxt,
+                                 encoding=EncType.seqcounter)
+            nxt = max(nxt, enc.nv)
+            cls += [c + [-s] for c in enc.clauses]
+        cls.append([selo, -selo])
     t0 = time.time()
     with Cadical195(bootstrap_with=cls) as s:
         ok = s.solve()
         model = set(l for l in s.get_model() if l > 0) if ok else None
     el = round(time.time() - t0, 1)
-    row = {'tag': f'bm1vac_M{M}',
+    row = {'tag': f'bm1vac_M{M}' + ('' if tcap is None else f'_t{tcap}'),
            'verdict': 'SAT' if ok else 'UNSAT', 'time': el}
     if ok:
         Aset = {v for v in V if ai[v] in model}
         row['anatomy'] = anatomy(M, Aset)
+        row['S_check'] = compute_S(M, Aset)
         row['colorA'] = sorted(Aset)
     stream(row)
 
