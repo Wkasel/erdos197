@@ -161,6 +161,21 @@ order/color variables, and no sound variable-XOR reformulation exists at
 the encoding level.  CMS's c3core win is inprocessing (distillation +
 ternary resolution over the dense transitivity lattice), not Gauss.
 
+## 5. NEW VERDICTS (landing during the sprint)
+
+- **bal@24 v=2: UNSAT [854.4 s, sprint-B, e127 encoder via
+  solve_budget_sub]** — v*3(24) >= 3; first new point on the
+  GAP-V* growth curve beyond the recorded v=1 (54.1 s).  The
+  growth24-v16 C&C was abandoned (measured per-cube cost at conf=3e6
+  implied ~47 days on quota cores); replaced by the mono ladder
+  v = 2, 3, 4, 6, 8 with 12 h caps (running).
+- bal@16 v=5 structured-coloring probes (conf 3e7 each): evenA (the
+  v=80 witness's B0 shape) **UNSAT** [1665 s] — the parity coloring
+  does not extend at v=5.  oddA/lowA/highA/pairs/mod4 probes queued.
+- bal@16 v=5 C&C main swarm: 300+/6435 balanced-B0 cubes refuted, zero
+  SAT, sustained ~4.7 cubes/min on sprint-D's 10 quota cores
+  (projected ~20 h to full refutation if UNSAT).
+
 ## Log
 
 - [launch] note created; export tooling next.
