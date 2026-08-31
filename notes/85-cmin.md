@@ -48,7 +48,8 @@ low-impure (some — equivalently, by the balance count
 parities).  For z ∈ B2, c_T(z) = #{(u, y) ∈ (low∩T) × (B1∩T) :
 2y − u = z}; S = Σ_{z∈B2} min(c_A, c_B); cmin(M) = min S.
 [GAP-CMIN]: cmin(M) ≥ M.  Measured EXACT (= M): 8/12/16 (notes/71)
-+ 20 (notes/76); 24/28/32 launched this session (§7).
++ 20 (notes/76) + 24/28/32 (this session, §7) — seven scales,
+extremal-frame witness at every one.
 
 **Canonical labeling.**  Call A the team owning the majority of
 low ODDS (relabel teams and/or parities so this holds and the
@@ -296,7 +297,7 @@ and both reduction inequalities tight.
 
 | tag | before | after |
 |---|---|---|
-| GAP-CMIN | proof skeleton + extremal cell (M ≥ 32) + "finite drafting task" | **Theorem CMIN-SMALLT [PROVED]**: S ≥ M whenever 16t ≤ M − 14 (all M ≡ 0 mod 4); + Lemma BM1-VAC [PROVED]; + measured cmin = M at 8/12/16/20 (24/28/32 in flight).  Residue renamed **[GAP-CMIN-BIGT]** (t > (M−14)/16, M ≥ 36) |
+| GAP-CMIN | proof skeleton + extremal cell (M ≥ 32) + "finite drafting task" | **Theorem CMIN-SMALLT [PROVED]**: S ≥ M whenever 16t ≤ M − 14 (all M ≡ 0 mod 4); + Lemma BM1-VAC [PROVED]; + measured cmin = M at all SEVEN scales 8..32.  Residue renamed **[GAP-CMIN-BIGT]** (t > (M−14)/16, M ≥ 36) |
 | GAP-FHALF (f(M) ≥ M/2) | reduces to GAP-CMIN | **CLOSED on M ≤ 32** (f measured EXACT at 8/12/16/20/24/28/32 — that IS the inequality there); for M ≥ 36 [PROVED mod GAP-CMIN-BIGT] via the verbatim reduction |
 | Theorem J-BOOT | PROVED mod GAP-CMIN | **UNCONDITIONAL on the boot window and beyond: (v,0) UNSAT for v < M/2 at every M ≡ 0 mod 4, 12 ≤ M ≤ 32** (the measured f at the seven scales is load-bearing; CMIN-SMALLT adds the uniform small-t layer from 32 up); mod GAP-CMIN-BIGT for M ≥ 36 — where Theorem J-DOWN (notes/75) already owns the verdict.  **The (·,0) demand family is covered at every anchor with NO appeal to BIGT**; J-BOOT remains the N6a-independent leg, now gap-free through 32 |
 | boot window | closed "modulo one counting lemma" | closed, full stop, for the finite regime: v_min(0)(8) = 12 (anatomy notes/71 §2), v_min(0)(M) ≥ M/2 for M = 12..28 unconditional, v_min(0)(M) = ∞ for M ≥ 32 [J-DOWN, mod N6a] |
@@ -310,8 +311,9 @@ M = 32 and one clean statement (BIGT) from uniform.
 
 ## 9. Queue at close
 
-1. Harvest §7's in-flight runs; if cmin(24/28/32) = M lands, GAP-
-   CMIN's measured floor meets the theorem with no scale hole.
+1. Harvest the remaining in-flight runs (cmin_t2 at 20/24 on
+   sprint-B; ftot(20) on sprint-C).  cmin(24/28/32) = M LANDED —
+   the measured floor meets the theorem with no scale hole.
 2. [GAP-CMIN-BIGT]: the only surviving mathematics of this front.
    Attack sketch: in the big-t regime BOTH parities have ≥ t ≥
    M/16 channels on EACH team; a two-sided sweep with the ROLES of
