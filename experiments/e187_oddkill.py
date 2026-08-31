@@ -544,6 +544,37 @@ def main():
     elif mode == 'tower':
         res = run_tower(args or [24, 32, 40, 48, 56, 64, 104, 120])
         path = os.path.join(DATA, 'e187_oddkill_tower.json')
+    elif mode == 'win':
+        # arbitrary window lengths N (A = floor((N-1)/2)): supports the
+        # uniform-in-N reading of the region law at lengths outside the
+        # full-scale / W2 shapes (e.g. the halved windows of LAT-LOW).
+        res = {}
+        for N in (args or [100, 123, 124, 137, 200, 251]):
+            A = (N - 1) // 2
+            nR = ncov = nfw = 0
+            for (q, p) in odd_grid(A):
+                if not in_region(q, p, N):
+                    continue
+                nR += 1
+                c = s_cert(q, p, N)
+                if c:
+                    check_cert(c)
+                elif fg_high(q, p, N):
+                    pass
+                else:
+                    c2 = fw2_cert(q, p, N)
+                    if c2:
+                        check_fw2(c2)
+                    else:
+                        ck = fwk_cert(q, p, N)
+                        assert ck, f'WIN REGION LAW violated {(q, p, N)}'
+                        check_fwk(ck)
+                    nfw += 1
+                ncov += 1
+            log(f'WIN N={N} (A={A}): R-pairs {nR}, ALL covered '
+                f'({nfw} via FW2/FWK)')
+            res[N] = dict(R=nR, cov=ncov, fw=nfw)
+        path = os.path.join(DATA, 'e187_oddkill_win.json')
     else:
         raise SystemExit(f'unknown mode {mode}')
     with open(path, 'w') as f:

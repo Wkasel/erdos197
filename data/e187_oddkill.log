@@ -66,3 +66,9 @@ FRESH M=208: odd grid 12544; S certs built+VERIFIED 10281 (82.0%); S1-region 452
    e142 closure spot-check x10: mismatches none [9s]
 FRESH M=240: odd grid 16384; S certs built+VERIFIED 13480 (82.3%); S1-region 5983, all with certs; R-pairs 12146, ALL covered (168 via FW2 certs, verified) [10s]
    e142 closure spot-check x10: mismatches none [13s]
+WIN N=100 (A=49): R-pairs 387, ALL covered (0 via FW2/FWK)
+WIN N=123 (A=61): R-pairs 629, ALL covered (3 via FW2/FWK)
+WIN N=124 (A=61): R-pairs 636, ALL covered (2 via FW2/FWK)
+WIN N=137 (A=68): R-pairs 802, ALL covered (3 via FW2/FWK)
+WIN N=200 (A=99): R-pairs 1820, ALL covered (13 via FW2/FWK)
+WIN N=251 (A=125): R-pairs 2965, ALL covered (29 via FW2/FWK)
