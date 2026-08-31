@@ -165,3 +165,15 @@ itself the refutation), 20–30 (technical/NO-direction notes;
 notes/30 is a draft with honest per-step gap tags, superseded by
 notes/33 as marked in STATUS).  MORNING-REPORT.md already carries
 a historical-snapshot banner.
+
+---
+
+## Item 5 — Roth sentence fixed (review item 8)
+
+notes/82 §3.2 said "one team always has upper density ≥ 1/2, so
+Roth already floods both teams with 3-APs" — wrong quantifier:
+subadditivity of upper density guarantees d̄ ≥ 1/2 for at least
+ONE team only; the other may have upper density below any Roth
+threshold (even 0).  Fixed in place ("floods THAT team"); the
+argumentative point (containing 3-APs is not an obstruction)
+survives unchanged.

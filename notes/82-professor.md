@@ -280,9 +280,13 @@ Three walls, each already measured by the campaign:
 2. **APs in the SET are not obstructions.**  Szemerédi/vdW
    applied to the minority yields long APs inside the team — but
    permutable sets can have density 2/3 (Geneson) and every
-   finite set is permutable (DEGS77 constructions); one team
-   always has upper density ≥ 1/2, so Roth already floods both
-   teams with 3-APs.  Death never comes from containing APs; it
+   finite set is permutable (DEGS77 constructions); at least one
+   team has upper density ≥ 1/2 (upper density is subadditive), so
+   Roth already floods THAT team with 3-APs — while it may well be
+   the permutable-looking one.  [Corrected, notes/88 item 5: the
+   original line said "both teams" — false; the other team can
+   have upper density < any Roth threshold.]  Death never comes
+   from containing APs; it
    comes from pair+window ORDER theories.  Only the infinite AP
    is fatal (L-NOTAIL) — and the alternating corner contains
    none by construction.
