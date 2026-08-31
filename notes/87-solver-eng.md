@@ -114,6 +114,32 @@ and re-solving mono on a solver polluted by a prior assumption query
 took 575 s vs 24 s fresh (incremental reuse cuts both ways across
 heterogeneous queries).
 
+## 3. OPERATIONAL DISCOVERY — the pods are cgroup-quota'd far below nproc
+
+cpu.cfs_quota/period measured mid-sprint after C&C workers sat at 20 %
+CPU in R state: **sprint-B 10.2 cores (nproc 48), sprint-C 10.2 (nproc
+64), sprint-D 10.2 (nproc 24), main 13.6 (nproc 64)** — the fleet is
+~44 quota-cores total, not ~200.  Every historical "60 workers" run has
+been time-slicing ~10 cores.  All C&C swarms resized to quota:
+bal16v5 -> sprint-D (idle, 10 w), growth24v16 -> sprint-B (8 w),
+fresh24v65 -> sprint-C (5 w, shares quota with the sibling session's
+e174/vmus/e168 jobs).  This also recalibrates every wall-clock in the
+measurement record: monolithic TIMEOUT cells were competing inside the
+same 10-core quota as their neighbors.
+
+Additional engine rows: CMS via pycryptosat CRASHED on both big
+attempts (SIGABRT loading c3core@1024 = 357M clauses; SIGILL 1.5 h into
+bal16v5) — the pip wheel is not trustworthy at this scale; a proper
+cryptominisat5 CLI build is in progress (pip-installed cmake, zlib
+disabled).  CMS-lazy loop (e189_cms_lazy) validated correct at 24/20
+(UNSAT/SAT+witness) but is slower than Cadical-lazy at 512 (>305 s vs
+108 s): CMS's restart-heavy incremental behavior wastes the CEGAR
+loop's warm state.  kissat on bal16v5 mono: SIGSEGV at 9538 s (no
+verdict).  Windowed-transitivity subsets (hoped to make 2048+ eager
+exports feasible): minimal UNSAT window scales as w*(M) ~ M-8
+(8/16/24/32 at M=16/24/32/40) — half the block, no asymptotic savings;
+route dead.
+
 ## Log
 
 - [launch] note created; export tooling next.
