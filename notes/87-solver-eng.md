@@ -24,6 +24,47 @@ generators with FULL transitivity materialized instead of lazy CEGAR
 (a superset of every lazily-added clause; UNSAT/SAT semantics of the
 full theory, no closure caveat).
 
+## 1. Track 3 (gmpy2) — DONE first: measured multipliers
+
+nk_cert.py (erdos97) now takes --gmpy2: module-level Q = Fraction |
+gmpy2.mpq, hot-path functions (solve_exact_on_support,
+verify_cert_inline, shortcut normalization) all routed through Q;
+worker init propagates the flag.  Benchmark nk_bench_gmpy2.py, single
+core, same 1000 n=10 types, warmed up, cross-verified (every mpq cert
+re-verified exactly under Fraction — 1000/1000 OK):
+
+| config | total | exact-arith inside | per-type |
+|---|---|---|---|
+| Fraction, production (shortcut on) | 24.55 s | 0.22 s | 24.6 ms |
+| gmpy2, production | 23.72 s | 0.38 s | 23.7 ms |
+| Fraction, LP path forced | 38.36 s | 4.97 s | 38.4 ms |
+| gmpy2, LP path forced | 25.54 s | 0.89 s | 25.5 ms |
+
+**Multipliers: exact-arithmetic hot path 5.6x (mpq); end-to-end LP path
+1.50x; production end-to-end 1.03x** — because at n = 10 the
+nonpositive-row shortcut kills ~everything and Fraction work is < 1 %
+of runtime; the float LP dominates the non-shortcut path.  gmpy2 is
+real but only matters where the exact path fires.  (Production
+exact-arith shows 0.59x = mpq constructor overhead on the trivial
+shortcut normalizations — the shortcut path does almost no rational
+arithmetic at all.)
+
+n=11/n=12 feasibility: parallel sharded count of the n = 11 witness
+enumeration launched (nk_enum_par.c, -first shard on W[0], sprint-D;
+NV=10 shard-sum validation first).  Projection to follow from the
+measured count + per-type cost at n = 11 (sampled from the head of the
+n = 11 enumeration).
+
 ## Log
 
 - [launch] note created; export tooling next.
+- e189_dimacs_export.py: bal (verbatim e127 clause capture via recording
+  solver class), c3core (e166 + full transitivity), coupled (e165b +
+  full transitivity).  Local sanity: bal16v0 UNSAT 1.2s / c3@16 UNSAT /
+  c3@20 SAT / coupled(2,2,2)@32 UNSAT 6.5s — all match the record.
+- kissat 4.0.4 built on sprint-B + sprint-C; pycryptosat 5.14.7 (CMS)
+  installed both; cryptominisat CLI not buildable (no cmake on pods) —
+  CMS driven via e189_cms.py (DIMACS -> pycryptosat, verbose stats).
+- In flight: kissat c3core@512 + coupled@128 + CMS c3@512 + cadical-lazy
+  baselines e166@512/e165b@128 (sprint-B); kissat + CMS bal16v5
+  (sprint-C); bal24v16 export (sprint-C).
