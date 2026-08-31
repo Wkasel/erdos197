@@ -265,6 +265,11 @@ known scaled-zone species (§3).
 
 * Species soundness: [PROVED] (Lemmas CC, FW, GL — notes/59/77;
   every certificate this front emits is independently replayed).
+  Checker hardening: mutation suite (e117-style, inline session
+  run) — 100/100 load-bearing corruptions rejected across the
+  three checkers (S: 68/68 on u/w/x/orbit/window fields, the only
+  accepted mutations being the unused bookkeeping field 't';
+  FW2: 24/24; FWK: 8/8).
 * S1 + COR sub-region: [PROVED] (§1.3-1.4) — a hand theorem with
   no machine residue.
 * R(N) coverage: [MACHINE-CHECKED at 26 windows] — the uniform-in-N
