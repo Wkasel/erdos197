@@ -140,6 +140,27 @@ exports feasible): minimal UNSAT window scales as w*(M) ~ M-8
 (8/16/24/32 at M=16/24/32/40) — half the block, no asymptotic savings;
 route dead.
 
+## 4. FINAL SPEEDUP TABLE (updated as rows land)
+
+| instance | baseline (Cadical195, existing method) | kissat 4.0.4 | cryptominisat 5.14.7 | C&C (e189_cnc2, quota-cores) |
+|---|---|---|---|---|
+| c3core@512 UNSAT | 108 s lazy | 2189 s eager (0.05x) | **31 s solve eager (3.5x; +303 s py load)** | not needed |
+| c3core@1024 UNSAT | 449 s lazy | — | CRASH (pycryptosat SIGABRT @357M cl) | not needed |
+| c3core@2048 UNSAT | 11169 s lazy | eager not materializable (2.9B cl) | CMS-lazy loop: LOSES (round-11 solve hung > 1 h @512; killed) | — |
+| coupled (2,2,2)@128 UNSAT | 690 s lazy | 5196 s eager (0.13x) | 1246 s solve / 1906 s total (0.4-0.6x) | — |
+| bal@16 v=1 UNSAT (control) | 24 s mono | > 300 s TIMEOUT | — | 541 s wall / 6435 cubes (validation, pre-quota-discovery sizing) |
+| bal@16 v=5 OPEN | TIMEOUT ~40000 s | SIGSEGV @ 9538 s | SIGILL @ ~5400 s | RUNNING sprint-D 10 w |
+| growth24 v=16 (bal@24) OPEN | unmeasured (mono running, cap 43200 s) | — | — | RUNNING sprint-B 8 w |
+| fresh_M24 = F(24;65) OPEN | TIMEOUT 43200 s (86400 s rerun in flight, sibling) | — | — | RUNNING sprint-C 5 w |
+
+XOR verdict (task 1's parity question): the ordering encodings carry NO
+recoverable XOR structure — CMS verbose logs show zero xor-clause
+recovery on c3core/bal; the mod-8 "parity laws" live in value indices
+(which g-class a rung lands in), not as GF(2) constraints over the
+order/color variables, and no sound variable-XOR reformulation exists at
+the encoding level.  CMS's c3core win is inprocessing (distillation +
+ternary resolution over the dense transitivity lattice), not Gauss.
+
 ## Log
 
 - [launch] note created; export tooling next.
