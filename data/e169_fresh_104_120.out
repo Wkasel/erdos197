@@ -1,0 +1,13 @@
+L : m=104 W2e: 6216 pairs -> closure-alive 164 -> SAT-alive 89 [clo 62s, sat 23s]
+    gaps [32, 64, 96]; H-LAT(mod 8) HOLDS
+    max clique FULL = 3 [305, 337, 401]; SHALLOW [3m+1,4m] = 3 [313, 345, 377]  => alpha-hat bound 3 for M=208
+L : m=104 W2o: 6216 pairs -> closure-alive 155 -> SAT-alive 88 [clo 69s, sat 20s]
+    gaps [32, 64, 96]; H-LAT(mod 8) HOLDS
+    max clique FULL = 3 [305, 337, 401]; SHALLOW [3m+1,4m] = 3 [313, 345, 377]  => alpha-hat bound 3 for M=208
+L : m=120 W2e: 8128 pairs -> closure-alive 227 -> SAT-alive 128 [clo 129s, sat 49s]
+    gaps [32, 64, 96]; H-LAT(mod 8) HOLDS
+    max clique FULL = 3 [353, 385, 449]; SHALLOW [3m+1,4m] = 3 [361, 393, 457]  => alpha-hat bound 3 for M=240
+L : m=120 W2o: 8128 pairs -> closure-alive 219 -> SAT-alive 128 [clo 123s, sat 41s]
+    gaps [32, 64, 96]; H-LAT(mod 8) HOLDS
+    max clique FULL = 3 [353, 385, 449]; SHALLOW [3m+1,4m] = 3 [361, 393, 457]  => alpha-hat bound 3 for M=240
+e169: DONE

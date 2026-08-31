@@ -94,7 +94,20 @@ seams, bounds bal or const.
   half-scales — all descriptive or GAP-RES instances.  **Residue:
   GAP-RES (the consolidated crux — classify the SAT-alive fan pairs
   uniformly in window length; provably carries FG-scaled-zone,
-  FG-deep taxonomy, DICH-ALPHA, H-LAT via Cor. PURE-2)** +
+  FG-deep taxonomy, DICH-ALPHA, H-LAT via Cor. PURE-2)** —
+  UPDATE (notes/84, FRONT GAP-RES): the cross-parity core ODD-KILL
+  now has a PROVED sub-theorem (Lemma LAND + Theorem S1 + Cor COR:
+  every odd-gap pair with 7q + 10g ≤ 2N dead by one spiral
+  2-cycle; landing = base-(−2) digit extraction, exact iff
+  g | δ₀) + a machine region law (R(N): 3q+g ≤ N−24, 2p ≤ N−7 —
+  every R-pair certified dead, 40 windows N = 55..495 incl. fresh
+  M = 208/240 and m = 104/120, certificates independently
+  verified, 0 soundness violations) + Theorem LAT-LOW (8 | g for
+  alive pairs on the low zone, PROVED mod region law) + Lemma
+  CLIQUE-HALVE (mod-8 alive cliques transport to the base window,
+  shallow→shallow).  GAP-RES residue narrows to: the §6.1 cell
+  table (R ∖ COR), the scaled zone/E1 columns/high wing, and the
+  odd stall corner (q ≥ M−8, SAT-dead ×8 scales) +
   ThW1′-ROBUST/-TOL uniformization (finite packed-quad breaker
   family, hand-listable) + GAP-DICH-F2/CASC + SPLIT finish +
   GAP-LLOP-α/β + GAP-ASM′ = (OV-∀) (8-scale + robust insurance;
@@ -305,7 +318,7 @@ Critical path (all four needed; nothing else is):
 
 | tag | exact statement | species | evidence state |
 |-----|-----------------|---------|----------------|
-| **GAP-AFFORD′** | for every valid Case-2 pair, the donation supply (single-use colored values, P3-accounted) cannot fund the T-TEL″ mint system (≥ 1 displaced value per 2 octaves) forever | **genuinely new ledger statement** — no template in the campaign | no-go results (NG1–NG4, GAP-COMP refuted) + tournament (notes/79) + adjudication (notes/80): S2/S3 refuted, L-DOUBLE-DUTY [PROVED, ×3 scales], SPARSE-CORE ×8 scales + AAA hand arm; PINCER EXECUTED (notes/80-pincer): MINT-LOC resolved strong-form, Theorem AFFORD-CORNER [PROVED], S5-ALT UNSAT ×2 censors; **CHART KILL (notes/82 + notes/81 verification): Lemma Q + ALT-DEAD [PROVED, zero new gaps] retire the ENTIRE arithmetic corner** (all lattices any ownership law, on-class punctures any count, 2^k-periodic minorities via Cor. HSPLIT) — residue = **GAP-AFFORD‴-SPLIT** (gap-≥3, 2-adically split minorities: no known inhabitant, no arithmetic shape) — the supply CAP on that residue still has zero completed proof strategies (professor certifies no elegant kill among directions 1–4 for it) |
+| **GAP-AFFORD′** | for every valid Case-2 pair, the donation supply (single-use colored values, P3-accounted) cannot fund the T-TEL″ mint system (≥ 1 displaced value per 2 octaves) forever | **genuinely new ledger statement** — no template in the campaign | no-go results (NG1–NG4, GAP-COMP refuted) + tournament (notes/79) + adjudication (notes/80): S2/S3 refuted, L-DOUBLE-DUTY [PROVED, ×3 scales], SPARSE-CORE ×8 scales + AAA hand arm; PINCER EXECUTED (notes/80-pincer): MINT-LOC resolved strong-form, Theorem AFFORD-CORNER [PROVED], S5-ALT UNSAT ×2 censors; **CHART KILL (notes/82 + notes/81 verification): Lemma Q + ALT-DEAD [PROVED, zero new gaps] retire the ENTIRE arithmetic corner** (all lattices any ownership law, on-class punctures any count, 2^k-periodic minorities via Cor. HSPLIT) — residue = **GAP-AFFORD‴-SPLIT** (gap-≥3, 2-adically split minorities: no known inhabitant of the full corner axes; no 2^k-periodic shape — but odd-periodic/mixed-modulus/automatic shapes are excluded only mod the Q-ODD gates or by L-NOTAIL at constant ownership: mod-3 counterexample, notes/88 item 2) — the supply CAP on that residue still has zero completed proof strategies (professor certifies no elegant kill among directions 1–4 for it) |
 | **GAP-N6a sub-pool** | the CI(m) core fires for ALL m (bal ≥ 16; const (2,2,2) ≥ 48): remaining per notes/77 §7 = **GAP-RES** (consolidated: classify SAT-alive fan pairs uniformly in N — carries FG-scaled-zone, FG-deep taxonomy, DICH-ALPHA, H-LAT) + ThW1′-ROBUST/-TOL + DICH-F2/CASC + SPLIT + LLOP-α/β + ASM′ = (OV-∀) | uniformization/classification (discharged instances exist for each; PURE/P-ARM‴/AFF⁺+MON cleared out of the pool) | machine-closed everywhere asked (8 CI scales + robust ×2; P-ARM‴ modular 48..128; laws ×8 full + ×7 half scales; blind hits; 176/192 pre-registered) |
 | **GAP-N2-DIAG** | C3(p) UNSAT on its flip class for every odd p ≥ 5 (uniform-in-p write-up) | uniformization — **DISCHARGED: Theorem C3(p), notes/78 Part I [PROVED — spot-audited notes/80]** | schema p = 5..25 (0 fail; 23/25 fresh both mod-4 classes), boundaries exact, solver x-val ×9 p-values, identity layer re-derived p ≤ 39; prose pass DONE (notes/86 §1) — zero residual |
 | **GAP-N3-GROW (N3-b)** | < ⌊(x−1)/4⌋ punctures leave the rung UNSAT, uniformly in x and puncture set | uniformization + robustness (severed-ladder closures = machine shadow); skeleton LANE + SEV + (N3-b′), notes/78 §II.3 | exact at x = 11/15/19/23/27 global, x = 19 AND 27 each at two scales (d*(19; 112) = 4 fresh, notes/80); closures complete at M = 112 |
@@ -346,12 +359,15 @@ realized inhabitant — is DEAD at ω (L-NOTAIL); the live
 punctured near-lattices, and non-lattice gap-≥3 minorities, none
 realized.  The YES question is: can THOSE afford presence-scale
 payments (GAP-AFFORD″-ALT).]  [Updated again, notes/82 + notes/81:
-Lemma Q/ALT-DEAD kill EVERY arithmetic member of that list at ω —
+Lemma Q/ALT-DEAD kill EVERY mod-4/2^k member of that list at ω —
 all lattices regardless of ownership law, all on-class punctured
 variants, all eventually-2^k-periodic minorities.  The live
-(iv)-negative is now ONLY a gap-≥3 minority that is 2-adically
-split in every chart (Cor. HSPLIT) — aperiodic by construction,
-never realized (the censor-off alternating coloring is
+(iv)-negative is now a gap-≥3 minority that is 2-adically split in
+every chart (Cor. HSPLIT) — NOT necessarily aperiodic (notes/88
+item 2: the mod-3 minority is fully periodic yet HSPLIT-compatible;
+odd-periodic shapes are excluded only mod the Q-ODD gates or by
+L-NOTAIL at constant ownership) — never realized under the full
+corner axes (the censor-off alternating coloring is
 HSPLIT-compatible as a coloring but is not corner-certified); the
 YES question is GAP-AFFORD‴-SPLIT.]
 

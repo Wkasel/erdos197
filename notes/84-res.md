@@ -440,15 +440,40 @@ phrasing "⟹ (OV-∀), retiring GAP-ASM′" is superseded by the
 notes/66 robust-first restatement: what α ≤ 3 buys is that the
 robust chain's α-arm is law-pinned at every scale.
 
-### 7.4 Fresh-scale data (T1/T2 tracks; filled as pod runs land)
+### 7.4 Fresh-scale data (T1/T2 tracks)
 
-    T2 (e169 --scan, sprint-D): m = 104, 120 — the half-scale alive
-    graphs of the fresh full scales 208/240.  [PENDING at first
-    commit of this section]
-    T1 (e168 catalogue + e153 scan): M = 208, 240.  [PENDING]
-
-Pre-registration (BEFORE any of these runs printed): H-LAT (alive
-gaps ≡ 0 mod 8) at both fresh m; shallow cliques ≤ 3 at both;
+Pre-registration (committed BEFORE any of these runs printed): H-LAT
+(alive gaps ≡ 0 mod 8) at both fresh m; shallow cliques ≤ 3 at both;
 full-window cliques ≤ 4 with any 4-clique of span exactly m and
 deepest member below the shallow boundary; α̂ values in {2, 3}; if
 the catalogue track lands, α_catalogue = α̂ at both scales.
+
+**T2 LANDED (e169 --scan on sprint-D; data/e169_alive_lattice.json
+'scan' 104/120, log data/e169_fresh_104_120.out)
+[MACHINE-CHECKED]:**
+
+    m=104 W2e: 6216 pairs → 164 closure-alive → 89 SAT-alive;
+               gaps {32, 64, 96} — H-LAT HOLDS;
+               clique FULL = 3 {305,337,401}, SHALLOW = 3
+               {313,345,377}  ⟹ α̂(208) = 3
+    m=104 W2o: 6216 → 155 → 88; gaps {32,64,96} — H-LAT HOLDS;
+               FULL 3 / SHALLOW 3 (same witnesses)
+    m=120 W2e: 8128 → 227 → 128; gaps {32,64,96} — H-LAT HOLDS;
+               clique FULL = 3 {353,385,449}, SHALLOW = 3
+               {361,393,457}  ⟹ α̂(240) = 3
+    m=120 W2o: 8128 → 219 → 128; gaps {32,64,96} — H-LAT HOLDS;
+               FULL 3 / SHALLOW 3 (same witnesses)
+
+Every pre-registered prediction confirmed; note the FULL-window
+clique number is 3 at all four fresh windows (the deep span-m
+4-cliques of m = 112/128 do not recur at 104/120 — consistent with
+SPAN-4: a span-104/120 4-clique needs gaps summing to m with all
+gaps ≡ 0 mod 32 realized… the observed gap sets {32, 64, 96} admit
+no 4-clique with the observed alive structure).  α̂(208) = α̂(240)
+= 3: the α-arm of the robust chain stays law-pinned at both fresh
+scales; K*(208) = 104 + 9 + (3 − f), K*(240) = 120 + 9 + (3 − f)
+predictions follow once the catalogue track lands f.
+
+    T1 (e168 catalogue → e153 scan; e180 deep-classify at 176/192):
+    in flight on sprint-C / main / sprint-B at this commit; §7.5
+    when landed.
