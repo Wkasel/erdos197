@@ -219,3 +219,40 @@ they survive this session.  Harvest targets:
 - In flight: kissat c3core@512 + coupled@128 + CMS c3@512 + cadical-lazy
   baselines e166@512/e165b@128 (sprint-B); kissat + CMS bal16v5
   (sprint-C); bal24v16 export (sprint-C).
+
+## CPU-cap recalibration (verified 2026-08-31) — the fleet is ~44 cores, not ~200
+
+Independently confirmed by reading the cgroup quotas directly, after the
+sprint report flagged it:
+
+| pod | `nproc` reports | cgroup quota | **effective CPUs** |
+|---|---|---|---|
+| sprint-B | 48 | `1020000/100000` (v1) | **10.2** |
+| sprint-C | 64 | `1020000/100000` (v1) | **10.2** |
+| sprint-D | 24 | `1020000/100000` (v1) | **10.2** |
+| ledger-3 | 64 | `1360000/100000` (v2) | **13.6** |
+
+**Total 44.2 effective CPUs against 200 reported by `nproc`.** `nproc` does
+not see the cgroup cap, so every sizing decision taken from it has been wrong
+by a factor of ~4.5.
+
+**Consequences, which are not small:**
+
+1. **Every historical multi-worker wall-clock was time-slicing ~10 cores.**
+   This includes every TIMEOUT cell. A "12 h TIMEOUT" at 10 effective cores
+   is much weaker evidence of intrinsic hardness than it looks — e.g. the
+   `(96,0)@16` v_min(0) cell (notes/72 §3) and the F(24;65) freshness cells.
+   Do not cite those TIMEOUTs as evidence an instance is hard.
+2. **Worker counts above ~10 per pod are counterproductive**, not merely
+   flat: they add context-switching against a hard quota. sprint-C was found
+   at load 17.2 against its 10.2 cap (68% oversubscribed).
+3. **Cost per useful core is ~4.5x what was assumed** when sizing runs.
+
+**Action taken.** The `fresh24v65` C&C swarm (5 workers) was terminated on
+sprint-C: the sprint report states those cubes "won't decide in-sprint", so
+they were consuming half a capped pod for no verdict while `bal16v6` — which
+pins an exact value — was starved. sprint-C demand is now ~2.4 cores.
+
+**Standing rule going forward: size worker pools from the cgroup quota
+(`/sys/fs/cgroup/cpu.max`, or `cpu/cpu.cfs_quota_us` on v1), never from
+`nproc`.**
