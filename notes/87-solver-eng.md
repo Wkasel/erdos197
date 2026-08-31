@@ -149,9 +149,9 @@ route dead.
 | c3core@2048 UNSAT | 11169 s lazy | eager not materializable (2.9B cl) | CMS-lazy loop: LOSES (round-11 solve hung > 1 h @512; killed) | — |
 | coupled (2,2,2)@128 UNSAT | 690 s lazy | 5196 s eager (0.13x) | 1246 s solve / 1906 s total (0.4-0.6x) | — |
 | bal@16 v=1 UNSAT (control) | 24 s mono | > 300 s TIMEOUT | — | 541 s wall / 6435 cubes (validation, pre-quota-discovery sizing) |
-| bal@16 v=5 OPEN | TIMEOUT ~40000 s | SIGSEGV @ 9538 s | SIGILL @ ~5400 s | RUNNING sprint-D 10 w |
-| growth24 v=16 (bal@24) OPEN | unmeasured (mono running, cap 43200 s) | — | — | RUNNING sprint-B 8 w |
-| fresh_M24 = F(24;65) OPEN | TIMEOUT 43200 s (86400 s rerun in flight, sibling) | — | — | RUNNING sprint-C 5 w |
+| bal@16 v=5 OPEN | TIMEOUT ~40000 s | SIGSEGV @ 9538 s | SIGILL @ ~5400 s | **859/6435 cubes all-UNSAT, avg 104 s, zero UNDET — on track to full refutation in ~14 h (10 quota cores)**; 8/8 structured-shape probes UNSAT at conf 3e7 |
+| growth24 v=16 (bal@24) OPEN | unmeasured (mono running, cap 43200 s) | — | — | ABANDONED (measured cube cost ⇒ ~47 days at quota); replaced by mono v-ladder: **v=2 UNSAT 854 s (NEW)**, v=3+ running |
+| fresh_M24 = F(24;65) OPEN | TIMEOUT 43200 s (86400 s rerun in flight, sibling) | — | — | RUNNING but ~2 h/cube — will not decide in-sprint |
 
 XOR verdict (task 1's parity question): the ordering encodings carry NO
 recoverable XOR structure — CMS verbose logs show zero xor-clause
@@ -175,6 +175,36 @@ ternary resolution over the dense transitivity lattice), not Gauss.
 - bal@16 v=5 C&C main swarm: 300+/6435 balanced-B0 cubes refuted, zero
   SAT, sustained ~4.7 cubes/min on sprint-D's 10 quota cores
   (projected ~20 h to full refutation if UNSAT).
+
+## 6. End-of-session state (jobs left running; harvest pointers)
+
+All long jobs are nohup'd on the pods and stream durable records —
+they survive this session.  Harvest targets:
+
+- **bal@16 v=5 C&C** (sprint-D `/root/e/data/cnf/cnc2_bal16v5.{log,jsonl}`):
+  at close 859/6435 balanced-B0 cubes, **all UNSAT, zero UNDET**, avg
+  104 s/cube, ~6.7 cubes/min on 10 quota cores → full refutation
+  projected ~14 h.  If it completes all-UNSAT: **bal@16 v=5 UNSAT**,
+  hence with the pinned v=4 UNSAT ⇒ **v*3(16) = 6** iff bal16v6 is SAT
+  (mono attempt running on sprint-C, `mono_bal16v6.log`, 12 h cap).
+  The driver's final line prints `CNC2 VERDICT bal16v5: UNSAT (...)`
+  when done (resume-safe: rerun the same command to continue).
+- **Structured-shape probes at v=5** (sprint-D `probe_structured.log`):
+  ALL EIGHT candidate B0 shapes (even/odd, low/high, pair-blocks,
+  mod-4 classes) UNSAT at conf 3e7 — no structured witness exists;
+  any v=5 SAT would need an unstructured B0 coloring.
+- **bal@24 v-ladder** (sprint-B `/root/e/data/cnf/v24ladder.log`, rows
+  streamed to the pod's `data/e127_seam_budget.jsonl`, tags
+  `e189_bal24_v{2,3,4,6,8}`): v=2 UNSAT 854 s landed (v*3(24) >= 3);
+  v=3 in flight; 12 h cap per rung; SAT stops the ladder and audits.
+- **fresh_M24 C&C** (sprint-C `cnc2_fresh24v65.log`): 462 anchor-block
+  cubes, 5 quota-core workers, per-cube cost ~2 h at conf 3e6 — will
+  NOT decide quickly; the sibling session's 86400 s mono rerun is the
+  likelier decider.  growth24-v16 mono (sprint-C `mono_bal24v16.log`,
+  12 h cap) still out.
+- CMS CLI build on the pods: abandoned (no system zlib/pkg-config
+  headers; cmake configure fails even with pip cmake + source-built
+  pkg-config).  All CMS rows above are the pycryptosat 5.14.7 wheel.
 
 ## Log
 
