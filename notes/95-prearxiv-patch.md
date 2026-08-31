@@ -86,3 +86,47 @@ Section order now: Introduction → Definitions → General obstructions →
 Contiguous blocks → Order gadget → C3 core + main theorem → Machine
 verification and data availability → Acknowledgments → Appendix A (chunk
 reduction) → Appendix B (computational observations and conjectures).
+
+## Independent post-patch verification (session hand-off)
+
+Re-checked the two items the patch agent could not confirm by grep, plus the
+artifact chain, before releasing the GO.
+
+| check | result |
+|---|---|
+| `[Gen26]` at the vdC statement | present — `thm:vdc` header reads "van der Corput absorption; \cite{Gen26}", followed by "This is not new: it is Lemma 2.1 of \cite{Gen26} in different coordinates" |
+| `3-permutable` defined | yes — Definition at §2 (`permutable`, then "When the progression length matters we write *3-permutable*"); `thm:main` uses it with an inline gloss |
+| author byline | `\author{William Kasel}` |
+| bundle | single `main.tex`, byte-identical to `paper/main.tex` (sha256 matches) |
+| scale coverage of `thm:main` | `thm:ogred` hypothesises `t ≥ 4`, so every invoked `M = 2^{2t-1} ≥ 128`, all `≡ 0 mod 8` and `≥ 16` — inside `thm:c3core`'s range. No uncovered scale. |
+
+### One defect found and fixed
+
+The data-availability paragraph cited the repository at its **mutable**
+default branch. A reader arriving later would get whatever `main` had drifted
+to, not the reviewed state. Replaced with the immutable tag
+`arxiv-v1` (`.../tree/arxiv-v1`), plus a note that the branch may advance
+past it. The tag was then **moved onto the commit containing that citation**,
+so the tag the paper names contains the paper that names it — done before
+anything external referenced the old tag, which was the only safe window.
+
+Recompiled after the edit: 21 pages, no undefined refs, same single cosmetic
+underfull hbox in the references.
+
+### arXiv submission 7993526 — stale metadata found
+
+The uploaded source and the metadata were both **pre-patch**. Three fixes:
+
+1. **Abstract** — the live abstract still advertised "a van der Corput
+   absorption theorem for odd residue classes" among our contributions.
+   This is exactly the priority hazard Adversary A flagged (the result is
+   Geneson's Lemma 2.1). The paper had been corrected; the arXiv field had
+   not. Replaced with an abstract matching the patched manuscript.
+2. **Comments** — said "17 pages" (now 21) and cited the mutable repo URL.
+   Now cites the `arxiv-v1` tag and discloses machine assistance.
+3. **Source** — `main.tex` replaced; arXiv recompiled with pdflatex /
+   TeX Live 2025, status SUCCEEDED, "Output written on main.pdf (21 pages)",
+   which independently confirms the swap landed.
+
+Submission is staged at Preview with the Submit button live. The final click
+is the author's.
