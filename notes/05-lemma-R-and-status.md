@@ -1,3 +1,5 @@
+> **ARCHIVAL / SUPERSEDED. Contains statements later shown false. Do not use as a dependency. See paper/main.tex and STATUS.md for the current formulation.**
+>
 > **SUPERSEDED IN PART — ONE PROVEN-LIST ITEM KNOWN FALSE AS
 > STATED.**  The "PROVEN (hand)" list below includes
 > "Balanced-placement law + record corollary (notes/04)" — the

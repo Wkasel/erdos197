@@ -1,3 +1,5 @@
+> **ARCHIVAL / SUPERSEDED. Contains statements later shown false. Do not use as a dependency. See paper/main.tex and STATUS.md for the current formulation.**
+>
 > **SUPERSEDED — THE FRAGILITY INTERPRETATION IS WITHDRAWN
 > (KNOWN OVERCLAIMED AS STATED).**  notes/14: radius-1 robustness
 > fails generically in 3-AP-arrangement systems (including

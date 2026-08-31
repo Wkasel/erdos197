@@ -1,3 +1,5 @@
+> **ARCHIVAL / SUPERSEDED. Contains statements later shown false. Do not use as a dependency. See paper/main.tex and STATUS.md for the current formulation.**
+>
 > **SUPERSEDED — THE TARGET OF THE CONDITIONAL THEOREM IS KNOWN
 > FALSE.**  The conditional extension theorem below concludes
 > "S_A is permutable … #197 = YES" from Σ/P-satisfiability

@@ -1,3 +1,5 @@
+> **ARCHIVAL / SUPERSEDED. Contains statements later shown false. Do not use as a dependency. See paper/main.tex and STATUS.md for the current formulation.**
+>
 > **SUPERSEDED — THE DEFECT LAW / REPAIR CONJECTURE IS KNOWN
 > FALSE AS STATED.**  The working conjecture below (defect class
 > D = {v ≡ 2 mod 2^{k/2}}, O(1)-defect law, defect-removal

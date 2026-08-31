@@ -9,6 +9,22 @@
 > the GAP-N6a sub-pool, GAP-N3-GROW (N3-b), ALT-DEAD's applicability
 > hypothesis on the SPLIT corner, and the Q-ODD gates; many
 > structured candidate families are eliminated unconditionally.
+>
+> Percentage rule (second review item 8): no "NO ≈ X %" figure is a
+> claim of this campaign.  The claim-grade summary sentence is: **the
+> conditional architecture is increasingly constrained, but three
+> substantial hypotheses remain: N3-GROW, N6a closure, and AFFORD′.**
+>
+> Provenance rule (second review item 8): every "professor pass" /
+> "referee prose pass" in this file denotes an **internal adversarial
+> prose audit** — self-review by this campaign, with no external
+> referee involved.  The ONE external review by J. Geneson (Aug 27)
+> covers **the original paper** (`paper/main.tex`, the S_A theorem);
+> it does **not** cover the Part II chain (`paper2/main.tex`, Case-2
+> machinery, the AFFORD/N6a/N3-GROW fronts, or any note above
+> notes/50).  The two adversarial reviews logged in
+> notes/88 and notes/90 are likewise external-reviewer-sourced
+> critiques of the write-up, not endorsements of the mathematics.
 
 ## Bottom line
 
@@ -1019,7 +1035,7 @@ frontier witness anatomy tying its α-arm to the same corner as
 P-ARM's.  New machine-true finite laws to uniformize: H-LAT (mod-8
 lattice law), the {4,6}-droppable-crown table, the ≤ 4 clique bound.
 
-### FRONT AUDIT (2026-08-28, three referee passes: notes/60, notes/60-audit-1, notes/61-audit-2) — ALL FOUR NIGHT-SHIFT FRONTS SOUND
+### FRONT AUDIT (2026-08-28, three internal adversarial audit passes: notes/60, notes/60-audit-1, notes/61-audit-2) — ALL FOUR NIGHT-SHIFT FRONTS SOUND
 
 Adversarial referee audits of notes/52 (BRIDGE1), 57 (DICH), 58
 (LLOP/PARM), 59 (lowgaps): hand reconstructions of every proof,
@@ -1695,8 +1711,8 @@ ZERO anomalies):** Theorem C3(p) — affine identity layer re-derived
 by independent code to p = 39, strict schema + independent solver at
 FRESH p = 23 AND 25 (both mod-4 classes: 104+52+52 scales each 0
 fail; 20/20 solver verdicts incl. M = 256/260) — the notes/78 "audit
-pending" rider is discharged, residual = referee prose pass at paper
-time.  Lemmas PS/LANE — halving identities exact at fresh x = 29/31,
+pending" rider is discharged, residual = internal adversarial prose
+audit at paper time.  Lemmas PS/LANE — halving identities exact at fresh x = 29/31,
 LANE numeric to x = 99, and a fresh law cell d*(19; 112) = 4
 (atmost-3 anywhere UNSAT; the SAT witness is the pure-bottom lane
 transversal).  Lemma PURE — set-level bijection re-implemented (4
@@ -1845,8 +1861,8 @@ respected — the cap itself is still unproven.
 
 ---
 
-## FRONT ALT-CLOSURE (2026-08-30 late; notes/82 professor pass +
-## notes/81 verification & errand; e186): THE ARITHMETIC CORNER IS
+## FRONT ALT-CLOSURE (2026-08-30 late; notes/82 internal adversarial
+## prose audit + notes/81 verification & errand; e186): THE ARITHMETIC CORNER IS
 ## DEAD — Lemma Q / Theorem ALT-DEAD [PROVED, zero new gaps]
 
 **The kill (notes/82 §2, one page):** in a blockwise mod-4 lattice
@@ -1944,8 +1960,11 @@ GAP-AFFORD‴-SPLIT (the only Case-2 corner remnant) + arm B,
 (2) GAP-N6a sub-pool, (3) GAP-N3-GROW (N3-b) — GAP-N2-DIAG stays
 discharged.  New proved tags: Lemma Q, Theorem ALT-DEAD,
 Cor. HSPLIT (+ Q-ODD stated, rides N2-UNIF/BRIDGE1-AF).
-**Honest assessment (reframed per notes/88 item 9; the original
-"NO ≈ 96–97 %" headline is retired):** what exists is a
+**Honest assessment (reframed per notes/88 item 9 + second review
+item 8; the percentage headline that once stood here is DELETED, not
+merely retired):** **The conditional architecture is increasingly
+constrained, but three substantial hypotheses remain: N3-GROW, N6a
+closure, and AFFORD′.**  What exists is a
 **conditional NO architecture**.  Open theorems gating it, exactly:
 (1) GAP-AFFORD′ — the terminal supply cap, sharpest surviving form
 GAP-AFFORD‴-SPLIT (zero completed proof strategies); (2) the
@@ -1964,7 +1983,7 @@ density theory remains open.
 ### FRONT PROSE+ASSEMBLY-PREP (2026-08-30, notes/86): C3(p) prose
 ### rider DISCHARGED, tag graph reconciled, paper-2 skeleton drafted
 
-- The referee prose pass of notes/78 Part I vs notes/33 (notes/86
+- The internal adversarial prose audit of notes/78 Part I vs notes/33 (notes/86
   SS1): every identity/congruence/index/mirror/window re-derived by
   hand; ONE cosmetic slip (FLIP(p) Case I step 3: "M > 2p+2" should
   read "M > 2p-2"; conservative, zero effect).  Lemma Q / ALT-DEAD /
@@ -2131,7 +2150,7 @@ headline computed.  Full one-page verdict: **BOTTOM-LINE.md**.
 | 83 SPLIT | Q-g chart facts + mod-3 test case | fresh checker: g ≤ 12 × all c × t = 6..17 (fresh 13-17) — image = ratio-2 window, ≤ 1 dust/end, contiguous; anchor cycles mod 8 = 5,2 / 3,6,4,1 / 4,1,2 verbatim; dyadic g exact | **CONFIRMED** (one precision fix: mod-3 claim at (mod 32, t = 6) — length-2 sections majority-pure; HSPLIT mods 4+8 clean at all t ≥ 6; recorded in notes/83 §2b + notes/88 item 2) |
 | 84 GAP-RES | Lemma LAND + Thm S1 + Cor COR | from-scratch spiral walker at FRESH N = 600 and 222: 5 178 + 717 = 5 895/5 895 in-region odd pairs yield valid 2-cycle certificates, every step's window/positivity/head-avoidance checked; LAND(c) exactness 2 549/2 549 non-divisible seeds never land | **CONFIRMED** |
 | 85 CMIN | BM1-VAC + CMIN-SMALLT + cmin = M | from-scratch CP-SAT encoder (zero shared code): BM1-VAC scoped UNSAT at FRESH M = 36 (0.1 s; unrestricted control SAT); cmin(12) = 12, cmin(16) = 16 OPTIMAL | **CONFIRMED** |
-| 86 PROSE | C3(p) referee pass discharged | identity layer re-derived independently at p = 29..47 (record was ≤ 39): units/flip-class/mod-4 table/POLAR/flip mirrors/E-collision scales/index-gap parity — 0 fails; the §1.5 slip verified exactly (betweenness ⟺ M > 2p−2, both inequalities) | **CONFIRMED** |
+| 86 PROSE | C3(p) internal adversarial prose audit discharged | identity layer re-derived independently at p = 29..47 (record was ≤ 39): units/flip-class/mod-4 table/POLAR/flip mirrors/E-collision scales/index-gap parity — 0 fails; the §1.5 slip verified exactly (betweenness ⟺ M > 2p−2, both inequalities) | **CONFIRMED** |
 | e97 lcomb | Theorem C4 / 11.1 (circulant kill) | from-scratch board checker at FRESH n = 21, 22 (record was ≤ 20): 4 845 + 5 985 = 10 830/10 830 4-subsets — pair rule never fails, orbit charge Γ ≥ 0 everywhere and > 0, strict bin at d* = min(b+c, a) | **CONFIRMED** |
 
 ### In flight at grand-assembly close (honest)

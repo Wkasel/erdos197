@@ -133,3 +133,40 @@ one — unchanged.
   **6/6 PASS, 115 s, exit 0.**  REPRODUCE.md package-2 section
   updated: verbatim HSPLIT reading + three scope notes, the
   hsplitburn probe, step 6, new wall time, portability note.
+
+## Item 7 — archival banners
+
+The first remediation (notes/88 item 4) had banners on notes 04,
+05, 06, 08, 12, 16, 17, 19, but each was file-specific and none
+carried the standard header line.  Prepended VERBATIM to all eight,
+above the existing specific banner (which is kept — it says what
+exactly is false):
+
+  **ARCHIVAL / SUPERSEDED. Contains statements later shown false.
+  Do not use as a dependency. See paper/main.tex and STATUS.md for
+  the current formulation.**
+
+Re-swept notes/01-30: no other file carries a known-false claim
+without a banner.
+
+## Item 8 — percentage + provenance
+
+* **Percentage.** The "NO ≈ 96–97 %" text in FRONT ALT-CLOSURE is
+  DELETED (it survived the first pass only as "the original
+  headline is retired", i.e. the number was still on the page).
+  Replaced by the prescribed sentence: *"The conditional
+  architecture is increasingly constrained, but three substantial
+  hypotheses remain: N3-GROW, N6a closure, and AFFORD′."*  A
+  standing percentage rule at the top of STATUS makes this the
+  claim-grade summary and denies claim status to every historical
+  "NO ≈ X %" line.
+* **Provenance.** "professor pass" / "referee prose pass" →
+  **internal adversarial prose audit** (STATUS ×4 incl. the FRONT
+  ALT-CLOSURE and FRONT AUDIT headings, paper2 \source, notes/86
+  title).  New standing provenance rule at the top of STATUS states
+  explicitly: these are SELF-reviews, no external referee involved;
+  **Geneson's external review (Aug 27) covers the original paper
+  (paper/main.tex) ONLY — not the Part II chain** (paper2, Case-2
+  machinery, AFFORD/N6a/N3-GROW, notes above 50); the two
+  adversarial reviews in notes/88 and notes/90 are critiques of the
+  write-up, not endorsements of the mathematics.

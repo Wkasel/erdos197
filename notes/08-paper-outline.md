@@ -1,3 +1,5 @@
+> **ARCHIVAL / SUPERSEDED. Contains statements later shown false. Do not use as a dependency. See paper/main.tex and STATUS.md for the current formulation.**
+>
 > **SUPERSEDED — TWO LISTED "RESULTS" KNOWN FALSE AS STATED.**
 > Item 2 (balanced-placement law, symmetric form) is false —
 > corrected asymmetric version in paper/main.tex lem:balance (see

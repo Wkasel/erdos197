@@ -1,4 +1,8 @@
-# 86 — FRONT PROSE + ASSEMBLY-PREP: the C3(p) referee pass, the
+# 86 — FRONT PROSE + ASSEMBLY-PREP: the C3(p) internal adversarial
+# prose audit ["referee pass" throughout this note = SELF-review by
+# the campaign, no external referee involved; the sole external
+# review, J. Geneson Aug 27, covers paper/main.tex only, NOT the
+# Part II chain — second review item 8], the
 # definitive gap ledger, and the paper-2 skeleton
 # (2026-08-30, assembly-prep session; sources: notes/78 Part I read
 # line-by-line against notes/33; notes/50-82 swept for tags;

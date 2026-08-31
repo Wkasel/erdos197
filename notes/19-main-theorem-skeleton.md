@@ -1,3 +1,5 @@
+> **ARCHIVAL / SUPERSEDED. Contains statements later shown false. Do not use as a dependency. See paper/main.tex and STATUS.md for the current formulation.**
+>
 > **SUPERSEDED — THE TARGET THEOREM IS KNOWN FALSE.**  The goal
 > below ("S_A is 3-permutable") is refuted: S_A is PROVEN not
 > 3-permutable (paper/main.tex thm:main; STATUS.md "Bottom

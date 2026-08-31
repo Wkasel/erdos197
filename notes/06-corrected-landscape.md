@@ -1,3 +1,5 @@
+> **ARCHIVAL / SUPERSEDED. Contains statements later shown false. Do not use as a dependency. See paper/main.tex and STATUS.md for the current formulation.**
+>
 > **SUPERSEDED — KNOWN FALSE AS STATED.**  The "Team B reduces to
 > Team A" identity below, S_B = {1, 2} ∪ 2·S_A, is FALSE: 2·S_A
 > gives only the even values of S_B's blocks.  Corrected in

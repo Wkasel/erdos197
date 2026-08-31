@@ -1,3 +1,5 @@
+> **ARCHIVAL / SUPERSEDED. Contains statements later shown false. Do not use as a dependency. See paper/main.tex and STATUS.md for the current formulation.**
+>
 > **SUPERSEDED — KNOWN FALSE AS STATED.**  The symmetric bound
 > below ("Balance law: |H(v) − L(v)| ≤ |S^c ∩ (v, 2v)| + O(1)") is
 > FALSE: the downward law's completions 2v − u land in (0, v), so
