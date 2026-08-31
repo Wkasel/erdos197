@@ -93,3 +93,15 @@ if __name__ == '__main__':
         if v > 1000:
             up = max(up, c / v); lo = min(lo, c / v)
     print(f"  k>=2:  upper={up:.6f} lower={lo:.6f}  |SA cap [1,16]|={len([v for v in SA if v<=16])}  |SA cap [1,64]|={len([v for v in SA if v<=64])}")
+
+def L1_check(M):
+    """AP-free + A2 + A3 + (b3 < b5)  should be UNSAT for M = 0 mod 4."""
+    vals = list(range(M + 1, 2 * M + 1))
+    t = lambda i: 2 * M - i; b = lambda j: M + j
+    return solve(len(vals), vals, [(t(3), b(6)), (t(10), b(3)), (b(3), b(5))])
+
+def FLIP_check(M):
+    """AP-free + A2 + A3 + (b5 < b3) + A1  should be UNSAT for M = 0 mod 8."""
+    vals = list(range(M + 1, 2 * M + 1))
+    t = lambda i: 2 * M - i; b = lambda j: M + j
+    return solve(len(vals), vals, [(t(3), b(6)), (t(10), b(3)), (b(5), b(3)), (t(5), b(5))])
