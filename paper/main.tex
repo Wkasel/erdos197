@@ -3,6 +3,12 @@
 \usepackage[margin=1.2in]{geometry}
 \usepackage{hyperref}
 
+% Let TeX stretch as a last resort, and allow a little glue inside \url{},
+% rather than emit over/underfull boxes around the long unbreakable URLs
+% in the bibliography.
+\setlength{\emergencystretch}{2em}
+\Urlmuskip=0mu plus 3mu\relax
+
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -1080,14 +1086,15 @@ error that remains.
 
 \section{The chunk reduction}\label{sec:chunk}
 
-Every permutation of $\SA$ of order type $\omega$ decomposes into consecutive
-finite segments (\emph{chunks}); conversely, a choice of finite fibers and
-internal orders assembles into such a permutation. The following exact
-reformulation is the coordinate system for the elimination phase
-(Appendix~\ref{sec:compobs}); as noted in the
-introduction, the reduction of Section~\ref{sec:og} is proved without it,
-and nothing in this appendix is used in the proof of
-Theorem~\ref{thm:main}.
+\begin{sloppypar}
+Every permutation of $\SA$ of order type $\omega$ decomposes into
+consecutive finite segments (\emph{chunks}); conversely, a choice of finite
+fibers and internal orders assembles into such a permutation. The exact
+reformulation below is the coordinate system used in the elimination phase
+of Appendix~\ref{sec:compobs}. As noted in the introduction, the reduction
+of Section~\ref{sec:og} is proved without it, and nothing in this appendix
+enters the proof of Theorem~\ref{thm:main}.
+\end{sloppypar}
 
 \begin{definition}
 Let $S \subseteq \Z^+$ be infinite. A \emph{stage function} for $S$ is any
@@ -1463,8 +1470,8 @@ growth rate}, arXiv:2602.13617 (2026).
 \bibitem{Bl} T.~F. Bloom, \emph{Erd\H{o}s Problem \#197},
 \url{https://www.erdosproblems.com/197}, accessed 2026-08-25.
 
-\bibitem{FC} Google DeepMind, \emph{Formal Conjectures}:
-\texttt{FormalConjectures/ErdosProblems/197.lean},
+\bibitem{FC} Google DeepMind, \emph{Formal Conjectures}; problem \#197 is
+formalised in the file \texttt{ErdosProblems/197.lean}. Available at
 \url{https://github.com/google-deepmind/formal-conjectures}.
 
 \end{thebibliography}
