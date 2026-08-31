@@ -490,10 +490,11 @@ candidate $\SA$.
 \section{Suffix-stacked class deferral}
 
 \begin{definition}[Deferral states]
-For a scale $M$ (a power of two) let $D_M \subseteq (M/2, M]$ denote a single
-residue class modulo $m(M)$ (class coherence; the witnesses select
-$\{v \equiv 2 \bmod 2^{k/2}\}$). A \emph{deferral state} at scale $M$ is a
-doom-free arrangement of $\SA \cap [1, 2M]$ of the suffix-stacked form
+For a scale $M = 2^{k}$ let $D_M \subseteq (M/2, M]$ denote a single
+residue class modulo a power of two (\emph{class coherence}; the witnesses
+found by the solver select $\{v \equiv 2 \bmod 2^{\lfloor k/2 \rfloor}\}$).
+A \emph{deferral state} at scale $M$ is a
+$3$-AP-free arrangement of $\SA \cap [1, 2M]$ of the suffix-stacked form
 $[\,\mathrm{bulk} \mid D_{M/2} \mid D_{M}\,]$: the bulk contains everything
 except the two most recent deferred classes, which are appended in scale
 order.
@@ -502,7 +503,8 @@ order.
 Machine-verified facts (certificates in the repository): deferral states exist
 for $M = 32, 64, 128$; the suffix must be stacked in scale order (the reversed
 stacking contains a Lemma~\ref{lem:R} configuration); no-extras variants are
-infeasible at every scale (lookahead into the next block is necessary); any
+infeasible at every scale tested (lookahead into the next block is
+necessary); at those scales any
 single residue class serves as the deferred suffix, while generic sets of the
 same size do not.
 
@@ -532,14 +534,15 @@ reformulation is the coordinate system for the elimination phase
 introduction, the reduction of Section~\ref{sec:og} is proved without it.
 
 \begin{definition}
-A \emph{stage function} is any $s\colon \SA \to \N$ with finite fibers.
+Let $S \subseteq \Z^+$ be infinite. A \emph{stage function} for $S$ is any
+$s\colon S \to \N$ with finite fibers.
 Given $s$ and a linear order on each fiber, let $T$ be the concatenation.
 \end{definition}
 
 \begin{theorem}[Chunk reduction; exact]\label{thm:chunk}
 $T$ avoids monotone $3$-term APs if and only if:
 \begin{enumerate}
-\item[(A)] no AP triple $(x,y,z)$, $z=2y-x$, in $\SA$ has strictly monotone
+\item[(A)] no AP triple $(x,y,z)$, $z=2y-x$, in $S$ has strictly monotone
 stages ($s(x)<s(y)<s(z)$ or $s(z)<s(y)<s(x)$); and
 \item[(B)] each fiber order contains the \emph{forced pairs}
 \[
@@ -551,9 +554,11 @@ s(x)=s(y)<s(z):\ y \prec x, &\quad s(y)=s(z)<s(x):\ y \prec z,
 and is non-monotone on every within-fiber triple. (Triples whose endpoint
 stages lie on one side of the middle's are automatically safe.)
 \end{enumerate}
-Hence $\SA$ is $3$-permutable if and only if some stage function satisfies
+Hence $S$ is $3$-permutable if and only if some stage function for $S$,
+together with a choice of fiber orders, satisfies
 (A) and (B). The fiber problems are finite and mutually independent given
-$s$.
+$s$. (Nothing in the statement or the proof uses any property of $S$; we
+apply it to $S = \SA$ and, in Theorem~\ref{thm:degs}, to $S = \Z^+$.)
 \end{theorem}
 
 \begin{proof}
@@ -604,14 +609,18 @@ high-block value in an early chunk. Restrictions of normalized schemes
 stay normalized, which is what the divergence criterion below consumes.
 
 \begin{theorem}[DEGS via chunks]\label{thm:degs}
-$\Z^+$ itself is not $3$-permutable. \emph{Proof:} suppose $s$ satisfies
+$\Z^+$ itself is not $3$-permutable.
+\end{theorem}
+
+\begin{proof}
+Suppose $s\colon \Z^+ \to \N$ satisfies
 (A) with finite fibers and put $\sigma = s(1)$. For every $y$ with
 $s(y) > \sigma$, the triple $(1, y, 2y-1)$ forces $s(2y-1) \le s(y)$ by (A).
 The orbit $y_0,\, y_{i+1} = 2y_i - 1$ is strictly increasing; only finitely
 many of its members can have stage $\le \sigma$ (those fibers are finite),
 after which its stages are non-increasing, hence eventually confined to one
-finite fiber — impossible for an infinite set. \qed
-\end{theorem}
+finite fiber — impossible for an infinite set.
+\end{proof}
 
 \noindent This recovers the Davis–Entringer–Graham–Simmons theorem (in its
 monotone form; \cite{DEGS77} proves the stronger increasing-3-AP statement)
@@ -644,13 +653,21 @@ midpoints (bottom-quarter values) to defer with it.
 
 \begin{theorem}[Block-granular death]\label{thm:blockgranular}
 No stage function whose fibers are unions of whole even blocks satisfies
-(A)$\wedge$(B). \emph{Proof:} the fatal core $F_b$ (forced pairs into block
+(A)$\wedge$(B).
+\end{theorem}
+
+\begin{proof}
+The fatal core $F_b$ (forced pairs into block
 $b$ from block $b{-}2$ below, plus block-$b$ triples) is UNSAT for $b=6$
 (machine, instant), and $v \mapsto 4v$ embeds $F_b$ into $F_{b+2}$: the map
 preserves $\SA$, sends block $j$ to block $j{+}2$, and preserves AP triples;
-UNSAT lifts to supersystems. Any block-granular scheme has a fiber boundary
-above block $4$ and therefore contains some $F_b$. \qed
-\end{theorem}
+UNSAT lifts to supersystems. It remains to see that a block-granular scheme
+has a fiber boundary above block $4$, i.e.\ some $b \ge 6$ with
+$s(B_{b-2}) \ne s(B_b)$: otherwise all the blocks $B_4, B_6, B_8, \dots$
+would lie in a single fiber, which is then infinite, contradicting the
+finiteness of fibers. At such a $b$ the corresponding forced pairs are
+present and the scheme contains $F_b$.
+\end{proof}
 
 \begin{theorem}[$\times 4$ restriction; window death is permanent]
 \label{thm:restriction}
