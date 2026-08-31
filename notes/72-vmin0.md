@@ -409,3 +409,52 @@ hypothesis.
 Open rows to harvest next session: sprint logs (above), e174 fhalf
 24/32/40, F(24;65).  Decisive next mathematics: GAP-AFFORD′ (the
 terminal), GAP-FHALF general case, GAP-J-margin, N6a sub-gaps.
+
+## 3. Sprint-B harvest (2026-08-31) — both small-M lower bounds improve
+
+Landed from sprint-B (`194.26.196.215:23563`, `data/vmin0_series.log`):
+
+| M | v | verdict | time |
+|---|---|---|---|
+| 16 | 12 | UNSAT | 12.3 s |
+| 16 | 24 | UNSAT | 36.6 s |
+| 16 | 48 | UNSAT | 706.2 s |
+| 16 | 96 | **TIMEOUT** | 43200.3 s (12 h) |
+| 24 | 128 | UNSAT | 169.7 s |
+
+**Provenance (quarantine rule, §2).** These lines are written by
+`run_vmin0.py` on sprint-B, which logs plain text and does *not* append to
+`e173_telescope.jsonl`, so the records do not themselves carry the budget
+vector. I verified the cell at the source instead — `run_vmin0.py` calls
+
+```python
+blocks  = dyadic_blocks(M // 2, 8 * M)
+budgets = [("vdn", [0, 1], 0), ("vup", [1, 2], v)]
+verdict, el, info = solve_chain(blocks, budgets, ...)
+```
+
+which is exactly the e173 4-block per-anchor pump cell the rule requires,
+**not** e127's 3-block per-team cell that caused the §2 incident. The only
+structured records in `e173_telescope.jsonl` are `fresh_*` tags carrying
+`["s0_zero", [0], 0]` — the freshness cell, a *different* vector; do not
+confuse the two when harvesting. Points admitted on the strength of the
+verified driver source.
+
+*Recurrence fix wanted:* have `run_vmin0.py` append a jsonl record with its
+budget vector, so future points satisfy the rule from the record alone.
+
+**Bounds.** UNSAT at v ⟹ `v_min(0)(M) > v`:
+
+* `v_min(0)(16) > 48` (was `> 6`) — now `3M`
+* `v_min(0)(24) > 128` (was `> 65`), narrowing §1's interval to `(128, 1440]` — now `> 5.3M`
+
+Both are corroborative rather than load-bearing: [GAP-VMIN0-growth] is
+already DISCHARGED via `v_min(0) = ∞` at `M = 32, 40, 48` (§ below). They
+tighten the small-M end of the series and stay consistent with divergence —
+the ratio `v_min(0)(M)/M` rises `1.5 → >3 → >5.3` across `M = 8, 16, 24`.
+
+**Open cell.** `(96,0)@16` timed out at 12 h — the only unresolved point in
+the sprint-B grid. Plain CDCL is the wrong instrument here; the validated
+cube-and-conquer path (notes/87: `bal16v1` UNSAT via 6435 cubes in 541 s on
+32 workers) is the natural next attempt, and would decide whether
+`v_min(0)(16) > 96 = 6M`.
