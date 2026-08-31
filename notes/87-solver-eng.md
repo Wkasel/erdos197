@@ -256,3 +256,14 @@ pins an exact value — was starved. sprint-C demand is now ~2.4 cores.
 **Standing rule going forward: size worker pools from the cgroup quota
 (`/sys/fs/cgroup/cpu.max`, or `cpu/cpu.cfs_quota_us` on v1), never from
 `nproc`.**
+
+
+### F(24;65) TIMEOUT at 86400 s — read with the cap caveat
+
+The freshness cell `F(24;65)` returned TIMEOUT after 24 h. Per the CPU-cap
+recalibration above, that run was time-slicing ~10 effective cores, not the 64
+`nproc` reports. It is therefore **not** evidence that the cell is intrinsically
+hard, and must not be cited as such; it is an unresolved cell at an unknown
+difficulty. The companion C&C swarm on the same instance was terminated
+earlier (the sprint report stated those cubes would not decide in-sprint) to
+free the pod for `bal16v6`, which pins an exact value.
