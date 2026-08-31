@@ -1926,3 +1926,68 @@ remains open.  HSPLIT build verdicts pending (in flight on pods).
   Q/ALT-DEAD/HSPLIT/L-NOTAIL unconditional package (publishable cut
   NOW); Theorem B = assembly modulo exactly the three gating
   hypotheses; dependency graph + section-to-notes map inside.
+
+---
+
+## FRONT CMIN (2026-08-30 night; notes/85 + e188): THE COUNTING
+## LEMMA WRITTEN OUT — Lemma BM1-VAC + Theorem CMIN-SMALLT [PROVED],
+## the boot window unconditional, residue narrowed to GAP-CMIN-BIGT
+
+Full write-up notes/85-cmin.md; machine experiments/e188_cmin_close
+.py (cmin/cmin_t2/bm1vac/sweepaudit; predictions pre-registered in
+the e188 commit), records data/e188_cmin.jsonl + pod logs; sprint-C
+e174 ftot harvest folded in.
+
+- **Lemma BM1-VAC [PROVED]**: for impurity t ≤ ⌊M/8⌋ − 1, NO
+  balanced μ_dn = 0 coloring has mixed-parity Bm1 at all — a swapped
+  -in Bm1 even d₁ (times the full B0-odd class) and the even team's
+  own Bm1-fan jointly ban a whole mod-4 class of B1-evens from BOTH
+  teams: an uncolorable value.  notes/71 §4c's "swap-in-Bm1 subcase"
+  is not a harder case — it is VACUOUS.  Machine: scoped query UNSAT
+  at 16/20/24/28/32 (< 0.1 s each); unrestricted query SAT (a
+  pre-registration miss kept honest): Bm1-mixing becomes feasible
+  only at t*(M) = 4/5/5/6/7, always with t₁ = 1, paying S =
+  49/79/103/143/201 ≈ 3M–6M — inhabited but lavish.
+- **Theorem CMIN-SMALLT [PROVED, exact constants]**: every balanced
+  μ_dn = 0 low-impure split with canonical impurity 16t ≤ M − 14
+  has S = Σ_z min(c_A, c_B) ≥ M.  Ingredients all written with
+  constants: SZ′(t) confinement at corner c(t) = 4t + 8 (rep-
+  counting; scope t ≤ ⌊M/8⌋ − 1 is machine-exact — the cmin_t2(16)
+  optimum punches the hole at t = ⌊M/8⌋ precisely); RIGID (below-
+  corner = forced parity split); candidate floor N ≥ 2M − (r+d)/4
+  − 1/4 (the corner constants CANCEL — this is why no top-corner
+  optimization survives), failure zones confined to the top with
+  run bound f ≤ max(0, M/2 + 4t + O(1) − r/2), and r, d > M because
+  impurity lives in B0 (BM1-VAC pays twice).  Corollary: the t = 1
+  extremal frame — every measured f/cmin/ftot witness — is DEAD for
+  ALL M ≥ 32 by hand; the notes/71 §4d bookkeeping list (top-corner
+  cases, one-sidedness, Bm1 swap) is fully discharged.
+- **Machine audit**: sweepaudit@40, 9 (r, d) cells: 9/9 PASS — every
+  inner optimum S ≥ 40, RIGID true, failures exactly where located,
+  minimum EXACTLY at the extremal cell (79, 80) with S = M, and
+  S = N − f_A − f_B EXACTLY in all 9 cells (the sweep accounting is
+  the value at the optimum, not just a bound).
+- **Exchange floor at the assigned fresh scales**: cmin_t2(16) = 33
+  OPTIMAL (> 2M; 8/12 gave 10/22); 20/24 descending on sprint-B;
+  cmin(24/28/32) on sprint-D to close the measurement hole between
+  cmin(20) = 20 and the M ≥ 32 theorem.
+- **Residue renamed [GAP-CMIN-BIGT]**: S ≥ M for t > (M − 14)/16 at
+  M ≥ 36 — the ONLY surviving mathematics of the front.  The naive
+  exchange breaks μ_dn = 0 (un-swapping mints H_dn fans landing in
+  the RIGID zone); notes/85 §9 sketches the two live routes (two-
+  sided symmetric sweep with t-slack; forced-repair coupling).
+- **Propagation**: [GAP-FHALF] f(M) ≥ M/2 CLOSED on M ≤ 32
+  (measured exact at 7 scales — that IS the inequality there) and
+  [PROVED mod BIGT] for M ≥ 36.  **Theorem J-BOOT is UNCONDITIONAL
+  for 12 ≤ M ≤ 32**: (v,0) UNSAT for v < M/2, elementary, no N6a —
+  the boot window closes full stop, and with J-DOWN (M ≥ 32, mod
+  N6a) the (·,0) demand family is covered at every anchor with NO
+  appeal to BIGT.  v_min(0): = 12 at 8 (anatomy), ≥ M/2 at 12..28
+  unconditional, ∞ at ≥ 32 [J-DOWN].  [GAP-FTOT]: ftot(16) = 8
+  landed on sprint-C (witness = the extremal frame (31, 32),
+  corner-confined) — f_F = f at 8/12/16; F-BOOT's floor is
+  measurement-backed at three scales; ftot(20) ≥ 8 descending.
+- Gating-gap list: UNCHANGED (this front hardens, exactly as
+  notes/76 predicted).  The J/F demand layer — the only engine
+  independent of the N6a pool — is now gap-free through M = 32 and
+  one clean statement (BIGT) from uniform.
