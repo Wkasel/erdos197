@@ -83,7 +83,7 @@ lazy: 11169 s @2048; @4096 still running on main pod since Aug 29).
 | instance | Cadical195 lazy (baseline) | kissat 4.0.4 (eager DIMACS) | CMS 5.14.7 (eager DIMACS) |
 |---|---|---|---|
 | c3core@512 (44.6M cl eager) | **108 s** | 2189 s | **31 s solve** (+303 s python DIMACS load) |
-| coupled (2,2,2)@128 core (105.7M cl eager) | **690 s** | running | running |
+| coupled (2,2,2)@128 core (105.7M cl eager) | **690 s** | 5196 s | 1246 s solve (1906 s total) |
 | bal@16 v=1 (940K cl, known UNSAT 24 s) | 24 s (record) | **> 300 s TIMEOUT** | — |
 | bal@16 v=5 (OPEN) | TIMEOUT ~40000 s class | running (1h+, no verdict) | running (1h+, restarts) |
 
@@ -102,7 +102,17 @@ cubes on bal@16 v=1): every cube TIMEOUT at 120 s — kissat again, not
 the splitting.  v2 driver (e189_cnc2.py) switches to persistent
 Cadical195 workers (base CNF loaded once per worker, cubes as
 assumptions, conflict-budgeted, learned clauses shared across cubes
-within a worker) — validating on bal16v1 before the real targets.
+within a worker).
+
+**C&C v2 validation (bal@16 v=1, known UNSAT 24 s mono): UNSAT, all
+6435 balanced-B0 cubes refuted, 541 s wall on 32 workers.**  Per-cube
+avg ~2.6 s (first cube per worker ~25 s, then the incremental effect
+kicks in).  Notable control datum: a single fixed-B0 cube costs ~27 s
+on a FRESH solver — as much as the whole mono query — so the cube win
+comes from incremental reuse, not from the split shrinking the theory;
+and re-solving mono on a solver polluted by a prior assumption query
+took 575 s vs 24 s fresh (incremental reuse cuts both ways across
+heterogeneous queries).
 
 ## Log
 
