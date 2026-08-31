@@ -1879,8 +1879,14 @@ route, and the run-length/censor siege (R-scans, ν-growth, F12
 boundary cells) stands down as moot at ω.
 
 **Residue: GAP-AFFORD″-ALT RETIRED → GAP-AFFORD‴-SPLIT** — the
-supply cap for gap-≥3, 2-adically split (HSPLIT-generic, hence
-aperiodic) minorities.  No known inhabitant satisfies all corner
+supply cap for gap-≥3, 2-adically split minorities.  [Corrected,
+notes/88 item 2: NOT "hence aperiodic" — HSPLIT excludes only
+persistent monochromatic power-of-two residue charts; the mod-3
+minority (multiples of 3) is fully periodic yet HSPLIT-compatible
+(gcd(2^k, 3) = 1 makes every long class-section bichromatic;
+machine-checked), and odd-periodic/mixed-modulus/automatic shapes
+are excluded only mod the Q-ODD gates or by L-NOTAIL at constant
+ownership.]  No known inhabitant satisfies all corner
 axes (the e185 censor-off alternating coloring is NOT 4-pure —
 machine-verified, n_pure = 0 at every t ≥ 6 — so the residue class
 is real as colorings, but it was never corner-certified).  First
@@ -1901,7 +1907,8 @@ theorem) is unaffected; its applicability hypothesis on this corner
 is explicitly open.**  Professor certifies
 no elegant kill among directions (1)–(4) for THIS residue — it is
 genuine AFFORD′-species mathematics, now stripped of every
-arithmetic example.
+2^k-periodic example (odd-periodic ones survive unconditionally —
+notes/88 item 2).
 
 **Ledger:** gating gaps now (1) GAP-AFFORD′ with residue
 GAP-AFFORD‴-SPLIT (the only Case-2 corner remnant) + arm B,
@@ -2005,3 +2012,68 @@ e174 ftot harvest folded in.
   notes/76 predicted).  The J/F demand layer — the only engine
   independent of the N6a pool — is now gap-free through M = 32 and
   one clean statement (BIGT) from uniform.
+
+### FRONT GAP-RES (2026-08-30 late night, notes/84 + e187): ODD-KILL's
+### cross-parity core PROVED on the clustered/low regime; the spiral
+### mechanism found; fresh-scale α̂ = 3 twice
+
+The consolidated N6a crux (notes/77 §7 GAP-RES) attacked at its core,
+the ODD-KILL reduction of notes/66 §5.  **The mechanism:** for odd gap
+g = p − q every descent-rule residue is PARITY-FORCED, so the walk
+calculus at a head becomes a deterministic SPIRAL whose deviation from
+the head's fixed point is base-(−2) digit extraction in units of g —
+**Lemma LAND [PROVED]**: base-(−2) extraction terminates from every
+integer, so the spiral lands iff g | δ₀ (mod-g exactness both ways).
+The notes/55 §5.3b "affine-cycle certificates, med ≈ 14 facts" are
+these spiral 2-cycles verbatim.
+
+- **Theorem S1 + Corollary COR [PROVED, notes/84 §1]: every odd-gap
+  attacker pair of F(N, A) with 7q + 10g ≤ 2N is dead** — one seed
+  unit, one RL lift, one landing spiral; side conditions three affine
+  inequalities; the divisibility is absorbed by the free translation
+  parameter (minimal valid t ≤ g).  Covers the clustered bulk
+  (g ≤ q) through q ≈ 2N/7.
+- **Region law [MACHINE-CHECKED ×40 windows]: every odd-gap pair in
+  R(N) = {3q + g ≤ N − 24, 2p ≤ N − 7} carries a VERIFIED closure
+  certificate** (S spiral family ∪ FG-high ∪ FW 2-/k-cycles; species
+  soundness = Lemmas CC/FW [PROVED, imported]).  Windows: 8 full
+  scales 48..160, 16 tower windows (m = 24..64 + FRESH 104/120), the
+  2 FRESH full scales M = 208/240 (N = 431/495, never measured
+  before), and 14 arbitrary lengths N = 100..450 (incl. the LAT-LOW
+  halves 123/124).  Every certificate replayed by an independent
+  Lemma-CC step-walker; ZERO soundness violations (no closure-alive
+  pair acquires a certificate, ~10⁴ trials); e142 closure spot-checks
+  at both fresh scales agree.
+- **Theorem LAT-LOW [PROVED mod region law]**: on the low zone
+  (3q + g ≤ N − 100, 2p ≤ N − 32) every alive pair has gap ≡ 0
+  (mod 8) — the alive-gap lattice law / H-LAT input, delivered by
+  running the notes/66 halving reduction inside R (budget recursion
+  B → ⌈(B−1)/2⌉ from 100/32 stays above 24/7 for two levels).
+- **Lemma CLIQUE-HALVE [PROVED]**: mod-8 alive cliques transport
+  three levels down, shallow→shallow — the base-window clique
+  reduction of notes/66 §5 made exact; with LAT-LOW: α_low ≤ max
+  shallow base clique.
+- **α_max ≤ 3 remains CONDITIONAL** (exact statement notes/84 §7.3):
+  needs (α-1) region-law uniformity (the owed R∖COR cell table),
+  (α-2) the mid-deep sector (scaled zone + stall corner — the
+  pre-existing GAP-RES residue, unchanged species), (α-3) SPAN-4 at
+  the base windows.  Its consumer is the ROBUST chain's K* law (the
+  claudeMd-era "⟹ (OV-∀)" is superseded — notes/66 killed plain
+  (OV-∀) at 224/256).
+- **Fresh-scale α (T2, e169 on sprint-D, pre-registered)**: all four
+  fresh half-windows (m = 104/120 × e/o) — H-LAT HOLDS, SAT-alive
+  gap sets {32, 64, 96}, **α̂(208) = α̂(240) = 3**, full-window
+  cliques also 3 (the deep span-m 4-cliques of 112/128 absent).
+  Every pre-registered prediction confirmed.
+- Odd STALL corner pinned [MACHINE ×8 scales, e180 data]: odd-gap
+  closure-alive pairs occupy exactly q ≥ M − 8 (all SAT-dead); the
+  α quantifier zone touches it only in its bottom 8 q-values.
+- In flight at close: e168 catalogues at 208/240 (T1 α/f
+  cross-check, sprint-C/main), e180 deep-classify at 176/192
+  (RES-LAW/stall extension to 10 scales, sprint-B).
+
+Residue of GAP-RES after this front (notes/84 §6): the R∖COR cell
+table (would promote region law + LAT-LOW to [PROVED]); the scaled
+zone / E1 columns / high wing (RESISTS, unchanged); the odd stall
+corner (finite-width, PARM-species candidate); base-catalogue
+uniformity (SPAN-4).
