@@ -360,6 +360,13 @@ residue).
 1. The cell table for R ∖ COR (finite classification of which
    S/FW word fires per congruence cell of (q, g) — would upgrade the
    region law to [PROVED] and with it LAT-LOW to a full theorem).
+   Scoping measurement (this session): the pairs needing FW2/FWK
+   beyond S ∪ FG-high number 2/20/32/112 at N = 111/207/335/431,
+   concentrated in the boundary strip (slack 3q+g vs N−24 mostly
+   < 48) plus, from N ≈ 431, interior clustered cells with small
+   odd gaps 11..33 where the minimal S1 lift fails (C2)/(C3) and
+   the transient search stalls — the table is thin but genuinely
+   growing with N; it is the exact hard core of the [GAP].
 2. The scaled-zone odd kills q ∈ ((N−24)/3, M−9] and the E1
    columns: species = notes/77 §1.4 RESISTS (glue calculus).
 3. The odd stall corner q ≥ M−8 (SAT-dead only): finite-width in
