@@ -257,6 +257,14 @@ What survives of GAP-CMIN: **S ≥ M for t > (M − 14)/16, M ≥ 36**
   Bm1-mixed witnesses (§1) pay 3M–6M; every cmin optimum ever
   dumped is t = 1.  BIGT gates NOTHING downstream (§8): it is a
   hardening statement for the uniform-in-M law at M ≥ 36 only.
+- **The full t-profile at M = 16 (e188, all OPTIMAL)**:
+  cmin_{t≥k}(16) = 16 / 33 / 46 / 48 at k = 1 / 2 / 4 / 6 — a
+  factor-2 CLIFF immediately behind the t = 1 frame, climbing to
+  3M at deep impurity; the t ≥ 4 optimum sits exactly at the
+  Bm1-mixing threshold t*(16) = 4 (t₁ = 1) and the t ≥ 6 optimum
+  is genuinely Bm1-mixed (t₁ = 2).  The BIGT adversary's best play
+  is to enter the mixed corner the moment it opens — and it still
+  pays triple.
 
 ## 7. Machine ledger (runs of this front)
 
@@ -271,6 +279,12 @@ What survives of GAP-CMIN: **S ≥ M for t > (M − 14)/16, M ≥ 36**
 | sweepaudit(40), 9 cells (r ∈ {41,61,79} × d ∈ {42,62,80}) | local | **9/9 PASS, all OPTIMAL, ≤ 0.3 s each**: every cell S ≥ 40 = M; RIGID true in every optimal witness; failures only at the lowest channels ((41,42): f_B = 1; (61,42)/(79,42): f_A = 1) exactly as §4(a) locates them; minimum EXACTLY at the extremal cell (79, 80) = (2M−1, 2M) with S = 40 = M, N = 40, zero failures.  Sharper than predicted: **S = N − f_A − f_B EXACTLY in all 9 cells** — at the optimum the sweep accounting is not a bound but the value |
 | ftot(16) | sprint-C (e174) | **= 8 = M/2** (UNSAT through 7, the m = 7 query 6920 s; SAT at 8 [3.5 s]) |
 | ftot(20) | sprint-C (e174) | ≥ 8 and descending (m = 7 UNSAT 8785 s; predicted 10) |
+
+**Witness-level accounting check (harvested optima re-run through
+the proof's counters):** the cmin(24) and cmin(28) optimal
+witnesses give S = N − f_A − f_B EXACTLY (24 = 24 − 0 − 0,
+28 = 28 − 0 − 0) with RIGID true below the corner — as at M = 40,
+the sweep accounting IS the optimum at every measured scale.
 
 The ftot(16) witness is one more extremal-frame instance:
 low split (r, d) = (31, 32) = (2M−1, 2M), Bm1 pure, corner odds
