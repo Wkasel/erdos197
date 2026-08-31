@@ -1262,13 +1262,17 @@ yields a consistent tower whose limit has each $v$ preceded by at most $B(v)$
 values, hence order type $\omega$; all constraints are finitary and inherited.
 \end{proof}
 
-Computationally: pure-complete-$X$ is satisfiable for $X \le 1024$ (machine
-certificates), and the completion-pressure function
-$g_X(L) = \min \max_{v \le L} \pos(v)$ satisfies $g_{256}(64) = 153$
-(optimal): eighty-seven percent of the block $(128,256]$ must precede the
-completion of $[1,64]$, with the residue concentrated in a single residue
-class modulo 8 --- the reservoir structure that any construction must
-implement. Divergence of $g_X(L)$ in $X$ for fixed $L$ would prove
+Computationally: pure-complete-$X$ is satisfiable for $X \le 1024$
+(explicit witnesses in the repository), and the completion-pressure function
+$g_X(L) = \min \max_{v \le L} \pos(v)$ satisfies $g_{256}(64) = 153$,
+this value being optimal. The equality $g_{256}(64) = 153$ means that at
+least $153 - 42 = 111$ of the $128$ values in $(128,256]$ precede the
+last-placed member of $\SA \cap [1,64]$ (recall
+$|\SA \cap [1,64]| = 42$, so at most $42$ of the first $153$ positions can
+be occupied by members of $\SA \cap [1,64]$ itself). In the optimal
+arrangements found, those early values of $(128,256]$ were concentrated in
+a single residue class modulo $8$.
+Divergence of $g_X(L)$ in $X$ for fixed $L$ would prove
 non-permutability directly; our measurements did not exhibit divergence
 (the subset-tolerance is near-total), and this route was abandoned in favour
 of the one taken in Sections~\ref{sec:og}--\ref{sec:c3}. There is no
@@ -1287,11 +1291,12 @@ so the self-similar tower also has dead branches.
 We also record a calibration fact: requiring, in addition, that the $\pm 1$
 neighbors (within the same block and team) of each forced completion also
 precede the pair's later element (``radius-1 robustness'') is infeasible in
-every setting we tested --- including plain intervals $[1, n]$ from $n = 8$.
-Radius-1 robustness therefore appears to be unachievable in three-AP
-arrangement problems generally, and cannot serve as a satisfiability
-criterion; in particular it does
-not discriminate between partitions, and pumping arguments must instead manage
+every setting we tested --- including plain intervals $[1, n]$ from $n = 8$,
+where no partition is involved at all. We have no proof that this persists,
+but within the tested range radius-1 robustness fails for reasons that have
+nothing to do with the dyadic partition, so it does not discriminate between
+partitions and is of no use as a satisfiability criterion; a pumping
+argument would instead have to manage
 rounding drift on the thin family of far-pair constraints only. The
 radius-one experiments are \emph{evidence} against placement rules in which
 position varies slowly with value; we neither formalize such a class of
@@ -1306,11 +1311,28 @@ No stage function whose fibers are unions of whole even blocks satisfies
 \end{theorem}
 
 \begin{proof}
-The fatal core $F_b$ (forced pairs into block
-$b$ from block $b{-}2$ below, plus block-$b$ triples) is UNSAT for $b=6$
-(machine, instant), and $v \mapsto 4v$ embeds $F_b$ into $F_{b+2}$: the map
+For an even $b \ge 6$ define the \emph{fatal core} $F_b$: the variables are
+the relative order of the elements of the block $B_b$, and the constraints
+are
+\begin{enumerate}
+\item[(a)] the forced pair $z \prec y$ for every AP triple $(x, y, z)$,
+$z = 2y - x$, with $x \in B_{b-2}$ and $y, z \in B_b$ --- these are the
+instances of the row $s(x) < s(y) = s(z) \Rightarrow z \prec y$ of (B) that
+a boundary between $B_{b-2}$ and $B_b$ creates; and
+\item[(b)] non-monotonicity on every AP triple lying inside $B_b$.
+\end{enumerate}
+Any fiber whose lowest block is $B_b$ contains $F_b$ as a subsystem, and a
+supersystem of an unsatisfiable system is unsatisfiable.
+
+$F_6$ is unsatisfiable: it has $51$ forced pairs and $240$ triples on the
+$32$ elements of $B_6$, and is refuted by CaDiCaL in well under a second
+(script \texttt{e59}, independently reproduced by \texttt{e67}; this is a
+solver verdict on one finite instance and carries no proof certificate, cf.\
+Section~\ref{sec:data}). The map $v \mapsto 4v$ then embeds $F_b$ into
+$F_{b+2}$: it
 preserves $\SA$, sends block $j$ to block $j{+}2$, and preserves AP triples;
-UNSAT lifts to supersystems. It remains to see that a block-granular scheme
+so every $F_b$ with $b \ge 6$ even is unsatisfiable.
+It remains to see that a block-granular scheme
 has an \emph{ascending} fiber boundary above block $4$, i.e.\ some
 $b \ge 6$ with $s(B_{b-2}) < s(B_b)$ (this is what puts the forced pairs of
 $F_b$ into the system). If there were none, then
@@ -1341,7 +1363,8 @@ $C_s = 2^{s}\cdot[3\cdot 2^{s-2}, 2^{s}]$, the top-quarter multiples of
 $2^{s}$ --- precisely the set singled out by Lemma~\ref{lem:escape}.)
 
 \medskip
-This atlas leaves exactly one shape of candidate for a YES: stage functions
+Among the classes of stage function we were able to search, the atlas
+leaves one shape of candidate for a YES: stage functions
 with unbounded displacement (chunks mixing stragglers of unboundedly many
 blocks). Closing the remaining gap --- between
 Theorems~\ref{thm:blockgranular}/\ref{thm:restriction} and general
