@@ -62,3 +62,7 @@ TOWER W2e(m=104) N=215: odd 3136, S certs built+VERIFIED 2522 (80%), S1-region 1
 TOWER W2o(m=104) N=216: odd 3136, S certs built+VERIFIED 2527 (81%), S1-region 1138; R-pairs 2146 ALL covered (23 via FW2)
 TOWER W2e(m=120) N=247: odd 4096, S certs built+VERIFIED 3337 (81%), S1-region 1494; R-pairs 2867 ALL covered (25 via FW2)
 TOWER W2o(m=120) N=248: odd 4096, S certs built+VERIFIED 3349 (82%), S1-region 1507; R-pairs 2878 ALL covered (26 via FW2)
+FRESH M=208: odd grid 12544; S certs built+VERIFIED 10281 (82.0%); S1-region 4525, all with certs; R-pairs 9138, ALL covered (112 via FW2 certs, verified) [7s]
+   e142 closure spot-check x10: mismatches none [9s]
+FRESH M=240: odd grid 16384; S certs built+VERIFIED 13480 (82.3%); S1-region 5983, all with certs; R-pairs 12146, ALL covered (168 via FW2 certs, verified) [10s]
+   e142 closure spot-check x10: mismatches none [13s]

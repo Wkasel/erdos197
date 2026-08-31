@@ -1,0 +1,5 @@
+FRESH M=208: odd grid 12544; S certs built+VERIFIED 10281 (82.0%); S1-region 4525, all with certs; R-pairs 9138, ALL covered (112 via FW2 certs, verified) [7s]
+   e142 closure spot-check x10: mismatches none [9s]
+FRESH M=240: odd grid 16384; S certs built+VERIFIED 13480 (82.3%); S1-region 5983, all with certs; R-pairs 12146, ALL covered (168 via FW2 certs, verified) [10s]
+   e142 closure spot-check x10: mismatches none [13s]
+e187: DONE

@@ -128,8 +128,9 @@ partition}: let
 S_B \;=\; \Z^+ \setminus \SA,
 \]
 so that each team is a union of doubling blocks and the completion
-$2y - x$ of a pair $x < y$ within a block falls in the other team's
-territory. Our main result eliminates this candidate.
+$2y - x$ of a within-block pair $x < y$, whenever it escapes the block
+upward, lands in the adjacent block — the other team's territory. Our main
+result eliminates this candidate.
 
 \begin{quote}
 \textbf{Main Theorem} (Theorem~\ref{thm:main}). \emph{$\SA$ admits no
@@ -164,7 +165,10 @@ on AP-ladders that seeds the toolkit is classical — it appears inside
 \cite{DEGS77} in Folkman's argument, as Lemma~2.5 of \cite{HS24}, and as
 Lemmas~2.1--2.2 of \cite{Gen26}; what is new here is its boundary-quantitative
 use on bounded ladders, the transfer lock, and the flood induction.) The mod-$8$ condition is sharp:
-the same three axioms are satisfiable whenever $M \not\equiv 0 \pmod 8$,
+the same three axioms are satisfiable at every tested scale with
+$M \not\equiv 0 \pmod 8$ (a parametric satisfying construction for the
+complementary residues is not proved here, and the main theorem does not
+require one),
 matching the machine's phase diagram exactly.
 
 A word on methodology. The elimination phase and the discovery of the
@@ -424,7 +428,9 @@ form an infinite orbit $u_{j+1} = 2u_j - a$ inside $A$ with $F = \{a\}$,
 contradicting Lemma~\ref{lem:orbit}.
 \end{proof}
 
-Both teams must therefore alternate along every affine doubling ray; partitions
+Every affine doubling ray based in one team therefore meets the opposite
+team infinitely often (the precise content of the lemma — it does not
+assert literal alternation); partitions
 such as ``even 2-adic valuation vs.\ odd'' die immediately, and viable partitions
 are forced toward dyadic-interval alternation, motivating the canonical
 candidate $\SA$.
