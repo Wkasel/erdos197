@@ -1924,15 +1924,22 @@ GAP-AFFORD‴-SPLIT (the only Case-2 corner remnant) + arm B,
 (2) GAP-N6a sub-pool, (3) GAP-N3-GROW (N3-b) — GAP-N2-DIAG stays
 discharged.  New proved tags: Lemma Q, Theorem ALT-DEAD,
 Cor. HSPLIT (+ Q-ODD stated, rides N2-UNIF/BRIDGE1-AF).
-**Honest assessment: NO ≈ 96–97 % (was 95).**  FOR: the entire
-arithmetic YES-space — everything ever realized or parameterized —
-is now dead at ω through the proved Case-1 chain with zero new
-gaps and a clean adversarial audit; the YES now requires a
-2-adically generic sparse coloring nobody has constructed, PLUS
-¬AFFORD on it.  AGAINST more: the SPLIT residue has no finite
-refutation (S5-species colorings exist), the supply cap has zero
-completed strategies (NG1–NG4 stand), and α_ℕ(3) density theory
-remains open.  HSPLIT build verdicts pending (in flight on pods).
+**Honest assessment (reframed per notes/88 item 9; the original
+"NO ≈ 96–97 %" headline is retired):** what exists is a
+**conditional NO architecture**.  Open theorems gating it, exactly:
+(1) GAP-AFFORD′ — the terminal supply cap, sharpest surviving form
+GAP-AFFORD‴-SPLIT (zero completed proof strategies); (2) the
+GAP-N6a sub-pool (GAP-RES + listed companions); (3) GAP-N3-GROW
+(N3-b); plus, explicitly since notes/88 item 1, ALT-DEAD's
+applicability hypothesis on the SPLIT corner (infinitely many
+4-pure scales — open) and the Q-ODD gates for odd-periodic
+shapes.  What is TRUE unconditionally: many structured candidate
+families are eliminated — every 2^k-lattice/periodic minority at
+any ownership law (Lemma Q/ALT-DEAD/HSPLIT), the canonical
+partition and all block-granular shapes (thm:main), constant-
+ownership infinite-AP teams (L-NOTAIL/B1₀).  The SPLIT residue has
+no finite refutation (S5-species colorings exist), and α_ℕ(3)
+density theory remains open.
 
 ### FRONT PROSE+ASSEMBLY-PREP (2026-08-30, notes/86): C3(p) prose
 ### rider DISCHARGED, tag graph reconciled, paper-2 skeleton drafted
@@ -2086,3 +2093,89 @@ table (would promote region law + LAT-LOW to [PROVED]); the scaled
 zone / E1 columns / high wing (RESISTS, unchanged); the odd stall
 corner (finite-width, PARM-species candidate); base-catalogue
 uniformity (SPAN-4).
+
+---
+
+## GRAND ASSEMBLY (2026-08-30, night): five-front merge, independent
+## spot-verification, definitive post-wave state
+
+Mandate executed: each front's central claim independently
+reconstructed (fresh code, fresh scale, no shared instruments);
+notes/50 + this file brought to the definitive state; honest
+headline computed.  Full one-page verdict: **BOTTOM-LINE.md**.
+
+### Spot-verification ledger (all five fronts)
+
+| front | central claim | independent reconstruction | verdict |
+|---|---|---|---|
+| 83 SPLIT | Q-g chart facts + mod-3 test case | fresh checker: g ≤ 12 × all c × t = 6..17 (fresh 13-17) — image = ratio-2 window, ≤ 1 dust/end, contiguous; anchor cycles mod 8 = 5,2 / 3,6,4,1 / 4,1,2 verbatim; dyadic g exact | **CONFIRMED** (one precision fix: mod-3 claim at (mod 32, t = 6) — length-2 sections majority-pure; HSPLIT mods 4+8 clean at all t ≥ 6; recorded in notes/83 §2b + notes/88 item 2) |
+| 84 GAP-RES | Lemma LAND + Thm S1 + Cor COR | from-scratch spiral walker at FRESH N = 600 and 222: 5 178 + 717 = 5 895/5 895 in-region odd pairs yield valid 2-cycle certificates, every step's window/positivity/head-avoidance checked; LAND(c) exactness 2 549/2 549 non-divisible seeds never land | **CONFIRMED** |
+| 85 CMIN | BM1-VAC + CMIN-SMALLT + cmin = M | from-scratch CP-SAT encoder (zero shared code): BM1-VAC scoped UNSAT at FRESH M = 36 (0.1 s; unrestricted control SAT); cmin(12) = 12, cmin(16) = 16 OPTIMAL | **CONFIRMED** |
+| 86 PROSE | C3(p) referee pass discharged | identity layer re-derived independently at p = 29..47 (record was ≤ 39): units/flip-class/mod-4 table/POLAR/flip mirrors/E-collision scales/index-gap parity — 0 fails; the §1.5 slip verified exactly (betweenness ⟺ M > 2p−2, both inequalities) | **CONFIRMED** |
+| e97 lcomb | Theorem C4 / 11.1 (circulant kill) | from-scratch board checker at FRESH n = 21, 22 (record was ≤ 20): 4 845 + 5 985 = 10 830/10 830 4-subsets — pair rule never fails, orbit charge Γ ≥ 0 everywhere and > 0, strict bin at d* = min(b+c, a) | **CONFIRMED** |
+
+### In flight at grand-assembly close (honest)
+
+- **e187 F = 12 weak-censor HSPLIT cells (the decisive SPLIT-residue
+  hunt): C1 (local), C2 (sprint-B), C3 (sprint-C), C4 (sprint-D),
+  C5-variant (main) ALL STILL RUNNING** past their 2 h budgets —
+  the F = 64 analogues took ≤ 30 s (UNSAT), so F = 12 is genuinely
+  harder: deep SAT-side search or hard UNSAT.  NO verdict harvested;
+  notes/83 §0b's blind-drafted readings stand by for either.
+- e188 cmin_t2(20/24) on sprint-B; e174 ftot(20) on sprint-C
+  (UNSAT through m = 7, descending to predicted 10).
+- e168 M = 208 re-run (sprint-C); e180 M = 192 (sprint-B).
+  LANDED and folded into notes/84 §7.5: e168 catalogues M = 240
+  (32 071 dead / 569 alive / 36 J) and M = 256 (36 257 / 599 / 36);
+  e180 M = 176 deep-classify (CLOSE-LAW escapes 0, violators 0).
+- notes/87 solver-engineering sprint (kissat/CMS/cube-and-conquer)
+  running on the stuck decision instances; concurrent review-
+  remediation session active (notes/81 language alignment, item 8).
+
+### THE HONEST HEADLINE (post-wave)
+
+**Is Case 2 closed?  NO.**  The demand side is a theorem modulo the
+N6a sub-pool; the arithmetic corner (all 2^k-lattices, every
+ownership law, all on-class punctures, all eventually-2^k-periodic
+minorities) is dead at ω by Lemma Q + ALT-DEAD + HSPLIT — now
+rider-free (C3(p) prose pass done) and sharpened to ALL moduli by
+Cor. ASPLIT (odd arm mod the Q-ODD gates).  But the supply cap
+GAP-AFFORD‴-SPLIT on the diffuse residue is open, the F = 12
+inhabitant hunt is undecided, and notes/88 items 1-2 keep the
+finite-to-ω bridge honest (no compactness step; odd-periodic shapes
+only conditionally dead).
+
+**Is the NO-proof complete modulo species write-ups + audit?  NO —
+that phrasing would overstate.**  The assembly theorem (notes/50
+§5) has THREE hypotheses: (i) GAP-N3-GROW (N3-b) and (ii) the
+GAP-N6a sub-pool residue are uniformization species with every
+instance ever attempted discharged and zero machine anomalies —
+those two ARE fairly described as "write-ups + audit risk"; but
+(iii) GAP-AFFORD′ is genuinely new mathematics with zero completed
+proof strategies, and no wording should launder it into a
+formality.  Unconditional theorems banked: thm:main (S_A not
+3-permutable), Theorem B1₀, Lemma Q / ALT-DEAD / HSPLIT, C3(p),
+S1/COR, CMIN-SMALLT, J-BOOT ≤ 32, AFFORD-CORNER, L-NOTAIL,
+L-DOUBLE-DUTY.
+
+**The honest formulation (notes/88 item 9): a conditional NO
+architecture — open theorems exactly as listed above (GAP-AFFORD′ /
+GAP-N6a sub-pool / GAP-N3-GROW(N3-b), plus ALT-DEAD's applicability
+hypothesis on the SPLIT corner and the Q-ODD gates); many
+structured candidate families eliminated unconditionally.**
+
+*Informal betting heuristic — NOT a mathematical claim, kept only
+as a clearly-labeled internal signal (notes/88 item 9):*
+NO ≈ 95 %, YES ≈ 5 %.
+Movement from notes/80's 93/7: the ≈ 5 % YES-mass that sat on "the
+mod-4 lattice corner affords its mints" is DEAD (Lemma Q/ALT-DEAD
+kill the entire realized YES-space at ω; every corner witness ever
+found is a lattice coloring); five-front spot-verification at fresh
+scales found zero breaks.  Held back from more: the SPLIT residue
+is a coloring-class that provably EXISTS (altw, mod-3 variants) and
+its supply cap has no proof strategy; the F = 12 cells could return
+SAT (a first corner-certified inhabitant would be genuine YES-side
+evidence); review remediation showed two finite-to-ω overclaims
+this same week — epistemic humility tax.  Composition of the 5 %:
+≈ 3 % some diffuse split coloring defeats every censor and affords
+forever (YES), ≈ 2 % an unmodeled break in the machine-schema layer.
