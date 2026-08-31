@@ -111,15 +111,16 @@ because δ_n and g are both odd.
 m_{n+1} = −(m_n + ε_n)/2 with ε_n = m_n mod 2 (g odd).  This is
 base-(−2) digit extraction, and it terminates at 0 from EVERY
 integer: m = 0 is fixed; ±1 reach 0 in ≤ 2 steps (1 → −1 → 0,
-−1 → 0); and |m| ≥ 2 gives |m_{n+1}| ≤ (|m| + 1)/2 < |m|.  The
-bound |δ_{n+1}| ≤ (|δ_n| + g)/2 ≤ max(|δ_n|, g) gives the sup
-bound; if δ₀ < 0 and |δ₀| ≥ g, every later |δ_n| ≤ |δ₀| with
-positive terms bounded by (|δ₀|+g)/2 < |δ₀|, so x₀ is the minimum;
-if |δ₀| < g then all |δ_n| < g (the recursion cannot produce
-|δ| = g: δ = ±g needs a predecessor of magnitude ≥ 2g — wait, at
-most (|δ_n|+g)/2 < g when |δ_n| < g, strict since equality forces
-|δ_n| = g).  In both cases x₀ = τ + δ₀ remains the minimum orbit
-value when δ₀ < 0.
+−1 → 0); and |m| ≥ 2 gives |m_{n+1}| ≤ (|m| + 1)/2 < |m|.  For the
+sup bound, |δ_{n+1}| ≤ (|δ_n| + g)/2, so |δ_n| ≤ D := max(|δ₀|, g)
+by induction.  Two refinements used later, both for δ₀ < 0:
+(b1) POSITIVE deviations satisfy δ_{n+1} > 0 ⟹ δ_n < 0 and
+δ_{n+1} ≤ |δ_n|/2 ≤ D/2;  (b2) NEGATIVE deviations satisfy
+|δ_{n+1}| ≤ (|δ_{n}| + g)/2 ≤ D, with the minimum orbit value
+attained at x₀ (every later negative deviation has magnitude
+≤ (D + g)/2 ≤ D = |δ₀| when |δ₀| ≥ g; and when |δ₀| < g, all
+|δ_n| < g by induction — equality |δ_{n+1}| = g would force
+|δ_n| = g).  So x₀ = τ + δ₀ is the orbit minimum.
 
 (c) The correction term ε_n σ g vanishes mod g; 2 is invertible mod
 the odd g.  ∎
