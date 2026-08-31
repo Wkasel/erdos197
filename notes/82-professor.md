@@ -334,12 +334,23 @@ question with the wrong instrument.
 | odd-q periodic minorities (e.g. spacing-3) | DEAD mod BRIDGE1-AF + GAP-N2-UNIF (known species; Cor. Q-ODD) |
 | non-lattice, 2-adically split gap-≥3 minorities | **SURVIVES** — rename the tag |
 
-The surviving object is sharply characterized and is NOT
-"mod-4-lattice-like": by HSPLIT it must, at every modulus 2^k,
-split every class in cofinitely many blocks — a 2-adically
-generic sparse minority, aperiodic by construction, of which the
-campaign has never produced a single inhabitant (all realized
-corner witnesses were lattices — notes/80 §4).  Proposed rename:
+The surviving object is constrained but NOT "mod-4-lattice-like":
+by HSPLIT it must, at every modulus 2^k, split every class in
+cofinitely many blocks.  [CORRECTED, notes/88 item 2: the original
+text here claimed "aperiodic by construction" — that is FALSE.
+HSPLIT rules out persistent monochromatic power-of-two residue
+charts ONLY.  Counterexample: minority = multiples of 3 — fully
+periodic (period 3), yet every mod-2^k class-section is
+bichromatic in every long block, because gcd(2^k, 3) = 1 puts both
+multiples and non-multiples of 3 in every class-section of length
+≥ 3·2^k (machine-checked: 0 monochromatic sections, mods 4/8/16/32,
+t = 6..12).  Odd-periodic, mixed-modulus, and automatic minority
+structures are NOT excluded by HSPLIT; they die, if at all, by
+other instruments — constant-ownership odd-periodic by L-NOTAIL
+(infinite AP), block-alternating odd-periodic only mod the Q-ODD
+gates (§2.3).]  The campaign has produced no inhabitant of the
+full corner axes in this residue (all realized corner witnesses
+were lattices — notes/80 §4).  Proposed rename:
 **GAP-AFFORD‴-SPLIT** — the supply cap for gap-≥3, 2-adically
 split minorities — patrolled as before by SPARSE-CORE (demand,
 8 scales + AAA hand arm) and MINT-1, with L-CASCADE/arm B
@@ -348,7 +359,11 @@ directions (1)–(4) yields an elegant kill — (1b)'s geometry
 blocks fixed attackers (no class-section structure to align on),
 (3) and (4) fail as above — it remains genuine AFFORD′-type
 mathematics, but it is now a strictly smaller and stranger
-target, stripped of every arithmetic example.
+target, stripped of every POWER-OF-TWO-periodic example
+[corrected, notes/88 item 2: odd-periodic / mixed-modulus /
+automatic shapes remain in the residue unconditionally — see the
+mod-3 counterexample above; they are excluded only mod the Q-ODD
+gates or, at constant ownership, by L-NOTAIL].
 
 **Ledger moves (for notes/50 §2d and §6):**
 
@@ -365,7 +380,9 @@ target, stripped of every arithmetic example.
 - The YES-composition shifts: of the residual YES-mass, the
   "canonical arithmetic family with trivial ω-extension" argument
   (notes/80 adjudication, the reason the estimate was held) is
-  VOID — every arithmetic inhabitant is dead; a YES now requires
+  VOID — every 2^k-periodic inhabitant is dead (odd-periodic ones
+  only mod the Q-ODD gates / L-NOTAIL, notes/88 item 2); a YES now
+  requires
   a 2-adically generic sparse coloring nobody has constructed AND
   ¬AFFORD on it.
 
@@ -400,6 +417,8 @@ class sections EXACTLY onto dyadic blocks, permutability restricts,
 and the image is Case 1 — dead by PIN + DIAG-DENSE + C3(p), all
 proved.  Alternation, run lengths, punctures on the class, and
 censors never enter.  What remains of the corner is only the
-2-adically split gap-≥3 residue — no known inhabitant, no
-arithmetic shape — and the terminal supply question lives there
-alone now.
+2-adically split gap-≥3 residue — no known inhabitant of the full
+corner axes; no eventually-2^k-periodic shape, though odd-periodic
+and other non-2-adic arithmetic shapes are excluded only
+conditionally (notes/88 item 2) — and the terminal supply question
+lives there alone now.

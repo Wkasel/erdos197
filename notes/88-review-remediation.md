@@ -57,3 +57,40 @@ Edits: notes/81 §2 (pre-registered reading annotated) + §3
 STATUS.md FRONT ALT-CLOSURE (verdicts recorded with the downgraded
 reading), notes/50 §6 GAP-AFFORD′ row + §6 closing (iv) bracket,
 notes/82 §5 (pointer).
+
+---
+
+## Item 2 — "HSPLIT ⟹ aperiodic" RETRACTED (review item 7):
+## the mod-3 counterexample is correct
+
+**The error.**  Several places inferred "2-adically split
+(HSPLIT-generic), hence aperiodic" / "stripped of every arithmetic
+example".  FALSE.  Cor. HSPLIT rules out persistent monochromatic
+POWER-OF-TWO residue charts only.
+
+**The counterexample (reviewer's; machine-verified this session).**
+Minority = 3ℤ⁺: fully periodic (period 3), yet every class-section
+mod 2^k is bichromatic in every long block — gcd(2^k, 3) = 1 puts
+both multiples and non-multiples of 3 into every class c mod 2^k of
+any section of length ≥ 3·2^k.  Check: 0 monochromatic sections at
+mods 4/8/16/32, t = 6..12; in-block minority gaps identically 3.
+
+**Corrected characterization (now propagated everywhere the claim
+appeared):** the SPLIT residue excludes eventually-2^k-periodic
+minorities [PROVED, Cor. HSPLIT] but NOT odd-periodic,
+mixed-modulus, or automatic ones.  Those die, if at all, by:
+L-NOTAIL [PROVED] when one team owns an infinite AP
+(constant-ownership case), or Lemma Q-g / Cor. Q-ODD [stated, mod
+BRIDGE1-AF + GAP-N2-UNIF + N3-GROW at C = 2] for block-alternating
+ownership — open gates, so block-alternating odd-periodic
+minorities are LIVE candidates.
+
+**Test case added to notes/83 §2b** with kill attribution:
+constant-ownership mod-3 dies by L-NOTAIL (equivalently B1₀ after
+the gap-3 chart — the full AP transports to all of ℤ⁺, no Q-ODD
+gate consumed); alternating mod-3 is killed by no fully-proved
+instrument.
+
+Edits: notes/82 §5 (×3) + §6, STATUS.md FRONT ALT-CLOSURE (×2),
+notes/50 §6 row + (iv) bracket, paper2/main.tex hyp:afford,
+notes/86 gating list, notes/83 axis (d) + new §2b.

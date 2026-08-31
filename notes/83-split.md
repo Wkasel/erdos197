@@ -21,8 +21,10 @@ trick ON IT (gap-g chart, Lemma Q generalized to gap g);
 (notes/46 §5 axis (iii) verbatim);
 (d) HSPLIT-compatible — every class mod 4 AND mod 8 bichromatic
 in every block t ≥ 6 (Cor. HSPLIT is a PROVED necessary condition
-at ω; imposing it finitely bans exactly the lattice shapes
-ALT-DEAD already kills);
+at ω; imposing it finitely bans every in-horizon monochromatic
+class-section — strictly more than the lattice shapes ALT-DEAD
+kills, cf. notes/88 item 1; and it does NOT force aperiodicity,
+cf. §2b below);
 (e) orbit-censored (subcriticality proxy): no in-team doubling
 chain of depth ≥ D = 2 with reflectors ≤ F, seed > u₀.
 
@@ -221,3 +223,40 @@ finite instrument keeps mods 4+8 (imposing all m finitely is
 neither possible nor needed: ASPLIT is the ω-law that kills
 whatever periodic structure a finite witness would extrapolate
 to).
+
+## 2b. The mod-3 lattice: a LIVE periodic test case (review item 7
+## remediation, notes/88 item 2 — HSPLIT does NOT imply aperiodic)
+
+The external review's counterexample to "HSPLIT-generic ⟹
+aperiodic", adopted here as a standing test case for the hunt.
+
+**The coloring.**  Minority team = 3ℤ⁺ (multiples of 3), majority
+= the rest.  Fully periodic, period 3.  Machine-checked this
+session: ZERO monochromatic class-sections at mods 4/8/16/32 for
+t = 6..12 — because gcd(2^k, 3) = 1, every class c mod 2^k of a
+section of length ≥ 3·2^k contains both multiples and
+non-multiples of 3.  In-block minority gaps are identically 3
+(axis (c) verbatim); split floor and window floor hold (minority
+= 1/3 of every window).  So the coloring satisfies (a)–(d): HSPLIT
+excludes persistent monochromatic POWER-OF-TWO residue charts
+only; odd-periodic, mixed-modulus, and automatic minorities pass
+it.  (It fails axis (e) at any censor strength: 3ℤ⁺ is closed
+under doubling, so it carries in-team doubling chains of every
+depth — same status as altw, a COLORING-class inhabitant, not a
+corner-certified one.)
+
+**Which proven instrument kills it (verified).**  At constant
+ownership the minority team contains the infinite AP 3, 6, 9, … —
+**L-NOTAIL [PROVED, notes/80-pincer]** kills it.  Equivalently:
+the gap-3 chart φ(x) = x/3 maps team ∩ 3ℤ onto all of ℤ⁺, whose
+tail contains every dyadic block — Theorem B1₀ (notes/88 item 3)
+applies directly; no Q-ODD gate is consumed because the FULL AP
+(not a block-truncated section) is owned.  **The block-alternating
+variant** (ownership of the mod-3 section switching between teams)
+contains no infinite AP in either team and is killed ONLY by
+Lemma Q-g at g = 3 = Cor. Q-ODD [stated, mod BRIDGE1-AF +
+GAP-N2-UNIF + N3-GROW at C = 2] — i.e. by NO fully-proved
+instrument.  It is a live, structured, arithmetic candidate that
+the descent family does not yet touch unconditionally: exactly
+what the SPLIT-residue hunt must either inhabit (with axis (e)) or
+kill (by discharging the Q-ODD gates).

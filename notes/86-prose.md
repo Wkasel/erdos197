@@ -241,8 +241,10 @@ THREE, was four):**
    can fund the T-TEL″ mint system (≥ 1 displaced value per 2
    octaves, single-use colored values) forever.  Sharpest surviving
    form after the chart kill: **GAP-AFFORD‴-SPLIT** — the cap for
-   gap-≥3, 2-adically split (HSPLIT-generic, hence aperiodic)
-   minorities; no known inhabitant; plus arm B's p(k) → ∞ pump.
+   gap-≥3, 2-adically split minorities [NOT "hence aperiodic" —
+   corrected, notes/88 item 2: mod-3 periodic minorities are
+   HSPLIT-compatible]; no known inhabitant of the full corner
+   axes; plus arm B's p(k) → ∞ pump.
    Species: genuinely new ledger mathematics; zero completed
    strategies; professor-certified no elegant kill (notes/82 §5).
 2. **GAP-N6a sub-pool** — CI(m)/CORE′ fires for all m; owed
