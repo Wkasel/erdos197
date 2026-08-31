@@ -281,11 +281,15 @@ $u_0 < u_1 < \cdots$ in $S$ with $u_{k+1} = 2u_k - f_k$, $f_k \in F$.
 \end{lemma}
 
 \begin{proof}
-Let $q$ be the largest position of an element of $F$ in the permutation. Since
-the $u_k$ are distinct, at most $q$ of them occupy positions $\le q$; beyond the
-largest such index, each pair $(f_k, u_k)$ is increasingly placed, so its
-completion $u_{k+1} \in S$ must be placed before $u_k$, giving an infinite strictly
-decreasing sequence of positions.
+Let $q$ be the largest position of an element of $F$ in the permutation.
+Since the $u_k$ are distinct, only finitely many occupy positions at most
+$q$; and since $u_k \to \infty$, eventually $u_k > \max F$. Choose $K$ so
+that, for every $k \ge K$, $\pos(u_k) > q$ and $u_k > \max F$. Then
+$f_k < u_k$ and $\pos(f_k) \le q < \pos(u_k)$, so the pair $(f_k, u_k)$ is
+increasingly placed, and its completion $2u_k - f_k = u_{k+1}$ lies in $S$;
+were it placed after $u_k$, the triple $(f_k, u_k, u_{k+1})$ would be an
+increasing $3$-AP. Hence $\pos(u_{k+1}) < \pos(u_k)$ for every $k \ge K$,
+an infinite strictly decreasing sequence of positions --- impossible.
 \end{proof}
 
 Taking $S = \Z^+$, $F = \{1,2\}$ recovers the theorem of Davis--Entringer--Graham--Simmons (more precisely its monotone form; \cite{DEGS77} in fact proves that an \emph{increasing} 3-AP always occurs).

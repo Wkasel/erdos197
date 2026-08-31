@@ -164,6 +164,46 @@ def decode_bal(M, v, model_path, bounds_arg=None):
     return 0 if not errs else 2
 
 
+# ------------------------------------------------------------ chain (e173)
+def export_chain(kind, M, v, out):
+    """e173_telescope solve_chain cells (pump / fresh), captured
+    verbatim by patching e173.Cadical195 with a dumping recorder that
+    writes the DIMACS inside solve_chain's fork before reporting UNSAT.
+    kind fresh + M=24, v=65 is the F(24;65) stuck cell."""
+    import e173_telescope as e173
+
+    class DumpSolver(Recorder):
+        def solve(self, **kw):
+            write_dimacs(out, self.cls,
+                         extra_comment=f"e189 chain {kind} M={M} v={v}")
+            return False
+
+    orig = e173.Cadical195
+    e173.Cadical195 = DumpSolver
+    try:
+        blocks = e173.dyadic_blocks(M // 2, 8 * M)
+        if kind == "pump":
+            budgets = [("vdn", [0, 1], 0), ("vup", [1, 2], v)]
+        else:
+            budgets = [("s0_zero", [0], 0), ("vup", [1, 2], v)]
+        verdict, el, info = e173.solve_chain(blocks, budgets,
+                                             f"e189_{kind}_M{M}_v{v}",
+                                             time_budget=1e9)
+        assert verdict == "UNSAT", verdict
+    finally:
+        e173.Cadical195 = orig
+    V = [x for blk in blocks for x in blk]
+    n = len(V)
+    nP = n * (n - 1) // 2
+    ai = {V[i]: 2 * nP + 1 + i for i in range(n)}
+    meta = {"family": "chain", "kind": kind, "M": M, "v": v, "n": n,
+            "nP": nP, "blocks": [list(b) for b in blocks],
+            "ai": {str(val): var for val, var in ai.items()}}
+    with open(out + ".meta.json", "w") as f:
+        json.dump(meta, f)
+    print(f"chain {kind} M={M} v={v}: n={n} -> {out} (+meta)")
+
+
 # ------------------------------------------------------------ c3core (e166)
 def export_c3core(M, out, attacks="c3"):
     lo, hi = M, 2 * M
