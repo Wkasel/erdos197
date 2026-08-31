@@ -49,11 +49,28 @@ exact-arith shows 0.59x = mpq constructor overhead on the trivial
 shortcut normalizations — the shortcut path does almost no rational
 arithmetic at all.)
 
-n=11/n=12 feasibility: parallel sharded count of the n = 11 witness
-enumeration launched (nk_enum_par.c, -first shard on W[0], sprint-D;
-NV=10 shard-sum validation first).  Projection to follow from the
-measured count + per-type cost at n = 11 (sampled from the head of the
-n = 11 enumeration).
+n=11/n=12 feasibility — SETTLED (negative), with measurements:
+
+- Sharded enumerator (nk_enum_par.c, -first fixes W[0]): NV=10
+  shard-sum reproduces the canonical 9,936,815 leaves / 497,399 reps
+  EXACTLY (126 shards, 339 s wall on 12 sprint-D cores) — sharding
+  validated.
+- The full n = 11 count is itself infeasible (shard 0 alone passed 35M
+  types before being killed), so counts come from a Knuth Monte-Carlo
+  tree-size estimator (nk_est.c, same feasibility predicate, unbiased
+  for leaves; calibration at NV=10: est 1.02–1.10e7 vs true 9.94e6).
+- **n=11: ~1.4e12 leaves, ~6.2e10 types** (est_reps = leaves/22,
+  trivial-stabilizer approximation; stderr ~3 %).
+- **n=12: ~1.9e17 leaves, ~8e15 types.**
+- Measured per-type cost at n = 11 (1000-type sample from the head of
+  shard 0, real n11 masks): 31.1 ms Fraction / 30.8 ms mpq — all 1000
+  shortcut kills, same shape as n = 10.
+- Verdict: n=11 direct certification = 6.2e10 x 31 ms ~ **61
+  core-years** (plus ~18 core-years just to enumerate at the measured
+  2400 leaves/s/core) — infeasible at any gmpy2 multiplier, since the
+  hot path gmpy2 accelerates is < 1 % of the pipeline.  n=12 is 5
+  orders beyond that.  The n >= 12 frontier needs the schema/lcomb
+  compression route (per-family certificates), not faster rationals.
 
 ## 2. Track 1 interim — benchmark rows landing
 
