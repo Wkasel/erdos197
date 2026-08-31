@@ -119,12 +119,15 @@ large-M = GAP-N6a verbatim.]
 
 ### 2c. Boot window + independent floors (no N6a dependency)
 
-- **Theorem J-BOOT [PROVED mod GAP-CMIN]** (notes/71 §3): (v,0)
-  UNSAT for v < M/2, all M ≡ 0 mod 4, M ≥ 12 — Lemma K [PROVED;
-  re-proved exhaustively k = 2..4, notes/76] + the counting floor
-  f(M) ≥ M/2 [GAP-FHALF → GAP-CMIN].  f(M) = M/2 EXACT at 7 scales
-  8..32 (two instruments); cmin(M) = M exact at 8/12/16/**20 (NEW,
-  e178 OPT)**.
+- **Theorem J-BOOT [UNCONDITIONAL for 12 ≤ M ≤ 32; PROVED mod
+  GAP-CMIN-BIGT beyond]** (notes/71 §3 + notes/85): (v,0) UNSAT for
+  v < M/2, all M ≡ 0 mod 4, M ≥ 12 — Lemma K [PROVED; re-proved
+  exhaustively k = 2..4, notes/76] + the counting floor f(M) ≥ M/2
+  [GAP-FHALF: CLOSED on M ≤ 32 by the 7-scale exact measurement;
+  M ≥ 36 PROVED mod BIGT].  Hand layer now: Lemma BM1-VAC +
+  Theorem CMIN-SMALLT [PROVED, notes/85] — S ≥ M whenever
+  16t ≤ M − 14; residue = big-t only.  cmin(M) = M exact at
+  8/12/16/20 (24/28/32 in flight, e188).
 - **Theorem F-BOOT [PROVED mod GAP-FTOT]** (notes/71 §5): F(M; v)
   UNSAT for v < ⌈M/4⌉ — first uniform freshness law; machine
   F(12;2), F(16;6)×3, F(20;4), F(12;5).
@@ -299,8 +302,8 @@ Hardening layer (not gating the assembly):
 
 | tag | exact statement | state |
 |-----|-----------------|-------|
-| GAP-CMIN | Σ_z min(c_A, c_B) ≥ M for balanced μ_dn = 0 low-impure splits | extremal cell PROVED (M ≥ 32); near-pure reduced to O(1) bookkeeping + 2 scoped subcases; = M exact at 8/12/16/20 |
-| GAP-FHALF / GAP-FTOT | f(M) ≥ M/2 resp. f_F(M) ≥ M/2 | follow from GAP-CMIN (verbatim reduction); f = M/2 exact ×7 |
+| GAP-CMIN → **GAP-CMIN-BIGT** | Σ_z min(c_A, c_B) ≥ M for balanced μ_dn = 0 low-impure splits | **near-pure regime PROVED (notes/85): Lemma BM1-VAC (Bm1 impurity vacuous) + Theorem CMIN-SMALLT (16t ≤ M − 14, all M)**; residue = t > (M−14)/16 at M ≥ 36 (exchange floor machine-true: cmin_t2 = 10/22/33 at 8/12/16, all > M); = M exact at 8/12/16/20; sweepaudit@40 9/9 exact accounting |
+| GAP-FHALF / GAP-FTOT | f(M) ≥ M/2 resp. f_F(M) ≥ M/2 | FHALF CLOSED on M ≤ 32 (measured ×7) + PROVED mod BIGT beyond; FTOT: f_F = f at 8/12/16 (ftot(16) = 8 NEW, sprint-C), same reduction |
 | GAP-F-schema | F(N; v) UNSAT family (freshness; does not project) | F-BOOT gives v < ⌈N/4⌉ mod GAP-FTOT; machine ×3 cells |
 | GAP-J-margin / GAP-MARGIN-MASS | U4(2m; v, v*₃(m)+b) family; impure mass at μ_dn ≤ w | low-pure arm PROVED (MARGIN-LP + K-diagonal incl. 51/111) |
 | GAP-N2-UNIF ∖ N2-DIAG | remaining 35 template cells' uniform write-ups | feeds BRIDGE1-AF only |
@@ -350,6 +353,7 @@ YES question is GAP-AFFORD‴-SPLIT.]
 - notes/55-59 + 51: N6a skeleton + bridge [PROVED skeleton + sub-pool]
 - notes/75: J-DOWN + P-CAT + LEAK + NEST [PROVED]
 - notes/71: J-BOOT, F-BOOT, MARGIN-LP, SZ/SZ′/WALL [PROVED mod CMIN/FTOT]
+- notes/85: BM1-VAC, SZ′(t)/RIGID, CMIN-SMALLT [PROVED]; J-BOOT unconditional ≤ 32; residue GAP-CMIN-BIGT
 - notes/72: T-CHAN, L-MID/SEESAW/HIT/RANGE, T-TEL″ + link table [PROVED mod stated]
 - notes/70: T-LEDGER, T-FRESH, L-HOME/2PRICE/SQUEEZE/ECHO [PROVED mod F-schema]
 - notes/62: L-PREFIX, Lemma K, SCHED-DEAD, NG4 [PROVED]
