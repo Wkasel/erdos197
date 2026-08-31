@@ -361,12 +361,16 @@ residue).
    S/FW word fires per congruence cell of (q, g) — would upgrade the
    region law to [PROVED] and with it LAT-LOW to a full theorem).
    Scoping measurement (this session): the pairs needing FW2/FWK
-   beyond S ∪ FG-high number 2/20/32/112 at N = 111/207/335/431,
-   concentrated in the boundary strip (slack 3q+g vs N−24 mostly
-   < 48) plus, from N ≈ 431, interior clustered cells with small
-   odd gaps 11..33 where the minimal S1 lift fails (C2)/(C3) and
-   the transient search stalls — the table is thin but genuinely
-   growing with N; it is the exact hard core of the [GAP].
+   beyond S ∪ FG-high number 2/20/32/112 at N = 111/207/335/431.
+   Their anatomy is exactly S1's own MODULAR boundary: S1's true
+   region is {∃ lift t ≡ −q or −p (mod 2g) with 9t + 6q + r₀ ≤ 2N},
+   which depends on q mod 2g through the minimal lift t†; the
+   stragglers are the fibers where t† ≈ g pushes the window over
+   (e.g. (93..95, 124..126) at N = 431: g = 31, t† ∈ {30, 31},
+   window misses by ≤ 6), plus the high wing g > q beyond FG's
+   reach.  So the cell table = the FW2 word classification on the
+   modular boundary fibers — thin but growing with N; the exact
+   hard core of the [GAP].
 2. The scaled-zone odd kills q ∈ ((N−24)/3, M−9] and the E1
    columns: species = notes/77 §1.4 RESISTS (glue calculus).
 3. The odd stall corner q ≥ M−8 (SAT-dead only): finite-width in
