@@ -242,7 +242,12 @@ the SPLIT residue (audit gap structure + purity + H-census);
 UNSAT ×2 censors ⟹ the residue is finitely EMPTY at ROT4 strength
 — the entire corner would then be machine-rejected at the finite
 level while ω-dead on every arithmetic sub-family: probability
-moves accordingly.
+moves accordingly.  [CORRECTION, review remediation notes/88 item
+1: the UNSAT reading in this pre-registration was overdrawn — an
+UNSAT here shows only that every finite inhabitant of the corner
+axes at these parameters carries ≥ 1 monochromatic class-section
+within the tested horizon; it does not machine-reject the corner
+and licenses no ω conclusion.  See the corrected §3.]
 
 ## 3. HSPLIT battery — the SPLIT residue's first instrument
 
@@ -261,12 +266,30 @@ the orbit censor tolerates them.
 | F = 12, u₀ = 32, HSPLIT mod 4+8 | (in flight) | — |
 | F = 12, mod-4-only (attribution) | (in flight) | — |
 
-Reading (F = 64 rows): **at the ROT4-strength censor the corner
-tolerates NOTHING but lattices** — the un-HSPLIT build was SAT at
-exactly these parameters (e179: 45 s, witness = mod-4 lattice);
-banning only the mod-4 monochromatic sections (k8 = False row)
-already empties it, at both horizons.  Since ALT-DEAD kills every
-lattice at ω, the strong-censor corner is now dead END TO END:
-finitely, every inhabitant is a lattice; at ω, every lattice is
-invalid.  The weak-censor cells decide whether GAP-AFFORD‴-SPLIT
-has ANY finite inhabitant at all.
+Reading (F = 64 rows), **as corrected by the external review
+(notes/88 item 1; the original reading below is RETRACTED)**: the
+UNSAT cells prove exactly this — **every finite strong-censor
+corner inhabitant on [1, hor], hor ∈ {2048, 4096}, has at least
+one monochromatic residue-class section (mod 4 already suffices)
+at some tested scale 6 ≤ t ≤ t_max** — the un-HSPLIT build was SAT
+at exactly these parameters (e179: 45 s, witness = mod-4 lattice),
+so full bichromaticity is what the censor refuses, not the corner
+axes themselves.
+
+**RETRACTED (invalid inference, original text of this section):**
+"the corner tolerates NOTHING but lattices … the strong-censor
+corner is now dead END TO END: finitely, every inhabitant is a
+lattice; at ω, every lattice is invalid."  One monochromatic
+section is not a lattice, and there is NO compactness step from
+these cells to ω: an ω-inhabitant that is 4-pure at finitely many
+scales only (e.g. only at t ≤ 11) is consistent with every tested
+cell, and ALT-DEAD (which needs INFINITELY many 4-pure scales)
+does not touch it.  What the end-to-end kill would need is the
+open *shifted-window uniform infeasibility* statement: for EVERY
+T ≥ 6, no corner model with all class-sections bichromatic at all
+scales ≥ T.  Only the T = 6 instance was run.  ALT-DEAD itself —
+the conditional theorem "infinitely many 4-pure scales ⟹ not a
+valid pair" — is UNAFFECTED and stands [PROVED]; its
+applicability hypothesis on this corner is explicitly OPEN.  The
+weak-censor cells decide whether GAP-AFFORD‴-SPLIT has ANY finite
+inhabitant at these horizons — nothing more.

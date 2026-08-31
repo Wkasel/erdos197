@@ -1,0 +1,9 @@
+WIN N=150 (A=74): R-pairs 973, ALL covered (0 via FW2/FWK)
+WIN N=175 (A=87): R-pairs 1373, ALL covered (4 via FW2/FWK)
+WIN N=275 (A=137): R-pairs 3593, ALL covered (36 via FW2/FWK)
+WIN N=300 (A=149): R-pairs 4295, ALL covered (27 via FW2/FWK)
+WIN N=335 (A=167): R-pairs 5426, ALL covered (32 via FW2/FWK)
+WIN N=350 (A=174): R-pairs 5923, ALL covered (38 via FW2/FWK)
+WIN N=400 (A=199): R-pairs 7812, ALL covered (72 via FW2/FWK)
+WIN N=450 (A=224): R-pairs 9961, ALL covered (120 via FW2/FWK)
+e187: DONE

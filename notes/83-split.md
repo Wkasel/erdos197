@@ -26,9 +26,12 @@ ALT-DEAD already kills);
 (e) orbit-censored (subcriticality proxy): no in-team doubling
 chain of depth ≥ D = 2 with reflectors ≤ F, seed > u₀.
 
-Known facts going in: at the ROT4-strength censor F = 64 the
-corner tolerates ONLY lattices — HSPLIT (even mod-4-only) empties
-it at hor = 2048 AND 4096 (e186 partHSPLIT, UNSAT ×3, ≤ 30 s);
+Known facts going in [corrected per notes/88 item 1]: at the
+ROT4-strength censor F = 64, e186 partHSPLIT is UNSAT ×3 (≤ 30 s;
+hor = 2048 AND 4096, mod-4-only included) — i.e. every finite
+corner inhabitant there carries ≥ 1 monochromatic class-section
+within the tested horizon (NOT "tolerates only lattices", and no
+ω conclusion follows — see the notes/81 §3 retraction);
 the censor-off alternating coloring altw IS fully
 HSPLIT-compatible (0 mono sections at t ≥ 6), so the coloring
 class (a)–(d) is inhabited — the question is whether it coexists

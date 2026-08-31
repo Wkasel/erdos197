@@ -240,10 +240,21 @@ window CANNOT be killed via its own punctured rung (every
 extractable class-punctured cell SAT, exact touch-the-class law)
 — the chart through the MINORITY is the unique working route.
 **GAP-AFFORD″-ALT is RETIRED.  Residue renamed GAP-AFFORD‴-SPLIT:
-the supply cap for gap-≥3, 2-adically split (HSPLIT-generic)
-minorities — no known inhabitant satisfying all corner axes, no
-arithmetic shape; first instrument = the HSPLIT-constrained dodger
-build (e186, notes/81 §2 pre-registration).**
+the supply cap for gap-≥3, 2-adically split minorities — no known
+inhabitant satisfying all corner axes; first instrument = the
+HSPLIT-constrained dodger build (e186, notes/81 §2
+pre-registration).**  [Review remediation, notes/88 items 1–2: the
+F = 64 UNSAT of that instrument proves only that every finite
+strong-censor inhabitant has ≥ 1 monochromatic class-section
+within the tested horizon — no ω conclusion, "dead end-to-end"
+retracted; ALT-DEAD's applicability hypothesis (infinitely many
+4-pure scales) is explicitly open on this corner.  And
+"2-adically split ⟹ aperiodic" is FALSE — HSPLIT excludes only
+persistent monochromatic 2^k-residue charts; odd-periodic (e.g.
+mod-3), mixed-modulus, and automatic minorities are NOT excluded
+unconditionally (they die only mod the Q-ODD gates or, with
+constant ownership, by L-NOTAIL) — the residue is NOT "stripped of
+every arithmetic shape".]
 
 ## 3. Retired / reframed tags (final dispositions)
 

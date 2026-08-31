@@ -377,7 +377,11 @@ and exhibit the transported image's clean blocks (the finite
 shadow of ALT-DEAD); (c) re-run the S5 dodger build with the
 HSPLIT constraint (every class mod 4 and mod 8 bichromatic per
 block) added — the first honest instrument for GAP-AFFORD‴-SPLIT's
-inhabitants.
+inhabitants.  [Outcome note, notes/88 item 1: the F = 64 cells came
+back UNSAT; that shows only that every finite inhabitant carries
+≥ 1 monochromatic class-section within the tested horizon — no ω
+conclusion (no compactness step), and ALT-DEAD's applicability
+hypothesis on that corner remains open.]
 
 **Ranking of survivors by shortest path:** only (2) survived, and
 it is finished above.  Within it: Cor. 1 + Cor. 2 (zero gaps,

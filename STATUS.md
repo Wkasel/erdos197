@@ -1887,7 +1887,18 @@ is real as colorings, but it was never corner-certified).  First
 honest instrument launched: the HSPLIT-constrained dodger build
 (e186 partHSPLIT: s5dodger axes + every class mod 4 AND mod 8
 bichromatic per block; F = 12 and F = 64 + mod-4-only control;
-pre-registered notes/81 §2: SAT 55 %/35 %).  Professor certifies
+pre-registered notes/81 §2: SAT 55 %/35 %).  LANDED at F = 64:
+UNSAT ×3 (hor 2048/4096, mod-4-only included).  **Corrected reading
+(review remediation, notes/88 item 1): this proves only that every
+finite strong-censor corner inhabitant has ≥ 1 monochromatic
+residue-class section within the tested horizon.  It does NOT show
+every finite inhabitant is a lattice, and there is no compactness
+step to ω — notes/81 §3's "strong-censor corner dead end-to-end"
+is RETRACTED.  Needed (open): shifted-window uniform infeasibility
+— for every T, no corner model with all class-sections bichromatic
+at all scales ≥ T; only T = 6 was run.  ALT-DEAD (the conditional
+theorem) is unaffected; its applicability hypothesis on this corner
+is explicitly open.**  Professor certifies
 no elegant kill among directions (1)–(4) for THIS residue — it is
 genuine AFFORD′-species mathematics, now stripped of every
 arithmetic example.
