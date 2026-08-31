@@ -358,14 +358,17 @@ of $(c-1)/2 \bmod 2^{k-1}$. Then for any two classes $a$ ordered before $b$, the
 class $2b - a \bmod 2^k$ is ordered strictly before $b$.
 \end{lemma}
 
-\noindent This is not new. Writing $\rho_m$ for the bit-reversal rank modulo
-$m = 2^{k-1}$, the statement is exactly the first equivalence
-$\rho_m(r) < \rho_m(r+\delta) \iff \rho_m(r+\delta) > \rho_m(r+2\delta)$ of
-Lemma~2.1 of Geneson \cite{Gen26} (take $r = (a-1)/2$,
-$\delta = (b-a)/2$), and the underlying binary recursion goes back to
-\cite{DEGS77} (p.~81) and to the ``chaotic ordering'' literature
-\cite{ABJ11}. We include a proof for completeness and because the
-bit-reversal form is the one we use.
+\noindent This is not new: it is Lemma~2.1 of \cite{Gen26} in different
+coordinates (via $c \mapsto (c-1)/2$). Explicitly, writing $\rho_m$ for the
+bit-reversal rank modulo $m = 2^{k-1}$, the statement is the first
+equivalence
+$\rho_m(r) < \rho_m(r+\delta) \iff \rho_m(r+\delta) > \rho_m(r+2\delta)$
+of that lemma, with $r = (a-1)/2$ and $\delta = (b-a)/2$. The underlying
+binary recursion goes back to \cite{DEGS77} (p.~81) and to
+Ardal, Brown and Jungi\'c \cite{ABJ11}; the companion modular existence
+theorem for powers of two is due to Nathanson \cite{Nat77}. We include a
+short proof for completeness, and because the bit-reversal form is the one
+we use.
 
 \begin{proof}
 Write $\alpha = (a-1)/2$, $\beta = (b-1)/2$; the completion class has parameter
@@ -1426,6 +1429,9 @@ L'Enseignement Math\'ematique \textbf{28}, Gen\`eve, 1980.
 \bibitem{ABJ11} H.~Ardal, T.~Brown and V.~Jungi\'c, \emph{Chaotic orderings
 of the rationals and reals}, Amer.\ Math.\ Monthly \textbf{118} (2011),
 921--925.
+
+\bibitem{Nat77} M.~B. Nathanson, \emph{Permutations, periodicity, and
+chaos}, J.\ Combin.\ Theory Ser.\ A \textbf{22} (1977), 61--68.
 
 \bibitem{LV11} T.~D. LeSaulnier and S.~Vijay, \emph{On permutations avoiding
 arithmetic progressions}, Discrete Math.\ \textbf{311} (2011), 205--207.
