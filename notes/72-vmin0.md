@@ -423,9 +423,11 @@ Landed from sprint-B (`194.26.196.215:23563`, `data/vmin0_series.log`):
 | 24 | 128 | UNSAT | 169.7 s |
 
 **Provenance (quarantine rule, §2).** These lines are written by
-`run_vmin0.py` on sprint-B, which logs plain text and does *not* append to
-`e173_telescope.jsonl`, so the records do not themselves carry the budget
-vector. I verified the cell at the source instead — `run_vmin0.py` calls
+`run_vmin0.py` on sprint-B. It *does* emit structured rows, but to
+`data/e173_podB.jsonl` (not `e173_telescope.jsonl`, which holds only the
+`fresh_*` cells), and the row was `{tag, M, v, verdict, time}` — carrying no
+`blocks`/`budgets`, so the record did not satisfy the rule on its own. I
+verified the cell at the source instead — `run_vmin0.py` calls
 
 ```python
 blocks  = dyadic_blocks(M // 2, 8 * M)
@@ -440,8 +442,10 @@ structured records in `e173_telescope.jsonl` are `fresh_*` tags carrying
 confuse the two when harvesting. Points admitted on the strength of the
 verified driver source.
 
-*Recurrence fix wanted:* have `run_vmin0.py` append a jsonl record with its
-budget vector, so future points satisfy the rule from the record alone.
+*Recurrence fix APPLIED:* `run_vmin0.py` now writes `blocks` and `budgets`
+into every row (`run_vmin0.py.bak` holds the original), so points landing
+from here on satisfy the quarantine rule from the record alone. The five
+rows above predate the patch and stand on the source verification.
 
 **Bounds.** UNSAT at v ⟹ `v_min(0)(M) > v`:
 
