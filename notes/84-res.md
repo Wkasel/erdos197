@@ -33,9 +33,9 @@ HALVE-PURE) then pin the alive-gap lattice ≡ 0 mod 8 (H-LAT).
 2. **Theorem S1 + Corollary COR [PROVED, §1.3-1.4]: every odd-gap
    pair with 7q + 10g ≤ 2N is dead**, by a single explicit 2-cycle
    schema (one seed unit, one RL lift, one spiral).  This covers the
-   clustered bulk (g ≤ q ⟹ death whenever p ≲ 2N/17·…, exact form
-   below) and is EXACT within its species: the spiral lands iff
-   g | δ₀ (mod-g exactness, §1.2(c)).
+   clustered bulk (in particular every clustered pair with
+   17 max(q, g) ≤ 2N) and is EXACT within its species: the spiral
+   lands iff g | δ₀ (mod-g exactness, §1.2(c)).
 3. **The region law [MACHINE-CHECKED, 8 full scales + 16 tower
    windows + 2 fresh windows]: every odd-gap pair in
    R(N) = {3q + g ≤ N − 24, 2p ≤ N − 7} is closure-dead with a
@@ -50,8 +50,9 @@ HALVE-PURE) then pin the alive-gap lattice ≡ 0 mod 8 (H-LAT).
    alive, SAT-dead) stays q ≥ M − 8 at all eight audited scales.
 5. Consequence (§4): the alive-gap lattice law 8 | g holds
    [PROVED modulo the machine region law] on the low zone
-   3q + g ≤ N − 96 — the ODD-KILL reduction of notes/66 executed on
-   the region where the tower stays inside R at all three levels.
+   3q + g ≤ N − 100, 2p ≤ N − 32 — the ODD-KILL reduction of
+   notes/66 executed on the region where the halving tower stays
+   inside R at all levels.
 
 ## 1. The spiral schema
 
@@ -145,15 +146,15 @@ the spiral at w with target τ = u and r* = q: indeed
 r₀ (w = 3t + 2q ≡ t mod 2, and r₀ ≡ t by its definition), so
 δ₀ = x₀ − u = (w − r₀)/2 − u = −(t + r₀)/2 < 0.  By (C1) and Lemma
 LAND(b) the spiral lands: x_K = u, giving the derived fact w ≺ u —
-provided each step is admissible, which we check: (positivity and
-head-avoidance) the minimum orbit value is x₀ = (w − r₀)/2 ≥ 1 by
-(C2); the maximum is < w: positive deviations are
-≤ (|δ₀| + g)/2 ≤ (t + r₀)/2 ≤ … < w − u = t + q unless the strict
-inequality fails, and δ_n = +(w − u) would need |δ_{n−1}| ≥ 2g +
-… > max(|δ₀|, g), impossible (Lemma LAND(b) bound; the boundary
-value +max(|δ₀|, g) itself is unreachable from δ₀ < 0 as shown in
-LAND(b)); (window) every reflection 2w − x_n ≤ 2w − x₀ =
-(3w + r₀)/2 ≤ N by (C3).  So u ≺ w and w ≺ u, contradicting
+provided each step is admissible, which we check.  (Positivity)
+the orbit minimum is x₀ = (w − r₀)/2 ≥ 1 by (C2) (LAND(b2)).
+(Head-avoidance x_n ≠ w)  x_n ≤ u + D/2 by LAND(b1), and
+D = max((t + r₀)/2, g) ≤ t + q — the first argument is
+≤ (t + q + g)/2 ≤ t + q and the second is ≤ t + q, both because
+(C1) forces (t + r₀)/2 ≥ g, i.e. t + q ≥ 2g − (r₀ − q) ≥ g —
+so x_n ≤ u + (t + q)/2 < u + t + q = w.  (Window) every reflection
+2w − x_n ≤ 2w − x₀ = (3w + r₀)/2 ≤ N by (C3), and every
+reflection ≥ w + 1 ≥ 1.  So u ≺ w and w ≺ u, contradicting
 irreflexivity through T (Lemma CC).  ∎
 
 Remark (exactness).  By LAND(c), for the S1 shape the divisibility
@@ -305,26 +306,32 @@ the "certificates in hand" folklore.
 ## 4. The low-zone lattice law (the ODD-KILL reduction, executed)
 
 **Theorem LAT-LOW.**  [PROVED modulo the §2.3 region law at the
-three halved shapes]  Let (q, p) be a same-parity… any pair of the
-level-0 window (N = 2M + 15) with
+halved shapes]  Let (q, p) be any pair of a window of length N with
 
-    3q + g ≤ N − 96   and   2p ≤ N − 7,   g = p − q.
+    3q + g ≤ N − 100   and   2p ≤ N − 32,   g = p − q.
 
 If the pair is closure/SAT-alive, then g ≡ 0 (mod 8).
 
-*Proof sketch (the notes/66 §5 reduction, run inside R).*  Suppose
+*Proof (the notes/66 §5 reduction, run inside R).*  Suppose
 2^j ∥ g, j ≤ 2.  Halve j times through Lemma PURE (notes/77 §3.1;
-each level maps the class-ε pure subsystem isomorphically onto the
-fan system of window N_{ℓ+1} ∈ {⌊N_ℓ/2⌋, (N_ℓ+1)/2} with
-q̂ = (q−ε)/2, ĝ = g/2).  After j halvings the image pair has odd
-gap and coordinates 3q̂ + ĝ ≤ (3q + g)/2^j ≤ (N − 96)/2^j ≤
-N_j − 24 (since N_j ≥ (N − 1)/2^j ≥ … each halving costs ≤ a factor
-2 on the slack: (N − 96)/2 ≤ ⌊N/2⌋ − 47 ≤ N₁ − 24, and again
-(N−96)/4 ≤ N₂ − 24 − …), and 2p̂ ≤ p ≤ N_j − 7 similarly.  By the
-region law the image is dead; by Lemma PURE(ii) the original pair
-is pure-dead, hence dead.  So alive ⟹ 8 | g.  ∎  [The arithmetic
-of the two window inequalities per level is checked in e187 `tower`
-runs at every level shape used; the constant 96 has slack.]
+per notes/66 §5 the proof uses only the F(N, A) shape, so it
+applies at every level).  Each level maps the class-ε pure
+subsystem isomorphically onto the fan system of window
+N_{ℓ+1} ∈ {⌊N_ℓ/2⌋, (N_ℓ+1)/2} ≥ (N_ℓ − 1)/2 with q̂ = (q−ε)/2,
+p̂ = (p−ε)/2, ĝ = g_ℓ/2.  Track the integer budgets
+B_ℓ := N_ℓ − (3q_ℓ + g_ℓ) and C_ℓ := N_ℓ − 2p_ℓ.  Since
+3q̂ + ĝ ≤ (3q_ℓ + g_ℓ)/2 and 2p̂ = p_ℓ − ε ≤ p_ℓ,
+
+    B_{ℓ+1} ≥ (N_ℓ − 1)/2 − (3q_ℓ + g_ℓ)/2 = (B_ℓ − 1)/2,
+    C_{ℓ+1} ≥ (N_ℓ − 1)/2 − p_ℓ = (C_ℓ − 1)/2,
+
+and by integrality B_{ℓ+1} ≥ ⌈(B_ℓ − 1)/2⌉, likewise for C.  From
+B₀ ≥ 100, C₀ ≥ 32: B₁ ≥ 50, B₂ ≥ 25 ≥ 24 and C₁ ≥ 16, C₂ ≥ 8 ≥ 7.
+So after j ≤ 2 halvings the (now odd-gap) image lies in R(N_j); by
+the region law it is dead; by Lemma PURE(ii) inconsistency of the
+class-ε subsystem refutes the full theory — the original pair is
+dead.  Alive ⟹ 8 | g.  ∎  [The level shapes are exactly the e187
+`tower` windows; the region law is audited there.]
 
 This is the front's "alive-gap lattice law" on the low zone: the
 H-LAT/DICH-ALPHA/(RES-LAW) input is now theorem-shaped there, with
