@@ -365,3 +365,87 @@ residue).
 4. The base-window clique catalogue + α̂ at the fresh scales
    (M = 208/240 catalogues building on sprint-C/main at close) —
    §7 below when they land.
+
+## 7. The clique transport and the conditional α assembly
+## (front items (2)-(3))
+
+### 7.1 Lemma CLIQUE-HALVE  [PROVED]
+
+Let V = {o₁ < … < o_k} be attacker offsets of F(N, A) with all
+pairwise gaps ≡ 0 (mod 2^j), j ≤ 3, and suppose every pair
+(o_i, o_{i'}) is alive (its double-fan theory consistent).  Then all
+o_i share one parity ε, and the halved set
+V̂ = {(o_i − ε)/2} is an alive set of pairwise gaps ≡ 0 (mod
+2^{j−1}) in the halved fan system of Lemma PURE.  Iterating j
+times: **every mod-8 alive k-clique of F(N, A) transports to an
+alive k-clique of the level-j window (length ≈ N/2^j)**; and if V
+lies in the shallow zone, so does its image at every level
+(notes/66 §1, HALVE-PURE consequence).
+
+*Proof.*  Gaps even ⟹ common parity.  For each pair, Lemma
+PURE(ii) gives: halved pair fan-dead ⟺ original pair pure-dead ⟹
+original dead.  Contrapositive: original alive ⟹ halved alive.
+Gaps halve.  Shallow maps to shallow by the HALVE-PURE window
+bookkeeping.  ∎
+
+### 7.2 The base-window reduction (the notes/66 §5 program, made
+### exact)
+
+Combining LAT-LOW (§4) with CLIQUE-HALVE: **every alive clique
+inside the low zone (each member pair satisfying the LAT-LOW
+inequalities) has all gaps ≡ 0 (mod 8) and transports, three levels
+down, to an alive clique — shallow to shallow — of the base window
+of length ≈ N/8.**  Hence
+
+    α_low(M) := max alive-clique among shallow band values with all
+                pairs in the LAT-LOW zone
+    ≤ max shallow alive-clique of the base window.
+
+The measured base-window catalogue (e155b/e169, 22 + fresh windows;
+notes/66 §4b): full-window cliques ≤ 4, SHALLOW cliques ≤ 3, every
+4-clique of span exactly m (ANCHOR-4/SPAN-4 — its deepest member
+always falls one lattice step below the shallow boundary), 5-cliques
+impossible outright (SPAN-4 arithmetic).
+
+### 7.3 α_max ≤ 3: the exact conditional statement
+
+**Claim (α-UNIFORM, the front's item (3)).**  α_max(M) ≤ 3 for all
+M ≡ 0 (mod 16).  STATUS: NOT a theorem yet.  It follows from:
+
+    (α-1) the §2.3 region law uniformly in N        [MACHINE ×26 — the
+          §6.1 cell table would prove it];
+    (α-2) the mid-deep sector: no alive pair with a member at depth
+          ∈ ((N−24)/3, (N−7)/2] escapes the mod-8 lattice — this is
+          the §3 residue (scaled zone + stall corner)   [MACHINE:
+          (RES-LAW) 0 violations / 631+ escapes, 8 scales; stall
+          corner all SAT-dead, 8 scales];
+    (α-3) SPAN-4 at the base windows (shallow cliques ≤ 3)
+          [MACHINE at all 22+2 scanned windows; the sharp uniform
+          form of GAP-DICH-ALPHA, notes/66 §4b].
+
+Given (α-1)-(α-3): a shallow alive 4-clique would either live in
+the low zone — transported by §7.2 to a shallow base 4-clique,
+contradicting (α-3) — or touch the mid-deep sector, where (α-2)
+pins its gaps mod 8 and the same transport applies (the clique's
+DEEPEST member may then sit outside the low zone; this is where
+(α-2) is genuinely consumed, not just the lattice law but deadness
+of the odd/2-adic sectors there).  So α ≤ 3.  The consumer is the
+K* mechanistic law (K* = m + 9 + max(α−f), exact at ten scales,
+notes/66) which feeds the ROBUST chain — NOT the plain overlap
+(OV-∀), which notes/66 showed is false at 224/256; the claudeMd
+phrasing "⟹ (OV-∀), retiring GAP-ASM′" is superseded by the
+notes/66 robust-first restatement: what α ≤ 3 buys is that the
+robust chain's α-arm is law-pinned at every scale.
+
+### 7.4 Fresh-scale data (T1/T2 tracks; filled as pod runs land)
+
+    T2 (e169 --scan, sprint-D): m = 104, 120 — the half-scale alive
+    graphs of the fresh full scales 208/240.  [PENDING at first
+    commit of this section]
+    T1 (e168 catalogue + e153 scan): M = 208, 240.  [PENDING]
+
+Pre-registration (BEFORE any of these runs printed): H-LAT (alive
+gaps ≡ 0 mod 8) at both fresh m; shallow cliques ≤ 3 at both;
+full-window cliques ≤ 4 with any 4-clique of span exactly m and
+deepest member below the shallow boundary; α̂ values in {2, 3}; if
+the catalogue track lands, α_catalogue = α̂ at both scales.
