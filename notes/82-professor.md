@@ -134,9 +134,11 @@ midpoint is automatically in class c because φ^{-1} is affine).
 So a monotone 3-AP of the image arrangement would be a monotone
 3-AP of π.  **S′ is 3-permutable.**
 
-(iii) *The contradiction.*  S′ ⊇ B(t−2) for every t ∈ 𝕋: S′ has
-infinitely many 0-clean dyadic blocks.  Theorem B1 (notes/52
-§3.1) applies with C₀ = 0.  Its proof at C₀ = 0 consumes: Lemma
+(iii) *The contradiction.*  S′ ⊇ B(t−2) for every t ∈ 𝕋: S′
+contains infinitely many complete dyadic blocks.  Theorem B1₀
+(notes/88 item 3 — the standalone unconditional zero-dust bridge;
+originally phrased here as "Theorem B1 at C₀ = 0") applies
+directly.  Its proof consumes: Lemma
 DIAG-DENSE [PROVED] to extract a diagonal pair {3p, 3p+1},
 p ≡ 1 (mod 4), from one clean block of S′; Lemma PIN [PROVED] to
 force the pair before cofinitely many later clean blocks; and the

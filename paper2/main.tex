@@ -207,12 +207,23 @@ dyadic blocks for some constant $C_0$, then $T$ is not 3-permutable.  No
 hypothesis on the partner is used.  \status{PROVED modulo (H1)}
 \end{theorem}
 
-\begin{corollary}[B1 at zero dust --- unconditional]\label{cor:b1zero}
-\emph{(H1)} at $C = 0$ is exactly Theorem~\ref{thm:c3p} (the three $C3(p)$
-units are among the rung's fired units).  Hence, unconditionally: no
-3-permutable set contains infinitely many full dyadic blocks.
+\begin{theorem}[B1$_0$ --- zero-dust bridge, unconditional]\label{cor:b1zero}
+No 3-permutable set contains infinitely many complete dyadic blocks.
 \status{PROVED}
-\end{corollary}
+\end{theorem}
+
+\noindent\emph{Direct proof (from Lemmas~\ref{lem:pin},
+\ref{lem:diagdense} and Theorem~\ref{thm:c3p} only; no (H1)): from one
+complete block extract a diagonal pair $\{3p, 3p+1\}$, $p \equiv 1
+\pmod 4$ (Lemma~\ref{lem:diagdense}); Lemma~\ref{lem:pin} at $C = 0$
+makes $\Rung(3p, 3p+1; 2^m, \emptyset)$ consistent for cofinitely many
+complete scales; but every $2^m \ge 2p+6$ lies in the flip class
+($2^m \equiv 0 \equiv 2p+6 \pmod 8$) and the three $C3(p)$ units are
+among the rung's fired units, so Theorem~\ref{thm:c3p} makes every such
+theory inconsistent.  Full ten-line write-up: notes/88 item 3.
+Theorem~\ref{thm:b1} is \emph{not} consumed: B1$_0$ is the standalone
+unconditional statement that the chart argument of \S\ref{sec:chart}
+rests on.}
 
 The general-$C$ case of (H1) is the first open input:
 
@@ -247,7 +258,7 @@ many $t$.  \status{PROVED}
 $\varphi(x) = (x - c + 4)/4$ (resp.\ $x/4$) maps $\Lambda_c(t)$ exactly onto
 $B(t-2)$; restriction preserves permutability, affine maps preserve 3-APs in
 both directions; the image has infinitely many full dyadic blocks ---
-contradiction with Corollary~\ref{cor:b1zero}.}
+contradiction with Theorem~\ref{cor:b1zero} (B1$_0$).}
 
 \begin{theorem}[ALT-DEAD]\label{thm:altdead}
 Call a scale $t$ \emph{4-pure} for a partition $(A,B)$ if some mod-4 class
@@ -404,7 +415,7 @@ fresh-payment system; Hypothesis~\ref{hyp:afford} caps supply below it.
  (Z/D/E(p)/P     (N3-b) [GAP]    |
   L1(p), FLIP(p))                |
           |                    Hyp AFFORD' [GAP]
-   B1 at C0=0 [P]              (residue: SPLIT corner;
+   Thm B1_0 [P]                (residue: SPLIT corner;
           |                     all arithmetic shapes dead
    Lemma Q [P]                  via Lemma Q/ALT-DEAD)
           |                        |

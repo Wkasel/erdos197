@@ -94,3 +94,47 @@ instrument.
 Edits: notes/82 §5 (×3) + §6, STATUS.md FRONT ALT-CLOSURE (×2),
 notes/50 §6 row + (iv) bracket, paper2/main.tex hyp:afford,
 notes/86 gating list, notes/83 axis (d) + new §2b.
+
+---
+
+## Item 3 — Theorem B1₀, standalone (review item 3): the
+## unconditional zero-dust bridge, extracted from conditional B1
+
+Lemma Q previously cited "Theorem B1 [PROVED mod (H1)] at C₀ = 0",
+making the unconditional chain look conditional.  The standalone
+statement and its direct proof:
+
+**Theorem B1₀.**  Let T ⊆ ℤ⁺ contain the complete dyadic block
+B(m) = (2^m, 2^{m+1}] for infinitely many m.  Then T is not
+3-permutable.  (The scales 2^m automatically lie in the needed
+residue class: 2^m ≡ 0 ≡ 2p+6 (mod 8) for m ≥ 3, p ≡ 1 (mod 4).)
+
+*Proof.*  Suppose π is an arrangement of T with no monotone 3-AP,
+and let 𝕄 be the infinite set of scales with B(m) ⊆ T.
+(1) Fix m₀ ∈ 𝕄 with 2^{m₀} ≥ 32.  By Lemma DIAG-DENSE [PROVED,
+notes/52 §2.1], B(m₀) contains ≥ (2^{m₀} − 13)/12 ≥ 1 diagonal
+pair {3p, 3p+1} with p ≡ 1 (mod 4); p > 2^{m₀}/3 > 8, so p ≥ 9.
+Both members lie in T because B(m₀) is complete.
+(2) Apply Lemma PIN [PROVED, notes/52 §1.3] to the fixed pair
+a₁ = 3p < a₂ = 3p+1 ∈ T with dust bound C = 0 and the infinite
+scale family {m ∈ 𝕄 : 2^m > 3p+1}: for all but finitely many such
+m, the rung theory R(3p, 3p+1; 2^m, ∅) is consistent.
+(3) But for every m ≥ 3 with 2^m ≥ 2p+6, the scale M = 2^m
+satisfies M ≡ 0 ≡ 2p+6 (mod 8) (p ≡ 1 mod 4), i.e. M is in the
+flip class, so Theorem C3(p) [PROVED, notes/78 Part I; unpunctured
+instance only] makes AP-freeness of (M, 2M] inconsistent with the
+three C3(p) units — which are among R(3p, 3p+1; M, ∅)'s fired
+units (attackers 3p, 3p, 3p+1; machine-checked exactly, e186
+partQVERIFY 6/6).  Hence R(3p, 3p+1; 2^m, ∅) is inconsistent for
+every such m — contradicting (2).  ∎
+
+Inputs: PIN + DIAG-DENSE + unpunctured C3(p), all [PROVED].  No
+(H1), no dust tolerance, no N3-GROW anywhere.  **Tag: [PROVED,
+unconditional].**  Conditional B1 (general C₀, notes/52 §3.1)
+remains as stated, mod (H1′); B1₀ is not an instance of its
+STATEMENT-form (no "Assume (H1)") — it is the C₀ = 0 proof run
+directly on proved inputs.
+
+Repointed: notes/82 §2.1 step (iii) and paper2/main.tex (lem:q's
+proof + the zero-dust node in the dependency graph) now cite
+Theorem B1₀ instead of "B1 at C₀ = 0".
