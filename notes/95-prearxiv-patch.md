@@ -197,3 +197,16 @@ triple"; -ise/-isation normalized to the paper's -ize convention.
 
 Result: 21 pages, 0 undefined/multiply-defined refs, one cosmetic underfull
 hbox in the bibliography.
+
+## Submitted (2026-08-31)
+
+arXiv submission 7993526 was submitted after both `reproduce.sh` runs returned
+exit code 0 and arXiv's own compile succeeded at 21 pages.
+
+Status on the account page: **`on hold`** — queued for moderator review rather
+than auto-announced. This is routine for a first submission to a new primary
+category (the account's default category is cs.AI; this went to math.CO). No
+arXiv identifier is assigned until it is announced.
+
+Submitted state = tag `arxiv-v1` = commit `2639d03`, which the paper's data
+availability section cites by name.
