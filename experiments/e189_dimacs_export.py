@@ -205,7 +205,11 @@ def export_chain(kind, M, v, out):
 
 
 # ------------------------------------------------------------ c3core (e166)
-def export_c3core(M, out, attacks="c3"):
+def export_c3core(M, out, attacks="c3", window=0):
+    """window=0: FULL transitivity (complete encoding — SAT and UNSAT
+    both sound).  window=w>0: index-window-w transitivity only (e166's
+    seed set) — a SUBSET of the theory, so UNSAT remains sound but SAT
+    would be inconclusive."""
     lo, hi = M, 2 * M
     V = list(range(lo + 1, hi + 1))
     n = len(V)
@@ -228,11 +232,17 @@ def export_c3core(M, out, attacks="c3"):
                 if lo < z <= hi:
                     atk.append((z, M + j))
     nap = sum(min(y - lo - 1, hi - y) for y in V)
-    ntr = n * (n - 1) * (n - 2) // 6
+    if window and window < n:
+        ntr = sum((min(n, i + window + 1) - i - 1) *
+                  (min(n, i + window + 1) - i - 2) // 2
+                  for i in range(n))
+    else:
+        ntr = n * (n - 1) * (n - 2) // 6
     ncl = 2 * nap + len(atk) + 2 * ntr
     t0 = time.time()
     with open(out, "w") as f:
-        f.write(f"c e189 c3core M={M} attacks={attacks} eager-full-trans\n")
+        f.write(f"c e189 c3core M={M} attacks={attacks} "
+                f"trans={'w'+str(window) if window and window < n else 'full'}\n")
         f.write(f"p cnf {nP} {ncl}\n")
         buf = []
 
@@ -253,10 +263,11 @@ def export_c3core(M, out, attacks="c3"):
             buf.append(f"{o(z, y)} 0")
         for i in range(n):
             ri = row[i]
-            for j in range(i + 1, n):
+            top_w = min(n, i + window + 1) if window and window < n else n
+            for j in range(i + 1, top_w):
                 xij = ri + (j - i)
                 rj = row[j]
-                for k in range(j + 1, n):
+                for k in range(j + 1, top_w):
                     xjk = rj + (k - j)
                     xik = ri + (k - i)
                     buf.append(f"-{xij} -{xjk} {xik} 0")
@@ -264,7 +275,7 @@ def export_c3core(M, out, attacks="c3"):
                 flush()
         flush(force=True)
     meta = {"family": "c3core", "M": M, "attacks": attacks, "n": n,
-            "nvars": nP, "nclauses": ncl}
+            "window": window, "nvars": nP, "nclauses": ncl}
     with open(out + ".meta.json", "w") as f:
         json.dump(meta, f)
     print(f"c3core M={M} {attacks}: vars={nP} clauses={ncl} "
@@ -374,12 +385,13 @@ def main():
     ap.add_argument("--attacks", default="c3")
     ap.add_argument("--bounds", default=None)
     ap.add_argument("--support", default="core")
+    ap.add_argument("--window", type=int, default=0)
     ap.add_argument("--model", default=None)
     a = ap.parse_args()
     if a.family == "bal":
         export_bal(a.M, a.v, a.out, a.bounds)
     elif a.family == "c3core":
-        export_c3core(a.M, a.out, a.attacks)
+        export_c3core(a.M, a.out, a.attacks, a.window)
     elif a.family == "coupled":
         export_coupled(a.M, a.out, a.bounds or "2,2,2", a.support)
     elif a.family == "chain":
