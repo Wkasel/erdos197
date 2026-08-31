@@ -188,7 +188,7 @@ def export_chain(kind, M, v, out):
             budgets = [("s0_zero", [0], 0), ("vup", [1, 2], v)]
         verdict, el, info = e173.solve_chain(blocks, budgets,
                                              f"e189_{kind}_M{M}_v{v}",
-                                             time_budget=1e9)
+                                             time_budget=86400.0)
         assert verdict == "UNSAT", verdict
     finally:
         e173.Cadical195 = orig

@@ -25,51 +25,27 @@
 \maketitle
 
 \begin{abstract}
-A sequence $a_1, a_2, \dots$ \emph{contains a monotone 3-AP} if some three terms,
-taken in order of position, form an increasing or a decreasing arithmetic
-progression. Davis, Entringer, Graham and Simmons (1977) proved that every
-permutation of $\Z^+$ contains an increasing --- in particular monotone --- 3-AP,
-constructed a partition of $\Z^+$ into three sets each admitting a permutation
-with no monotone 3-AP, and asked whether two sets suffice; Erd\H{o}s and Graham
-(1979, p.~338) repeated this as ``a very annoying question'' (problem \#197 of
-the Erd\H{o}s problem collection). We prove several structural results constraining any solution.
-(i) A permutable set admits no infinite \emph{increasing} doubling orbit
-$u_0<u_1<\cdots$, $u_{k+1}=2u_k-f_k$, with
-$f_k$ drawn from a fixed finite subset. (ii) In any 3-AP-free arrangement, every newly placed value must be
-balanced: the counts of already-placed values in $[1,v)$ and in $(v,2v)$
-control each other up to the codensity of the set in $(v,2v)$ and in
-$(0,v)$ respectively.
-(iii) No 3-AP-free arrangement of $\{k,2k,3k,5k\}\subseteq S$ places all
-ratio-$\ge 2$ pairs in increasing order. (iv) For the canonical dyadic partition,
-no solution can play any cofinite family of dyadic blocks as contiguous runs: a
-halving self-reduction plus finitely many machine-checked base cases shows the
-associated ``zone'' systems are infeasible, and a finish-time descent completes
-the argument. (v) In contrast, all natural finite fragments of the problem are
-satisfiable, and we give an exact characterization of solvability in terms of
-bounded-delay towers of finite arrangements, which pinpoints the problem's
-content in the growth of a single computable function.
-(vi) For the dyadic partition we prove an unconditional reduction to a single
-scale-uniform statement: an ``order gadget'' $\OG(M)$ on the interval
-$(M, 2M]$ --- no monotone in-block $3$-AP, plus fifteen guard-precedence
-axioms induced by the values $15$ and $16$ --- whose infeasibility at
-infinitely many dyadic scales $M = 2^{2t-1}$ implies that $\SA$ admits no
-valid permutation.
-(vii) We then prove, by hand, that infeasibility: for every
-$M \equiv 0 \pmod 8$ with $M \ge 16$, already the three-axiom core
-$\mathrm{C3} \subset \OG(M)$ is inconsistent with AP-freeness. The proof
-runs on a small toolkit of ladder lemmas (zigzag propagation, phase
-dichotomy, a transfer lock, and a mirror-flood induction) and exhibits the
-mod-$8$ arithmetic as a residue condition on two flood centers; every step
-of the two forcing theorems is machine-verified at $100$ resp.\ $51$ scales
-up to $M = 1024$ and independently cross-validated. Combining (vi) and (vii):
-\textbf{$\SA$ admits no permutation of order type $\omega$ free of monotone
-$3$-APs} --- the
-canonical dyadic partition does not resolve the Erd\H{o}s--Graham problem.
-We also record, in a form convenient here, the absorption property of van der
-Corput orderings of odd residue classes (a restatement of a lemma of Geneson)
-which explains the fractal structure observed in all satisfying fragments.
-Problem \#197 itself remains open: our theorem eliminates one candidate
-partition, and decides nothing about other two-set partitions.
+Call a permutation of a set of positive integers \emph{admissible} if it
+contains no increasing or decreasing three-term arithmetic progression in
+position order. Davis, Entringer, Graham, and Simmons proved that the
+positive integers are not admissibly permutable, partitioned them into
+three admissibly permutable sets, and asked whether two sets suffice. We
+study the canonical dyadic candidate
+$\SA = \bigcup_{k \ge 2,\ k \text{ even}} (2^{k-1}, 2^{k}]$. We establish
+several structural restrictions on admissible permutations, including an
+orbit obstruction, an asymmetric balance law, and the impossibility of
+placing all sufficiently large dyadic blocks as contiguous runs. For the
+main result, we reduce admissibility of $\SA$ to feasibility of an order
+gadget on $(M, 2M]$: the order must avoid monotone three-term progressions
+and satisfy fifteen precedence constraints induced by the values $15$ and
+$16$. We then prove that a three-constraint core of this gadget is
+inconsistent for every $M \equiv 0 \pmod 8$, using zigzag propagation on
+arithmetic-progression ladders, a transfer lock, and mirror-flood
+induction. Since every relevant dyadic scale lies in this residue class,
+$\SA$ admits no admissible permutation. Thus the canonical dyadic partition
+does not solve the two-set problem, which remains open. Independent SAT
+encodings and certificate checks provide auxiliary verification of the
+human-readable proof.
 \end{abstract}
 
 \section{Introduction}
