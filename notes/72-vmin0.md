@@ -421,6 +421,8 @@ Landed from sprint-B (`194.26.196.215:23563`, `data/vmin0_series.log`):
 | 16 | 48 | UNSAT | 706.2 s |
 | 16 | 96 | **TIMEOUT** | 43200.3 s (12 h) |
 | 24 | 128 | UNSAT | 169.7 s |
+| 24 | 256 | UNSAT | 2029.3 s |
+| 32 | 768 | UNSAT | 356.5 s |
 
 **Provenance (quarantine rule, §2).** These lines are written by
 `run_vmin0.py` on sprint-B. It *does* emit structured rows, but to
@@ -450,12 +452,14 @@ rows above predate the patch and stand on the source verification.
 **Bounds.** UNSAT at v ⟹ `v_min(0)(M) > v`:
 
 * `v_min(0)(16) > 48` (was `> 6`) — now `3M`
-* `v_min(0)(24) > 128` (was `> 65`), narrowing §1's interval to `(128, 1440]` — now `> 5.3M`
+* `v_min(0)(24) > 256` (was `> 65`), narrowing §1's interval to `(256, 1440]` — now `> 10.7M`
+* `v_min(0)(32) > 768` (was `> 512`) — now `> 24M`
 
 Both are corroborative rather than load-bearing: [GAP-VMIN0-growth] is
 already DISCHARGED via `v_min(0) = ∞` at `M = 32, 40, 48` (§ below). They
 tighten the small-M end of the series and stay consistent with divergence —
-the ratio `v_min(0)(M)/M` rises `1.5 → >3 → >5.3` across `M = 8, 16, 24`.
+the ratio `v_min(0)(M)/M` rises `1.5 → >3 → >10.7 → >24` across
+`M = 8, 16, 24, 32` — superlinear, consistent with the `= ∞` result.
 
 **Open cell.** `(96,0)@16` timed out at 12 h — the only unresolved point in
 the sprint-B grid. Plain CDCL is the wrong instrument here; the validated

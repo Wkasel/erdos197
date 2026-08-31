@@ -80,3 +80,24 @@ API key in memory/runpod-access.md.
 
 - 2026-08-29 00:13 UTC: e165 M=256 core (2,2,2) **UNSAT** [930s, 18
   rounds, 5.4M lazy clauses] — the record attempt landed first try.
+
+## e166 C3@4096 terminated (2026-08-31) — diverging, not load-bearing
+
+Killed after 51 h on ledger-3. The lazy-clause loop was not converging:
+
+| round | violations | clauses | wall |
+|---|---|---|---|
+| 1 | 6,299,670 | 0.3 M | 2 s |
+| 81 | 8,385,053 | 24.3 M | 579 s |
+| 201 | 8,368,277 | 60.3 M | 13,085 s |
+| 271 | 8,211,617 | 81.3 M | 161,017 s |
+| 272 | 7,768,277 | 81.6 M | 183,547 s |
+
+Violations *rose* from 6.3 M to 8.4 M and then plateaued near 8 M, while
+per-round cost grew from ~7 s to ~22,500 s — a 3000x slowdown with the
+objective flat. Extrapolating, it would not terminate.
+
+Terminating costs nothing: `thm:c3core` is a **hand proof** for all
+`M ≡ 0 (mod 8), M ≥ 16`, and the machine layer is corroboration that is
+already complete at many scales including 2048. Freeing the core for the
+live fronts is strictly better value.

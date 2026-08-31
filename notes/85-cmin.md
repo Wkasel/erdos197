@@ -327,3 +327,23 @@ M = 32 and one clean statement (BIGT) from uniform.
 3. ftot(20) completion (predicted 10); then GAP-FTOT mirrors
    FHALF's status mechanically.
 4. NOT this front: GAP-MARGIN-MASS; the const-bounds analogue.
+
+
+## Sprint-B/D harvest (2026-08-31) — exchange floor at two new scales
+
+| cell | value | status | source |
+|---|---|---|---|
+| `cmin_t2(20)` | **42** | OPTIMAL (lb = 42) | sprint-B `e188_t2_2024.log` |
+| `cmin_t2(24)` | **50** | OPTIMAL (lb = 50, 17465 s) | sprint-B `e188_t2_2024.log` |
+| `cmin_t1(32)` | **32** | OPTIMAL (lb = 32, 447.7 s) | sprint-D `e188_cmin_242832.log` |
+
+The `t = 2` exchange floor now reads `10, 22, 33, 42, 50` at
+`M = 8, 12, 16, 20, 24` — every value `> M`, with the ratio `cmin_t2/M`
+settling near `2.1` (`1.25, 1.83, 2.06, 2.10, 2.08`). `cmin_t1(32) = 32 = M`
+exactly, extending the "`= M` at the extremal frame" pattern to an eighth
+scale.
+
+Both series are evidence *for* GAP-CMIN-BIGT (`Σ_z min(c_A,c_B) ≥ M`) at a
+comfortable margin, not merely at equality — but they remain measurements at
+finite `t`, and the open residue is still `t > (M−14)/16` at `M ≥ 36`, which
+no amount of small-`t` data reaches.
