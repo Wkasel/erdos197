@@ -262,3 +262,21 @@ to "top two pure scales per witness (8/8 cells)"; the notes/82 §5
 "sharply characterized" aperiodicity phrasing was already replaced
 under item 2.  ALT-DEAD/Lemma Q claims themselves are untouched
 (they are hand theorems).
+
+---
+
+## Item 9 — percentage reframe (review item 15)
+
+STATUS.md's "NO ≈ 96–97 %" headline (FRONT ALT-CLOSURE) replaced
+with the reviewer's formulation: **a conditional NO architecture —
+open theorems exactly: GAP-AFFORD′ (residue GAP-AFFORD‴-SPLIT),
+the GAP-N6a sub-pool, GAP-N3-GROW (N3-b), plus ALT-DEAD's
+applicability hypothesis on the SPLIT corner (item 1) and the
+Q-ODD gates (item 2); many structured candidate families
+eliminated unconditionally.**  The grand-assembly final section's
+probability line kept but demoted to an explicitly labeled
+informal internal heuristic, led by the claim-grade formulation.
+A labeling rule added at the top of STATUS covers every historical
+"NO ≈ X %" line in the dated FRONT sections (informal heuristics
+of record, not claims).  notes/50 contains no percentage claims
+(checked).

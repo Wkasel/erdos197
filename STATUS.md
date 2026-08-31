@@ -1,5 +1,15 @@
 # Erdős #197 campaign — STATUS (2026-08-30 end-of-day, MASTER ASSEMBLY + AUDIT; see the final section for the current state and notes/50 for the final dependency graph)
 
+> Labeling rule (review remediation, notes/88 item 9): every
+> "NO ≈ X %" line in the dated FRONT sections below is a historical
+> INFORMAL heuristic recorded at that session, not a mathematical
+> claim.  The claim-grade formulation of the current state is the
+> "conditional NO architecture" paragraph in the final section: the
+> exact open theorems are GAP-AFFORD′ (residue GAP-AFFORD‴-SPLIT),
+> the GAP-N6a sub-pool, GAP-N3-GROW (N3-b), ALT-DEAD's applicability
+> hypothesis on the SPLIT corner, and the Q-ODD gates; many
+> structured candidate families are eliminated unconditionally.
+
 ## Bottom line
 
 **THEOREM (proven, hand proof, machine-audited).  S_A = ∪_{k even}
