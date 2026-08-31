@@ -1968,9 +1968,12 @@ e174 ftot harvest folded in.
   S = N − f_A − f_B EXACTLY in all 9 cells (the sweep accounting is
   the value at the optimum, not just a bound).
 - **Exchange floor at the assigned fresh scales**: cmin_t2(16) = 33
-  OPTIMAL (> 2M; 8/12 gave 10/22); 20/24 descending on sprint-B;
-  cmin(24/28/32) on sprint-D to close the measurement hole between
-  cmin(20) = 20 and the M ≥ 32 theorem.
+  OPTIMAL (> 2M; 8/12 gave 10/22); 20/24 descending on sprint-B.
+  cmin(24/28/32) = 24/28/32 ALL OPTIMAL (sprint-D, pre-registered):
+  cmin(M) = M at SEVEN scales 8..32, witness = the extremal frame
+  (2M−1, 2M) at every scale — measurement and theorem now overlap
+  at 32 with no scale hole.  Full t-profile at 16: 16/33/46/48 at
+  t ≥ 1/2/4/6 — factor-2 cliff behind t = 1, 3M at deep impurity.
 - **Residue renamed [GAP-CMIN-BIGT]**: S ≥ M for t > (M − 14)/16 at
   M ≥ 36 — the ONLY surviving mathematics of the front.  The naive
   exchange breaks μ_dn = 0 (un-swapping mints H_dn fans landing in
