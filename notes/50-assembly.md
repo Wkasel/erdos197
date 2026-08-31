@@ -127,7 +127,8 @@ large-M = GAP-N6a verbatim.]
   M ≥ 36 PROVED mod BIGT].  Hand layer now: Lemma BM1-VAC +
   Theorem CMIN-SMALLT [PROVED, notes/85] — S ≥ M whenever
   16t ≤ M − 14; residue = big-t only.  cmin(M) = M exact at
-  8/12/16/20 (24/28/32 in flight, e188).
+  SEVEN scales 8..32 step 4 (24/28/32 NEW, e188; witness = the
+  extremal frame (2M−1, 2M) at every scale).
 - **Theorem F-BOOT [PROVED mod GAP-FTOT]** (notes/71 §5): F(M; v)
   UNSAT for v < ⌈M/4⌉ — first uniform freshness law; machine
   F(12;2), F(16;6)×3, F(20;4), F(12;5).
@@ -302,7 +303,7 @@ Hardening layer (not gating the assembly):
 
 | tag | exact statement | state |
 |-----|-----------------|-------|
-| GAP-CMIN → **GAP-CMIN-BIGT** | Σ_z min(c_A, c_B) ≥ M for balanced μ_dn = 0 low-impure splits | **near-pure regime PROVED (notes/85): Lemma BM1-VAC (Bm1 impurity vacuous) + Theorem CMIN-SMALLT (16t ≤ M − 14, all M)**; residue = t > (M−14)/16 at M ≥ 36 (exchange floor machine-true: cmin_t2 = 10/22/33 at 8/12/16, all > M); = M exact at 8/12/16/20; sweepaudit@40 9/9 exact accounting |
+| GAP-CMIN → **GAP-CMIN-BIGT** | Σ_z min(c_A, c_B) ≥ M for balanced μ_dn = 0 low-impure splits | **near-pure regime PROVED (notes/85): Lemma BM1-VAC (Bm1 impurity vacuous) + Theorem CMIN-SMALLT (16t ≤ M − 14, all M)**; residue = t > (M−14)/16 at M ≥ 36 (exchange floor machine-true: cmin_t2 = 10/22/33 at 8/12/16, all > M); = M exact at SEVEN scales 8..32 (witness = extremal frame each time); sweepaudit@40 9/9 exact accounting |
 | GAP-FHALF / GAP-FTOT | f(M) ≥ M/2 resp. f_F(M) ≥ M/2 | FHALF CLOSED on M ≤ 32 (measured ×7) + PROVED mod BIGT beyond; FTOT: f_F = f at 8/12/16 (ftot(16) = 8 NEW, sprint-C), same reduction |
 | GAP-F-schema | F(N; v) UNSAT family (freshness; does not project) | F-BOOT gives v < ⌈N/4⌉ mod GAP-FTOT; machine ×3 cells |
 | GAP-J-margin / GAP-MARGIN-MASS | U4(2m; v, v*₃(m)+b) family; impure mass at μ_dn ≤ w | low-pure arm PROVED (MARGIN-LP + K-diagonal incl. 51/111) |
