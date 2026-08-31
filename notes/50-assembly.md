@@ -264,11 +264,18 @@ extractable class-punctured cell SAT, exact touch-the-class law)
 the supply cap for gap-≥3, 2-adically split minorities — no known
 inhabitant satisfying all corner axes; first instrument = the
 HSPLIT-constrained dodger build (e186, notes/81 §2
-pre-registration).**  [Review remediation, notes/88 items 1–2: the
-F = 64 UNSAT of that instrument proves only that every finite
-strong-censor inhabitant has ≥ 1 monochromatic class-section
-within the tested horizon — no ω conclusion, "dead end-to-end"
-retracted; ALT-DEAD's applicability hypothesis (infinitely many
+pre-registration).**  [Review remediation, notes/88 items 1–2 +
+second review item 3: the F = 64 UNSAT of that instrument proves
+exactly — "At F = 64, horizons 2048 and 4096, every coloring
+satisfying the remaining proxy constraints has at least one
+monochromatic mod-4 class-section among the tested blocks."
+HSPLIT-as-constraint bans ANY coloring with even one pure tested
+section (not only lattices); the hard-coded burn-in t = 6 does
+not capture the correct eventual quantifier; the depth-2 orbit
+censor is a proxy.  The burn-in probe T ∈ {6, 8, 10} ×
+hor ∈ {2048, 4096} is UNSAT ×6 (e186 hsplitburn, notes/81 §3b) —
+same finite-scope reading per cell, no ω conclusion, "dead
+end-to-end" retracted; ALT-DEAD's applicability hypothesis (infinitely many
 4-pure scales) is explicitly open on this corner.  And
 "2-adically split ⟹ aperiodic" is FALSE — HSPLIT excludes only
 persistent monochromatic 2^k-residue charts; odd-periodic (e.g.

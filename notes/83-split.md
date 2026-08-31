@@ -28,12 +28,16 @@ cf. §2b below);
 (e) orbit-censored (subcriticality proxy): no in-team doubling
 chain of depth ≥ D = 2 with reflectors ≤ F, seed > u₀.
 
-Known facts going in [corrected per notes/88 item 1]: at the
-ROT4-strength censor F = 64, e186 partHSPLIT is UNSAT ×3 (≤ 30 s;
-hor = 2048 AND 4096, mod-4-only included) — i.e. every finite
-corner inhabitant there carries ≥ 1 monochromatic class-section
-within the tested horizon (NOT "tolerates only lattices", and no
-ω conclusion follows — see the notes/81 §3 retraction);
+Known facts going in [corrected per notes/88 item 1 + second
+review item 3]: at the ROT4-strength censor F = 64, e186
+partHSPLIT is UNSAT ×3 (≤ 30 s; hor = 2048 AND 4096, mod-4-only
+included) — i.e., exactly: at F = 64, horizons 2048 and 4096,
+every coloring satisfying the remaining proxy constraints has at
+least one monochromatic mod-4 class-section among the tested
+blocks (NOT "tolerates only lattices" — one pure section is not a
+lattice; the t = 6 burn-in does not capture the eventual
+quantifier; the depth-2 censor is a proxy; no ω conclusion
+follows — see the notes/81 §3 retraction);
 the censor-off alternating coloring altw IS fully
 HSPLIT-compatible (0 mono sections at t ≥ 6), so the coloring
 class (a)–(d) is inhabited — the question is whether it coexists
@@ -91,10 +95,20 @@ SAT 55 % — retained):**
 
 - UNSAT ×(C1,C2,C3): Theorem SPLIT-EMPTY(F) [MACHINE-CHECKED]:
   no 2-coloring of [1, hor] satisfies (a)–(e) at F ∈ {12, 64}.
-  Combined with ALT-DEAD/HSPLIT [PROVED]: every finite
+  [CORRECTED, second review item 3 — the next inference of this
+  blind draft was INVALID and is struck: ~~"every finite
   inhabitant of the corner axioms (a)+(b)+(c)+(e) at these
   censors is a mod-2^k near-lattice, and every such coloring is
-  dead at ω.  Case 2 then rests ONLY on colorings that defeat
+  dead at ω"~~.  What such an UNSAT licenses is only the
+  finite-scope statement (cf. the F = 64 record): every coloring
+  satisfying the remaining proxy constraints has at least one
+  monochromatic class-section among the tested blocks — one pure
+  section is NOT a near-lattice, HSPLIT-as-constraint bans any
+  coloring with even one pure tested section, the burn-in t = 6
+  does not capture the eventual quantifier, and the depth-2
+  censor is a proxy.  In the event the F = 12 cells returned
+  TIMEOUT ×2, so not even SPLIT-EMPTY(12) exists.]
+  Case 2 then rests ONLY on colorings that defeat
   every finite orbit censor tried — supercritical-looking at
   every finite depth — while keeping (a)–(d); the residue
   statement sharpens to that class ([GAP], exact wording in §3).

@@ -528,22 +528,30 @@ def partGENESON(t_max=200):
     dump()
 
 
-def partHSPLIT(hor=4096, F=12, u0=32, budget=7200.0, k8=True):
+def partHSPLIT(hor=4096, F=12, u0=32, budget=7200.0, k8=True,
+               burnin=6):
     """The GAP-AFFORD'''-SPLIT instrument: e179 s5dodger axes
     (i-proxy)+(ii)+(iii)+split floor, PLUS Cor. HSPLIT as a
     constraint: every class mod 4 (and mod 8 if k8) is bichromatic
-    within every dyadic block t >= 6.
+    within every dyadic block burnin <= t <= log2(hor) - 1.
 
-    INTERPRETATION (downgraded per external review, notes/88 item
-    1): UNSAT here proves ONLY that every finite corner inhabitant
-    on [1, hor] at these parameters has >= 1 monochromatic
-    residue-class section at some tested scale 6 <= t <= t_max.
-    It does NOT show inhabitants are lattices, and licenses NO
-    omega conclusion (no compactness step; ALT-DEAD needs
-    infinitely many 4-pure scales).  The omega-relevant open
-    statement is the shifted-window family: for every T >= 6,
-    infeasibility with bichromaticity imposed only at scales
-    >= T.  This function imposes T = 6 only."""
+    INTERPRETATION (downgraded per external review, notes/88 item 1
+    + second review item 3): UNSAT here proves ONLY that, at these
+    parameters, every coloring satisfying the remaining proxy
+    constraints has at least one monochromatic mod-4 (or mod-8 if
+    k8) class-section among the tested blocks
+    burnin <= t <= log2(hor) - 1.  It does NOT show inhabitants are
+    lattices (one pure section is banned, whatever the rest looks
+    like), and licenses NO omega conclusion (no compactness step;
+    ALT-DEAD needs infinitely many 4-pure scales).  The hard-coded
+    burn-in does not capture the correct eventual quantifier: the
+    omega-relevant open statement is the shifted-window family —
+    for EVERY T, infeasibility with bichromaticity imposed only at
+    scales >= T.  The `burnin` parameter probes exactly that family
+    at T = burnin (second-review item 3 experiment: T in {6, 8, 10}
+    x hor in {2048, 4096}).  The depth-2 orbit censor (D = 2,
+    reflectors <= F, seeds > u0) is a PROXY for subcriticality, not
+    a proved necessary condition of valid pairs."""
     from ortools.sat.python import cp_model
     t0 = time.time()
     D = 2
@@ -570,8 +578,8 @@ def partHSPLIT(hor=4096, F=12, u0=32, budget=7200.0, k8=True):
                     mdl.AddBoolOr([A[v].Not(), A[v + g].Not(),
                                    mA.Not()])
                     mdl.AddBoolOr([A[v], A[v + g], mA])
-        # HSPLIT: class sections bichromatic (t >= 6)
-        if t >= 6:
+        # HSPLIT: class sections bichromatic (burnin <= t <= t_hi)
+        if t >= burnin:
             mods = (4, 8) if k8 else (4,)
             for md in mods:
                 for c in range(md):
@@ -617,13 +625,15 @@ def partHSPLIT(hor=4096, F=12, u0=32, budget=7200.0, k8=True):
     name = {cp_model.OPTIMAL: "SAT", cp_model.FEASIBLE: "SAT",
             cp_model.INFEASIBLE: "UNSAT"}.get(st, "TIMEOUT")
     row = {"part": "hsplit", "hor": hor, "D": D, "F": F, "u0": u0,
-           "k8": k8, "verdict": name,
+           "k8": k8, "burnin": burnin, "verdict": name,
            "secs": round(time.time() - t0, 1)}
     if name == "SAT":
         col = [v for v in range(1, hor + 1) if solver.Value(A[v])]
         out = os.path.join(BASE,
                            f"e186_hsplit_h{hor}_F{F}"
-                           f"{'_k8' if k8 else ''}.json")
+                           f"{'_k8' if k8 else ''}"
+                           f"{f'_T{burnin}' if burnin != 6 else ''}"
+                           ".json")
         json.dump({"hor": hor, "D": D, "F": F, "A": col},
                   open(out, "w"))
         row["witness"] = out
@@ -654,6 +664,14 @@ if __name__ == "__main__":
             partHSPLIT(hor=4096, F=64, u0=64, k8=True)
         elif nm == "hsplit64ctl":
             partHSPLIT(hor=2048, F=64, u0=64, k8=True)
+        elif nm == "hsplitburn":
+            # second-review item 3: burn-in scale T experiment --
+            # HSPLIT imposed only for T <= t <= log2(hor)-1,
+            # T in {6, 8, 10} x hor in {2048, 4096}, strong censor.
+            for T in (6, 8, 10):
+                for h in (2048, 4096):
+                    partHSPLIT(hor=h, F=64, u0=64, k8=True,
+                               burnin=T, budget=3600.0)
         else:
             PARTS[nm]()
         dump()

@@ -276,15 +276,28 @@ the orbit censor tolerates them.
 | F = 12, u₀ = 32, HSPLIT mod 4+8 | TIMEOUT (undecided) | 7200 |
 | F = 12, mod-4-only (attribution) | TIMEOUT (undecided) | 7200 |
 
-Reading (F = 64 rows), **as corrected by the external review
-(notes/88 item 1; the original reading below is RETRACTED)**: the
-UNSAT cells prove exactly this — **every finite strong-censor
-corner inhabitant on [1, hor], hor ∈ {2048, 4096}, has at least
-one monochromatic residue-class section (mod 4 already suffices)
-at some tested scale 6 ≤ t ≤ t_max** — the un-HSPLIT build was SAT
+Reading (F = 64 rows), **as corrected by the external reviews
+(notes/88 item 1 + second review item 3; the original reading
+below is RETRACTED)**: the UNSAT cells prove exactly this —
+**"At F = 64, horizons 2048 and 4096, every coloring satisfying
+the remaining proxy constraints has at least one monochromatic
+mod-4 class-section among the tested blocks."**  Three explicit
+scope notes (second review item 3): (i) HSPLIT as a finite
+constraint bans ANY coloring with even one pure tested section —
+not only lattices — so an UNSAT cell licenses no statement about
+how lattice-like the excluded colorings are; (ii) the hard-coded
+burn-in t = 6 does NOT capture the correct eventual quantifier —
+the ω-relevant statement is the shifted-window family (for EVERY
+T, no model with all sections bichromatic at all tested scales
+≥ T); (iii) the depth-2 orbit censor is a PROXY for
+subcriticality, not a proved necessary condition of valid pairs.
+The un-HSPLIT build was SAT
 at exactly these parameters (e179: 45 s, witness = mod-4 lattice),
 so full bichromaticity is what the censor refuses, not the corner
-axes themselves.
+axes themselves.  The reviewer-suggested burn-in experiment
+(HSPLIT imposed only for T ≤ t ≤ log2(hor) − 1, T ∈ {6, 8, 10} ×
+hor ∈ {2048, 4096}, strong censor): e186 `hsplitburn`, harvest in
+§3b.
 
 **RETRACTED (invalid inference, original text of this section):**
 "the corner tolerates NOTHING but lattices … the strong-censor
@@ -303,6 +316,45 @@ valid pair" — is UNAFFECTED and stands [PROVED]; its
 applicability hypothesis on this corner is explicitly OPEN.  The
 weak-censor cells decide whether GAP-AFFORD‴-SPLIT has ANY finite
 inhabitant at these horizons — nothing more.
+[Only T = 6 had been run when this retraction was written; §3b
+runs T ∈ {6, 8, 10}.]
+
+## 3b. Burn-in scale T: the shifted-window probe
+## (second-review item 3 experiment)  [MACHINE-CHECKED]
+
+Instrument: e186 `hsplitburn` = partHSPLIT with new parameter
+`burnin`, imposing HSPLIT only for T ≤ t ≤ log2(hor) − 1 (all
+other axes unchanged, strong censor F = 64, u₀ = 64, D = 2,
+mods 4+8).  Committed before the run; budget 3600 s/cell.
+
+| T | hor = 2048 | hor = 4096 |
+|---|---|---|
+| 6  | UNSAT (16.5 s) | UNSAT (40.0 s) |
+| 8  | UNSAT (19.3 s) | UNSAT (38.6 s) |
+| 10 | UNSAT (20.0 s) | UNSAT (36.8 s) |
+
+Raw rows: data/e186_altclosure.json partHSPLIT (`burnin` field),
+log data/e186_hsplitburn.log; total 172 s.
+
+**Exact reading, and nothing more.**  For each cell: *at F = 64,
+at that horizon, every coloring satisfying the remaining proxy
+constraints has at least one monochromatic mod-4 class-section
+among the tested blocks T ≤ t ≤ log2(hor) − 1.*  Note T = 10 at
+hor = 2048 tests only t = 10 (a single block) and at hor = 4096
+only t = 10, 11 — the higher-T cells are progressively WEAKER
+constraints on progressively fewer blocks, so their UNSAT is
+progressively more informative about the censor and less about
+HSPLIT.  Honest limits, unchanged: (i) HSPLIT-as-constraint bans
+any coloring with even one pure tested section, not just
+lattices; (ii) six instances of the shifted-window family is not
+the family — the open statement quantifies over EVERY T at EVERY
+horizon, and no compactness step exists from any finite set of
+cells to ω; (iii) the depth-2 orbit censor remains a proxy for
+subcriticality, not a proved necessary condition of valid pairs.
+So this experiment removes the "only T = 6 was run" objection at
+two horizons and three burn-ins; it does not move the ω verdict,
+and GAP-AFFORD‴-SPLIT / ALT-DEAD's applicability hypothesis stay
+exactly as open as before.
 
 ## 4. Close-out (weak-censor rows landed; front hands off)
 

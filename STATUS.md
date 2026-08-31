@@ -1914,14 +1914,21 @@ honest instrument launched: the HSPLIT-constrained dodger build
 bichromatic per block; F = 12 and F = 64 + mod-4-only control;
 pre-registered notes/81 §2: SAT 55 %/35 %).  LANDED at F = 64:
 UNSAT ×3 (hor 2048/4096, mod-4-only included).  **Corrected reading
-(review remediation, notes/88 item 1): this proves only that every
-finite strong-censor corner inhabitant has ≥ 1 monochromatic
-residue-class section within the tested horizon.  It does NOT show
-every finite inhabitant is a lattice, and there is no compactness
-step to ω — notes/81 §3's "strong-censor corner dead end-to-end"
-is RETRACTED.  Needed (open): shifted-window uniform infeasibility
-— for every T, no corner model with all class-sections bichromatic
-at all scales ≥ T; only T = 6 was run.  ALT-DEAD (the conditional
+(notes/88 item 1 + second review item 3), exactly: at F = 64,
+horizons 2048 and 4096, every coloring satisfying the remaining
+proxy constraints has at least one monochromatic mod-4
+class-section among the tested blocks.  Scope notes: HSPLIT as a
+finite constraint bans ANY coloring with even one pure tested
+section (not only lattices); the hard-coded burn-in t = 6 does not
+capture the correct eventual quantifier; the depth-2 orbit censor
+is a proxy for subcriticality, not a proved necessary condition.
+No compactness step to ω — notes/81 §3's "strong-censor corner
+dead end-to-end" is RETRACTED.  Needed (open): shifted-window
+uniform infeasibility — for every T, no corner model with all
+class-sections bichromatic at all scales ≥ T; the burn-in
+experiment (e186 hsplitburn: HSPLIT only for T ≤ t ≤ log2(hor)−1,
+T ∈ {6, 8, 10} × hor ∈ {2048, 4096}) probes exactly this family —
+results in notes/81 §3b.  ALT-DEAD (the conditional
 theorem) is unaffected; its applicability hypothesis on this corner
 is explicitly open.**  Professor certifies
 no elegant kill among directions (1)–(4) for THIS residue — it is

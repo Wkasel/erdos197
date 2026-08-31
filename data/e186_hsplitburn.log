@@ -1,0 +1,7 @@
+[HSPLIT] {"part": "hsplit", "hor": 2048, "D": 2, "F": 64, "u0": 64, "k8": true, "burnin": 6, "verdict": "UNSAT", "secs": 16.5}
+[HSPLIT] {"part": "hsplit", "hor": 4096, "D": 2, "F": 64, "u0": 64, "k8": true, "burnin": 6, "verdict": "UNSAT", "secs": 40.0}
+[HSPLIT] {"part": "hsplit", "hor": 2048, "D": 2, "F": 64, "u0": 64, "k8": true, "burnin": 8, "verdict": "UNSAT", "secs": 19.3}
+[HSPLIT] {"part": "hsplit", "hor": 4096, "D": 2, "F": 64, "u0": 64, "k8": true, "burnin": 8, "verdict": "UNSAT", "secs": 38.6}
+[HSPLIT] {"part": "hsplit", "hor": 2048, "D": 2, "F": 64, "u0": 64, "k8": true, "burnin": 10, "verdict": "UNSAT", "secs": 20.0}
+[HSPLIT] {"part": "hsplit", "hor": 4096, "D": 2, "F": 64, "u0": 64, "k8": true, "burnin": 10, "verdict": "UNSAT", "secs": 36.8}
+[hsplitburn] done 172.0s

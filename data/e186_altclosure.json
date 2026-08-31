@@ -1855,6 +1855,72 @@
    "verdict": "TIMEOUT",
    "secs": 7200.7,
    "pod": "sprint-D"
+  },
+  {
+   "part": "hsplit",
+   "hor": 2048,
+   "D": 2,
+   "F": 64,
+   "u0": 64,
+   "k8": true,
+   "burnin": 6,
+   "verdict": "UNSAT",
+   "secs": 16.5
+  },
+  {
+   "part": "hsplit",
+   "hor": 4096,
+   "D": 2,
+   "F": 64,
+   "u0": 64,
+   "k8": true,
+   "burnin": 6,
+   "verdict": "UNSAT",
+   "secs": 40.0
+  },
+  {
+   "part": "hsplit",
+   "hor": 2048,
+   "D": 2,
+   "F": 64,
+   "u0": 64,
+   "k8": true,
+   "burnin": 8,
+   "verdict": "UNSAT",
+   "secs": 19.3
+  },
+  {
+   "part": "hsplit",
+   "hor": 4096,
+   "D": 2,
+   "F": 64,
+   "u0": 64,
+   "k8": true,
+   "burnin": 8,
+   "verdict": "UNSAT",
+   "secs": 38.6
+  },
+  {
+   "part": "hsplit",
+   "hor": 2048,
+   "D": 2,
+   "F": 64,
+   "u0": 64,
+   "k8": true,
+   "burnin": 10,
+   "verdict": "UNSAT",
+   "secs": 20.0
+  },
+  {
+   "part": "hsplit",
+   "hor": 4096,
+   "D": 2,
+   "F": 64,
+   "u0": 64,
+   "k8": true,
+   "burnin": 10,
+   "verdict": "UNSAT",
+   "secs": 36.8
   }
  ],
  "altw_hsplit_compat": {
