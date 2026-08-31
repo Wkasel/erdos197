@@ -99,8 +99,9 @@ sets, each admitting an admissible permutation, and asked (Concluding
 Remarks~3, p.~89) whether two sets suffice. Erd\H{o}s and Graham repeated the
 question in \cite{ErGr79} (p.~338), calling it ``a very annoying question''
 (see also their monograph \cite{ErGr80}); it is problem \#197 of the
-Erd\H{o}s problem collection \cite{Bl}, where it is stated for $\N$ and
-carries a Lean formalisation \cite{FC}.
+Erd\H{o}s problem collection \cite{Bl}, where it is stated for the natural
+numbers and carries a Lean formalisation \cite{FC} (see
+Remark~\ref{rem:lean} for the $0 \in \N_0$ nuance).
 
 The modern literature around the problem concerns densities, longer
 progressions, and enumeration (Ho \cite{Ho26} recently proved that
@@ -240,11 +241,39 @@ and the permutation has order type $\omega$.
 The completion of an ordered pair: if $x$ is placed before $y$, the value
 $z = 2y - x$ (which continues the progression through $x,y$ in the direction of
 $y$) must not be placed after $y$; equivalently every such $z \in S$ placed later
-yields a monotone 3-AP. We use throughout the \emph{dyadic blocks}
-$B_k = (2^{k-1}, 2^k]$ and the canonical two-set candidate
-$\SA = \bigcup_{k \text{ even},\, k \ge 2} B_k$, $S_B = \Z^+ \setminus \SA$.
+yields a monotone 3-AP.
 
-\begin{remark}[Ground set: $\Z^+$ versus $\N \ni 0$; the Lean formalization]
+Throughout, $\N = \{1, 2, 3, \dots\}$ is the set of positive integers, which
+serves both as the ground set (written $\Z^+$ when we wish to emphasise that
+role) and as the index set of positions in a permutation.
+
+\begin{definition}[Dyadic indexing]\label{def:dyadic}
+For $k \ge 1$ the \emph{$k$-th dyadic block} is
+\[
+B_k \;=\; \left(2^{k-1},\, 2^{k}\right] \cap \Z^+
+\;=\; \{\, 2^{k-1}+1,\ 2^{k-1}+2,\ \dots,\ 2^{k} \,\},
+\qquad |B_k| = 2^{k-1}.
+\]
+The blocks $B_1, B_2, B_3, \dots$ are pairwise disjoint and partition
+$\Z^+ \setminus \{1\}$; for $v \ge 2$ we write $\mathrm{block}(v)$ for the
+unique $k \ge 1$ with $v \in B_k$. The canonical two-set candidate is
+\[
+\SA \;=\; \bigcup_{k \ge 2,\ k \text{ even}} B_k
+\;=\; (2,4] \cup (8,16] \cup (32,64] \cup \cdots,
+\qquad
+S_B \;=\; \Z^+ \setminus \SA .
+\]
+\end{definition}
+
+\noindent The range $k \ge 2$ in the union is not a restriction, since
+$k = 1$ is odd; we nevertheless state it, because two counts used later
+depend on knowing exactly which small values belong to $\SA$: $1 \notin \SA$
+and $2 \notin \SA$, so $\SA \cap [1,16] = \{3,4\} \cup \{9, 10, \dots, 16\}$
+has exactly ten elements, and $|\SA \cap [1,64]| = 42$. Note that
+$1 \in S_B$ lies in no block and $\mathrm{block}(1)$ is undefined; we apply
+$\mathrm{block}$ only to elements of $\SA$, all of which are $\ge 3$.
+
+\begin{remark}[Ground set: $\Z^+$ versus $\N_0 \ni 0$; the Lean formalization]
 \label{rem:lean}
 The original sources pose the problem for the positive integers: Davis,
 Entringer, Graham and Simmons ask whether a two-set partition of $\Z^+$ is
@@ -252,11 +281,12 @@ possible, and Erd\H{o}s--Graham (1979, p.~338) repeat the question, again
 for $\Z^+$. The Lean formalization in the DeepMind
 \emph{formal-conjectures} repository
 (\texttt{FormalConjectures/ErdosProblems/197.lean}) instead partitions
-Lean's $\N = \{0, 1, 2, \dots\}$, which \emph{includes $0$}, and asks for
-bijections $f\colon \N \simeq A$, $g\colon \N \simeq B$ avoiding monotone
-$3$-term APs --- the bijection-from-$\N$ requirement being exactly our
+Lean's ground set $\N_0 = \{0, 1, 2, \dots\}$, which \emph{includes $0$}
+(and so differs from our $\N = \{1,2,\dots\}$), and asks for
+bijections $f\colon \N_0 \simeq A$, $g\colon \N_0 \simeq B$ avoiding monotone
+$3$-term APs --- the bijection-from-$\N_0$ requirement being exactly our
 order-type-$\omega$ convention. The two formulations are not verbatim
-equivalent: a positive answer over $\N$ yields one over $\Z^+$ (delete the
+equivalent: a positive answer over $\N_0$ yields one over $\Z^+$ (delete the
 value $0$; deletion preserves $3$-AP-freeness), but conversely adjoining
 $0$ to one part adds genuine constraints --- the progressions $(0, d, 2d)$
 with $d, 2d$ in that part --- and we are not aware of a general argument
@@ -265,7 +295,7 @@ are insensitive to the nuance: Theorem~\ref{thm:main} shows $\SA$ itself
 is not permutable, and since deletion preserves validity, $\SA \cup \{0\}$
 is not permutable either; hence the dyadic partition fails in both
 formulations, whichever part receives $0$. (In the Lean encoding the
-values live in $\N$, so the common difference is a natural number and never
+values live in $\N_0$, so the common difference is a natural number and never
 negative; \texttt{HasMonotoneAP} requires strictly increasing indices whose
 value list equals $(a, a+d, a+2d)$ or its reverse, the reversed disjunct
 being the decreasing case. The predicate permits $d = 0$, but injectivity
@@ -946,7 +976,8 @@ proof must be a scale-uniform schema, verified rung by rung.
 \section{The C3 core theorem and the main theorem}\label{sec:c3}
 
 \begin{theorem}[Main theorem]\label{thm:main}
-$\SA = \bigcup_{k \text{ even}} (2^{k-1}, 2^k]$ is not $3$-permutable:
+$\SA = \bigcup_{k \ge 2,\ k \text{ even}} B_k
+= \bigcup_{k \ge 2,\ k \text{ even}} (2^{k-1}, 2^k]$ is not $3$-permutable:
 it admits no permutation (of order type $\omega$) free of monotone
 $3$-term arithmetic progressions. In particular the canonical dyadic
 partition $\Z^+ = \SA \sqcup S_B$ is not a solution of the
