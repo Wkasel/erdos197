@@ -1,0 +1,33 @@
+{
+ "LAND": {
+  "tuples_per_sigma": 10000,
+  "general_bound_fail": 0,
+  "pos_dev_from_pos_fail": 0,
+  "pos_dev_bound_fail_plus": 0,
+  "pos_dev_bound_viol_minus": 451485,
+  "land_fail": 0,
+  "sup_bound_fail": 0,
+  "min_orbit_fail": 0,
+  "nonland_fail": 0,
+  "mod_track_fail": 0
+ },
+ "counterexample_sigma_minus": {
+  "xs_prefix": [
+   5,
+   11,
+   8
+  ],
+  "delta0": -3,
+  "delta1": 3,
+  "violates_half_bound": true,
+  "lands_eventually": true
+ },
+ "S1": {
+  "tuples": 10000,
+  "fail": 0,
+  "examples_fail": [],
+  "max_K": 9,
+  "min_N": 103,
+  "max_N": 13753
+ }
+}

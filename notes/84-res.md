@@ -112,19 +112,39 @@ because δ_n and g are both odd.
 m_{n+1} = −(m_n + ε_n)/2 with ε_n = m_n mod 2 (g odd).  This is
 base-(−2) digit extraction, and it terminates at 0 from EVERY
 integer: m = 0 is fixed; ±1 reach 0 in ≤ 2 steps (1 → −1 → 0,
-−1 → 0); and |m| ≥ 2 gives |m_{n+1}| ≤ (|m| + 1)/2 < |m|.  For the
-sup bound, |δ_{n+1}| ≤ (|δ_n| + g)/2, so |δ_n| ≤ D := max(|δ₀|, g)
-by induction.  Two refinements FOR THE CASE σ = +1 (r* = q),
-g | δ₀, δ₀ < 0 — note these hypotheses force |δ₀| ≥ g, so
-D = |δ₀|:
+−1 → 0); and |m| ≥ 2 gives |m_{n+1}| ≤ (|m| + 1)/2 < |m|.
+
+The GENERAL deviation bound — the only bound valid for both signs
+of σ — is
+
+    |δ_{n+1}| ≤ (|δ_n| + g)/2,
+
+so |δ_n| ≤ D := max(|δ₀|, g) by induction.  Two refinements, valid
+ONLY FOR σ = +1 (r* = q), with g | δ₀, δ₀ < 0 — note these
+hypotheses force |δ₀| ≥ g, so D = |δ₀|:
 (b1) positive deviations only arise from negative ones
 (δ_{n+1} > 0 needs δ_n + ε_n g < 0, impossible for δ_n > 0 when
-σ = +1) and satisfy δ_{n+1} ≤ |δ_n|/2 ≤ D/2;
+σ = +1) and satisfy, exactly,
+δ_{n+1} = |δ_n|/2 (δ_n even) or δ_{n+1} = (|δ_n| − g)/2 < |δ_n|/2
+(δ_n odd); in both cases δ_{n+1} ≤ |δ_n|/2 ≤ D/2;
 (b2) later negative deviations only arise from positive ones, with
 magnitude ≤ (D/2 + g)/2 ≤ 3D/4 < |δ₀|.  So x₀ = τ + δ₀ is the
 STRICT orbit minimum, and every subsequent |δ_n| ≤ 3D/4.
-(For σ = −1 the analogous refinements need δ₀ > 0; S1 below only
-uses σ = +1.)
+
+**Warning (σ = −1 has NO halving bound; second-review item 2).**
+For σ = −1 (r* = p) the refinement (b1) is FALSE: an odd negative
+δ_n gives δ_{n+1} = −(δ_n − g)/2 = (|δ_n| + g)/2 > |δ_n|/2.
+Explicit counterexample (the external reviewer's): q = 1, p = 4,
+g = 3, r* = p = 4, τ = 8, h = 14 — the seed residue is r₀ = p
+(h even), x₀ = 5, δ₀ = −3, and the next forced step is r₁ = q
+(x₀ odd), δ₁ = +3 = |δ₀|, violating δ_{n+1} ≤ |δ₀|/2.  An earlier
+draft of this note stated (b1)-(b2) without the σ = +1 scoping;
+that version of Lemma LAND was false as stated (caught by the
+second external review; the scoping itself was added at commit
+a7616eb, and this remark pins the boundary with the witness).
+Only the general bound (|δ_n| + g)/2 survives at σ = −1; the
+σ = −1 analogues of (b1)-(b2) would need δ₀ > 0, and nothing in
+this note uses them — S1 below runs its spiral at r* = q, σ = +1.
 
 (c) The correction term ε_n σ g vanishes mod g; 2 is invertible mod
 the odd g.  ∎
@@ -147,15 +167,20 @@ gives u ≺ 2u − t = w (the AP (t, u, w) lies in O by (C3)).  Now run
 the spiral at w with target τ = u and r* = q: indeed
 3u = 6t + 3q = 2w − q and u ≡ q (mod 2).  The seed of w has residue
 r₀ (w = 3t + 2q ≡ t mod 2, and r₀ ≡ t by its definition), so
-δ₀ = x₀ − u = (w − r₀)/2 − u = −(t + r₀)/2 < 0.  By (C1) and Lemma
-LAND(b) the spiral lands: x_K = u, giving the derived fact w ≺ u —
-provided each step is admissible, which we check.  (Positivity)
-the orbit minimum is x₀ = (w − r₀)/2 ≥ 1 by (C2) (LAND(b2)).
-(Head-avoidance x_n ≠ w)  x_n ≤ u + D/2 by LAND(b1), and
-D = max((t + r₀)/2, g) ≤ t + q — the first argument is
-≤ (t + q + g)/2 ≤ t + q and the second is ≤ t + q, both because
-(C1) forces (t + r₀)/2 ≥ g, i.e. t + q ≥ 2g − (r₀ − q) ≥ g —
-so x_n ≤ u + (t + q)/2 < u + t + q = w.  (Window) every reflection
+δ₀ = x₀ − u = (w − r₀)/2 − u = −(t + r₀)/2 < 0.  The spiral's
+residue is r* = q, i.e. σ = +1, so the LAND(b1)-(b2) refinements
+apply.  By (C1) and Lemma LAND(b) the spiral lands: x_K = u,
+giving the derived fact w ≺ u — provided each step is admissible,
+which we check.  Set A := |δ₀| = (t + r₀)/2; (C1) gives g | A with
+A > 0, hence A ≥ g and D = max(A, g) = A.  (Positivity)  by
+LAND(b2), x₀ = (w − r₀)/2 is the strict orbit minimum, and
+x₀ ≥ 1 by (C2).  (Head-avoidance x_n ≠ w)  by LAND(b1), σ = +1,
+every positive deviation is ≤ A/2, so x_n ≤ u + A/2; and
+A/2 < w − u = t + q in both residue cases of (C1):
+r₀ = q gives A/2 = (t + q)/4 < t + q; r₀ = p = q + g gives
+A = (t + q + g)/2, and A ≥ g forces t + q ≥ g, so
+A/2 = (t + q + g)/4 ≤ (t + q)/2 < t + q.  Hence x_n < w.
+(Window) every reflection
 2w − x_n ≤ 2w − x₀ = (3w + r₀)/2 ≤ N by (C3), and every
 reflection ≥ w + 1 ≥ 1.  So u ≺ w and w ≺ u, contradicting
 irreflexivity through T (Lemma CC).  ∎
@@ -213,6 +238,17 @@ the e146 catalogues' closure-dead lists; independent engine):
   (0 violations — the standard strongest test of the calculus);
 * the full S-family (§2) additionally covers the transient-landing
   instances; totals below.
+* **Corrected-bounds check (integrity patch item 2, e191):** the
+  recurrence bounds as now stated — general (|δ_n|+g)/2 both σ;
+  (b1)/(b2) refinements at σ = +1 — verified on 10⁴ random tuples
+  PER σ case (0 failures on every asserted bound, landing, sup,
+  orbit-minimum, and mod-g exactness clause), the σ = −1 half-bound
+  confirmed FALSE (451 485 sampled violations incl. the reviewer's
+  h = 14 tuple through the real spiral map), and Theorem S1
+  re-verified by direct forced-spiral simulation on 10⁴ fresh
+  admissible (q, g, t, N) tuples — landing + positivity +
+  head-avoidance + window all hold, 0 failures.
+  data/e191_land_s1_check.json.
 
 ## 2. The full family and the region law
 
@@ -352,7 +388,7 @@ residue).
 | claim | status |
 |-------|--------|
 | parity-forcing / drop-map totality (odd g) | [PROVED] §1.1 |
-| Lemma LAND (base-(−2) landing + exactness) | [PROVED] §1.2 |
+| Lemma LAND (base-(−2) landing + exactness; refinements σ = +1 only — the unscoped form was FALSE, second-review item 2) | [PROVED as corrected] §1.2 + e191 |
 | Theorem S1 (spiral 2-cycle schema) | [PROVED] §1.3 |
 | Corollary COR: 7q + 10g ≤ 2N ⟹ dead | [PROVED] §1.4 |
 | region law R(N) (3q + g ≤ N−24, 2p ≤ N−7) | [MACHINE-CHECKED ×26 windows, all certificates independently verified; 0 soundness violations] |
