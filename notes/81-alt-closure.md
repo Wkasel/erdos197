@@ -183,10 +183,16 @@ scale-flip rows (several cells SAT at M = 128, UNSAT at 256) and
 the exact touch-the-class law are recorded as structure for the
 Q-ODD/N2-UNIF write-ups.
 
-## 2. Adversarial verification of Lemma Q / ALT-DEAD [ALL PASS]
-## + the notes/82 machine errand
+## 2. Machine spot-checks of Lemma Q / ALT-DEAD [all checks pass
+## at the tested instances] + the notes/82 machine errand
 
-partQVERIFY (e186; every layer of the notes/82 §2 proof attacked):
+[Language aligned per notes/88 item 8: these are finite
+REGRESSION-style checks of the machine-checkable shadows of the
+proof's layers at the stated instances/scales — consistency
+evidence, not a universal verification of the proofs.]
+
+partQVERIFY (e186; the machine-checkable shadow of each notes/82
+§2 proof layer exercised at the stated instances):
 
 1. **Chart exactness**: φ(Λ_c(t)) = B(t−2) as EXACT sets — 44/44
    cells (c ∈ {0..3}, t = 4..14), 0 fail.  Both endpoint
@@ -223,10 +229,14 @@ corner-certified inhabitant (censor off), but it shows alternating
 (ii)+(iii)+split colorings need not be lattices — the
 GAP-AFFORD‴-SPLIT residue is a real, inhabited-as-COLORING class,
 and the professor's residue table is honest.  Verification
-verdict: **Lemma Q + ALT-DEAD SOUND — every machine-checkable
-layer passes; I found no hole in the restriction/transport steps
-(order-type, position-preservation, midpoint-class, B1-at-C₀=0
-threshold arithmetic all re-derived and checked).**
+verdict: **no inconsistency found — every machine-checkable shadow
+passes at the tested instances, and the restriction/transport
+steps (order-type, position-preservation, midpoint-class,
+B1₀ threshold arithmetic) were re-derived by hand.**  This is
+supporting evidence for Lemma Q + ALT-DEAD, not a proof audit of
+universal scope: the checks are finite spot checks (e.g. chart
+exactness at t = 4..14, transport on [1, 600], two witnesses' top
+scales), and soundness of the theorems rests on the hand proofs.
 
 **HSPLIT build pre-registration (the errand's part (c); committed
 before the run):** e179 s5dodger axes verbatim + Cor. HSPLIT as a

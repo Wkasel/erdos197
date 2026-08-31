@@ -2,6 +2,10 @@
 # (rewritten 2026-08-30 end-of-day, post five-front merge + notes/76 audit;
 # adjudication pass applied same night — notes/80: six-species spot-audit
 # clean, champion = S4/MINT-LOC, S5 witnesses = mod-4 lattice colorings;
+# GRAND ASSEMBLY pass 2026-08-30 late: notes/83-88 folded in (Q-g/ASPLIT,
+# spiral region law, CMIN-SMALLT, C3(p) prose pass, B1₀, review
+# remediation) + independent spot-verification of all five fronts at
+# fresh scales (see STATUS.md final section + BOTTOM-LINE.md);
 # supersedes all earlier versions of this file — history in git)
 
 Target: **Theorem (conditional assembly).**  No partition of ℤ⁺ into two
@@ -242,12 +246,16 @@ every valid pair is everywhere-split in EVERY 2-adic chart
 (eventually-2^k-periodic minorities all dead); odd-q siblings =
 Cor. Q-ODD mod BRIDGE1-AF + N2-UNIF.  The Case-2 corner inherits a
 Case-1 kill — N4's dichotomy is not restriction-stable.  The C3(p)
-referee prose pass is DONE (notes/86 §1): rider-free.  Adversarially verified
-(notes/81 §2, e186): chart exactness 44/44, AP transport
-44 400/44 400, C3(p)-units-in-R 6/6, fresh rung UNSAT p = 13,
-witness 4-purity + transported clean blocks 8/8, Geneson-W Λ-scan
-0 hits t = 5..200 (Lemma Q's finiteness prediction confirmed on
-the sharpest known permutable set).  Complementary instrument
+referee prose pass is DONE (notes/86 §1): rider-free.  Machine
+spot-checks of the proof's checkable shadows at the stated finite
+instances — regression evidence, not universal verification
+(notes/88 item 8) — all pass (notes/81 §2, e186): chart exactness
+44/44 cells (t = 4..14), AP transport 44 400/44 400 triples on
+[1, 600], C3(p)-units-in-R 6/6, fresh rung UNSAT p = 13, witness
+4-purity + transported clean blocks at the top two pure scales per
+witness (8/8 cells), Geneson-W Λ-scan 0 hits t = 5..200 (consistent
+with Lemma Q's finiteness prediction on the sharpest known
+permutable set).  Complementary instrument
 measurement (notes/81 §1): the majority team of a sparse-minority
 window CANNOT be killed via its own punctured rung (every
 extractable class-punctured cell SAT, exact touch-the-class law)
@@ -268,6 +276,23 @@ mod-3), mixed-modulus, and automatic minorities are NOT excluded
 unconditionally (they die only mod the Q-ODD gates or, with
 constant ownership, by L-NOTAIL) — the residue is NOT "stripped of
 every arithmetic shape".]
+
+DESCENT SHARPENING (notes/83 §2, grand assembly): **Lemma Q-g**
+(gap-g chart; g = 2^k PROVED verbatim from Lemma Q / Theorem B1₀,
+odd part mod the Q-ODD gates BRIDGE1-AF + GAP-N2-UNIF + N3-GROW at
+C = 2 — no new species) + **Cor. ASPLIT**: every valid pair is
+split in EVERY modulus-m chart, all m ≥ 2 (same tags) — both
+containment directions die (minority ⊇ section: Q-g; minority ⊆
+section: ALT-DEAD Cor-2 at modulus q kills the majority).  The
+SPLIT residue's inhabitant must be m-adically split for ALL m.
+Honest reach boundary: Q-g needs co-full sections — the diffuse
+mixed-gap {3, 4, 5} shape (altw's measured anatomy, e187b-audited)
+is chart-immune; the descent CANNOT close the residue alone.  The
+decisive weak-censor F = 12 HSPLIT cells (e187, hor 2048-8192,
+notes/83 §0 pre-registration with blind-drafted verdict readings)
+were STILL RUNNING at grand-assembly close — SPLIT-EMPTY(F) vs
+first certified inhabitant undecided; either verdict is progress,
+neither closes Case 2 by itself (§0b tag discipline).
 
 ## 3. Retired / reframed tags (final dispositions)
 
@@ -318,7 +343,7 @@ Critical path (all four needed; nothing else is):
 
 | tag | exact statement | species | evidence state |
 |-----|-----------------|---------|----------------|
-| **GAP-AFFORD′** | for every valid Case-2 pair, the donation supply (single-use colored values, P3-accounted) cannot fund the T-TEL″ mint system (≥ 1 displaced value per 2 octaves) forever | **genuinely new ledger statement** — no template in the campaign | no-go results (NG1–NG4, GAP-COMP refuted) + tournament (notes/79) + adjudication (notes/80): S2/S3 refuted, L-DOUBLE-DUTY [PROVED, ×3 scales], SPARSE-CORE ×8 scales + AAA hand arm; PINCER EXECUTED (notes/80-pincer): MINT-LOC resolved strong-form, Theorem AFFORD-CORNER [PROVED], S5-ALT UNSAT ×2 censors; **CHART KILL (notes/82 + notes/81 verification): Lemma Q + ALT-DEAD [PROVED, zero new gaps] retire the ENTIRE arithmetic corner** (all lattices any ownership law, on-class punctures any count, 2^k-periodic minorities via Cor. HSPLIT) — residue = **GAP-AFFORD‴-SPLIT** (gap-≥3, 2-adically split minorities: no known inhabitant of the full corner axes; no 2^k-periodic shape — but odd-periodic/mixed-modulus/automatic shapes are excluded only mod the Q-ODD gates or by L-NOTAIL at constant ownership: mod-3 counterexample, notes/88 item 2) — the supply CAP on that residue still has zero completed proof strategies (professor certifies no elegant kill among directions 1–4 for it) |
+| **GAP-AFFORD′** | for every valid Case-2 pair, the donation supply (single-use colored values, P3-accounted) cannot fund the T-TEL″ mint system (≥ 1 displaced value per 2 octaves) forever | **genuinely new ledger statement** — no template in the campaign | no-go results (NG1–NG4, GAP-COMP refuted) + tournament (notes/79) + adjudication (notes/80): S2/S3 refuted, L-DOUBLE-DUTY [PROVED, ×3 scales], SPARSE-CORE ×8 scales + AAA hand arm; PINCER EXECUTED (notes/80-pincer): MINT-LOC resolved strong-form, Theorem AFFORD-CORNER [PROVED], S5-ALT UNSAT ×2 censors; **CHART KILL (notes/82 + notes/81 verification): Lemma Q + ALT-DEAD [PROVED, zero new gaps] retire the ENTIRE arithmetic corner** (all lattices any ownership law, on-class punctures any count, 2^k-periodic minorities via Cor. HSPLIT) — residue = **GAP-AFFORD‴-SPLIT** (gap-≥3, 2-adically split minorities: no known inhabitant of the full corner axes; no 2^k-periodic shape — but odd-periodic/mixed-modulus/automatic shapes are excluded only mod the Q-ODD gates or by L-NOTAIL at constant ownership: mod-3 counterexample, notes/88 item 2) — the supply CAP on that residue still has zero completed proof strategies (professor certifies no elegant kill among directions 1–4 for it).  SHARPENED (notes/83 §2): Cor. ASPLIT upgrades 2-adically split to **m-adically split for EVERY m ≥ 2** [g = 2^k arm PROVED via B1₀; odd arm mod the Q-ODD gates]; the residue's inhabitant is confined to totally-diffuse mixed-gap minorities (the one shape provably chart-immune).  The decisive F = 12 weak-censor inhabitant hunt (e187 C1-C5) was in flight at grand-assembly close — no finite inhabitant of the full corner axes known at ANY censor strength |
 | **GAP-N6a sub-pool** | the CI(m) core fires for ALL m (bal ≥ 16; const (2,2,2) ≥ 48): remaining per notes/77 §7 = **GAP-RES** (consolidated: classify SAT-alive fan pairs uniformly in N — carries FG-scaled-zone, FG-deep taxonomy, DICH-ALPHA, H-LAT) + ThW1′-ROBUST/-TOL + DICH-F2/CASC + SPLIT + LLOP-α/β + ASM′ = (OV-∀) | uniformization/classification (discharged instances exist for each; PURE/P-ARM‴/AFF⁺+MON cleared out of the pool) | machine-closed everywhere asked (8 CI scales + robust ×2; P-ARM‴ modular 48..128; laws ×8 full + ×7 half scales; blind hits; 176/192 pre-registered) |
 | **GAP-N2-DIAG** | C3(p) UNSAT on its flip class for every odd p ≥ 5 (uniform-in-p write-up) | uniformization — **DISCHARGED: Theorem C3(p), notes/78 Part I [PROVED — spot-audited notes/80]** | schema p = 5..25 (0 fail; 23/25 fresh both mod-4 classes), boundaries exact, solver x-val ×9 p-values, identity layer re-derived p ≤ 39; prose pass DONE (notes/86 §1) — zero residual |
 | **GAP-N3-GROW (N3-b)** | < ⌊(x−1)/4⌋ punctures leave the rung UNSAT, uniformly in x and puncture set | uniformization + robustness (severed-ladder closures = machine shadow); skeleton LANE + SEV + (N3-b′), notes/78 §II.3 | exact at x = 11/15/19/23/27 global, x = 19 AND 27 each at two scales (d*(19; 112) = 4 fresh, notes/80); closures complete at M = 112 |
@@ -392,3 +417,8 @@ YES question is GAP-AFFORD‴-SPLIT.]
 - notes/80-pincer: L-NOTAIL, γ-RIGID/MINT-1, D-FLOOR/D-SAT, Theorem AFFORD-CORNER [PROVED]; MINT-LOC executed as pre-registered (e185: 26/26 one-mint cells empty, census closed-form exact, ν frontiers 9/31/58); S5-ALT + attribution battery [MACHINE]
 - notes/82: Lemma Q, Theorem ALT-DEAD, Cor. HSPLIT [PROVED — professor pass; inputs PIN/DIAG-DENSE/C3(p)]; Cor. Q-ODD [stated]; directions 1/3/4 failure analysis; GAP-AFFORD″-ALT retired → GAP-AFFORD‴-SPLIT
 - notes/81: adversarial verification of Lemma Q (e186 partQVERIFY, 5 layers, 0 fails; Geneson Λ-scan 0 hits t = 5..200); the measured complement (class-punctured rungs: exact touch-the-class law, majority-side siege provably void); HSPLIT-constrained dodger build (the SPLIT residue's first instrument)
+- notes/83: Lemma Q-g [g = 2^k PROVED; odd part mod BRIDGE1-AF + N2-UNIF + N3-GROW@C=2] + Cor. ASPLIT (every valid pair m-adically split for ALL m ≥ 2, same tags) — every periodic/arithmetic minority shape at any modulus dead territory; chart facts MACHINE-CHECKED (+ re-verified independently, grand assembly, g ≤ 12 × t ≤ 17); honest reach boundary: diffuse mixed-gap {3,4,5} shapes are chart-immune; §2b mod-3 live test case; F = 12 weak-censor HSPLIT battery (C1-C5) IN FLIGHT — no verdict at grand-assembly close
+- notes/84: Lemma LAND + Theorem S1 + Cor. COR [PROVED — independently reconstructed at FRESH N = 600/222, 5 895/5 895 pairs valid, grand assembly] + region law R(N) [MACHINE ×40 windows] + LAT-LOW [PROVED mod region law] + CLIQUE-HALVE [PROVED]; α̂(208) = α̂(240) = 3 fresh
+- notes/85: BM1-VAC + CMIN-SMALLT [PROVED — BM1-VAC re-verified from-scratch at FRESH M = 36, cmin(12/16) reproduced, grand assembly]; cmin = M at 7 scales; residue GAP-CMIN-BIGT
+- notes/86: C3(p) referee prose pass DONE (rider-free; identity layer independently re-derived at p = 29..47, grand assembly); definitive gap list §2.2; paper2 skeleton
+- notes/88: review remediation — HSPLIT downgrade (finite UNSAT ⇏ ω), mod-3 counterexample adopted, **Theorem B1₀ [PROVED, unconditional]** (complete dyadic blocks at ∞ many scales ⟹ not 3-permutable; PIN + DIAG-DENSE + unpunctured C3(p) only — Lemma Q's zero-dust input, no (H1) anywhere), quarantine banners 01-30, Roth fix

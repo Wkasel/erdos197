@@ -233,9 +233,13 @@ aperiodic", adopted here as a standing test case for the hunt.
 **The coloring.**  Minority team = 3ℤ⁺ (multiples of 3), majority
 = the rest.  Fully periodic, period 3.  Machine-checked this
 session: ZERO monochromatic class-sections at mods 4/8/16/32 for
-t = 6..12 — because gcd(2^k, 3) = 1, every class c mod 2^k of a
-section of length ≥ 3·2^k contains both multiples and
-non-multiples of 3.  In-block minority gaps are identically 3
+t = 6..12 with the boundary caveat below — because gcd(2^k, 3) = 1,
+every class c mod 2^k of a section of length ≥ 3·2^k contains both
+multiples and non-multiples of 3.  [Grand-assembly precision fix:
+at (mod 32, t = 6) the sections have only 2 < 3 elements and 11/32
+classes ARE majority-pure — the length hypothesis needs t ≥ k + 2;
+mods 4 + 8 (the HSPLIT instrument) are clean at ALL t ≥ 6, and
+mods 16/32 from t = k + 2 on; no other violation t ≤ 14.]  In-block minority gaps are identically 3
 (axis (c) verbatim); split floor and window floor hold (minority
 = 1/3 of every window).  So the coloring satisfies (a)–(d): HSPLIT
 excludes persistent monochromatic POWER-OF-TWO residue charts

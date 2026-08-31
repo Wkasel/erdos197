@@ -74,6 +74,14 @@ mod 2^k is bichromatic in every long block — gcd(2^k, 3) = 1 puts
 both multiples and non-multiples of 3 into every class c mod 2^k of
 any section of length ≥ 3·2^k.  Check: 0 monochromatic sections at
 mods 4/8/16/32, t = 6..12; in-block minority gaps identically 3.
+[Precision fix, grand assembly 2026-08-30: the machine sentence
+above overstates at the boundary (mod 32, t = 6), where sections
+have only 2 < 3 elements and 11 of the 32 classes are indeed
+majority-pure — exactly the case the "length ≥ 3·2^k" hypothesis
+excludes (need t ≥ k + 2).  Independently re-checked: mods 4 + 8
+(the HSPLIT instrument) are bichromatic at ALL t ≥ 6, and mods
+16/32 from t = k + 2 on; zero other violations t ≤ 14.  Argument
+unaffected — HSPLIT imposes mods 4 + 8 only.]
 
 **Corrected characterization (now propagated everywhere the claim
 appeared):** the SPLIT residue excludes eventually-2^k-periodic
@@ -234,3 +242,23 @@ with the DOWNGRADED interpretation only.
 HSPLIT UNSAT reproduced at 38.4 s / 19.0 s; qverify 44/44 chart,
 44,400/44,400 transport, 6/6 units, R(39,40;128) UNSAT; Geneson
 hits only at boot t = 2, 4).
+
+---
+
+## Item 8 — rhetoric pass (review items 11, 14): regression tests
+## vs universal verification
+
+The partQVERIFY battery was described as "every machine-checkable
+layer attacked, ALL PASS … SOUND, no hole found" (notes/81 §2
+heading + verdict; STATUS FRONT ALT-CLOSURE; notes/50 §2d
+"Adversarially verified"; paper2 §chart \source "adversarial
+machine verification").  Reality: finite regression-style
+spot-checks of each proof layer's machine-checkable shadow at
+stated instances (chart cells t = 4..14, transport on [1, 600],
+6 unit cells, one fresh rung, two witnesses' top scales) —
+consistency evidence; soundness rests on the hand proofs.  All
+four locations rewritten to say exactly that; "8/8 exact" scoped
+to "top two pure scales per witness (8/8 cells)"; the notes/82 §5
+"sharply characterized" aperiodicity phrasing was already replaced
+under item 2.  ALT-DEAD/Lemma Q claims themselves are untouched
+(they are hand theorems).

@@ -493,3 +493,18 @@ predictions follow once the catalogue track lands f.
     T1 (e168 catalogue → e153 scan; e180 deep-classify at 176/192):
     in flight on sprint-C / main / sprint-B at this commit; §7.5
     when landed.
+
+### 7.5 T1 partial harvest (grand assembly, 2026-08-30 late)
+
+**e168 catalogues LANDED on main [MACHINE]:** M = 240 — 32 071
+closure-dead pairs, 569 alive, 32 071 distinct minimized patterns,
+36 J patterns validated (catalogue 32 107 → e146_catalogue_M240);
+M = 256 — 36 257 dead, 599 alive, 36 J patterns (catalogue 36 293).
+M = 208 still re-running on sprint-C at close.
+**e180 deep-classify M = 176 LANDED on sprint-B [MACHINE]:**
+(CLOSE-LAW) distance ≤ 15 escapes: 0; violators (non-gap-8 E1×E1):
+0; alive R gaps realized {32, 64, 128, 160}, q-range 0..144 —
+RES-LAW/stall structure extends to the 9th scale with zero
+violations.  M = 192 in progress (455 closure-alive pairs, base
+theory built).  α/f cross-check (e153 scan on the new catalogues)
+still owed; the task stays open until M = 208 and 192 land.

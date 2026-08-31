@@ -1859,17 +1859,22 @@ all dead).  The Case-2 corner inherits a Case-1 kill; N4's
 dichotomy is not restriction-stable.  Only rider: C3(p) referee
 prose pass.  L-NOTAIL becomes a corollary.
 
-**Adversarial verification (notes/81 §2, e186 partQVERIFY — every
-machine-checkable layer attacked, ALL PASS):** chart exactness
-44/44 cells; AP transport + midpoint-class 44 400 triples 0 fail;
+**Machine spot-checks (notes/81 §2, e186 partQVERIFY; language
+aligned per notes/88 item 8 — these are finite regression-style
+checks of each proof layer's machine-checkable shadow at the
+stated instances, NOT a universal verification of the proofs):**
+chart exactness 44/44 cells (c ∈ {0..3}, t = 4..14); AP transport
++ midpoint-class 44 400 triples on [1, 600], 0 fail;
 C3(p)-units-⊆-R(3p,3p+1;M,∅) 6/6; fresh rung UNSAT R(39,40;128)
 (p = 13) + R(15,16)/R(27,28) at 128/256 in a fresh encoder;
 witness 4-purity (h8192_F64 pure at ALL scales; F64/lin4 pure
-above boot) + transported clean blocks 8/8 exact; **Geneson W
-Λ-scan: 0 full class-sections for t = 5..200** (Lemma Q predicts
-finiteness on the density-2/3 permutable witness — confirmed with
-~196 scales to spare).  Verification verdict: SOUND, no hole
-found.
+above boot) + transported clean blocks at the top two pure scales
+per witness (8/8 cells); **Geneson W Λ-scan: 0 full class-sections
+for t = 5..200** (consistent with Lemma Q's finiteness prediction
+on the density-2/3 permutable witness).  Verdict: no inconsistency
+found at any tested instance; soundness of Lemma Q/ALT-DEAD rests
+on the hand proofs, whose transport steps were also re-derived by
+hand.
 
 **The measured complement (notes/81 §1, e186 grid run before the
 professor's note landed):** the majority team of a sparse-minority
