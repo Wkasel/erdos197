@@ -155,9 +155,11 @@ the first odd y > 2M + r/2 is ≥ 2M + (r+1)/2, the last is
 ≥ (3M/2 − c(t) − (r+1)/2)/2 = 3M/4 − c(t)/2 − r/4 − 1/4.
 Below-corner evens in I_d likewise, count ≥ (first even
 ≥ 2M + d/2 + 2, so) 3M/4 − c(t)/2 − d/4.  Corner values are ALL
-candidates (C ⊆ I_r ∩ I_d since 7M/2 − c(t) ≥ 2M + max(r,d)/2
-⟸ 3M/2 − c(t) ≥ M, true for t ≤ M/8 − 1; each corner value feeds
-its own team's channel): + |C| = M/2 + c(t).  Sum: the c(t)'s
+candidates (C ⊆ I_r ∩ I_d: the first corner value 7M/2 − c(t) + 1
+must exceed 2M + max(r,d)/2, which at max(r,d) ≤ 2M reads
+c(t) ≤ M/2 + 1, i.e. 8t ≤ M − 14 — implied by the theorem
+hypothesis; each corner value feeds its own team's channel):
++ |C| = M/2 + c(t).  Sum: the c(t)'s
 cancel — N ≥ 2M − (r + d)/4 − 1/4.  With r + d ≤ 4M − 1:
 **N ≥ M, always.**  (Sharpness: at the measured extremal cell
 (r, d) = (2M−1, 2M) this is exactly the notes/71 §4d count; the
@@ -281,7 +283,7 @@ and both reduction inequalities tight.
 |---|---|---|
 | GAP-CMIN | proof skeleton + extremal cell (M ≥ 32) + "finite drafting task" | **Theorem CMIN-SMALLT [PROVED]**: S ≥ M whenever 16t ≤ M − 14 (all M ≡ 0 mod 4); + Lemma BM1-VAC [PROVED]; + measured cmin = M at 8/12/16/20 (24/28/32 in flight).  Residue renamed **[GAP-CMIN-BIGT]** (t > (M−14)/16, M ≥ 36) |
 | GAP-FHALF (f(M) ≥ M/2) | reduces to GAP-CMIN | **CLOSED on M ≤ 32** (f measured EXACT at 8/12/16/20/24/28/32 — that IS the inequality there); for M ≥ 36 [PROVED mod GAP-CMIN-BIGT] via the verbatim reduction |
-| Theorem J-BOOT | PROVED mod GAP-CMIN | **UNCONDITIONAL on the boot window and beyond: (v,0) UNSAT for v < M/2 at every M ≡ 0 mod 4, 12 ≤ M ≤ 32** (measured f + the M = 32 theorem); mod GAP-CMIN-BIGT for M ≥ 36 — where Theorem J-DOWN (notes/75) already owns the verdict.  **The (·,0) demand family is covered at every anchor with NO appeal to BIGT**; J-BOOT remains the N6a-independent leg, now gap-free through 32 |
+| Theorem J-BOOT | PROVED mod GAP-CMIN | **UNCONDITIONAL on the boot window and beyond: (v,0) UNSAT for v < M/2 at every M ≡ 0 mod 4, 12 ≤ M ≤ 32** (the measured f at the seven scales is load-bearing; CMIN-SMALLT adds the uniform small-t layer from 32 up); mod GAP-CMIN-BIGT for M ≥ 36 — where Theorem J-DOWN (notes/75) already owns the verdict.  **The (·,0) demand family is covered at every anchor with NO appeal to BIGT**; J-BOOT remains the N6a-independent leg, now gap-free through 32 |
 | boot window | closed "modulo one counting lemma" | closed, full stop, for the finite regime: v_min(0)(8) = 12 (anatomy notes/71 §2), v_min(0)(M) ≥ M/2 for M = 12..28 unconditional, v_min(0)(M) = ∞ for M ≥ 32 [J-DOWN, mod N6a] |
 | GAP-FTOT (f_F ≥ M/2) | measured = f at 8/12 | measured = f at **8/12/16** (ftot(16) = 8 landed); F-BOOT's floor v < ⌈M/4⌉ is measurement-backed at three scales, conditional (same BIGT species via the verbatim CMIN reduction on the μ_up + μ_skip part) beyond; ftot(20) descending |
 | GAP-MARGIN-MASS | scoped, untouched | untouched (not this front) |
