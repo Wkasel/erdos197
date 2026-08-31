@@ -299,3 +299,44 @@ scales) and says plainly the chain does not resolve #197.  Zero
 AFFORD material, zero percentages, zero censor interpretation.
 Machine layer referenced only as optional corroboration
 (reproduce2.sh).
+
+---
+
+## Item 11 — novelty guard (review item 13)
+
+**Sweep performed** (case-insensitive, all *.md/*.tex/*.txt in the
+repo incl. publish/, plus the extracted arXiv bundle main.tex,
+README.md, both papers, STATUS, MORNING-REPORT): patterns
+"first impossibility", "first non-permutable", "first
+proof/result/theorem/example/known/such", "novel", "to our
+knowledge", "no prior", "nobody has".
+
+**Finding: no literature-novelty claim of the flagged shape exists
+anywhere in the tree.**  Every "first …" hit is either (a) a
+campaign-internal first, explicitly scoped ("first firing Case-2
+core", "first clean partition team of the campaign", notes/05's
+"first fully human-checkable impossibility gadget OF THE PROJECT",
+notes/38's "first infinite CLASS death beyond S_A" — all internal
+milestones, not literature claims), or (b) "the natural first
+candidate" (describing the dyadic partition, both papers +
+erdosproblems comment — not a novelty claim).  The one comparative
+novelty sentence in the published paper ("what is new here is its
+boundary-quantitative form", vs Geneson's Lemmas 2.1–2.2) is
+already narrowly scoped.  MORNING-REPORT's "mapped at a depth
+nobody has published" is internal, historical, and sits under a
+SUPERSEDED banner — left as a dated snapshot.
+
+**Already-public artifacts needing follow-up correction: NONE**
+(checked: README.md, publish/erdosproblems-comment.md,
+publish/arxiv-bundle.tar.gz::main.tex, publish/arxiv-checklist.md,
+paper/main.tex, paper2/main.tex).
+
+**Guard for future use (the reviewer's template, binding for any
+forthcoming announcement or paper-2 prose):** any novelty claim
+about the S_A theorem or the Lemma-Q family must be phrased as —
+"to our knowledge, the first impossibility result for a natural
+set that is not an affine copy of ℤ⁺ (in particular, one
+containing no infinite arithmetic progression)" — never an
+unqualified "first impossibility" / "first non-permutable set"
+(affine copies of ℤ⁺ are non-permutable already by DEGS 1977, and
+prior-literature coverage is not exhaustively known).
