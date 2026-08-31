@@ -55,6 +55,38 @@ NV=10 shard-sum validation first).  Projection to follow from the
 measured count + per-type cost at n = 11 (sampled from the head of the
 n = 11 enumeration).
 
+## 2. Track 1 interim — benchmark rows landing
+
+Correction to the sprint brief: the recorded 13435 s Cadical-lazy UNSAT
+is the **coupled (2,2,2)@512 core** (e165b_M512_core.log, main pod),
+not the C3 core@512 — C3@512 is cheap under Cadical-lazy (108 s,
+re-measured, 11 rounds).  The C3-family stuck scale is 2048+ (e166
+lazy: 11169 s @2048; @4096 still running on main pod since Aug 29).
+
+| instance | Cadical195 lazy (baseline) | kissat 4.0.4 (eager DIMACS) | CMS 5.14.7 (eager DIMACS) |
+|---|---|---|---|
+| c3core@512 (44.6M cl eager) | **108 s** | 2189 s | **31 s solve** (+303 s python DIMACS load) |
+| coupled (2,2,2)@128 core (105.7M cl eager) | **690 s** | running | running |
+| bal@16 v=1 (940K cl, known UNSAT 24 s) | 24 s (record) | **> 300 s TIMEOUT** | — |
+| bal@16 v=5 (OPEN) | TIMEOUT ~40000 s class | running (1h+, no verdict) | running (1h+, restarts) |
+
+Early reading: kissat is the WRONG engine for both families (loses
+20x to Cadical-lazy on c3core@512, 10x+ on tiny bal cells).  CMS is a
+genuine winner on the parity-heavy c3core (31 s where lazy-Cadical
+needs 108 s and kissat 2189 s) — c3core@1024 eager (357M clauses)
+generating now to see if the CMS edge scales to where the lazy loop
+hurts (11169 s @2048).  No explicit XOR constraints exist to hand CMS:
+the mod-8 law lives in the value indices, not as variable parities —
+CMS's win is its inprocessing on the dense transitivity structure, not
+recovered XORs (verbose log shows no xor recovery on c3@512).
+
+First C&C attempt (e189_cnc.py, kissat per cube, 6435 balanced-B0
+cubes on bal@16 v=1): every cube TIMEOUT at 120 s — kissat again, not
+the splitting.  v2 driver (e189_cnc2.py) switches to persistent
+Cadical195 workers (base CNF loaded once per worker, cubes as
+assumptions, conflict-budgeted, learned clauses shared across cubes
+within a worker) — validating on bal16v1 before the real targets.
+
 ## Log
 
 - [launch] note created; export tooling next.
