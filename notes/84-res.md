@@ -114,14 +114,17 @@ base-(−2) digit extraction, and it terminates at 0 from EVERY
 integer: m = 0 is fixed; ±1 reach 0 in ≤ 2 steps (1 → −1 → 0,
 −1 → 0); and |m| ≥ 2 gives |m_{n+1}| ≤ (|m| + 1)/2 < |m|.  For the
 sup bound, |δ_{n+1}| ≤ (|δ_n| + g)/2, so |δ_n| ≤ D := max(|δ₀|, g)
-by induction.  Two refinements used later, both for δ₀ < 0:
-(b1) POSITIVE deviations satisfy δ_{n+1} > 0 ⟹ δ_n < 0 and
-δ_{n+1} ≤ |δ_n|/2 ≤ D/2;  (b2) NEGATIVE deviations satisfy
-|δ_{n+1}| ≤ (|δ_{n}| + g)/2 ≤ D, with the minimum orbit value
-attained at x₀ (every later negative deviation has magnitude
-≤ (D + g)/2 ≤ D = |δ₀| when |δ₀| ≥ g; and when |δ₀| < g, all
-|δ_n| < g by induction — equality |δ_{n+1}| = g would force
-|δ_n| = g).  So x₀ = τ + δ₀ is the orbit minimum.
+by induction.  Two refinements FOR THE CASE σ = +1 (r* = q),
+g | δ₀, δ₀ < 0 — note these hypotheses force |δ₀| ≥ g, so
+D = |δ₀|:
+(b1) positive deviations only arise from negative ones
+(δ_{n+1} > 0 needs δ_n + ε_n g < 0, impossible for δ_n > 0 when
+σ = +1) and satisfy δ_{n+1} ≤ |δ_n|/2 ≤ D/2;
+(b2) later negative deviations only arise from positive ones, with
+magnitude ≤ (D/2 + g)/2 ≤ 3D/4 < |δ₀|.  So x₀ = τ + δ₀ is the
+STRICT orbit minimum, and every subsequent |δ_n| ≤ 3D/4.
+(For σ = −1 the analogous refinements need δ₀ > 0; S1 below only
+uses σ = +1.)
 
 (c) The correction term ε_n σ g vanishes mod g; 2 is invertible mod
 the odd g.  ∎
