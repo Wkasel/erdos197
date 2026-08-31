@@ -1,0 +1,64 @@
+M=48: odd-dead 988; S1 305, FG-high 154, union 305 (30.9%), uncovered 683; SOUNDNESS violations 0  [0s]
+   uncovered q-min = 0 (S1 window barrier ~ (N-15)/3 = 32); odd-alive (stall+escape) 36
+M=64: odd-dead 1554; S1 496, FG-high 256, union 496 (31.9%), uncovered 1058; SOUNDNESS violations 0  [0s]
+   uncovered q-min = 0 (S1 window barrier ~ (N-15)/3 = 42); odd-alive (stall+escape) 46
+M=96: odd-dead 3079; S1 1046, FG-high 536, union 1046 (34.0%), uncovered 2033; SOUNDNESS violations 0  [0s]
+   uncovered q-min = 0 (S1 window barrier ~ (N-15)/3 = 64); odd-alive (stall+escape) 57
+M=48: odd-dead 988; S1 305, FG-high 154, union 305 (30.9%), uncovered 683; SOUNDNESS violations 0  [0s]
+   uncovered q-min = 0 (S1 window barrier ~ (N-15)/3 = 32); odd-alive (stall+escape) 36
+M=64: odd-dead 1554; S1 496, FG-high 256, union 496 (31.9%), uncovered 1058; SOUNDNESS violations 0  [0s]
+   uncovered q-min = 0 (S1 window barrier ~ (N-15)/3 = 42); odd-alive (stall+escape) 46
+M=96: odd-dead 3079; S1 1046, FG-high 536, union 1046 (34.0%), uncovered 2033; SOUNDNESS violations 0  [0s]
+   uncovered q-min = 0 (S1 window barrier ~ (N-15)/3 = 64); odd-alive (stall+escape) 57
+M=48: odd-dead 988; S 722 FG 154 S1 305 COR 182; union 722 (73.1%), uncovered 266; SOUNDNESS: S-cert on alive 0, S1-region on alive 0 (all MUST be 0) [0s]
+   uncovered with 3q <= N-21: 64 [(0, 55), (0, 57), (1, 56), (1, 58), (1, 62), (2, 57), (2, 59), (3, 58), (3, 60), (4, 55), (4, 59), (4, 61), (5, 56), (5, 60)]
+M=64: odd-dead 1554; S 1189 FG 256 S1 496 COR 300; union 1189 (76.5%), uncovered 365; SOUNDNESS: S-cert on alive 0, S1-region on alive 0 (all MUST be 0) [0s]
+   uncovered with 3q <= N-21: 71 [(0, 73), (0, 77), (0, 79), (1, 74), (2, 75), (3, 76), (4, 77), (5, 76), (5, 78), (6, 77), (6, 79), (7, 78), (9, 66), (13, 70)]
+M=80: odd-dead 2250; S 1797 FG 384 S1 743 COR 447; union 1797 (79.9%), uncovered 453; SOUNDNESS: S-cert on alive 0, S1-region on alive 0 (all MUST be 0) [0s]
+   uncovered with 3q <= N-21: 67 [(0, 95), (1, 86), (1, 94), (2, 87), (2, 95), (3, 88), (4, 89), (5, 90), (6, 91), (7, 92), (8, 93), (9, 94), (10, 95), (13, 86)]
+M=96: odd-dead 3079; S 2454 FG 536 S1 1046 COR 624; union 2454 (79.7%), uncovered 625; SOUNDNESS: S-cert on alive 0, S1-region on alive 0 (all MUST be 0) [1s]
+   uncovered with 3q <= N-21: 115 [(0, 105), (0, 107), (0, 109), (1, 106), (1, 108), (1, 110), (2, 107), (2, 109), (2, 111), (3, 108), (3, 110), (4, 109), (4, 111), (5, 100)]
+M=112: odd-dead 4035; S 3249 FG 714 S1 1391 COR 830; union 3249 (80.5%), uncovered 786; SOUNDNESS: S-cert on alive 0, S1-region on alive 0 (all MUST be 0) [1s]
+   uncovered with 3q <= N-21: 136 [(0, 119), (0, 127), (1, 120), (2, 121), (3, 122), (4, 123), (5, 124), (6, 125), (7, 126), (8, 127), (25, 118), (26, 119), (27, 112), (27, 120)]
+M=128: odd-dead 5111; S 4148 FG 918 S1 1775 COR 1065; union 4148 (81.2%), uncovered 963; SOUNDNESS: S-cert on alive 0, S1-region on alive 0 (all MUST be 0) [1s]
+   uncovered with 3q <= N-21: 165 [(1, 134), (2, 135), (3, 136), (3, 140), (4, 137), (4, 141), (5, 138), (5, 142), (6, 139), (6, 143), (7, 134), (7, 140), (8, 135), (8, 137)]
+M=144: odd-dead 6319; S 5199 FG 1148 S1 2233 COR 1329; union 5199 (82.3%), uncovered 1120; SOUNDNESS: S-cert on alive 0, S1-region on alive 0 (all MUST be 0) [2s]
+   uncovered with 3q <= N-21: 179 [(0, 151), (0, 155), (1, 152), (1, 156), (2, 153), (2, 157), (3, 154), (3, 158), (4, 155), (4, 159), (5, 156), (6, 157), (7, 158), (8, 159)]
+M=160: odd-dead 7659; S 6322 FG 1404 S1 2737 COR 1622; union 6322 (82.5%), uncovered 1337; SOUNDNESS: S-cert on alive 0, S1-region on alive 0 (all MUST be 0) [2s]
+   uncovered with 3q <= N-21: 193 [(1, 166), (2, 167), (3, 168), (4, 169), (5, 170), (6, 171), (7, 172), (8, 173), (9, 174), (11, 166), (12, 167), (13, 168), (14, 169), (15, 166)]
+M=48: odd-dead 988; S 722 FG 154 FW2 68 (R-pairs 570); S1 305 COR 182; union 790 (80.0%), uncovered 198; SOUNDNESS: S-cert on alive 0, S1-region on alive 0, alive pairs inside R 0 (all MUST be 0) [0s]
+   uncovered inside R (MUST be 0 by the assert): []
+M=64: odd-dead 1554; S 1189 FG 256 FW2 70 (R-pairs 980); S1 496 COR 300; union 1259 (81.0%), uncovered 295; SOUNDNESS: S-cert on alive 0, S1-region on alive 0, alive pairs inside R 0 (all MUST be 0) [0s]
+   uncovered inside R (MUST be 0 by the assert): []
+M=48: odd-dead 988; S 722 FG 154 FW2 68 FWK 0 (R-pairs 498); S1 305 COR 182; union 790 (80.0%), uncovered 198; SOUNDNESS: S-cert on alive 0, S1-region on alive 0, alive pairs inside R 0 (all MUST be 0) [0s]
+   uncovered inside R (MUST be 0 by the assert): []
+M=64: odd-dead 1554; S 1189 FG 256 FW2 70 FWK 0 (R-pairs 882); S1 496 COR 300; union 1259 (81.0%), uncovered 295; SOUNDNESS: S-cert on alive 0, S1-region on alive 0, alive pairs inside R 0 (all MUST be 0) [0s]
+   uncovered inside R (MUST be 0 by the assert): []
+M=80: odd-dead 2250; S 1797 FG 384 FW2 67 FWK 0 (R-pairs 1373); S1 743 COR 447; union 1864 (82.8%), uncovered 386; SOUNDNESS: S-cert on alive 0, S1-region on alive 0, alive pairs inside R 0 (all MUST be 0) [0s]
+   uncovered inside R (MUST be 0 by the assert): []
+M=96: odd-dead 3079; S 2454 FG 536 FW2 106 FWK 0 (R-pairs 1970); S1 1046 COR 624; union 2560 (83.1%), uncovered 519; SOUNDNESS: S-cert on alive 0, S1-region on alive 0, alive pairs inside R 0 (all MUST be 0) [1s]
+   uncovered inside R (MUST be 0 by the assert): []
+M=112: odd-dead 4035; S 3249 FG 714 FW2 117 FWK 0 (R-pairs 2674); S1 1391 COR 830; union 3366 (83.4%), uncovered 669; SOUNDNESS: S-cert on alive 0, S1-region on alive 0, alive pairs inside R 0 (all MUST be 0) [2s]
+   uncovered inside R (MUST be 0 by the assert): []
+M=128: odd-dead 5111; S 4148 FG 918 FW2 137 FWK 0 (R-pairs 3485); S1 1775 COR 1065; union 4285 (83.8%), uncovered 826; SOUNDNESS: S-cert on alive 0, S1-region on alive 0, alive pairs inside R 0 (all MUST be 0) [3s]
+   uncovered inside R (MUST be 0 by the assert): []
+M=144: odd-dead 6319; S 5199 FG 1148 FW2 129 FWK 0 (R-pairs 4402); S1 2233 COR 1329; union 5328 (84.3%), uncovered 991; SOUNDNESS: S-cert on alive 0, S1-region on alive 0, alive pairs inside R 0 (all MUST be 0) [4s]
+   uncovered inside R (MUST be 0 by the assert): []
+M=160: odd-dead 7659; S 6322 FG 1404 FW2 138 FWK 2 (R-pairs 5426); S1 2737 COR 1622; union 6462 (84.4%), uncovered 1197; SOUNDNESS: S-cert on alive 0, S1-region on alive 0, alive pairs inside R 0 (all MUST be 0) [6s]
+   uncovered inside R (MUST be 0 by the assert): []
+TOWER W2e(m=24) N=55: odd 256, S certs built+VERIFIED 176 (69%), S1-region 74; R-pairs 83 ALL covered (0 via FW2)
+TOWER W2o(m=24) N=56: odd 256, S certs built+VERIFIED 180 (70%), S1-region 78; R-pairs 86 ALL covered (0 via FW2)
+TOWER W2e(m=32) N=71: odd 400, S certs built+VERIFIED 274 (68%), S1-region 123; R-pairs 168 ALL covered (0 via FW2)
+TOWER W2o(m=32) N=72: odd 400, S certs built+VERIFIED 277 (69%), S1-region 127; R-pairs 172 ALL covered (0 via FW2)
+TOWER W2e(m=40) N=87: odd 576, S certs built+VERIFIED 429 (74%), S1-region 187; R-pairs 280 ALL covered (1 via FW2)
+TOWER W2o(m=40) N=88: odd 576, S certs built+VERIFIED 434 (75%), S1-region 190; R-pairs 285 ALL covered (1 via FW2)
+TOWER W2e(m=48) N=103: odd 784, S certs built+VERIFIED 600 (77%), S1-region 260; R-pairs 419 ALL covered (1 via FW2)
+TOWER W2o(m=48) N=104: odd 784, S certs built+VERIFIED 607 (77%), S1-region 266; R-pairs 424 ALL covered (1 via FW2)
+TOWER W2e(m=56) N=119: odd 1024, S certs built+VERIFIED 780 (76%), S1-region 340; R-pairs 584 ALL covered (5 via FW2)
+TOWER W2o(m=56) N=120: odd 1024, S certs built+VERIFIED 784 (77%), S1-region 347; R-pairs 590 ALL covered (4 via FW2)
+TOWER W2e(m=64) N=135: odd 1296, S certs built+VERIFIED 1010 (78%), S1-region 452; R-pairs 776 ALL covered (4 via FW2)
+TOWER W2o(m=64) N=136: odd 1296, S certs built+VERIFIED 1021 (79%), S1-region 457; R-pairs 783 ALL covered (3 via FW2)
+TOWER W2e(m=104) N=215: odd 3136, S certs built+VERIFIED 2522 (80%), S1-region 1129; R-pairs 2136 ALL covered (24 via FW2)
+TOWER W2o(m=104) N=216: odd 3136, S certs built+VERIFIED 2527 (81%), S1-region 1138; R-pairs 2146 ALL covered (23 via FW2)
+TOWER W2e(m=120) N=247: odd 4096, S certs built+VERIFIED 3337 (81%), S1-region 1494; R-pairs 2867 ALL covered (25 via FW2)
+TOWER W2o(m=120) N=248: odd 4096, S certs built+VERIFIED 3349 (82%), S1-region 1507; R-pairs 2878 ALL covered (26 via FW2)
