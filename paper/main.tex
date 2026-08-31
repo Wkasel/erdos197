@@ -460,7 +460,7 @@ tower characterization, because the minimizing arrangements vary with $L$.
 Adding the exact scale-invariance $u \prec w \iff 4u \prec 4w$ to the
 pure-complete systems remains satisfiable at $X = 256$ and $X = 1024$
 (independently audited witnesses); however the audited $1024$-witness does not
-extend to a self-similar $4096$-arrangement (machine-certified infeasibility),
+extend to a self-similar $4096$-arrangement (solver verdict, uncertified),
 so the self-similar tower also has dead branches.
 
 We also record a calibration fact: requiring, in addition, that the $\pm 1$
@@ -511,7 +511,7 @@ except the two most recent deferred classes, which are appended in scale
 order.
 \end{definition}
 
-Machine-verified facts (certificates in the repository): deferral states exist
+Machine-verified facts (witnesses and solver logs in the repository): deferral states exist
 for $M = 32, 64, 128$; the suffix must be stacked in scale order (the reversed
 stacking contains a Lemma~\ref{lem:R} configuration); no-extras variants are
 infeasible at every scale tested (lookahead into the next block is
@@ -693,8 +693,9 @@ verdicts below are permanent (hold at all larger horizons), and an infinite
 solution in a window class would imply feasibility at every finite horizon.
 \end{theorem}
 
-\noindent Machine atlas (CP-SAT and CDCL cross-checks; certificates in the
-repository): bottom-half relief of depth $1$ and depth $\le 2$ infeasible at
+\noindent Machine atlas (CP-SAT and CDCL cross-checks; solver logs and
+witnesses in the repository, but no proof certificates for the negative
+verdicts): bottom-half relief of depth $1$ and depth $\le 2$ infeasible at
 $N=256$ (and $1024$); \textbf{window-$2$ infeasible at $N=1024$} (CP-SAT, 746s; independently CDCL/unary-ladder, 1760s) --- hence, by
 Theorem~\ref{thm:restriction}, infeasible at every horizon
 $\ge 1024$, so there is no infinite window-$2$ solution. (At the smaller
