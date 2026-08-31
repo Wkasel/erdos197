@@ -37,16 +37,17 @@ import importlib
 import json
 import os
 import sys
+from pathlib import Path
 import time
 
-_HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, _HERE)
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "experiments"))
 
 e123 = importlib.import_module("e123_diagonal_schema")
 e123b = importlib.import_module("e123b_diagonal_solver_xval")
 e174 = importlib.import_module("e174_n3_growth")
 
-BASE = os.path.join(os.path.dirname(_HERE), "data")
+BASE = str(ROOT / "data")
 OUT = {}
 
 

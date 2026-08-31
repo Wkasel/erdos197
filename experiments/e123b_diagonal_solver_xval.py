@@ -19,9 +19,10 @@ import sys
 import time
 
 from pysat.solvers import Cadical195
+from pathlib import Path
 
-DATA = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                    "data", "e123b_diagonal_xval.json")
+ROOT = Path(__file__).resolve().parents[1]
+DATA = str(ROOT / "data" / "e123b_diagonal_xval.json")
 
 
 def build_base(M, units):

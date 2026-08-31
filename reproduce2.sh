@@ -36,6 +36,14 @@
 #           residue-class section within the tested horizon" --
 #           NOTHING MORE (no lattice claim, no omega claim; notes/88
 #           item 1).
+#   step 6  Lemma LAND + Theorem S1 recurrence check (e191, second
+#           review item 2): the CORRECTED LAND bounds on 10^4 random
+#           parameter tuples in BOTH sigma cases -- general bound
+#           (|d|+g)/2 both signs, the halving refinement only at
+#           sigma = +1 (and its FAILURE at sigma = -1 confirmed, incl.
+#           the reviewer's q=1,p=4,g=3,tau=8,h=14 tuple) -- plus S1
+#           re-verified by direct forced-spiral simulation on 10^4
+#           fresh admissible tuples.
 #
 # Usage:  ./reproduce2.sh          (all steps; ~5-10 min total)
 # Needs:  .venv with python-sat + ortools (see REPRODUCE.md).
@@ -108,6 +116,9 @@ sys.exit(0 if ok else 1)
 EOF
 }
 run_step "step5 HSPLIT (downgraded reading), F = 64 x {4096, 2048}" step5
+
+run_step "step6 Lemma LAND corrected bounds + Theorem S1 (10^4 x2 tuples)" \
+    "$PY" experiments/e191_land_s1_check.py
 
 echo "reproduce2 total: $(( $(date +%s) - T0 ))s; overall: $([ $FAIL -eq 0 ] && echo PASS || echo FAIL)"
 exit $FAIL

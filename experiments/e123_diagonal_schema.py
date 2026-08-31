@@ -50,11 +50,11 @@ Run: .venv/bin/python experiments/e123_diagonal_schema.py [pmax]
 Output: data/e123_diagonal_schema.json
 """
 import json
-import os
 import sys
+from pathlib import Path
 
-DATA = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                    "data", "e123_diagonal_schema.json")
+ROOT = Path(__file__).resolve().parents[1]
+DATA = str(ROOT / "data" / "e123_diagonal_schema.json")
 
 
 class Ctx:

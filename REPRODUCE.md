@@ -227,13 +227,37 @@ the repo root; no absolute paths).
 5. **HSPLIT, downgraded** (`e186_altclosure.py hsplit64 hsplit64ctl`):
    the strong-censor cells (F = 64, hor = 4096 and 2048) re-solved
    fresh; expected UNSAT.  **Interpretation (the only one licensed —
-   notes/88 item 1):** every finite strong-censor corner inhabitant
-   has ≥ 1 monochromatic residue-class section within the tested
-   horizon.  It does NOT show inhabitants are lattices and licenses
-   no ω conclusion; ALT-DEAD's applicability hypothesis (infinitely
-   many 4-pure scales) remains open on this corner.
+   notes/88 item 1 + second review item 3), verbatim:** *at F = 64,
+   horizons 2048 and 4096, every coloring satisfying the remaining
+   proxy constraints has at least one monochromatic mod-4
+   class-section among the tested blocks.*  Scope: HSPLIT as a
+   finite constraint bans **any** coloring with even one pure tested
+   section (not only lattices); the hard-coded burn-in `t = 6` does
+   not capture the correct eventual quantifier; the depth-2 orbit
+   censor is a **proxy** for subcriticality, not a proved necessary
+   condition.  No ω conclusion; ALT-DEAD's applicability hypothesis
+   (infinitely many 4-pure scales) remains open on this corner.
+   The shifted-window probe `e186_altclosure.py hsplitburn`
+   (HSPLIT imposed only for `T ≤ t ≤ log2(H)−1`, T ∈ {6, 8, 10} ×
+   H ∈ {2048, 4096}) is UNSAT ×6 in 172 s — same per-cell reading,
+   six instances are not the ∀T family (notes/81 §3b).  Not in the
+   default script (≈ 3 min); run it directly to reproduce.
+6. **Lemma LAND corrected bounds + Theorem S1**
+   (`e191_land_s1_check.py`, second review item 2): 10⁴ random
+   parameter tuples **per σ case** exercising the corrected
+   recurrence — the general bound `|δ_{n+1}| ≤ (|δ_n|+g)/2` at both
+   signs, the halving refinement **only** at σ = +1, landing/sup/
+   orbit-minimum/mod-g exactness — plus the σ = −1 failure of the
+   halving bound confirmed (the review's `q=1, p=4, g=3, τ=8, h=14`
+   tuple reproduced through the real spiral map, δ₀ = −3 → δ₁ = +3),
+   and Theorem S1 re-verified by direct forced-spiral simulation on
+   10⁴ fresh admissible `(q, g, t, N)` tuples.  Exit 0 iff every
+   asserted bound holds **and** the σ = −1 counterexample is found.
 
 ### Measured wall time (package 2)
 
-End-to-end run recorded for this commit: **127 s**, all steps PASS
-(step 2 ≈ 60 s, step 5 ≈ 58 s dominate; steps 1/3/4 ≈ 5 s total).
+End-to-end run recorded for this commit: **115 s**, all 6 steps PASS
+(step 2 ≈ 50 s and step 5 ≈ 55 s dominate; steps 1/3/4/6 ≈ 10 s
+total).  All scripts are path-portable — `e123`, `e123b`, `e180`,
+`e191` derive paths from `ROOT = Path(__file__).resolve().parents[1]`,
+so the package runs from any working directory.

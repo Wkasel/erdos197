@@ -107,3 +107,29 @@ transporting by its affine parametrization.  When the common
 difference is a power of two, HSPLIT gives an alternative
 proof."*  notes/80-pincer §3.1's own proof was always the DEGS77
 one — unchanged.
+
+## Item 6 — portability + boundary honesty + reproduce2
+
+* **Portability.** e123 / e123b / e180 converted to the prescribed
+  idiom `ROOT = Path(__file__).resolve().parents[1]` (they were
+  already repo-root-relative via `__file__` after the first
+  remediation; this makes the intent explicit and is smoke-tested
+  from a foreign cwd).  e191 (new) uses it natively.
+* **Boundary honesty.**  e180 DOES assert the stated boundaries:
+  `partMINMsharp` computes first-pass scales FROM the scan and
+  asserts them equal to the sharp affine values (L1: first
+  4 | M ≥ p+7; FLIP: in-class M ≥ 2p+6), with every scanned
+  below-threshold scale checked to FAIL — re-run this session at
+  p = 5/13/21, 0 mismatches.  notes/78 already attributed the
+  claim correctly; paper2's unattributed "e180 exact boundary
+  scan" now names `partMINMsharp`, states both boundaries and the
+  below-threshold check, and records that the legacy `partMINM`
+  asserts only the slack bounds 2p+10 / 2p+14.
+* **reproduce2.sh** already covered C3(p) at 3 values of p (e123
+  schema p = 5,7,9; e123b independent solver p = 5,9,13), B1₀'s
+  machine layer + Lemma Q chart checks (e186 qverify/geneson), and
+  HSPLIT-as-downgraded (e186 hsplit64 + ctl).  Added **step 6** =
+  e191 (LAND corrected bounds + S1).  Run end-to-end this session:
+  **6/6 PASS, 115 s, exit 0.**  REPRODUCE.md package-2 section
+  updated: verbatim HSPLIT reading + three scope notes, the
+  hsplitburn probe, step 6, new wall time, portability note.

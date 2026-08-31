@@ -68,7 +68,7 @@
    "core": "UNSAT",
    "core_expected": "UNSAT",
    "rung": "UNSAT",
-   "t": 0.1
+   "t": 0.0
   },
   {
    "p": 5,
@@ -78,7 +78,7 @@
    "core": "SAT",
    "core_expected": "SAT",
    "rung": "UNSAT",
-   "t": 0.1
+   "t": 0.0
   },
   {
    "p": 5,
@@ -88,7 +88,7 @@
    "core": "UNSAT",
    "core_expected": "UNSAT",
    "rung": "UNSAT",
-   "t": 9.0
+   "t": 7.1
   },
   {
    "p": 5,
@@ -98,7 +98,7 @@
    "core": "SAT",
    "core_expected": "SAT",
    "rung": "UNSAT",
-   "t": 8.0
+   "t": 6.2
   },
   {
    "p": 9,
@@ -128,7 +128,7 @@
    "core": "UNSAT",
    "core_expected": "UNSAT",
    "rung": "UNSAT",
-   "t": 0.0
+   "t": 0.1
   },
   {
    "p": 9,
@@ -138,7 +138,7 @@
    "core": "SAT",
    "core_expected": "SAT",
    "rung": "UNSAT",
-   "t": 0.1
+   "t": 0.0
   },
   {
    "p": 9,
@@ -148,7 +148,7 @@
    "core": "UNSAT",
    "core_expected": "UNSAT",
    "rung": "UNSAT",
-   "t": 0.1
+   "t": 0.0
   },
   {
    "p": 9,
@@ -188,7 +188,7 @@
    "core": "UNSAT",
    "core_expected": "UNSAT",
    "rung": "UNSAT",
-   "t": 9.6
+   "t": 9.5
   },
   {
    "p": 9,
@@ -198,7 +198,7 @@
    "core": "SAT",
    "core_expected": "SAT",
    "rung": "UNSAT",
-   "t": 10.5
+   "t": 11.5
   },
   {
    "p": 13,
@@ -228,7 +228,7 @@
    "core": "UNSAT",
    "core_expected": "UNSAT",
    "rung": "UNSAT",
-   "t": 0.1
+   "t": 0.0
   },
   {
    "p": 13,
@@ -238,7 +238,7 @@
    "core": "SAT",
    "core_expected": "SAT",
    "rung": "UNSAT",
-   "t": 0.1
+   "t": 0.3
   },
   {
    "p": 13,
@@ -248,7 +248,7 @@
    "core": "UNSAT",
    "core_expected": "UNSAT",
    "rung": "UNSAT",
-   "t": 0.2
+   "t": 0.3
   },
   {
    "p": 13,
@@ -258,7 +258,7 @@
    "core": "SAT",
    "core_expected": "SAT",
    "rung": "UNSAT",
-   "t": 0.1
+   "t": 0.2
   },
   {
    "p": 13,
@@ -288,7 +288,7 @@
    "core": "UNSAT",
    "core_expected": "UNSAT",
    "rung": "UNSAT",
-   "t": 12.9
+   "t": 11.6
   },
   {
    "p": 13,
@@ -298,7 +298,7 @@
    "core": "SAT",
    "core_expected": "SAT",
    "rung": "UNSAT",
-   "t": 12.4
+   "t": 12.9
   }
  ],
  "fail": []
