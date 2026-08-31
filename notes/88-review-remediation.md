@@ -280,3 +280,22 @@ A labeling rule added at the top of STATUS covers every historical
 "NO ≈ X %" line in the dated FRONT sections (informal heuristics
 of record, not claims).  notes/50 contains no percentage claims
 (checked).
+
+---
+
+## Item 10 — notes/89-clean-chain.md (the reviewer's deliverable)
+
+Written: the chain **C3(p) → B1₀ → Lemma Q → ALT-DEAD** as a
+self-contained hand-off document.  Full statements throughout;
+full proofs in-document for PIN, DIAG-DENSE, B1₀, Lemma Q,
+ALT-DEAD, Corollaries 1–3 (lattices, on-class punctures, HSPLIT),
+plus the three-line units-in-rung computation (Fact 1.3.1) so the
+a-fortiori step needs no machine citation; exact pointers for the
+one long proof (Theorem C3(p): notes/78 Part I; p = 5 =
+paper thm:c3core + notes/33).  §4's scope remark records the mod-3
+non-aperiodicity boundary (item 2); §5 states the explicitly open
+applicability hypothesis of ALT-DEAD (infinitely many 4-pure
+scales) and says plainly the chain does not resolve #197.  Zero
+AFFORD material, zero percentages, zero censor interpretation.
+Machine layer referenced only as optional corroboration
+(reproduce2.sh).
