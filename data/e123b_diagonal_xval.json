@@ -68,7 +68,7 @@
    "core": "UNSAT",
    "core_expected": "UNSAT",
    "rung": "UNSAT",
-   "t": 0.0
+   "t": 0.1
   },
   {
    "p": 5,
@@ -78,7 +78,7 @@
    "core": "SAT",
    "core_expected": "SAT",
    "rung": "UNSAT",
-   "t": 0.0
+   "t": 0.1
   },
   {
    "p": 5,
@@ -88,7 +88,7 @@
    "core": "UNSAT",
    "core_expected": "UNSAT",
    "rung": "UNSAT",
-   "t": 7.2
+   "t": 9.0
   },
   {
    "p": 5,
@@ -98,107 +98,7 @@
    "core": "SAT",
    "core_expected": "SAT",
    "rung": "UNSAT",
-   "t": 7.0
-  },
-  {
-   "p": 7,
-   "x": 21,
-   "M": 32,
-   "class": "comp",
-   "core": "SAT",
-   "core_expected": "SAT",
-   "rung": "UNSAT",
-   "t": 0.0
-  },
-  {
-   "p": 7,
-   "x": 21,
-   "M": 36,
-   "class": "flip",
-   "core": "UNSAT",
-   "core_expected": "UNSAT",
-   "rung": "UNSAT",
-   "t": 0.0
-  },
-  {
-   "p": 7,
-   "x": 21,
-   "M": 40,
-   "class": "comp",
-   "core": "SAT",
-   "core_expected": "SAT",
-   "rung": "UNSAT",
-   "t": 0.0
-  },
-  {
-   "p": 7,
-   "x": 21,
-   "M": 44,
-   "class": "flip",
-   "core": "UNSAT",
-   "core_expected": "UNSAT",
-   "rung": "UNSAT",
-   "t": 0.0
-  },
-  {
-   "p": 7,
-   "x": 21,
-   "M": 48,
-   "class": "comp",
-   "core": "SAT",
-   "core_expected": "SAT",
-   "rung": "UNSAT",
-   "t": 0.0
-  },
-  {
-   "p": 7,
-   "x": 21,
-   "M": 52,
-   "class": "flip",
-   "core": "UNSAT",
-   "core_expected": "UNSAT",
-   "rung": "UNSAT",
-   "t": 0.1
-  },
-  {
-   "p": 7,
-   "x": 21,
-   "M": 56,
-   "class": "comp",
-   "core": "SAT",
-   "core_expected": "SAT",
-   "rung": "UNSAT",
-   "t": 0.0
-  },
-  {
-   "p": 7,
-   "x": 21,
-   "M": 60,
-   "class": "flip",
-   "core": "UNSAT",
-   "core_expected": "UNSAT",
-   "rung": "UNSAT",
-   "t": 0.1
-  },
-  {
-   "p": 7,
-   "x": 21,
-   "M": 256,
-   "class": "comp",
-   "core": "SAT",
-   "core_expected": "SAT",
-   "rung": "UNSAT",
-   "t": 7.7
-  },
-  {
-   "p": 7,
-   "x": 21,
-   "M": 260,
-   "class": "flip",
-   "core": "UNSAT",
-   "core_expected": "UNSAT",
-   "rung": "UNSAT",
-   "t": 9.7
+   "t": 8.0
   },
   {
    "p": 9,
@@ -208,7 +108,7 @@
    "core": "UNSAT",
    "core_expected": "UNSAT",
    "rung": "UNSAT",
-   "t": 0.0
+   "t": 0.1
   },
   {
    "p": 9,
@@ -218,7 +118,7 @@
    "core": "SAT",
    "core_expected": "SAT",
    "rung": "UNSAT",
-   "t": 0.0
+   "t": 0.1
   },
   {
    "p": 9,
@@ -228,7 +128,7 @@
    "core": "UNSAT",
    "core_expected": "UNSAT",
    "rung": "UNSAT",
-   "t": 0.1
+   "t": 0.0
   },
   {
    "p": 9,
@@ -288,7 +188,7 @@
    "core": "UNSAT",
    "core_expected": "UNSAT",
    "rung": "UNSAT",
-   "t": 9.4
+   "t": 9.6
   },
   {
    "p": 9,
@@ -301,106 +201,6 @@
    "t": 10.5
   },
   {
-   "p": 11,
-   "x": 33,
-   "M": 48,
-   "class": "comp",
-   "core": "SAT",
-   "core_expected": "SAT",
-   "rung": "UNSAT",
-   "t": 0.0
-  },
-  {
-   "p": 11,
-   "x": 33,
-   "M": 52,
-   "class": "flip",
-   "core": "UNSAT",
-   "core_expected": "UNSAT",
-   "rung": "UNSAT",
-   "t": 0.0
-  },
-  {
-   "p": 11,
-   "x": 33,
-   "M": 56,
-   "class": "comp",
-   "core": "SAT",
-   "core_expected": "SAT",
-   "rung": "UNSAT",
-   "t": 0.1
-  },
-  {
-   "p": 11,
-   "x": 33,
-   "M": 60,
-   "class": "flip",
-   "core": "UNSAT",
-   "core_expected": "UNSAT",
-   "rung": "UNSAT",
-   "t": 0.1
-  },
-  {
-   "p": 11,
-   "x": 33,
-   "M": 64,
-   "class": "comp",
-   "core": "SAT",
-   "core_expected": "SAT",
-   "rung": "UNSAT",
-   "t": 0.1
-  },
-  {
-   "p": 11,
-   "x": 33,
-   "M": 68,
-   "class": "flip",
-   "core": "UNSAT",
-   "core_expected": "UNSAT",
-   "rung": "UNSAT",
-   "t": 0.1
-  },
-  {
-   "p": 11,
-   "x": 33,
-   "M": 72,
-   "class": "comp",
-   "core": "SAT",
-   "core_expected": "SAT",
-   "rung": "UNSAT",
-   "t": 0.1
-  },
-  {
-   "p": 11,
-   "x": 33,
-   "M": 76,
-   "class": "flip",
-   "core": "UNSAT",
-   "core_expected": "UNSAT",
-   "rung": "UNSAT",
-   "t": 0.1
-  },
-  {
-   "p": 11,
-   "x": 33,
-   "M": 256,
-   "class": "comp",
-   "core": "SAT",
-   "core_expected": "SAT",
-   "rung": "UNSAT",
-   "t": 8.4
-  },
-  {
-   "p": 11,
-   "x": 33,
-   "M": 260,
-   "class": "flip",
-   "core": "UNSAT",
-   "core_expected": "UNSAT",
-   "rung": "UNSAT",
-   "t": 13.0
-  },
-  {
    "p": 13,
    "x": 39,
    "M": 64,
@@ -438,7 +238,7 @@
    "core": "SAT",
    "core_expected": "SAT",
    "rung": "UNSAT",
-   "t": 0.2
+   "t": 0.1
   },
   {
    "p": 13,
@@ -458,7 +258,7 @@
    "core": "SAT",
    "core_expected": "SAT",
    "rung": "UNSAT",
-   "t": 0.2
+   "t": 0.1
   },
   {
    "p": 13,
@@ -478,7 +278,7 @@
    "core": "SAT",
    "core_expected": "SAT",
    "rung": "UNSAT",
-   "t": 0.3
+   "t": 0.2
   },
   {
    "p": 13,
@@ -488,7 +288,7 @@
    "core": "UNSAT",
    "core_expected": "UNSAT",
    "rung": "UNSAT",
-   "t": 9.4
+   "t": 12.9
   },
   {
    "p": 13,
@@ -498,7 +298,7 @@
    "core": "SAT",
    "core_expected": "SAT",
    "rung": "UNSAT",
-   "t": 10.5
+   "t": 12.4
   }
  ],
  "fail": []

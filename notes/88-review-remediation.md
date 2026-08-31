@@ -209,3 +209,28 @@ sharp affine boundary AND fails at every scanned scale below it";
 the old prose's "fails at the ONE in-class scale below (M = 2p−2)"
 was also wrong in count — for most p several in-class scales below
 2p+6 fail (e.g. p = 13: M = 8, 16, 24), all with value collisions.
+
+---
+
+## Item 7 — reproducibility: path portability + reproduce2.sh
+
+**Path portability.**  e123_diagonal_schema, e123b (the independent
+C3 solver), e180_diag_grow, e174_n3_growth: absolute
+/Users/will/... paths replaced with repo-root-relative paths
+derived from __file__ (e186 was already portable).  e123b gained a
+CLI p-list and a nonzero exit on mismatch; e186 gained hsplit64 /
+hsplit64ctl CLI cells and the downgraded-reading docstring on
+partHSPLIT.
+
+**reproduce2.sh** (new; documented in REPRODUCE.md "Package 2"):
+step 1 C3(p) schema executor p ∈ {5,7,9}; step 2 independent
+solver p ∈ {5,9,13} (incl. M = 256/260); step 3 sharp boundaries
+partMINMsharp p ∈ {5,13,21}; step 4 Lemma Q chart checks + B1₀
+machine layer + Geneson Λ-scan with explicit JSON gates; step 5
+HSPLIT F = 64 × {4096, 2048} re-solved fresh, gated UNSAT, printed
+with the DOWNGRADED interpretation only.
+
+**End-to-end run (2026-08-30): ALL 5 STEPS PASS, 127 s** (fresh
+HSPLIT UNSAT reproduced at 38.4 s / 19.0 s; qverify 44/44 chart,
+44,400/44,400 transport, 6/6 units, R(39,40;128) UNSAT; Geneson
+hits only at boot t = 2, 4).

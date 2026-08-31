@@ -32,6 +32,7 @@ Artifacts: data/e174_n3_growth.json (+ .log via tee)
 """
 import itertools
 import json
+import os
 import random
 import sys
 import time
@@ -40,7 +41,8 @@ from pysat.card import CardEnc, EncType
 from pysat.formula import IDPool
 from pysat.solvers import Cadical195
 
-BASE = "/Users/will/Dev/personal/tasks/math/erdos197/data"
+BASE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                    "data")
 OUT = {}
 
 

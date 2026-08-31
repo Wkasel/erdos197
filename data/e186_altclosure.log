@@ -78,3 +78,19 @@
 [qverify] done 0.3s
 [GENESON] t<=200: full-section hits=2 [{'t': 2, 'full_classes': [0, 1, 2, 3]}, {'t': 4, 'full_classes': [0, 1, 2, 3]}]
 [geneson] done 0.1s
+[QVER] chart exactness: 44 cells, fail=[]
+[QVER] AP transport: 44400 triples, fail=0
+[QVER] C3(p) units in R fired set: 6 cells, fail=[]
+[QVER-R39] M=128 att=[39, 40] |D|=0 n=128: UNSAT [0.6s]
+[QVER] h4096_F64: n_pure per block t>=5: [4, 2, 4, 4, 4, 4, 4]; img clean blocks: [{'t': 10, 'c': 0, 'team': 'B', 'clean': True}, {'t': 11, 'c': 0, 'team': 'B', 'clean': True}]
+[QVER] h4096_lin4: n_pure per block t>=5: [0, 1, 4, 4, 4, 4, 4]; img clean blocks: [{'t': 10, 'c': 0, 'team': 'B', 'clean': True}, {'t': 11, 'c': 0, 'team': 'B', 'clean': True}]
+[QVER] h8192_F64: n_pure per block t>=5: [4, 4, 4, 4, 4, 4, 4, 4]; img clean blocks: [{'t': 11, 'c': 0, 'team': 'B', 'clean': True}, {'t': 12, 'c': 0, 'team': 'B', 'clean': True}]
+[QVER] pureL3: n_pure per block t>=5: [4, 4, 4, 4, 4, 4]; img clean blocks: [{'t': 9, 'c': 0, 'team': 'B', 'clean': True}, {'t': 10, 'c': 0, 'team': 'B', 'clean': True}]
+[QVER] altw: n_pure per block t>=5: [1, 0, 0, 0, 0, 0, 0]; img clean blocks: []
+[qverify] done 0.7s
+[GENESON] t<=200: full-section hits=2 [{'t': 2, 'full_classes': [0, 1, 2, 3]}, {'t': 4, 'full_classes': [0, 1, 2, 3]}]
+[geneson] done 0.1s
+[HSPLIT] {"part": "hsplit", "hor": 4096, "D": 2, "F": 64, "u0": 64, "k8": true, "verdict": "UNSAT", "secs": 38.4}
+[hsplit64] done 38.9s
+[HSPLIT] {"part": "hsplit", "hor": 2048, "D": 2, "F": 64, "u0": 64, "k8": true, "verdict": "UNSAT", "secs": 19.0}
+[hsplit64ctl] done 19.0s

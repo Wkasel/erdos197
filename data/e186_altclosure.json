@@ -1813,6 +1813,26 @@
    "verdict": "UNSAT",
    "secs": 27.6,
    "pod": "sprint-B"
+  },
+  {
+   "part": "hsplit",
+   "hor": 4096,
+   "D": 2,
+   "F": 64,
+   "u0": 64,
+   "k8": true,
+   "verdict": "UNSAT",
+   "secs": 38.4
+  },
+  {
+   "part": "hsplit",
+   "hor": 2048,
+   "D": 2,
+   "F": 64,
+   "u0": 64,
+   "k8": true,
+   "verdict": "UNSAT",
+   "secs": 19.0
   }
  ],
  "altw_hsplit_compat": {

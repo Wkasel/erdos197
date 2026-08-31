@@ -50,9 +50,11 @@ Run: .venv/bin/python experiments/e123_diagonal_schema.py [pmax]
 Output: data/e123_diagonal_schema.json
 """
 import json
+import os
 import sys
 
-DATA = "/Users/will/Dev/personal/tasks/math/erdos197/data/e123_diagonal_schema.json"
+DATA = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                    "data", "e123_diagonal_schema.json")
 
 
 class Ctx:

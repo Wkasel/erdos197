@@ -183,3 +183,57 @@ Python 3.11.15), the end-to-end run recorded for this commit:
 step 3 ≈ 535 s (the two M=512-scale solves dominate); step 4 ≈ 475 s
 (lazy loop + proof-logging solve + drat-trim on ~1.9M proof lines);
 step 5 ≈ 3 s.
+
+---
+
+# Package 2: the unconditional chain (`reproduce2.sh`)
+
+Machine layer for the chain **C3(p) → B1₀ → Lemma Q → ALT-DEAD**
+(statements and proofs: `notes/89-clean-chain.md`; `paper2/main.tex`
+Theorem A), plus the HSPLIT experiment in its **downgraded** reading
+(review remediation, `notes/88-review-remediation.md` item 1).
+
+```sh
+./reproduce2.sh         # ~2-3 min wall; exit 0 iff every step passes
+```
+
+Extra requirement beyond Package 1: `ortools` (CP-SAT), used only by
+step 5. All scripts invoked here are path-portable (paths derived from
+the repo root; no absolute paths).
+
+### What each step verifies
+
+1. **C3(p) schema executor** (`e123_diagonal_schema.py 9`): strict
+   rung-by-rung execution of the Theorem C3(p) hand proof (Layer-1,
+   FLIP, complementary-class sharpness controls) at **three values of
+   p** (5, 7, 9), ~100 scales each, 0 failures required.
+2. **Independent C3 solver** (`e123b_diagonal_solver_xval.py 5 9 13`):
+   complete AP + transitivity encoding, Cadical195, no knowledge of the
+   schema; C3(p) UNSAT on the flip class, SAT on the complementary
+   class, full rung UNSAT — at p = 5, 9, 13, scales up to M = 260.
+3. **Sharp applicability boundaries** (`e180_diag_grow.py
+   partMINMsharp`): the review-item-9 remediated audit — first-pass
+   scales computed from the scan and asserted equal to the sharp
+   affine boundaries (L1: first `4 | M ≥ p+7`; FLIP: in-class
+   `2p+6`), with every scanned below-threshold scale checked to FAIL;
+   p = 5, 13, 21.
+4. **Lemma Q chart checks + B1₀ machine layer** (`e186_altclosure.py
+   qverify geneson` + JSON gates): chart exactness
+   `φ(Λ_c(t)) = B(t−2)` (44 cells), AP transport + midpoint-class
+   (44,400 triples, both directions), C3(p)-units-⊆-rung (6 cells —
+   B1₀'s a-fortiori step), fresh rung UNSAT `R(39,40;128)`, witness
+   4-purity; Geneson Λ-scan gate: no full class-section above the
+   boot octaves (t > 4) in the density-2/3 permutable W.
+5. **HSPLIT, downgraded** (`e186_altclosure.py hsplit64 hsplit64ctl`):
+   the strong-censor cells (F = 64, hor = 4096 and 2048) re-solved
+   fresh; expected UNSAT.  **Interpretation (the only one licensed —
+   notes/88 item 1):** every finite strong-censor corner inhabitant
+   has ≥ 1 monochromatic residue-class section within the tested
+   horizon.  It does NOT show inhabitants are lattices and licenses
+   no ω conclusion; ALT-DEAD's applicability hypothesis (infinitely
+   many 4-pure scales) remains open on this corner.
+
+### Measured wall time (package 2)
+
+End-to-end run recorded for this commit: **127 s**, all steps PASS
+(step 2 ≈ 60 s, step 5 ≈ 58 s dominate; steps 1/3/4 ≈ 5 s total).

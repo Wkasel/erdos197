@@ -35,16 +35,18 @@ Artifacts: data/e180_diag_grow.json (+ .log via tee)
 """
 import importlib
 import json
+import os
 import sys
 import time
 
-sys.path.insert(0, "/Users/will/Dev/personal/tasks/math/erdos197/experiments")
+_HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, _HERE)
 
 e123 = importlib.import_module("e123_diagonal_schema")
 e123b = importlib.import_module("e123b_diagonal_solver_xval")
 e174 = importlib.import_module("e174_n3_growth")
 
-BASE = "/Users/will/Dev/personal/tasks/math/erdos197/data"
+BASE = os.path.join(os.path.dirname(_HERE), "data")
 OUT = {}
 
 

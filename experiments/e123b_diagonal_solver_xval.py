@@ -14,11 +14,14 @@ Run: .venv/bin/python experiments/e123b_diagonal_solver_xval.py
 Output: data/e123b_diagonal_xval.json
 """
 import json
+import os
+import sys
 import time
 
 from pysat.solvers import Cadical195
 
-DATA = "/Users/will/Dev/personal/tasks/math/erdos197/data/e123b_diagonal_xval.json"
+DATA = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                    "data", "e123b_diagonal_xval.json")
 
 
 def build_base(M, units):
@@ -61,8 +64,9 @@ def build_base(M, units):
 
 
 def main():
+    ps = tuple(int(a) for a in sys.argv[1:]) or (5, 7, 9, 11, 13)
     out = {"rows": [], "fail": []}
-    for p in (5, 7, 9, 11, 13):
+    for p in ps:
         x = 3 * p
         core = [(p, p), (p - 2, p + 1), (p + 5, p - 2)]
         rung = [(a - 2 * j, j) for a in (x, x + 1)
@@ -102,6 +106,8 @@ def main():
     print(f"failures: {len(out['fail'])}")
     json.dump(out, open(DATA, "w"), indent=1)
     print(f"-> {DATA}")
+    if out["fail"]:
+        sys.exit(1)
 
 
 if __name__ == "__main__":

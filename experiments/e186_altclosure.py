@@ -532,7 +532,18 @@ def partHSPLIT(hor=4096, F=12, u0=32, budget=7200.0, k8=True):
     """The GAP-AFFORD'''-SPLIT instrument: e179 s5dodger axes
     (i-proxy)+(ii)+(iii)+split floor, PLUS Cor. HSPLIT as a
     constraint: every class mod 4 (and mod 8 if k8) is bichromatic
-    within every dyadic block t >= 6."""
+    within every dyadic block t >= 6.
+
+    INTERPRETATION (downgraded per external review, notes/88 item
+    1): UNSAT here proves ONLY that every finite corner inhabitant
+    on [1, hor] at these parameters has >= 1 monochromatic
+    residue-class section at some tested scale 6 <= t <= t_max.
+    It does NOT show inhabitants are lattices, and licenses NO
+    omega conclusion (no compactness step; ALT-DEAD needs
+    infinitely many 4-pure scales).  The omega-relevant open
+    statement is the shifted-window family: for every T >= 6,
+    infeasibility with bichromaticity imposed only at scales
+    >= T.  This function imposes T = 6 only."""
     from ortools.sat.python import cp_model
     t0 = time.time()
     D = 2
@@ -637,6 +648,12 @@ if __name__ == "__main__":
             partLATRUNG(Ms=(512,))
         elif nm == "joint512":
             partJOINT(Ms=(512,))
+        elif nm == "hsplit64":
+            # the strong-censor cell, DOWNGRADED reading (notes/88
+            # item 1) -- see partHSPLIT docstring
+            partHSPLIT(hor=4096, F=64, u0=64, k8=True)
+        elif nm == "hsplit64ctl":
+            partHSPLIT(hor=2048, F=64, u0=64, k8=True)
         else:
             PARTS[nm]()
         dump()
