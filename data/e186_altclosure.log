@@ -117,3 +117,19 @@
 [hsplit64] done 34.1s
 [HSPLIT] {"part": "hsplit", "hor": 2048, "D": 2, "F": 64, "u0": 64, "k8": true, "burnin": 6, "verdict": "UNSAT", "secs": 13.5}
 [hsplit64ctl] done 13.5s
+[QVER] chart exactness: 44 cells, fail=[]
+[QVER] AP transport: 44400 triples, fail=0
+[QVER] C3(p) units in R fired set: 6 cells, fail=[]
+[QVER-R39] M=128 att=[39, 40] |D|=0 n=128: UNSAT [0.5s]
+[QVER] h4096_F64: n_pure per block t>=5: [4, 2, 4, 4, 4, 4, 4]; img clean blocks: [{'t': 10, 'c': 0, 'team': 'B', 'clean': True}, {'t': 11, 'c': 0, 'team': 'B', 'clean': True}]
+[QVER] h4096_lin4: n_pure per block t>=5: [0, 1, 4, 4, 4, 4, 4]; img clean blocks: [{'t': 10, 'c': 0, 'team': 'B', 'clean': True}, {'t': 11, 'c': 0, 'team': 'B', 'clean': True}]
+[QVER] h8192_F64: n_pure per block t>=5: [4, 4, 4, 4, 4, 4, 4, 4]; img clean blocks: [{'t': 11, 'c': 0, 'team': 'B', 'clean': True}, {'t': 12, 'c': 0, 'team': 'B', 'clean': True}]
+[QVER] pureL3: n_pure per block t>=5: [4, 4, 4, 4, 4, 4]; img clean blocks: [{'t': 9, 'c': 0, 'team': 'B', 'clean': True}, {'t': 10, 'c': 0, 'team': 'B', 'clean': True}]
+[QVER] altw: n_pure per block t>=5: [1, 0, 0, 0, 0, 0, 0]; img clean blocks: []
+[qverify] done 0.5s
+[GENESON] t<=200: full-section hits=2 [{'t': 2, 'full_classes': [0, 1, 2, 3]}, {'t': 4, 'full_classes': [0, 1, 2, 3]}]
+[geneson] done 0.0s
+[HSPLIT] {"part": "hsplit", "hor": 4096, "D": 2, "F": 64, "u0": 64, "k8": true, "burnin": 6, "verdict": "UNSAT", "secs": 29.7}
+[hsplit64] done 30.1s
+[HSPLIT] {"part": "hsplit", "hor": 2048, "D": 2, "F": 64, "u0": 64, "k8": true, "burnin": 6, "verdict": "UNSAT", "secs": 11.8}
+[hsplit64ctl] done 11.8s

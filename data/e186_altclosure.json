@@ -1943,6 +1943,28 @@
    "burnin": 6,
    "verdict": "UNSAT",
    "secs": 13.5
+  },
+  {
+   "part": "hsplit",
+   "hor": 4096,
+   "D": 2,
+   "F": 64,
+   "u0": 64,
+   "k8": true,
+   "burnin": 6,
+   "verdict": "UNSAT",
+   "secs": 29.7
+  },
+  {
+   "part": "hsplit",
+   "hor": 2048,
+   "D": 2,
+   "F": 64,
+   "u0": 64,
+   "k8": true,
+   "burnin": 6,
+   "verdict": "UNSAT",
+   "secs": 11.8
   }
  ],
  "altw_hsplit_compat": {
