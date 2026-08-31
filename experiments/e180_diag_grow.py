@@ -59,10 +59,17 @@ def dump():
 
 
 # ---------------------------------------------------------------- partMINM
-def partMINM():
+def partMINM(ps=range(5, 22, 2), key="partMINM"):
+    """ORIGINAL boundary scan (kept for the historical record).
+
+    KNOWN DISCREPANCY (external review item 9, remediated by
+    partMINMsharp below): this part asserts only the SLACK bounds
+    2p+10 / 2p+14, while the notes/78 SS I.5 prose claims the sharp
+    boundaries p+7 (first 4 | M >= p+7) / 2p+6.  Use partMINMsharp
+    for the audit that actually certifies the prose."""
     rows = {}
     ok_all = True
-    for p in range(5, 22, 2):
+    for p in ps:
         l1_pass, l1_fail = [], []
         for M in range(8, 4 * p + 44, 4):
             try:
@@ -100,9 +107,91 @@ def partMINM():
               f" FLIP from {bfl} {'ALL PASS' if fl_ok else 'FAIL!'}"
               f" (below: pass {rows[p]['flip_below_bound_pass']},"
               f" fail {rows[p]['flip_below_bound_fail']})", flush=True)
-    OUT["partMINM"] = {"rows": rows, "boundaries_hold": ok_all}
+    OUT[key] = {"rows": rows, "boundaries_hold": ok_all}
     dump()
     assert ok_all, "affine boundary claim violated"
+
+
+# ------------------------------------------------------------ partMINMsharp
+def partMINMsharp(ps=(5, 13, 21), key="partMINM_sharp"):
+    """Review-item-9 remediation (notes/88 item 6): audit the SHARP
+    affine boundaries the notes/78 prose actually claims.
+
+      L1(p):   passes at every 4 | M >= p+7, i.e. from
+               sharp_l1 = first multiple of 4 >= p+7; every scanned
+               4 | M BELOW sharp_l1 must FAIL (explicit check).
+      FLIP(p): passes at every in-class M >= 2p+6 (class
+               M = 2(p+3) mod 8; 2p+6 is in class); every scanned
+               in-class M BELOW 2p+6 must FAIL (explicit check;
+               vacuous when no in-class scale < 2p+6 is scanned,
+               recorded as such).
+
+    first_l1 / first_flip are COMPUTED from the scan (smallest
+    scanned scale from which every later scanned scale passes) and
+    ASSERTED equal to the sharp values."""
+    rows = {}
+    ok_all = True
+    for p in ps:
+        # ---- L1 scan: all multiples of 4 in [8, 4p+40]
+        l1 = {}
+        for M in range(8, 4 * p + 44, 4):
+            try:
+                e123.check_layer1(M, p)
+                l1[M] = True
+            except Exception:
+                l1[M] = False
+        scanned = sorted(l1)
+        sharp_l1 = ((p + 7 + 3) // 4) * 4
+        passing_suffix = [M for M in scanned
+                          if all(l1[M2] for M2 in scanned if M2 >= M)]
+        first_l1 = min(passing_suffix) if passing_suffix else None
+        l1_first_ok = first_l1 == sharp_l1
+        l1_below = [M for M in scanned if M < sharp_l1]
+        l1_below_all_fail = all(not l1[M] for M in l1_below)
+        # ---- FLIP scan: in-class M in [8, 4p+84]
+        flip_res = (2 * (p + 3)) % 8
+        sharp_fl = 2 * p + 6
+        assert sharp_fl % 8 == flip_res, (p, sharp_fl, flip_res)
+        fl = {}
+        for M in range(8, 4 * p + 88, 4):
+            if M % 8 != flip_res:
+                continue
+            try:
+                e123.check_flip(M, p)
+                fl[M] = True
+            except Exception:
+                fl[M] = False
+        fscanned = sorted(fl)
+        fsuffix = [M for M in fscanned
+                   if all(fl[M2] for M2 in fscanned if M2 >= M)]
+        first_fl = min(fsuffix) if fsuffix else None
+        fl_first_ok = first_fl == sharp_fl
+        fl_below = [M for M in fscanned if M < sharp_fl]
+        fl_below_all_fail = all(not fl[M] for M in fl_below)
+        ok = (l1_first_ok and l1_below_all_fail
+              and fl_first_ok and fl_below_all_fail)
+        ok_all &= ok
+        rows[p] = {
+            "sharp_l1": sharp_l1, "first_l1": first_l1,
+            "l1_first_ok": l1_first_ok,
+            "l1_below_sharp": l1_below,
+            "l1_below_all_fail": l1_below_all_fail,
+            "sharp_flip": sharp_fl, "first_flip": first_fl,
+            "flip_first_ok": fl_first_ok,
+            "flip_below_sharp": fl_below,
+            "flip_below_all_fail": fl_below_all_fail,
+            "flip_below_vacuous": not fl_below}
+        print(f"[MINMsharp] p={p}: L1 first-pass {first_l1} "
+              f"(sharp {sharp_l1}, {'OK' if l1_first_ok else 'MISMATCH'}), "
+              f"below {l1_below} all-fail={l1_below_all_fail}; "
+              f"FLIP first-pass {first_fl} (sharp {sharp_fl}, "
+              f"{'OK' if fl_first_ok else 'MISMATCH'}), below {fl_below} "
+              f"all-fail={fl_below_all_fail}"
+              f"{' (vacuous)' if not fl_below else ''}", flush=True)
+    OUT[key] = {"rows": rows, "sharp_boundaries_hold": ok_all,
+                "ps": list(ps)}
+    dump()
+    assert ok_all, "SHARP boundary claim violated"
 
 
 # ---------------------------------------------------------------- partXVAL
@@ -207,6 +296,9 @@ def partK(x, M, dstar):
 
 
 PARTS = {"partMINM": partMINM, "partXVAL": partXVAL,
+         "partMINMsharp": partMINMsharp,
+         "partMINMsharpfull": lambda: partMINMsharp(
+             ps=tuple(range(5, 22, 2)), key="partMINM_sharp_full"),
          "partK19": lambda: partK(19, 80, 4),
          "partK23": lambda: partK(23, 112, 5)}
 

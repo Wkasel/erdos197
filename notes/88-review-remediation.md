@@ -177,3 +177,35 @@ ONE team only; the other may have upper density below any Roth
 threshold (even 0).  Fixed in place ("floods THAT team"); the
 argumentative point (containing 3-APs is not an obstruction)
 survives unchanged.
+
+---
+
+## Item 6 — e180 boundary audit fixed and reran (review item 9)
+
+**The discrepancy.**  e180 partMINM asserted the SLACK boundaries
+M ≥ 2p+10 (L1) / 2p+14 (FLIP) while notes/78 §I.5 prose claimed
+the sharp ones (first 4 | M ≥ p+7; in-class M ≥ 2p+6) and cited
+partMINM as having verified them — a code/prose gap.
+
+**The fix (reviewer's exact shape).**  New partMINMsharp:
+first_l1 / first_flip are COMPUTED from the full scan (smallest
+scanned scale from which every later scanned scale passes) and
+ASSERTED equal to the sharp affine values; every scanned scale
+BELOW the sharp boundary is explicitly checked to FAIL (flip scan
+extended down to M = 8 so the below-set is non-empty at every p —
+vacuity is recorded if it ever occurs).  Original partMINM kept
+for the record with a discrepancy docstring.
+
+**Rerun (2026-08-30).**  Registered cells p ∈ {5, 13, 21}: all
+sharp, 0 mismatches (L1 first-pass 12/20/28 = sharp; FLIP
+first-pass 16/32/48 = 2p+6; below-sets all-fail).  Corroboration
+at all nine p ∈ {5..21}: same, 0 mismatches.  Data:
+data/e180_diag_grow.json keys partMINM_sharp / partMINM_sharp_full.
+
+**Prose aligned** (notes/78 header verdict, §I.5 boundaries
+paragraph, §I.6 machine-record table, session summary; STATUS
+FRONT N2-DIAG): the certified statement is now "passes from the
+sharp affine boundary AND fails at every scanned scale below it";
+the old prose's "fails at the ONE in-class scale below (M = 2p−2)"
+was also wrong in count — for most p several in-class scales below
+2p+6 fail (e.g. p = 13: M = 8, 16, 24), all with value collisions.

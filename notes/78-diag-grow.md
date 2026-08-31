@@ -18,7 +18,14 @@ gaps of notes/50 §6).  Verdicts up front:
   (20/20 verdicts incl. M = 256/260), and the applicability
   boundaries verified EXACT: L1(p) passes at every 4 | M ≥ p+7 (first
   in-block scale) and FLIP(p) at every in-class M ≥ 2p+6, for all
-  nine p (e180 partMINM).
+  nine p — with every scanned scale BELOW those boundaries failing
+  (e180 partMINMsharp; the sharp first-pass scales are computed from
+  the scan and asserted).  [Review remediation, notes/88 item 6: the
+  originally shipped partMINM asserted only the slack bounds
+  2p+10 / 2p+14 while this prose claimed p+7 / 2p+6; partMINMsharp
+  closes that code/prose gap — reran 2026-08-30 at the registered
+  p ∈ {5, 13, 21} and corroborated at all nine p ∈ {5..21}, all
+  sharp, 0 mismatches.]
 * **GAP-N3-GROW: (N3-a) tightened to a single half-scale hypothesis
   (notes/74 correction: both parity classes halve onto the SAME
   single-attacker system SA((x+1)/2; M/2), not (x+3)/2); (N3-b)
@@ -263,16 +270,24 @@ trailer, cI's neighbors trailers): neither case's seed set exists.
 And AP + C3(p) is genuinely SAT there — machine, every p tested
 (e122/e123b/e180) — so the flip class is exactly right, for every p.
 
-**Boundaries are exact and affine (machine, e180 partMINM).**  For
-every p = 5..21: check_layer1(M, p) passes at every 4 | M from the
-first multiple of 4 with M ≥ p+7 upward (= all six core values and
-all four mirror offsets in block; below it, failures), and
-check_flip(M, p) passes at every in-class M ≥ 2p+6 and fails at the
-one in-class scale below with degenerate value collisions
-(M = 2p−2, where t_p = b_{p−2} degenerates the hypothesis set).
-The stated bounds need no slack: the write-up's window conditions ARE
-the machine boundary.  (Below p+7 and off-class the theorem makes no
-claim; small in-class scales are inside the verified range anyway.)
+**Boundaries are exact and affine (machine, e180 partMINMsharp —
+the remediated audit, notes/88 item 6; the original partMINM
+asserted only the slack bounds 2p+10 / 2p+14 and is kept for the
+record).**  For every p = 5..21 (sharp audit reran at the
+registered p ∈ {5, 13, 21} and corroborated at all nine):
+check_layer1(M, p) passes at every 4 | M from the first multiple
+of 4 with M ≥ p+7 upward (= all six core values and all four
+mirror offsets in block), and FAILS at every scanned 4 | M below
+that; check_flip(M, p) passes at every in-class M ≥ 2p+6 and
+FAILS at every scanned in-class scale below (scan from M = 8; the
+below-set is non-empty for every p, e.g. M = 2p−2 where
+t_p = b_{p−2} degenerates the hypothesis set — for most p several
+smaller in-class scales fail too, all with value collisions).
+The first-pass scales are COMPUTED from the scan and ASSERTED
+equal to the sharp affine values: the write-up's window conditions
+ARE the machine boundary, no slack.  (Below p+7 and off-class the
+theorem makes no claim; small in-class scales are inside the
+verified range anyway.)
 
 **Remark (interior coincidences are harmless).**  For M between p+7
 and 2p+6 the six core values can collide with flood targets or with
@@ -288,7 +303,8 @@ betweenness), which in class is free.
 | instrument | scope | verdict |
 |---|---|---|
 | e123_diagonal_schema.py pmax=21 (rerun this session) | strict rung-by-rung schema execution (e113 discipline: every AP membership, every R-rule pattern, every leader/trailer/residue claim, both branches of every phase dichotomy, per-branch hypothesis audit) | p = 5..21 (9 values, p = 15/17/19/21 FRESH): layer1 104/104 scales each (4p..4p+396 + 512/516/1024/1028 ∩ 0 mod 4), flip 52/52, sharpness 52/52 — **0 failures** (data/e123_diagonal_schema.json, e123_diagonal_p21.log) |
-| e180 partMINM | applicability boundary scan, ALL scales 8 ≤ M ≤ 4p+40 (L1) / 4p+84 (flip) | boundary claims hold for all 9 p: L1 ALL PASS from the first 4 | M ≥ p+7; FLIP ALL PASS from in-class M = 2p+6; recorded pass/fail zones below verbatim (data/e180_diag_grow.json) |
+| e180 partMINM (original) | slack-bound scan (asserted only 2p+10 / 2p+14 — code/prose gap, review item 9) | kept for the record; superseded by partMINMsharp |
+| e180 partMINMsharp (remediated audit, notes/88 item 6) | sharp boundary audit, ALL scales 8 ≤ M ≤ 4p+40 (L1) / 4p+84 (flip); first-pass scales computed from the scan and asserted = sharp affine values, below-threshold failures explicitly checked | sharp boundaries hold: L1 first-pass = first 4 \| M ≥ p+7 with every scanned scale below FAILING; FLIP first-pass = 2p+6 in-class with every scanned in-class scale below FAILING; reran at p ∈ {5, 13, 21} (registered) + all nine p ∈ {5..21} (corroboration), 0 mismatches (data/e180_diag_grow.json: partMINM_sharp, partMINM_sharp_full) |
 | e180 partXVAL | independent complete-encoding Cadical195 (e123b encoder), FRESH p = 17, 21 | 20/20 OK: C3(p) UNSAT at 5 flip scales incl. 256, SAT at 5 complementary scales incl. 260, full rung UNSAT at all 10, per p (data/e180_xval.log) |
 | e123b (prior) | same, p = 5..13 | 0 mismatches (data/e123b_diagonal_xval.json) |
 
@@ -496,7 +512,7 @@ II.2).
 |---|---|
 | Theorem C3(p), affine write-up (I.1–I.5) | [PROVED — audit pending]; GAP-N2-DIAG DISCHARGED |
 | e123 @ p = 5..21 (fresh 15/17/19/21) | 0 failures, 9 × 208 scales |
-| e180 partMINM boundary scan | exact affine boundaries p+7 / 2p+6, all 9 p |
+| e180 partMINMsharp boundary audit (remediated, notes/88 item 6) | exact affine boundaries p+7 / 2p+6 asserted sharp, below-threshold failures checked, all 9 p |
 | e180 partXVAL fresh solver x-val p = 17/21 | 20/20 OK |
 | Lemma LANE(x) + Lemma PS(x) + Lemma SEV | [PROVED] (PS mod GAP-SA-HALF) |
 | notes/74 correction: both classes halve to SA((x+1)/2; M/2) | machine-verified ×5 x-values |

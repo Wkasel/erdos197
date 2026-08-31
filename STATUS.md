@@ -1579,8 +1579,12 @@ data/e180_diag_grow.json, e180_*.log, e123_diagonal_p21.log.
   uniform sharpness on the complementary class.  Machine: e123 strict
   schema executor at p = 5..21 — fresh 15/17/19/21 — 104+52+52
   scales each, 0 failures; applicability boundaries verified EXACT
-  and affine (e180 partMINM: L1 passes from the first 4 | M ≥ p+7,
-  FLIP from in-class 2p+6, all nine p); independent complete-encoding
+  and affine (e180 partMINMsharp, the review-remediated audit
+  [notes/88 item 6]: first-pass scales computed from the scan and
+  asserted = first 4 | M ≥ p+7 (L1) / in-class 2p+6 (FLIP), with
+  every scanned below-threshold scale failing, all nine p — the
+  original partMINM had asserted only slack bounds 2p+10/2p+14);
+  independent complete-encoding
   solver x-val at fresh p = 17/21: 20/20 incl. M = 256/260 (e180
   partXVAL).  Theorem B1's (H1′) part 1 is discharged; **Case 1's
   residue is GAP-N3-GROW (N3-b) alone** (plus the audit cycle).
