@@ -10,8 +10,6 @@
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{remark}[theorem]{Remark}
-\newtheorem{question}[theorem]{Question}
-\newtheorem{conjecture}[theorem]{Conjecture}
 
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
@@ -20,11 +18,17 @@
 \newcommand{\OG}{\mathrm{OG}}
 
 \title{Structural rigidity in the Erd\H{o}s--Graham two-set permutation problem}
-\author{William Kasel\thanks{With extensive machine assistance from Claude
-(Anthropic) and from the SAT solvers CaDiCaL and OR-Tools CP-SAT;
-SAT certificates, code, and a one-command reproduction kit are available in the
-accompanying repository (see Data Availability). All proofs have been verified by hand
-unless explicitly marked as machine-checked.}}
+\author{William Kasel\thanks{This paper was written with extensive machine
+assistance: the search for the gadget, the core and the residue phenomenon
+used the SAT solvers CaDiCaL and OR-Tools CP-SAT, and the drafting and the
+exploration of proof strategies used the language model Claude (Anthropic).
+The mathematical content is the author's responsibility. The arguments of
+Sections~\ref{sec:chunk}, \ref{sec:og} and~\ref{sec:c3} --- the chain
+carrying the main theorem --- are human-readable and were checked line by
+line by the author; solver output is relied on only where a statement is
+explicitly marked machine-checked. Code, certificates, and a one-command
+reproduction kit are in the accompanying repository (see Data
+Availability).}}
 \date{Draft: August 2026}
 
 \begin{document}
@@ -39,7 +43,8 @@ constructed a partition of $\Z^+$ into three sets each admitting a permutation
 with no monotone 3-AP, and asked whether two sets suffice; Erd\H{o}s and Graham
 (1979, p.~338) repeated this as ``a very annoying question'' (problem \#197 of
 the Erd\H{o}s problem collection). We prove several structural results constraining any solution.
-(i) A permutable set admits no infinite doubling orbit $u_{k+1}=2u_k-f_k$ with
+(i) A permutable set admits no infinite \emph{increasing} doubling orbit
+$u_0<u_1<\cdots$, $u_{k+1}=2u_k-f_k$, with
 $f_k$ drawn from a fixed finite subset. (ii) In any 3-AP-free arrangement, every newly placed value must be
 balanced: the counts of already-placed values in $[1,v)$ and in $(v,2v)$
 control each other up to the codensity of the set in $(v,2v)$ and in
@@ -65,13 +70,14 @@ $\mathrm{C3} \subset \OG(M)$ is inconsistent with AP-freeness. The proof
 runs on a small toolkit of ladder lemmas (zigzag propagation, phase
 dichotomy, a transfer lock, and a mirror-flood induction) and exhibits the
 mod-$8$ arithmetic as a residue condition on two flood centers; every step
-is machine-verified at $100$ scales up to $M = 1024$ and independently
-cross-validated. Combining (vi) and (vii):
-\textbf{$\SA$ admits no permutation free of monotone $3$-APs} --- the
+of the two forcing theorems is machine-verified at $100$ resp.\ $51$ scales
+up to $M = 1024$ and independently cross-validated. Combining (vi) and (vii):
+\textbf{$\SA$ admits no permutation of order type $\omega$ free of monotone
+$3$-APs} --- the
 canonical dyadic partition does not resolve the Erd\H{o}s--Graham problem.
-We also prove a clean
-absorption theorem for van der Corput orderings of odd residue classes which
-explains the fractal structure observed in all satisfying fragments.
+We also record, in a form convenient here, the absorption property of van der
+Corput orderings of odd residue classes (a restatement of a lemma of Geneson)
+which explains the fractal structure observed in all satisfying fragments.
 Problem \#197 itself remains open: our theorem eliminates one candidate
 partition, and decides nothing about other two-set partitions.
 \end{abstract}
@@ -96,8 +102,11 @@ question in \cite{ErGr79} (p.~338), calling it ``a very annoying question''
 Erd\H{o}s problem collection \cite{Bl}, where it is stated for $\N$ and
 carries a Lean formalisation \cite{FC}.
 
-The modern literature around the problem concerns densities and longer
-progressions. LeSaulnier and Vijay \cite{LV11} exhibited a set admitting an
+The modern literature around the problem concerns densities, longer
+progressions, and enumeration (Ho \cite{Ho26} recently proved that
+$\theta(n)^{1/n}$ has no limit, where $\theta(n)$ counts the $3$-AP-free
+permutations of $[n]$, settling a growth question of \cite{ErGr79}).
+LeSaulnier and Vijay \cite{LV11} exhibited a set admitting an
 admissible permutation with upper density $1/2$ and lower density $1/4$;
 writing $\alpha_{\N}(3)$ (resp.\ $\beta_{\N}(3)$) for the supremum of upper
 (resp.\ lower) densities of such sets, this gives $\alpha_{\N}(3) \ge 1/2$
@@ -106,13 +115,13 @@ Geneson \cite{Gen26} recently disproved the upper-density conjecture, proving
 $\alpha_{\N}(3) \ge 2/3$. His witness is strikingly relevant here: it is a
 union of ratio-$4$ doubling blocks $[L\cdot 4^j + m,\, 2L\cdot 4^j]$ — an
 $\SA$-like octave pattern \emph{with the bottom sliver of each block
-removed} and only finitely many octaves per stage. Our main theorem shows
-the full dyadic blocks fail, and the mechanism of failure (the attack of the
-values $15$ and $16$ on every block's bottom sliver, Section~\ref{sec:negative}
-onward) lives precisely in the region Geneson's construction excises: the
-two results are consistent, and the mechanisms align strikingly: the
-attacks proving failure of the full blocks are concentrated in the same
-bottom regions removed in Geneson's construction. (We do not claim that
+removed} (here $m = M_{k-1}$ in his notation, re-cased to avoid a collision
+with our scale parameter $M$) and only finitely many octaves per stage. Our
+main theorem shows the full dyadic blocks fail, and the mechanism of failure
+--- the attack of the values $15$ and $16$ on every block's bottom sliver
+(Section~\ref{sec:negative} onward) --- is concentrated in exactly the
+region Geneson's construction excises, so the two results are consistent
+and their mechanisms align. (We do not claim that
 removing precisely those slivers is necessary or sufficient; his
 construction also uses stage separation and rapid scale growth.) Permutations of $\Z$ and of subsets of $\Z^+$
 avoiding longer monotone progressions were constructed by Geneson
@@ -123,17 +132,30 @@ characterised the \emph{order types} of total orders on $\N$, $\Z$ and $\mathbb{
 admitting no monotone 3-AP; from their standpoint the difficulty of \#197 is
 that order type $\omega$ is forced, where avoidance is hardest.
 
-The natural first candidate for a two-set partition — implicit already in
-the parity heuristic of \cite{DEGS77} — is the \emph{dyadic
+A natural first candidate for a two-set partition is the \emph{dyadic
 partition}: let
 \[
-\SA \;=\; \bigcup_{k \text{ even}} \left(2^{k-1},\, 2^{k}\right], \qquad
-S_B \;=\; \Z^+ \setminus \SA,
+\SA \;=\; \bigcup_{k \text{ even},\, k \ge 2} \left(2^{k-1},\, 2^{k}\right]
+\;=\; (2,4] \cup (8,16] \cup (32,64] \cup \cdots, \qquad
+S_B \;=\; \Z^+ \setminus \SA \;=\; \{1,2\} \cup (4,8] \cup (16,32] \cup\cdots,
 \]
-so that each team is a union of doubling blocks and the completion
+so that each team is a union of doubling blocks (together, for $S_B$, with
+the two initial values) and the completion
 $2y - x$ of a within-block pair $x < y$, whenever it escapes the block
-upward, lands in the adjacent block — the other team's territory. Our main
-result eliminates this candidate.
+upward, lands in the adjacent block — the other team's territory. Two
+elementary density facts explain why this is the canonical candidate. First,
+$\SA$ has upper density $2/3$ and lower density $1/3$ (and $S_B$ the same,
+with the two limits attained along the complementary subsequences of
+scales); so $\SA$ sits exactly at Geneson's record value
+$\alpha_{\N}(3) \ge 2/3$, and our main theorem therefore exhibits a specific
+set \emph{at} the current record upper density that is not permutable ---
+$\SA$ and Geneson's witness have the same upper density and opposite
+answers. Second, for any partition $\Z^+ = A \sqcup B$ the identity
+$\overline{d}(A) + \underline{d}(B) = 1$ is automatic, so a two-set solution
+requires $\alpha_{\N}(3) + \beta_{\N}(3) \ge 1$ (a remark of \cite{LV11});
+the dyadic pair meets this constraint on the nose,
+$2/3 + 1/3 = 1$, whereas the current records give only
+$2/3 + 1/4 = 11/12$. Our main result eliminates this candidate.
 
 \begin{quote}
 \textbf{Main Theorem} (Theorem~\ref{thm:main}). \emph{$\SA$ admits no
@@ -147,7 +169,7 @@ interest. First, an exact \emph{chunk reduction} (Theorem~\ref{thm:chunk})
 translates the existence of an admissible permutation into the existence of
 a stage function with finite fibres satisfying two checkable conditions; in
 these coordinates the theorem of \cite{DEGS77} (in its monotone form) has a
-four-line proof, and self-similarity of $\SA$ under $v \mapsto 4v$ becomes
+short proof, and self-similarity of $\SA$ under $v \mapsto 4v$ becomes
 an induction engine. Second, a sequence of machine-assisted eliminations
 (Sections~\ref{sec:negative}--\ref{sec:ladder}) shrinks the search space of
 candidate stage functions until a single finite obstruction emerges: an
@@ -166,7 +188,8 @@ via a toolkit of ladder lemmas whose single appeal to the residue of $M$
 occurs at two ``flood centres'' near $3M/2$. (The basic zigzag alternation
 on AP-ladders that seeds the toolkit is classical — it appears inside
 \cite{DEGS77} in Folkman's argument, as Lemma~2.5 of \cite{HS24}, and as
-Lemmas~2.1--2.2 of \cite{Gen26}; what is new here is its boundary-quantitative
+Lemmas~2.1--2.2 of \cite{Gen26}; what is new here, to our knowledge, is its
+boundary-quantitative
 use on bounded ladders, the transfer lock, and the flood induction.) Computationally, the mod-$8$ condition is sharp at every tested scale:
 the same three axioms are satisfiable at every tested scale with
 $M \not\equiv 0 \pmod 8$ (a parametric satisfying construction for the
@@ -176,20 +199,27 @@ matching the machine's phase diagram exactly.
 
 A word on methodology. The elimination phase and the discovery of the
 gadget, the three-axiom core, and the residue phenomenon were carried out
-with large-scale SAT-solver experimentation (CaDiCaL, OR-Tools), with every
-negative claim cross-validated by independent encodings and solvers. The
+with large-scale SAT-solver experimentation (CaDiCaL, OR-Tools). The
+load-bearing negative claims --- the infeasibility of the order gadget and
+of its three-axiom core --- were cross-validated by independently written
+encodings and by more than one solver; the auxiliary sweeps reported in
+Sections~\ref{sec:negative}--\ref{sec:ladder} were not, and are flagged
+where they occur. The
 final proof chain, however, does not rest on any solver verdict: the
-reductions and the C3 core theorem are human-readable arguments, and each
-of their finitely many schema instances has been machine-audited by three
+reductions and the C3 core theorem are human-readable arguments. They are
+$\forall M$ schemas, with infinitely many instances; a finite but large
+range of those instances (Remark~\ref{rem:c3machine}) has been
+machine-audited step by step by three
 independently written checkers, including mutation testing of the checkers
-themselves. A complete reproduction kit (scripts, pinned environments, and
-DRAT certificates for the finite base cases) accompanies the paper.
+themselves --- an audit of the writing, not a substitute for the proofs.
+A reproduction kit (scripts, pinned environments, and
+DRAT certificates for two base instances) accompanies the paper.
 
 Problem \#197 itself remains open. Beyond eliminating the leading candidate,
 the methods here — the chunk calculus, the attack/guard analysis of small
 values against doubling blocks, and the residue-locked ladder toolkit —
-apply to any two-set partition whose parts are unions of intervals, and we
-expect them to bear on the general question.
+should apply to any two-set partition whose parts are unions of intervals,
+and we expect them to bear on the general question.
 
 \section{Definitions and conventions}
 
@@ -197,6 +227,10 @@ expect them to bear on the general question.
 A set $S \subseteq \Z^+$ is \emph{permutable} if there is a bijection
 $\pi\colon \N \to S$ such that no $i<j<k$ have $\pi(i),\pi(j),\pi(k)$ forming an
 arithmetic progression with $\pi(i)<\pi(j)<\pi(k)$ or $\pi(i)>\pi(j)>\pi(k)$.
+When the progression length matters we write \emph{$3$-permutable}; in this
+paper the two words are synonymous, since only $3$-term progressions are
+forbidden. Note that a permutable set is by definition countably infinite
+and the permutation has order type $\omega$.
 \end{definition}
 
 The completion of an ordered pair: if $x$ is placed before $y$, the value
@@ -204,7 +238,7 @@ $z = 2y - x$ (which continues the progression through $x,y$ in the direction of
 $y$) must not be placed after $y$; equivalently every such $z \in S$ placed later
 yields a monotone 3-AP. We use throughout the \emph{dyadic blocks}
 $B_k = (2^{k-1}, 2^k]$ and the canonical two-set candidate
-$\SA = \bigcup_{k \text{ even}} B_k$, $S_B = \Z^+ \setminus \SA$.
+$\SA = \bigcup_{k \text{ even},\, k \ge 2} B_k$, $S_B = \Z^+ \setminus \SA$.
 
 \begin{remark}[Ground set: $\Z^+$ versus $\N \ni 0$; the Lean formalization]
 \label{rem:lean}
@@ -261,7 +295,7 @@ $(v,2v)$). Then
 \[
 L - H \;\le\; |S^c \cap (v, 2v)|
 \qquad\text{and}\qquad
-H - L \;\le\; |S^c \cap (0, v)| + O(1).
+H - L \;\le\; |S^c \cap (0, v)|.
 \]
 (The two directions are bounded by the codensities of $S$ in \emph{different}
 ranges; no symmetric single-range bound holds in general.\footnote{We thank
@@ -276,12 +310,12 @@ must already be placed. This gives $H \ge L - |S^c \cap (v,2v)|$. In the other
 direction, each placed $u \in (v, 2v)$ forms a decreasingly placed pair
 $(u,v)$ with completion $2v - u \in (0, v)$, distinct for distinct $u$, and
 each such completion lying in $S$ must already be placed, whence
-$L \ge H - |S^c \cap (0,v)| - O(1)$.
+$L \ge H - |S^c \cap (0,v)|$.
 \end{proof}
 
 \begin{corollary}[Records]\label{cor:records}
-When a left-to-right maximum $v$ is placed, at most $|S^c \cap (v,2v)| + O(1)$
-smaller values are already placed.
+When a left-to-right maximum $v$ is placed, at most $|S^c \cap (v,2v)|$
+smaller values are already placed (apply the first inequality with $H = 0$).
 \end{corollary}
 
 \section{Two absorption lemmas}
@@ -297,11 +331,20 @@ $(k,2k,3k)$ with $k \prec 2k$, $k \prec 3k$ forces $3k \prec 2k$; then
 $3k \prec 2k \prec 5k$, and $(k,3k,5k)$ is an increasing 3-AP.
 \end{proof}
 
-\begin{theorem}[van der Corput absorption]\label{thm:vdc}
+\begin{lemma}[van der Corput absorption; \cite{Gen26}]\label{thm:vdc}
 Order the odd residues $c$ modulo $2^k$ by the bit-reversal (van der Corput) rank
 of $(c-1)/2 \bmod 2^{k-1}$. Then for any two classes $a$ ordered before $b$, the
 class $2b - a \bmod 2^k$ is ordered strictly before $b$.
-\end{theorem}
+\end{lemma}
+
+\noindent This is not new. Writing $\rho_m$ for the bit-reversal rank modulo
+$m = 2^{k-1}$, the statement is exactly the first equivalence
+$\rho_m(r) < \rho_m(r+\delta) \iff \rho_m(r+\delta) > \rho_m(r+2\delta)$ of
+Lemma~2.1 of Geneson \cite{Gen26} (take $r = (a-1)/2$,
+$\delta = (b-a)/2$), and the underlying binary recursion goes back to
+\cite{DEGS77} (p.~81) and to the ``chaotic ordering'' literature
+\cite{ABJ11}. We include a proof for completeness and because the
+bit-reversal form is the one we use.
 
 \begin{proof}
 Write $\alpha = (a-1)/2$, $\beta = (b-1)/2$; the completion class has parameter
@@ -394,8 +437,12 @@ $g_X(L) = \min \max_{v \le L} \pos(v)$ satisfies $g_{256}(64) = 153$
 completion of $[1,64]$, with the residue concentrated in a single residue
 class modulo 8 --- the reservoir structure that any construction must
 implement. Divergence of $g_X(L)$ in $X$ for fixed $L$ would prove
-non-permutability; the mechanism is blocked by the measured subset-tolerance
-(near-total), and $g$ is expected to stabilize.
+non-permutability directly; our measurements did not exhibit divergence
+(the subset-tolerance is near-total), and this route was abandoned in favour
+of the one taken in Sections~\ref{sec:og}--\ref{sec:c3}. There is no
+tension with Theorem~\ref{thm:main}: stabilization of $g_X(L)$ for each
+fixed $L$ does not by itself produce a single bound $B$ as required by the
+tower characterization, because the minimizing arrangements vary with $L$.
 
 \subsection{Self-similar witnesses, fragility, and pumping obstructions}
 
@@ -409,8 +456,9 @@ We also record a calibration fact: requiring, in addition, that the $\pm 1$
 neighbors (within the same block and team) of each forced completion also
 precede the pair's later element (``radius-1 robustness'') is infeasible in
 every setting we tested --- including plain intervals $[1, n]$ from $n = 8$.
-Radius-1 robustness is thus unachievable generically in three-AP arrangement
-problems and cannot serve as a satisfiability criterion; in particular it does
+Radius-1 robustness therefore appears to be unachievable in three-AP
+arrangement problems generally, and cannot serve as a satisfiability
+criterion; in particular it does
 not discriminate between partitions, and pumping arguments must instead manage
 rounding drift on the thin family of far-pair constraints only. The
 radius-one experiments are \emph{evidence} against placement rules in which

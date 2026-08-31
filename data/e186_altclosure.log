@@ -133,3 +133,4 @@
 [hsplit64] done 30.1s
 [HSPLIT] {"part": "hsplit", "hor": 2048, "D": 2, "F": 64, "u0": 64, "k8": true, "burnin": 6, "verdict": "UNSAT", "secs": 11.8}
 [hsplit64ctl] done 11.8s
+[HSPLIT] {"part": "hsplit", "hor": 4096, "D": 2, "F": 12, "u0": 32, "k8": true, "verdict": "TIMEOUT", "secs": 7200.7}
