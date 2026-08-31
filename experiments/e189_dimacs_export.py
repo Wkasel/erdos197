@@ -365,7 +365,9 @@ def export_coupled(M, out, bounds="2,2,2", support="core"):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("family", choices=("bal", "c3core", "coupled",
-                                       "decode-bal"))
+                                       "chain", "decode-bal"))
+    ap.add_argument("--kind", default="fresh",
+                    choices=("pump", "fresh"))
     ap.add_argument("--M", type=int, required=True)
     ap.add_argument("--v", type=int, default=0)
     ap.add_argument("--out", default=None)
@@ -380,6 +382,8 @@ def main():
         export_c3core(a.M, a.out, a.attacks)
     elif a.family == "coupled":
         export_coupled(a.M, a.out, a.bounds or "2,2,2", a.support)
+    elif a.family == "chain":
+        export_chain(a.kind, a.M, a.v, a.out)
     else:
         sys.exit(decode_bal(a.M, a.v, a.model, a.bounds))
 
