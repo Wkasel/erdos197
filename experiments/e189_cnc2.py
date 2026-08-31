@@ -91,6 +91,11 @@ def main():
     ap.add_argument("--rounds", type=int, default=3)
     ap.add_argument("--workers", type=int, default=48)
     ap.add_argument("--conf", type=int, default=3000000)
+    ap.add_argument("--shard", default=None,
+                    help="i:s -> process only cubes with index %% s == i "
+                         "(multi-pod split; each shard adjudicates only "
+                         "its own cubes — combine jsonls for the global "
+                         "verdict)")
     ap.add_argument("--tag", required=True)
     a = ap.parse_args()
     meta = json.load(open(a.cnf + ".meta.json"))
@@ -111,9 +116,15 @@ def main():
                     done.add(r["cube"])
             except Exception:
                 pass
+    shard = None
+    if a.shard:
+        si, ss = (int(x) for x in a.shard.split(":"))
+        shard = (si, ss)
     cubes = [(cid, u, a.conf)
-             for cid, u in gen_cubes(a.M, ai, a.mode, a.k, B0=cube_B0)
-             if cid not in done]
+             for idx, (cid, u) in enumerate(
+                 gen_cubes(a.M, ai, a.mode, a.k, B0=cube_B0))
+             if cid not in done
+             and (shard is None or idx % shard[1] == shard[0])]
     allv = (sorted(int(v) for v in meta["ai"]) if chain
             else list(range(a.M + 1, 8 * a.M + 1)))
     print(f"cnc2 {a.tag}: {len(cubes)} cubes ({len(done)} done), "
