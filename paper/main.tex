@@ -528,8 +528,9 @@ the infinite problem on one block: for $x \in \{15,16\}$ the completion
 $2b_j - x$ lies in $(M, 2M]$ precisely for $j \le x/2$, and then equals
 the guard $t_{x-2j}$ (at $(x, j) = (16, 8)$ it is $2M$ itself, still
 inside the half-open block) --- so (ii) lists \emph{all} in-block
-completions of pairs $(x, b_j)$ and nothing else; all other completions
-against $15$ and $16$ escape into the odd block above; and the
+completions of pairs $(x, b_j)$ and nothing else. All other completions
+lie above $2M$; at the dyadic scales used in Theorem~\ref{thm:ogred} they
+lie in the intervening odd dyadic block and hence outside $\SA$. Finally the
 guard--bottom pair's own downward completion $2b_j - t_{x-2j} = x$ is the
 attacking value itself, below the block, so the attack edges generate no
 unmodeled in-block constraint.
@@ -641,22 +642,27 @@ Theorem~\ref{thm:ogred} needs only the infeasibility of
 (i)${}\wedge{}\mathrm{C3}$ on the class $M \equiv 0 \pmod 8$. That is
 exactly Theorem~\ref{thm:c3core} below.
 
-\begin{remark}[Why a per-residue proof was to be expected]
-The repository's parametric analysis (notes 27, 28, 30 and the
-\texttt{e87}--\texttt{e113} experiment suite) had established three
-structural facts that shaped the proof in Section~\ref{sec:c3}.
-(1) Deletion-minimal certificate supports grow linearly with $M$
-($\approx 8$ triples per unit of $M$), so no fixed finite list of
-parametric AP-triples certifies infeasibility at all scales; a uniform
-proof must use $\Theta(M)$-length mechanisms with $O(1)$ description ---
-the ladder floods below are exactly that. (2) The forced-lemma layer
-behind small-scale refutations is parity-locked (reverse-forced at
-$M \not\equiv 0 \bmod 4$), so any uniform proof must stay within a
-residue class; the dyadic family lives in $M \equiv 0 \pmod 8$.
-(3) Fixed-denominator band-limit windows of the constraint system are
-satisfiable at all scales, so the obstruction is genuinely asymptotic
-and no compactness/limit argument over order types can carry it; the
-proof must be a scale-uniform schema, verified rung by rung.
+\begin{remark}[What the experiments suggested about the shape of a proof]
+Three recurring computational observations across the tested scales shaped
+the proof in Section~\ref{sec:c3}. We record them because they explain the
+form the argument takes; none is a theorem, and nothing below depends on
+them.
+(1) Deletion-minimal refutation supports were observed to grow linearly
+with $M$ (about $8$ triples per unit of $M$ over the swept range), which
+suggested that no fixed finite list of
+parametric AP-triples would certify infeasibility at all scales, and
+motivated looking for $\Theta(M)$-length mechanisms with an $O(1)$
+description --- the ladder floods below are of that form. (2) The forced
+relations behind the small-scale refutations were observed to be
+parity-locked, reversing at
+$M \not\equiv 0 \bmod 4$, which suggested that a uniform argument would have
+to stay inside a residue class; the dyadic family lives in
+$M \equiv 0 \pmod 8$.
+(3) Fixed-denominator band-limit windows of the constraint system were
+satisfiable at every scale tested, suggesting that the obstruction is
+genuinely asymptotic, so that a compactness or limit argument over order
+types was unlikely to reach it and a scale-uniform schema would be needed
+instead.
 \end{remark}
 
 \section{The C3 core theorem and the main theorem}\label{sec:c3}
