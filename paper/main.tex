@@ -532,42 +532,17 @@ such as ``even 2-adic valuation vs.\ odd'' die immediately, and viable partition
 are forced toward dyadic-interval alternation, motivating the canonical
 candidate $\SA$.
 
-\section{Suffix-stacked class deferral}
-
-\begin{definition}[Deferral states]
-For a scale $M = 2^{k}$ let $D_M \subseteq (M/2, M]$ denote a single
-residue class modulo a power of two (\emph{class coherence}; the witnesses
-found by the solver select $\{v \equiv 2 \bmod 2^{\lfloor k/2 \rfloor}\}$).
-A \emph{deferral state} at scale $M$ is a
-$3$-AP-free arrangement of $\SA \cap [1, 2M]$ of the suffix-stacked form
-$[\,\mathrm{bulk} \mid D_{M/2} \mid D_{M}\,]$: the bulk contains everything
-except the two most recent deferred classes, which are appended in scale
-order.
-\end{definition}
-
-Machine-verified facts (witnesses and solver logs in the repository): deferral states exist
-for $M = 32, 64, 128$; the suffix must be stacked in scale order (the reversed
-stacking contains a Lemma~\ref{lem:R} configuration); no-extras variants are
-infeasible at every scale tested (lookahead into the next block is
-necessary); at those scales any
-single residue class serves as the deferred suffix, while generic sets of the
-same size do not.
-
-\begin{proposition}[Class-sink algebra]
-Fix a modulus $m = 2^k$ and a target class $r$. The attacker map
-$\varphi_r(b) = 2b - r$ on $\Z/m\Z$ is conjugate to doubling (via
-$b \mapsto b - r$), so for $m$ a power of two every orbit is eventually
-absorbed at the unique fixed point $r$: the functional graph is a tree onto
-$r$. Hence in a class-phase arrangement a single class can be scheduled last
-(all its attacker-demands point inward), whereas a fully placed zone imposes
-root demands at every class simultaneously, which cannot all be satisfied.
-For general $m$ (odd part $> 1$) the conjugacy shows the cycle structure of
-$\varphi_r$ is independent of $r$, and the tree picture fails; the
-observed special role of $2\cdot\mathrm{odd}$ phases in the experiments is a
-range-truncation phenomenon, not a cycle-structure one.\footnote{We thank
-Jesse Geneson for correcting the general-$m$ form of this proposition; an
+\begin{remark}[Class-sink algebra]\label{rem:classsink}
+One algebraic fact about attacks within a residue class is worth recording,
+since it explains why powers of two are the natural moduli here. Fix
+$m = 2^k$ and a target class $r$. The attacker map $\varphi_r(b) = 2b - r$
+on $\Z/m\Z$ is conjugate to doubling under $b \mapsto b - r$; hence every
+orbit eventually reaches the unique fixed point $r$. For a general modulus
+$m$ the same conjugacy shows that the cycle structure of $\varphi_r$ does
+not depend on $r$, so no class is distinguished.\footnote{We thank
+Jesse Geneson for correcting the general-$m$ form of this statement; an
 earlier version asserted an $r$-dependent cycle structure.}
-\end{proposition}
+\end{remark}
 
 \section{The chunk reduction}\label{sec:chunk}
 
@@ -1347,7 +1322,8 @@ partition works.
 I thank Jesse Geneson for reading an earlier version of this paper and for
 several corrections, two of which are recorded at the points where they
 apply: the balance lemma (Lemma~\ref{lem:balance}), which an earlier draft
-stated in a false symmetric form, and the class-sink proposition, which an
+stated in a false symmetric form, and the class-sink algebra
+(Remark~\ref{rem:classsink}), which an
 earlier draft asserted with an $r$-dependent cycle structure. His comments
 did not extend to a verification of Theorem~\ref{thm:main} or of the chain
 leading to it, and responsibility for all statements in this paper,
