@@ -194,18 +194,39 @@ The number of diagonal usable pairs $\{3p, 3p+1\}$, $p \equiv 1 \pmod 4$,
 contained in $B(m)$ is at least $(2^m - 13)/12$.  \status{PROVED}
 \end{lemma}
 
-\begin{definition}[Rung hypothesis (H1)]\label{def:h1}
-For every $p \equiv 1 \pmod 4$, $p \ge 5$, and every $C \ge 0$ there is
-$m^*(p, C)$ such that for every $m \ge m^*(p, C)$ and every
-$D \subseteq B(m)$ with $|D| \le C$, the theory
-$\Rung(3p, 3p+1; 2^m, D)$ is inconsistent.
+\begin{definition}[Rung hypothesis (H1$'$)]\label{def:h1}
+For every $C \ge 0$ there exists $x_0(C)$ such that for every
+$p \equiv 1 \pmod 4$ with $3p \ge x_0(C)$ there is $m^*(p, C)$ with
+$\Rung(3p, 3p+1; 2^m, D)$ inconsistent whenever $m \ge m^*(p, C)$ and
+$D \subseteq B(m)$ with $|D| \le C$.  Under
+Hypothesis~\ref{hyp:n3grow} one may take $x_0(C) = \max\{11,\, 4C+5\}$
+(then $|D| \le C < \lfloor (3p-1)/4 \rfloor$).
 \end{definition}
 
+\begin{remark}[Why not the fixed-$p$ form]\label{rem:h1prime}
+The stronger statement ``for every \emph{fixed} $p$ and every $C$''
+(the original H1 of notes/52 \S1.4) does \emph{not} follow from
+Hypothesis~\ref{hyp:n3grow}, which is robust only below the dust
+threshold $\lfloor (x-1)/4 \rfloor$ at $x = 3p$ --- and it is in fact
+\emph{machine-refuted} at $p = 5$, $C = 3$: the pair $\{15,16\}$ admits
+3-puncture escapes at every dyadic scale tested (e174, notes/74).  All
+uses below consume only (H1$'$).
+\end{remark}
+
 \begin{theorem}[B1]\label{thm:b1}
-Assume \emph{(H1)}.  If $T \subseteq \Z^+$ has infinitely many $C_0$-clean
+Assume \emph{(H1$'$)}.  If $T \subseteq \Z^+$ has infinitely many $C_0$-clean
 dyadic blocks for some constant $C_0$, then $T$ is not 3-permutable.  No
-hypothesis on the partner is used.  \status{PROVED modulo (H1)}
+hypothesis on the partner is used.  \status{PROVED modulo (H1$'$)}
 \end{theorem}
+
+\noindent\emph{Pair-extraction step (patched; notes/74 \S I.4): choose a
+clean scale $m_0$ with $2^{m_0} \ge \max\{12C_0+25,\ x_0(C_0)\}$.  By
+Lemma~\ref{lem:diagdense}, $B(m_0)$ contains $\ge (2^{m_0}-13)/12 \ge
+C_0+1 > C_0$ pairwise-disjoint diagonal usable pairs; the $\le C_0$ dust
+values puncture at most $C_0$ of them, so some pair
+$\{3p, 3p+1\} \subseteq T$ survives the dust, and $3p > 2^{m_0} \ge
+x_0(C_0)$ puts it inside (H1$'$)'s range.  Steps 2--3 of notes/52 \S3.1
+then run verbatim with (H1$'$) in place of H1.}
 
 \begin{theorem}[B1$_0$ --- zero-dust bridge, unconditional]\label{cor:b1zero}
 No 3-permutable set contains infinitely many complete dyadic blocks.
@@ -213,7 +234,7 @@ No 3-permutable set contains infinitely many complete dyadic blocks.
 \end{theorem}
 
 \noindent\emph{Direct proof (from Lemmas~\ref{lem:pin},
-\ref{lem:diagdense} and Theorem~\ref{thm:c3p} only; no (H1)): from one
+\ref{lem:diagdense} and Theorem~\ref{thm:c3p} only; no (H1$'$)): from one
 complete block extract a diagonal pair $\{3p, 3p+1\}$, $p \equiv 1
 \pmod 4$ (Lemma~\ref{lem:diagdense}); Lemma~\ref{lem:pin} at $C = 0$
 makes $\Rung(3p, 3p+1; 2^m, \emptyset)$ consistent for cofinitely many
@@ -225,7 +246,7 @@ Theorem~\ref{thm:b1} is \emph{not} consumed: B1$_0$ is the standalone
 unconditional statement that the chart argument of \S\ref{sec:chart}
 rests on.}
 
-The general-$C$ case of (H1) is the first open input:
+The general-$C$ case of (H1$'$) is the first open input:
 
 \begin{hypothesis}[N3-GROW, the $\ge$-side (N3-b)]\label{hyp:n3grow}
 For every odd $x \ge 11$, all large $M$, and every puncture set $D$ with
@@ -395,9 +416,13 @@ Then no partition of\, $\Z^+$ into two sets has both parts 3-permutable.
 
 \begin{proof}[Proof shape]
 By Proposition~\ref{prop:n4}, Case 1 or Case 2.  Case 1 dies by
-Lemma~\ref{lem:pin} + Theorem~\ref{thm:b1}, whose hypothesis (H1) is
-Theorem~\ref{thm:c3p} at $C = 0$ plus Hypothesis~\ref{hyp:n3grow} at
-$C > 0$.  In Case 2, Hypothesis~\ref{hyp:n6a} closes the coupled core at
+Lemma~\ref{lem:pin} + Theorem~\ref{thm:b1}, whose hypothesis (H1$'$)
+follows from Theorem~\ref{thm:c3p} at $C = 0$ (where $x_0(0) = 11$
+suffices) plus Hypothesis~\ref{hyp:n3grow} at $C > 0$ with
+$x_0(C) = \max\{11, 4C+5\}$, so that $|D| \le C < \lfloor (3p-1)/4
+\rfloor$ for every pair the patched extraction step of
+Theorem~\ref{thm:b1} produces.  In Case 2, Hypothesis~\ref{hyp:n6a}
+closes the coupled core at
 every large anchor; Theorem~\ref{thm:ttel} forces the infinite disjoint
 fresh-payment system; Hypothesis~\ref{hyp:afford} caps supply below it.
 \end{proof}
@@ -411,7 +436,7 @@ fresh-payment system; Hypothesis~\ref{hyp:afford} caps supply below it.
           |                        |
    PIN [P]  DIAG-DENSE [P]   CI(m) core: skeleton [P]
           \   |                machine x8 scales [M]
-           B1 [P mod H1]         |    ... Hyp N6a [GAP]
+           B1 [P mod H1']        |    ... Hyp N6a [GAP]
           /        \             |
   C3(p) [P]     Hyp N3-GROW    T-TEL'' demand [P mod N6a]
  (Z/D/E(p)/P     (N3-b) [GAP]    |
