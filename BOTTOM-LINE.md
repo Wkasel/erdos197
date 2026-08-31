@@ -61,7 +61,8 @@ only conditionally dead via the Q-ODD gates).
 - `reproduce2.sh` (127 s): C3(p) ×3, independent solver ×3, sharp
   boundaries, Lemma Q chart + B1₀ machine layer, Geneson scan.
 - Grand-assembly spot-checks: independent reconstructions in the
-  session scratchpad, results tabled in STATUS.md (final section);
+  session scratchpad, results tabled in STATUS.md (final section) and banked as
+  experiments/e190_ga_verify_{desk,spiral,cmin}.py;
   the S1 spiral walker at N = 600/222 and the from-scratch CMIN
   encoder are ~100-line self-contained scripts re-derivable from
   the theorem statements in notes/84 §1 and notes/85 §0.
