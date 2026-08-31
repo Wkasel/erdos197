@@ -2,7 +2,7 @@
 # reproduce.sh -- one-shot reproducibility package (AUDIT A4) for
 #
 #   "S_A = union of even dyadic blocks (2^{k-1}, 2^k] is not 3-permutable"
-#   (paper/main.tex: thm:chunk -> thm:ogred -> thm:c3core -> thm:main)
+#   (paper/main.tex: thm:ogred -> thm:c3core -> thm:main)
 #
 # Five verification steps, each ending in an explicit PASS/FAIL line:
 #
@@ -19,8 +19,8 @@
 #           transitivity, SAT models fully validated):
 #           C3 UNSAT at M = 128, 512;  SAT controls at M = 132, 516.
 #   step 4  DRAT certificates: RE-EMIT both C3-UNSAT certificates from
-#           scratch via CaDiCaL proof logging (pysat Cadical195,
-#           with_proof=True), clause-audit the CNFs from disk, verify
+#           scratch via CaDiCaL proof logging through pysat Cadical153
+#           (with_proof=True), clause-audit the CNFs from disk, verify
 #           the proofs with the independent drat-trim checker (vendored
 #           C source, built here), refresh data/certs/*.gz archives.
 #   step 5  e96 reduction checks: gadget boundary arithmetic, the chunk
