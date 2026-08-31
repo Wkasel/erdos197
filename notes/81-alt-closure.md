@@ -273,8 +273,8 @@ the orbit censor tolerates them.
 | F = 64, u₀ = 64, HSPLIT mod 4+8 | **UNSAT** | 30 |
 | F = 64, hor = 2048 (scale control) | **UNSAT** | 13 |
 | F = 64, mod-4-only HSPLIT (attribution) | **UNSAT** | 28 |
-| F = 12, u₀ = 32, HSPLIT mod 4+8 | (in flight) | — |
-| F = 12, mod-4-only (attribution) | (in flight) | — |
+| F = 12, u₀ = 32, HSPLIT mod 4+8 | TIMEOUT (undecided) | 7200 |
+| F = 12, mod-4-only (attribution) | TIMEOUT (undecided) | 7200 |
 
 Reading (F = 64 rows), **as corrected by the external review
 (notes/88 item 1; the original reading below is RETRACTED)**: the
@@ -303,3 +303,31 @@ valid pair" — is UNAFFECTED and stands [PROVED]; its
 applicability hypothesis on this corner is explicitly OPEN.  The
 weak-censor cells decide whether GAP-AFFORD‴-SPLIT has ANY finite
 inhabitant at these horizons — nothing more.
+
+## 4. Close-out (weak-censor rows landed; front hands off)
+
+The F = 12 cells ran their full 7200 s budgets on pods main and
+sprint-D and returned **TIMEOUT — genuinely undecided**, at BOTH
+HSPLIT strengths (mod 4+8 and mod-4-only).  This matches the e185
+partS5ALT weak-censor boundary exactly (the F = 12 run ≥ 2 cells
+timed out there too): F = 12 sits at the solver's decision
+frontier for every corner-family variant tried.  Recorded as
+boundary data, no verdict claimed in either direction; the cells
+are duplicated (independent replication, longer budgets) in the
+notes/83 C1/C2 program, which owns the weak-censor follow-up.
+
+Final state of this front (everything else is in notes/82/88/89):
+
+- Lemma Q / ALT-DEAD / HSPLIT: verified adversarially (§2, ALL
+  PASS incl. the Geneson Λ-scan 0/196 scales) — [PROVED], with
+  the applicability hypothesis on the SPLIT corner explicitly
+  OPEN (notes/89 §5).
+- Machine record: data/e186_altclosure.json — partQVERIFY,
+  partGENESON, partLATRUNG/JOINT/SPARSE (the measured complement:
+  exact touch-the-class law; majority-side punctured-rung siege
+  provably void), partHSPLIT (7 rows: UNSAT ×3 at F = 64 per the
+  corrected §3 reading; TIMEOUT ×2 at F = 12; + altw
+  HSPLIT-compatibility).
+- Residue: GAP-AFFORD‴-SPLIT, owned by notes/83; probability held
+  at the notes/88-remediated NO ≈ 95 % (the F = 12 TIMEOUTs are
+  boundary rows, not movement).

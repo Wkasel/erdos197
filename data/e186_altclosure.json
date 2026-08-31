@@ -1833,6 +1833,28 @@
    "k8": true,
    "verdict": "UNSAT",
    "secs": 19.0
+  },
+  {
+   "part": "hsplit",
+   "hor": 4096,
+   "D": 2,
+   "F": 12,
+   "u0": 32,
+   "k8": true,
+   "verdict": "TIMEOUT",
+   "secs": 7200.7,
+   "pod": "main"
+  },
+  {
+   "part": "hsplit",
+   "hor": 4096,
+   "D": 2,
+   "F": 12,
+   "u0": 32,
+   "k8": false,
+   "verdict": "TIMEOUT",
+   "secs": 7200.7,
+   "pod": "sprint-D"
   }
  ],
  "altw_hsplit_compat": {

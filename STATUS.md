@@ -2183,9 +2183,11 @@ kill the entire realized YES-space at ω; every corner witness ever
 found is a lattice coloring); five-front spot-verification at fresh
 scales found zero breaks.  Held back from more: the SPLIT residue
 is a coloring-class that provably EXISTS (altw, mod-3 variants) and
-its supply cap has no proof strategy; the F = 12 cells could return
-SAT (a first corner-certified inhabitant would be genuine YES-side
-evidence); review remediation showed two finite-to-ω overclaims
+its supply cap has no proof strategy; the F = 12 HSPLIT cells
+returned TIMEOUT at full 7200 s budgets (both mod-4+8 and
+mod-4-only, e186 partHSPLIT — the weak-censor decision boundary
+again, undecided in either direction; notes/83 C1/C2 own the
+follow-up); review remediation showed two finite-to-ω overclaims
 this same week — epistemic humility tax.  Composition of the 5 %:
 ≈ 3 % some diffuse split coloring defeats every censor and affords
 forever (YES), ≈ 2 % an unmodeled break in the machine-schema layer.
