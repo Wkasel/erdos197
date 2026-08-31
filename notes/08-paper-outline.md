@@ -1,3 +1,11 @@
+> **SUPERSEDED — TWO LISTED "RESULTS" KNOWN FALSE AS STATED.**
+> Item 2 (balanced-placement law, symmetric form) is false —
+> corrected asymmetric version in paper/main.tex lem:balance (see
+> notes/04 banner).  Item 8 (Team-B reduction S_B = {1,2} ∪ 2·S_A)
+> is false — corrected in notes/11 §CORRECTION.  The outline
+> itself was superseded by the actual paper (paper/main.tex).
+> (Review remediation notes/88 item 4.)
+
 # Paper draft outline: "Structural rigidity in the Erdős–Graham two-set permutation problem"
 
 Target: arXiv math.CO + submission to a combinatorics journal; also erdosproblems.com forum comment on #197.

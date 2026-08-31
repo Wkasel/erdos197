@@ -1,3 +1,14 @@
+> **SUPERSEDED — KNOWN FALSE AS STATED.**  The "Team B reduces to
+> Team A" identity below, S_B = {1, 2} ∪ 2·S_A, is FALSE: 2·S_A
+> gives only the even values of S_B's blocks.  Corrected in
+> notes/11 §CORRECTION (S_B = {1} ∪ odd-indexed blocks, a shifted
+> copy needing its own parallel construction — no free ride), and
+> the "S_A template ⇒ S_B ⇒ #197 = YES" chain riding on it is
+> void.  Moreover the S_A YES-target itself is now closed: S_A is
+> PROVEN not 3-permutable (paper/main.tex thm:main; STATUS.md
+> "Bottom line").  The bug-fix inventory and fatal-zone results
+> below stand.  (Review remediation notes/88 item 4.)
+
 # Session 2: bug fix + corrected landscape (2026-08-24)
 
 ## Critical bug found and fixed

@@ -1,3 +1,15 @@
+> **SUPERSEDED — THE FRAGILITY INTERPRETATION IS WITHDRAWN
+> (KNOWN OVERCLAIMED AS STATED).**  notes/14: radius-1 robustness
+> fails generically in 3-AP-arrangement systems (including
+> settings with known infinite constructions), so item 3's
+> "fragility theorem" consequences — "all
+> pumping-by-approximation is dead", "rules out Lipschitz-like
+> rules" — are NOT valid inferences about #197.  Even the weaker
+> Lipschitz statement was later demoted to a recorded observation
+> (paper fix, commit 59655a9).  The SAT/UNSAT rows themselves
+> (selfsim-1024 SAT, witness-fixed 4096 UNSAT) stand as data.
+> (Review remediation notes/88 item 4.)
+
 # Fragility and the 4096 endgame (2026-08-24 late night)
 
 ## Established this stretch

@@ -1,3 +1,12 @@
+> **SUPERSEDED IN PART — ONE PROVEN-LIST ITEM KNOWN FALSE AS
+> STATED.**  The "PROVEN (hand)" list below includes
+> "Balanced-placement law + record corollary (notes/04)" — the
+> symmetric balance bound is FALSE as stated there; the corrected
+> asymmetric version is paper/main.tex lem:balance (see the
+> notes/04 banner).  Lemma R, the orbit lemma, the round-robin
+> marginality, and the contiguous-block descent stand.  (Review
+> remediation notes/88 item 4.)
+
 # Lemma R (proved, human-checkable)
 
 **Lemma R.** For W ≥ 5 there is no arrangement of [1, W] that (i) contains no monotone 3-term AP and (ii) places w before u whenever u ≥ 2w ("ratio-2 pairs ascend"). More generally any set containing {k, 2k, 3k, 5k} admits no such arrangement.

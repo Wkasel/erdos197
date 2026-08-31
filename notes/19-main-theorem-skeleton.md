@@ -1,3 +1,11 @@
+> **SUPERSEDED — THE TARGET THEOREM IS KNOWN FALSE.**  The goal
+> below ("S_A is 3-permutable") is refuted: S_A is PROVEN not
+> 3-permutable (paper/main.tex thm:main; STATUS.md "Bottom
+> line").  The L1 mechanism sketch ("removing the defect class
+> breaks all cores") was independently refuted by notes/18 §0 (no
+> thin-class removal restores feasibility at M ≥ 32).  (Review
+> remediation notes/88 item 4.)
+
 # Main theorem skeleton (the YES-program endgame)
 
 ## Target

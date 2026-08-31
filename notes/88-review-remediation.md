@@ -138,3 +138,30 @@ directly on proved inputs.
 Repointed: notes/82 §2.1 step (iii) and paper2/main.tex (lem:q's
 proof + the zero-dust node in the dependency graph) now cite
 Theorem B1₀ instead of "B1 at C₀ = 0".
+
+---
+
+## Item 4 — quarantine banners (review items 4, 5): notes/01-30
+## swept for claims contradicted by later results
+
+Banners added ("SUPERSEDED — KNOWN FALSE AS STATED" or scoped
+variant, each with a pointer to the superseding result):
+
+| note | false/stale content | superseded by |
+|---|---|---|
+| 04-balance-law | symmetric balance bound \|H−L\| ≤ \|S^c ∩ (v,2v)\| + O(1) — downward completions land in (0, v) | paper/main.tex lem:balance (asymmetric; Geneson correction) |
+| 05-lemma-R-and-status | PROVEN list includes the notes/04 balance law | same |
+| 06-corrected-landscape | S_B = {1,2} ∪ 2·S_A identity + the "⇒ #197 = YES" chain on it | notes/11 §CORRECTION; paper thm:main |
+| 08-paper-outline | outline items 2 (symmetric balance law) and 8 (S_B identity) | lem:balance; notes/11 |
+| 12-fragility-and-endgame | "universal fragility" anti-pumping/anti-Lipschitz inferences | notes/14 (withdrawal); paper fix 59655a9 |
+| 16-extension-lemma-attempt | conditional "S_A permutable ⇒ #197 = YES" — hypotheses now known to fail | paper thm:main |
+| 17-identity-web | defect law D = {v ≡ 2 mod 2^{k/2}}, O(1)-defect conjecture, defect-removal repair | notes/18 §0 (refutation) |
+| 19-main-theorem-skeleton | target "S_A is 3-permutable" + L1 defect-removal mechanism | paper thm:main; notes/18 §0 |
+
+Swept clean (no false claims found; proved content stands or notes
+self-correct inline): 01, 02, 03, 07, 09 (inline corrected
+assessment), 10, 11 (inline §CORRECTION), 13, 14, 15, 18 (is
+itself the refutation), 20–30 (technical/NO-direction notes;
+notes/30 is a draft with honest per-step gap tags, superseded by
+notes/33 as marked in STATUS).  MORNING-REPORT.md already carries
+a historical-snapshot banner.

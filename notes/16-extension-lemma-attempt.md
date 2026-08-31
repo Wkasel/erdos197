@@ -1,3 +1,13 @@
+> **SUPERSEDED — THE TARGET OF THE CONDITIONAL THEOREM IS KNOWN
+> FALSE.**  The conditional extension theorem below concludes
+> "S_A is permutable … #197 = YES" from Σ/P-satisfiability
+> hypotheses.  S_A is now PROVEN not 3-permutable (paper
+> thm:main), so those hypotheses fail from some scale on; the
+> constraint calculus retains descriptive value only.  The final
+> YES-inference also rode the false S_B identity (see the notes/06
+> banner and notes/11 §CORRECTION).  (Review remediation notes/88
+> item 4.)
+
 # The extension lemma: full constraint calculus, a derived invariant, and a conditional proof (2026-08-24)
 
 Task: analyze the crux question of the viability hierarchy (notes/14) — does State(X)

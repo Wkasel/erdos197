@@ -1,3 +1,15 @@
+> **SUPERSEDED — THE DEFECT LAW / REPAIR CONJECTURE IS KNOWN
+> FALSE AS STATED.**  The working conjecture below (defect class
+> D = {v ≡ 2 mod 2^{k/2}}, O(1)-defect law, defect-removal
+> restoring feasibility) was refuted by notes/18 §0: B ∖ D with
+> pre-placed zone is UNSAT at M = 32/64/128; no thin-class removal
+> works at M ≥ 32; the minimal repair at M = 32 is {34, 36, 61},
+> unrelated to D; the e50/e51 ladders escape by
+> interleaving/reservoirs, not by the defect law.  The wider
+> YES-target (S_A permutable) is also closed — S_A is proven NOT
+> 3-permutable (paper thm:main).  (Review remediation notes/88
+> item 4.)
+
 # The HS identity web (2026-08-24 afternoon)
 
 From the Hirose–Saito deep-dive (notes/15): finite-ray versions of their

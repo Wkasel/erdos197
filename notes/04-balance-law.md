@@ -1,3 +1,13 @@
+> **SUPERSEDED — KNOWN FALSE AS STATED.**  The symmetric bound
+> below ("Balance law: |H(v) − L(v)| ≤ |S^c ∩ (v, 2v)| + O(1)") is
+> FALSE: the downward law's completions 2v − u land in (0, v), so
+> that direction is bounded by |S^c ∩ (0, v)|, a DIFFERENT range —
+> no symmetric single-range bound holds.  Corrected asymmetric
+> version: paper/main.tex, Lemma "Balanced placement" (lem:balance;
+> misstatement caught by J. Geneson).  The upward law (*) and the
+> record special case are correct as stated.  (Review remediation
+> notes/88 item 4.)
+
 # The balanced-placement law (new, proved)
 
 Let S be permutable with 3-AP-free permutation π. Consider the moment a value v is placed. Let
