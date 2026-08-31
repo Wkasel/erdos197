@@ -18,18 +18,8 @@
 \newcommand{\OG}{\mathrm{OG}}
 
 \title{Structural rigidity in the Erd\H{o}s--Graham two-set permutation problem}
-\author{William Kasel\thanks{This paper was written with extensive machine
-assistance: the search for the gadget, the core and the residue phenomenon
-used the SAT solvers CaDiCaL and OR-Tools CP-SAT, and the drafting and the
-exploration of proof strategies used the language model Claude (Anthropic).
-The mathematical content is the author's responsibility. The arguments of
-Sections~\ref{sec:chunk}, \ref{sec:og} and~\ref{sec:c3} --- the chain
-carrying the main theorem --- are human-readable and were checked line by
-line by the author; solver output is relied on only where a statement is
-explicitly marked machine-checked. Code, certificates, and a one-command
-reproduction kit are in the accompanying repository (see Data
-Availability).}}
-\date{Draft: August 2026}
+\author{William Kasel}
+\date{August 2026}
 
 \begin{document}
 \maketitle
@@ -120,7 +110,7 @@ removed} (here $m = M_{k-1}$ in his notation, re-cased to avoid a collision
 with our scale parameter $M$) and only finitely many octaves per stage. Our
 main theorem shows the full dyadic blocks fail, and the mechanism of failure
 --- the attack of the values $15$ and $16$ on every block's bottom sliver
-(Section~\ref{sec:negative} onward) --- is concentrated in exactly the
+(Sections~\ref{sec:og}--\ref{sec:c3}) --- is concentrated in exactly the
 region Geneson's construction excises, so the two results are consistent
 and their mechanisms align. (We do not claim that
 removing precisely those slivers is necessary or sufficient; his
@@ -169,24 +159,15 @@ progressions. Consequently the dyadic partition does not witness a positive
 answer to problem \#197.}
 \end{quote}
 
-The proof has an unusual architecture, which we believe is of independent
-interest. First, an exact \emph{chunk reduction} (Theorem~\ref{thm:chunk})
-translates the existence of an admissible permutation into the existence of
-a stage function with finite fibres satisfying two checkable conditions; in
-these coordinates the theorem of \cite{DEGS77} (in its monotone form) has a
-short proof, and self-similarity of $\SA$ under $v \mapsto 4v$ becomes
-an induction engine. Second, a sequence of machine-assisted eliminations
-(Sections~\ref{sec:negative}--\ref{sec:ladder}) shrinks the search space of
-candidate stage functions until a single finite obstruction emerges: an
-\emph{order gadget} $\OG(M)$ on the interval $(M, 2M]$, fifteen precedence
-axioms induced by the two values $15$ and $16$, whose infeasibility at
-infinitely many dyadic scales implies the main theorem unconditionally
-(Theorem~\ref{thm:ogred}). We stress that Theorem~\ref{thm:ogred} is
-proved directly on a hypothetical permutation and is logically independent
-of the chunk calculus: the chunk coordinates served as the discovery
-instrument, and give an alternative route to the same reduction
-(Remark~\ref{rem:ogchunk}), but the proof chain of the main theorem is
-just Theorem~\ref{thm:ogred} plus Theorem~\ref{thm:c3core}. Third --- and this is the mathematical heart --- we
+The proof chain is short and we state it first, since the paper contains a
+good deal of surrounding material that is not part of it. It has exactly
+two links. The first is a reduction (Theorem~\ref{thm:ogred}): an
+\emph{order gadget} $\OG(M)$ on the interval $(M, 2M]$ --- AP-freeness plus
+fifteen precedence axioms induced by the two values $15$ and $16$ --- whose
+infeasibility at infinitely many dyadic scales implies the main theorem
+unconditionally. It is proved directly on a hypothetical permutation, in
+three paragraphs, and uses nothing else in the paper.
+The second --- and this is the mathematical heart --- we
 prove by hand that already a three-axiom core of $\OG(M)$ is inconsistent
 with admissibility for every $M \equiv 0 \pmod 8$ (Theorem~\ref{thm:c3core}),
 via a toolkit of ladder lemmas whose single appeal to the residue of $M$
@@ -202,13 +183,32 @@ complementary residues is not proved here, and the main theorem does not
 require one),
 matching the machine's phase diagram exactly.
 
+The paper is organised so that this chain stands alone.
+Section~\ref{sec:general} collects four obstructions that constrain
+admissible permutations of any set --- an orbit obstruction, an asymmetric
+balance law, a ratio-ascent lemma and a partition-rigidity lemma --- and
+Section~\ref{sec:contig} proves that no admissible permutation of $\SA$ can
+play all sufficiently large dyadic blocks as contiguous runs. Neither is
+used later; both are included because they are the general facts we know
+about the problem, and the last of them motivates the dyadic candidate.
+Sections~\ref{sec:og} and~\ref{sec:c3} are the proof.
+Section~\ref{sec:data} separates the three roles machine work plays here
+and records what is and is not certified. Two appendices hold the rest:
+Appendix~\ref{sec:chunk} develops the \emph{chunk calculus}, an exact
+reformulation of admissibility in terms of stage functions, which was the
+coordinate system of the search and which gives a second route to the
+reduction (Remark~\ref{rem:ogchunk}); and
+Appendix~\ref{sec:compobs} records the finite-scale computations and the
+conjectures they suggest. Nothing in either appendix is used in the proof
+of Theorem~\ref{thm:main}.
+
 A word on methodology. The elimination phase and the discovery of the
 gadget, the three-axiom core, and the residue phenomenon were carried out
 with large-scale SAT-solver experimentation (CaDiCaL, OR-Tools). The
 load-bearing negative claims --- the infeasibility of the order gadget and
 of its three-axiom core --- were cross-validated by independently written
 encodings and by more than one solver; the auxiliary sweeps reported in
-Sections~\ref{sec:negative}--\ref{sec:ladder} were not, and are flagged
+Appendix~\ref{sec:compobs} were not, and are flagged
 where they occur. The
 final proof chain, however, does not rest on any solver verdict: the
 reductions and the C3 core theorem are human-readable arguments. They are
@@ -303,7 +303,14 @@ of the permutation rules that out, so the notion of ``monotone $3$-AP''
 agrees with ours.)
 \end{remark}
 
-\section{The orbit obstruction}
+\section{General obstructions}\label{sec:general}
+
+This section collects four restrictions that every admissible permutation
+of every set must obey. They are independent of the dyadic partition and
+are used freely later; the first is also the engine of
+Lemma~\ref{lem:ray}.
+
+\subsection{The orbit obstruction}
 
 \begin{lemma}[Orbit obstruction]\label{lem:orbit}
 Let $S$ be permutable and $F \subseteq S$ finite. There is no infinite sequence
@@ -324,7 +331,7 @@ an infinite strictly decreasing sequence of positions --- impossible.
 
 Taking $S = \Z^+$, $F = \{1,2\}$ recovers the theorem of Davis--Entringer--Graham--Simmons (more precisely its monotone form; \cite{DEGS77} in fact proves that an \emph{increasing} 3-AP always occurs).
 
-\section{The balance law}
+\subsection{The balance law}
 
 \begin{lemma}[Balanced placement]\label{lem:balance}
 Let $S$ be permutable via $\pi$, and consider the moment a value $v$ is placed.
@@ -356,7 +363,7 @@ When a left-to-right maximum $v$ is placed, at most $|S^c \cap (v,2v)|$
 smaller values are already placed (apply the first inequality with $H = 0$).
 \end{corollary}
 
-\section{Two absorption lemmas}
+\subsection{Two absorption lemmas}
 
 \begin{lemma}[Ratio-ascent obstruction]\label{lem:R}
 Let $S \supseteq \{k, 2k, 3k, 5k\}$. No 3-AP-free arrangement of $S$ places $w$
@@ -394,7 +401,40 @@ $\beta$'s to be $1$; since $\zeta \equiv \alpha$ at that bit, $\zeta$'s bit is
 $0$, so $\mathrm{rev}(\zeta) < \mathrm{rev}(\beta)$ strictly.
 \end{proof}
 
-\section{Contiguous blocks cannot work}
+\subsection{Partition rigidity}
+
+\begin{lemma}[Ray piercing]\label{lem:ray}
+Let $\Z^+ = A \sqcup B$ with both parts permutable. Then for every $a \in A$ and
+every $d \ge 1$, the set $\{k \ge 0 : a + 2^k d \in B\}$ is infinite, and
+symmetrically with $A$ and $B$ exchanged.
+\end{lemma}
+
+\begin{proof}
+If $a + 2^k d \in A$ for all $k \ge k_0$, the values $u_j = a + 2^{k_0+j} d$
+form an infinite orbit $u_{j+1} = 2u_j - a$ inside $A$ with $F = \{a\}$,
+contradicting Lemma~\ref{lem:orbit}.
+\end{proof}
+
+Every affine doubling ray based in one team therefore meets the opposite
+team infinitely often (the precise content of the lemma --- it does not
+assert literal alternation); partitions
+such as ``even 2-adic valuation vs.\ odd'' die immediately, and viable partitions
+are forced toward dyadic-interval alternation, motivating the canonical
+candidate $\SA$.
+
+\begin{remark}[Class-sink algebra]\label{rem:classsink}
+One algebraic fact about attacks within a residue class is worth recording,
+since it explains why powers of two are the natural moduli here. Fix
+$m = 2^k$ and a target class $r$. The attacker map $\varphi_r(b) = 2b - r$
+on $\Z/m\Z$ is conjugate to doubling under $b \mapsto b - r$; hence every
+orbit eventually reaches the unique fixed point $r$. For a general modulus
+$m$ the same conjugacy shows that the cycle structure of $\varphi_r$ does
+not depend on $r$, so no class is distinguished.\footnote{We thank
+Jesse Geneson for correcting the general-$m$ form of this statement; an
+earlier version asserted an $r$-dependent cycle structure.}
+\end{remark}
+
+\section{Contiguous blocks cannot work}\label{sec:contig}
 
 \begin{definition}
 The \emph{zone system} $Z(M)$: arrange the interval $(M, 2M]$ so that (a) no
@@ -448,342 +488,13 @@ $B_{2k_0}, B_{2k_0+2}, B_{2k_0+4}, \dots$ form an infinite strictly
 decreasing sequence of positive integers --- impossible.
 \end{proof}
 
-\section{Local realizability and the tower characterization}
-
-\begin{definition}[Pure-complete systems]
-For an $\SA$-block top $X$, the \emph{pure-complete-$X$ system} asks for an
-arrangement of $\SA \cap [1, X]$ with no monotone 3-AP. (All completions of
-in-range pairs lie in $(X, 2X]$, an odd block, or inside the range; hence this
-is exactly the restriction of the infinite problem.)
-\end{definition}
-
-\begin{lemma}[Horizon collapse]
-Deleting any set of values from a valid arrangement preserves validity; hence
-auxiliary values above $X$ never aid the pure-complete-$X$ system.
-\end{lemma}
-
-\begin{theorem}[Tower characterization]
-$\SA$ is permutable iff there exists $B\colon \N \to \N$ such that for every
-block top $X$ the system [pure-complete-$X$ and every $v$ has at most $B(v)$
-predecessors] is satisfiable.
-\end{theorem}
-
-\begin{proof}
-($\Rightarrow$) restrict a permutation and take $B(v)$ its positions.
-($\Leftarrow$) the restriction sets are finite and nested; K\H{o}nig's lemma
-yields a consistent tower whose limit has each $v$ preceded by at most $B(v)$
-values, hence order type $\omega$; all constraints are finitary and inherited.
-\end{proof}
-
-Computationally: pure-complete-$X$ is satisfiable for $X \le 1024$ (machine
-certificates), and the completion-pressure function
-$g_X(L) = \min \max_{v \le L} \pos(v)$ satisfies $g_{256}(64) = 153$
-(optimal): eighty-seven percent of the block $(128,256]$ must precede the
-completion of $[1,64]$, with the residue concentrated in a single residue
-class modulo 8 --- the reservoir structure that any construction must
-implement. Divergence of $g_X(L)$ in $X$ for fixed $L$ would prove
-non-permutability directly; our measurements did not exhibit divergence
-(the subset-tolerance is near-total), and this route was abandoned in favour
-of the one taken in Sections~\ref{sec:og}--\ref{sec:c3}. There is no
-tension with Theorem~\ref{thm:main}: stabilization of $g_X(L)$ for each
-fixed $L$ does not by itself produce a single bound $B$ as required by the
-tower characterization, because the minimizing arrangements vary with $L$.
-
-\subsection{Self-similar witnesses, fragility, and pumping obstructions}
-
-Adding the exact scale-invariance $u \prec w \iff 4u \prec 4w$ to the
-pure-complete systems remains satisfiable at $X = 256$ and $X = 1024$
-(independently audited witnesses); however the audited $1024$-witness does not
-extend to a self-similar $4096$-arrangement (solver verdict, uncertified),
-so the self-similar tower also has dead branches.
-
-We also record a calibration fact: requiring, in addition, that the $\pm 1$
-neighbors (within the same block and team) of each forced completion also
-precede the pair's later element (``radius-1 robustness'') is infeasible in
-every setting we tested --- including plain intervals $[1, n]$ from $n = 8$.
-Radius-1 robustness therefore appears to be unachievable in three-AP
-arrangement problems generally, and cannot serve as a satisfiability
-criterion; in particular it does
-not discriminate between partitions, and pumping arguments must instead manage
-rounding drift on the thin family of far-pair constraints only. The
-radius-one experiments are \emph{evidence} against placement rules in which
-position varies slowly with value; we neither formalize such a class of
-rules here nor prove a theorem about it, and we draw no further inference
-from the observation.
-
-\section{Partition rigidity}
-
-\begin{lemma}[Ray piercing]\label{lem:ray}
-Let $\Z^+ = A \sqcup B$ with both parts permutable. Then for every $a \in A$ and
-every $d \ge 1$, the set $\{k \ge 0 : a + 2^k d \in B\}$ is infinite, and
-symmetrically with $A$ and $B$ exchanged.
-\end{lemma}
-
-\begin{proof}
-If $a + 2^k d \in A$ for all $k \ge k_0$, the values $u_j = a + 2^{k_0+j} d$
-form an infinite orbit $u_{j+1} = 2u_j - a$ inside $A$ with $F = \{a\}$,
-contradicting Lemma~\ref{lem:orbit}.
-\end{proof}
-
-Every affine doubling ray based in one team therefore meets the opposite
-team infinitely often (the precise content of the lemma --- it does not
-assert literal alternation); partitions
-such as ``even 2-adic valuation vs.\ odd'' die immediately, and viable partitions
-are forced toward dyadic-interval alternation, motivating the canonical
-candidate $\SA$.
-
-\begin{remark}[Class-sink algebra]\label{rem:classsink}
-One algebraic fact about attacks within a residue class is worth recording,
-since it explains why powers of two are the natural moduli here. Fix
-$m = 2^k$ and a target class $r$. The attacker map $\varphi_r(b) = 2b - r$
-on $\Z/m\Z$ is conjugate to doubling under $b \mapsto b - r$; hence every
-orbit eventually reaches the unique fixed point $r$. For a general modulus
-$m$ the same conjugacy shows that the cycle structure of $\varphi_r$ does
-not depend on $r$, so no class is distinguished.\footnote{We thank
-Jesse Geneson for correcting the general-$m$ form of this statement; an
-earlier version asserted an $r$-dependent cycle structure.}
-\end{remark}
-
-\section{The chunk reduction}\label{sec:chunk}
-
-Every permutation of $\SA$ of order type $\omega$ decomposes into consecutive
-finite segments (\emph{chunks}); conversely, a choice of finite fibers and
-internal orders assembles into such a permutation. The following exact
-reformulation is the coordinate system for the elimination phase
-(Sections~\ref{sec:negative}--\ref{sec:ladder}); as noted in the
-introduction, the reduction of Section~\ref{sec:og} is proved without it.
-
-\begin{definition}
-Let $S \subseteq \Z^+$ be infinite. A \emph{stage function} for $S$ is any
-$s\colon S \to \N$ with finite fibers.
-Given $s$ and a linear order on each fiber, let $T$ be the concatenation.
-\end{definition}
-
-\begin{theorem}[Chunk reduction; exact]\label{thm:chunk}
-$T$ avoids monotone $3$-term APs if and only if:
-\begin{enumerate}
-\item[(A)] no AP triple $(x,y,z)$, $z=2y-x$, in $S$ has strictly monotone
-stages ($s(x)<s(y)<s(z)$ or $s(z)<s(y)<s(x)$); and
-\item[(B)] each fiber order contains the \emph{forced pairs}
-\[
-\begin{array}{ll}
-s(x)<s(y)=s(z):\ z \prec y, &\quad s(z)<s(y)=s(x):\ x \prec y,\\
-s(x)=s(y)<s(z):\ y \prec x, &\quad s(y)=s(z)<s(x):\ y \prec z,
-\end{array}
-\]
-and is non-monotone on every within-fiber triple. (Triples whose endpoint
-stages lie on one side of the middle's are automatically safe.)
-\end{enumerate}
-Hence $S$ is $3$-permutable if and only if some stage function for $S$,
-together with a choice of fiber orders, satisfies
-(A) and (B). The fiber problems are finite and mutually independent given
-$s$. (Nothing in the statement or the proof uses any property of $S$; we
-apply it to $S = \SA$ and, in Theorem~\ref{thm:degs}, to $S = \Z^+$.)
-\end{theorem}
-
-\begin{proof}
-Along positions of $T$ the stage is non-decreasing, and within a stage the
-fiber order gives the positions. Suppose $T$ avoids monotone $3$-APs. If
-(A) failed at $(x,y,z)$ with $s(x)<s(y)<s(z)$, then $x,y,z$ occur in $T$ in
-that position order with $x<y<z$ --- an increasing $3$-AP (the case
-$s(z)<s(y)<s(x)$ gives a decreasing one). If a forced pair of (B) failed,
-say $s(x)<s(y)=s(z)$ with $y \prec z$ in their fiber, then $x, y, z$ occur
-in position order --- again an AP; the other three rows and the within-fiber
-non-monotonicity requirement are identical. Conversely, suppose (A) and (B)
-hold and let $(x,y,z)$, $z = 2y-x$, be placed monotonically in $T$, say
-$\pos(x)<\pos(y)<\pos(z)$ (the decreasing case is symmetric). Then
-$s(x) \le s(y) \le s(z)$. Strict inequalities throughout contradict (A);
-$s(x)=s(y)<s(z)$ puts $x \prec y$ in one fiber, contradicting the row
-$s(x)=s(y)<s(z) \Rightarrow y \prec x$ of (B); $s(x)<s(y)=s(z)$ puts
-$y \prec z$, contradicting $z \prec y$; and $s(x)=s(y)=s(z)$ is a monotone
-within-fiber triple, excluded by (B). Triples whose endpoint stages lie on
-one side of the middle's stage can never be placed monotonically, since the
-middle's position is then extremal among the three; this is the safety
-clause. The full case table over all stage patterns and fiber orders has
-additionally been machine-checked exhaustively
-(\texttt{e96\_reduction\_check.py}, part P2).
-\end{proof}
-
-\begin{lemma}[Normalization: running-max chunking]\label{lem:normal}
-Every $3$-AP-free permutation $\pi$ of $\SA$ (of order type $\omega$)
-admits a valid scheme --- a stage function with finite fibers satisfying
-(A)$\wedge$(B), whose concatenation is $\pi$ itself --- with
-$s(v) \ge \mathrm{block}(v)/2$ for every $v$.
-\end{lemma}
-
-\begin{proof}
-Set $s(v) = \max_{q \le \pos(v)} \mathrm{block}(\pi(q))/2$ (the running
-maximum of half-block-indices). Along positions $s$ is non-decreasing, so
-its fibers are consecutive segments of $\pi$ and the concatenation (with
-the fiber orders induced by $\pi$) is $\pi$; Theorem~\ref{thm:chunk} then
-gives (A)$\wedge$(B). Since $\mathrm{block}(v)/2$ enters the maximum at
-$v$'s own position, $s(v) \ge \mathrm{block}(v)/2$. Each fiber is finite:
-$\pi$ is onto $\SA$, so a value of block index $> 2\sigma$ occurs at some
-finite position, after which the running maximum exceeds $\sigma$.
-\end{proof}
-
-\noindent The point of Lemma~\ref{lem:normal} is that non-negative
-\emph{displacement} (next section) is a harmless normalization, not an
-automatic property: an arbitrary chunk decomposition can place a
-high-block value in an early chunk. Restrictions of normalized schemes
-stay normalized, which is what the divergence criterion below consumes.
-
-\begin{theorem}[DEGS via chunks]\label{thm:degs}
-$\Z^+$ itself is not $3$-permutable.
-\end{theorem}
-
-\begin{proof}
-Suppose $s\colon \Z^+ \to \N$ satisfies
-(A) with finite fibers and put $\sigma = s(1)$. For every $y$ with
-$s(y) > \sigma$, the triple $(1, y, 2y-1)$ forces $s(2y-1) \le s(y)$ by (A).
-The orbit $y_0,\, y_{i+1} = 2y_i - 1$ is strictly increasing; only finitely
-many of its members can have stage $\le \sigma$ (those fibers are finite),
-after which its stages are non-increasing, hence eventually confined to one
-finite fiber --- impossible for an infinite set.
-\end{proof}
-
-\noindent This recovers the Davis--Entringer--Graham--Simmons theorem (in its
-monotone form; \cite{DEGS77} proves the stronger increasing-3-AP statement)
-in the chunk coordinates and isolates what a permutable team must do: break every
-such reflected orbit out of the team. The dyadic team $\SA$ breaks
-single-reflector orbits in two steps (completions land in odd blocks); the
-question is whether the multi-scale accounting below can be survived.
-
-\begin{lemma}[Same block]\label{lem:sameblock}
-In every AP triple of $\SA$ the middle $y$ and top $z$ lie in the same even
-block. ($z<2y\le 2^{k+1}$ and block $k{+}1$ is odd.)
-\end{lemma}
-
-\begin{lemma}[Escape]\label{lem:escape}
-If $y \ge 3\cdot 4^{s-1}$ (top quarter of block $2s$) and $x \le 4^{s-1}$,
-then $2y-x > 4^{s}$: completions of (lower value, top-quarter value) pairs
-land in the odd block above --- out of team.
-\end{lemma}
-
-\begin{lemma}[Bottom-half characterization]\label{lem:bottomhalf}
-Deferring $D_k \subseteq$ block $k$ by a uniform delay (adding a constant to
-$s$ on $D_k$) creates no violation of condition (A) if
-$D_k \subseteq (2^{k-1}, 3\cdot 2^{k-2}]$: the witness midpoints
-$y=(x+z)/2$ of a bottom-half $z \in D_k$ against an $\SA$-value $x$ in a
-lower block (so $x \le 2^{k-2}$) satisfy
-$2^{k-2} < y \le 2^{k-1}$, i.e.\ lie in the odd block below. Conversely a
-deferred top-half $z$ has genuine in-team witnesses, forcing its witness
-midpoints (bottom-quarter values) to defer with it.
-\end{lemma}
-
-\section{The negative atlas}\label{sec:negative}
-
-\begin{theorem}[Block-granular death]\label{thm:blockgranular}
-No stage function whose fibers are unions of whole even blocks satisfies
-(A)$\wedge$(B).
-\end{theorem}
-
-\begin{proof}
-The fatal core $F_b$ (forced pairs into block
-$b$ from block $b{-}2$ below, plus block-$b$ triples) is UNSAT for $b=6$
-(machine, instant), and $v \mapsto 4v$ embeds $F_b$ into $F_{b+2}$: the map
-preserves $\SA$, sends block $j$ to block $j{+}2$, and preserves AP triples;
-UNSAT lifts to supersystems. It remains to see that a block-granular scheme
-has an \emph{ascending} fiber boundary above block $4$, i.e.\ some
-$b \ge 6$ with $s(B_{b-2}) < s(B_b)$ (this is what puts the forced pairs of
-$F_b$ into the system). If there were none, then
-$s(B_4) \ge s(B_6) \ge s(B_8) \ge \cdots$ would be a non-increasing
-sequence of natural numbers, hence eventually constant; infinitely many
-blocks would then share a single fiber, contradicting the finiteness of
-fibers.
-\end{proof}
-
-\begin{theorem}[$\times 4$ restriction; window death is permanent]
-\label{thm:restriction}
-For the window class $\{s : s(v)-\mathrm{block}(v)/2 \in [0,w]\}$:
-feasibility at horizon $4N$ implies feasibility at horizon $N$ (restrict
-along $v \mapsto 4v$ and shift stages by one). Consequently the machine
-verdicts below are permanent (hold at all larger horizons), and an infinite
-solution in a window class would imply feasibility at every finite horizon.
-\end{theorem}
-
-\noindent Machine atlas (CP-SAT and CDCL cross-checks; solver logs and
-witnesses in the repository, but no proof certificates for the negative
-verdicts): bottom-half relief of depth $1$ and depth $\le 2$ infeasible at
-$N=256$ (and $1024$); \textbf{window-$2$ infeasible at $N=1024$} (CP-SAT, 746s; independently CDCL/unary-ladder, 1760s) --- hence, by
-Theorem~\ref{thm:restriction}, infeasible at every horizon
-$\ge 1024$, so there is no infinite window-$2$ solution. (At the smaller
-horizon $N=256$ window~$2$ is still feasible, but only via whole-block
-merges, of minimum total displacement $41$; the merged skeleton is
-$C_s = 2^{s}\cdot[3\cdot 2^{s-2}, 2^{s}]$, the top-quarter multiples of
-$2^{s}$ --- precisely the set singled out by Lemma~\ref{lem:escape}.)
-
-\medskip
-This atlas leaves exactly one shape of candidate for a YES: stage functions
-with unbounded displacement (chunks mixing stragglers of unboundedly many
-blocks). Closing the remaining gap --- between
-Theorems~\ref{thm:blockgranular}/\ref{thm:restriction} and general
-finite-fiber schemes --- by the per-block deferral calculus of
-Lemma~\ref{lem:bottomhalf} was the state of the elimination phase before
-Section~\ref{sec:og}, where the gap is closed instead by the order-gadget
-route, which does not use the chunk calculus at all. The same analysis
-applies to $S_B$ by the evident mirror symmetry (checked by machine at
-$4096$).
-
-\section{The displacement ladder}\label{sec:ladder}
-
-For a stage function $s$ write $\delta(v) = s(v) - \mathrm{block}(v)/2$
-(\emph{displacement}); a scheme is \emph{normalized} if $\delta \ge 0$
-everywhere, which by Lemma~\ref{lem:normal} is no loss of generality for
-schemes induced by genuine permutations. Define
-\[
-L(m) \;=\; \min_{\text{normalized schemes at horizon } 4^m}\
-\max_{v \in \SA,\ v \le 16} \delta(v),
-\]
-the minimum over all normalized finite-fiber schemes satisfying
-(A)$\wedge$(B) at horizon $4^m$ (no bound on any other value's
-displacement); the maximum is over the ten values
-$\SA \cap [1,16] = \{3,4\} \cup \{9, \dots, 16\}$.
-
-\begin{proposition}[Ladder rungs; machine-checked]
-$L(3) \le 1$; \ $L(4) \ge 2$ (infeasibility of the cap $\delta \le 1$ on
-$\SA \cap [1,16]$ at $N=256$, verified independently by CP-SAT, 252s, and
-CDCL with a unary-ladder encoding, 15s); \ $L(5) = 3$ (lower bound: CDCL,
-2304s, a single run; upper bound: a window-3 witness at $N=1024$, 995s ---
-which also gives $L(4) \le 3$, since $L$ is non-decreasing in $m$).
-Moreover the minimal infeasible cap-coalition at $N=256$ is exactly
-$\{15, 16\}$ (deletion-minimal): every scheme has $\delta(15) \ge 2$ or
-$\delta(16) \ge 2$ --- the crowns of the two competing class towers
-($15 = 1111_2$, apex of the $\equiv -1$ skeleton; $16 = 10000_2$, the block
-top, apex of the $\equiv 0$ skeleton).
-\end{proposition}
-
-\begin{theorem}[Divergence criterion]\label{thm:divergence}
-If $L(m) \to \infty$ then $\SA$ is not $3$-permutable.
-\end{theorem}
-
-\begin{proof}
-An
-infinite valid permutation induces (Lemma~\ref{lem:normal}) a
-\emph{normalized} valid scheme, and by restriction a normalized valid
-scheme at every horizon $4^m$ (completions of values $\le 4^m$ that lie
-beyond the horizon fall in the odd block $(4^m, 2\cdot 4^m]$, out of
-team), and the ten displacements $\delta(v)$, $v \in \SA \cap [1,16]$,
-are constants of the infinite
-scheme. For $m$ with $L(m) > \max_{v \in \SA,\, v\le 16}\delta(v)$ this is a
-contradiction, by the exactness of Theorem~\ref{thm:chunk}.
-\end{proof}
-
-The conjectured growth $L(m) = m-2$ matches the window-death schedule
-(window $w$ dying at horizon $4^{w+3}$) and the observed per-block descent
-of displacement in minimal solutions ($\delta$ profile $(m{-}2, m{-}3,
-\dots, 1, 0)$ across blocks $4, 6, \dots, 2m$). The missing step is a
-self-propagating squeeze $L(m{+}1) \ge L(m) + 1$; the $\times 4$
-restriction alone yields only the diagonal transfer
-$L_{b+1}(m{+}1) \ge L_b(m)$ for the capped set $[1, 4^b]$.
-
 \section{The order gadget and the reduction}\label{sec:og}
 
-The machinery of Sections~\ref{sec:chunk}--\ref{sec:ladder} compresses,
-for the canonical candidate $\SA$, into a one-scale-at-a-time statement
+The search described in the appendices compresses, for the canonical
+candidate $\SA$, into a one-scale-at-a-time statement
 about linear orders of single dyadic blocks. This section states that
 reduction precisely and proves it unconditionally --- directly on a
-hypothetical permutation, without using the chunk calculus --- and reports
+hypothetical permutation, using nothing from the appendices --- and reports
 the machine verification of its finite instances; Section~\ref{sec:c3} then proves the
 required infeasibility by hand on the residue class $M \equiv 0 \pmod 8$
 --- which contains every dyadic scale --- completing the proof of the main
@@ -869,7 +580,7 @@ step is then the finiteness of the fibers at stages
 $\le \max(s(15), s(16))$; \emph{no} displacement normalization
 (Lemma~\ref{lem:normal}) is needed anywhere in this route. This is the
 precise sense in which the two \emph{crowns} $15$ and $16$ of
-Section~\ref{sec:ladder} cannot defend every dyadic block: they would
+Appendix~\ref{sec:compobs} cannot defend every dyadic block: they would
 have to be placed below the bottom-eight of all but finitely many
 blocks. We use only the direction scheme $\Rightarrow$ order; the
 converse (rebuilding a capped scheme from an $\OG$ witness, which would
@@ -1318,24 +1029,34 @@ candidate partition, but does not decide whether some other two-set
 partition works.
 \end{remark}
 
-\section*{Acknowledgements}
-I thank Jesse Geneson for reading an earlier version of this paper and for
-several corrections, two of which are recorded at the points where they
-apply: the balance lemma (Lemma~\ref{lem:balance}), which an earlier draft
-stated in a false symmetric form, and the class-sink algebra
-(Remark~\ref{rem:classsink}), which an
-earlier draft asserted with an $r$-dependent cycle structure. His comments
-did not extend to a verification of Theorem~\ref{thm:main} or of the chain
-leading to it, and responsibility for all statements in this paper,
-including any error, is mine alone.
+\section{Machine verification and data availability}\label{sec:data}
 
-\section*{Data availability}
+The proof chain of Theorem~\ref{thm:main} --- Theorem~\ref{thm:ogred}
+followed by Theorem~\ref{thm:c3core} --- is human-readable throughout, and
+no step of it is delegated to a solver. Machine work enters in three
+distinct roles, which we separate explicitly because they carry very
+different evidential weight. (1) \emph{Discovery}: the order gadget, the
+three-axiom core, and the mod-$8$ residue phenomenon were found by
+large-scale SAT experimentation; nothing in the final proof depends on how
+they were found. (2) \emph{Audit of the writing}: Theorems~\ref{thm:l1}
+and~\ref{thm:flip} are $\forall M$ schemas, and each of their instances at
+a given scale unfolds into $\Theta(M)$ ladder steps; those instances have
+been executed with per-step assertions over a large finite range of scales
+by three independently written checking layers
+(Remark~\ref{rem:c3machine}). This catches misstated lemmas and bookkeeping
+slips, and is emphatically not a substitute for the proofs, which are
+quantified over all $M \equiv 0 \pmod 8$. (3) \emph{Standalone verdicts}:
+the finite claims of Lemma~\ref{lem:bases},
+Proposition~\ref{prop:ogmachine}, Proposition~\ref{prop:cores} and
+Appendix~\ref{sec:compobs} are solver results, true at the scales stated
+and asserted at no others.
+
 All experiment scripts, machine-audit checkers (including the mutation-test
 suite for the checkers themselves), solver logs, and witness data are
 contained in the accompanying repository,
 \url{https://github.com/Wkasel/erdos197}, together with
-\texttt{reproduce.sh}, a script that re-runs the verification stack for the
-main-theorem chain (the schema audits of Remark~\ref{rem:c3machine}, the
+\texttt{reproduce.sh}, which reruns the load-bearing verification stack for
+the main theorem (the schema audits of Remark~\ref{rem:c3machine}, the
 closure-engine cross-validation, fresh direct SAT checks, re-emission and
 independent \texttt{drat-trim} checking of the DRAT certificates, and the
 reduction checks of Section~\ref{sec:og}) from a pinned environment.
@@ -1351,6 +1072,337 @@ certificates. The validity of the $\forall M$ schemas
 rests on the hand proofs of Sections~\ref{sec:og}--\ref{sec:c3} and not on
 any of these verdicts; their per-step machine audit
 (Remark~\ref{rem:c3machine}) covers a finite range of scales only.
+
+\section*{Acknowledgments and computational assistance}
+
+I thank Jesse Geneson for comments on an earlier version of this paper,
+which corrected two statements at the points where they apply: the balance
+law (Lemma~\ref{lem:balance}), given there in a false symmetric form, and
+the class-sink observation (Remark~\ref{rem:classsink}), asserted there
+with an $r$-dependent cycle structure. His comments did not extend to a
+verification of Theorem~\ref{thm:main} or of the chain leading to it.
+
+This paper was prepared with machine assistance, which I disclose in full.
+The language model Claude (Anthropic) was used for proof auditing, code
+assistance, and editorial revision. The SAT solvers CaDiCaL and OR-Tools
+CP-SAT were used for the computational experiments reported in
+Section~\ref{sec:data} and Appendix~\ref{sec:compobs}, and for the
+discovery work described there. The author takes full responsibility for
+the contents of this paper, including every statement and proof and any
+error that remains.
+
+\appendix
+
+\section{The chunk reduction}\label{sec:chunk}
+
+Every permutation of $\SA$ of order type $\omega$ decomposes into consecutive
+finite segments (\emph{chunks}); conversely, a choice of finite fibers and
+internal orders assembles into such a permutation. The following exact
+reformulation is the coordinate system for the elimination phase
+(Appendix~\ref{sec:compobs}); as noted in the
+introduction, the reduction of Section~\ref{sec:og} is proved without it,
+and nothing in this appendix is used in the proof of
+Theorem~\ref{thm:main}.
+
+\begin{definition}
+Let $S \subseteq \Z^+$ be infinite. A \emph{stage function} for $S$ is any
+$s\colon S \to \N$ with finite fibers.
+Given $s$ and a linear order on each fiber, let $T$ be the concatenation.
+\end{definition}
+
+\begin{theorem}[Chunk reduction; exact]\label{thm:chunk}
+$T$ avoids monotone $3$-term APs if and only if:
+\begin{enumerate}
+\item[(A)] no AP triple $(x,y,z)$, $z=2y-x$, in $S$ has strictly monotone
+stages ($s(x)<s(y)<s(z)$ or $s(z)<s(y)<s(x)$); and
+\item[(B)] each fiber order contains the \emph{forced pairs}
+\[
+\begin{array}{ll}
+s(x)<s(y)=s(z):\ z \prec y, &\quad s(z)<s(y)=s(x):\ x \prec y,\\
+s(x)=s(y)<s(z):\ y \prec x, &\quad s(y)=s(z)<s(x):\ y \prec z,
+\end{array}
+\]
+and is non-monotone on every within-fiber triple. (Triples whose endpoint
+stages lie on one side of the middle's are automatically safe.)
+\end{enumerate}
+Hence $S$ is $3$-permutable if and only if some stage function for $S$,
+together with a choice of fiber orders, satisfies
+(A) and (B). The fiber problems are finite and mutually independent given
+$s$. (Nothing in the statement or the proof uses any property of $S$; we
+apply it to $S = \SA$ and, in Theorem~\ref{thm:degs}, to $S = \Z^+$.)
+\end{theorem}
+
+\begin{proof}
+Along positions of $T$ the stage is non-decreasing, and within a stage the
+fiber order gives the positions. Suppose $T$ avoids monotone $3$-APs. If
+(A) failed at $(x,y,z)$ with $s(x)<s(y)<s(z)$, then $x,y,z$ occur in $T$ in
+that position order with $x<y<z$ --- an increasing $3$-AP (the case
+$s(z)<s(y)<s(x)$ gives a decreasing one). If a forced pair of (B) failed,
+say $s(x)<s(y)=s(z)$ with $y \prec z$ in their fiber, then $x, y, z$ occur
+in position order --- again an AP; the other three rows and the within-fiber
+non-monotonicity requirement are identical. Conversely, suppose (A) and (B)
+hold and let $(x,y,z)$, $z = 2y-x$, be placed monotonically in $T$, say
+$\pos(x)<\pos(y)<\pos(z)$ (the decreasing case is symmetric). Then
+$s(x) \le s(y) \le s(z)$. Strict inequalities throughout contradict (A);
+$s(x)=s(y)<s(z)$ puts $x \prec y$ in one fiber, contradicting the row
+$s(x)=s(y)<s(z) \Rightarrow y \prec x$ of (B); $s(x)<s(y)=s(z)$ puts
+$y \prec z$, contradicting $z \prec y$; and $s(x)=s(y)=s(z)$ is a monotone
+within-fiber triple, excluded by (B). Triples whose endpoint stages lie on
+one side of the middle's stage can never be placed monotonically, since the
+middle's position is then extremal among the three; this is the safety
+clause. The full case table over all stage patterns and fiber orders has
+additionally been machine-checked exhaustively
+(\texttt{e96\_reduction\_check.py}, part P2).
+\end{proof}
+
+\begin{lemma}[Normalization: running-max chunking]\label{lem:normal}
+Every $3$-AP-free permutation $\pi$ of $\SA$ (of order type $\omega$)
+admits a valid scheme --- a stage function with finite fibers satisfying
+(A)$\wedge$(B), whose concatenation is $\pi$ itself --- with
+$s(v) \ge \mathrm{block}(v)/2$ for every $v$.
+\end{lemma}
+
+\begin{proof}
+Set $s(v) = \max_{q \le \pos(v)} \mathrm{block}(\pi(q))/2$ (the running
+maximum of half-block-indices). Along positions $s$ is non-decreasing, so
+its fibers are consecutive segments of $\pi$ and the concatenation (with
+the fiber orders induced by $\pi$) is $\pi$; Theorem~\ref{thm:chunk} then
+gives (A)$\wedge$(B). Since $\mathrm{block}(v)/2$ enters the maximum at
+$v$'s own position, $s(v) \ge \mathrm{block}(v)/2$. Each fiber is finite:
+$\pi$ is onto $\SA$, so a value of block index $> 2\sigma$ occurs at some
+finite position, after which the running maximum exceeds $\sigma$.
+\end{proof}
+
+\noindent The point of Lemma~\ref{lem:normal} is that non-negative
+\emph{displacement} (next section) is a harmless normalization, not an
+automatic property: an arbitrary chunk decomposition can place a
+high-block value in an early chunk. Restrictions of normalized schemes
+stay normalized, which is what the divergence criterion below consumes.
+
+\begin{theorem}[DEGS via chunks]\label{thm:degs}
+$\Z^+$ itself is not $3$-permutable.
+\end{theorem}
+
+\begin{proof}
+Suppose $s\colon \Z^+ \to \N$ satisfies
+(A) with finite fibers and put $\sigma = s(1)$. For every $y$ with
+$s(y) > \sigma$, the triple $(1, y, 2y-1)$ forces $s(2y-1) \le s(y)$ by (A).
+The orbit $y_0,\, y_{i+1} = 2y_i - 1$ is strictly increasing; only finitely
+many of its members can have stage $\le \sigma$ (those fibers are finite),
+after which its stages are non-increasing, hence eventually confined to one
+finite fiber --- impossible for an infinite set.
+\end{proof}
+
+\noindent This recovers the Davis--Entringer--Graham--Simmons theorem (in its
+monotone form; \cite{DEGS77} proves the stronger increasing-3-AP statement)
+in the chunk coordinates and isolates what a permutable team must do: break every
+such reflected orbit out of the team. The dyadic team $\SA$ breaks
+single-reflector orbits in two steps (completions land in odd blocks); the
+question is whether the multi-scale accounting below can be survived.
+
+\begin{lemma}[Same block]\label{lem:sameblock}
+In every AP triple of $\SA$ the middle $y$ and top $z$ lie in the same even
+block. ($z<2y\le 2^{k+1}$ and block $k{+}1$ is odd.)
+\end{lemma}
+
+\begin{lemma}[Escape]\label{lem:escape}
+If $y \ge 3\cdot 4^{s-1}$ (top quarter of block $2s$) and $x \le 4^{s-1}$,
+then $2y-x > 4^{s}$: completions of (lower value, top-quarter value) pairs
+land in the odd block above --- out of team.
+\end{lemma}
+
+\begin{lemma}[Bottom-half characterization]\label{lem:bottomhalf}
+Deferring $D_k \subseteq$ block $k$ by a uniform delay (adding a constant to
+$s$ on $D_k$) creates no violation of condition (A) if
+$D_k \subseteq (2^{k-1}, 3\cdot 2^{k-2}]$: the witness midpoints
+$y=(x+z)/2$ of a bottom-half $z \in D_k$ against an $\SA$-value $x$ in a
+lower block (so $x \le 2^{k-2}$) satisfy
+$2^{k-2} < y \le 2^{k-1}$, i.e.\ lie in the odd block below. Conversely a
+deferred top-half $z$ has genuine in-team witnesses, forcing its witness
+midpoints (bottom-quarter values) to defer with it.
+\end{lemma}
+
+\section{Computational observations and conjectures}\label{sec:compobs}
+
+Everything in this appendix is a record of \emph{finite-scale computation}:
+measurements, solver verdicts at particular horizons, and the conjectures
+they suggest. None of it is used in the proof of Theorem~\ref{thm:main},
+whose chain is Theorem~\ref{thm:ogred} together with
+Theorem~\ref{thm:c3core}. We report it because it is what located the
+order gadget and the two crowns $15, 16$, and because the conjectures it
+raises seem to us the natural next questions. Statements here that are
+quantified over all scales are explicitly labelled as conjectures; the
+rest are verdicts at the horizons named, and carry no proof certificates
+(see Section~\ref{sec:data}).
+
+\subsection{Local realizability and the tower characterization}
+
+\begin{definition}[Pure-complete systems]
+For an $\SA$-block top $X$, the \emph{pure-complete-$X$ system} asks for an
+arrangement of $\SA \cap [1, X]$ with no monotone 3-AP. (All completions of
+in-range pairs lie in $(X, 2X]$, an odd block, or inside the range; hence this
+is exactly the restriction of the infinite problem.)
+\end{definition}
+
+\begin{lemma}[Horizon collapse]
+Deleting any set of values from a valid arrangement preserves validity; hence
+auxiliary values above $X$ never aid the pure-complete-$X$ system.
+\end{lemma}
+
+\begin{theorem}[Tower characterization]
+$\SA$ is permutable iff there exists $B\colon \N \to \N$ such that for every
+block top $X$ the system [pure-complete-$X$ and every $v$ has at most $B(v)$
+predecessors] is satisfiable.
+\end{theorem}
+
+\begin{proof}
+($\Rightarrow$) restrict a permutation and take $B(v)$ its positions.
+($\Leftarrow$) the restriction sets are finite and nested; K\H{o}nig's lemma
+yields a consistent tower whose limit has each $v$ preceded by at most $B(v)$
+values, hence order type $\omega$; all constraints are finitary and inherited.
+\end{proof}
+
+Computationally: pure-complete-$X$ is satisfiable for $X \le 1024$ (machine
+certificates), and the completion-pressure function
+$g_X(L) = \min \max_{v \le L} \pos(v)$ satisfies $g_{256}(64) = 153$
+(optimal): eighty-seven percent of the block $(128,256]$ must precede the
+completion of $[1,64]$, with the residue concentrated in a single residue
+class modulo 8 --- the reservoir structure that any construction must
+implement. Divergence of $g_X(L)$ in $X$ for fixed $L$ would prove
+non-permutability directly; our measurements did not exhibit divergence
+(the subset-tolerance is near-total), and this route was abandoned in favour
+of the one taken in Sections~\ref{sec:og}--\ref{sec:c3}. There is no
+tension with Theorem~\ref{thm:main}: stabilization of $g_X(L)$ for each
+fixed $L$ does not by itself produce a single bound $B$ as required by the
+tower characterization, because the minimizing arrangements vary with $L$.
+
+\subsection{Self-similar witnesses, fragility, and pumping obstructions}
+
+Adding the exact scale-invariance $u \prec w \iff 4u \prec 4w$ to the
+pure-complete systems remains satisfiable at $X = 256$ and $X = 1024$
+(independently audited witnesses); however the audited $1024$-witness does not
+extend to a self-similar $4096$-arrangement (solver verdict, uncertified),
+so the self-similar tower also has dead branches.
+
+We also record a calibration fact: requiring, in addition, that the $\pm 1$
+neighbors (within the same block and team) of each forced completion also
+precede the pair's later element (``radius-1 robustness'') is infeasible in
+every setting we tested --- including plain intervals $[1, n]$ from $n = 8$.
+Radius-1 robustness therefore appears to be unachievable in three-AP
+arrangement problems generally, and cannot serve as a satisfiability
+criterion; in particular it does
+not discriminate between partitions, and pumping arguments must instead manage
+rounding drift on the thin family of far-pair constraints only. The
+radius-one experiments are \emph{evidence} against placement rules in which
+position varies slowly with value; we neither formalize such a class of
+rules here nor prove a theorem about it, and we draw no further inference
+from the observation.
+
+\subsection{The negative atlas}\label{sec:negative}
+
+\begin{theorem}[Block-granular death]\label{thm:blockgranular}
+No stage function whose fibers are unions of whole even blocks satisfies
+(A)$\wedge$(B).
+\end{theorem}
+
+\begin{proof}
+The fatal core $F_b$ (forced pairs into block
+$b$ from block $b{-}2$ below, plus block-$b$ triples) is UNSAT for $b=6$
+(machine, instant), and $v \mapsto 4v$ embeds $F_b$ into $F_{b+2}$: the map
+preserves $\SA$, sends block $j$ to block $j{+}2$, and preserves AP triples;
+UNSAT lifts to supersystems. It remains to see that a block-granular scheme
+has an \emph{ascending} fiber boundary above block $4$, i.e.\ some
+$b \ge 6$ with $s(B_{b-2}) < s(B_b)$ (this is what puts the forced pairs of
+$F_b$ into the system). If there were none, then
+$s(B_4) \ge s(B_6) \ge s(B_8) \ge \cdots$ would be a non-increasing
+sequence of natural numbers, hence eventually constant; infinitely many
+blocks would then share a single fiber, contradicting the finiteness of
+fibers.
+\end{proof}
+
+\begin{theorem}[$\times 4$ restriction; window death is permanent]
+\label{thm:restriction}
+For the window class $\{s : s(v)-\mathrm{block}(v)/2 \in [0,w]\}$:
+feasibility at horizon $4N$ implies feasibility at horizon $N$ (restrict
+along $v \mapsto 4v$ and shift stages by one). Consequently the machine
+verdicts below are permanent (hold at all larger horizons), and an infinite
+solution in a window class would imply feasibility at every finite horizon.
+\end{theorem}
+
+\noindent Machine atlas (CP-SAT and CDCL cross-checks; solver logs and
+witnesses in the repository, but no proof certificates for the negative
+verdicts): bottom-half relief of depth $1$ and depth $\le 2$ infeasible at
+$N=256$ (and $1024$); \textbf{window-$2$ infeasible at $N=1024$} (CP-SAT, 746s; independently CDCL/unary-ladder, 1760s) --- hence, by
+Theorem~\ref{thm:restriction}, infeasible at every horizon
+$\ge 1024$, so there is no infinite window-$2$ solution. (At the smaller
+horizon $N=256$ window~$2$ is still feasible, but only via whole-block
+merges, of minimum total displacement $41$; the merged skeleton is
+$C_s = 2^{s}\cdot[3\cdot 2^{s-2}, 2^{s}]$, the top-quarter multiples of
+$2^{s}$ --- precisely the set singled out by Lemma~\ref{lem:escape}.)
+
+\medskip
+This atlas leaves exactly one shape of candidate for a YES: stage functions
+with unbounded displacement (chunks mixing stragglers of unboundedly many
+blocks). Closing the remaining gap --- between
+Theorems~\ref{thm:blockgranular}/\ref{thm:restriction} and general
+finite-fiber schemes --- by the per-block deferral calculus of
+Lemma~\ref{lem:bottomhalf} was the state of the elimination phase before
+Section~\ref{sec:og}, where the gap is closed instead by the order-gadget
+route, which does not use the chunk calculus at all. The same analysis
+applies to $S_B$ by the evident mirror symmetry (checked by machine at
+$4096$).
+
+\subsection{The displacement ladder}\label{sec:ladder}
+
+For a stage function $s$ write $\delta(v) = s(v) - \mathrm{block}(v)/2$
+(\emph{displacement}); a scheme is \emph{normalized} if $\delta \ge 0$
+everywhere, which by Lemma~\ref{lem:normal} is no loss of generality for
+schemes induced by genuine permutations. Define
+\[
+L(m) \;=\; \min_{\text{normalized schemes at horizon } 4^m}\
+\max_{v \in \SA,\ v \le 16} \delta(v),
+\]
+the minimum over all normalized finite-fiber schemes satisfying
+(A)$\wedge$(B) at horizon $4^m$ (no bound on any other value's
+displacement); the maximum is over the ten values
+$\SA \cap [1,16] = \{3,4\} \cup \{9, \dots, 16\}$.
+
+\begin{proposition}[Ladder rungs; machine-checked]
+$L(3) \le 1$; \ $L(4) \ge 2$ (infeasibility of the cap $\delta \le 1$ on
+$\SA \cap [1,16]$ at $N=256$, verified independently by CP-SAT, 252s, and
+CDCL with a unary-ladder encoding, 15s); \ $L(5) = 3$ (lower bound: CDCL,
+2304s, a single run; upper bound: a window-3 witness at $N=1024$, 995s ---
+which also gives $L(4) \le 3$, since $L$ is non-decreasing in $m$).
+Moreover the minimal infeasible cap-coalition at $N=256$ is exactly
+$\{15, 16\}$ (deletion-minimal): every scheme has $\delta(15) \ge 2$ or
+$\delta(16) \ge 2$ --- the crowns of the two competing class towers
+($15 = 1111_2$, apex of the $\equiv -1$ skeleton; $16 = 10000_2$, the block
+top, apex of the $\equiv 0$ skeleton).
+\end{proposition}
+
+\begin{theorem}[Divergence criterion]\label{thm:divergence}
+If $L(m) \to \infty$ then $\SA$ is not $3$-permutable.
+\end{theorem}
+
+\begin{proof}
+An
+infinite valid permutation induces (Lemma~\ref{lem:normal}) a
+\emph{normalized} valid scheme, and by restriction a normalized valid
+scheme at every horizon $4^m$ (completions of values $\le 4^m$ that lie
+beyond the horizon fall in the odd block $(4^m, 2\cdot 4^m]$, out of
+team), and the ten displacements $\delta(v)$, $v \in \SA \cap [1,16]$,
+are constants of the infinite
+scheme. For $m$ with $L(m) > \max_{v \in \SA,\, v\le 16}\delta(v)$ this is a
+contradiction, by the exactness of Theorem~\ref{thm:chunk}.
+\end{proof}
+
+The conjectured growth $L(m) = m-2$ matches the window-death schedule
+(window $w$ dying at horizon $4^{w+3}$) and the observed per-block descent
+of displacement in minimal solutions ($\delta$ profile $(m{-}2, m{-}3,
+\dots, 1, 0)$ across blocks $4, 6, \dots, 2m$). The missing step is a
+self-propagating squeeze $L(m{+}1) \ge L(m) + 1$; the $\times 4$
+restriction alone yields only the diagonal transfer
+$L_{b+1}(m{+}1) \ge L_b(m)$ for the capped set $[1, 4^b]$.
 
 \begin{thebibliography}{99}
 
