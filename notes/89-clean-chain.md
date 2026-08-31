@@ -220,8 +220,14 @@ cells (c, team) would produce such a set.  ∎
 In particular every partition whose block minorities are
 eventually 2^k-periodic (for any fixed k) is not a valid pair.
 
-*Scope remark (important).*  Corollary 3 constrains only
-power-of-two residue structure.  It does NOT force aperiodicity:
+*Scope remark (important).*  The correct positive formulation
+(second review item 4): **HSPLIT imposes hereditary 2-adic mixing;
+combined with L-NOTAIL, a valid pair cannot be globally periodic.**
+(A globally periodic coloring of period P gives each team a finite
+union of classes mod P, hence an infinite AP, which L-NOTAIL
+forbids.)  What HSPLIT does NOT give is aperiodicity of the
+minority: Corollary 3 constrains only power-of-two residue
+structure, and does not force aperiodicity:
 e.g. a minority equal to the multiples of 3 is fully periodic yet
 has every mod-2^k class-section bichromatic (gcd(2^k, 3) = 1), so
 it is untouched by Corollary 3.  (That particular set contains the

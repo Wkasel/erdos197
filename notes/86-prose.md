@@ -223,7 +223,7 @@ single authoritative list.
 | GAP-BRIDGE1, GAP-G2/DNP, GAP-L1′, GAP-N2's 3 remainders | as notes/50 §3: discharged / refuted-reframed / REFUTED (ROT4) / discharged |
 | MINT-LOC (notes/80 §3) | RETIRED resolved-strong-form (notes/80-pincer §2: literal mechanism wrong, stronger theorem AFFORD-DEMAND [PROVED]) |
 | GAP-AFFORD″-ALT (notes/80-pincer §3.4) | RETIRED (notes/82: Lemma Q + ALT-DEAD kill the whole arithmetic corner); residue renamed **GAP-AFFORD‴-SPLIT** |
-| L-NOTAIL (notes/80-pincer §3) | not a gap — [PROVED], now a COROLLARY of Lemma Q on the lattice family (notes/82 §5); kept for classical self-audit |
+| L-NOTAIL (notes/80-pincer §3) | not a gap — [PROVED] by DEGS77 after restricting to the progression and transporting by its affine parametrization; when the common difference is a power of two, HSPLIT gives an alternative proof.  [CORRECTED, second review item 5: the "COROLLARY of Lemma Q on the lattice family" reading is FALSE in general — Lemma Q only kills APs of power-of-two common difference] |
 | C3(p) prose rider (notes/82 §2.2; 50 §6; STATUS) | DISCHARGED this note (§1).  Lemma Q / ALT-DEAD / HSPLIT are rider-free |
 
 Notes whose bracketed [GAP]s are NOT stale (verified current):
@@ -243,7 +243,9 @@ THREE, was four):**
    form after the chart kill: **GAP-AFFORD‴-SPLIT** — the cap for
    gap-≥3, 2-adically split minorities [NOT "hence aperiodic" —
    corrected, notes/88 item 2: mod-3 periodic minorities are
-   HSPLIT-compatible]; no known inhabitant of the full corner
+   HSPLIT-compatible.  Correct positive form, second review item
+   4: HSPLIT imposes hereditary 2-adic mixing; combined with
+   L-NOTAIL, a valid pair cannot be globally periodic]; no known inhabitant of the full corner
    axes; plus arm B's p(k) → ∞ pump.
    Species: genuinely new ledger mathematics; zero completed
    strategies; professor-certified no elegant kill (notes/82 §5).

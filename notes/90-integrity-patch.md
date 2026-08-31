@@ -64,3 +64,46 @@ and adds the missing pieces:
   map); S1 re-verified on 10⁴ fresh admissible tuples by direct
   forced-spiral simulation, 0 failures.
   data/e191_land_s1_check.json.
+
+## Items 3-5 (HSPLIT quantifiers, aperiodicity, L-NOTAIL)
+
+**Item 3 — HSPLIT quantifier discipline.**  Exact sanctioned
+wording now carried in notes/81 §3, notes/83 §0 + §0b, notes/50,
+STATUS: *"At F = 64, horizons 2048 and 4096, every coloring
+satisfying the remaining proxy constraints has at least one
+monochromatic mod-4 class-section among the tested blocks."*
+Three scope notes stated at each site: HSPLIT-as-constraint bans
+ANY coloring with even one pure tested section (not only
+lattices); the hard-coded burn-in t = 6 does not capture the
+correct eventual quantifier; the depth-2 orbit censor is a proxy.
+notes/83 §0b's blind-drafted "every finite inhabitant is a
+mod-2^k near-lattice" inference is struck in place.  paper2 makes
+no machine-HSPLIT claim (only the PROVED Cor. HSPLIT) — nothing
+to fix there.
+**New experiment (reviewer-suggested), e186 `hsplitburn`:** HSPLIT
+imposed only for T ≤ t ≤ log2(H) − 1, T ∈ {6, 8, 10} ×
+H ∈ {2048, 4096}, strong censor F = 64.  **UNSAT ×6** (16.5/40.0,
+19.3/38.6, 20.0/36.8 s; 172 s total).  Reading per cell is the
+sanctioned finite-scope sentence with "tested blocks" =
+[T, log2(H)−1]; higher T tests fewer blocks, so the cells get
+weaker, not stronger.  Six instances are not the ∀T family and no
+compactness step exists — ω verdict unmoved.  notes/81 §3b.
+
+**Item 4 — "HSPLIT ⟹ aperiodic".**  The first-review pass had
+already retracted it (mod-3 counterexample verified).  Added the
+prescribed POSITIVE replacement at every site (notes/50 ×2,
+notes/82, notes/86, notes/89, STATUS, paper2 hyp:afford):
+*"HSPLIT imposes hereditary 2-adic mixing; combined with L-NOTAIL,
+a valid pair cannot be globally periodic."*  (Justification, no
+new mathematics: period P ⟹ each team is a finite union of
+classes mod P ⟹ each team contains an infinite AP ⟹ L-NOTAIL.)
+
+**Item 5 — L-NOTAIL's second proof was invalid.**  Lemma Q only
+kills APs whose common difference is a power of two, so
+"L-NOTAIL = corollary of Lemma Q" is false in general.  Replaced
+in paper2 cor:notail and in notes/50, notes/82, notes/86 with:
+*"Proof: DEGS77, applied after restricting to the progression and
+transporting by its affine parametrization.  When the common
+difference is a power of two, HSPLIT gives an alternative
+proof."*  notes/80-pincer §3.1's own proof was always the DEGS77
+one — unchanged.

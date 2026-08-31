@@ -1899,7 +1899,10 @@ boundary cells) stands down as moot at ω.
 
 **Residue: GAP-AFFORD″-ALT RETIRED → GAP-AFFORD‴-SPLIT** — the
 supply cap for gap-≥3, 2-adically split minorities.  [Corrected,
-notes/88 item 2: NOT "hence aperiodic" — HSPLIT excludes only
+notes/88 item 2 + second review item 4: NOT "hence aperiodic".
+  Correct positive statement: HSPLIT imposes hereditary 2-adic
+  mixing; combined with L-NOTAIL, a valid pair cannot be globally
+  periodic.  HSPLIT excludes only
 persistent monochromatic power-of-two residue charts; the mod-3
 minority (multiples of 3) is fully periodic yet HSPLIT-compatible
 (gcd(2^k, 3) = 1 makes every long class-section bichromatic;

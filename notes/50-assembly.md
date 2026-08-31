@@ -277,7 +277,10 @@ hor ∈ {2048, 4096} is UNSAT ×6 (e186 hsplitburn, notes/81 §3b) —
 same finite-scope reading per cell, no ω conclusion, "dead
 end-to-end" retracted; ALT-DEAD's applicability hypothesis (infinitely many
 4-pure scales) is explicitly open on this corner.  And
-"2-adically split ⟹ aperiodic" is FALSE — HSPLIT excludes only
+"2-adically split ⟹ aperiodic" is FALSE; the correct positive
+statement (second review item 4) is: HSPLIT imposes hereditary
+2-adic mixing; combined with L-NOTAIL, a valid pair cannot be
+globally periodic.  HSPLIT excludes only
 persistent monochromatic 2^k-residue charts; odd-periodic (e.g.
 mod-3), mixed-modulus, and automatic minorities are NOT excluded
 unconditionally (they die only mod the Q-ODD gates or, with
@@ -367,7 +370,7 @@ Hardening layer (not gating the assembly):
 | GAP-V* | v*₃(m; bounds) growth | rate sharpening only |
 | GAP-ZERO | classify the sumset floor's zero variety | all zeros measured LOW-PURE (order-dead); N3-species |
 | GAP-SPARSE-CORE (new, notes/79; adjudicated notes/80) | CI(m) at (1,1,1) + per-block minority gap ≥ 3 UNSAT for all m ≥ 16 | machine ×8 scales (16..48 incl. fresh 36, boot ≤ 12), control triangle + gap-≥2 discriminator; **AAA designation HAND-CLOSED m ≥ 26** (covering bound; machine covers 16..48) — residue = mixed-designation catalogue; lattice-minority sub-family void STRUCTURALLY (AP-closed minorities carry cross-3-block triples); strengthens Case-2 demand on the (iii)-corner to presence-1 bounds — does not gate the assembly but arms it |
-| L-NOTAIL + Theorem AFFORD-CORNER (new, notes/80-pincer) | no 3-permutable team contains an infinite AP (DEGS77 import); blockwise-lattice corner: ownership must alternate, every H-carrier pays Θ(m²) seam inversions/anchor as an exact orientation with presence-scale displaced sets (Θ(N) cumulative), no anchor one-mint payable | [PROVED] + machine (e185: census closed-form exact, 26/26 one-mint cells empty, ν(8/12/16) = 9/31/58, S5-ALT UNSAT ×2 + controls) — arms the corner kill; does not gate the assembly.  L-NOTAIL is now a corollary of Lemma Q on the lattice family (kept for classical self-audit value) |
+| L-NOTAIL + Theorem AFFORD-CORNER (new, notes/80-pincer) | no 3-permutable team contains an infinite AP (DEGS77 import); blockwise-lattice corner: ownership must alternate, every H-carrier pays Θ(m²) seam inversions/anchor as an exact orientation with presence-scale displaced sets (Θ(N) cumulative), no anchor one-mint payable | [PROVED] + machine (e185: census closed-form exact, 26/26 one-mint cells empty, ν(8/12/16) = 9/31/58, S5-ALT UNSAT ×2 + controls) — arms the corner kill; does not gate the assembly.  L-NOTAIL's proof is DEGS77, applied after restricting to the progression and transporting by its affine parametrization; when the common difference is a power of two, HSPLIT gives an alternative proof [CORRECTED, second review item 5: Lemma Q only kills APs of power-of-two common difference, so "L-NOTAIL is a corollary of Lemma Q" is FALSE in general] |
 | **Lemma Q + Theorem ALT-DEAD + Cor. HSPLIT (new, notes/82; verified notes/81)** | no permutable set contains a full mod-4 class-section of infinitely many dyadic blocks (exact 4-adic chart onto B(t−2) + restriction + B1 at C₀ = 0); infinitely many 4-pure scales ⟹ invalid pair; every valid pair is everywhere-split in every 2-adic chart | [PROVED — inputs PIN + DIAG-DENSE + C3(p) only; C3(p) prose pass done (notes/86 §1): rider-free] + adversarial machine verification (e186 partQVERIFY 0 fails across 5 layers; Geneson Λ-scan 0 hits t = 5..200) — retires the arithmetic corner; does not gate the assembly (GAP-AFFORD‴-SPLIT gates) |
 
 **If any critical tag BREAKS instead of clearing**: (i)/(ii) breaking
@@ -396,7 +399,10 @@ all lattices regardless of ownership law, all on-class punctured
 variants, all eventually-2^k-periodic minorities.  The live
 (iv)-negative is now a gap-≥3 minority that is 2-adically split in
 every chart (Cor. HSPLIT) — NOT necessarily aperiodic (notes/88
-item 2: the mod-3 minority is fully periodic yet HSPLIT-compatible;
+item 2 + second review item 4: HSPLIT imposes hereditary 2-adic
+mixing, and with L-NOTAIL a valid pair cannot be globally
+periodic, but the mod-3 minority is fully periodic yet
+HSPLIT-compatible;
 odd-periodic shapes are excluded only mod the Q-ODD gates or by
 L-NOTAIL at constant ownership) — never realized under the full
 corner axes (the censor-off alternating coloring is

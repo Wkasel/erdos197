@@ -342,7 +342,10 @@ question with the wrong instrument.
 
 The surviving object is constrained but NOT "mod-4-lattice-like":
 by HSPLIT it must, at every modulus 2^k, split every class in
-cofinitely many blocks.  [CORRECTED, notes/88 item 2: the original
+cofinitely many blocks.  Positive formulation (second review item
+4): **HSPLIT imposes hereditary 2-adic mixing; combined with
+L-NOTAIL, a valid pair cannot be globally periodic.**  [CORRECTED,
+notes/88 item 2: the original
 text here claimed "aperiodic by construction" — that is FALSE.
 HSPLIT rules out persistent monochromatic power-of-two residue
 charts ONLY.  Counterexample: minority = multiples of 3 — fully
@@ -381,7 +384,14 @@ gates or, at constant ownership, by L-NOTAIL].
 - GAP-AFFORD″-ALT: RETIRED in favor of GAP-AFFORD‴-SPLIT (above).
   All run-length/puncture siege lines (S5-ALT escalation, R-scans
   at F = 64, puncture catalogues) can stand down.
-- L-NOTAIL: now a corollary of Lemma Q on the lattice family
+- L-NOTAIL [CORRECTED, second review item 5]: its proof is
+  DEGS77, applied after restricting to the progression and
+  transporting by its affine parametrization.  When the common
+  difference is a power of two, HSPLIT gives an alternative proof.
+  (The earlier claim "a corollary of Lemma Q" is FALSE in general:
+  Lemma Q only kills APs whose common difference is a power of
+  two.)  Formerly recorded as a corollary of Lemma Q on the
+  lattice family
   (kept for its classical self-audit value).
 - The YES-composition shifts: of the residual YES-mass, the
   "canonical arithmetic family with trivial ω-extension" argument
