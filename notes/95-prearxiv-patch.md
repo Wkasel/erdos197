@@ -130,3 +130,70 @@ The uploaded source and the metadata were both **pre-patch**. Three fixes:
 
 Submission is staged at Preview with the Submit button live. The final click
 is the author's.
+
+## Round 2: full word-for-word verification (pre-submission)
+
+Two independent passes over the exact arXiv-staged PDF, plus a third external
+review, run because the author asked for every word to be checked before the
+irreversible click.
+
+* **Adversarial audit** (4 lenses x attribution/chain/overclaim/consistency,
+  each finding attacked by 2 refuters): 4 confirmed, 1 refuted.
+* **Word-for-word pass** (11 readers over all 21 pages + 1 cross-page
+  consistency agent, every finding independently re-checked): 47 distinct
+  findings, 14 adjudicated, **14/14 confirmed, 0 false positives**.
+* **External review** independently confirmed the same three prose defects and
+  supplied sharper wordings, which were adopted.
+
+Mechanical layer was clean beforehand: 0 undefined refs, no TODO/FIXME,
+no genuine doubled words, 12,085 words.
+
+### Two findings where verification changed the answer
+
+**The `51 forced pairs` count is CORRECT; the definition was wrong.**
+A reviewer flagged `$F_6$ has 51 forced pairs` as contradicting item (a),
+which restricts `x` to `B_{b-2}`. Direct computation:
+
+| forced pairs | source of `x` |
+|---|---|
+| 48 | `x in B_4` only (= item (a) as written) |
+| 3  | `x in B_2` |
+| **51** | `x in B_2 u B_4` (all lower `S_A` blocks) |
+
+240 AP triples inside `B_6` also confirmed exactly. `e59` iterates over all of
+`S_A`, so 51 is what was actually solved and the *definition* was too narrow.
+Both systems were then checked with CaDiCaL: **48-pair UNSAT and 51-pair
+UNSAT**, so the argument never depended on the wider set. Fixed by widening (a)
+to `x in S_A` lying below `B_b`.
+
+**The mod-8 observation was stated backwards.** The paper said the *early*
+values of `(128,256]` concentrate in one residue class mod 8 — impossible,
+since a class holds 16 values and >=111 are early. Recomputed from the repo's
+own `data/g256_witness.json`:
+
+* 112 early, 16 deferred (`|S_A cap [1,64]| = 42` confirmed)
+* early values mod 8: `{0:16, 1:1, 2:16, 3:16, 4:16, 5:15, 6:16, 7:16}` — spread evenly
+* **deferred** values mod 8: `{1:15, 5:1}` — essentially exactly class 1
+
+It is the *reservoir* that is structured, not the early values. Corrected to
+the true, checkable statement.
+
+### Everything corrected (24 edits, all prose/typography; no mathematics changed)
+
+Substantive: van der Corput lemma falsely described as used (0 `\ref`s);
+Section 3 "used freely later" contradicting the introduction's "Neither is
+used later"; finite sweep promoted to an infinite claim at two sites;
+**Geneson/Adenwalla citations paired with the wrong papers**; fatal-core
+definition; mod-8 observation.
+
+Presentation: `hyperref` loaded bare, so every reference and URL was drawn
+inside a coloured link box throughout the PDF (fixed with `hidelinks`);
+`S_B` italic against upright `\SA` (new `\SB` macro); bare math-mode `:`
+typeset as a relation; `\prec` used ~180 lines before its definition (now
+defined in section 2); stray `\mp`; `Cadical195` -> `CaDiCaL`; incomplete Lean
+path; anacoluthon in the roadmap; duplicated "at every tested scale";
+"reductions" -> "reduction"; "countable" -> "countably"; "triple" -> "AP
+triple"; -ise/-isation normalized to the paper's -ize convention.
+
+Result: 21 pages, 0 undefined/multiply-defined refs, one cosmetic underfull
+hbox in the bibliography.

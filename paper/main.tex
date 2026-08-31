@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage[margin=1.2in]{geometry}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 
 % Let TeX stretch as a last resort, and allow a little glue inside \url{},
 % rather than emit over/underfull boxes around the long unbreakable URLs
@@ -20,6 +20,7 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\SA}{S_{\mathrm{A}}}
+\newcommand{\SB}{S_{\mathrm{B}}}
 \newcommand{\pos}{\mathrm{pos}}
 \newcommand{\OG}{\mathrm{OG}}
 
@@ -60,7 +61,7 @@ Call a linear arrangement of a set of integers \emph{admissible} if no three
 of its terms, read in order of position, form an increasing or a decreasing
 arithmetic progression (a \emph{monotone 3-AP}). Every finite set of integers
 admits an admissible arrangement: place the odd values before the even values
-and recurse, using the fact that the first and third term of a 3-AP share a
+and recurse, using the fact that the first and third terms of a 3-AP share a
 parity (stated for intervals in \cite{DEGS77}, which credits earlier notes of
 this observation; for arbitrary finite sets in \cite{ErGr79}). For infinite sets the situation changes completely.
 Davis, Entringer, Graham and Simmons \cite{DEGS77} proved that every
@@ -72,7 +73,7 @@ Remarks~3, p.~89) whether two sets suffice. Erd\H{o}s and Graham repeated the
 question in \cite{ErGr79} (p.~338), calling it ``a very annoying question''
 (see also their monograph \cite{ErGr80}); it is problem \#197 of the
 Erd\H{o}s problem collection \cite{Bl}, where it is stated for the natural
-numbers and carries a Lean formalisation \cite{FC} (see
+numbers and carries a Lean formalization \cite{FC} (see
 Remark~\ref{rem:lean} for the $0 \in \N_0$ nuance).
 
 The modern literature around the problem concerns densities, longer
@@ -97,11 +98,11 @@ region Geneson's construction excises, so the two results are consistent
 and their mechanisms align. (We do not claim that
 removing precisely those slivers is necessary or sufficient; his
 construction also uses stage separation and rapid scale growth.) Permutations of $\Z$ and of subsets of $\Z^+$
-avoiding longer monotone progressions were constructed by Geneson
-\cite{Gen18} and Adenwalla \cite{Ad24}. Hirose and Saito \cite{HS24} ---
+avoiding longer monotone progressions were constructed by Adenwalla
+\cite{Ad24} and Geneson \cite{Gen18}. Hirose and Saito \cite{HS24} ---
 continuing a line begun by Ardal, Brown and Jungi\'c \cite{ABJ11} on
 AP-avoiding (``chaotic'') orderings of $\mathbb{Q}$ and $\mathbb{R}$ ---
-characterised the \emph{order types} of total orders on $\N$, $\Z$ and $\mathbb{Q}$
+characterized the \emph{order types} of total orders on $\N$, $\Z$ and $\mathbb{Q}$
 admitting no monotone 3-AP; from their standpoint the difficulty of \#197 is
 that order type $\omega$ is forced, where avoidance is hardest.
 
@@ -112,15 +113,15 @@ partition}: let
 \;=\; (2,4] \cup (8,16] \cup (32,64] \cup \cdots,
 \]
 \[
-S_B \;=\; \Z^+ \setminus \SA \;=\; \{1,2\} \cup (4,8] \cup (16,32] \cup \cdots,
+\SB{} \;=\; \Z^+ \setminus \SA \;=\; \{1,2\} \cup (4,8] \cup (16,32] \cup \cdots,
 \]
-so that each team is a union of doubling blocks (together, for $S_B$, with
+so that each team is a union of doubling blocks (together, for $\SB{}$, with
 the two initial values) and the completion
 $2y - x$ of a within-block pair $x < y$, whenever it escapes the block
 upward, lands in the adjacent block --- the other team's territory. Two
 elementary density facts explain why this is the canonical candidate. First,
 $\SA$ has upper density $2/3$ (attained along $n = 4^k$) and lower density
-$1/3$ (along $n = 2\cdot 4^k$), and $S_B$ the same with the roles of the two
+$1/3$ (along $n = 2\cdot 4^k$), and $\SB{}$ the same with the roles of the two
 subsequences exchanged. So $\SA$ sits exactly at the current record value
 $\alpha_{\N}(3) \ge 2/3$ of \cite{Gen26}, and the main theorem below
 therefore exhibits a specific set \emph{at} that density which is not
@@ -149,7 +150,7 @@ fifteen precedence axioms induced by the two values $15$ and $16$ --- whose
 infeasibility at infinitely many dyadic scales implies the main theorem
 unconditionally. It is proved directly on a hypothetical permutation, in
 three paragraphs, and uses nothing else in the paper.
-The second --- and this is the mathematical heart --- we
+For the second --- and this is the mathematical heart --- we
 prove by hand that already a three-axiom core of $\OG(M)$ is inconsistent
 with admissibility for every $M \equiv 0 \pmod 8$ (Theorem~\ref{thm:c3core}),
 via a toolkit of ladder lemmas whose single appeal to the residue of $M$
@@ -158,14 +159,14 @@ on AP-ladders that seeds the toolkit is classical --- it appears inside
 \cite{DEGS77} in Folkman's argument, as Lemma~2.5 of \cite{HS24}, and as
 Lemmas~2.1--2.2 of \cite{Gen26}; what is new here, to our knowledge, is its
 boundary-quantitative
-use on bounded ladders, the transfer lock, and the flood induction.) Computationally, the mod-$8$ condition is sharp at every tested scale:
+use on bounded ladders, the transfer lock, and the flood induction.) Computationally, the mod-$8$ condition is sharp:
 the same three axioms are satisfiable at every tested scale with
 $M \not\equiv 0 \pmod 8$ (a parametric satisfying construction for the
 complementary residues is not proved here, and the main theorem does not
 require one),
 matching the machine's phase diagram exactly.
 
-The paper is organised so that this chain stands alone.
+The paper is organized so that this chain stands alone.
 Section~\ref{sec:general} collects four obstructions that constrain
 admissible permutations of any set --- an orbit obstruction, an asymmetric
 balance law, a ratio-ascent lemma and a partition-rigidity lemma --- and
@@ -193,7 +194,7 @@ encodings and by more than one solver; the auxiliary sweeps reported in
 Appendix~\ref{sec:compobs} were not, and are flagged
 where they occur. The
 final proof chain, however, does not rest on any solver verdict: the
-reductions and the C3 core theorem are human-readable arguments. They are
+reduction and the C3 core theorem are human-readable arguments. They are
 $\forall M$ schemas, with infinitely many instances; a finite but large
 range of those instances (Remark~\ref{rem:c3machine}) has been
 machine-audited step by step by three
@@ -220,6 +221,9 @@ forbidden. Note that a permutable set is by definition countably infinite
 and the permutation has order type $\omega$.
 \end{definition}
 
+Given a permutation, or any linear order, of a set of values we write
+$u \prec v$ to mean that $u$ is placed before $v$.
+
 The completion of an ordered pair: if $x$ is placed before $y$, the value
 $z = 2y - x$ (which continues the progression through $x,y$ in the direction of
 $y$) must not be placed after $y$; equivalently every such $z \in S$ placed later
@@ -243,7 +247,7 @@ unique $k \ge 1$ with $v \in B_k$. The canonical two-set candidate is
 \SA \;=\; \bigcup_{k \ge 2,\ k \text{ even}} B_k
 \;=\; (2,4] \cup (8,16] \cup (32,64] \cup \cdots,
 \qquad
-S_B \;=\; \Z^+ \setminus \SA .
+\SB{} \;=\; \Z^+ \setminus \SA .
 \]
 \end{definition}
 
@@ -252,7 +256,7 @@ $k = 1$ is odd; we nevertheless state it, because two counts used later
 depend on knowing exactly which small values belong to $\SA$: $1 \notin \SA$
 and $2 \notin \SA$, so $\SA \cap [1,16] = \{3,4\} \cup \{9, 10, \dots, 16\}$
 has exactly ten elements, and $|\SA \cap [1,64]| = 42$. Note that
-$1 \in S_B$ lies in no block and $\mathrm{block}(1)$ is undefined; we apply
+$1 \in \SB{}$ lies in no block and $\mathrm{block}(1)$ is undefined; we apply
 $\mathrm{block}$ only to elements of $\SA$, all of which are $\ge 3$.
 
 \begin{remark}[Ground set: $\Z^+$ versus $\N_0 \ni 0$; the Lean formalization]
@@ -288,9 +292,10 @@ agrees with ours.)
 \section{General obstructions}\label{sec:general}
 
 This section collects four restrictions that every admissible permutation
-of every set must obey. They are independent of the dyadic partition and
-are used freely later; the first is also the engine of
-Lemma~\ref{lem:ray}.
+of every set must obey. They are independent of the dyadic partition.
+The first, the orbit obstruction, is used below in Lemma~\ref{lem:ray};
+none of the four results is used after this section or in the proof of
+Theorem~\ref{thm:main}.
 
 \subsection{The orbit obstruction}
 
@@ -373,8 +378,8 @@ of that lemma, with $r = (a-1)/2$ and $\delta = (b-a)/2$. The underlying
 binary recursion goes back to \cite{DEGS77} (p.~81) and to
 Ardal, Brown and Jungi\'c \cite{ABJ11}; the companion modular existence
 theorem for powers of two is due to Nathanson \cite{Nat77}. We include a
-short proof for completeness, and because the bit-reversal form is the one
-we use.
+short proof for completeness and to make the change of coordinates from
+Geneson's formulation explicit. The lemma is not used later in the paper.
 
 \begin{proof}
 Write $\alpha = (a-1)/2$, $\beta = (b-1)/2$; the completion class has parameter
@@ -576,7 +581,7 @@ single scale $M = 128$, where the relevant family-MUS is single-block,
 and is not used here.
 \end{remark}
 
-\begin{proposition}[Machine verification; Cadical195]\label{prop:ogmachine}
+\begin{proposition}[Machine verification; CaDiCaL]\label{prop:ogmachine}
 $\OG(M)$ is infeasible for every $M$ with $16 \le M \le 200$, and
 for $M = 512$. In particular both tested scales of the dyadic family
 $\{2^{2t-1}\}_{t \ge 4} = \{128, 512, 2048, \dots\}$ are infeasible.
@@ -657,7 +662,7 @@ $\SA = \bigcup_{k \ge 2,\ k \text{ even}} B_k
 = \bigcup_{k \ge 2,\ k \text{ even}} (2^{k-1}, 2^k]$ is not $3$-permutable:
 it admits no permutation (of order type $\omega$) free of monotone
 $3$-term arithmetic progressions. In particular the canonical dyadic
-partition $\Z^+ = \SA \sqcup S_B$ is not a solution of the
+partition $\Z^+ = \SA \sqcup \SB{}$ is not a solution of the
 Erd\H{o}s--Graham two-set problem: any partition witnessing a YES answer
 to problem \#197, if one exists, must differ from the dyadic one.
 \end{theorem}
@@ -752,10 +757,10 @@ collide, e.g.\ $t_5 = b_3$ at $M = 8$). On the odd $d=2$ ladder $w_i = M + 1 + 2
 $b_5 = w_2$, $t_5 = w_{M/2-3}$, $t_3 = w_{M/2-2}$, and
 Lemma~\ref{lem:zigzag} locks the pair orientations together:
 \[
-M \equiv 0 \ (\mathrm{mod}\ 4):\quad b_5 \prec b_3
+M \equiv 0 \ (\mathrm{mod}\ 4)\colon\quad b_5 \prec b_3
 \iff t_3 \prec t_5;
 \qquad
-M \equiv 2 \ (\mathrm{mod}\ 4):\quad b_5 \prec b_3 \iff t_5 \prec t_3.
+M \equiv 2 \ (\mathrm{mod}\ 4)\colon\quad b_5 \prec b_3 \iff t_5 \prec t_3.
 \]
 \end{lemma}
 
@@ -855,9 +860,9 @@ below survives this swap --- it is stated and proved for all
 $M \equiv 0 \pmod 4$, absorbing the swap into the definition of the
 centers $c^{*}, c^{**}$ --- whereas Theorem~\ref{thm:flip} does not: there
 the two required seed sets cease to exist simultaneously, and the argument
-fails, as it must, since (i)${}\wedge{}\mathrm{C3}$ is in fact
-\emph{satisfiable} at $M \equiv 4 \pmod 8$
-(Proposition~\ref{prop:cores}). The mod-$8$ hypothesis of
+fails. This is consistent with the computational observation that
+(i)${}\wedge{}\mathrm{C3}$ is satisfiable at every swept
+$M \equiv 4 \pmod 8$ (Proposition~\ref{prop:cores}). The mod-$8$ hypothesis of
 Theorem~\ref{thm:c3core} therefore enters only through
 Theorem~\ref{thm:flip}.
 
@@ -972,7 +977,7 @@ $M/2 - 6 \equiv 2 \pmod 4$ with mirror $b_7$; both phases].
 
 Again Case I consumes $A_3$ and Case II consumes $A_2$, while $A_1$ is
 consumed symmetrically in both (step 4). The proof visibly fails at
-$M \equiv 4 \pmod 8$ in both cases: the centers $m_0 \mp 1$ land in
+$M \equiv 4 \pmod 8$ in both cases: the centers $m_0 \pm 1$ land in
 the wrong mod-$4$ classes for their G4-floods and the odd-ladder
 leader statuses at $m_0 \pm 1$ invert, so neither seed set exists.
 
@@ -1009,9 +1014,10 @@ $[16, 256]$ and at $512$) are now corroboration, not a dependency.
 The main theorem needs nothing beyond the class $M \equiv 0 \pmod 8$.
 The full order gadget is nevertheless conjectured infeasible at
 \emph{every} $M \ge 16$ (machine-verified for $16 \le M \le 200$ and
-$M = 512$, Proposition~\ref{prop:ogmachine}); at residues
-$\not\equiv 0 \bmod 8$ the C3 core is satisfiable and other attack
-subsets take over (Proposition~\ref{prop:cores}), so a proof would
+$M = 512$, Proposition~\ref{prop:ogmachine}); at every swept scale with
+$M \not\equiv 0 \pmod 8$ the C3 core was satisfiable, and other attack
+subsets were observed computationally to take over
+(Proposition~\ref{prop:cores}); a proof beyond the swept scales would
 need per-residue analogues of Theorems~\ref{thm:l1}--\ref{thm:flip}
 built from the same flood toolkit. This statement is not needed for
 Theorem~\ref{thm:main}. The Erd\H{o}s--Graham problem \#197 itself
@@ -1117,7 +1123,7 @@ s(x)<s(y)=s(z):\ z \prec y, &\quad s(z)<s(y)=s(x):\ x \prec y,\\
 s(x)=s(y)<s(z):\ y \prec x, &\quad s(y)=s(z)<s(x):\ y \prec z,
 \end{array}
 \]
-and is non-monotone on every within-fiber triple. (Triples whose endpoint
+and is non-monotone on every within-fiber AP triple. (Triples whose endpoint
 stages lie on one side of the middle's are automatically safe.)
 \end{enumerate}
 Hence $S$ is $3$-permutable if and only if some stage function for $S$,
@@ -1176,7 +1182,7 @@ high-block value in an early chunk. Restrictions of normalized schemes
 stay normalized, which is what the divergence criterion there consumes.
 
 The definitions above and Theorem~\ref{thm:chunk} hold verbatim with $\SA$
-replaced by any countable infinite set $S \subseteq \Z^+$: no step of the
+replaced by any countably infinite set $S \subseteq \Z^+$: no step of the
 statement or the proof uses a property of $\SA$. Applying that formulation
 to $S = \Z^+$ gives:
 
@@ -1271,8 +1277,9 @@ least $153 - 42 = 111$ of the $128$ values in $(128,256]$ precede the
 last-placed member of $\SA \cap [1,64]$ (recall
 $|\SA \cap [1,64]| = 42$, so at most $42$ of the first $153$ positions can
 be occupied by members of $\SA \cap [1,64]$ itself). In the optimal
-arrangements found, those early values of $(128,256]$ were concentrated in
-a single residue class modulo $8$.
+arrangements found it is the \emph{deferred} values that are structured: the
+$16$ members of $(128,256]$ placed after that point are almost exactly a
+single residue class modulo $8$ (fifteen of them lie in class $1$).
 Divergence of $g_X(L)$ in $X$ for fixed $L$ would prove
 non-permutability directly; our measurements did not exhibit divergence
 (the subset-tolerance is near-total), and this route was abandoned in favour
@@ -1317,9 +1324,9 @@ the relative order of the elements of the block $B_b$, and the constraints
 are
 \begin{enumerate}
 \item[(a)] the forced pair $z \prec y$ for every AP triple $(x, y, z)$,
-$z = 2y - x$, with $x \in B_{b-2}$ and $y, z \in B_b$ --- these are the
+$z = 2y - x$, with $x \in \SA$ lying below $B_b$ and $y, z \in B_b$ --- these are the
 instances of the row $s(x) < s(y) = s(z) \Rightarrow z \prec y$ of (B) that
-a boundary between $B_{b-2}$ and $B_b$ creates; and
+a stage boundary below $B_b$ creates; and
 \item[(b)] non-monotonicity on every AP triple lying inside $B_b$.
 \end{enumerate}
 Any fiber whose lowest block is $B_b$ contains $F_b$ as a subsystem, and a
@@ -1373,7 +1380,7 @@ finite-fiber schemes --- by the per-block deferral calculus of
 Lemma~\ref{lem:bottomhalf} was the state of the elimination phase before
 Section~\ref{sec:og}, where the gap is closed instead by the order-gadget
 route, which does not use the chunk calculus at all. The same analysis
-applies to $S_B$ by the evident mirror symmetry (checked by machine at
+applies to $\SB{}$ by the evident mirror symmetry (checked by machine at
 $4096$).
 
 \subsection{The displacement ladder}\label{sec:ladder}
@@ -1474,7 +1481,8 @@ growth rate}, arXiv:2602.13617 (2026).
 \url{https://www.erdosproblems.com/197}, accessed 2026-08-25.
 
 \bibitem{FC} Google DeepMind, \emph{Formal Conjectures}; problem \#197 is
-formalised in the file \texttt{ErdosProblems/197.lean}. Available at
+formalized in the file
+\texttt{FormalConjectures/ErdosProblems/197.lean}. Available at
 \url{https://github.com/google-deepmind/formal-conjectures}.
 
 \end{thebibliography}
