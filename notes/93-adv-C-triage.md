@@ -81,3 +81,13 @@ arXiv ID is live.
 
 **GO.** No blocker survives; the main chain was re-derived and re-verified
 independently and is sound.
+
+### Addendum (post-commit)
+
+Also corrected: three places still promising "certificates in the repository"
+for negative machine verdicts (deferral facts, machine atlas, the self-similar
+4096 infeasibility) -- now "solver logs and witnesses ... but no proof
+certificates for the negative verdicts", consistent with the rewritten Data
+availability section. All dashes ASCII-ized (0 non-ASCII bytes) so the bundle
+is pdflatex-safe regardless of arXiv toolchain. Tagged v1.1 at the posted
+state; origin/main == local HEAD.
